@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entry xmlns="http://www.w3.org/2005/Atom"
+       xmlns:sword="http://purl.org/net/sword/"
+       xmlns:hal="http://hal.archives-ouvertes.fr/"
+       xmlns:dcterms="http://purl.org/dc/terms/"
+       xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <!-- ============================================ -->
+  <!-- MÉTADONNÉES PRINCIPALES                     -->
+  <!-- ============================================ -->
+  
+  <title>AL-MIZAN : Émulateur quantique pur Python avec certificats mathématiques scellés pour les problèmes du millénaire</title>
+  
+  <title type="alternate" xml:lang="en">AL-MIZAN: A Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems</title>
+
+  <!-- ============================================ -->
+  <!-- AUTEURS                                      -->
+  <!-- ============================================ -->
+  
+  <author>
+    <name>EL BAHLOUL, M. Ahmed</name>
+    <email>elbahloulahmed505@gmail.com</email>
+    <affiliation>IMAM8MAHDI Research Initiative, Valence, France</affiliation>
+    <role>Auteur principal, concepteur, développeur</role>
+  </author>
+
+  <author>
+    <name>Devin (SWE-2)</name>
+    <affiliation>Cognition AI</affiliation>
+    <role>Assistance IA pour génération de code, tests et documentation</role>
+    <hal:ai-assistance>true</hal:ai-assistance>
+  </author>
+
+  <!-- ============================================ -->
+  <!-- RÉSUMÉS                                      -->
+  <!-- ============================================ -->
+  
+  <summary xml:lang="fr">AL-MIZAN est un émulateur quantique complet implémenté en Python pur sans dépendances externes, unifiant la simulation par vecteur d'état, l'évolution par matrice densité, la correction d'erreurs quantiques (code Steane [[7,1,3]]), l'extrapolation à bruit nul (ZNE) et la génération de layout GDSII pédagogique. Au-delà de la simulation quantique, le paquetage fournit des certificats mathématiques scellés SHA-256 pour des vérifications bornées de problèmes du millénaire : la Conjecture du Point Carré (PC-1..PC-5 prouvées par exhaustion), le théorème de Turing sur la bande de Riemann ≤100 (29 zéros certifiés par arithmétique d'intervalles), et la vérification BSD sur des courbes elliptiques nommées. L'architecture maintient des contraintes d'honnêteté strictes — chaque artefact porte sa borne de calcul, et aucun problème ouvert du millénaire n'est revendiqué comme résolu.</summary>
+
+  <summary xml:lang="en">AL-MIZAN is a complete quantum emulator implemented in pure Python with zero external dependencies, unifying state vector simulation, density matrix evolution, quantum error correction (Steane [[7,1,3]] code), zero-noise extrapolation (ZNE), and pedagogical GDSII layout generation. Beyond quantum simulation, the package provides sealed SHA-256 mathematical certificates for bounded verifications of millennium problems: the Point Square Conjecture (PC-1..PC-5 proven by exhaustion), Turing's theorem on the Riemann strip ≤100 (29 zeros certified via interval arithmetic), and BSD verification on named elliptic curves. The architecture maintains strict honesty constraints—every artifact carries its computational bound, and no open millennium problem is claimed as solved.</summary>
+
+  <!-- ============================================ -->
+  <!-- MOTS-CLÉS                                    -->
+  <!-- ============================================ -->
+  
+  <category term="émulateur quantique" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="fr"/>
+  <category term="Python" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="fr"/>
+  <category term="correction d'erreurs quantiques" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="fr"/>
+  <category term="hypothèse de Riemann" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="fr"/>
+  <category term="conjecture BSD" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="fr"/>
+  <category term="certificats mathématiques" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="fr"/>
+  <category term="simulation quantique" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="fr"/>
+  <category term="OpenQASM" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="fr"/>
+  <category term="code Steane" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="fr"/>
+  <category term="extrapolation à bruit nul" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="fr"/>
+
+  <category term="quantum emulator" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="en"/>
+  <category term="Python" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="en"/>
+  <category term="quantum error correction" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="en"/>
+  <category term="Riemann hypothesis" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="en"/>
+  <category term="BSD conjecture" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="en"/>
+  <category term="mathematical certificates" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="en"/>
+  <category term="quantum simulation" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="en"/>
+  <category term="OpenQASM" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="en"/>
+  <category term="Steane code" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="en"/>
+  <category term="zero-noise extrapolation" scheme="http://hal.archives-ouvertes.fr/keyword/" xml:lang="en"/>
+
+  <!-- ============================================ -->
+  <!-- DOMAINES SCIENTIFIQUES                       -->
+  <!-- ============================================ -->
+  
+  <hal:domain>info.info-cf</hal:domain>
+  <hal:domain>math.math-mp</hal:domain>
+  <hal:domain>phys.qphy</hal:domain>
+
+  <dcterms:subject>Calcul formel</dcterms:subject>
+  <dcterms:subject>Physique mathématique</dcterms:subject>
+  <dcterms:subject>Mécanique quantique</dcterms:subject>
+
+  <!-- ============================================ -->
+  <!-- IDENTIFIANTS ET LIENS                        -->
+  <!-- ============================================ -->
+  
+  <id>https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator</id>
+  
+  <link rel="alternate" href="https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator" title="Dépôt GitHub"/>
+  
+  <link rel="related" href="https://doi.org/10.5281/zenodo.24028243" title="DOI Zenodo"/>
+
+  <dcterms:identifier>10.5281/zenodo.24028243</dcterms:identifier>
+
+  <!-- ============================================ -->
+  <!-- DATES                                        -->
+  <!-- ============================================ -->
+  
+  <updated>2026-11-07T06:50:00Z</updated>
+  <published>2026-11-07</published>
+  <dcterms:issued>2026-11-07</dcterms:issued>
+
+  <!-- ============================================ -->
+  <!-- TYPE DE DOCUMENT                             -->
+  <!-- ============================================ -->
+  
+  <dcterms:type>Software</dcterms:type>
+  <hal:document-type>LOGICIEL</hal:document-type>
+
+  <!-- ============================================ -->
+  <!-- VERSION                                      -->
+  <!-- ============================================ -->
+  
+  <dcterms:hasVersion>1.0.0</dcterms:hasVersion>
+
+  <!-- ============================================ -->
+  <!-- LANGUES                                      -->
+  <!-- ============================================ -->
+  
+  <dcterms:language>fr</dcterms:language>
+  <dcterms:language>en</dcterms:language>
+
+  <!-- ============================================ -->
+  <!-- LICENCE ET DROITS                            -->
+  <!-- ============================================ -->
+  
+  <rights>AGPL-3.0</rights>
+  <dcterms:license>https://www.gnu.org/licenses/agpl-3.0.fr.html</dcterms:license>
+  <dcterms:rightsHolder>EL BAHLOUL, M. Ahmed</dcterms:rightsHolder>
+
+  <!-- ============================================ -->
+  <!-- DÉCLARATION IA                               -->
+  <!-- ============================================ -->
+  
+  <hal:ai-assistance>true</hal:ai-assistance>
+  <hal:ai-disclosure>Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2, Cognition AI) pour la génération de code, les tests et la documentation. L'auteur humain (M. Ahmed EL BAHLOUL) a révisé, validé et dirigé tous les résultats, et a pris les décisions de conception fondamentales incluant la doctrine Al-Mizan, les règles du noyau scellé, l'architecture des certificats mathématiques et les contraintes d'honnêteté. Tout le code généré par IA a été inspecté manuellement et intégré sous supervision humaine.</hal:ai-disclosure>
+
+  <!-- ============================================ -->
+  <!-- RELATIONS AVEC D'AUTRES PUBLICATIONS         -->
+  <!-- ============================================ -->
+  
+  <dcterms:isVersionOf>
+    <dcterms:title>ASTRO-Q°ODE_SYSTEME</dcterms:title>
+    <dcterms:identifier>10.5281/zenodo.23554838</dcterms:identifier>
+  </dcterms:isVersionOf>
+
+  <dcterms:relation>
+    <dcterms:identifier>10.5281/zenodo.23479740</dcterms:identifier>
+  </dcterms:relation>
+
+  <dcterms:relation>
+    <dcterms:identifier>10.5281/zenodo.23288947</dcterms:identifier>
+  </dcterms:relation>
+
+  <!-- ============================================ -->
+  <!-- ÉDITEUR ET PUBLICATION                       -->
+  <!-- ============================================ -->
+  
+  <dcterms:publisher>HAL - Archive ouverte</dcterms:publisher>
+  <dcterms:publisher>IMAM8MAHDI Research Initiative</dcterms:publisher>
+
+  <!-- ============================================ -->
+  <!-- FORMAT DES FICHIERSS                         -->
+  <!-- ============================================ -->
+  
+  <dcterms:format>
+    <dcterms:extent>1600000000</dcterms:extent>
+    <dcterms:medium>application/zip</dcterms:medium>
+    <dcterms:description>Archive complète du dépôt GitHub contenant code source Python (13 modules quantiques + 14 modules certificats), 48 tests unitaires, documentation complète, métadonnées et licences</dcterms:description>
+  </dcterms:format>
+
+  <dcterms:format>
+    <dcterms:medium>text/markdown</dcterms:medium>
+    <dcterms:description>Article scientifique au format JOSS (Journal of Open Source Software)</dcterms:description>
+  </dcterms:format>
+
+  <dcterms:format>
+    <dcterms:medium>application/x-bibtex</dcterms:medium>
+    <dcterms:description>Bibliographie complète (100+ références)</dcterms:description>
+  </dcterms:format>
+
+  <!-- ============================================ -->
+  <!-- NOTES DE DÉPÔT                               -->
+  <!-- ============================================ -->
+  
+  <dcterms:abstract xml:lang="fr">Logiciel développé dans le cadre de l'initiative IMAM8MAHDI. Architecture "sans dolosif" : honnêteté scientifique stricte sur les capacités et limitations. Chaque certificat mathématique porte des bornes explicites. Émulation classique uniquement (pas de QPU matériel). 48 tests unitaires tous verts. Documentation bilingue français/anglais.</dcterms:abstract>
+
+  <dcterms:abstract xml:lang="en">Software developed as part of the IMAM8MAHDI initiative. "Non-dolosive" architecture: strict scientific honesty regarding capabilities and limitations. Each mathematical certificate carries explicit bounds. Classical emulation only (no hardware QPU). 48 unit tests all passing. Bilingual French/English documentation.</dcterms:abstract>
+
+  <!-- ============================================ -->
+  <!-- CONTRIBUEURS (optionnel)                     -->
+  <!-- ============================================ -->
+  
+  <hal:contributor>
+    <name>ASTRO-Q°ODE System Ecosystem</name>
+    <role>Framework and infrastructure</role>
+  </hal:contributor>
+
+  <hal:contributor>
+    <name>Al-Mizan Intellectual Framework</name>
+    <role>Conceptual foundation and doctrine</role>
+  </hal:contributor>
+
+  <!-- ============================================ -->
+  <!-- RÉFÉRENCES BIBLIOGRAPHIQUES                  -->
+  <!-- ============================================ -->
+  
+  <dcterms:references>
+    <dcterms:bibliographicCitation>Turing, A.M. (1953). Some calculations of the Riemann zeta-function. Proceedings of the London Mathematical Society, s3-3(1), 99-117.</dcterms:bibliographicCitation>
+  </dcterms:references>
+
+  <dcterms:references>
+    <dcterms:bibliographicCitation>Steane, A.M. (1996). Error Correcting Codes in Quantum Theory. Physical Review Letters, 77(5), 793-797.</dcterms:bibliographicCitation>
+  </dcterms:references>
+
+  <dcterms:references>
+    <dcterms:bibliographicCitation>Temme, K., Bravyi, S., &amp; Gambetta, J.M. (2017). Error Mitigation for Short-Depth Quantum Circuits. Physical Review Letters, 119(18), 180509.</dcterms:bibliographicCitation>
+  </dcterms:references>
+
+  <dcterms:references>
+    <dcterms:bibliographicCitation>Peruzzo, A., et al. (2014). A variational eigenvalue solver on a photonic quantum processor. Nature Communications, 5, 4213.</dcterms:bibliographicCitation>
+  </dcterms:references>
+
+  <dcterms:references>
+    <dcterms:bibliographicCitation>Shor, P.W. (1997). Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer. SIAM Journal on Computing, 26(5), 1484-1509.</dcterms:bibliographicCitation>
+  </dcterms:references>
+
+  <!-- ============================================ -->
+  <!-- MÉTADONNÉES TECHNIQUES SWORD                 -->
+  <!-- ============================================ -->
+  
+  <sword:treatment>Automatic processing by HAL archive</sword:treatment>
+  <sword:verbose>true</sword:verbose>
+  <sword:noOp>false</sword:noOp>
+
+</entry>
