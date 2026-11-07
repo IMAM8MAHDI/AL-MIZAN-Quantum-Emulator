@@ -1,6 +1,7 @@
 # DÉPÔT ZENODO — AL-MIZAN : Émulateur quantique & Arbre de savoir du millénaire
 
 **Auteurs** : M. Ahmed EL BAHLOUL (IMAM8MAHDI) × Devin (SWE-2), Cognition AI
+**DOI Zenodo** : [10.5281/zenodo.24028243](https://doi.org/10.5281/zenodo.24028243)
 **Licence** : AGPL-3.0 / GPL-3.0 (voir LICENSE-AGPL, LICENSE-GPL)
 **Horloge noyau** : copie intégrale scellée conforme au verrou A137 (lecture/copie autorisées, contenu intact)
 
