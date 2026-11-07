@@ -45,8 +45,8 @@ AL-MIZAN is a complete quantum emulator implemented in pure Python with zero ext
 https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 
 ## DOI Zenodo associé
-10.5281/zenodo.24028243
-https://doi.org/10.5281/zenodo.24028243
+10.5281/zenodo.24032527
+https://doi.org/10.5281/zenodo.24032527
 
 ## Version
 1.0.0

@@ -39,7 +39,7 @@ BSD sur 3 courbes (L'(37a1)=0.306 = valeur LMFDB) · Hasse p≤97 · Hodge T²/C
 | Champ | Valeur |
 |-------|--------|
 | **Auteur** | M. Ahmed EL BAHLOUL (IMAM8MAHDI) |
-| **DOI Zenodo** | [10.5281/zenodo.24028243](https://doi.org/10.5281/zenodo.24028243) |
+| **DOI Zenodo** | [10.5281/zenodo.24032527](https://doi.org/10.5281/zenodo.24032527) |
 | **Licence** | AGPL-3.0 / GPL-3.0 |
 | **Contact** | elbahloulahmed505@gmail.com |
 | **GitHub** | [IMAM8MAHDI/AL-MIZAN-Quantum-Emulator](https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator) |
