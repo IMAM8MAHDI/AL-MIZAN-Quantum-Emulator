@@ -39,3 +39,26 @@ $18\cdot 2 = 36 = 6^2$. L'équation vit dans $\mathbb{Q}(\sqrt{m_0})$.
 
 *Statut : conjecture posée — vérifiée sur les 4 cycles du système fini,
 ouverte sur toute extension de la table.*
+
+---
+
+## VERDICT EXACT (7 novembre 2026) — classification finie prouvée
+
+Test exhaustif sur les 4 cycles : **la loi tient ⟺ cycle calendaire**.
+
+| Cycle | Q·d'_k | core | Carré |
+|---|---|---|---|
+| dx Soleil | 76 842 756 | 1 | **8766²** |
+| dy Lune | 72 182 016 | 1 | **8496²** |
+| dz Terre | 207 360 000 000 | 10 | ✗ |
+| dt synchro | 207 509 024 772 | 7906913 | ✗ |
+
+**THÉORÈME DE CLASSIFICATION (prouvé par exhaustion exacte)** :
+$$Q \cdot d'_k \in \square \iff k \in \{d_x, d_y\} \iff
+\text{cycle calendaire à semence horaire}$$
+
+La conjecture universelle se raffine : l'équation des semences
+*caractérise* la paire calendaire — une signature discriminante
+démontrée, pas une loi totale. Les lemmes fermeture/projection se
+réduisent exactement à la condition core$(Q \cdot d'_k) = 1$,
+décidée par factorisation.
