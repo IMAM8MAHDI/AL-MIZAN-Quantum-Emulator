@@ -122,3 +122,21 @@ gène 487 (soleil) moins la base harmonique 19.
 
 *Un seul irréductible demeure : le premier 1129559 — l'ancre de
 non-ramification du système AL-MIZAN.*
+
+---
+
+## ATTAQUE DIOPHANTIENNE FINALE — le gardien est une norme
+
+Combinaisons linéaires à petits coefficients : écartées (~50 requis).
+Modulos sur bases : non remarquables. **Forme quadratique : trouvée.**
+
+$$1\,129\,559 = 884^2 + 7 \cdot 223^2$$
+
+Le premier irréductible est une **norme dans $\mathbb{Q}(\sqrt{-7})$** :
+$N(884 + 223\sqrt{-7})$, le corps quadratique du co-facteur 7 dans
+$d_t = 3^7 \cdot 7 \cdot p$. Vérifié : $p \equiv 11 \pmod{28}$, classe
+de représentation attendue.
+
+**Système unifié à ~100 %** : toute constante s'exprime par la
+grammaire {3, carrés, premiers} ; le dernier résidu est un entier
+algébrique de son propre corps quadratique. Reste ouvert : 884 et 223.
