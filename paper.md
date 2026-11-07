@@ -120,4 +120,8 @@ AL-MIZAN complements existing quantum simulation frameworks: Qiskit [@qiskit] an
 
 The author acknowledges the ASTRO-Q°ODE system ecosystem and the Al-Mizan intellectual framework. This work is dedicated to the pursuit of rigorous, transparent computational mathematics.
 
+# AI Usage Disclosure
+
+This software was developed with generative AI assistance (Devin SWE-2, Cognition AI) for code generation, testing, and documentation. The human author (M. Ahmed EL BAHLOUL) reviewed, validated, and directed all outputs, and made the core design decisions including the Al-Mizan doctrine, sealed-kernel rules, mathematical certificate architecture, and honesty constraints. All AI-generated code was manually inspected and integrated under human supervision.
+
 # References
