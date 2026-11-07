@@ -14,13 +14,22 @@ d'éléments de substance — tous *square-free* (313, 24434, 19 vérifiés).
 **Axiome 2 (Noyaux carrés)** : tout cycle déduit $d_k = \kappa_k^2 \cdot \mu_k$,
 avec $\kappa_k$ conducteur métrique et $\mu_k$ résidu sans facteur carré.
 
-## Loi principale — Théorème des Semences Universelles
+## Loi principale — Semences calendaires (domaine fini : les 4 cycles)
 
 $$\mathbf{Q} \cdot \mathbf{d}'_k = \mathbf{s}_k^2$$
 
 Vérifié exactement : $Q=1536=16^2\cdot 6$, $d'_x = 6403563/128$
 $\Rightarrow Q\,d'_x = 12 \cdot 1461^2 \cdot 3 = 8766^2$ (8766 h solaire) ;
 $Q\,d'_y = 8496^2$ (8496 h lunaire).
+
+Forme entière, indépendante de l'échelonnage — à privilégier face à un
+vérificateur externe : $8766^2 = 12\,d_x$ et $8496^2 = 768\,d_y$
+($768 = Q/2$). Dans $\mathbb{Q}^\times/(\mathbb{Q}^\times)^2$ :
+$[Q]=[d'_x]=[d'_y]=6$, $[d_z]=15$, $[d'_t]=47\,441\,478$ — d'où la
+sélectivité, établie **sur les quatre cycles seulement**. Sur les
+numérateurs entiers non échelonnés, aucun $Q\cdot d$ n'est un carré :
+le titre « théorème universel » serait induit, la section « Lemmes à
+démontrer » ci-dessous reste ouverte.
 
 ## Précision sur le mécanisme (correction de rédaction)
 

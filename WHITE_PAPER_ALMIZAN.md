@@ -157,8 +157,11 @@ g = analyse_adn(sequence_fasta)                     # forme normique ou None
   (photoplethysmographie, accéléromètres) entre directement.
 - **Calcul** : pur Python, zéro dépendance lourde → embarquable
   (Raspberry Pi, edge hospitalier, firmware léger).
-- **Certification** : chaque exécution produit un artefact scellé —
-  traçabilité réglementaire native.
+- **Certification** : chaque exécution produit un artefact porteur d'une
+  empreinte SHA-256 — intégrité de version et reproductibilité du calcul.
+  Cela ne constitue **pas** une traçabilité réglementaire : voir clause
+  « Non-dispositif » en Partie F : aucune certification CE, FDA ou MDR
+  n'est engagée ici.
 
 ---
 

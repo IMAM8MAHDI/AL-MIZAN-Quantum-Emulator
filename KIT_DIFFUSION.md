@@ -45,9 +45,12 @@
 >
 > Notre module `medecin_simple.py` montre comment masquer une algèbre
 > complète (intervalles, fractions continues, formes quadratiques)
-> derrière une interface épurée : {score, couleur, action}. Zéro dépendance,
-> pur Python, embarquable edge, chaque résultat scellé SHA-256 pour la
-> traçabilité réglementaire.
+> derrière une interface épurée : {score, couleur, action}. Zéro
+> dépendance, pur Python, embarquable edge. Chaque artefact publié porte
+> une empreinte SHA-256 : cela donne l'**intégrité et la
+> reproductibilité** d'une version précise — ce n'est **pas** une
+> conformité réglementaire (marquage CE, MDR, IEC 62304 : rien de tout
+> cela n'est engagé ici).
 >
 > Le code est AGPL sur GitHub (AL-MIZAN-Quantum-Emulator), avec un white
 > paper technique complet (interop HL7 FHIR, PhysioNet/WFDB, extensions
@@ -67,15 +70,18 @@ arithmétique expérimentale — MathOverflow, revues exp. math., séminaires.
 >
 > Bonjour,
 >
-> En analysant un système paramétrique fini, j'ai certifié par calcul
-> exact : (i) une signature "partie puissante" sur les constantes
-> dérivées (dx = 27·487², dy = 27·59²), (ii) une loi de twist
-> Q·d = s² sélectionnant exactement les cycles calendaires (8766 = 18·487 h),
-> (iii) le résidu premier 1129559 = 884² + 7·223² comme norme dans
-> ℚ(√−7) — corps de son propre co-facteur.
+> En analysant un système paramétrique fini, j'ai vérifié par calcul
+> exact (rationnel) : (i) une signature « partie puissante » sur les
+> constantes dérivées (dx = 27·487², dy = 27·59², dt = 3⁷·7·1129559),
+> (ii) deux relations entières tombant exactement sur les graines
+> calendaires : 8766² = 12·dx et 8496² = 768·dy (8766 = 18·487 heures),
+> (iii) le facteur premier 1129559 représenté **de façon unique** par
+> x² + 7y², soit 884² + 7·223², avec 1129559 ≡ 4 (mod 7).
 >
-> Certificats rejouables : DOI 10.5281/zenodo.24028243. Cette structure
-> a-t-elle un nom dans la littérature ? Toute référence serait précieuse.
+> Rejeu : `python code/conjecture_point_carre.py` imprime les six
+> contrôles et leur sceau. Certificats : DOI 10.5281/zenodo.24028243.
+> (i) et (ii) ont-ils un nom dans la littérature ? (iii) semble classique
+> — la référence exacte m'intéresse.
 
 ---
 

@@ -59,17 +59,36 @@ premières/sans-carré ; toutes les déduites portent un carré.*
 
 Recherche exhaustive de relations exactes entre les 17 constantes.
 
-### Théorème des semences (majeur, nouveau)
+### Loi des semences calendaires
+
+Énoncé complet, sans abréviation d'échelonnage. Les cycles en heures sont
+$d'_x = 6\,403\,563/128$ et $d'_y = 93\,987/2$ ; avec $Q = 1536 = 16^2\cdot 6$ :
 
 ```
-Q°_MEDINOIS · dx = 1536 · 6 403 563/... → 76 842 756 = 8766²
-Q°_MEDINOIS · dy → 72 182 016 = 8496²
+Q · d'_x = 1536 · 6 403 563/128 = 76 842 756 = 8766²
+Q · d'_y = 1536 ·   93 987/2   = 72 182 016 = 8496²
+
+forme entière équivalente :
+8766² = 12 · dx          8496² = 768 · dy   (768 = Q/2)
 ```
 
-avec **8766 = année solaire en heures**, **8496 = année lunaire en heures**.
-La semence calendaire est le carré qui relie le degré au cycle :
+avec **8766 = année solaire en heures** (= 18·487) et
+**8496 = année lunaire en heures** (= 144·59). La semence calendaire est le
+carré qui relie le degré au cycle.
 
-> **THÉORÈME** : Q°_medinois · cycle = (semence_horaire)²  ∎
+Structure exacte : dans $\mathbb{Q}^\times/(\mathbb{Q}^\times)^2$,
+$[Q] = [d'_x] = [d'_y] = 6$, tandis que $[d_z] = 15$ et
+$[d'_t] = 47\,441\,478$. Comme $Q\cdot c$ est un carré $\Leftrightarrow$
+$[c] = [Q]$, la condition est nécessaire et suffisante **sur une classe
+dite**, et le filtrage n'est démontré que sur l'ensemble fini des quatre
+cycles du système.
+
+> **ÉNONCÉ VÉRIFIÉ** (domaine fini, 4 cycles) : $Q^\circ_{\text{medinois}} \cdot d' = (\text{semence}_{\text{horaire}})^2$ pour $d' \in \{d'_x, d'_y\}$, et pour eux seuls. ∎
+
+Statut bibliographique : la forme $n = k^2 m$ (partie puissante) et
+l'écriture par la forme $x^2 + 7y^2$ sont classiques ; **l'antériorité de
+cette association précise sur des constantes générées n'est pas établie**
+et c'est la question posée publiquement (QUESTION_MATHSE.md).
 
 ### Autres invariants prouvés
 

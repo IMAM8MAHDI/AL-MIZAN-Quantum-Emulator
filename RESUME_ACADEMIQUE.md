@@ -14,10 +14,26 @@ Le système extrait quatre cycles fondamentaux (d_x, d_y, d_z, d_t) d'une matric
 
 ## 2. Théorème des Semences et classification calendaire
 
-L'opérateur de degré global Q = 1536 = 16²·6 révèle un twist quadratique dans ℚ×/(ℚ×)². La relation Q·d'_k = s_k² est une condition nécessaire et suffisante sélectionnant exclusivement les cycles calendaires :
+L'opérateur de degré global Q = 1536 = 16²·6 a pour classe de carrés 6 dans
+ℚ×/(ℚ×)². Les cycles, **rendus en heures**, sont des rationnels :
 
-- Soleil : Q·d'_x = 8766² — année solaire en heures
-- Lune : Q·d'_y = 8496² — année lunaire en heures
+    d'_x = dx/128 = 6 403 563/128        d'_y = dy/2 = 93 987/2
+
+Dans ℚ×/(ℚ×)² exactement : [Q] = [d'_x] = [d'_y] = 6, alors que
+[d_z] = 15 et [d'_t] = 47 441 478. Comme `Q·c` est un carré si et seulement
+si `[c] = [Q]`, la loi s'écrit sans approximation :
+
+- Soleil : Q·d'_x = 8766² — année solaire en heures (= 18·487)
+- Lune : Q·d'_y = 8496² — année lunaire en heures (= 144·59)
+
+et, sous forme entière équivalente (celle qu'un tiers peut vérifier sans
+connaître l'échelonnage) : **8766² = 12·dx**, **8496² = 768·dy**.
+
+Portée exacte de la sélectivité : sur l'ensemble **fini des quatre cycles**
+du système, seuls le solaire et le lunaire partagent la classe de Q — donc
+« exclusivement » vaut sur ces quatre éléments, et sur rien de plus. Sur les
+numérateurs entiers non échelonnés, `Q·dx`, `Q·dy`, `Q·dz`, `Q·dt` ne sont
+jamais des carrés (classes 3, 3, 15, 47 441 478 ≠ 6).
 
 Les numérateurs partagent la grammaire 27·p² sur les gènes premiers p = 487 (Soleil) et p = 59 (Lune). Le quotient fondamental : d'_x/d'_y = (487/472)².
 

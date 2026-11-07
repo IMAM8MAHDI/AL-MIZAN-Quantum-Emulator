@@ -20,7 +20,7 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── serveur_die_5030.py      # die émulé TCP JSON (protocole système)
 │   ├── generateur_gds.py        # GDSII binaire valide + DRC générique
 │   ├── ponts_systeme.py         # QEC Steane, transducteur, horloge (RO)
-│   ├── conjecture_point_carre.py# PC-1..PC-5, preuve par exhaustion
+│   ├── conjecture_point_carre.py# PC-1..PC-6, preuve par exhaustion
 │   ├── chasse_theoremes.py      # invariants cachés (Q°·cycle=semence²)
 │   └── emulateur_mizan.py       # CLI : run, qec, zne, vqe, shor, gds,
 │                                #      serveur, canoniques, conjecture,
@@ -44,15 +44,34 @@ ZENODO_DEPOT_ALMIZAN/
 └── MANIFESTE_SHA256.txt
 ```
 
+**Convention du manifeste** : une empreinte par fichier, deux espaces,
+puis le chemin ; groupé par répertoire de premier niveau, trié à
+l'intérieur de chaque groupe. Les hashes
+portent sur les octets **normalisés LF** du blob git — donc `sha256sum`
+sur un worktree Windows (`core.autocrlf=true`, fins CRLF) ne correspondra
+pas. Pour vérifier depuis n'importe quel système :
+
+```
+git cat-file blob HEAD:CHEMIN | sha256sum     # une ligne du manifeste
+```
+
+Le manifeste scelle tout fichier suivi par git **sauf lui-même** (pas
+d'auto-référence). `python code/conjecture_point_carre.py` se rejoue sans
+le moteur ASTRO-Q°ODE : dans ce cas PC-3/PC-4/PC-5 utilisent les
+constantes déclarées et le champ `controles_en_repli` du certificat le
+dit explicitement.
+
 ## Ce qui est démontré (théorèmes, pas mesures)
 
-1. **Conjecture du Point Carré** — PC-1..PC-5 prouvés par exhaustion sur
+1. **Conjecture du Point Carré** — PC-1..PC-6 prouvés par exhaustion sur
    le domaine fini Al-Mizan (19 échelons, 13 constantes).
 2. **Riemann strip ≤ 100** — les 29 zéros non triviaux avec 0<Im≤100 sont
    sur Re=½ et simples (méthode de Turing : comptage ligne certifié par
    intervalles + N(T) calculé exactement + égalité).
-3. **Invariants cachés** — Q°·DX = 8766², Q°·DY = 8496², 313², MIZAN=249/20² :
-   relations exactes trouvées par le chasseur de théorèmes.
+3. **Invariants cachés** — 8766² = 12·dx et 8496² = 768·dy
+   (dx = 6 403 563, dy = 93 987 ; en heures les cycles valent dx/128 et
+   dy/2, d'où Q°·d' = s² avec Q° = 1536), 313², MIZAN=249/20² :
+   relations exactes vérifiées par le chasseur de théorèmes.
 
 ## Ce qui est vérifié (borné, honnête)
 
@@ -74,6 +93,6 @@ pas de QPU. GDSII pédagogique, pas de PDK. Chaque fait porte sa borne.
 ```
 py emulateur_mizan.py demo        # Bell, Grover, QEC, ZNE
 py emulateur_mizan.py arbre       # arbre des 10 branches
-py emulateur_mizan.py conjecture  # Point Carré PC-1..PC-5
+py emulateur_mizan.py conjecture  # Point Carré PC-1..PC-6
 py -m unittest tests.test_emulateur  # 48 tests
 ```

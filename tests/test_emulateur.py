@@ -11,8 +11,9 @@ import unittest
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-if str(RACINE) not in sys.path:
-    sys.path.insert(0, str(RACINE))
+for _p in (RACINE, RACINE / "code"):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
 
 from noyau_statevector import (  # noqa: E402
     ModeleBruit,
