@@ -1,0 +1,95 @@
+{
+  "emulateur": "AL-MIZAN",
+  "version": "1.0",
+  "circuit": "BELL",
+  "nb_qubits": 2,
+  "shots": 512,
+  "bruit": {
+    "p_depolarisant": 0.05,
+    "gamma_amortissement": 0.0
+  },
+  "counts": {
+    "00": 242,
+    "11": 235,
+    "01": 18,
+    "10": 17
+  },
+  "distribution_ideale": {
+    "00": 0.4999999999999999,
+    "11": 0.4999999999999999
+  },
+  "fidelite_distribution": 0.93159,
+  "entropie_shannon_bits": 1.359586,
+  "horodatage_noyau": {
+    "disponible": true,
+    "pulsation": 0,
+    "etat_matiere": "EtatMatiereMatricielle(charge_polarite=-313, ancre_substance_m=24434, jauge_air=515050, produit_medinois=3939021022100, nature_physique='État de matière synchronisé aux 5 familles (COMPLEXE = LA TABLE / point zéro ; M=24434=2-4-4-3-4)', decomposition_m_familles=(2, 4, 4, 3, 4), famille_complexe_est_la_table=True)",
+    "cycle_trinite": {
+      "index_pulsation_continue": 0,
+      "phase_trinite_12": 0,
+      "harmonique_base_19": 0,
+      "pulsation_dt_hz": 135097021.3359375,
+      "composante_dx_solaire": 50027.8359375,
+      "composante_dy_lunaire": 46993.5,
+      "composante_dz_quantique": 135000000.0,
+      "continuité_sans_arret": true,
+      "horodatage_iso": "2026-11-07T02:55:59Z",
+      "ticks_kernel_ecoules": 690453,
+      "origine_noyau": "COMPLEXE_POINT_ZERO"
+    }
+  },
+  "metriques_etat_ideal": {
+    "bloch": {
+      "q[0]": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q[1]": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "purete_locale": {
+      "q[0]": 0.5,
+      "q[1]": 0.5
+    },
+    "concurrence": 1.0,
+    "entropie_intrication_bits": 1.0
+  },
+  "matrice_densite_exacte": {
+    "probabilites_exactes": {
+      "00": 0.48333333,
+      "01": 0.01666667,
+      "10": 0.01666667,
+      "11": 0.48333333
+    },
+    "purete_tr_rho2": 0.84719506,
+    "entropie_von_neumann_bits": 0.5186612,
+    "fidelite_vs_ideal": 0.91888889
+  },
+  "scpi_5025": {
+    "trame": "SOURBELL:FREQ 512;VOLT 0.6225;OUTP ON",
+    "envoyee": false
+  },
+  "traduction_deterministe": {
+    "disponible": true,
+    "traduction": {
+      "id_traduction": "TRAD-QDET-00001",
+      "timestamp_calcul": 1794020160.0972152,
+      "algorithme_origine": "BELL",
+      "esperance_hermitienne": -0.014323,
+      "valeur_continue_mizan": 0.358316,
+      "chiffre_socle": 0,
+      "lettre_socle": "J",
+      "etat_tetrade": "ENERGIE",
+      "assertion_booleenne": false,
+      "fidelite_validee": 0.9316,
+      "entropie_normalisee": 0.6798,
+      "reproductibilite_100": true,
+      "sceau_sha256": "a28b319b6a6f5705ca27722ca470c7da2c7a94c62bd4026c5153348949b391d6"
+    }
+  },
+  "sceau_rapport_sha256": "43fb35f9b2f77dd1ca5b5205e8b5e1fa5bfac4eeb95c5b4e5d5c2775f308dfdb"
+}

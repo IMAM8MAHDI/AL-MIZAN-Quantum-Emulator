@@ -1,0 +1,113 @@
+{
+  "enonce": {
+    "nom": "CONJECTURE DU POINT CARRÉ",
+    "version": "1.0",
+    "domaine": "Structure finie de l'Informe Al-Mizan — décidable par énumération",
+    "sous_enonces": [
+      {
+        "id": "PC-1",
+        "titre": "Unicité du point fixe",
+        "forme": "∀x∈[-9;+9] : (x = −x) ∧ (Atbash(L(x)) = L(x)) ⇔ x = 0 ≡ 'J'"
+      },
+      {
+        "id": "PC-2",
+        "titre": "Quadrature structurelle",
+        "forme": "amplitude 9 = 3² ∧ niveaux 4 = 2² ∧ Q° mécois 2304 = 48²"
+      },
+      {
+        "id": "PC-3",
+        "titre": "Signature carrée des sorties de LA TABLE",
+        "forme": "∀ cycle sorti du point zéro : ∃k>1 : k² | numérateur réduit"
+      },
+      {
+        "id": "PC-4",
+        "titre": "Déductibilité totale depuis le point zéro",
+        "forme": "dx, dy, dz, dt, ppcm = recomputés sans constante assignée"
+      }
+    ],
+    "limite_honnete": "Preuve par exhaustion sur domaine fini — ne résout PAS les problèmes du millénaire (domaines infinis)."
+  },
+  "resultats": {
+    "PC-1": {
+      "verdict": true,
+      "points_fixes": [
+        {
+          "echelon": 0,
+          "lettre": "J"
+        }
+      ],
+      "methode": "énumération exhaustive des 19 échelons — DÉCIDÉ"
+    },
+    "PC-2": {
+      "verdict": true,
+      "parametres": {
+        "amplitude_harmonique_9": {
+          "valeur": 9,
+          "carre": true,
+          "racine": 3
+        },
+        "niveaux_table_4": {
+          "valeur": 4,
+          "carre": true,
+          "racine": 2
+        },
+        "q_degre_mecois": {
+          "valeur": 2304,
+          "carre": true,
+          "racine": 48
+        },
+        "q_degre_medinois": {
+          "valeur": 1536,
+          "carre": false,
+          "racine": 39
+        }
+      },
+      "note": "Q° médinois 1536 n'est pas un carré — l'énoncé ne l'exige pas (forme stricte), il est rapporté pour honnêteté"
+    },
+    "PC-3": {
+      "verdict": true,
+      "cycles": {
+        "dx_soleil": {
+          "fraction": "6403563/128",
+          "num = k²·reste": "6403563 = 1461² · 3",
+          "k": 1461,
+          "signature_carree": true,
+          "den = k²·reste": "128 = 8² · 2"
+        },
+        "dy_lune": {
+          "fraction": "93987/2",
+          "num = k²·reste": "93987 = 177² · 3",
+          "k": 177,
+          "signature_carree": true,
+          "den = k²·reste": "2 = 1² · 2"
+        },
+        "dz_terre": {
+          "fraction": "135000000/1",
+          "num = k²·reste": "135000000 = 3000² · 15",
+          "k": 3000,
+          "signature_carree": true,
+          "den = k²·reste": "1 = 1² · 1"
+        },
+        "dt_somme": {
+          "fraction": "17292418731/128",
+          "num = k²·reste": "17292418731 = 27² · 23720739",
+          "k": 27,
+          "signature_carree": true,
+          "den = k²·reste": "128 = 8² · 2"
+        }
+      },
+      "source": "recomputed depuis LA TABLE (lib_informe)",
+      "enonce": "toute sortie de LA TABLE possède un facteur carré > 1 en numérateur réduit — signature du passage par le point carré"
+    },
+    "PC-4": {
+      "verdict": true,
+      "dt == dx+dy+dz": true,
+      "ppcm_12": true,
+      "aucune_constante_assignee": true
+    }
+  },
+  "verdict_global": true,
+  "statut": "CONJECTURE VÉRIFIÉE PAR EXHAUSTION sur le domaine fini Al-Mizan",
+  "timestamp_utc": "2026-11-07T03:19:52Z",
+  "sceau_sha256": "a8bbd1179cd7eb2d3a839f46bc029f3b53fa18770c0ce59bcadae514b47f1e6c"
+}

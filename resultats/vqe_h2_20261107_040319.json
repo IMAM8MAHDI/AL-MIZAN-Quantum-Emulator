@@ -1,0 +1,42 @@
+{
+  "algorithme": "VQE",
+  "molecule": "H2 (STO-3G, R=0.735 Å, mapping parité, 2 qubits)",
+  "hamiltonien": {
+    "II": -1.0524,
+    "ZI": 0.3979,
+    "IZ": -0.3979,
+    "ZZ": -0.0113,
+    "XX": 0.1809,
+    "YY": 0.1809
+  },
+  "essais": 200,
+  "ansatz_params_rad": [
+    2.1224,
+    -2.6341,
+    2.1842,
+    0.2835
+  ],
+  "energie_vqe_ha": -1.915284,
+  "energie_exacte_ha": -1.915284,
+  "ecart_mha": 0.0,
+  "statut": "jouet pédagogique — pas une prédiction chimique de production",
+  "horodatage_noyau": {
+    "disponible": true,
+    "pulsation": 0,
+    "etat_matiere": "EtatMatiereMatricielle(charge_polarite=-313, ancre_substance_m=24434, jauge_air=515050, produit_medinois=3939021022100, nature_physique='État de matière synchronisé aux 5 familles (COMPLEXE = LA TABLE / point zéro ; M=24434=2-4-4-3-4)', decomposition_m_familles=(2, 4, 4, 3, 4), famille_complexe_est_la_table=True)",
+    "cycle_trinite": {
+      "index_pulsation_continue": 0,
+      "phase_trinite_12": 0,
+      "harmonique_base_19": 0,
+      "pulsation_dt_hz": 135097021.3359375,
+      "composante_dx_solaire": 50027.8359375,
+      "composante_dy_lunaire": 46993.5,
+      "composante_dz_quantique": 135000000.0,
+      "continuité_sans_arret": true,
+      "horodatage_iso": "2026-11-07T03:03:19Z",
+      "ticks_kernel_ecoules": 1264805,
+      "origine_noyau": "COMPLEXE_POINT_ZERO"
+    }
+  },
+  "sceau_rapport_sha256": "a456a4d8a55baba3559e42e16dc95c5f349a6ca2b398e88d2a7561be3288965e"
+}

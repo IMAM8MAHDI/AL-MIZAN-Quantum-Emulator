@@ -1,0 +1,58 @@
+{
+  "emulateur": "AL-MIZAN",
+  "version": "1.0",
+  "circuit": "BELL",
+  "nb_qubits": 2,
+  "shots": 512,
+  "bruit": {
+    "p_depolarisant": 0.0,
+    "gamma_amortissement": 0.0
+  },
+  "counts": {
+    "11": 265,
+    "00": 247
+  },
+  "distribution_ideale": {
+    "00": 0.4999999999999999,
+    "11": 0.4999999999999999
+  },
+  "fidelite_distribution": 0.999691,
+  "entropie_shannon_bits": 0.999108,
+  "horodatage_noyau": {
+    "disponible": true,
+    "pulsation": 0,
+    "etat_matiere": "EtatMatiereMatricielle(charge_polarite=-313, ancre_substance_m=24434, jauge_air=515050, produit_medinois=3939021022100, nature_physique='État de matière synchronisé aux 5 familles (COMPLEXE = LA TABLE / point zéro ; M=24434=2-4-4-3-4)', decomposition_m_familles=(2, 4, 4, 3, 4), famille_complexe_est_la_table=True)",
+    "cycle_trinite": {
+      "index_pulsation_continue": 0,
+      "phase_trinite_12": 0,
+      "harmonique_base_19": 0,
+      "pulsation_dt_hz": 135097021.3359375,
+      "composante_dx_solaire": 50027.8359375,
+      "composante_dy_lunaire": 46993.5,
+      "composante_dz_quantique": 135000000.0,
+      "continuité_sans_arret": true,
+      "horodatage_iso": "2026-11-07T02:05:57Z",
+      "ticks_kernel_ecoules": 2209065,
+      "origine_noyau": "COMPLEXE_POINT_ZERO"
+    }
+  },
+  "traduction_deterministe": {
+    "disponible": true,
+    "traduction": {
+      "id_traduction": "TRAD-QDET-00001",
+      "timestamp_calcul": 1794017157.111777,
+      "algorithme_origine": "BELL",
+      "esperance_hermitienne": 0.035156,
+      "valeur_continue_mizan": 0.370179,
+      "chiffre_socle": 0,
+      "lettre_socle": "J",
+      "etat_tetrade": "MATIERE",
+      "assertion_booleenne": true,
+      "fidelite_validee": 0.9997,
+      "entropie_normalisee": 0.4996,
+      "reproductibilite_100": true,
+      "sceau_sha256": "d2fcf281139a7057c9fac86f1c7ca6ebd4e50ea2042f552bded83299acd90d53"
+    }
+  },
+  "sceau_rapport_sha256": "b04df52d393311e9212311172097ebed77f9bbf86f73ee590859fd2436288a40"
+}

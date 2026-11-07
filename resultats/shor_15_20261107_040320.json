@@ -1,0 +1,41 @@
+{
+  "algorithme": "SHOR (recherche de période, QPE)",
+  "N": 15,
+  "a": 7,
+  "nb_qubits": 7,
+  "nb_portes": 14,
+  "distribution_comptage": {
+    "000": 0.25,
+    "001": 0.25,
+    "010": 0.25,
+    "011": 0.25
+  },
+  "periodes_candidats": [
+    4,
+    8
+  ],
+  "facteurs": [
+    3,
+    5
+  ],
+  "statut": "démonstration jouet N=15 — aucune menace cryptographique réelle",
+  "horodatage_noyau": {
+    "disponible": true,
+    "pulsation": 0,
+    "etat_matiere": "EtatMatiereMatricielle(charge_polarite=-313, ancre_substance_m=24434, jauge_air=515050, produit_medinois=3939021022100, nature_physique='État de matière synchronisé aux 5 familles (COMPLEXE = LA TABLE / point zéro ; M=24434=2-4-4-3-4)', decomposition_m_familles=(2, 4, 4, 3, 4), famille_complexe_est_la_table=True)",
+    "cycle_trinite": {
+      "index_pulsation_continue": 0,
+      "phase_trinite_12": 0,
+      "harmonique_base_19": 0,
+      "pulsation_dt_hz": 135097021.3359375,
+      "composante_dx_solaire": 50027.8359375,
+      "composante_dy_lunaire": 46993.5,
+      "composante_dz_quantique": 135000000.0,
+      "continuité_sans_arret": true,
+      "horodatage_iso": "2026-11-07T03:03:20Z",
+      "ticks_kernel_ecoules": 1243324,
+      "origine_noyau": "COMPLEXE_POINT_ZERO"
+    }
+  },
+  "sceau_rapport_sha256": "ceee2cdbf5347a0f24546ddd0f1a3973fff71cbc362a59dc85d262cc8e29622d"
+}

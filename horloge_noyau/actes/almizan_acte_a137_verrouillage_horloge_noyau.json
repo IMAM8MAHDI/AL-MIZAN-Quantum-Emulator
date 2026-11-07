@@ -1,0 +1,34 @@
+{
+  "numero_acte": 54,
+  "code_acte": "A137",
+  "titre": "Verrouillage HORLOGE-NOYAU — lecture/exécution OK, écriture INTERDITE",
+  "horodatage_iso": "2026-10-25T03:20:00Z",
+  "auteur_souverain": "M. Ahmed EL BAHLOUL (alias IMAM8MAHDI / M. Almizan Elbahloul)",
+  "systeme": "ASTRO-Q°ODE / AL-MIZAN",
+  "capsule": "ASTRO-Q°ODE_SYSTEME/horloge_noyau/",
+  "politique": {
+    "lecture": true,
+    "execution": true,
+    "tests": true,
+    "ecriture": false,
+    "modification": false,
+    "troncature": false,
+    "agent_cursor": "INTERDIT d'altérer horloge_noyau/**"
+  },
+  "mecanismes": [
+    "Permissions FS : Read+Execute autorisés ; Write/Modify/Delete refusés (icacls)",
+    "Attribut lecture seule sur fichiers scellés (attrib +R) — n'empêche pas l'import Python",
+    "Sceau SHA-256 (sceau/EMPREINTES.json) vérifié à l'import de horloge_noyau",
+    "API verrou.refuser_ecriture() lève NoyauVerrouilleError",
+    "Règle Cursor alwaysApply : horloge_noyau intouchable"
+  ],
+  "contenu_capsule": [
+    "horloge_logique_mizan.py",
+    "architecture_informe_couche_matiere_table_mizan.py",
+    "verrou.py",
+    "actes A134 / A136 / A137",
+    "tests/test_horloge_noyau_complet.py"
+  ],
+  "doctrine_scellee": "Le noyau-horloge reste utilisable (lire, exécuter, tester) mais INTANGIBLE (aucune altération, y compris par l'agent).",
+  "symbole_securite": "🛡️🔒 HORLOGE-NOYAU VERROUILLÉE — RX OK / WRITE DENIED"
+}

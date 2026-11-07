@@ -1,0 +1,10 @@
+{
+  "verrouille": true,
+  "acte": "A137",
+  "lecture": true,
+  "execution": true,
+  "ecriture": false,
+  "modification": false,
+  "troncature": false,
+  "message": "Noyau utilisable en lecture/execution ; alteration interdite."
+}

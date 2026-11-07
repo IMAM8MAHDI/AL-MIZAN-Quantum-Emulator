@@ -1,0 +1,15 @@
+{
+  "acte": "A137",
+  "politique": "RX_ALLOWED_WRITE_DENIED",
+  "horodatage_iso": "2026-10-25T02:17:51Z",
+  "empreintes_sha256": {
+    "horloge_logique_mizan.py": "551fd6c5527482b0cf8a921f14359eafc6595dc8208e03935b4aae7029e441dd",
+    "architecture_informe_couche_matiere_table_mizan.py": "ba6bd8f8fa3a622d83f8b547369bd5ba661fc3d657061d2e278aad2c1eba4cf0",
+    "verrou.py": "1f3e2b8656ddc90b571de526823d9d78fb6edc9dd46b9f02eb9dda835079477e",
+    "__init__.py": "d74b1be9321fc1496ef16c24b9af3cbf28b745ed61c13a930f8fcb2043ffa626",
+    "actes/almizan_acte_a134_zero_expansion_matrice_complexe.json": "c2ea7c8daa785c524444cd26d120ce94901a46260cd935b9844427cfe62a3b2b",
+    "actes/almizan_acte_a136_horloge_deduite_du_noyau.json": "5a4043e298889c324154aa45f873478a3f9232cd5d466bc76d3b2e9c15793eff",
+    "actes/almizan_acte_a137_verrouillage_horloge_noyau.json": "49c69eaca66cb6e702dccb21c7e510878a3003dfdd5910610e3bfea93424ab44",
+    "tests/test_horloge_noyau_complet.py": "410ab88f13b281ba42c4c2fe2fb4c01a8fb6bcb56a33c664a00547192c4fc4af"
+  }
+}

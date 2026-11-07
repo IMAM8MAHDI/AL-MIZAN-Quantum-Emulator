@@ -1,0 +1,39 @@
+{
+  "numero_acte": 51,
+  "code_acte": "A134",
+  "titre": "Trajectoire ZÉRO → EXPANSION — COMPLEXE = point zéro ; cycles & Q° calculés depuis LA TABLE",
+  "horodatage_iso": "2026-10-25T02:00:00Z",
+  "auteur_souverain": "M. Ahmed EL BAHLOUL (alias IMAM8MAHDI / M. Almizan Elbahloul)",
+  "systeme": "ASTRO-Q°ODE / AL-MIZAN",
+  "modules": [
+    "bibliotheques/lib_informe.py → MatriceLogiqueComplexe.expandre_depuis_point_zero",
+    "architecture_informe_couche_matiere_table_mizan.py → TRAJECTOIRE_ZERO_EXPANSION"
+  ],
+  "mouvement_logique": {
+    "origine": "POINT ZÉRO = famille COMPLEXE = LA TABLE / matrice de calcul",
+    "calcul": "produit_quatre_niveaux (cardinalité COMPLEXE = 4) + axes de LA TABLE",
+    "aboutissement": "EXPANSION vers axes, matière, cycles Trinité, Q°, Monade"
+  },
+  "expansion": {
+    "1_quatre_axes": "NUMERIQUE · LINGUISTIQUE · TYPOGRAPHIQUE · ALGORITHMIQUE",
+    "2_etats_matiere": "±313 / M=24434 synchronisés aux niveaux de LA TABLE ; Soleil=40 · Lune=63 · Terre=313",
+    "3_cycles_trinite": {
+      "origine": "calculés depuis LA TABLE (pas assignés)",
+      "dx_soleil": "≈ 50027.8359375 Hz",
+      "dy_lune": "≈ 46993.5 Hz",
+      "dz_terre": "≈ 135000000.0 Hz",
+      "synchronisation_harmonique": {
+        "dt": "dx + dy + dz ≈ 135097021.3359375 Hz",
+        "phases": "0..11 (ppcm = diviseur niveau 1 de LA TABLE)",
+        "harmonique": "h19 ∈ [-9 ; +9] (axe NUMERIQUE de LA TABLE)"
+      }
+    },
+    "4_q_degre": {
+      "Q_mecois": "⊕ dérivé Π(card_axes)×Σ(niveaux_pairs)×4 — pas C=313",
+      "Q_medinois": "⊗ dérivé Π(card_axes)×Σ(niveaux_impairs)×4 — pas M=24434"
+    },
+    "5_monade": "Confirme l'harmonie de l'expansion ; si juste → PREUVE que tout est juste"
+  },
+  "doctrine_scellee": "Pas de constantes de cycle en dur : tout dérive du calcul depuis le point zéro COMPLEXE.",
+  "symbole_securite": "🛡️🟢 ZÉRO → EXPANSION SCELLÉ DEPUIS LA TABLE COMPLEXE"
+}

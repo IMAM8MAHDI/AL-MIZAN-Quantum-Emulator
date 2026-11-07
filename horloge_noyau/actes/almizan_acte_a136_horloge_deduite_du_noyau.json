@@ -1,0 +1,28 @@
+{
+  "numero_acte": 53,
+  "code_acte": "A136",
+  "titre": "Horloge logique du noyau — déduite de COMPLEXE (pas de Hz arbitraires)",
+  "horodatage_iso": "2026-10-25T03:15:00Z",
+  "auteur_souverain": "M. Ahmed EL BAHLOUL (alias IMAM8MAHDI / M. Almizan Elbahloul)",
+  "systeme": "ASTRO-Q°ODE / AL-MIZAN",
+  "module": "horloge_logique_mizan.py",
+  "fonction": "deduire_constantes_horloge_depuis_noyau → HorlogeLogiqueMatriceMizan.lien_avec_noyau",
+  "chaine_deduction": {
+    "1_point_zero": "COMPLEXE = LA TABLE",
+    "2_calcul": "MatriceLogiqueComplexe.calculer_cycles_trinite_depuis_zero()",
+    "3_constantes_horloge": "dx, dy, dz, dt, PPCM=12, base_h=19, amplitude=9",
+    "4_lecture": "time.monotonic_ns → index pulsation → phase_12 + h19"
+  },
+  "constantes_deduites": {
+    "dx_soleil": 50027.8359375,
+    "dy_lune": 46993.5,
+    "dz_terre": 135000000.0,
+    "dt_kernel": 135097021.3359375,
+    "phases": "0..11",
+    "harmonique": "-9..+9"
+  },
+  "q_degre_noyau": {"mecois": 2304, "medinois": 1536},
+  "matiere_distincte": {"poles": [-313, 313], "ancre_M": 24434},
+  "doctrine_scellee": "L'horloge du noyau est le chronos de l'expansion depuis le point zéro — aucune constante de cycle assignée à la main.",
+  "symbole_securite": "🛡️🟢 HORLOGE DÉDUITE DU NOYAU COMPLEXE"
+}

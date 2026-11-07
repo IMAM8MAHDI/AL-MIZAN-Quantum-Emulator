@@ -1,0 +1,64 @@
+{
+  "emulateur": "AL-MIZAN",
+  "version": "1.0",
+  "circuit": "CYCLE_SOLAIRE_LUNAIRE_TERRESTRE",
+  "nb_qubits": 2,
+  "shots": 256,
+  "bruit": {
+    "p_depolarisant": 0.0,
+    "gamma_amortissement": 0.0
+  },
+  "counts": {
+    "10": 99,
+    "11": 39,
+    "01": 76,
+    "00": 42
+  },
+  "distribution_ideale": {
+    "00": 0.1561462061031075,
+    "01": 0.34385379389689275,
+    "10": 0.34385379389689275,
+    "11": 0.1561462061031075
+  },
+  "fidelite_distribution": 0.996898,
+  "entropie_shannon_bits": 1.891575,
+  "horodatage_noyau": {
+    "disponible": true,
+    "pulsation": 0,
+    "etat_matiere": "EtatMatiereMatricielle(charge_polarite=-313, ancre_substance_m=24434, jauge_air=515050, produit_medinois=3939021022100, nature_physique='État de matière synchronisé aux 5 familles (COMPLEXE = LA TABLE / point zéro ; M=24434=2-4-4-3-4)', decomposition_m_familles=(2, 4, 4, 3, 4), famille_complexe_est_la_table=True)",
+    "cycle_trinite": {
+      "index_pulsation_continue": 0,
+      "phase_trinite_12": 0,
+      "harmonique_base_19": 0,
+      "pulsation_dt_hz": 135097021.3359375,
+      "composante_dx_solaire": 50027.8359375,
+      "composante_dy_lunaire": 46993.5,
+      "composante_dz_quantique": 135000000.0,
+      "continuité_sans_arret": true,
+      "horodatage_iso": "2026-11-07T02:56:08Z",
+      "ticks_kernel_ecoules": 590738,
+      "origine_noyau": "COMPLEXE_POINT_ZERO"
+    }
+  },
+  "metriques_etat_ideal": {
+    "bloch": {
+      "q[0]": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q[1]": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "purete_locale": {
+      "q[0]": 0.5,
+      "q[1]": 0.5
+    },
+    "concurrence": 1.0,
+    "entropie_intrication_bits": 1.0
+  },
+  "sceau_rapport_sha256": "08d9b1002db16c7c9f6e4d37fd6b70074638c4d79adc2745b95d35123ae3e9c8"
+}

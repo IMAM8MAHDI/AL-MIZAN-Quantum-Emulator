@@ -1,0 +1,64 @@
+{
+  "disponible": true,
+  "code": "[[7,1,3]] Steane",
+  "distance": 3,
+  "preuve_distance": {
+    "parametres": "[[7,1,3]]",
+    "dimension_espace_code": 16,
+    "dimension_dual": 8,
+    "operateurs_logiques_distincts": 8,
+    "poids_minimal_operateur_logique": 3,
+    "exemple_operateur_poids_3": "0000111",
+    "paulis_verifies_poids_max_2": 211,
+    "knill_laflamme_poids_2": true,
+    "operateur_poids_3_non_trivial": true,
+    "distance": 3,
+    "stabilisateurs_ok": true,
+    "operateurs_logiques_ok": true,
+    "convention": "|0>_L uniforme sur C ; X_logique = Z^{⊗7} ; Z_logique = X^{⊗7}"
+  },
+  "p_physique": 0.001,
+  "taux_echec_logique_exact": 1.6277421405467118e-05,
+  "monte_carlo": {
+    "echantillons": 20000,
+    "echecs": 0,
+    "taux": 0.0,
+    "ic95": [
+      0.0,
+      0.00019204311235897808
+    ],
+    "graine": 20261027
+  },
+  "pseudo_seuil_depolarisant": 0.08108189622828846,
+  "empreinte_source_sha256": "b1fb87f21cd40d477f548a1fd99ead663d04babca5c1c86807875a6ea2e9ff4b",
+  "statut": "calcul exact (syndromes parfaits) — pas une mesure QPU",
+  "demo_poids_un": {
+    "disponible": true,
+    "erreurs_testees": 14,
+    "erreurs_corrigees": 14,
+    "tous_poids_un_corriges": true,
+    "verification_module": [
+      true,
+      21
+    ]
+  },
+  "horodatage_noyau": {
+    "disponible": true,
+    "pulsation": 0,
+    "etat_matiere": "EtatMatiereMatricielle(charge_polarite=-313, ancre_substance_m=24434, jauge_air=515050, produit_medinois=3939021022100, nature_physique='État de matière synchronisé aux 5 familles (COMPLEXE = LA TABLE / point zéro ; M=24434=2-4-4-3-4)', decomposition_m_familles=(2, 4, 4, 3, 4), famille_complexe_est_la_table=True)",
+    "cycle_trinite": {
+      "index_pulsation_continue": 0,
+      "phase_trinite_12": 0,
+      "harmonique_base_19": 0,
+      "pulsation_dt_hz": 135097021.3359375,
+      "composante_dx_solaire": 50027.8359375,
+      "composante_dy_lunaire": 46993.5,
+      "composante_dz_quantique": 135000000.0,
+      "continuité_sans_arret": true,
+      "horodatage_iso": "2026-11-07T02:52:00Z",
+      "ticks_kernel_ecoules": 917578,
+      "origine_noyau": "COMPLEXE_POINT_ZERO"
+    }
+  },
+  "sceau_rapport_sha256": "8a574fbf23f1e19d916cb7acd4a7ce787dd77c89852edd86294881d289531b9b"
+}
