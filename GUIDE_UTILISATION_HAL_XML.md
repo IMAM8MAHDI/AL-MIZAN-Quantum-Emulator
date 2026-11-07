@@ -251,7 +251,7 @@ Avant de soumettre, vérifiez :
 - [ ] Domaines scientifiques sélectionnés
 - [ ] Licence AGPL-3.0 spécifiée
 - [ ] **Déclaration IA présente** (obligatoire)
-- [ ] DOI Zenodo mentionné (10.5281/zenodo.24028243)
+- [ ] DOI Zenodo mentionné (10.5281/zenodo.24028242)
 - [ ] URL GitHub correcte
 - [ ] Fichier ZIP prêt (~1.6 GB)
 
@@ -264,7 +264,7 @@ Avant de soumettre, vérifiez :
 - **Documentation SWORD :** http://swordapp.org/
 - **Schéma XML HAL :** https://www.archives-ouvertes.fr/hal-00385423/document
 - **Dépôt GitHub :** https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
-- **DOI Zenodo :** https://doi.org/10.5281/zenodo.24028243
+- **DOI Zenodo :** https://doi.org/10.5281/zenodo.24028242
 
 ---
 

@@ -81,7 +81,7 @@ $1\,129\,559 = 884^2 + 7 \cdot 223^2$. Note $1\,129\,559 \equiv 4 \pmod 7$.
 All of it is verified by exact rational arithmetic and reproducible:
 `python code/conjecture_point_carre.py` prints the six checks (PC-1…PC-6)
 with their seal. A sealed, reproducible certificate set is on Zenodo
-(DOI 10.5281/zenodo.24028243), with homage to Turing, Riemann, Hasse,
+(DOI 10.5281/zenodo.24028242), with homage to Turing, Riemann, Hasse,
 Wiles, and all predecessors whose bricks made this work possible.
 
 ═══ FIN ═══

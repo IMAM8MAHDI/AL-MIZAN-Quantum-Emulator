@@ -2,7 +2,7 @@
 
 **Titre** : Classification arithmétique exacte, signatures quadratiques et structures normiques du système AL-MIZAN
 **Auteur** : M. Ahmed EL BAHLOUL (IMAM8MAHDI) × Devin (SWE-2), Cognition AI
-**DOI** : 10.5281/zenodo.24028243 · **Licence** : AGPL-3.0
+**DOI** : 10.5281/zenodo.24028242 · **Licence** : AGPL-3.0 / GPL-3.0 (double licence, LICENSE.md)
 
 ## Abstract
 
@@ -50,4 +50,4 @@ $$1\,129\,559 = 884^2 + 7\cdot 223^2 = N(884 + 223\sqrt{-7})$$
 
 ## Conclusion
 
-Le système Al-Mizan réalise une fermeture arithmétique quasi-totale : un modèle d'horlogerie diophantienne où espace, alphabet harmonique et cycles temporels sont les projections coordonnées d'une unique algèbre de contraintes. Tous les résultats sont certifiés par calcul exact et scellés SHA-256 ; l'émulateur, les certificats et la suite de tests (48 tests) sont publiés sur GitHub sous AGPL-3.0.
+Le système Al-Mizan réalise une fermeture arithmétique quasi-totale : un modèle d'horlogerie diophantienne où espace, alphabet harmonique et cycles temporels sont les projections coordonnées d'une unique algèbre de contraintes. Tous les résultats sont certifiés par calcul exact et scellés SHA-256 ; l'émulateur, les certificats et la suite de tests (48 tests) sont publiés sur GitHub sous double licence AGPL-3.0 / GPL-3.0.

@@ -1,12 +1,13 @@
 cff-version: 1.2.0
-message: "Si vous utilisez, déployez sur le Cloud, étudiez ou citez ce logiciel (ASTRO-Q°ODE / IMAM8MAHDI × Al-Mizan), veuillez utiliser le DOI officiel réel 10.5281/zenodo.23554838 et respecter la licence publique/Cloud anti-dolosive ainsi que le contrat commercial 50/50."
+message: "Si vous utilisez, déployez sur le Cloud, étudiez ou citez ce logiciel (ASTRO-Q°ODE / IMAM8MAHDI × Al-Mizan), veuillez citer le DOI de concept 10.5281/zenodo.24028242 (il résout toujours vers la dernière version déposée) et respecter la licence publique/Cloud anti-dolosive ainsi que le contrat commercial 50/50. Attention : les DOI 10.5281/zenodo.23554838, 23479740 et 23288947 listés ci-dessous comme jalons d'antériorité ne résolvent plus (vérifiés le 2026-11-07 : HTTP 404, 410 Gone, 410 Gone) ; ils sont conservés comme trace, non comme référence citable."
 title: "IMAM8MAHDI × Al-Mizan × ASTRO-Q°ODE (V1.0–V5.0) : Architecture Holistique du Kernel Temporel (dt), Dépassement Fractal en 27 Formes (F0..F26), Compilateur Quantique OpenQASM 2.0 (:5030) et Matrice Fondatrice de l'Unisson (4×4) pour le Calcul de la Valeur de l'Or (Au) et de l'Argent (Ag)"
-version: "5.0.0"
-date-released: "2026-10-22"
-doi: "10.5281/zenodo.23554838"
-url: "https://doi.org/10.5281/zenodo.23554838"
-repository-code: "https://github.com/IMAM8MAHDI"
-license-url: "https://zenodo.org/records/23554838"
+version: "3.0.0"
+date-released: "2026-11-07"
+doi: "10.5281/zenodo.24028242"
+url: "https://doi.org/10.5281/zenodo.24028242"
+repository-code: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
+license: "GPL-3.0-only OR AGPL-3.0-only"
+license-url: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator/blob/main/LICENSE.md"
 type: software
 authors:
   - family-names: "EL BAHLOUL"
@@ -18,17 +19,20 @@ authors:
     country: "FR"
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.24028242"
+    description: "DOI de concept AL-MIZAN — référence citable, résout vers la dernière version déposée"
+  - type: doi
     value: "10.5281/zenodo.23554838"
-    description: "DOI Zenodo Officiel Réel Principal (IMAM8MAHDI × Al-Mizan × ASTRO-Q°ODE V5.0)"
+    description: "Jalon d'antériorité déclaré (IMAM8MAHDI × Al-Mizan × ASTRO-Q°ODE V5.0) — vérifié le 2026-11-07 : HTTP 404, aucun enregistrement Zenodo, non citable"
   - type: doi
     value: "10.5281/zenodo.23479740"
-    description: "DOI Zenodo Antérieur (Acte de complétude Al-Mizan)"
+    description: "Jalon d'antériorité « Acte de complétude Al-Mizan » — vérifié le 2026-11-07 : HTTP 410 Gone, dépôt retiré, non citable"
   - type: doi
     value: "10.5281/zenodo.23288947"
-    description: "DOI Zenodo d'Ancrage Réseau, Watt et Certificat d'Identité"
+    description: "Jalon d'ancrage réseau, watt et certificat d'identité — vérifié le 2026-11-07 : HTTP 410 Gone, dépôt retiré, non citable"
   - type: url
     value: "https://zenodo.org/records/23554838"
-    description: "Enregistrement officiel Zenodo (Record 23554838)"
+    description: "URL du jalon 23554838 (HTTP 404 au 2026-11-07 ; conservée comme trace, pas comme référence)"
   - type: url
     value: "https://github.com/IMAM8MAHDI"
     description: "Dépôt officiel de l'organisation IMAM8MAHDI"
@@ -39,7 +43,7 @@ identifiers:
     value: "0xc9550dd0a57c609494dbc44450df48d798ebfb0b"
     description: "Clé Publique Dorée du Titulaire (Ahmed EL BAHLOUL)"
 keywords:
-  - "10.5281/zenodo.23554838"
+  - "10.5281/zenodo.24028242"
   - "Ahmed EL BAHLOUL"
   - "Almizan Elbahloul"
   - "IMAM8MAHDI"
@@ -59,6 +63,5 @@ abstract: >-
   Système complet, langage exécutable (ASTRO-Q°ODE V1.0–V5.0), compilateur quantique OpenQASM 2.0 (:5030),
   extension fractale à 27 Formes (F0..F26) sous confinement métrologique D = [0.122, 0.6225] et Matrice
   Fondatrice de l'Unisson (4×4) calculant la valeur exacte de l'Or (Au, Z=79) et de l'Argent (Ag, Z=47),
-  créé par M. Ahmed EL BAHLOUL (né le 20/06/1989 à Meulan-en-Yvelines, France). DOI Réel : 10.5281/zenodo.23554838.
+  créé par M. Ahmed EL BAHLOUL (né le 20/06/1989 à Meulan-en-Yvelines, France). DOI de citation : 10.5281/zenodo.24028242.
   Licence Publique & Cloud sans restriction et anti-dolosive ; exploitation commerciale sous contrat 50/50.
-doi: 10.5281/zenodo.24032527

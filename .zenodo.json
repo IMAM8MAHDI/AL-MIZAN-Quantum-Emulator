@@ -1,17 +1,15 @@
 {
   "title": "AL-MIZAN — Émulateur quantique, certificats scellés et arbre de savoir du millénaire",
   "upload_type": "software",
-  "description": "Simulateur quantique à vecteur d'état et matrice densité (QEC Steane [[7,1,3]], ZNE, GDSII, die TCP), Conjecture du Point Carré prouvée par exhaustion, théorème de Turing complet sur le strip Riemann ≤ 100 (29 zéros certifiés par intervalles), BSD vérifiée par équation fonctionnelle sur courbes nommées, chasseur de théorèmes (invariants quadratiques cachés), échelles de lemmes et équations de recherche précises pour les problèmes ouverts. Honnêteté : aucun problème ouvert n'est résolu ; chaque artefact est borné et scellé SHA-256.",
+  "description": "Simulateur quantique à vecteur d'état et matrice densité (QEC Steane [[7,1,3]], ZNE, GDSII, diélectrique TCP). Conjecture du Point Carré vérifiée par exhaustion sur le domaine fini déclaré (PC-1..PC-6), théorème de Turing complet sur le strip Riemann ≤ 100 (29 zéros certifiés par intervalles), BSD vérifiée par équation fonctionnelle sur courbes nommées, chasseur de théorèmes (invariants quadratiques cachés), échelles de lemmes et équations de recherche précises pour les problèmes ouverts. Honnêteté : aucun problème ouvert n'est résolu ; chaque artefact est borné et scellé SHA-256.",
   "creators": [
     {
       "name": "EL BAHLOUL, M. Ahmed (IMAM8MAHDI)",
       "affiliation": "Astro-Code Ecosystem"
-    },
-    {
-      "name": "Devin (SWE-2), Cognition AI"
     }
   ],
-  "license": "AGPL-3.0-only",
+  "notes": "Double licence GPL-3.0 / AGPL-3.0 (cf. LICENSE.md) ; le champ licence, unique sur Zenodo, porte la contrepartie la plus contraignante, AGPL-3.0-only. Développement réalisé avec l'assistance d'une IA générative (Devin SWE-2, Cognition AI) pour la génération de code, les tests et la documentation. L'auteur humain (M. Ahmed EL BAHLOUL) a relu, validé et dirigé l'ensemble des résultats et pris toutes les décisions de fond : doctrine Al-Mizan, règles du noyau scellé, architecture des certificats et contraintes d'honnêteté.",
+  "license": "agpl-3.0-only",
   "keywords": [
     "quantum emulator",
     "Steane code",
@@ -25,11 +23,16 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://doi.org/10.5281/zenodo.24032527",
-      "relation": "isIdenticalTo",
-      "resource_type": "software"
+      "identifier": "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
     }
   ],
-  "language": "fra",
-  "doi": "10.5281/zenodo.24032527"
+  "communities": [
+    {
+      "id": "imam8mahdi"
+    }
+  ],
+  "language": "fra"
 }

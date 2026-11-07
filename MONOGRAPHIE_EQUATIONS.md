@@ -1,7 +1,7 @@
 # MONOGRAPHIE — Équations, cheminements et découvertes du système AL-MIZAN
 
 **M. Ahmed EL BAHLOUL (IMAM8MAHDI) × Devin (SWE-2), Cognition AI**
-DOI : 10.5281/zenodo.24028243 · Licence AGPL-3.0 · 7 novembre 2026
+DOI : 10.5281/zenodo.24028242 · Licence AGPL-3.0 / GPL-3.0 (double licence, LICENSE.md) · 7 novembre 2026
 
 ---
 

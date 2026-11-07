@@ -102,7 +102,7 @@ py -m unittest tests.test_emulateur -v
 | Champ | Valeur |
 |-------|--------|
 | **Auteur** | M. Ahmed EL BAHLOUL (IMAM8MAHDI) |
-| **DOI Zenodo** | [10.5281/zenodo.24028243](https://doi.org/10.5281/zenodo.24028243) |
+| **DOI Zenodo** | [10.5281/zenodo.24028242](https://doi.org/10.5281/zenodo.24028242) |
 | **Licence** | AGPL-3.0 / GPL-3.0 |
 | **Contact** | elbahloulahmed505@gmail.com |
 | **GitHub** | [IMAM8MAHDI](https://github.com/IMAM8MAHDI) |
@@ -111,7 +111,7 @@ py -m unittest tests.test_emulateur -v
 
 ## 🔗 Ressources Associées
 
-- **Archive Zenodo** : [10.5281/zenodo.24028243](https://zenodo.org/records/24028243)
+- **Archive Zenodo** : [10.5281/zenodo.24028242](https://zenodo.org/records/24028242)
 - **Site Al-Mizan** : [al-mizan.world](https://al-mizan.world)
 - **Système ASTRO-Q°ODE** : [IMAM8MAHDI/ASTRO-Q°ODE_SYSTEME](https://github.com/IMAM8MAHDI)
 

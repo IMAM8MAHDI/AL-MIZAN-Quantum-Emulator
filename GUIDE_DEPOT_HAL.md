@@ -142,7 +142,7 @@ Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2
 - DOI : 10.5281/zenodo.23554838
 
 **DOI associé :**
-- 10.5281/zenodo.24028243
+- 10.5281/zenodo.24028242
 
 **URL du dépôt GitHub :**
 - https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
@@ -202,7 +202,7 @@ Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2
 - **Aide HAL :** https://help.scientific-commons.org/
 - **Licence AGPL-3.0 :** https://www.gnu.org/licenses/agpl-3.0.fr.html
 - **Dépôt GitHub :** https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
-- **DOI Zenodo :** https://doi.org/10.5281/zenodo.24028243
+- **DOI Zenodo :** https://doi.org/10.5281/zenodo.24028242
 
 ---
 

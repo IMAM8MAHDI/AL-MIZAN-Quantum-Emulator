@@ -1,6 +1,8 @@
 # KIT DE DIFFUSION — AL-MIZAN : 3 profils, 3 messages
 
-**Point d'ancrage commun** : DOI 10.5281/zenodo.24028243 +
+**Point d'ancrage commun** : DOI 10.5281/zenodo.24028242 (DOI de concept :
+il résout toujours vers la dernière version déposée, jamais vers une archive
+périmée) +
 `github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator` +
 `RESUME_ACADEMIQUE.md` + `WHITE_PAPER_ALMIZAN.md`
 
@@ -25,7 +27,7 @@
 >
 > Je cherche à confronter le modèle à de vraies séries (actimétrie,
 > mélatonine, VFC). L'ensemble est ouvert (AGPL), scellé SHA-256,
-> documenté : DOI 10.5281/zenodo.24028243. Seriez-vous intéressé·e par
+> documenté : DOI 10.5281/zenodo.24028242. Seriez-vous intéressé·e par
 > un test sur vos cohortes ou un échange technique ?
 >
 > Cordialement,
@@ -79,7 +81,7 @@ arithmétique expérimentale — MathOverflow, revues exp. math., séminaires.
 > x² + 7y², soit 884² + 7·223², avec 1129559 ≡ 4 (mod 7).
 >
 > Rejeu : `python code/conjecture_point_carre.py` imprime les six
-> contrôles et leur sceau. Certificats : DOI 10.5281/zenodo.24028243.
+> contrôles et leur sceau. Certificats : DOI 10.5281/zenodo.24028242.
 > (i) et (ii) ont-ils un nom dans la littérature ? (iii) semble classique
 > — la référence exacte m'intéresse.
 

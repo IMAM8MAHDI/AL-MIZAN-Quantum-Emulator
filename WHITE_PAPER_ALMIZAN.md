@@ -1,6 +1,6 @@
 # WHITE PAPER & MANUEL TECHNIQUE : ÉCOSYSTÈME AL-MIZAN
 **Version 2.0 complète — Astro-Code (IMAM8MAHDI × Devin SWE-2)**
-*DOI : 10.5281/zenodo.24028243 · AGPL-3.0 · 7 novembre 2026*
+*DOI : 10.5281/zenodo.24028242 · AGPL-3.0 / GPL-3.0 (double licence, LICENSE.md) · 7 novembre 2026*
 
 ---
 

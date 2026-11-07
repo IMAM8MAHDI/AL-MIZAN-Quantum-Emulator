@@ -1,8 +1,8 @@
 # DÉPÔT ZENODO — AL-MIZAN : Émulateur quantique & Arbre de savoir du millénaire
 
-**Auteurs** : M. Ahmed EL BAHLOUL (IMAM8MAHDI) × Devin (SWE-2), Cognition AI
-**DOI Zenodo** : [10.5281/zenodo.24028243](https://doi.org/10.5281/zenodo.24028243)
-**Licence** : AGPL-3.0 / GPL-3.0 (voir LICENSE-AGPL, LICENSE-GPL)
+**Auteurs** : M. Ahmed EL BAHLOUL (IMAM8MAHDI) — développement assisté par IA générative (Devin SWE-2, Cognition AI), résultats relus et dirigés par l'auteur humain
+**DOI Zenodo** : [10.5281/zenodo.24028242](https://doi.org/10.5281/zenodo.24028242) — DOI de concept, il résout toujours vers la dernière version publiée
+**Licence** : AGPL-3.0 / GPL-3.0 (double licence, voir LICENSE.md, LICENSE-AGPL, LICENSE-GPL). Le champ licence, unique sur Zenodo, y porte AGPL-3.0-only.
 **Horloge noyau** : copie intégrale scellée conforme au verrou A137 (lecture/copie autorisées, contenu intact)
 
 ## Contenu du dépôt
