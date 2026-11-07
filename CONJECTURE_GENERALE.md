@@ -62,3 +62,34 @@ La conjecture universelle se raffine : l'équation des semences
 démontrée, pas une loi totale. Les lemmes fermeture/projection se
 réduisent exactement à la condition core$(Q \cdot d'_k) = 1$,
 décidée par factorisation.
+
+---
+
+## DÉCOUVERTES PROFONDES (suite — 7 novembre 2026)
+
+### Théorème des gènes premiers (calendrier)
+
+$$dx_{num} = 27 \cdot 487^2,\qquad dy_{num} = 27 \cdot 59^2$$
+$$s_{solaire} = 8766 = 18 \cdot 487,\qquad s_{lunaire} = 8496 = 144 \cdot 59$$
+
+La paire calendaire obéit à la grammaire $27p^2$ (p premier) ; les
+semences horaires sont les gènes premiers multipliés par les facteurs
+$18 = 2\cdot3^2$ et $144 = 12^2$. Le quotient $487/472 = 487/(8\cdot59)$
+est le rapport des deux gènes.
+
+### Opérateur espace pour la Terre
+
+$$Q_{espace} = 15 \;\Rightarrow\; 15 \cdot dz = 45\,000^2,\qquad
+45\,000\,\text{s} = 12{,}5\,\text{h (demi-jour exact)}$$
+
+Troisième classe ouverte par sa propre clé. Reste $dt$ : résidu
+premier 7906913 — aucune graine simple, frontière honnête du système.
+
+### Classification finale à trois classes
+
+| Cycle | Structure | Clé | Semence | Statut |
+|---|---|---|---|---|
+| dx Soleil | $27\cdot487^2$ | $Q=1536$ | $8766 = 18\cdot487$ h | ✓ |
+| dy Lune | $27\cdot59^2$ | $Q=1536$ | $8496 = 144\cdot59$ h | ✓ |
+| dz Terre | $3000^2\cdot15$ | $Q_{espace}=15$ | $45000$ s $= 12{,}5$ h | ✓ |
+| dt synchro | $27^2\cdot23\,720\,739$ | aucune | — | frontière |
