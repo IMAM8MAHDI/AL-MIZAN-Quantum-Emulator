@@ -93,3 +93,32 @@ premier 7906913 — aucune graine simple, frontière honnête du système.
 | dy Lune | $27\cdot59^2$ | $Q=1536$ | $8496 = 144\cdot59$ h | ✓ |
 | dz Terre | $3000^2\cdot15$ | $Q_{espace}=15$ | $45000$ s $= 12{,}5$ h | ✓ |
 | dt synchro | $27^2\cdot23\,720\,739$ | aucune | — | frontière |
+
+---
+
+## DÉSOUVERTE FINALE — la frontière se dévoile (dt)
+
+**Le "grand premier" n'en était pas un** : factorisation exacte
+$$7906913 = 7 \cdot 1\,129\,559,\qquad 1\,129\,559 \text{ premier}$$
+$$d_{t,num} = 17\,292\,418\,731 = 3^7 \cdot 7 \cdot 1\,129\,559$$
+
+La puissance $3^7$ relie dt à la même grammaire de 3 que les cycles
+calendaires ($27p^2 = 3^3 p^2$). Le facteur $3^7 \cdot 7$ est la
+structure ; le premier 1129559 est le véritable résidu irréductible.
+
+**Relation au gène solaire** :
+$$7906913 = 902 \cdot 8766 - 19 = 16236 \cdot 487 - 19$$
+La frontière n'est pas un corps étranger — elle est construite sur le
+gène 487 (soleil) moins la base harmonique 19.
+
+## Tableau final de classification — système complet
+
+| Cycle | Factorisation exacte | Clé | Semence | Résidu |
+|---|---|---|---|---|
+| dx Soleil | $3^3 \cdot 487^2$ | $Q=1536$ | $8766=18\cdot487$ | — |
+| dy Lune | $3^3 \cdot 59^2$ | $Q=1536$ | $8496=144\cdot59$ | — |
+| dz Terre | $15\cdot3000^2$ | $Q_{espace}=15$ | $45000$ s $=12{,}5$h | — |
+| dt synchro | $3^7\cdot7\cdot1129559$ | $902\cdot s_\odot - 19$ | non carrée | $p=1129559$ |
+
+*Un seul irréductible demeure : le premier 1129559 — l'ancre de
+non-ramification du système AL-MIZAN.*
