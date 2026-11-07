@@ -1,0 +1,26 @@
+{
+  "fichier_gds": "C:\\Users\\Administrateur\\Desktop\\IMAM8MAHDI\\EMULATEUR_QUANTIQUE_MIZAN\\resultats\\steane_tile_almizan.gds",
+  "taille_octets": 4536,
+  "nb_rectangles": 58,
+  "nb_textes": 15,
+  "couches": {
+    "die": 0,
+    "qubits": 1,
+    "ancillas": 2,
+    "coupleurs": 3,
+    "lecture": 4,
+    "texte": 7
+  },
+  "drc_generique": {
+    "regles": {
+      "largeur_min_um": 0.5,
+      "espacement_min_um": 0.5,
+      "marge_die_um": 20.0
+    },
+    "nb_violations": 0,
+    "violations": [],
+    "avertissement": "Règles génériques internes — PAS le DRC d'une fonderie"
+  },
+  "sha256_gds": "79aeedd9018e8a99a230deb1e8fd09a465b8fbf2ea372e526a93915f825e4151",
+  "statut": "GDSII géométriquement valide — NON fabricable, aucun PDK fonderie, DRC interne générique uniquement"
+}
