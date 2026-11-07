@@ -8,7 +8,7 @@
 
 ### Ce qui est démontré (théorèmes, pas mesures)
 
-1. **Conjecture du Point Carré** — PC-1..PC-6 prouvés par exhaustion sur le domaine fini Al-Mizan (19 échelons, 13 constantes).
+1. **Conjecture du Point Carré** — PC-1..PC-6 vérifiés par exhaustion sur le domaine fini Al-Mizan (19 échelons, 13 constantes).
 
 2. **Riemann strip ≤ 100** — Les 29 zéros non triviaux avec 0<Im≤100 sont sur Re=½ et simples (méthode de Turing : comptage ligne certifié par intervalles + N(T) calculé exactement + égalité).
 

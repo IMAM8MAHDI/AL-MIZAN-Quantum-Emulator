@@ -22,7 +22,7 @@ bibliography: paper.bib
 
 # Summary
 
-AL-MIZAN is a complete quantum emulator implemented in pure Python with zero external dependencies, unifying state vector simulation, density matrix evolution, quantum error correction (Steane [[7,1,3]] code), zero-noise extrapolation (ZNE), and pedagogical GDSII layout generation. Beyond quantum simulation, the package provides sealed SHA-256 mathematical certificates for bounded verifications of millennium problems: the Point Square Conjecture (PC-1..PC-6 proven by exhaustion), Turing's theorem on the Riemann strip ≤100 (29 zeros certified via interval arithmetic), and BSD verification on named elliptic curves. The architecture maintains strict honesty constraints—every artifact carries its computational bound, and no open millennium problem is claimed as solved.
+AL-MIZAN is a complete quantum emulator implemented in pure Python with zero external dependencies, unifying state vector simulation, density matrix evolution, quantum error correction (Steane [[7,1,3]] code), zero-noise extrapolation (ZNE), and pedagogical GDSII layout generation. Beyond quantum simulation, the package provides sealed SHA-256 mathematical certificates for bounded verifications of millennium problems: the Point Square Conjecture (PC-1..PC-6 verified by exhaustive computation over the declared finite domain), Turing's theorem on the Riemann strip ≤100 (29 zeros certified via interval arithmetic), and BSD verification on named elliptic curves. The architecture maintains strict honesty constraints—every artifact carries its computational bound, and no open millennium problem is claimed as solved.
 
 # Statement of Need
 
@@ -52,7 +52,7 @@ AL-MIZAN implements a 13-module architecture covering the full quantum simulatio
 
 AL-MIZAN's distinctive contribution is its sealed certificate architecture for bounded mathematical verification:
 
-**Point Square Conjecture** (`conjecture_point_carre.py`): PC-1 through PC-5 proven by exhaustive computation over the finite Al-Mizan domain (19 echelons, 13 constants). Each proof step is cryptographically sealed with SHA-256.
+**Point Square Conjecture** (`conjecture_point_carre.py`): PC-1 through PC-6 verified by exhaustive computation over the declared finite Al-Mizan domain (19 echelons, 13 constants); this is exhaustion on a bounded set, not a general theorem. Each check is sealed with SHA-256 for integrity and reproducibility, not as proof of validity.
 
 **Riemann Strip Theorem** (`certificats/preuve_strip_riemann.py`): Certification that all 29 non-trivial zeros with 0 < Im ≤ 100 lie on Re = ½ and are simple, using Turing's method with interval arithmetic for counting verification and exact N(T) computation. The certificate explicitly bounds its scope to the strip ≤100.
 
@@ -110,7 +110,7 @@ Each execution writes a SHA-256 sealed JSON report to `resultats/`, enabling ind
 
 # Testing and Validation
 
-AL-MIZAN ships with 48 unit and integration tests covering state preparation, gate operations, permutations, entanglement metrics, Born rule sampling, noise models (trajectory and Kraus), QASM parsing, circuit rendering, Deutsch-Jozsa/teleportation/QPE algorithms, VQE variational bounds, Shor factorization, GDSII TLV encoding, DRC rules, ZNE extrapolation, Steane code, transducer logic, Point Square Conjecture (PC-1..PC-4), and the seven-problem certificate tree. The full test suite completes in approximately 118 minutes on standard hardware, with clock-sensitive tests (p7 load) documented for reproducibility.
+AL-MIZAN ships with 48 unit and integration tests covering state preparation, gate operations, permutations, entanglement metrics, Born rule sampling, noise models (trajectory and Kraus), QASM parsing, circuit rendering, Deutsch-Jozsa/teleportation/QPE algorithms, VQE variational bounds, Shor factorization, GDSII TLV encoding, DRC rules, ZNE extrapolation, Steane code, transducer logic, Point Square Conjecture (PC-1 and PC-3 asserted individually, and the full six-control certificate PC-1..PC-6 re-executed and sealed), and the seven-problem certificate tree. The full test suite completes in approximately 118 minutes on standard hardware, with clock-sensitive tests (p7 load) documented for reproducibility.
 
 # Related Work
 

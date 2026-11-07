@@ -8,7 +8,7 @@
 
 ### Ce qui est démontré (théorèmes, pas mesures)
 
-1. **Conjecture du Point Carré** — PC-1..PC-6 prouvés par exhaustion sur le domaine fini Al-Mizan (19 échelons, 13 constantes)
+1. **Conjecture du Point Carré** — PC-1..PC-6 vérifiés par exhaustion sur le domaine fini Al-Mizan (19 échelons, 13 constantes)
 2. **Riemann strip ≤ 100** — Les 29 zéros non triviaux avec 0<Im≤100 sont sur Re=½ et simples (méthode de Turing : comptage ligne certifié par intervalles + N(T) calculé exactement + égalité)
 3. **Invariants cachés** — 8766² = 12·dx et 8496² = 768·dy (dx = 6 403 563, dy = 93 987 ; en heures ces cycles valent dx/128 et dy/2, d'où Q°·d' = s² avec Q° = 1536), 313², MIZAN=249/20² : relations exactes vérifiées par le chasseur de théorèmes
 
