@@ -30,7 +30,7 @@ Le logiciel fonctionne sur tout environnement Python 3.10+ sans accès matériel
 
 - **GitHub** : https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 - **Zenodo (archive peer-reviewed)** : https://doi.org/10.5281/zenodo.24028242
-- **Version 3.0** : https://doi.org/10.5281/zenodo.24054060
+- **Version 3.1** : https://doi.org/10.5281/zenodo.24062292
 - **Licence** : AGPL-3.0 / GPL-3.0 (double licence open source)
 
 ### À propos de l'auteur

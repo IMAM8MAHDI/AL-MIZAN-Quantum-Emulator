@@ -73,7 +73,7 @@ Also includes BSD verification on named curves and a full quantum emulator (Stea
 
 Code: https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 Preprint: arXiv pending (quant-ph)
-Zenodo: https://doi.org/10.5281/zenodo.24054060
+Zenodo: https://doi.org/10.5281/zenodo.24028242 (concept DOI, always the latest version)
 
 Happy to discuss the interval arithmetic implementation or the argument principle computation.
 
