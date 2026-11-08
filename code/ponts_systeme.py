@@ -23,7 +23,9 @@ from pathlib import Path
 from typing import Any, Dict, Optional
 
 RACINE = Path(__file__).resolve().parent
-RACINE_SYSTEME_AQ = RACINE.parent / "ASTRO-Q°ODE_SYSTEME"
+RACINE_DEPOT = RACINE.parent
+RACINE_IMAM = RACINE_DEPOT.parent
+RACINE_SYSTEME_AQ = RACINE_IMAM / "ASTRO-Q\u00b0ODE_SYSTEME"
 
 if str(RACINE_SYSTEME_AQ) not in sys.path and RACINE_SYSTEME_AQ.is_dir():
     sys.path.insert(0, str(RACINE_SYSTEME_AQ))
