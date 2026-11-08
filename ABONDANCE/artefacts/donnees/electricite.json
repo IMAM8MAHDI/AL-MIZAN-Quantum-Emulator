@@ -1,0 +1,709 @@
+{
+  "version": "1.0",
+  "theme": "ÉLECTRICITÉ & ABONDANCE ÉNERGÉTIQUE",
+  "source": {
+    "titre": "Électricité : tout s'éclaire ! | Déclics | ARTE",
+    "chaine": "ARTE",
+    "video_id": "cFx7Cm-c2nA",
+    "url": "https://www.youtube.com/watch?v=cFx7Cm-c2nA",
+    "duree_s": 1565,
+    "auteur_scenario": "Pierre Lergenmüller (Points de repères)",
+    "programme": "France, 2020, 26 mn",
+    "chapitres_publics": 0,
+    "transcript": "absent (timedtext : 0 octet en json3, srv3 et xml)",
+    "mesure_le": "2026-11-08T16:56:27Z"
+  },
+  "invariants": {
+    "c_m_s": 299792458.0,
+    "mu0_T_m_A": 1.25663706212e-06,
+    "epsilon0_F_m": 8.8541878128e-12,
+    "e_C": 1.602176634e-19,
+    "k_B_J_K": 1.380649e-23,
+    "R_J_mol_K": 8.31446261815324,
+    "g_m_s2": 9.80665,
+    "kwh_J": 3600000.0,
+    "eV_nm": 1239.8419843320025
+  },
+  "materiaux_declares": {
+    "resistivites_ohm_m": {
+      "cuivre pur": 1.68e-08,
+      "cuivre IEC": 1.7241e-08,
+      "aluminium": 2.65e-08
+    },
+    "bandes_gap_eV": {
+      "Si": 1.12,
+      "GaAs": 1.42,
+      "MAPbI3": 1.55,
+      "CdTe": 1.45
+    },
+    "stockage": {
+      "LiFePO4 mAh/g": 170.0,
+      "LiFePO4 V": 3.45,
+      "graphite mAh/g": 372.0,
+      "H2 LHV J/kg": 120000000.0,
+      "H2 HHV J/kg": 141800000.0,
+      "essence J/kg": 46000000.0
+    },
+    "supraconducteurs": {
+      "YBCO Tc K": 92.0,
+      "NbTi Tc K": 9.2
+    },
+    "statut": "valeurs déclarées de littérature, non mesurées dans ce dépôt"
+  },
+  "equations": [
+    {
+      "id": "EQ-01",
+      "chemin": "electricite_abondance.py → coulomb() → C01",
+      "formule": "F = q₁q₂/(4π ε₀ r²) ;  k = 1/(4πε₀) = μ₀c²/4π ;  1 C = 1/e",
+      "resultat": "k = 8.9876 × 10^9 N·m²/C² · 1 C = 6.2415 × 10^18 e · 2 × 1 C à 1 m : 8.9876 × 10^9 N",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "ke_m2_c2": 8987551792.261171,
+        "ke_par_mu0_c2": 8987551792.260782,
+        "ecart_relatif": 4.329311586596786e-14,
+        "electrons_par_coulomb": 6.241509074460763e+18,
+        "force_entre_2x1C_a_1m_N": 8987551792.261171,
+        "force_entre_electrons_a_1nm_N": 2.3070775523417354e-10,
+        "epsilon0": 8.8541878128e-12
+      },
+      "_titre_fr": "La charge se compte en électrons"
+    },
+    {
+      "id": "EQ-02",
+      "chemin": "electricite_abondance.py → condensateur() → C02",
+      "formule": "E = U/d ;  C = ε₀S/d ;  W = ½CU² = ½QU = ½ε₀E²·(Sd)",
+      "resultat": "C(1 m², 1 mm) = 0.000000008854 F · W à 1 kV = 0.0044 J",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "capacite_F": 8.854187812800001e-09,
+        "charge_C": 8.8541878128e-06,
+        "tension_V": 1000.0,
+        "champ_V_m": 1000000.0,
+        "energie_J": 0.0044270939064,
+        "energie_par_QV_J": 0.0044270939064,
+        "densite_energetique_J_m3": 4.4270939064000006,
+        "energie_par_volume_J": 0.004427093906400001,
+        "coherence": 1.9592124231530475e-16
+      },
+      "_titre_fr": "Le condensateur : champ et énergie stockée"
+    },
+    {
+      "id": "EQ-03",
+      "chemin": "electricite_abondance.py → ohm() → C03",
+      "formule": "R = ρ·ℓ/S ;  σ = 1/ρ ;  v_dérive = I/(n·e·S)",
+      "resultat": "1 km sous 10 mm² : Cu 1.680 Ω, Al 2.650 Ω · dérive 0.3671 mm/s",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "longueur_m": 1000.0,
+        "section_m2": 1e-05,
+        "R_cu_ohm": 1.68,
+        "R_cu_iec_ohm": 1.7240999999999997,
+        "R_al_ohm": 2.65,
+        "ratio_al_sur_cu": 1.5773809523809523,
+        "conductivite_cu_S_m": 59523809.523809515,
+        "courant_A": 50.0,
+        "derive_m_s": 0.000367147592615339,
+        "derive_mm_s": 0.36714759261533897,
+        "distance_par_heure_m": 1.3217313334152203,
+        "vitesse_du_signal_m_s": 299792458.0,
+        "ratio_signal_sur_derive": 816544801136.9448
+      },
+      "_titre_fr": "Résistance et vitesse de dérive"
+    },
+    {
+      "id": "EQ-04",
+      "chemin": "electricite_abondance.py → puissance() → C04",
+      "formule": "P = UI = I²R = U²/R ;  1 kW·h = 3,6 MJ",
+      "resultat": "230 V × 10 A = 2 300.0 W · trois écritures à 0.00e+00 W près",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "U_V": 230.0,
+        "I_A": 10.0,
+        "R_ohm": 23.0,
+        "P_UI_W": 2300.0,
+        "P_I2R_W": 2300.0,
+        "P_U2R_W": 2300.0,
+        "ecart_max_W": 0.0,
+        "kwh_en_j": 3600000.0,
+        "energie_1h_kWh": 2.3,
+        "pertes_ligne_W": 312500.0,
+        "pertes_ligne_kWh_par_heure": 312.5
+      },
+      "_titre_fr": "Puissance : trois écritures d'une même grandeur"
+    },
+    {
+      "id": "EQ-05",
+      "chemin": "electricite_abondance.py → kirchhoff() → C05",
+      "formule": "ΣI(nœud) = 0 ;  ΣU(maille) = 0 ;  résolution en rationnels",
+      "resultat": "I = 0.005455 A · nœud 0 · bilan 0 (exact, sans arrondi)",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "I_total_A": 0.005454545454545455,
+        "I2_A": 0.0032727272727272726,
+        "I3_A": 0.002181818181818182,
+        "U_parallelement_V": 6.545454545454546,
+        "R_total_ohm": 2200.0,
+        "R_parallelle_ohm": 1200.0,
+        "somme_noeud_exacte": "0",
+        "bilan_puissance_exact": "0",
+        "puissances_W": {
+          "R1": 0.02975206611570248,
+          "R2": 0.021421487603305787,
+          "R3": 0.01428099173553719
+        },
+        "repartition_i2_sur_itotale": 0.6
+      },
+      "_titre_fr": "Kirchhoff résolu en rationnels"
+    },
+    {
+      "id": "EQ-06",
+      "chemin": "electricite_abondance.py → champ_fil() → C06",
+      "formule": "B = μ₀I/(2πr) ;  F/ℓ = μ₀I₁I₂/(2πd)",
+      "resultat": "B(1 A, 1 m) = 2.00000000109 × 10^-7 T · écart relatif à 2·10⁻⁷ = 5.44 × 10^-10",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "B_T": 2.0000000010887514e-07,
+        "B_attendu_avant_2019_T": 2e-07,
+        "ecart_relatif": 5.44375766752824e-10,
+        "ecart_absolu_T": 1.0887515335056481e-16,
+        "force_par_metre_deux_fils_N_m": 2.0000000010887514e-07,
+        "mu0": 1.25663706212e-06,
+        "mu0_historique_4pi_e_7": 1.2566370614359173e-06
+      },
+      "_titre_fr": "Le champ d'un fil, défini au dixième chiffre"
+    },
+    {
+      "id": "EQ-07",
+      "chemin": "electricite_abondance.py → faraday() → C07",
+      "formule": "ℰ = −N·dΦ/dt ;  Φ = B·S·cos(ωt) ;  ℰ_rms = N·B·S·ω/√2",
+      "resultat": "100 spires à 50 Hz : crête 314.16 V, rms 222.14 V",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "omega_rad_s": 314.1592653589793,
+        "f_em_pic_V": 314.1592653589793,
+        "f_em_rms_V": 222.1441469079183,
+        "ratio_rms_sur_pic": 0.7071067811865475,
+        "derivation_numerique": -254.1601846017816,
+        "derivation_analytique": -254.16018461576238,
+        "ecart_relatif_derivation": 5.500775425741421e-11,
+        "fil_mouvant_BLv_V": 1.0,
+        "sens_lenz": "le courant créé s'oppose à la variation (signe moins)"
+      },
+      "_titre_fr": "Faraday : l'alternateur né du mouvement"
+    },
+    {
+      "id": "EQ-08",
+      "chemin": "electricite_abondance.py → inductance() → C08",
+      "formule": "L = μ₀N²S/ℓ ;  W = ½LI² ;  u_B = B²/(2μ₀) ;  u_E = ½ε₀E²",
+      "resultat": "L = 0.000314159 H · W = 0.000628 J · u_B/u_E = 1.42 × 10^1",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "L_H": 0.00031415926553,
+        "energie_J": 0.00062831853106,
+        "B_T": 0.0125663706212,
+        "densite_mag_J_m3": 62.831853106,
+        "densite_elec_J_m3": 4.4270939064000006,
+        "coherence_volume": 0.0,
+        "ratio_mag_sur_elec": 14.192572923553197
+      },
+      "_titre_fr": "Inductance : l'énergie du champ magnétique"
+    },
+    {
+      "id": "EQ-09",
+      "chemin": "electricite_abondance.py → ondes() → C09",
+      "formule": "c = 1/√(μ₀ε₀) ;  Z₀ = √(μ₀/ε₀) = μ₀c ;  E/B = c",
+      "resultat": "c calculée = 2.997924580 × 10^8 m/s · Z₀ = 376.7303 Ω",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "v_calculee_m_s": 299792458.0000065,
+        "v_exacte_c": 299792458.0,
+        "ecart_relatif": 2.1671346650480375e-14,
+        "z0_ohm": 376.73031366686166,
+        "z0_par_mu0_v": 376.73031366686166,
+        "ecart_z0": 0.0,
+        "E_sur_B_V_m_par_T": 376.73031366686166,
+        "pression_radiation_pa_pour_1000W_m2": 3.3356409519815205e-06
+      },
+      "_titre_fr": "Maxwell : la lumière était déjà électrique"
+    },
+    {
+      "id": "EQ-10",
+      "chemin": "electricite_abondance.py → courant_alternatif() → C10",
+      "formule": "U_rms = Û/√2 ;  P = UI·cos φ ;  S² = P² + Q²",
+      "resultat": "325 V crête → 229.81 V · cos 60° = 0.500000 · P = 1149.05 W sur 2298.10 VA",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "aire_sin2_sur_periode": 3.1415926535897936,
+        "aire_attendue_pi": 3.141592653589793,
+        "ecart_relatif_aire": 1.4135798584282297e-16,
+        "valeur_efficace_V": 229.80970388562793,
+        "ratio_rms_sur_crete": 0.7071067811865475,
+        "cos_phi": 0.5000000000000001,
+        "P_W": 1149.0485194281398,
+        "Q_var": 1990.2104160113317,
+        "S_VA": 2298.097038856279,
+        "ecart_triangle": 0.0,
+        "courant_pour_meme_P_a_cos_phi_0_5_A": 10.000000000000002
+      },
+      "_titre_fr": "Le facteur de puissance : ce qu'on paie et ce qui travaille"
+    },
+    {
+      "id": "EQ-11",
+      "chemin": "electricite_abondance.py → triphase() → C11",
+      "formule": "U_ligne = √3·U_phase ;  Σ phasores = 0 ;  P = √3·U_L·I_L·cos φ",
+      "resultat": "√3 = 1.732050807569 · somme = 3.1e-16 · 230 V → 398.37 V",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "somme_phasores": 3.1401849173675503e-16,
+        "U_composee_V": 398.3716857408417,
+        "ratio_ligne_sur_phase": 1.732050807568877,
+        "racine_3": 1.7320508075688772,
+        "ecart_racine_3": 2.220446049250313e-16,
+        "P_trois_fois_phase_W": 5975.5752861126275,
+        "P_formule_sqrt3_W": 5975.575286112627,
+        "ecart_puissance": 1.5220203214351838e-16
+      },
+      "_titre_fr": "Le triphasé : trois courants, une somme nulle"
+    },
+    {
+      "id": "EQ-12",
+      "chemin": "electricite_abondance.py → transformateur() → C12",
+      "formule": "U₂/U₁ = N₂/N₁ ;  I₂/I₁ = N₁/N₂ ;  S = UI conservée",
+      "resultat": "20 kV → 400 V : I₂ = 1000.00 A · rendement 97.37 % avec pertes déclarées",
+      "statut": "SIMULÉ",
+      "detail": {
+        "rapport_spires": 50.0,
+        "rapport_tensions": 50.0,
+        "spires_secondaire": 40.0,
+        "I_secondaire_A": 1000.0,
+        "I_primaire_A": 20.0,
+        "conservation_S": 0.0,
+        "pertes_cuivre_W": 10000.0,
+        "pertes_fer_W_declarees": 800.0,
+        "rendement": 0.9737098344693281,
+        "chute_relative": 0.027
+      },
+      "_titre_fr": "Le transformateur ne crée rien : il échange"
+    },
+    {
+      "id": "EQ-13",
+      "chemin": "electricite_abondance.py → transport_haute_tension() → C13",
+      "formule": "P_pertes = (P/U)²·R  ⇒  pertes ∝ 1/U²",
+      "resultat": "1 GW : 400 V → 3.12 × 10^11 W · 400 kV → 3.12 × 10^5 W · facteur 1.0 × 10^6",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "puissance_W": 1000000000.0,
+        "resistance_ohm": 0.05,
+        "table": [
+          {
+            "U_V": 400.0,
+            "I_A": 2500000.0,
+            "pertes_W": 312500000000.0,
+            "pertes_pct": 31250.0
+          },
+          {
+            "U_V": 20000.0,
+            "I_A": 50000.0,
+            "pertes_W": 125000000.0,
+            "pertes_pct": 12.5
+          },
+          {
+            "U_V": 400000.0,
+            "I_A": 2500.0,
+            "pertes_W": 312500.0,
+            "pertes_pct": 0.03125
+          },
+          {
+            "U_V": 800000.0,
+            "I_A": 1250.0,
+            "pertes_W": 78125.0,
+            "pertes_pct": 0.0078125
+          }
+        ],
+        "ratios_pertes": [
+          1.0,
+          0.0004,
+          1e-06,
+          2.5e-07
+        ],
+        "attendu_en_inverse_carre": [
+          1.0,
+          0.0004,
+          1e-06,
+          2.5e-07
+        ],
+        "ecart_max": 0.0,
+        "gain_400V_vers_400kV": 1000000.0
+      },
+      "_titre_fr": "Haute tension : le facteur 10^6 sur les pertes"
+    },
+    {
+      "id": "EQ-14",
+      "chemin": "electricite_abondance.py → hydro() → C14",
+      "formule": "P = ρ·g·Q·H·η ;  e = ρ·g·H (par m³)",
+      "resultat": "100 m, 10 m³/s, η = 0,90 → 8.83 MW · 0.2724 kWh/m³",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "P_W": 8825985.0,
+        "P_MW": 8.825985,
+        "J_par_m3": 980665.0,
+        "kWh_par_m3": 0.27240694444444447,
+        "masse_par_seconde_kg": 10000.0,
+        "rendement_declare": 0.9,
+        "coherence_par_m3": 0.0
+      },
+      "_titre_fr": "Chute d'eau : la puissance déjà écrite dans la gravité"
+    },
+    {
+      "id": "EQ-15",
+      "chemin": "electricite_abondance.py → betz() → C15",
+      "formule": "C_P(a) = 4a(1−a)² ;  a* = 1/3 ;  C_P,max = 16/27",
+      "resultat": "C_P,max = 0.592592593 · 16/27 = 0.592592593 · a* = 0.333333322",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "cp_max": 0.5925925925925921,
+        "a_max_bissection": 0.33333332246245906,
+        "a_max_balayage": 0.33335,
+        "seize_sur_vingt_sept": 0.5925925925925926,
+        "ecart": 4.440892098500626e-16,
+        "puissance_disponible_W": 30625.000000000004,
+        "puissance_max_capturable_W": 18148.148148148135,
+        "derivee_nulle_en_a_star": 8.696699561678186e-08
+      },
+      "_titre_fr": "Betz : la limite se dérive, elle ne se négocie pas"
+    },
+    {
+      "id": "EQ-16",
+      "chemin": "electricite_abondance.py → carnot() → C16",
+      "formule": "η ≤ 1 − T_froid/T_source ;  rejet = T_froid/T_source",
+      "resultat": "800 K / 300 K → 62.50 % · meilleur rendement déclaré à 97.6 % du plafond",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "T_source_K": 800.0,
+        "T_froid_K": 300.0,
+        "eta_carnot": 0.625,
+        "fraction_rejetee_au_froid": 0.375,
+        "somme_eta_plus_rejet": 1.0,
+        "rendements_declares": {
+          "vapeur supercritique": 0.45,
+          "cycle combine gaz": 0.61,
+          "diesel automobile": 0.35,
+          "solaire thermodynamique": 0.3
+        },
+        "meilleur_declare": 0.61,
+        "ratio_meilleur_sur_carnot": 0.976
+      },
+      "_titre_fr": "Carnot : la chaleur a un plafond politique"
+    },
+    {
+      "id": "EQ-17",
+      "chemin": "electricite_abondance.py → photovoltaique() → C17",
+      "formule": "λ_seuil = hc/E_g ;  perte = (E_photon − E_g)/E_photon",
+      "resultat": "Si 1,12 eV → 1107.0 nm · un photon à 2E_g perd 50 %",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "constante_eV_nm": 1239.8419843320025,
+        "lambda_seuil_si_nm": 1107.001771725002,
+        "lambda_seuil_gaas_nm": 873.1281579802835,
+        "lambda_seuil_perovskite_nm": 799.8980544077435,
+        "lambda_seuil_cdte_nm": 855.0634374703466,
+        "retour_calcul": 0.0,
+        "perte_thermalisation_photon_2Eg": 0.5,
+        "photons_par_m2_s_pour_1000W_m2_a_1e5_eV": 4.161006049640509e+21,
+        "rendement_shockley_queisser_declare": 0.337,
+        "conditions_declarees": "AM1.5G, 1000 W/m², 25 °C — valeur de littérature"
+      },
+      "_titre_fr": "Le seuil du semi-conducteur : qui paie les photons"
+    },
+    {
+      "id": "EQ-18",
+      "chemin": "electricite_abondance.py → stockage_materiau() → C18",
+      "formule": "e = U·capacité (Wh/kg) ;  Wh = J/3600 ;  gravitaire = g·h",
+      "resultat": "LiFePO₄ actif 586 Wh/kg · H₂ LHV 33.33 kWh/kg · 100 m d'eau 0.272 Wh/kg",
+      "statut": "SIMULÉ",
+      "detail": {
+        "Wh_par_kg": {
+          "LiFePO4 materiau actif (theorique)": 586.5,
+          "graphite materiau actif (theorique)": 37.2,
+          "cellule Li-ion (declaree)": 250.0,
+          "accumulateur plomb (declare)": 35.0,
+          "supercondensateur (declare)": 10.0,
+          "essence PCI": 12777.777777777777,
+          "dihydrogene LHV": 33333.333333333336,
+          "stockage gravitaire 100 m": 0.2724069444444444
+        },
+        "kWh_par_kg": {
+          "LiFePO4 materiau actif (theorique)": 0.5865,
+          "graphite materiau actif (theorique)": 0.037200000000000004,
+          "cellule Li-ion (declaree)": 0.25,
+          "accumulateur plomb (declare)": 0.035,
+          "supercondensateur (declare)": 0.01,
+          "essence PCI": 12.777777777777777,
+          "dihydrogene LHV": 33.333333333333336,
+          "stockage gravitaire 100 m": 0.0002724069444444444
+        },
+        "cathode_LFP_Wh_kg": 586.5,
+        "hydrogene_sur_essence": 2.608695652173913,
+        "equivalence_J_par_kg": {
+          "LiFePO4 materiau actif (theorique)": 2111400.0,
+          "graphite materiau actif (theorique)": 133920.0,
+          "cellule Li-ion (declaree)": 900000.0,
+          "accumulateur plomb (declare)": 126000.0,
+          "supercondensateur (declare)": 36000.0,
+          "essence PCI": 46000000.0,
+          "dihydrogene LHV": 120000000.00000001,
+          "stockage gravitaire 100 m": 980.6649999999998
+        },
+        "LHV_H2_sur_HHV": 0.846262341325811,
+        "gravitaire_J_par_kg": 980.665
+      },
+      "_titre_fr": "Stocker : la matière ne ment pas sur sa densité"
+    },
+    {
+      "id": "EQ-19",
+      "chemin": "electricite_abondance.py → supraconductivite() → C19",
+      "formule": "2Δ(0)/(k_B·T_c) ≈ 3,53 (déclaré) ;  R = 0 ⇒ pertes ohmiques nulles",
+      "resultat": "NbTi Δ = 1.399 meV · rapport recalculé 3.530 · 1 km de Cu à 50 A : 4200.00 W",
+      "statut": "SIMULÉ",
+      "detail": {
+        "k_B_eV_K": 8.617333262145179e-05,
+        "gap_nbti_meV": 1.399282575107134,
+        "gap_ybco_meV": 13.99282575107134,
+        "rapport_verifie": 3.5300000000000002,
+        "rapport_declare": 3.53,
+        "pertes_cuivre_W_pour_50A_sur_1km": 4200.0,
+        "pertes_ohmiques_supra_W": 0.0,
+        "refrigerants_declares_K": {
+          "NbTi (LHe)": 4.2,
+          "YBCO (LN2)": 77.0
+        },
+        "champ_critique_T_declare": {
+          "NbTi": 14.5,
+          "YBCO": 100.0
+        }
+      },
+      "_titre_fr": "Supraconductivité : zéro, mais à quel prix"
+    },
+    {
+      "id": "EQ-20",
+      "chemin": "electricite_abondance.py → budget_solaire_terre() → C20",
+      "formule": "Φ = L☉/(4π·AU²) ;  P interceptée = Φ·πR⊕² ;  S = P/(η·Φ)",
+      "resultat": "Φ = 1361.17 W/m² · interceptée = 1.736 × 10^17 W = 9135× la consommation déclarée",
+      "statut": "SIMULÉ",
+      "detail": {
+        "irradiance_hors_atmosphere_W_m2": 1361.1664654085753,
+        "constante_solaire_declaree_W_m2": 1361.0,
+        "ecart_relatif": 0.00012231110108396566,
+        "section_terre_m2": 127516117977447.06,
+        "puissance_interceptee_W": 1.735706635899845e+17,
+        "consommation_mondiale_declaree_W": 19000000000000.0,
+        "ratio_interceptee_sur_consommee": 9135.298083683396,
+        "surface_utile_m2_pour_20TW_a_22pct": 66787636354.090706,
+        "surface_utile_km2": 66787.6363540907,
+        "surface_emergee_km2_declaree": 149000000.0,
+        "fraction_des_terres_emergees": 0.00044823917016168256,
+        "kWh_par_m2_an_pour_200W_m2_moyen": 1752.0
+      },
+      "_titre_fr": "Le budget solaire de la Terre"
+    },
+    {
+      "id": "EQ-21",
+      "chemin": "electricite_abondance.py → ponts_dossier() → C21",
+      "formule": "P1 ↔ contrôle · P2 ↔ 50 Hz · P3 ↔ redondance N-1 · P4 ↔ comptage",
+      "resultat": "4 ponts déclarés comme analogies de lecture, chacun avec sa limite",
+      "statut": "SPÉCIFIÉ",
+      "detail": [
+        {
+          "pilier": "P1 — Scellement (preuve attachée à la valeur)",
+          "dossier": "chaque équation porte son contrôle C01..C21",
+          "electricite": "une grandeur non contrôlée n'entre pas dans le tableau",
+          "limite": "un contrôle numérique ne vaut pas mesure instrumentale"
+        },
+        {
+          "pilier": "P2 — Horloge (rythme borné, tick macroscopique)",
+          "dossier": "50 Hz, période 20 ms exactement",
+          "electricite": "fréquence réseau = horloge des machines synchrones",
+          "limite": "analogie de rythme : aucune horloge quantique n'intervient"
+        },
+        {
+          "pilier": "P3 — Code correcteur (redondance qui tolère la panne)",
+          "dossier": "Steane [[7,1,3]], 21 corrections",
+          "electricite": "redondance N-1 des réseaux et protections sélectives",
+          "limite": "même mot, deux objets différents : information vs kilowatts"
+        },
+        {
+          "pilier": "P4 — Registre (ce qui est dû, à qui, quand)",
+          "dossier": "registre des équations et traçabilité des DOI",
+          "electricite": "compteurs, facturation, attribution des prédécesseurs",
+          "limite": "le registre décrit une convention, pas une loi physique"
+        }
+      ],
+      "_titre_fr": "Quatre ponts de lecture, chacun avec sa limite"
+    }
+  ],
+  "controles": [
+    {
+      "id": "C01",
+      "nom": "k = 1/(4πε₀) coïncide avec μ₀c²/4π",
+      "attendu": "8.9876 × 10^9",
+      "obtenu": "8.9876 × 10^9",
+      "ok": true
+    },
+    {
+      "id": "C02",
+      "nom": "½CU² = ½ε₀E²·volume = ½QU",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000",
+      "ok": true
+    },
+    {
+      "id": "C03",
+      "nom": "ρσ = 1 et R(Al)/R(Cu) ≈ 1,58",
+      "attendu": "1.000000000000",
+      "obtenu": "1.000000000000",
+      "ok": true
+    },
+    {
+      "id": "C04",
+      "nom": "P = UI = I²R = U²/R et 1 kW·h = 3,6 MJ",
+      "attendu": "2300.000000",
+      "obtenu": "2 300.000000",
+      "ok": true
+    },
+    {
+      "id": "C05",
+      "nom": "nœud et bilan de puissance exacts (rationnels)",
+      "attendu": "0 / 0",
+      "obtenu": "0 / 0",
+      "ok": true
+    },
+    {
+      "id": "C06",
+      "nom": "B(1 A, 1 m) à 10⁻⁸ près de 2·10⁻⁷ T",
+      "attendu": "< 1e-8",
+      "obtenu": "5.444 × 10^-10",
+      "ok": true
+    },
+    {
+      "id": "C07",
+      "nom": "dΦ/dt numérique contre analytique",
+      "attendu": "< 1e-6",
+      "obtenu": "5.50 × 10^-11",
+      "ok": true
+    },
+    {
+      "id": "C08",
+      "nom": "½LI² = u_B·volume",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000",
+      "ok": true
+    },
+    {
+      "id": "C09",
+      "nom": "1/√(μ₀ε₀) = c et Z₀ = μ₀c",
+      "attendu": "299 792 458.000",
+      "obtenu": "299 792 458.000",
+      "ok": true
+    },
+    {
+      "id": "C10",
+      "nom": "∮sin² = π et S² = P² + Q²",
+      "attendu": "3.141592654",
+      "obtenu": "3.141592654",
+      "ok": true
+    },
+    {
+      "id": "C11",
+      "nom": "déphasage de 120° ⇒ √3 et somme nulle",
+      "attendu": "0.000000000000",
+      "obtenu": "2.220446049250e-16",
+      "ok": true
+    },
+    {
+      "id": "C12",
+      "nom": "S primaire = S secondaire (transformateur idéal)",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000",
+      "ok": true
+    },
+    {
+      "id": "C13",
+      "nom": "pertes en 1/U² sur quatre tensions",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000e+00",
+      "ok": true
+    },
+    {
+      "id": "C14",
+      "nom": "P = ρgQHη cohérent avec (ρgH)·Q·η",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000",
+      "ok": true
+    },
+    {
+      "id": "C15",
+      "nom": "max 4a(1−a)² = 16/27 à a = 1/3",
+      "attendu": "0.592592593",
+      "obtenu": "0.592592593",
+      "ok": true
+    },
+    {
+      "id": "C16",
+      "nom": "η + rejet = 1 exactement",
+      "attendu": "1.000000000000",
+      "obtenu": "1.000000000000",
+      "ok": true
+    },
+    {
+      "id": "C17",
+      "nom": "hc/e = 1239,841984 eV·nm et seuil Si ≈ 1107 nm",
+      "attendu": "1239.841984",
+      "obtenu": "1239.841984",
+      "ok": true
+    },
+    {
+      "id": "C18",
+      "nom": "Wh/kg × 3600 = J/kg et H₂ > essence > Li-ion",
+      "attendu": "120 000 000.0",
+      "obtenu": "120 000 000.0",
+      "ok": true
+    },
+    {
+      "id": "C19",
+      "nom": "2Δ/kTc reproduit le rapport déclaré 3,53",
+      "attendu": "3.530000",
+      "obtenu": "3.530000",
+      "ok": true
+    },
+    {
+      "id": "C20",
+      "nom": "L☉/(4π AU²) ≈ 1361 W/m² et ordre de grandeur du budget",
+      "attendu": "1361.000000",
+      "obtenu": "1 361.166465",
+      "ok": true
+    },
+    {
+      "id": "C21",
+      "nom": "quatre ponts déclarés, chacun borné par une limite",
+      "attendu": "4",
+      "obtenu": "4",
+      "ok": true
+    }
+  ],
+  "resume": {
+    "equations": 21,
+    "controles_ok": 21,
+    "controles_total": 21,
+    "statuts": {
+      "OPÉRATIONNEL": 16,
+      "SIMULÉ": 4,
+      "SPÉCIFIÉ": 1
+    },
+    "betz_max": 0.5925925925925921,
+    "carnot_800_300_K": 0.625,
+    "seuil_Si_nm": 1107.001771725002,
+    "pertes_1GW_a_400kV_W": 312500.0,
+    "puissance_solaire_interceptee_W": 1.735706635899845e+17,
+    "surface_utile_km2_pour_20TW": 66787.6363540907
+  }
+}

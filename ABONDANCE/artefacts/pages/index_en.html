@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABUNDANCE — three computed dossiers — AL-MIZAN × ASTRO-Q°ODE</title>
+<meta name="description" content="Electricity, water, agriculture: fifty-four equations, fifty-four checks, nine trilingual pages, SVG figures, JSON, CSV and Markdown computed by the modules.">
+<link rel="canonical" href="index_en.html">
+<meta property="og:url" content="index_en.html">
+<link rel="alternate" hreflang="fr" href="index.html">
+<link rel="alternate" hreflang="en" href="index_en.html">
+<link rel="alternate" hreflang="ar" href="index_ar.html">
+<link rel="alternate" hreflang="x-default" href="index.html">
+<meta property="og:title" content="ABUNDANCE — three computed dossiers — AL-MIZAN × ASTRO-Q°ODE">
+<meta property="og:description" content="Electricity, water, agriculture: fifty-four equations, fifty-four checks, nine trilingual pages, SVG figures, JSON, CSV and Markdown computed by the modules.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+<style>
+:root{--encre:#10263a;--bleu:#1f5f8b;--pale:#f5f7fa;--or:#b45309;--gris:#5b6b7a;--cible:#0f3d5c}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--encre);
+background:#fbfcfd;line-height:1.62;font-size:17px}
+html[dir="rtl"] body{font-family:'Segoe UI',Tahoma,'Traditional Arabic',Arial,sans-serif}
+html[dir="rtl"] .formule,html[dir="rtl"] .nb,html[dir="rtl"] table,html[dir="rtl"] pre,
+html[dir="rtl"] code{direction:ltr;text-align:left}
+html[dir="rtl"] td.titre,html[dir="rtl"] td.lecture{text-align:right}
+a{color:var(--cible)}
+header.site{background:#0f2438;color:#f2f6fa;padding:14px 22px}
+header.site .bande{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;
+align-items:center;justify-content:space-between;gap:12px}
+header.site strong{font-size:19px;letter-spacing:.2px}
+header.site a{color:#e8f1f8;text-decoration:none}
+header.site nav{display:flex;flex-wrap:wrap;gap:4px}
+header.site nav .langues{display:flex;flex-wrap:wrap;gap:4px}
+header.site nav .langues a{padding:7px 12px;border:1px solid #47688a;border-radius:6px;min-height:30px}
+header.site nav .langues a.on{background:#fdf3e7;color:#0f2438;border-color:#fdf3e7;font-weight:700}
+header.site :focus-visible{outline:3px solid #fdf3e7;outline-offset:2px}
+:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.saut a{position:absolute;left:-9999px;top:auto;background:#fdf3e7;color:#0f2438;
+padding:10px 14px;border-radius:6px;min-height:30px}
+.saut a:focus{left:12px;top:12px;z-index:9}
+main{max-width:1120px;margin:0 auto;padding:30px 22px 60px}
+main p{max-width:38em}
+h1{font-size:33px;line-height:1.2;margin:6px 0 10px}
+h2{font-size:25px;margin:34px 0 10px;border-bottom:2px solid #dbe6ef;padding-bottom:6px}
+h3{font-size:20px;margin:22px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.badges span{border:1px solid #cfdce7;background:var(--pale);border-radius:20px;
+padding:6px 13px;font-size:14px;min-height:30px;display:inline-flex;align-items:center}
+.badges .or{border-color:var(--or);color:#7a3c07;background:#fff7ed}
+.formule{display:block;font-family:Consolas,Menlo,monospace;font-size:13.5px;color:#1f4e6b;
+background:#f4f8fb;padding:10px 12px;border-radius:6px;overflow-x:auto}
+.chemin{font-family:Consolas,Menlo,monospace;font-size:12px;color:var(--gris);white-space:nowrap}
+.tableau{overflow-x:auto}
+pre{background:#0f2438;color:#eaf2f8;padding:14px 16px;border-radius:8px;
+overflow-x:auto;font-size:13.5px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0}
+caption{caption-side:top;text-align:left;font-size:13.5px;color:var(--gris);padding:0 0 8px}
+html[dir="rtl"] caption{text-align:right}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #e2e9ef;vertical-align:top}
+html[dir="rtl"] th,html[dir="rtl"] td{text-align:right}
+html[dir="rtl"] td.nb,html[dir="rtl"] th.nb{text-align:left}
+th{background:#eef4f9;color:#0f2438}
+td.id{white-space:nowrap;font-weight:700;color:var(--cible)}
+.statut{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.3px;
+padding:4px 10px;border-radius:20px;border:1px solid;min-height:26px}
+.statut.o{color:#14532d;border-color:#86efac;background:#f0fdf4}
+.statut.s{color:#7c2d12;border-color:#fdba74;background:#fff7ed}
+.statut.p{color:#334155;border-color:#cbd5e1;background:#f8fafc}
+.grille{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+.carte{border:1px solid #dbe6ef;border-radius:10px;padding:14px 16px;background:#fff}
+.carte h3{margin:0 0 6px;font-size:18px}
+.carte .gros{font-size:26px;font-weight:700;color:var(--cible)}
+html[dir="rtl"] .carte .gros{direction:ltr;text-align:left}
+.etape{border-left:4px solid var(--bleu);padding:4px 0 4px 16px;margin:0 0 18px}
+html[dir="rtl"] .etape{border-left:0;border-right:4px solid var(--bleu);padding:4px 16px 4px 0}
+.etape h3{margin:0 0 4px;font-size:19px}
+figure{margin:22px 0;padding:0}
+figcaption{font-size:13.5px;color:var(--gris);margin-top:8px}
+footer.site{border-top:2px solid #dbe6ef;margin-top:40px;padding:22px;color:var(--gris);font-size:14px}
+footer.site .interieur{max-width:1120px;margin:0 auto}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+.actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+padding:10px 16px;border:1px solid var(--cible);border-radius:8px;text-decoration:none;font-weight:700}
+.actions a.principal{background:var(--cible);color:#fff}
+.sommaire{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px}
+.sommaire a{display:inline-flex;align-items:center;min-height:30px;padding:6px 12px;
+border:1px solid #cfdce7;border-radius:8px;text-decoration:none;font-size:14.5px}
+ul{margin:10px 0 10px 22px;padding:0}
+html[dir="rtl"] ul{margin:10px 22px 10px 0}
+@media (max-width:900px){.grille{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
+</head>
+<body><div class="saut"><a href="#contenu">Skip to content</a></div>
+<header class="site"><div class="bande">
+<strong>ABUNDANCE — AL-MIZAN × ASTRO-Q°ODE</strong>
+<nav aria-label="Language"><span class="langues"><a href="index.html" lang="fr">Français</a><a href="index_en.html" class="on" aria-current="page" lang="en">English</a><a href="index_ar.html" lang="ar">العربية</a></span></nav>
+</div></header>
+<main id="contenu" tabindex="-1"><h1>ABUNDANCE — three computed dossiers</h1><p>Electricity, water, agriculture: fifty-four equations, fifty-four checks, nine trilingual pages, SVG figures, JSON, CSV and Markdown computed by the modules.</p><div class="badges"><span class="">54 EQ</span><span class="or">54/54 Numerical checks</span></div><p class="chemin">Three modules compute, this generator formats. No page number is typed by hand: delete an artefact, re-run the generator, and it comes back byte for byte.</p><div class="tableau"><table id="dossiers"><caption>Nine pages, three standalone SVG figures, three JSON, three Excel CSV and three Markdown dossiers, all produced by the same generator.</caption><thead><tr><th scope="col">Dossier</th><th scope="col"nb>Equations</th><th scope="col"nb>Checks met</th><th scope="col"nb>OPERATIONAL</th><th scope="col"nb>SIMULATED</th><th scope="col"nb>SPECIFIED</th><th scope="col">Pages</th><th scope="col">Data</th></tr></thead><tbody><tr><td class="id" scope="row">Electricity</td><td class="nb"><span class="nb">21</span></td><td class="nb"><span class="nb">21/21</span></td><td class="nb"><span class="nb">16</span></td><td class="nb"><span class="nb">4</span></td><td class="nb"><span class="nb">1</span></td><td class=""><a href="electricite.html" lang="fr">FR</a> · <a href="electricite_en.html" lang="en">EN</a> · <a href="electricite_ar.html" lang="ar">AR</a></td><td class=""><a href="../donnees/electricite.json">JSON</a> · <a href="../donnees/electricite.csv">CSV</a> · <a href="../figures/electricite_en.svg">SVG</a> · <a href="../dossiers/electricite.md">MD</a></td></tr><tr><td class="id" scope="row">Water</td><td class="nb"><span class="nb">15</span></td><td class="nb"><span class="nb">15/15</span></td><td class="nb"><span class="nb">10</span></td><td class="nb"><span class="nb">4</span></td><td class="nb"><span class="nb">1</span></td><td class=""><a href="eau.html" lang="fr">FR</a> · <a href="eau_en.html" lang="en">EN</a> · <a href="eau_ar.html" lang="ar">AR</a></td><td class=""><a href="../donnees/eau.json">JSON</a> · <a href="../donnees/eau.csv">CSV</a> · <a href="../figures/eau_en.svg">SVG</a> · <a href="../dossiers/eau.md">MD</a></td></tr><tr><td class="id" scope="row">Agriculture</td><td class="nb"><span class="nb">18</span></td><td class="nb"><span class="nb">18/18</span></td><td class="nb"><span class="nb">10</span></td><td class="nb"><span class="nb">7</span></td><td class="nb"><span class="nb">1</span></td><td class=""><a href="agriculture.html" lang="fr">FR</a> · <a href="agriculture_en.html" lang="en">EN</a> · <a href="agriculture_ar.html" lang="ar">AR</a></td><td class=""><a href="../donnees/agriculture.json">JSON</a> · <a href="../donnees/agriculture.csv">CSV</a> · <a href="../figures/agriculture_en.svg">SVG</a> · <a href="../dossiers/agriculture.md">MD</a></td></tr></tbody></table></div><div class="actions"><a class="principal" href="electricite_en.html">Go to the electricity dossier</a><a class="principal" href="eau_en.html">Go to the water dossier</a><a class="principal" href="agriculture_en.html">Go to the agriculture dossier</a><a class="" href="https://doi.org/10.5281/zenodo.24028242">Back to the deposit</a></div><h2 id="reproduction">Reproduce the calculation</h2><pre># from the repository root
+py -3 ABONDANCE/electricite_abondance.py     # 21 equations, 21 checks
+py -3 ABONDANCE/eau_abondance.py            # 15 equations, 15 checks
+py -3 ABONDANCE/agriculture_abondance.py    # 18 equations, 18 checks
+py -3 ABONDANCE/generer_abondance.py        # rebuilds pages, figures, JSON, CSV, Markdown
+# off Windows: replace py -3 with python3</pre></main><footer class="site"><div class="interieur"><p>A computed document, not a hand-written one: re-run the module and the page reappears.</p><p>M. Ahmed EL BAHLOUL (IMAM8MAHDI) · GPL-3.0-only OR AGPL-3.0-only · https://doi.org/10.5281/zenodo.24028242</p></div></footer>
+</body>
+</html>

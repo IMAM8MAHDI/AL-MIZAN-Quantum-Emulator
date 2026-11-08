@@ -1,0 +1,192 @@
+# EAU — ABONDANCE, DESSALEMENT ET CYCLE
+
+**Auteur** : M. Ahmed EL BAHLOUL (IMAM8MAHDI)  
+**Licence** : GPL-3.0-only OR AGPL-3.0-only  
+**Module** : `eau_abondance.py` — 15 équations, 15/15 contrôles reçus.
+
+## Chemin
+
+### Thalès, et l'eau comme principe
+L'élève de Thalès, Anaximandre, fait de l'eau le principe de toute chose : une erreur, mais la première tentative de expliquer le monde sans mythe.
+
+### Archimède, Pascal, Bernoulli : la pression devient nombre
+La poussée, puis le baromètre de von Guericke, puis l'écoulement : l'hydrostatique et l'hydrodynamique deviennent mesurables avant l'industrie.
+
+### van 't Hoff : la pression osmotique, avant les membranes
+π = i·c·R·T est une formule de 1886. Elle pose la borne que l'osmose inverse mettra un siècle à approcher.
+
+### Second principe : le plancher du dessalement
+Extraire de l'eau douce de la mer coûte au minimum un travail de mélange inversé : 0.8136 kWh/m³. Toute promesse en dessous est une erreur de compte.
+
+### Fermer le cycle, puis compter l'assiette
+Le cycle terrestre ne doit rien laisser de côté : les colonnes se ferment d'elles-mêmes. Ensuite l'eau virtuelle place le robinet dans l'agriculture.
+
+## Équations
+
+### EQ-01 — Toute l'eau, puis la part douce
+
+`V_douce = V_totale × 2,59 % ;  V_douce = Σ V_compartiments`
+
+> douce = 35.90 × 10⁶ km³ sur 1386.00 × 10⁶ km³ · renouvelable 0.03 % du stock · 2991 ans pour rajeunir toute l'eau douce
+
+*Statut* : SIMULÉ · *chemin* : `eau_abondance.py → repartition_terre() → C01`
+
+### EQ-02 — L'hydrostatique : chaque mètre compte
+
+`P = ρ·g·h ;  F = P·S`
+
+> 10 m (douce 25 °C) : 97.772 kPa = 1.965 atm absolue · 100 m en mer : 1005.2 kPa · ρgH(100 m) = 980 665.0000 J/m³
+
+*Statut* : OPÉRATIONNEL · *chemin* : `eau_abondance.py → hydrostatique() → C02`
+
+### EQ-03 — Archimède : la glace dit la densité
+
+`F_poussée = ρ_fluide·V·g ;  part immergée = ρ_objet/ρ_fluide`
+
+> iceberg immergé 89.46 % · émerge 10.54 % · 50 000 t ⇒ 4.878 × 10^4 m³ déplacés
+
+*Statut* : OPÉRATIONNEL · *chemin* : `eau_abondance.py → architecte_flottant() → C03`
+
+### EQ-04 — Continuité : ce qui entre sort, plus vite ou plus lentement
+
+`Q = A·v constant ;  v = Q/A`
+
+> 10 m³/s : 10 m² → 1.0 m/s, 0,5 m² → 20.0 m/s · écart max 0.00e+00
+
+*Statut* : OPÉRATIONNEL · *chemin* : `eau_abondance.py → continuite() → C04`
+
+### EQ-05 — Bernoulli : la hauteur transformée en vitesse
+
+`P + ½ρv² + ρgh = const ;  v = √(2gh)`
+
+> 10 m → 14.005 m/s · 100 m → 44.29 m/s · dPE/dh = 9.806650 m/s²
+
+*Statut* : OPÉRATIONNEL · *chemin* : `eau_abondance.py → bernoulli() → C05`
+
+### EQ-06 — Pomper : le prix en kWh du mètre cube
+
+`e = ρ·g·H/η (par m³) ;  P = e·Q`
+
+> 50 m à η 0,65 → 0.2089 kWh/m³ · 1000 m³/j → 8.7 kW en moyenne · 0.26× la borne de EQ-08
+
+*Statut* : OPÉRATIONNEL · *chemin* : `eau_abondance.py → pompage() → C06`
+
+### EQ-07 — van 't Hoff : la pression osmotique
+
+`π = i·c·R·T ;  c en osmoles par m³`
+
+> 35 g/kg → π idéale 30.44 bar (29.69 bar par la voie molaire), π réelle ≈ 27.1 bar · colonne d'eau de 302.8 m
+
+*Statut* : OPÉRATIONNEL · *chemin* : `eau_abondance.py → osmose() → C07`
+
+### EQ-08 — Le travail minimum du dessalement
+
+`w_min = R·T·ln(1/x_eau) par mole d'eau douce extraite`
+
+> x_eau = 0.978877 → 0.8136 kWh/m³ (borne) · RO déclarée 3.0 kWh/m³ = 3.69× la borne
+
+*Statut* : OPÉRATIONNEL · *chemin* : `eau_abondance.py → travail_minimum_dessalement() → C08`
+
+### EQ-09 — Bilan salin : la saumure est comptée
+
+`C_saumure = C_alim/(1−Y) ;  bilan salin fermé`
+
+> Y = 0,45 → 63.6 g/kg (1.82×) · 1.22 m³ rejetés par m³ produit · résidu 0.00e+00
+
+*Statut* : OPÉRATIONNEL · *chemin* : `eau_abondance.py → recuperation_concentration() → C09`
+
+### EQ-10 — Deux lois pour une vapeur
+
+`e_s(Magnus) = 6,1094·exp(17,625·t/(t+243,04)) ;  d ln e/dT = L/(R_v·T²)`
+
+> 25 °C : Magnus 31.617 hPa, Clausius 31.002 hPa · écart 1.95 % · évaporer 1 m³ coûte 676.3 kWh
+
+*Statut* : OPÉRATIONNEL · *chemin* : `eau_abondance.py → vapeur_eau_air() → C10`
+
+### EQ-11 — Le cycle global ferme ses deux colonnes
+
+`P_terre = ET_terre + R ;  P_océan + R = ET_océan`
+
+> 119 000 = 72 000 + 47 000 km³/an · 799 mm/an sur les terres émergées · 1029 mm/an sur la planète
+
+*Statut* : SIMULÉ · *chemin* : `eau_abondance.py → cycle_global() → C11`
+
+### EQ-12 — L'eau dans l'assiette
+
+`V_eau = Σᵢ (L/kg)ᵢ × mᵢ ;  mᵢ en kg par personne et par an`
+
+> bœuf/tomate = 60× · régime déclaré ≈ 2201 L/j contre 150 L/j au robinet
+
+*Statut* : SIMULÉ · *chemin* : `eau_abondance.py → eau_par_aliment() → C12`
+
+### EQ-13 — Salinité et conductivité : le pont de l'instrument
+
+`S (g/kg) ≈ 0,64 × EC (dS/m)`
+
+> 35 g/kg → 54.7 dS/m = 5.47 S/m · seuil potable à 1.56 dS/m
+
+*Statut* : SIMULÉ · *chemin* : `eau_abondance.py → salinite_conductivite() → C13`
+
+### EQ-14 — Stocker l'eau, c'est stocker la même formule qu'en électricité
+
+`E = ρ·g·H·V ;  même membre que le dossier électricité`
+
+> 1 km³ sous 100 m = 272.4 GWh = 0.2724 TWh · décharge en 8 h = 34.1 GW · 0.272 Wh/kg d'eau
+
+*Statut* : OPÉRATIONNEL · *chemin* : `eau_abondance.py → stockage_gravitaire_eau() → C14`
+
+### EQ-15 — Quatre ponts de lecture, chacun borné
+
+`P1 ↔ borne · P2 ↔ cycles · P3 ↔ redondance · P4 ↔ dette hydrologique`
+
+> 4 ponts déclarés comme lectures, chacun borné par une limite
+
+*Statut* : SPÉCIFIÉ · *chemin* : `eau_abondance.py → ponts_dossier() → C15`
+
+## Contrôles numériques
+
+| ID | Contrôle | Attendu | Obtenu | État |
+|---|---|---|---|---|
+| C01 | la répartition de l'eau douce ferme à 100 % et en volumes | 100.0 | 100.0 | reçu |
+| C02 | ρgH(100 m) identique aux deux dossiers (convention ρ = 1000) | 0.000000000000 | 0.000000000000 | reçu |
+| C03 | poids d'eau déplacée = poids du navire | 0 | 0.000000 | reçu |
+| C04 | A·v constant sur trois sections | 0.000000000000 | 0.000000000000e+00 | reçu |
+| C05 | d(gh)/dh = g et ½ρv² = ρgh (Torricelli) | 9.806650 | 9.806650 | reçu |
+| C06 | kWh/m³ = ρgH/3,6 MJ/η et croît avec H | 0.208915 | 0.208915 | reçu |
+| C07 | deux voies pour π, un ordre, et le réel sous l'idéal | ≈ 27 bar déclarés | 27.09 bar | reçu |
+| C08 | ln(1/x) contre son développement : la voie diluée suit l'exacte | < 0.02 | 0.010599 | reçu |
+| C09 | bilan salin fermé pour quatre taux de récupération | 0.000000000000 | 0.000000000000e+00 | reçu |
+| C10 | Magnus ≈ Clausius–Clapeyron à 25 °C | 31.617 | 31.002 | reçu |
+| C11 | le cycle ferme : terre, océan et planète | 0.0 | 0.000000 | reçu |
+| C12 | L/j issu des masses réellement consommées | 60 | 60 | reçu |
+| C13 | S/EC = 0,64 dans les deux sens et conversion en S/m | 0.640000 | 0.640000 | reçu |
+| C14 | 1 km³ sous 100 m = 272,4 GWh et même ρgH qu'EQ-14 électricité | 272.407 | 272.407 | reçu |
+| C15 | quatre ponts déclarés, chacun borné | 4 | 4 | reçu |
+
+## Source
+
+```
+{
+  "herite_de": "electricite_abondance.py (même patron EQ → fonction → contrôle)",
+  "video_origine": "Électricité : tout s'éclaire ! | Déclics | ARTE",
+  "video_url": "https://www.youtube.com/watch?v=cFx7Cm-c2nA",
+  "transcript": "absent (timedtext : 0 octet en json3, srv3 et xml)",
+  "fil_conducteur": "Thalès déjà tenait l'eau pour principe des choses ; Archimède, Pascal, Bernoulli, van 't Hoff sont les prédécesseurs nommés ici"
+}
+```
+
+## Valeurs déclarées
+
+```
+{
+  "SEC_osmose_inverse_kWh_m3": 3.0,
+  "recuperation_RO": 0.45,
+  "fuites_reseau_pct": 0.3,
+  "chaleur_latente_J_kg": 2442000.0,
+  "i_effectif_NaCl": 1.78,
+  "pression_usine_RO_bar": 60.0,
+  "statut": "ordres de grandeur de littérature, non mesurés dans ce dépôt"
+}
+```
+
+> Document calculé, non écrit à la main : régénérer le module régénère la page.

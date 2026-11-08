@@ -1,0 +1,742 @@
+{
+  "version": "1.0",
+  "theme": "AGRICULTURE — DU PHOTON À L'ASSIETTE",
+  "source": {
+    "herite_de": "electricite_abondance.py (21 EQ) puis eau_abondance.py (15 EQ)",
+    "video_origine": "Électricité : tout s'éclaire ! | Déclics | ARTE",
+    "video_url": "https://www.youtube.com/watch?v=cFx7Cm-c2nA",
+    "transcript": "absent (timedtext : 0 octet en json3, srv3 et xml)",
+    "statut_contenu": "la vidéo ne fournit AUCUNE donnée agricole : ni les rendements, ni la photosynthèse, ni les matériaux n'en sont extraits",
+    "fil_conducteur": "Thalès → van 't Hoff → Boussingault (loi du minimum) → Liebig → Haber/Bosch → Blackman → Calvin → Monteith (RUE) → Allan/Hoekstra (eau virtuelle)"
+  },
+  "invariants": {
+    "c_m_s": 299792458.0,
+    "h_J_s": 6.62607015e-34,
+    "k_B_J_K": 1.380649e-23,
+    "N_A_mol": 6.02214076e+23,
+    "sigma_W_m2_K4": 5.6703744191844314e-08,
+    "g_m_s2": 9.80665,
+    "masses_g_mol": {
+      "CO2": 44.009,
+      "H2O": 18.015,
+      "O2": 31.998,
+      "CH2O": 30.026,
+      "C6H12O6": 180.156,
+      "NH3": 17.031,
+      "P2O5": 141.943,
+      "K2O": 94.195,
+      "KCl": 74.548
+    }
+  },
+  "valeurs_declarees": {
+    "rendements_t_ha": {
+      "ble": 3.5,
+      "mais": 10.0
+    },
+    "kcal_par_tonne": {
+      "ble": 3400000.0,
+      "mais": 3650000.0
+    },
+    "eps_g_par_MJ": {
+      "C3": 1.5,
+      "C4": 3.0
+    },
+    "habergj_par_t_nh3": 31.0,
+    "azote_applique_kg_ha": 120.0,
+    "et_ble_mm_an": 500.0,
+    "led_umol_par_joule": 2.8,
+    "photons_par_co2_mesures": 8.5,
+    "sol": {
+      "profondeur_m": 0.3,
+      "densite_t_m3": 1.3,
+      "production_t_ha_an": 0.5,
+      "erosion_t_ha_an": 10.0
+    },
+    "statut": "valeurs de littérature agronomique, non mesurées dans ce dépôt ; les équations qui les utilisent sont calculées et contrôlées"
+  },
+  "equations": [
+    {
+      "id": "EQ-01",
+      "chemin": "agriculture_abondance.py → stoechiometrie_photosynthese() → C01",
+      "formule": "6 CO2 + 6 H2O → C6H12O6 + 6 O2 ;  équilibre atome par atome",
+      "resultat": "372.144 g de réactifs = 372.144 g de produits · 1.466 g CO2 par g de biomasse · 0 atome d'écart",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "equation": "6 CO2 + 6 H2O + lumière → C6H12O6 + 6 O2",
+        "masses_molaires_g_mol": {
+          "CO2": 44.009,
+          "H2O": 18.015,
+          "O2": 31.998,
+          "C6H12O6": 180.156,
+          "CH2O": 30.026
+        },
+        "atomes_reactifs": {
+          "C": 6.0,
+          "H": 12.0,
+          "O": 18.0
+        },
+        "atomes_produits": {
+          "C": 6.0,
+          "H": 12.0,
+          "O": 18.0
+        },
+        "desequilibre_atomique": 0.0,
+        "masse_reactifs_g": 372.144,
+        "masse_produits_g": 372.144,
+        "desequilibre_massique": 0.0,
+        "co2_par_g_biomasse": 1.4656963964564045,
+        "o2_par_g_biomasse": 1.0656764137747285,
+        "carbone_fraction_biomasse": 0.4000199826816759
+      },
+      "_titre_fr": "La photosynthèse est un bilan de masse"
+    },
+    {
+      "id": "EQ-02",
+      "chemin": "agriculture_abondance.py → exigence_quantique() → C02",
+      "formule": "E = N_A·hc/λ par einstein ;  4 photons/CO2 au minimum, 8,5 mesurés",
+      "resultat": "680 nm → 1.8233 eV = 175.92 kJ/mol de photons · plafond 68.0 % (4 photons), 32.0 % (8,5)",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "lambda_nm": 680.0,
+        "e_photon_J": 2.921243907571954e-19,
+        "e_photon_eV": 1.8232970357823566,
+        "einstein_kJ_par_mol_photons": 175.92142005690735,
+        "einstein_par_eV_kJ": 175.92142005690735,
+        "coherence_deux_voies": 0.0,
+        "photons_par_co2_min": 4.0,
+        "photons_par_co2_declares": 8.5,
+        "energie_min_kj_par_mol_co2": 703.6856802276294,
+        "energie_declaree_kj_par_mol_co2": 1495.3320704837124,
+        "energie_chimie_kj_par_mol_co2": 478.3333333333333,
+        "rendement_plafond_min": 0.679754252180606,
+        "rendement_plafond_mesure": 0.31988435396734405,
+        "surcout_photons": 2.125
+      },
+      "_titre_fr": "Le prix du CO2 fixé : 4 photons au moins"
+    },
+    {
+      "id": "EQ-03",
+      "chemin": "agriculture_abondance.py → spectre_PAR() → C03",
+      "formule": "M_λ(T) intégrée sur 400–700 nm ;  φ = ∫M_λλ/(hc)dλ",
+      "resultat": "PAR = 36.6 % de l'énergie · 1.673 µmol/J · pleine lumière hors atmosphère ≈ 1673 µmol/m²/s · STEFAN-BOLTZMANN re-vérifiée par l'intégrale à 7.9e-07",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "T_photosphere_K": 5772.0,
+        "exitance_integree_W_m2": 62938542.899772756,
+        "exitance_stefan_W_m2": 62938592.470335975,
+        "ecart_integration_stefan": 7.876020303894008e-07,
+        "fraction_energie_PAR": 0.3663834599488155,
+        "fraction_photons_PAR": 0.21691956614346075,
+        "umol_par_joule_de_rayonnement_total": 1.6731300206633648,
+        "umol_par_joule_dans_la_bande": 4.566609040967909,
+        "ppfd_1000_W_m2_hors_atmosphere": 1673.1300206633648,
+        "ppfd_declare_au_sol_umol": 2000.0,
+        "ppfd_1000_W_m2_au_sol_45pct": 2054.974068435559,
+        "lambda_effectif_bande_nm": 546.2877561856147,
+        "note": "le corps noir seul sous-estime le PAR au sol : l'atmosphère retire l'infrarouge, la bande 400–700 nm passe de 37 à ~45 %"
+      },
+      "_titre_fr": "Intégrer le spectre : combien de photons utilisables"
+    },
+    {
+      "id": "EQ-04",
+      "chemin": "agriculture_abondance.py → budget_solaire_agricole() → C04",
+      "formule": "E_PAR = I·f_PAR·S ;  demande = N·(kcal/j)·365·4184",
+      "resultat": "PAR sur les cultivables = 43.7 ZJ/an contre 0.026 ZJ/an demandés · à 0,5 % de conversion : 8.5× la demande",
+      "statut": "SIMULÉ",
+      "detail": {
+        "irradiance_hors_atmosphere_W_m2": 1361.1664654085753,
+        "insolation_moyenne_declaree_W_m2": 220.0,
+        "surface_cultivable_m2": 14000000000000.0,
+        "puissance_PAR_W": 1386000000000000.0,
+        "energie_PAR_J_par_an": 4.3708896e+22,
+        "energie_PAR_ZJ_par_an": 43.708895999999996,
+        "demande_alimentaire_J_par_an": 2.5656288e+19,
+        "demande_alimentaire_ZJ_par_an": 0.025656288,
+        "facteurs_de_conversion": {
+          "0.2 %": 3.407265774378585,
+          "0.5 %": 8.518164435946463,
+          "1.0 %": 17.036328871892927,
+          "2.0 %": 34.072657743785854
+        },
+        "ratio_par_sur_consommation_energie_mondiale": 72.94736842105263,
+        "limite": "le goulot n'est pas le nombre de joules : il est dans l'eau, l'azote, le sol et la saison — voir EQ-05 à EQ-15"
+      },
+      "_titre_fr": "Le rayonnement disponible contre l'assiette disponible"
+    },
+    {
+      "id": "EQ-05",
+      "chemin": "agriculture_abondance.py → rayonnement_use_efficiency() → C05",
+      "formule": "ΔB = ε·fAPAR·PAR  (Monteith) ;  ε ≤ plafond EQ-02",
+      "resultat": "plafond 20.08 g/MJ PAR · C4 déclaré à 33.2 % du plafond, C3 à 16.6 %",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "einstein_kJ": 175.92142005690735,
+        "einstein_par_MJ": 5.684356115796009,
+        "plafond_theorique_g_par_MJ_PAR": 42.66961918322274,
+        "plafond_a_8_5_photons_g_par_MJ_PAR": 20.079820792104822,
+        "eps_C3_declare_g_par_MJ_global": 1.5,
+        "eps_C4_declare_g_par_MJ_global": 3.0,
+        "eps_C3_rapporte_au_PAR": 3.333333333333333,
+        "eps_C4_rapporte_au_PAR": 6.666666666666666,
+        "part_du_plafond_C3": 0.16600413757895516,
+        "part_du_plafond_C4": 0.3320082751579103,
+        "fapar_declare": 0.85,
+        "exemple_ble_par_jour_MJ_m2": 9.0,
+        "biomasse_par_jour_g_m2": 25.5
+      },
+      "_titre_fr": "Monteith : le rendement borné par la lumière"
+    },
+    {
+      "id": "EQ-06",
+      "chemin": "agriculture_abondance.py → voies_photosynthetiques() → C06",
+      "formule": "Rubisco : v_C/v_O = 85 · C4 = pompe à CO2 devant Rubisco",
+      "resultat": "C4/C3 en ε = 2.00× · coût de la photorespiration = 52.9 % des photons",
+      "statut": "SIMULÉ",
+      "detail": {
+        "voies": {
+          "C3": {
+            "ε_g_MJ": 1.5,
+            "compensation_CO2_ppm": 40.0,
+            "optimum_T_C": 22.0,
+            "wue_relative": 1.0
+          },
+          "C4": {
+            "ε_g_MJ": 3.0,
+            "compensation_CO2_ppm": 8.0,
+            "optimum_T_C": 33.0,
+            "wue_relative": 2.0
+          },
+          "CAM": {
+            "ε_g_MJ": 0.8,
+            "compensation_CO2_ppm": 20.0,
+            "optimum_T_C": 28.0,
+            "wue_relative": 3.5
+          }
+        },
+        "gain_C4_sur_C3": 2.0,
+        "specificite_rubisco_declaree": 85.0,
+        "surcout_quantique_feuille": 2.125,
+        "part_perdue_par_photorespiration": 0.5294117647058824,
+        "seuil_CO2_effondrement_C3_ppm": 50.0,
+        "note": "le C4 n'a pas inventé une chimie meilleure : il a ajouté une pompe à CO2 devant Rubisco — la limite est énergétique (ATP), pas catalytique"
+      },
+      "_titre_fr": "C3, C4, CAM : Rubisco et la photorespiration"
+    },
+    {
+      "id": "EQ-07",
+      "chemin": "agriculture_abondance.py → loi_du_minimum() → C07",
+      "formule": "Y = Y_max · minᵢ(fᵢ) ;  doubler un facteur non limitant ne change rien",
+      "resultat": "P limitant : 1.40 t/ha · P ×2 : 2.45 · P ×4 : 2.45 (plateau, limitant = eau) · eau ×2 : 2.80 · toutes les planches pleines : 3.50",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "planches": {
+          "lumière": 0.9,
+          "azote": 0.8,
+          "phosphore": 0.4,
+          "potasse": 1.0,
+          "eau": 0.7
+        },
+        "rendement_max_t_ha": 3.5,
+        "serie": [
+          {
+            "etat": "départ (P limitant)",
+            "phosphore": 0.4,
+            "rendement_t_ha": 1.4000000000000001
+          },
+          {
+            "etat": "P ×2",
+            "phosphore": 0.8,
+            "rendement_t_ha": 2.4499999999999997
+          },
+          {
+            "etat": "P ×4",
+            "phosphore": 1.6,
+            "rendement_t_ha": 2.4499999999999997
+          },
+          {
+            "etat": "P ×4 et eau ×2",
+            "phosphore": 1.6,
+            "rendement_t_ha": 2.8000000000000003
+          },
+          {
+            "etat": "toutes les planches ≥ 1",
+            "phosphore": 1.6,
+            "rendement_t_ha": 3.5
+          }
+        ],
+        "y0": 1.4000000000000001,
+        "y1": 2.4499999999999997,
+        "y2": 2.4499999999999997,
+        "y3": 2.8000000000000003,
+        "y4": 3.5,
+        "limitant_depart": "phosphore",
+        "limitant_apres_P_x4": "eau",
+        "saut_attendu_apres_P": 2.4499999999999997,
+        "plate_apres_P_x4": true,
+        "loi": "doubler un facteur non limitant ne change rien : le test est exact, ce n'est pas une opinion"
+      },
+      "_titre_fr": "Liebig : le baril ne se remplit pas à la planche haute"
+    },
+    {
+      "id": "EQ-08",
+      "chemin": "agriculture_abondance.py → azote_haber_bosch() → C08",
+      "formule": "NH3 = 82,25 % d'azote ;  31 GJ/t NH3 ⇒ 37,7 MJ par kg N",
+      "resultat": "grain : 73.68 kg N/ha sur 120 kg appliqués → NUE 61.4 % · 359 kWh par tonne de blé",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "M_NH3_g_mol": 17.031,
+        "fraction_N_dans_NH3": 0.8224414303329224,
+        "habere_gj_par_t_nh3_declare": 31.0,
+        "MJ_par_kg_N": 37.69265367316341,
+        "proteine_pct": 12.0,
+        "facteur_N_proteine": 5.7,
+        "azote_du_grain_kg_ha": 73.68421052631578,
+        "azote_applique_kg_ha": 120.0,
+        "noue_recuperation_grain": 0.6140350877192982,
+        "energie_azote_GJ_ha": 4.52311844077961,
+        "energie_azote_kwh_par_t_grain": 358.9776540301278,
+        "nh3_kg_ha": 145.9070464767616,
+        "limite": "la NUE dépend de la date, de la forme (urée, ammonitrate) et du sol : le chiffre ici est celui d'un declared, pas une mesure du dépôt"
+      },
+      "_titre_fr": "Haber-Bosch : l'azote que l'on achète"
+    },
+    {
+      "id": "EQ-09",
+      "chemin": "agriculture_abondance.py → evapotranspiration() → C09",
+      "formule": "ET = R_n/(ρL) ;  1 mm sur 1 ha = 10 m³",
+      "resultat": "R_n 100 W/m² → 3.549 mm/jour · blé 500 mm = 5000 m³/ha = 1428.57 L/kg",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "L_J_kg": 2442000.0,
+        "Rn_W_m2_declare": 100.0,
+        "flux_kg_m2_s": 4.095004095004095e-05,
+        "mm_par_jour": 3.548729727265334,
+        "mm_par_an_si_constant": 1295.2863504518468,
+        "m3_par_ha_par_mm": 10.0,
+        "et_ble_mm_an_declare": 500.0,
+        "besoin_m3_ha_an": 5000.0,
+        "besoin_litre_par_kg_grain": 1428.5714285714287,
+        "coherence_avec_eau_1mm": 0.0,
+        "energie_evaporer_ha_J": 12173370000000.0
+      },
+      "_titre_fr": "L'évapotranspiration : le même litre que le dossier EAU"
+    },
+    {
+      "id": "EQ-10",
+      "chemin": "agriculture_abondance.py → energie_irrigation() → C10",
+      "formule": "e = kWh/m³ du dossier EAU (ρgH/η à 50 m) × volume prélevé",
+      "resultat": "0.2089 kWh/m³ · goutte-à-goutte 4.178 GJ/ha vs superficielle 6.267 GJ/ha · irrigation/azote = 0.92",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "kWh_par_m3_depuis_eau": 0.208915172008547,
+        "besoin_net_m3_ha": 5000.0,
+        "economie_kWh_par_ha": 580.319922245964,
+        "energie_gouttelette_GJ_ha": 4.17830344017094,
+        "energie_superficielle_GJ_ha": 6.267455160256411,
+        "eau_prelevee_gouttelette_m3_ha": 5555.555555555556,
+        "eau_prelevee_superficielle_m3_ha": 8333.333333333334,
+        "kwh_par_tonne_gouttelette": 331.6113841405508,
+        "ratio_irrigation_sur_azote": 0.9237660907793436,
+        "coherence_identite_rho_g_h": 0.0
+      },
+      "_titre_fr": "Irriguer : le kWh/m³ hérité du dossier EAU"
+    },
+    {
+      "id": "EQ-11",
+      "chemin": "agriculture_abondance.py → eau_virtuelle() → C11",
+      "formule": "L/kg dérivé (EQ-09) contre L/kg déclaré (dossier EAU EQ-12)",
+      "resultat": "dérivé 1428.57 vs déclaré 1500 L/kg · écart 4.8 % · compartiments vert/bleu/gris fermés",
+      "statut": "SIMULÉ",
+      "detail": {
+        "litres_par_kg_declareEAU": 1500.0,
+        "litres_par_kg_derive_agriculture": 1428.5714285714287,
+        "ecart_relatif": 0.047619047619047554,
+        "grise_declare_pct": 20.0,
+        "verte_pct": 70.0,
+        "bleue_pct": 10.0,
+        "somme_compartiments": 100.0,
+        "m3_ha_par_an": 5000.0,
+        "litres_par_personne_an": 135000.0,
+        "m3_par_personne_an": 135.0,
+        "note": "l'eau verte (pluie) ne s'achète pas ; la bleue (irrigation) se compte en kWh"
+      },
+      "_titre_fr": "Eau virtuelle : deux chemins, un même chiffre"
+    },
+    {
+      "id": "EQ-12",
+      "chemin": "agriculture_abondance.py → discrimination_carbone() → C12",
+      "formule": "Δ¹³C = a + (b−a)·ci/ca ;  WUE ∝ ca·(1 − ci/ca)",
+      "resultat": "Δ 19.5‰ ⇒ ci/ca = 0.6681 · 300 → 420 ppm : efficience hydrique +40.0 % à Δ constant",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "a_diffusion_pourmille": 4.4,
+        "b_rubisco_pourmille": 27.0,
+        "delta_mesure_pourmille": 19.5,
+        "ci_sur_ca": 0.6681415929203539,
+        "ca_actuel_ppm": 420.0,
+        "ca_preindustriel_ppm": 300.0,
+        "wue_indice_actuel": 139.38053097345136,
+        "wue_indice_preindustriel": 99.55752212389383,
+        "gain_d_efficience_hydrique": 0.3999999999999999,
+        "proportionnalite_exacte": 0.0,
+        "limite": "à Δ inchangé seulement : si la plante referme ses stomates, ci/ca baisse et le gain se mange en photorespiration"
+      },
+      "_titre_fr": "Δ13C : la plante enregistre son eau"
+    },
+    {
+      "id": "EQ-13",
+      "chemin": "agriculture_abondance.py → calories_par_hectare() → C13",
+      "formule": "personnes/ha = (t/ha)·(kcal/t) / (2100 kcal/j × 365)",
+      "resultat": "blé 15.53 pers/ha · maïs 47.62 pers/ha · ratio 3.07",
+      "statut": "SIMULÉ",
+      "detail": {
+        "ble": {
+          "tonnes_par_ha": 3.5,
+          "kcal_par_tonne": 3400000.0,
+          "kcal_par_ha": 11900000.0,
+          "personnes_par_ha": 15.525114155251142,
+          "jours_personne_par_ha": 5666.666666666667
+        },
+        "mais": {
+          "tonnes_par_ha": 10.0,
+          "kcal_par_tonne": 3650000.0,
+          "kcal_par_ha": 36500000.0,
+          "personnes_par_ha": 47.61904761904762,
+          "jours_personne_par_ha": 17380.95238095238
+        },
+        "rapport_mais_sur_ble": 3.0672268907563027,
+        "kcal_par_kg_ble": 3400.0,
+        "personnes_par_ha_monde_reel_ble_2t5": 11.089367253750815,
+        "note": "rendements déclarés : 3,5 t/ha de blé et 10 t/ha de maïs sont des moyennes de bonnes terres irriguées, pas une moyenne mondiale"
+      },
+      "_titre_fr": "Ce qu'un hectare nourrit"
+    },
+    {
+      "id": "EQ-14",
+      "chemin": "agriculture_abondance.py → surface_nourrir_le_monde() → C14",
+      "formule": "S = N·(kcal/j)·365 / (kcal/ha) ;  élevage = surface × indice de conversion",
+      "resultat": "8 Md en céréales seules : 515 Mha sur 1400 Mha disponibles (2.7×) · avec 25 % d'apport animal : 1159 Mha",
+      "statut": "SIMULÉ",
+      "detail": {
+        "demande_kcal_par_an": 6132000000000000.0,
+        "surface_ble_ha": 515294117.64705884,
+        "surface_mais_ha": 168000000.0,
+        "surface_cultivable_disponible_ha": 1400000000.0,
+        "marge_cerealiere": 2.7168949771689497,
+        "part_calorique_animale_declaree": 0.25,
+        "indice_conversion_declare": 6.0,
+        "surface_avec_elevage_ha": 1159411764.7058823,
+        "marge_avec_elevage": 1.2075088787417554,
+        "limite": "ce calcul ignore l'eau, l'azote, la saison, le gaspillage (≈ 30 %) et les sols : il ne prouve rien, il borne l'ordre de grandeur"
+      },
+      "_titre_fr": "La surface pour nourrir le monde, bornée"
+    },
+    {
+      "id": "EQ-15",
+      "chemin": "agriculture_abondance.py → dette_de_sol() → C15",
+      "formule": "M = z·S·ρ ;  dette = débit d'érosion − taux de formation",
+      "resultat": "horizon 30 cm = 3900 t/ha · érosion 10 t/ha/an = 20× la formation · 390 ans avant disparition",
+      "statut": "SIMULÉ",
+      "detail": {
+        "masse_horizon_t_ha": 3900.0,
+        "profondeur_m": 0.3,
+        "densite_apparente_t_m3": 1.3,
+        "production_declaree_t_ha_an": 0.5,
+        "erosion_declaree_t_ha_an": 10.0,
+        "ratio_erosion_sur_formation": 20.0,
+        "annees_avant_horizon_perdu": 390.0,
+        "annees_pour_reformer_l_horizon": 7800.0,
+        "dette_nette_t_ha_an": 9.5,
+        "mm_par_an_equivalent_erosion": 0.7692307692307693,
+        "seuil_tolerable_declare_t_ha_an": 2.0,
+        "note": "le sol se forme à ~0,1–1 mm/an : toute érosion au-delà est un emprunt, pas un coût d'exploitation"
+      },
+      "_titre_fr": "Le sol est un stock, l'érosion un débit"
+    },
+    {
+      "id": "EQ-16",
+      "chemin": "agriculture_abondance.py → serre_led_bilan() → C16",
+      "formule": "kWh/m² = DLI·E_einstein ;  WPE = φ·E_photon/Pélec",
+      "resultat": "15 mol/m²/j : minimum 0.7330 kWh, système 1.4881 kWh (93 W/m²) · 13.58 kWh/kg de tomate (lumière seule)",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "dli_mol_m2_jour": 15.0,
+        "einstein_J_par_mol_photons": 175921.42005690734,
+        "kWh_m2_jour_minimum_photons": 0.7330059169037806,
+        "kWh_m2_jour_systeme_led": 1.4880952380952381,
+        "umol_par_joule_declare": 2.8,
+        "wall_plug_efficiency": 0.4925799761593405,
+        "photoperiode_h": 16.0,
+        "ppfd_umol_m2_s": 260.4166666666667,
+        "W_photon_m2": 45.81286980648629,
+        "W_electrique_m2": 93.0059523809524,
+        "kWh_par_m2_an": 543.1547619047619,
+        "rendement_serre_kg_m2_an_declare": 40.0,
+        "kWh_par_kg_tomate_lumiere_seule": 13.578869047619047,
+        "rapport_systeme_sur_minimum": 2.0301271842128608
+      },
+      "_titre_fr": "La lumière achetée : du DLI au kilogramme"
+    },
+    {
+      "id": "EQ-17",
+      "chemin": "agriculture_abondance.py → materiaux_optimisants() → C17",
+      "formule": "quantité/ha = f(EQ-08, EQ-09, EQ-10, EQ-16) avec facteurs stoechiométriques exacts",
+      "resultat": "8 matériaux dimensionnés · film 276.00 kg/ha · SAP 666.67 kg/ha · biochar 2000 km² de surface interne par ha traité",
+      "statut": "SIMULÉ",
+      "detail": {
+        "materiaux": [
+          {
+            "materiau": "azote ammoniacal ( Haber-Bosch, catalyseur fer )",
+            "quantite_par_ha": 145.9070464767616,
+            "unite": "kg NH3/an",
+            "energie_par_ha_GJ": 4.52311844077961,
+            "equation": "EQ-08"
+          },
+          {
+            "materiau": "film polyéthylène de paillage, 30 µm",
+            "quantite_par_ha": 276.0,
+            "unite": "kg/ha",
+            "energie_par_ha_GJ": null,
+            "equation": "géométrie × densité déclarée"
+          },
+          {
+            "materiau": "hydrogel (SAP) pour tamponner 20 mm",
+            "quantite_par_ha": 666.6666666666666,
+            "unite": "kg/ha en eau douce",
+            "quantite_en_solution_kg_ha": 4000.0,
+            "energie_par_ha_GJ": null,
+            "equation": "EQ-09 (1 mm = 10 m³/ha)"
+          },
+          {
+            "materiau": "biochar, 10 t/ha, 60 % de carbone",
+            "quantite_par_ha": 10000.0,
+            "unite": "kg/ha",
+            "surface_interne_m2_ha": 2000000000.0,
+            "surface_interne_km2_ha": 2000.0,
+            "energie_par_ha_GJ": null,
+            "equation": "stock P4 — surface BET déclarée"
+          },
+          {
+            "materiau": "minerai phosphaté (30 % P2O5) pour 25 kg P/ha",
+            "quantite_par_ha": 190.9437485202643,
+            "unite": "kg/ha",
+            "energie_par_ha_GJ": null,
+            "equation": "stoichiométrie P2O5"
+          },
+          {
+            "materiau": "potasse KCl (60 % K2O) pour 30 kg K/ha",
+            "quantite_par_ha": 60.23006291881937,
+            "unite": "kg/ha",
+            "energie_par_ha_GJ": null,
+            "equation": "stoichiométrie K2O"
+          },
+          {
+            "materiau": "LED 660 nm (AlGaInP) pour DLI 15 mol",
+            "quantite_par_ha": 930.0595238095239,
+            "unite": "kW installés/ha",
+            "energie_par_ha_GJ": 19553.57142857143,
+            "equation": "EQ-16 (annualisé, photopériode 16 h)"
+          },
+          {
+            "materiau": "goutte-à-goutte (eau prélevée)",
+            "quantite_par_ha": 5555.555555555556,
+            "unite": "m³/ha",
+            "energie_par_ha_GJ": 4.17830344017094,
+            "equation": "EQ-10"
+          }
+        ],
+        "fractions_stoechiometriques": {
+          "N_dans_NH3": 0.8224414303329224,
+          "P_dans_P2O5": 0.4364287072979999,
+          "K_dans_K2O": 0.8301502202877011,
+          "K2O_dans_KCl": 0.6317741589311584,
+          "C_dans_CH2O": 0.4000199826816759
+        },
+        "statut": "les quantités sont calculées ; les performances des matériaux sont déclarées ; la colonne d'énergie est en GJ par hectare et par an"
+      },
+      "_titre_fr": "Les matériaux, dimensionnés par les équations"
+    },
+    {
+      "id": "EQ-18",
+      "chemin": "agriculture_abondance.py → ponts_dossier() → C18",
+      "formule": "P1 ↔ plafond · P2 ↔ photopériode et siècles de sol · P3 ↔ planche la plus basse · P4 ↔ dettes",
+      "resultat": "4 ponts déclarés comme lectures, chacun borné par une limite",
+      "statut": "SPÉCIFIÉ",
+      "detail": [
+        {
+          "pilier": "P1 — Scellement",
+          "dossier": "valeur = empreinte SHA-256 du fichier qui la porte",
+          "agriculture": "le plafond quantique (EQ-02) ne se négocie pas : toute promesse au-dessus de 20 g/MJ PAR est une erreur de compte",
+          "limite": "le plafond ne dit rien du rendement d'une parcelle donnée"
+        },
+        {
+          "pilier": "P2 — Horloge",
+          "dossier": "tick 7,402 ns, 50 Hz réseau",
+          "agriculture": "photopériode, saison, délai de charge d'un sol : EQ-16 la compte en heures, EQ-15 en siècles",
+          "limite": "l'horloge agronomique est biologique, pas électronique"
+        },
+        {
+          "pilier": "P3 — Tolérance à la panne",
+          "dossier": "redondance, code correcteur",
+          "agriculture": "diversité variétale et réserves d'eau : EQ-07 montre qu'une seule planche borne tout le baril",
+          "limite": "la redondance générique n'est pas un théorème de codage"
+        },
+        {
+          "pilier": "P4 — Registre et dette",
+          "dossier": "qui doit quoi à qui",
+          "agriculture": "EQ-15 dette de sol, EQ-11 eau virtuelle, EQ-12 signature isotopique : trois comptabilités mesurables",
+          "limite": "les volumes exacts dépendent du parcellaire ; le cadre est posé, pas l'inventaire"
+        }
+      ],
+      "_titre_fr": "Quatre ponts de lecture, chacun borné"
+    }
+  ],
+  "controles": [
+    {
+      "id": "C01",
+      "nom": "bilan atomique et massique de la photosynthèse fermés",
+      "attendu": "0 / 0",
+      "obtenu": "0 / 0.00e+00",
+      "ok": true
+    },
+    {
+      "id": "C02",
+      "nom": "deux voies pour l'einstein (hc/λ et eV × N_A·e)",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000e+00",
+      "ok": true
+    },
+    {
+      "id": "C03",
+      "nom": "l'intégration numérique reproduit Stefan-Boltzmann",
+      "attendu": "< 1e-6",
+      "obtenu": "7.876e-07",
+      "ok": true
+    },
+    {
+      "id": "C04",
+      "nom": "le budget PAR dépasse la demande alimentaire de plusieurs ordres",
+      "attendu": "0.5 % → 5× à 20×",
+      "obtenu": "8.5×",
+      "ok": true
+    },
+    {
+      "id": "C05",
+      "nom": "ε déclaré reste sous le plafond quantique",
+      "attendu": "< 1",
+      "obtenu": "0.3320",
+      "ok": true
+    },
+    {
+      "id": "C06",
+      "nom": "C4 > C3 > CAM en ε, surcoût quantique cohérent",
+      "attendu": "2.00",
+      "obtenu": "2.00",
+      "ok": true
+    },
+    {
+      "id": "C07",
+      "nom": "loi du minimum : plateau exact quand le limitant change",
+      "attendu": "2.45 / 0.00",
+      "obtenu": "2.45 / 0.00e+00",
+      "ok": true
+    },
+    {
+      "id": "C08",
+      "nom": "82,25 % d'azote dans NH3 et énergie par kg N",
+      "attendu": "0.8224 / 35-40 MJ",
+      "obtenu": "0.8224 / 37.7 MJ",
+      "ok": true
+    },
+    {
+      "id": "C09",
+      "nom": "ET issue de Rn/L et 1 mm = 10 m³/ha exactement",
+      "attendu": "10.000000",
+      "obtenu": "10.000000",
+      "ok": true
+    },
+    {
+      "id": "C10",
+      "nom": "kWh/m³ identique au dossier EAU et gain du goutte-à-goutte",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000e+00",
+      "ok": true
+    },
+    {
+      "id": "C11",
+      "nom": "L/kg dérivé converge vers le L/kg déclaré (EAU)",
+      "attendu": "< 0.20",
+      "obtenu": "0.0476",
+      "ok": true
+    },
+    {
+      "id": "C12",
+      "nom": "ci/ca dans (0,1) et gain proportionnel à ca",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000e+00",
+      "ok": true
+    },
+    {
+      "id": "C13",
+      "nom": "personnes/ha et ordre de grandeur des rendements",
+      "attendu": "3.06",
+      "obtenu": "3.067",
+      "ok": true
+    },
+    {
+      "id": "C14",
+      "nom": "surface céréalière < surface cultivable, avec marge",
+      "attendu": "> 1.5",
+      "obtenu": "2.72",
+      "ok": true
+    },
+    {
+      "id": "C15",
+      "nom": "érosion déclarée supérieure à la formation : dette ouverte",
+      "attendu": "20",
+      "obtenu": "20.0",
+      "ok": true
+    },
+    {
+      "id": "C16",
+      "nom": "kWh système > kWh photons, WPE et watts cohérents avec le kWh",
+      "attendu": "2.030",
+      "obtenu": "93.0 W/m²",
+      "ok": true
+    },
+    {
+      "id": "C17",
+      "nom": "facteurs stoechiométriques exacts et quantités positives",
+      "attendu": "0.4364 / 0.8302",
+      "obtenu": "0.4364 / 0.8302",
+      "ok": true
+    },
+    {
+      "id": "C18",
+      "nom": "quatre ponts déclarés, chacun borné",
+      "attendu": "4",
+      "obtenu": "4",
+      "ok": true
+    }
+  ],
+  "resume": {
+    "equations": 18,
+    "controles_ok": 18,
+    "controles_total": 18,
+    "statuts": {
+      "OPÉRATIONNEL": 10,
+      "SIMULÉ": 7,
+      "SPÉCIFIÉ": 1
+    },
+    "plafond_quantique_g_par_MJ_PAR": 20.079820792104822,
+    "einstein_680nm_kJ": 175.92142005690735,
+    "ppfd_1000W_mol": 1673.1300206633648,
+    "MJ_par_kg_N_haber": 37.69265367316341,
+    "kWh_par_m3_irrigation": 0.208915172008547,
+    "litres_par_kg_ble_derive": 1428.5714285714287,
+    "personnes_par_ha_ble": 15.525114155251142,
+    "surface_monde_Mha": 515.2941176470589,
+    "annees_de_sol_reste": 390.0,
+    "kWh_par_kg_tomate_led": 13.578869047619047
+  }
+}

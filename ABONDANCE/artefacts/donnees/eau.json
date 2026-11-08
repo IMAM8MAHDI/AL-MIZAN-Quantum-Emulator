@@ -1,0 +1,626 @@
+{
+  "version": "1.0",
+  "theme": "EAU — ABONDANCE, DESSALEMENT ET CYCLE",
+  "source": {
+    "herite_de": "electricite_abondance.py (même patron EQ → fonction → contrôle)",
+    "video_origine": "Électricité : tout s'éclaire ! | Déclics | ARTE",
+    "video_url": "https://www.youtube.com/watch?v=cFx7Cm-c2nA",
+    "transcript": "absent (timedtext : 0 octet en json3, srv3 et xml)",
+    "fil_conducteur": "Thalès déjà tenait l'eau pour principe des choses ; Archimède, Pascal, Bernoulli, van 't Hoff sont les prédécesseurs nommés ici"
+  },
+  "invariants": {
+    "rho_convention_kg_m3": 1000.0,
+    "rho_eau_douce_kg_m3": 997.0,
+    "rho_eau_mer_kg_m3": 1025.0,
+    "rho_glace_kg_m3": 917.0,
+    "g_m_s2": 9.80665,
+    "M_eau_kg_mol": 0.018015,
+    "R_vapeur_J_kg_K": 461.52998157941937,
+    "kwh_J": 3600000.0,
+    "salinite_g_kg": 35.0,
+    "T_K": 298.15
+  },
+  "valeurs_declarees": {
+    "SEC_osmose_inverse_kWh_m3": 3.0,
+    "recuperation_RO": 0.45,
+    "fuites_reseau_pct": 0.3,
+    "chaleur_latente_J_kg": 2442000.0,
+    "i_effectif_NaCl": 1.78,
+    "pression_usine_RO_bar": 60.0,
+    "statut": "ordres de grandeur de littérature, non mesurés dans ce dépôt"
+  },
+  "equations": [
+    {
+      "id": "EQ-01",
+      "chemin": "eau_abondance.py → repartition_terre() → C01",
+      "formule": "V_douce = V_totale × 2,59 % ;  V_douce = Σ V_compartiments",
+      "resultat": "douce = 35.90 × 10⁶ km³ sur 1386.00 × 10⁶ km³ · renouvelable 0.03 % du stock · 2991 ans pour rajeunir toute l'eau douce",
+      "statut": "SIMULÉ",
+      "detail": {
+        "total_km3": 1386000000.0,
+        "sale_pct": 97.41,
+        "douce_km3": 35897400.0,
+        "douce_pct": 2.59,
+        "repartition_douce_pct": {
+          "glaces et neige permanente": 68.7,
+          "nappes souterraines": 30.8,
+          "surface et autre": 0.5
+        },
+        "volumes_km3": {
+          "glaces et neige permanente": 24661513.8,
+          "nappes souterraines": 11056399.2,
+          "surface et autre": 179487.0
+        },
+        "somme_repartition": 100.0,
+        "fermeture_des_volumes": 0.0,
+        "debit_renouvelable_km3_an": 12000.0,
+        "annees_pour_renouveler_la_douce": 2991.45,
+        "fractions": {
+          "douce_sur_totale": 0.0259,
+          "renouvelable_sur_douce": 0.00033428604857176287
+        }
+      },
+      "_titre_fr": "Toute l'eau, puis la part douce"
+    },
+    {
+      "id": "EQ-02",
+      "chemin": "eau_abondance.py → hydrostatique() → C02",
+      "formule": "P = ρ·g·h ;  F = P·S",
+      "resultat": "10 m (douce 25 °C) : 97.772 kPa = 1.965 atm absolue · 100 m en mer : 1005.2 kPa · ρgH(100 m) = 980 665.0000 J/m³",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "table": [
+          {
+            "h_m": 1.0,
+            "P_Pa": 10051.81625,
+            "atmospheres": 0.09920371329879102
+          },
+          {
+            "h_m": 10.0,
+            "P_Pa": 100518.1625,
+            "atmospheres": 0.9920371329879103
+          },
+          {
+            "h_m": 100.0,
+            "P_Pa": 1005181.625,
+            "atmospheres": 9.920371329879101
+          },
+          {
+            "h_m": 10994.0,
+            "P_Pa": 110509667.85249999,
+            "atmospheres": 1090.6456240069083
+          }
+        ],
+        "P_a_10m_Pa": 97772.3005,
+        "atm_a_10m": 1.9649375820379966,
+        "force_par_m2_a_1m_N": 9777.23005,
+        "J_par_m3_convention_std": 980665.0,
+        "J_par_m3_eau_douce_25C": 977723.005,
+        "J_par_m3_eau_de_mer": 1005181.625,
+        "coherence_avec_elec": 0.0,
+        "relation": "P = ρ·g·h ; la forme du récipient ne compte pas (Pascal)"
+      },
+      "_titre_fr": "L'hydrostatique : chaque mètre compte"
+    },
+    {
+      "id": "EQ-03",
+      "chemin": "eau_abondance.py → architecte_flottant() → C03",
+      "formule": "F_poussée = ρ_fluide·V·g ;  part immergée = ρ_objet/ρ_fluide",
+      "resultat": "iceberg immergé 89.46 % · émerge 10.54 % · 50 000 t ⇒ 4.878 × 10^4 m³ déplacés",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "part_immergee_glace": 0.8946341463414634,
+        "part_emergee_glace": 0.10536585365853657,
+        "poussee_N_par_m3_immerge": 10051.81625,
+        "volume_deplace_m3_pour_50000t": 48780.48780487805,
+        "masse_d_eau_deplacee_kg": 50000000.0,
+        "masse_navire_kg": 50000000.0,
+        "equilibre": 0.0,
+        "ratio_flottaison_eau_douce": 0.9197592778335005
+      },
+      "_titre_fr": "Archimède : la glace dit la densité"
+    },
+    {
+      "id": "EQ-04",
+      "chemin": "eau_abondance.py → continuite() → C04",
+      "formule": "Q = A·v constant ;  v = Q/A",
+      "resultat": "10 m³/s : 10 m² → 1.0 m/s, 0,5 m² → 20.0 m/s · écart max 0.00e+00",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "debit_m3_s": 10.0,
+        "sections_m2": [
+          10.0,
+          2.0,
+          0.5
+        ],
+        "vitesses_m_s": [
+          1.0,
+          5.0,
+          20.0
+        ],
+        "produits": [
+          10.0,
+          10.0,
+          10.0
+        ],
+        "max_ecart": 0.0,
+        "rapport_v_max_sur_v_min": 20.0,
+        "rapport_sections": 20.0
+      },
+      "_titre_fr": "Continuité : ce qui entre sort, plus vite ou plus lentement"
+    },
+    {
+      "id": "EQ-05",
+      "chemin": "eau_abondance.py → bernoulli() → C05",
+      "formule": "P + ½ρv² + ρgh = const ;  v = √(2gh)",
+      "resultat": "10 m → 14.005 m/s · 100 m → 44.29 m/s · dPE/dh = 9.806650 m/s²",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "hauteurs_m": [
+          1.0,
+          10.0,
+          100.0
+        ],
+        "vitesses_m_s": [
+          4.428690551393267,
+          14.00474919446971,
+          44.28690551393267
+        ],
+        "charge_cinematique_Pa": [
+          9777.230049999998,
+          97772.3005,
+          977723.0050000001
+        ],
+        "dPE_dh": 9.806649991617178,
+        "attendu_g": 9.80665,
+        "v10m_m_s": 14.00474919446971,
+        "kg_par_m3_par_v2_sur_2": 1.0
+      },
+      "_titre_fr": "Bernoulli : la hauteur transformée en vitesse"
+    },
+    {
+      "id": "EQ-06",
+      "chemin": "eau_abondance.py → pompage() → C06",
+      "formule": "e = ρ·g·H/η (par m³) ;  P = e·Q",
+      "resultat": "50 m à η 0,65 → 0.2089 kWh/m³ · 1000 m³/j → 8.7 kW en moyenne · 0.26× la borne de EQ-08",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "table": [
+          {
+            "H_m": 10.0,
+            "J_par_m3": 97772.3005,
+            "kWh_par_m3": 0.02715897236111111,
+            "kWh_par_m3_rendement": 0.0417830344017094
+          },
+          {
+            "H_m": 50.0,
+            "J_par_m3": 488861.5025,
+            "kWh_par_m3": 0.13579486180555556,
+            "kWh_par_m3_rendement": 0.208915172008547
+          },
+          {
+            "H_m": 100.0,
+            "J_par_m3": 977723.005,
+            "kWh_par_m3": 0.2715897236111111,
+            "kWh_par_m3_rendement": 0.417830344017094
+          },
+          {
+            "H_m": 300.0,
+            "J_par_m3": 2933169.015,
+            "kWh_par_m3": 0.8147691708333333,
+            "kWh_par_m3_rendement": 1.253491032051282
+          }
+        ],
+        "rendement_declare": 0.65,
+        "cout_euro_par_m3_a_0_12_kWh": [
+          0.005013964128205128,
+          0.02506982064102564,
+          0.05013964128205128,
+          0.15041892384615382
+        ],
+        "pour_1000_m3_jour_kW": 8.704798833689459,
+        "ratio_pompage_sur_borne_dessalement": 0.25678202560972396
+      },
+      "_titre_fr": "Pomper : le prix en kWh du mètre cube"
+    },
+    {
+      "id": "EQ-07",
+      "chemin": "eau_abondance.py → osmose() → C07",
+      "formule": "π = i·c·R·T ;  c en osmoles par m³",
+      "resultat": "35 g/kg → π idéale 30.44 bar (29.69 bar par la voie molaire), π réelle ≈ 27.1 bar · colonne d'eau de 302.8 m",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "mol_eau_par_kg": 55.50929780738274,
+        "mol_sel_par_kg": 0.5989048596851472,
+        "osmoles_par_kg": 1.1978097193702943,
+        "c_osm_osm_par_m3": 1227.7549623545517,
+        "fraction_molaire_sel": 0.021122744072340435,
+        "x_eau": 0.9788772559276596,
+        "pi_ideale_Pa": 3043551.7945580315,
+        "pi_ideale_bar": 30.435517945580315,
+        "pi_ideale_bar_seconde_voie": 29.693188239590548,
+        "ecart_relatif_deux_voies": 0.024390243902439095,
+        "i_effectif_declare": 1.78,
+        "pi_reelle_bar": 27.08761097156648,
+        "valeur_litterature_bar_declaree": 27.0,
+        "hauteur_equivalente_m": 302.78625462916034,
+        "pression_usine_declaree_bar": 60.0,
+        "marge_sur_pi": 1.9713809407575034
+      },
+      "_titre_fr": "van 't Hoff : la pression osmotique"
+    },
+    {
+      "id": "EQ-08",
+      "chemin": "eau_abondance.py → travail_minimum_dessalement() → C08",
+      "formule": "w_min = R·T·ln(1/x_eau) par mole d'eau douce extraite",
+      "resultat": "x_eau = 0.978877 → 0.8136 kWh/m³ (borne) · RO déclarée 3.0 kWh/m³ = 3.69× la borne",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "x_eau": 0.9788772559276595,
+        "J_par_mol_eau": 52.92330642946861,
+        "J_par_mol_eau_approx_diluee": 52.36237490262064,
+        "ecart_approx_diluee": 0.010598950910135066,
+        "J_par_m3": 2928922.3708121125,
+        "kWh_par_m3": 0.813589547447809,
+        "monde_m3_par_jour_declare": 12000000000.0,
+        "monde_kWh_par_jour_a_la_borne": 9763074569.373707,
+        "monde_TW_moyen_a_la_borne": 1.1299854825664012e-07,
+        "sec_ro_declare_kWh_m3": 3.0,
+        "ratio_ro_sur_borne": 3.6873630068267897,
+        "a_remarquer": "borne réversible isotherme ; une usine paie aussi les pertes de charge, le pompage et la saumure"
+      },
+      "_titre_fr": "Le travail minimum du dessalement"
+    },
+    {
+      "id": "EQ-09",
+      "chemin": "eau_abondance.py → recuperation_concentration() → C09",
+      "formule": "C_saumure = C_alim/(1−Y) ;  bilan salin fermé",
+      "resultat": "Y = 0,45 → 63.6 g/kg (1.82×) · 1.22 m³ rejetés par m³ produit · résidu 0.00e+00",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "table": [
+          {
+            "Y": 0.2,
+            "saumure_g_kg": 43.75,
+            "sur_concentration": 1.25,
+            "eau_rejetee_m3_par_m3_produit": 4.0
+          },
+          {
+            "Y": 0.45,
+            "saumure_g_kg": 63.63636363636363,
+            "sur_concentration": 1.8181818181818181,
+            "eau_rejetee_m3_par_m3_produit": 1.2222222222222223
+          },
+          {
+            "Y": 0.6,
+            "saumure_g_kg": 87.5,
+            "sur_concentration": 2.5,
+            "eau_rejetee_m3_par_m3_produit": 0.6666666666666667
+          },
+          {
+            "Y": 0.75,
+            "saumure_g_kg": 140.0,
+            "sur_concentration": 4.0,
+            "eau_rejetee_m3_par_m3_produit": 0.33333333333333326
+          }
+        ],
+        "c_feed_g_kg": 35.0,
+        "residus_bilan_max": 0.0,
+        "sec_pratique_declare_kWh_m3": 3.0,
+        "hypothese": "volumes additifs et masse volumique commune : le bilan est écrit en concentrations, pas en volumes exacts",
+        "limite": "au-delà de Y ≈ 0,6 la saumure précipite (gypse, calcaire) : le modèle linéaire s'arrête là"
+      },
+      "_titre_fr": "Bilan salin : la saumure est comptée"
+    },
+    {
+      "id": "EQ-10",
+      "chemin": "eau_abondance.py → vapeur_eau_air() → C10",
+      "formule": "e_s(Magnus) = 6,1094·exp(17,625·t/(t+243,04)) ;  d ln e/dT = L/(R_v·T²)",
+      "resultat": "25 °C : Magnus 31.617 hPa, Clausius 31.002 hPa · écart 1.95 % · évaporer 1 m³ coûte 676.3 kWh",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "serie_magnus": [
+          {
+            "t_C": 0.0,
+            "e_hPa": 6.1094
+          },
+          {
+            "t_C": 10.0,
+            "e_hPa": 12.260206350234858
+          },
+          {
+            "t_C": 20.0,
+            "e_hPa": 23.334406230993576
+          },
+          {
+            "t_C": 25.0,
+            "e_hPa": 31.61736035696691
+          },
+          {
+            "t_C": 30.0,
+            "e_hPa": 42.366502512954746
+          },
+          {
+            "t_C": 40.0,
+            "e_hPa": 73.74716751520093
+          }
+        ],
+        "magnus_25C_hPa": 31.61736035696691,
+        "clausius_clapeyron_25C_hPa": 31.002247067079587,
+        "ecart_relatif_25C": 0.019454922325664085,
+        "melange_g_kg_air_sature_25C": 20.033969275089383,
+        "r_vapeur_J_kg_K": 461.52998157941937,
+        "chaleur_latente_J_kg": 2442000.0,
+        "evaporer_1_m3_exige_J": 2434674000.0,
+        "equivalent_kWh_par_m3": 676.2983333333333,
+        "pluie_de_1mm_en_L_par_m2": 1.0
+      },
+      "_titre_fr": "Deux lois pour une vapeur"
+    },
+    {
+      "id": "EQ-11",
+      "chemin": "eau_abondance.py → cycle_global() → C11",
+      "formule": "P_terre = ET_terre + R ;  P_océan + R = ET_océan",
+      "resultat": "119 000 = 72 000 + 47 000 km³/an · 799 mm/an sur les terres émergées · 1029 mm/an sur la planète",
+      "statut": "SIMULÉ",
+      "detail": {
+        "km3_par_an": {
+          "precip_terre": 119000.0,
+          "evap_terre": 72000.0,
+          "ruissellement": 47000.0,
+          "precip_ocean": 406000.0,
+          "evap_ocean": 453000.0
+        },
+        "solde_terre": 0.0,
+        "solde_ocean": 0.0,
+        "cloture_planetaire": 0.0,
+        "mm_par_an_sur_terre_emergee": 798.6577181208053,
+        "mm_par_an_planete": 1029.2704922853725,
+        "habitant_equivalent_m3_par_an": 5875.0,
+        "ratio_ruissellement_sur_boisson": 1958.3333333333333,
+        "besoin_boisson_m3_par_an": 3.0,
+        "avertissement": "la table souvent citée (précipitations océan 419000, évaporation 453000) laisse un trou de -13000 km³/an ; ici 406 000 ferme le bilan, et l'écart est revendiqué"
+      },
+      "_titre_fr": "Le cycle global ferme ses deux colonnes"
+    },
+    {
+      "id": "EQ-12",
+      "chemin": "eau_abondance.py → eau_par_aliment() → C12",
+      "formule": "V_eau = Σᵢ (L/kg)ᵢ × mᵢ ;  mᵢ en kg par personne et par an",
+      "resultat": "bœuf/tomate = 60× · régime déclaré ≈ 2201 L/j contre 150 L/j au robinet",
+      "statut": "SIMULÉ",
+      "detail": {
+        "litres_par_kg": {
+          "blé": 1500.0,
+          "riz": 2800.0,
+          "pomme de terre": 300.0,
+          "tomate": 250.0,
+          "œuf": 4200.0,
+          "lait (litre)": 350.0,
+          "poulet": 4300.0,
+          "bœuf": 15000.0
+        },
+        "kilos_par_personne_an_declares": {
+          "blé": 150.0,
+          "riz": 80.0,
+          "pomme de terre": 90.0,
+          "tomate": 30.0,
+          "œuf": 15.0,
+          "lait (litre)": 60.0,
+          "poulet": 20.0,
+          "bœuf": 10.0
+        },
+        "litres_par_personne_par_an": 803500.0,
+        "litres_par_personne_par_jour": 2201.3698630136987,
+        "domestique_declare_litres_par_jour": 150.0,
+        "ratio_agricole_sur_domestique": 14.67579908675799,
+        "seuil_potabilite_g_kg": 1.0,
+        "litres_par_m3": 1000.0,
+        "ratio_boeuf_sur_tomate": 60.0,
+        "masse_alimentaire_totale_kg_an": 455.0
+      },
+      "_titre_fr": "L'eau dans l'assiette"
+    },
+    {
+      "id": "EQ-13",
+      "chemin": "eau_abondance.py → salinite_conductivite() → C13",
+      "formule": "S (g/kg) ≈ 0,64 × EC (dS/m)",
+      "resultat": "35 g/kg → 54.7 dS/m = 5.47 S/m · seuil potable à 1.56 dS/m",
+      "statut": "SIMULÉ",
+      "detail": {
+        "facteur_declare": 0.64,
+        "EC_eau_de_mer_dS_m": 54.6875,
+        "EC_eau_saumatre_dS_m": 4.6875,
+        "EC_seuil_potable_dS_m": 1.5625,
+        "conductivite_eau_de_mer_S_m": 5.46875,
+        "seuil_saumatre_g_kg": 3.0,
+        "seuil_potable_g_kg": 1.0,
+        "reciproque": 0.64
+      },
+      "_titre_fr": "Salinité et conductivité : le pont de l'instrument"
+    },
+    {
+      "id": "EQ-14",
+      "chemin": "eau_abondance.py → stockage_gravitaire_eau() → C14",
+      "formule": "E = ρ·g·H·V ;  même membre que le dossier électricité",
+      "resultat": "1 km³ sous 100 m = 272.4 GWh = 0.2724 TWh · décharge en 8 h = 34.1 GW · 0.272 Wh/kg d'eau",
+      "statut": "OPÉRATIONNEL",
+      "detail": {
+        "volume_m3": 1000000000.0,
+        "hauteur_m": 100.0,
+        "rho_convention_kg_m3": 1000.0,
+        "energie_J": 980665000000000.0,
+        "energie_kWh": 272406944.4444444,
+        "energie_GWh": 272.40694444444443,
+        "energie_TWh": 0.2724069444444444,
+        "J_par_m3": 980665.0,
+        "identique_a_electricite_hydro": 0.0,
+        "puissance_decharge_8h_W": 34050868055.555557,
+        "Wh_par_kg_d_eau": 0.2724069444444444,
+        "rendement_round_trip_declare": 0.8,
+        "energie_utile_GWh": 217.92555555555555,
+        "comparaison_lithium_Wh_kg_declaree": 250.0
+      },
+      "_titre_fr": "Stocker l'eau, c'est stocker la même formule qu'en électricité"
+    },
+    {
+      "id": "EQ-15",
+      "chemin": "eau_abondance.py → ponts_dossier() → C15",
+      "formule": "P1 ↔ borne · P2 ↔ cycles · P3 ↔ redondance · P4 ↔ dette hydrologique",
+      "resultat": "4 ponts déclarés comme lectures, chacun borné par une limite",
+      "statut": "SPÉCIFIÉ",
+      "detail": [
+        {
+          "pilier": "P1 — Scellement",
+          "dossier": "valeur = empreinte SHA-256 du fichier qui la porte",
+          "eau": "bornes thermodynamiques : le travail minimum ne se négocie pas",
+          "limite": "la borne n'est pas un devis d'usine"
+        },
+        {
+          "pilier": "P2 — Horloge",
+          "dossier": "tick 7,402 ns, 50 Hz réseau",
+          "eau": "cycle de l'eau : évaporation le jour, rosée la nuit, mousson à saison fixe",
+          "limite": "analogie de périodicité, aucun lien causal avec l'horloge du noyau"
+        },
+        {
+          "pilier": "P3 — Tolérance à la panne",
+          "dossier": "redondance, code correcteur",
+          "eau": "double alimentation, stockage enterré, nappe de secours",
+          "limite": "l'ingénierie réseau n'est pas de la théorie des codes"
+        },
+        {
+          "pilier": "P4 — Registre et dette",
+          "dossier": "qui doit quoi à qui",
+          "eau": "nappes surexploitées = dette hydrologique ; eau virtuelle = commerce implicite",
+          "limite": "comptabilité déclarative : les volumes exacts manquent, le cadre est posé"
+        }
+      ],
+      "_titre_fr": "Quatre ponts de lecture, chacun borné"
+    }
+  ],
+  "controles": [
+    {
+      "id": "C01",
+      "nom": "la répartition de l'eau douce ferme à 100 % et en volumes",
+      "attendu": "100.0",
+      "obtenu": "100.0",
+      "ok": true
+    },
+    {
+      "id": "C02",
+      "nom": "ρgH(100 m) identique aux deux dossiers (convention ρ = 1000)",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000",
+      "ok": true
+    },
+    {
+      "id": "C03",
+      "nom": "poids d'eau déplacée = poids du navire",
+      "attendu": "0",
+      "obtenu": "0.000000",
+      "ok": true
+    },
+    {
+      "id": "C04",
+      "nom": "A·v constant sur trois sections",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000e+00",
+      "ok": true
+    },
+    {
+      "id": "C05",
+      "nom": "d(gh)/dh = g et ½ρv² = ρgh (Torricelli)",
+      "attendu": "9.806650",
+      "obtenu": "9.806650",
+      "ok": true
+    },
+    {
+      "id": "C06",
+      "nom": "kWh/m³ = ρgH/3,6 MJ/η et croît avec H",
+      "attendu": "0.208915",
+      "obtenu": "0.208915",
+      "ok": true
+    },
+    {
+      "id": "C07",
+      "nom": "deux voies pour π, un ordre, et le réel sous l'idéal",
+      "attendu": "≈ 27 bar déclarés",
+      "obtenu": "27.09 bar",
+      "ok": true
+    },
+    {
+      "id": "C08",
+      "nom": "ln(1/x) contre son développement : la voie diluée suit l'exacte",
+      "attendu": "< 0.02",
+      "obtenu": "0.010599",
+      "ok": true
+    },
+    {
+      "id": "C09",
+      "nom": "bilan salin fermé pour quatre taux de récupération",
+      "attendu": "0.000000000000",
+      "obtenu": "0.000000000000e+00",
+      "ok": true
+    },
+    {
+      "id": "C10",
+      "nom": "Magnus ≈ Clausius–Clapeyron à 25 °C",
+      "attendu": "31.617",
+      "obtenu": "31.002",
+      "ok": true
+    },
+    {
+      "id": "C11",
+      "nom": "le cycle ferme : terre, océan et planète",
+      "attendu": "0.0",
+      "obtenu": "0.000000",
+      "ok": true
+    },
+    {
+      "id": "C12",
+      "nom": "L/j issu des masses réellement consommées",
+      "attendu": "60",
+      "obtenu": "60",
+      "ok": true
+    },
+    {
+      "id": "C13",
+      "nom": "S/EC = 0,64 dans les deux sens et conversion en S/m",
+      "attendu": "0.640000",
+      "obtenu": "0.640000",
+      "ok": true
+    },
+    {
+      "id": "C14",
+      "nom": "1 km³ sous 100 m = 272,4 GWh et même ρgH qu'EQ-14 électricité",
+      "attendu": "272.407",
+      "obtenu": "272.407",
+      "ok": true
+    },
+    {
+      "id": "C15",
+      "nom": "quatre ponts déclarés, chacun borné",
+      "attendu": "4",
+      "obtenu": "4",
+      "ok": true
+    }
+  ],
+  "resume": {
+    "equations": 15,
+    "controles_ok": 15,
+    "controles_total": 15,
+    "statuts": {
+      "OPÉRATIONNEL": 10,
+      "SIMULÉ": 4,
+      "SPÉCIFIÉ": 1
+    },
+    "travail_minimum_kWh_m3": 0.813589547447809,
+    "pression_osmotique_ideale_bar": 30.435517945580315,
+    "pompage_50m_kWh_m3": 0.208915172008547,
+    "energie_1km3_sous_100m_GWh": 272.40694444444443,
+    "part_immergee_glace": 0.8946341463414634,
+    "pression_vapeur_25C_hPa": 31.61736035696691,
+    "precipitations_terre_mm_par_an": 798.6577181208053,
+    "eau_virtuelle_L_par_personne_par_jour": 2201.3698630136987
+  }
+}
