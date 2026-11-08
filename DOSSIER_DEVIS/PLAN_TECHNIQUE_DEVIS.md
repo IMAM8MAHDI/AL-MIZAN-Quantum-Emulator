@@ -1,6 +1,6 @@
 # DOSSIER TECHNIQUE POUR DEVIS — Gravure de masques logiques
 **Projet : AmalMoteur65 — Tuile logique Steane [[7,1,3]] sur Silicium Spin**
-*AL-MIZAN × Astro-Code · DOI 10.5281/zenodo.24028243 · 7 novembre 2026*
+*AL-MIZAN × Astro-Code · DOI 10.5281/zenodo.24028242 · 7 novembre 2026*
 
 ---
 

@@ -64,7 +64,7 @@ from noyau_matrice_densite import (  # noqa: E402
 import ponts_systeme  # noqa: E402
 
 DOSSIER_RESULTATS = RACINE / "resultats"
-VERSION = "1.0"
+VERSION = "2.0"
 
 
 # ---------------------------------------------------------------------------

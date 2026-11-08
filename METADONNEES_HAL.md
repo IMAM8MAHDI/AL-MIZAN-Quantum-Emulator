@@ -49,7 +49,7 @@ https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 https://doi.org/10.5281/zenodo.24028242
 
 ## Version
-1.0.0
+2.0.0
 
 ## Date de publication
 7 novembre 2026
