@@ -6,7 +6,7 @@
 
 # Un chercheur français publie un émulateur quantique open source avec certificats mathématiques scellés pour les problèmes du millénaire
 
-**Valence, France — 8 novembre 2026** — M. Ahmed EL BAHLOUL, chercheur indépendant de l'initiative IMAM8MAHDI, annonce la publication de **AL-MIZAN v3.0**, un émulateur quantique complet implémenté en Python pur sans aucune dépendance externe, accompagné de certificats mathématiques cryptographiquement scellés pour la vérification bornée de problèmes du millénaire.
+**Valence, France — 9 novembre 2026** — M. Ahmed EL BAHLOUL, chercheur indépendant de l'initiative IMAM8MAHDI, annonce la publication de **AL-MIZAN v3.2.2**, un émulateur quantique complet implémenté en Python pur sans aucune dépendance externe, accompagné de certificats mathématiques cryptographiquement scellés pour la vérification bornée de problèmes du millénaire.
 
 ### Une architecture sans précédent
 
@@ -30,8 +30,8 @@ Le logiciel fonctionne sur tout environnement Python 3.10+ sans accès matériel
 
 - **GitHub** : https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 - **Zenodo (archive peer-reviewed)** : https://doi.org/10.5281/zenodo.24028242 — DOI de concept, c'est la référence citable, il résout toujours vers la dernière version déposée
-- **Dernière version** : v3.2.0, https://doi.org/10.5281/zenodo.24074846 (9 novembre 2026) — dossiers FONDATION et CHIFFRES, audit des quatre piliers sur le parc entier
-- **Versions précédentes** : v3.1.0, https://doi.org/10.5281/zenodo.24062292 (8 novembre 2026) ; v3.0.0, https://doi.org/10.5281/zenodo.24054060
+- **Dernière version** : v3.2.2 — cette archive. Le dossier HORLOGERIE s'y ajoute : identité d'horloge `dx + dy + dz = dt` rendue en arithmétique rationnelle exacte, vérificateur autonome, et un écran de laboratoire qui joue la trajectoire 3D et affiche la stabilité mesurée de l'horloge. Le DOI de version que Zenodo émet à la publication figure dans `README_DEPOT.md` du dépôt Git ; le DOI de concept ci-dessus résout toujours vers la dernière version déposée.
+- **Versions précédentes** : v3.2.1, https://doi.org/10.5281/zenodo.24075082 (9 novembre 2026) ; v3.2.0, https://doi.org/10.5281/zenodo.24074846 (9 novembre 2026) ; v3.1.0, https://doi.org/10.5281/zenodo.24062292 (8 novembre 2026) ; v3.0.0, https://doi.org/10.5281/zenodo.24054060
 - **Licence** : AGPL-3.0 / GPL-3.0 (double licence open source)
 
 ### À propos de l'auteur
