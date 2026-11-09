@@ -151,7 +151,7 @@ py -m unittest tests.test_emulateur -v                           # 53 tests
 py -m unittest horloge_noyau.tests.test_horloge_noyau_complet     # 10 tests
 cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
     tests.test_eau_abondance tests.test_agriculture_abondance     # 107 tests
-cd CHIFFRES && py -m unittest tests.test_chiffres                  # 31 tests
+cd CHIFFRES && py -m unittest tests.test_chiffres                  # 32 tests
 cd FONDATION && py -m unittest tests.test_fondation                # 45 tests
 py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide             # 5 modules CONFORME
 ```
@@ -166,7 +166,7 @@ et le spectre hermitien complexe de la matrice densité.
 **0 ignoré, et plus rien d'extérieur à l'archive.** Les deux ponts
 (Steane, transducteur) se chargent depuis `moteur/` et la capsule
 `horloge_noyau` depuis `bibliotheques/` : un `ASTRO-Q°ODE_SYSTEME`
-voisin n'est plus requis. 246 tests au total, tous verts — et les 89
+voisin n'est plus requis. 247 tests au total, tous verts — et les 89
 équations du parc (ABONDANCE 54, CHIFFRES 17, FONDATION 18) portent
 chacune sa clause de limite, contrôlée par le même audit.
 

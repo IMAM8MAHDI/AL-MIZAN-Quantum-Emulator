@@ -16,6 +16,7 @@ Stdlib uniquement. Domaine court : rien ici ne demande les 10⁶ décimales.
 
 import json
 import math
+import re
 import sys
 import tempfile
 import unittest
@@ -28,6 +29,7 @@ if str(RACINE_DOSSIER) not in sys.path:
     sys.path.insert(0, str(RACINE_DOSSIER))
 
 import generer_chiffres as GEN                                          # noqa: E402
+import generer_pages as PAG                                             # noqa: E402
 import chiffres_pi as CH                                                # noqa: E402
 
 
@@ -371,6 +373,18 @@ class TestArtefacts(unittest.TestCase):
         reconstruit = CH.octets_confrontation_csv(cellules)
         self.assertEqual(reconstruit.replace(b"\r\n", b"\n"), publie.replace(b"\r\n", b"\n"))
         self.assertEqual(len(cellules), 108)
+
+    def test_le_compte_de_tests_annonce_est_le_compte_reel(self):
+        """Les pages, dans les trois langues, affichent « N tests » au pied de la
+        commande de test. Le compte vient du chargeur unittest lui-même : ajouter un
+        test sans retoucher `generer_pages.COMMANDES` fait mentir la page, et ce test
+        le signale."""
+        compte = unittest.TestLoader().loadTestsFromModule(
+            sys.modules[__name__]).countTestCases()
+        self.assertGreaterEqual(compte, 30)
+        for langue, bloc in PAG.COMMANDES.items():
+            ligne = next(l for l in bloc.splitlines() if "tests.test_chiffres" in l)
+            self.assertEqual(int(re.search(r"#\s*(\d+)", ligne).group(1)), compte, langue)
 
 
 class TestAttributionVideo(unittest.TestCase):

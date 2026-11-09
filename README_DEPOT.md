@@ -49,7 +49,7 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── chiffres_pi.py           # 108 cellules pré-déclarées puis confrontées
 │   ├── artefacts/               # predictions / mesures / confrontation (n = 10⁶)
 │   ├── SOURCES_ET_PREDECESSEURS.md
-│   └── tests/                   # 31 tests
+│   └── tests/                   # 32 tests
 ├── FONDATION/             # la base universelle : 4 piliers, 3 couches, 18 équations
 │   ├── fondation_base.py        # axiome hors matrice → prédiction gelée → NA62
 │   ├── generer_fondation.py     # pages FR/EN/AR + SVG + JSON + CSV Excel
@@ -175,13 +175,13 @@ py -m unittest tests.test_emulateur                     # 53 tests
 py -m unittest horloge_noyau.tests.test_horloge_noyau_complet   # 10 tests
 cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
     tests.test_eau_abondance tests.test_agriculture_abondance   # 107 tests
-cd CHIFFRES && py -m unittest tests.test_chiffres                #  31 tests
+cd CHIFFRES && py -m unittest tests.test_chiffres                #  32 tests
 cd FONDATION && py -m unittest tests.test_fondation              #  45 tests
 
 py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 5 modules CONFORME
 ```
 
-246 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
+247 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
 sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
 
 ## Les quatre piliers, appliqués à tout le dépôt

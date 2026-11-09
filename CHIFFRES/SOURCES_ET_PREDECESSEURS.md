@@ -7,7 +7,7 @@ résultats relus et dirigés par l'auteur humain.
 
 **Périmètre** : `generer_chiffres.py` (3 productrices de décimales certifiées, 2 voies
 indépendantes par constante) et `chiffres_pi.py` (17 équations, 17 contrôles, 108 cellules
-pré-déclarées), `tests/test_chiffres.py` (31 tests). Domaine des tests `n = 20 000`, domaine
+pré-déclarées), `tests/test_chiffres.py` (32 tests). Domaine des tests `n = 20 000`, domaine
 publicé `n = 10^6` avec artefacts (`artefacts/*.json`, `artefacts/confrontation.csv`).
 
 Ce fichier répond à une seule question : **qui a posé la brique, et qu'est-ce que ce dossier
@@ -142,7 +142,7 @@ valeur tapée à la main, pas un contrôle.
 cd ZENODO_DEPOT_ALMIZAN/CHIFFRES
 py -3 chiffres_pi.py                     # domaine court 20 000 — 17/17 contrôles, rc=0
 py -3 chiffres_pi.py 1000000 --ecrit     # domaine publié + 5 artefacts, ~3 min
-cd CHIFFRES && py -3 -m unittest tests.test_chiffres    # 31 tests, OK
+cd CHIFFRES && py -3 -m unittest tests.test_chiffres    # 32 tests, OK
 ```
 
 `generer_chiffres.py` s'exécute seul (`py -3 generer_chiffres.py`) et rend les deux voies

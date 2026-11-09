@@ -540,7 +540,7 @@ COMMANDES = {
            "artefacts\n"
            "py -3 CHIFFRES/generer_pages.py                   # régénère pages, figure, JSON, "
            "CSV, Markdown\n"
-           "py -3 -m unittest CHIFFRES.tests.test_chiffres     # 30 tests\n"
+           "py -3 -m unittest CHIFFRES.tests.test_chiffres     # 32 tests\n"
            "py -3 FONDATION/OUTILS/audit_piliers.py CHIFFRES/chiffres_pi.py --rigide\n"
            "# hors Windows : remplacer py -3 par python3"),
     "en": ("# from the repository root\n"
@@ -548,7 +548,7 @@ COMMANDES = {
            "artefacts\n"
            "py -3 CHIFFRES/generer_pages.py                   # rebuilds pages, figure, JSON, "
            "CSV, Markdown\n"
-           "py -3 -m unittest CHIFFRES.tests.test_chiffres     # 30 tests\n"
+           "py -3 -m unittest CHIFFRES.tests.test_chiffres     # 32 tests\n"
            "py -3 FONDATION/OUTILS/audit_piliers.py CHIFFRES/chiffres_pi.py --rigide\n"
            "# off Windows: replace py -3 with python3"),
     "ar": ("# من جذر المستودع\n"
@@ -556,7 +556,7 @@ COMMANDES = {
            "والمخرجات\n"
            "py -3 CHIFFRES/generer_pages.py                   # يعيد توليد الصفحات والشكل و JSON "
            "و CSV و Markdown\n"
-           "py -3 -m unittest CHIFFRES.tests.test_chiffres     # 30 اختبارًا\n"
+           "py -3 -m unittest CHIFFRES.tests.test_chiffres     # 32 اختبارًا\n"
            "py -3 FONDATION/OUTILS/audit_piliers.py CHIFFRES/chiffres_pi.py --rigide\n"
            "# خارج ويندوز: استبدل py -3 بـ python3"),
 }
