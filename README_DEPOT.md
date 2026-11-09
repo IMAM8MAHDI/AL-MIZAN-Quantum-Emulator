@@ -58,6 +58,13 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── artefacts/               # 13 livrables, dont la confrontation de 18 équations
 │   ├── SOURCES_ET_PREDECESSEURS.md
 │   └── tests/                   # 45 tests
+├── HORLOGERIE/            # l'horloge : 15 équations · 15 contrôles · 16 vérifications
+│   ├── horlogerie.py            # producteur : identité dx+dy+dz=dt, confrontation céleste
+│   ├── verifier_certificats.py  # vérificateur autonome : stdlib seule, aucun import du dépôt
+│   ├── calibrer_horloge_almizan.py  # mesure τ = T/N sur l'hôte (non scellée, par nature)
+│   ├── artefacts/               # certificats.json + confrontation_astronomique.csv
+│   ├── SOURCES_ET_PREDECESSEURS.md
+│   └── tests/                   # 30 tests
 ├── tests/                 # 53 tests unittest — tous verts, 0 ignoré
 ├── resultats/             # rapports JSON scellés SHA-256 + .gds
 ├── bibliotheques/         # 5 modules du moteur ASTRO-Q°ODE : clôture
@@ -177,11 +184,12 @@ cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
     tests.test_eau_abondance tests.test_agriculture_abondance   # 107 tests
 cd CHIFFRES && py -m unittest tests.test_chiffres                #  32 tests
 cd FONDATION && py -m unittest tests.test_fondation              #  45 tests
+cd HORLOGERIE && py -m unittest tests.test_horlogerie             #  30 tests
 
-py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 5 modules CONFORME
+py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 6 modules CONFORME
 ```
 
-247 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
+277 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
 sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
 
 ## Les quatre piliers, appliqués à tout le dépôt
@@ -191,12 +199,12 @@ et ne juge que ce que le module déclare déjà :
 
 | Pilier | Exigence | Vérifié |
 |---|---|---|
-| **P1 UNITE** | une équation = un identifiant = un contrôle, en chaîne continue sans trou ni doublon | 89 équations, 89 contrôles |
-| **P2 BORNE** | toute équation porte une `limite` écrite d'au moins 40 caractères | 89/89 |
-| **P3 CONFRONTATION** | chemin `module → fonction → contrôle`, statut parmi OPÉRATIONNEL / SIMULÉ / SPÉCIFIÉ, attendu et obtenu non vides, aucun contrôle rouge | 89/89 |
-| **P4 TRANSMISSION** | imports stdlib ou locaux seuls, `verifier()` callable, garde `__main__` | 5/5 modules |
+| **P1 UNITE** | une équation = un identifiant = un contrôle, en chaîne continue sans trou ni doublon | 104 équations, 104 contrôles |
+| **P2 BORNE** | toute équation porte une `limite` écrite d'au moins 40 caractères | 104/104 |
+| **P3 CONFRONTATION** | chemin `module → fonction → contrôle`, statut parmi OPÉRATIONNEL / SIMULÉ / SPÉCIFIÉ, attendu et obtenu non vides, aucun contrôle rouge | 104/104 |
+| **P4 TRANSMISSION** | imports stdlib ou locaux seuls, `verifier()` callable, garde `__main__` | 6/6 modules |
 
 Le coût est réel : l'audit exécute `resoudre()`, donc CHIFFRES calcule son
 domaine court (20 000 chiffres de π, e et √2 plus un calibrage Monte-Carlo) et
 demande une à deux minutes. `--rigide` fait échouer un pilier NON TENU ; le
-code de sortie est 0 sur les cinq modules principaux.
+code de sortie est 0 sur les six modules principaux.

@@ -57,7 +57,7 @@ https://doi.org/10.5281/zenodo.24028242
 ## Fichiers à déposer
 1. **ZENODO_DEPOT_ALMIZAN.zip** (archive complète du dépôt)
    - Code source Python (13 modules quantiques + 14 modules certificats)
-   - 53 tests unitaires pour l'émulateur, 245 pour le dépôt complet
+   - 53 tests unitaires pour l'émulateur, 277 pour le dépôt complet
    - Documentation complète (README, PRESENTATION, paper.md)
    - Métadonnées (.zenodo.json, CITATION.cff)
    - Licences (AGPL-3.0, GPL-3.0)
@@ -79,5 +79,5 @@ Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2
 - Architecture "sans dolosif" : honnêteté scientifique stricte sur les capacités et limitations
 - Chaque certificat mathématique porte des bornes explicites
 - Émulation classique uniquement (pas de QPU matériel)
-- 53 tests unitaires pour l'émulateur, 245 pour le dépôt complet — tous verts
+- 53 tests unitaires pour l'émulateur, 277 pour le dépôt complet — tous verts
 - Documentation bilingue français/anglais

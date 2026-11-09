@@ -15,7 +15,7 @@ I built a complete quantum emulator in pure Python with zero external dependenci
 - OpenQASM 2.0 frontend with 8 canonical circuits
 - Sealed SHA-256 mathematical certificates: Riemann zeros ≤100 (29 certified), BSD on named curves, Point Square Conjecture
 
-53/53 emulator tests pass, and 245/245 across the whole deposit (emulator, core clock, ABONDANCE, CHIFFRES, FONDATION). Every artifact carries explicit computational bounds — no open millennium problem is claimed as solved.
+53/53 emulator tests pass, and 277/277 across the whole deposit (emulator, core clock, ABONDANCE, CHIFFRES, FONDATION, HORLOGERIE). Every artifact carries explicit computational bounds — no open millennium problem is claimed as solved.
 
 GitHub: https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 Zenodo: https://doi.org/10.5281/zenodo.24028242
@@ -114,7 +114,7 @@ Archived on Zenodo: https://doi.org/10.5281/zenodo.24028242
 
 A pure-Python quantum emulator with sealed mathematical certificates.
 
-0 dependencies. 53/53 emulator tests (245/245 on the whole deposit). Full QEC stack.
+0 dependencies. 53/53 emulator tests (277/277 on the whole deposit). Full QEC stack.
 
 🔗 github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 

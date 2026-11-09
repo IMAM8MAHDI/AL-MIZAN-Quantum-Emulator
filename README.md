@@ -69,6 +69,7 @@ BSD sur 3 courbes (L'(37a1)=0.306 = valeur LMFDB) · Hasse p≤97 · Hodge T²/C
 | Piliers rejoués | `FONDATION/OUTILS/audit_piliers.py` | Audite `resoudre()` de chaque module du dépôt contre les 4 piliers — `--tous --rigide` |
 | Chiffres | `CHIFFRES/chiffres_pi.py` | π, e, √2 par deux voies indépendantes, 108 cellules pré-déclarées avant mesure, confrontées sur domaine fini |
 | Abondance | `ABONDANCE/` | 54 équations et 54 contrôles bornés (électricité 21 · eau 15 · agriculture 18) |
+| Horlogerie | `HORLOGERIE/horlogerie.py` | 15 équations et 15 contrôles : l'arithmétique exacte des cycles (dx+dy+dz = dt) réécrite et recontrôlée par un vérificateur qui n'importe pas le dépôt (`verifier_certificats.py`, 16 contrôles), et la portée physique de τ mesurée séparément |
 
 ## Base universelle — FONDATION
 
@@ -153,7 +154,8 @@ cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
     tests.test_eau_abondance tests.test_agriculture_abondance     # 107 tests
 cd CHIFFRES && py -m unittest tests.test_chiffres                  # 32 tests
 cd FONDATION && py -m unittest tests.test_fondation                # 45 tests
-py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide             # 5 modules CONFORME
+cd HORLOGERIE && py -m unittest tests.test_horlogerie               # 30 tests
+py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide             # 6 modules CONFORME
 ```
 
 53 tests : états, portes, permutations, intrication, Born, bruit
@@ -166,9 +168,9 @@ et le spectre hermitien complexe de la matrice densité.
 **0 ignoré, et plus rien d'extérieur à l'archive.** Les deux ponts
 (Steane, transducteur) se chargent depuis `moteur/` et la capsule
 `horloge_noyau` depuis `bibliotheques/` : un `ASTRO-Q°ODE_SYSTEME`
-voisin n'est plus requis. 247 tests au total, tous verts — et les 89
-équations du parc (ABONDANCE 54, CHIFFRES 17, FONDATION 18) portent
-chacune sa clause de limite, contrôlée par le même audit.
+voisin n'est plus requis. 277 tests au total, tous verts — et les 104
+équations du parc (ABONDANCE 54, CHIFFRES 17, FONDATION 18, HORLOGERIE 15)
+portent chacune sa clause de limite, contrôlée par le même audit.
 
 ## Statut honnête
 
@@ -180,10 +182,12 @@ Le die :5030 et le canal SCPI :5025 sont des interfaces réseau locales —
 sans matériel branché, rien de physique ne se produit. Le .gds n'est pas
 un masque fabricable.
 
-Les trois dossiers d'équations ne prouvent rien d'universel. ABONDANCE calcule
+Les quatre dossiers d'équations ne prouvent rien d'universel. ABONDANCE calcule
 des régularités finies et les confronte ; CHIFFRES annonce 108 cellules avant
 mesure puis constate un verdict de **CONTENU** — l'absence d'un rejet sur
 n = 10⁶ chiffres n'établit pas que π est normal, et un résultat discordant
 n'aurait pas prouvé le contraire ; FONDATION pose un axiome hors matrice qui
-ne fournit **aucun** nombre et ne livre que des bornes. Chaque équation porte
-sa clause de limite, lue par `audit_piliers.py`.
+ne fournit **aucun** nombre et ne livre que des bornes ; HORLOGERIE scelle une
+identité arithmétique exacte et montre que le rythme mesuré dépend de la
+machine, ce qui réfute la lecture en hertz sur l'hôte qui l'a produite. Chaque
+équation porte sa clause de limite, lue par `audit_piliers.py`.

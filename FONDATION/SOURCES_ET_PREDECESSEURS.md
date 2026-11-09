@@ -87,7 +87,7 @@ quatre comparateurs publics du dossier.
 | 02 | Tout nœud sans prédécesseur interne est fondé sur une source déclarée hors du dossier : 1 racine, 18 aretes vers l'extérieur | — (structure du dossier) | CALCULÉE |
 | 03 | Le graphe `NOEUDS` est un DAG : acyclique, 18 nœuds atteignables, zéro auto-référence, tri topologique de Kahn | Kahn (1962) pour l'algorithme de tri | CALCULÉE |
 | 04 | Discipline de source : chaque nombre a une source publique, douze cases pilier × couche sont habitées, les dix extraits de la description sont des sous-chaînes du texte mesuré, 0 horodatage prêté à la chaîne Nocturne | Nocturne (5pP1e69T3HQ) — thème seulement | CALCULÉE |
-| 05 | Transmission : `imports ⊆ stdlib ∪ locaux`, ici et dans les cinq modules principaux du parc (tiers : aucun) | — (contrainte d'outillage) | CALCULÉE |
+| 05 | Transmission : `imports ⊆ stdlib ∪ locaux`, ici et dans les six modules principaux du parc (tiers : aucun) | — (contrainte d'outillage) | CALCULÉE |
 | 06 | Registre des grandeurs : 14 entrées, 14 noms uniques, 0 doublon en conflit, unités non vides partout, `hors_declare = []` | Buras et al. (2015) ; NA62 (2021, 2024, 2026) ; home.cern (2024) | CALCULÉE (le registre) / DÉCLARÉE (les valeurs) |
 | 07 | La fonction de prédiction ne reçoit aucune clé du comparateur : `signature(prediction_gel) = ['declares']`, et le drapeau `a_lu_le_comparateur` se lève dès qu'une clé interdite entre | — (pratique de l'analyse en aveugle, telle que NA62 la déclare pour sa propre analyse) | CALCULÉE |
 | 08 | Nombre de désintégrations ordinaires par désintégration rare : `1/BR − 1` ; SM `1.19048e+10 ∈ [1.06383e+10, 1.35135e+10]`, et le communiqué arrondi `9 999 999 999` donne un taux implicite de `1e-10` | communiqué home.cern 2024-09-25 (« the other 9 999 999 999 decays ») | DÉCLARÉE / CALCULÉE (l'intervalle) |
@@ -144,12 +144,13 @@ sigma ») et `CERN_2024`.
 
 Les quatre piliers ne valent pas seulement ici : `OUTILS/audit_piliers.py` les applique à
 tous les modules d'équations du dépôt. À l'issue de cette application, l'audit `--tous
---rigide` rend **CONFORME** sur les cinq modules, soit **89 équations et 89 contrôles**
-(ABONDANCE 54, CHIFFRES 17, FONDATION 18) :
+--rigide` rend **CONFORME** sur les six modules, soit **104 équations et 104 contrôles**
+(ABONDANCE 54, CHIFFRES 17, FONDATION 18, HORLOGERIE 15) :
 
 ```
 FONDATION\fondation_base.py            — 18 équations, 18 contrôles — CONFORME
 CHIFFRES\chiffres_pi.py                — 17 équations, 17 contrôles — CONFORME
+HORLOGERIE\horlogerie.py               — 15 équations, 15 contrôles — CONFORME
 ABONDANCE\electricite_abondance.py     — 21 équations, 21 contrôles — CONFORME
 ABONDANCE\eau_abondance.py             — 15 équations, 15 contrôles — CONFORME
 ABONDANCE\agriculture_abondance.py     — 18 équations, 18 contrôles — CONFORME
@@ -196,7 +197,7 @@ coûte des phrases, pas quand il est annoncé.
 cd ZENODO_DEPOT_ALMIZAN
 py -3 FONDATION/fondation_base.py                     # 18/18 contrôles, rc=0
 py -3 -m unittest FONDATION.tests.test_fondation      # 45 tests, OK
-py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide   # 5 modules CONFORME, rc=0
+py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide   # 6 modules CONFORME, rc=0
 py -3 FONDATION/OUTILS/sceller_manifeste.py --verifier    # manifeste = HEAD, rc=0 si conforme
 py -3 FONDATION/SIMULATIONS/simuler_kaons.py          # V1..V5 verts, rc=0
 ```
