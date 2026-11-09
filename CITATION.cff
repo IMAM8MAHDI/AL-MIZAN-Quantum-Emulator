@@ -31,6 +31,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.24075082"
     description: "DOI de la version 3.2.1 (2026-11-09), documents resynchronises sur le contenu"
+  - type: doi
+    value: "10.5281/zenodo.24091259"
+    description: "DOI de la version 3.2.2 (2026-11-09), dossier HORLOGERIE et ecran de laboratoire"
   - type: url
     value: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
     description: "Depot GitHub officiel"

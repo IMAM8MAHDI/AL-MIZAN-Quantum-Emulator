@@ -10,7 +10,7 @@
       "affiliation": "Astro-Code Ecosystem"
     }
   ],
-  "notes": "Double licence GPL-3.0 / AGPL-3.0 (cf. LICENSE.md) ; le champ licence, unique sur Zenodo, porte la contrepartie la plus contraignante, AGPL-3.0-only. Développement réalisé avec l'assistance d'une IA générative (Devin SWE-2, Cognition AI) pour la génération de code, les tests et la documentation. L'auteur humain (M. Ahmed EL BAHLOUL) a relu, validé et dirigé l'ensemble des résultats et pris toutes les décisions de fond : doctrine Al-Mizan, règles du noyau scellé, architecture des certificats et contraintes d'honnêteté.",
+  "notes": "Double licence GPL-3.0 / AGPL-3.0 (cf. LICENSE.md) ; le champ licence, unique sur Zenodo, porte la contrepartie la plus contraignante, AGPL-3.0-only. Développement réalisé avec l'assistance d'une IA générative (Devin SWE-2, Cognition AI) pour la génération de code, les tests et la documentation. L'auteur humain (M. Ahmed EL BAHLOUL) a relu, validé et dirigé l'ensemble des résultats et pris toutes les décisions de fond : doctrine Al-Mizan, règles du noyau scellé, architecture des certificats et contraintes d'honnêteté. Contrôle d'intégrité de l'archive, mesuré dans le ZIP publié de la v3.2.2 : 205 entrées = les 204 fichiers scellés plus MANIFESTE_SHA256.txt, qui s'exclut lui-même ; 194 re-hachent exactement vers leur valeur scellée et les 10 CSV « Excel français » n'y re-hachent qu'après normalisation des fins de ligne, parce que .gitattributes déclare « *.csv text eol=crlf » — git archive livre donc le CRLF que le livrable promet (BOM, séparateur « ; », données inchangés) alors que le scellement hache les octets LF du blob.",
   "license": "agpl-3.0-only",
   "keywords": [
     "quantum emulator",

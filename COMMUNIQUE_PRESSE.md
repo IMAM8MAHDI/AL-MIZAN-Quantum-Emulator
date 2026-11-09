@@ -30,7 +30,7 @@ Le logiciel fonctionne sur tout environnement Python 3.10+ sans accès matériel
 
 - **GitHub** : https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 - **Zenodo (archive peer-reviewed)** : https://doi.org/10.5281/zenodo.24028242 — DOI de concept, c'est la référence citable, il résout toujours vers la dernière version déposée
-- **Dernière version** : v3.2.2 — cette archive. Le dossier HORLOGERIE s'y ajoute : identité d'horloge `dx + dy + dz = dt` rendue en arithmétique rationnelle exacte, vérificateur autonome, et un écran de laboratoire qui joue la trajectoire 3D et affiche la stabilité mesurée de l'horloge. Le DOI de version que Zenodo émet à la publication figure dans `README_DEPOT.md` du dépôt Git ; le DOI de concept ci-dessus résout toujours vers la dernière version déposée.
+- **Dernière version** : v3.2.2, https://doi.org/10.5281/zenodo.24091259 (9 novembre 2026) — dossier HORLOGERIE (identité d'horloge `dx + dy + dz = dt` en arithmétique rationnelle exacte, vérificateur autonome qui n'importe pas le dépôt, confrontation aux éphémérides publiques) et son écran de laboratoire qui joue la trajectoire 3D pas à pas et affiche la stabilité mesurée de l'horloge. 311 tests, 104 équations, 6 modules CONFORME, manifeste de 204 entrées.
 - **Versions précédentes** : v3.2.1, https://doi.org/10.5281/zenodo.24075082 (9 novembre 2026) ; v3.2.0, https://doi.org/10.5281/zenodo.24074846 (9 novembre 2026) ; v3.1.0, https://doi.org/10.5281/zenodo.24062292 (8 novembre 2026) ; v3.0.0, https://doi.org/10.5281/zenodo.24054060
 - **Licence** : AGPL-3.0 / GPL-3.0 (double licence open source)
 
