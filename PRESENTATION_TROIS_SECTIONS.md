@@ -54,7 +54,7 @@
 | **ZNE** | Extrapolation Richardson à bruit nul (λ = 1, 2, 3) |
 | **Algorithmes** | VQE H₂, Shor N=15 (QPE sur permutation modulaire, 7 qubits) |
 | **GDSII** | Layout binaire .gds valide de la tuile Steane + DRC interne générique |
-| **Tests** | 53 tests d'émulation, 277 pour le dépôt complet — tous verts |
+| **Tests** | 53 tests d'émulation, 311 pour le dépôt complet — tous verts |
 
 ---
 

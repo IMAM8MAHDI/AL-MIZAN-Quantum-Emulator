@@ -62,9 +62,11 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── horlogerie.py            # producteur : identité dx+dy+dz=dt, confrontation céleste
 │   ├── verifier_certificats.py  # vérificateur autonome : stdlib seule, aucun import du dépôt
 │   ├── calibrer_horloge_almizan.py  # mesure τ = T/N sur l'hôte (non scellée, par nature)
+│   ├── laboratoire.py           # écran : trajectoire 3D, repère à 14 coordonnées, ADEV
 │   ├── artefacts/               # certificats.json + confrontation_astronomique.csv
+│   │                            # + laboratoire.json, trajectoire et stabilité (CSV, SVG)
 │   ├── SOURCES_ET_PREDECESSEURS.md
-│   └── tests/                   # 30 tests
+│   └── tests/                   # 64 tests
 ├── tests/                 # 53 tests unittest — tous verts, 0 ignoré
 ├── resultats/             # rapports JSON scellés SHA-256 + .gds
 ├── bibliotheques/         # 5 modules du moteur ASTRO-Q°ODE : clôture
@@ -184,12 +186,12 @@ cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
     tests.test_eau_abondance tests.test_agriculture_abondance   # 107 tests
 cd CHIFFRES && py -m unittest tests.test_chiffres                #  32 tests
 cd FONDATION && py -m unittest tests.test_fondation              #  45 tests
-cd HORLOGERIE && py -m unittest tests.test_horlogerie             #  30 tests
+cd HORLOGERIE && py -m unittest tests.test_horlogerie tests.test_laboratoire   #  64 tests
 
 py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 6 modules CONFORME
 ```
 
-277 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
+311 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
 sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
 
 ## Les quatre piliers, appliqués à tout le dépôt

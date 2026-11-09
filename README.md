@@ -69,7 +69,7 @@ BSD sur 3 courbes (L'(37a1)=0.306 = valeur LMFDB) · Hasse p≤97 · Hodge T²/C
 | Piliers rejoués | `FONDATION/OUTILS/audit_piliers.py` | Audite `resoudre()` de chaque module du dépôt contre les 4 piliers — `--tous --rigide` |
 | Chiffres | `CHIFFRES/chiffres_pi.py` | π, e, √2 par deux voies indépendantes, 108 cellules pré-déclarées avant mesure, confrontées sur domaine fini |
 | Abondance | `ABONDANCE/` | 54 équations et 54 contrôles bornés (électricité 21 · eau 15 · agriculture 18) |
-| Horlogerie | `HORLOGERIE/horlogerie.py` | 15 équations et 15 contrôles : l'arithmétique exacte des cycles (dx+dy+dz = dt) réécrite et recontrôlée par un vérificateur qui n'importe pas le dépôt (`verifier_certificats.py`, 16 contrôles), et la portée physique de τ mesurée séparément |
+| Horlogerie | `HORLOGERIE/horlogerie.py` | 15 équations et 15 contrôles : l'arithmétique exacte des cycles (dx+dy+dz = dt) réécrite et recontrôlée par un vérificateur qui n'importe pas le dépôt (`verifier_certificats.py`, 16 contrôles), la portée physique de τ mesurée séparément, et un écran de laboratoire (`laboratoire.py`, 5 contrôles) qui joue la trajectoire 3D pas à pas et affiche sa stabilité |
 
 ## Base universelle — FONDATION
 
@@ -154,7 +154,7 @@ cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
     tests.test_eau_abondance tests.test_agriculture_abondance     # 107 tests
 cd CHIFFRES && py -m unittest tests.test_chiffres                  # 32 tests
 cd FONDATION && py -m unittest tests.test_fondation                # 45 tests
-cd HORLOGERIE && py -m unittest tests.test_horlogerie               # 30 tests
+cd HORLOGERIE && py -m unittest tests.test_horlogerie tests.test_laboratoire   # 64 tests
 py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide             # 6 modules CONFORME
 ```
 
@@ -168,7 +168,7 @@ et le spectre hermitien complexe de la matrice densité.
 **0 ignoré, et plus rien d'extérieur à l'archive.** Les deux ponts
 (Steane, transducteur) se chargent depuis `moteur/` et la capsule
 `horloge_noyau` depuis `bibliotheques/` : un `ASTRO-Q°ODE_SYSTEME`
-voisin n'est plus requis. 277 tests au total, tous verts — et les 104
+voisin n'est plus requis. 311 tests au total, tous verts — et les 104
 équations du parc (ABONDANCE 54, CHIFFRES 17, FONDATION 18, HORLOGERIE 15)
 portent chacune sa clause de limite, contrôlée par le même audit.
 
