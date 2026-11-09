@@ -189,8 +189,10 @@ Deux gardes bloquent la publication à la génération :
 Les noms propres des fils conducteurs et le texte des sources ne sont **pas** dans le pool de
 nombres : ils ne sont pas des résultats.
 
-**Fins de ligne.** Les trois `.csv` sortent en BOM UTF-8 + CRLF (Excel français). Le dépôt
-normalise les blobs en LF (`core.autocrlf=true`, comme pour tout le reste du dépôt) : l'archive
-Git — donc l'archive Zenodo — contient la variante LF. Le contenu des cellules est identique
-octet pour octet, seule la fin de ligne change ; les empreintes du manifeste sont calculées sur
-le blob (`git cat-file blob HEAD:CHEMIN`), pas sur le fichier de l'arborescence de travail.
+**Fins de ligne.** Les trois `.csv` sortent en BOM UTF-8 + CRLF (Excel français), écrits en
+octets imposés. Le dépôt normalise les blobs en LF (`core.autocrlf=true`, comme pour tout le
+reste du dépôt) et le manifeste scelle ces octets-LF ; les `.csv` sont en plus marqués
+`text eol=crlf` dans `.gitattributes`, donc un clone ou une archive — même tentée avec
+`git -c core.autocrlf=false archive` — rendent le CRLF annoncé plutôt qu'un LF hors Windows.
+Les empreintes du manifeste restent calculées sur le blob (`git cat-file blob HEAD:CHEMIN`),
+pas sur le fichier de l'arborescence de travail.

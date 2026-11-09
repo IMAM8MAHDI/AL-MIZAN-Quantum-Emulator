@@ -14,6 +14,7 @@ Stdlib uniquement. Domaine court : rien ici ne demande les 10⁶ décimales.
     cd CHIFFRES && py -3 -m unittest tests.test_chiffres -v
 """
 
+import json
 import math
 import sys
 import tempfile
@@ -341,6 +342,15 @@ class TestArtefacts(unittest.TestCase):
             octets = (dossier / "confrontation.csv").read_bytes()
             self.assertTrue(octets.startswith(b"\xef\xbb\xbf"), "BOM Excel absent")
             self.assertIn(b"\r\n", octets, "fin de ligne Excel absente")
+            # Écrire en octets imposés, pas via `write_text` : la traduction
+            # système des fins de ligne rendait le CSV LF sur Linux, CRLF sur Windows.
+            self.assertEqual(octets.count(b"\n"), octets.count(b"\r\n"),
+                             "un « \\n » sans « \\r » devant : fins de ligne laissées au système")
+            for nom in rendu:
+                if nom.endswith(".json"):
+                    self.assertNotIn(b"\r", (dossier / nom).read_bytes(), nom)
+                self.assertEqual(int(rendu[nom].split()[0]), (dossier / nom).stat().st_size,
+                                 f"octets annoncés pour {nom}")
             lignes = octets.decode("utf-8-sig").splitlines()
             self.assertEqual(len(lignes), 1 + 108)
             self.assertEqual(lignes[0], "constante;statistique;classe;attendu;obtenu;"
@@ -349,6 +359,18 @@ class TestArtefacts(unittest.TestCase):
             contenu = (dossier / "predictions.json").read_text(encoding="utf-8")
             self.assertIn("M90ZAVojI30", contenu, "la source vidéo doit voyager avec les artefacts")
             self.assertIn("Euclidea", contenu)
+
+    def test_le_csv_publie_est_le_rendu_du_module(self):
+        """Le CSV déposé dans l'archive n'est pas un fichier tenu à la main : les
+        cellules publiées, reformées par le code, redonnent le même contenu.
+        Les fins de ligne sont neutralisées ici — ce que l'archive contient dépend
+        du checkout ; `test_cinq_fichets_et_csv_franc`, lui, juge l'écriture elle-même."""
+        publie = (RACINE_DOSSIER / "artefacts" / "confrontation.csv").read_bytes()
+        cellules = json.loads((RACINE_DOSSIER / "artefacts" / "confrontation.json")
+                              .read_text(encoding="utf-8"))["confrontation"]["cellules"]
+        reconstruit = CH.octets_confrontation_csv(cellules)
+        self.assertEqual(reconstruit.replace(b"\r\n", b"\n"), publie.replace(b"\r\n", b"\n"))
+        self.assertEqual(len(cellules), 108)
 
 
 class TestAttributionVideo(unittest.TestCase):

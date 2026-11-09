@@ -1020,6 +1020,22 @@ def verifier(donnees: Optional[Dict[str, Any]] = None) -> bool:
     return all(c["ok"] for c in donnees["controles"])
 
 
+def octets_confrontation_csv(cellules: Sequence[Dict[str, Any]]) -> bytes:
+    """Le CSV livré, en octets : BOM UTF-8, séparateur « ; », décimale française,
+    fins de ligne CRLF écrites à la main. Le format Excel français est une
+    promesse du dossier ; le mode texte, lui, la laisse dépendre du système."""
+    lignes: List[List[Any]] = [["constante", "statistique", "classe", "attendu", "obtenu",
+                                "p_bilatere", "verdict"]]
+    for cel in cellules:
+        constante, reste = cel["nom"].split(".", 1)
+        stats, _, classe = reste.partition(".")
+        lignes.append([LIBELLES.get(constante, constante), stats, classe,
+                       f"{cel['attendu']:.6g}", cel["obtenu"],
+                       f"{cel['p_bilatere']:.6g}", cel["verdict"]])
+    corps = "\r\n".join(";".join(str(x).replace(".", ",") for x in ligne) for ligne in lignes)
+    return b"\xef\xbb\xbf" + (corps + "\r\n").encode("utf-8")
+
+
 def ecrire_artefacts(donnees: Dict[str, Any], vers: Optional[Path] = None) -> Dict[str, str]:
     import json
 
@@ -1038,21 +1054,16 @@ def ecrire_artefacts(donnees: Dict[str, Any], vers: Optional[Path] = None) -> Di
                       "equations": [{k: v for k, v in e.items() if k != "detail"}
                                     for e in donnees["equations"]]},
     }
+    # Octets imposés, jamais `write_text` : en mode texte le système traduirait les
+    # fins de ligne, et le même code rendrait du LF sur Linux, du CRLF sur Windows.
     for nom, contenu in morceaux.items():
         texte = json.dumps(contenu, ensure_ascii=False, indent=2, sort_keys=True, default=str)
-        (dossier / nom).write_text(texte + "\n", encoding="utf-8")
-        rendu[nom] = f"{len((texte + chr(10)).encode('utf-8'))} octets"
-    lignes: List[List[Any]] = [["constante", "statistique", "classe", "attendu", "obtenu",
-                               "p_bilatere", "verdict"]]
-    for cel in donnees["confrontation"]["cellules"]:
-        constante, reste = cel["nom"].split(".", 1)
-        stats, _, classe = reste.partition(".")
-        lignes.append([LIBELLES.get(constante, constante), stats, classe,
-                       f"{cel['attendu']:.6g}", cel["obtenu"],
-                       f"{cel['p_bilatere']:.6g}", cel["verdict"]])
-    csv = "\n".join(";".join(str(x).replace(".", ",") for x in ligne) for ligne in lignes) + "\n"
-    (dossier / "confrontation.csv").write_text(csv, encoding="utf-8-sig")
-    rendu["confrontation.csv"] = f"{len(csv.encode('utf-8-sig'))} octets"
+        octets_json = (texte + "\n").encode("utf-8")
+        (dossier / nom).write_bytes(octets_json)
+        rendu[nom] = f"{len(octets_json)} octets"
+    octets_csv = octets_confrontation_csv(donnees["confrontation"]["cellules"])
+    (dossier / "confrontation.csv").write_bytes(octets_csv)
+    rendu["confrontation.csv"] = f"{len(octets_csv)} octets"
     return rendu
 
 

@@ -7,7 +7,7 @@ résultats relus et dirigés par l'auteur humain.
 
 **Périmètre** : `generer_chiffres.py` (3 productrices de décimales certifiées, 2 voies
 indépendantes par constante) et `chiffres_pi.py` (17 équations, 17 contrôles, 108 cellules
-pré-déclarées), `tests/test_chiffres.py` (30 tests). Domaine des tests `n = 20 000`, domaine
+pré-déclarées), `tests/test_chiffres.py` (31 tests). Domaine des tests `n = 20 000`, domaine
 publicé `n = 10^6` avec artefacts (`artefacts/*.json`, `artefacts/confrontation.csv`).
 
 Ce fichier répond à une seule question : **qui a posé la brique, et qu'est-ce que ce dossier
@@ -142,7 +142,7 @@ valeur tapée à la main, pas un contrôle.
 cd ZENODO_DEPOT_ALMIZAN/CHIFFRES
 py -3 chiffres_pi.py                     # domaine court 20 000 — 17/17 contrôles, rc=0
 py -3 chiffres_pi.py 1000000 --ecrit     # domaine publié + 5 artefacts, ~3 min
-cd CHIFFRES && py -3 -m unittest tests.test_chiffres    # 30 tests, OK
+cd CHIFFRES && py -3 -m unittest tests.test_chiffres    # 31 tests, OK
 ```
 
 `generer_chiffres.py` s'exécute seul (`py -3 generer_chiffres.py`) et rend les deux voies
@@ -150,6 +150,10 @@ indépendantes par constante ; `chiffres_pi.py` les consomme et ne les relit pas
 `mesures.json` portent l'ancre (`certificats.*.ancre_publiee`) ; `confrontation.csv` sort en
 BOM UTF-8 + `;` + virgule décimale (Excel français), 109 lignes = en-tête + 108 cellules.
 
-**Fins de ligne.** Le dépôt normalise les blobs en LF (`core.autocrlf=true`) : l'archive
-Zenodo contient la variante LF. Les empreintes du manifeste sont calculées sur le blob
-(`git cat-file blob HEAD:CHEMIN | sha256sum`), pas sur le fichier de l'arborescence de travail.
+**Fins de ligne.** Le dépôt normalise les blobs en LF (`core.autocrlf=true`) et le manifeste
+scelle ces octets-LF (`git cat-file blob HEAD:CHEMIN | sha256sum`), pas le fichier de l'arbre
+de travail. `confrontation.csv` est en plus marqué `text eol=crlf` dans `.gitattributes` :
+clone et archive rendent partout le CRLF que le format « Excel français » annonce, y compris
+sous `git -c core.autocrlf=false archive --format=zip`. Le fichier lui-même est écrit en octets
+imposés (`write_bytes`) : un `write_text` en mode texte laisse le système traduire les fins de
+ligne, ce qui rendait un CSV LF hors Windows alors que le test, lui, attend le CRLF annoncé.

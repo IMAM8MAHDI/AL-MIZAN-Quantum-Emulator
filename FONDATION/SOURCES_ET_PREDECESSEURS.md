@@ -221,6 +221,9 @@ committer, puis resceller — dans cet ordre. Mesuré le 2026-11-09 : `FONDATION
 en ajoutant `sceller_manifeste.py` ; `confrontation.json`, écrit plus tôt sur un dossier à
 2 fichiers, est remonté à 6 dans le même mouvement.
 
-**Fins de ligne.** Le dépôt normalise les blobs en LF (`core.autocrlf=true`) : l'archive
-Zenodo contient la variante LF. Les empreintes du manifeste sont calculées sur le blob
-(`git cat-file blob HEAD:CHEMIN | sha256sum`), pas sur le fichier de l'arborescence de travail.
+**Fins de ligne.** Le dépôt normalise les blobs en LF (`core.autocrlf=true`) : les empreintes
+du manifeste sont calculées sur le blob (`git cat-file blob HEAD:CHEMIN | sha256sum`), pas sur
+le fichier de l'arborescence de travail. `confrontation.csv` est marqué `text eol=crlf` dans
+`.gitattributes` : clone et archive rendent le CRLF que le format annoncé promet, sur tout
+système ; le corps du CSV est écrit en octets imposés (`write_bytes`), donc la fin de ligne ne
+dépend plus de la plate-forme qui exécute le générateur.

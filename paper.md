@@ -102,7 +102,7 @@ py emulateur_mizan.py arbre
 # Point Square Conjecture verification
 py emulateur_mizan.py conjecture
 
-# Emulator test suite (53 tests ; 245 tests sur l'ensemble du dépôt)
+# Emulator test suite (53 tests ; 246 tests sur l'ensemble du dépôt)
 py -m unittest tests.test_emulateur -v
 ```
 
