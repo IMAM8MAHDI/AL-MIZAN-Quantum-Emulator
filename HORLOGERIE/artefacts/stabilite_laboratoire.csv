@@ -1,0 +1,11 @@
+﻿grandeur;valeur;statut
+pas;4000;simulé
+eps_injecte;0,001;simulé
+adev_mesure;0,00101519;simulé
+ecart_relatif;0,0151901;simulé
+graine;20261109;simulé
+tau_base_ns;1000;simulé
+bande_borne_basse;0,000960467;spécifié
+bande_borne_haute;0,00103953;spécifié
+bande_relatif;0,0395334;spécifié
+recupere;oui;contrôle

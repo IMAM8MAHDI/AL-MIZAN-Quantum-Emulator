@@ -1,0 +1,217 @@
+{
+  "ce_que_ce_n_est_pas": "aucune synchronisation physique n'est observée par ce module : la trajectoire est arithmétique, la stabilité est soit simulée soit propre à l'hôte",
+  "controles": [
+    {
+      "attendu": 0,
+      "enonce": "x + y + z − k·dt = 0 à chaque pas, en entiers",
+      "id": "L01",
+      "obtenu": 0,
+      "vrai": true
+    },
+    {
+      "attendu": [
+        640459953
+      ],
+      "enonce": "la fermeture est commune aux trois axes et calculée par pgcd",
+      "id": "L02",
+      "obtenu": [
+        640459953
+      ],
+      "vrai": true
+    },
+    {
+      "attendu": 14,
+      "enonce": "le repère porte exactement quatorze coordonnées nommées",
+      "id": "L03",
+      "obtenu": 14,
+      "vrai": true
+    },
+    {
+      "attendu": 0.001,
+      "enonce": "l'instrument retrouve le bruit qu'il a injecté",
+      "id": "L04",
+      "obtenu": 0.0010151900738460536,
+      "vrai": true
+    },
+    {
+      "attendu": 14,
+      "enonce": "aucune coordonnée du repère n'est inventée : chaque source est un texte du dépôt ou une mesure déclarée",
+      "id": "L05",
+      "obtenu": 14,
+      "vrai": true
+    }
+  ],
+  "controles_verts": 5,
+  "formule": "dt = dx + dy + dz = 17 292 418 731/128 ; le scénario avance de (dx, dy, dz, dt) par pas",
+  "horodatage": "aucun : le rapport doit sortir identique octet pour octet d'une exécution à l'autre, une mesure d'hôte comprise change tout",
+  "mesure_hote_ecrite": "non : les nombres d'hôte s'affichent à l'écran et n'entrent pas dans les octets scellés",
+  "nombre_controles": 5,
+  "portee_repere": "repère de coordonnées défini par convention de listing — aucune dimension physique nouvelle n'est revendiquée ici",
+  "repere": [
+    {
+      "id": 1,
+      "nom": "t",
+      "role": "temps du scénario",
+      "source": "horlogerie.rationnaux()['dt'] = dx + dy + dz",
+      "statut": "opérationnel",
+      "unite": "comptes",
+      "valeur": "17292418731/128"
+    },
+    {
+      "id": 2,
+      "nom": "x",
+      "role": "axe 1",
+      "source": "produit des quatre niveaux, semences du Soleil",
+      "statut": "opérationnel",
+      "unite": "comptes",
+      "valeur": "6403563/128"
+    },
+    {
+      "id": 3,
+      "nom": "y",
+      "role": "axe 2",
+      "source": "produit des quatre niveaux, semences de la Lune",
+      "statut": "opérationnel",
+      "unite": "comptes",
+      "valeur": "93987/2"
+    },
+    {
+      "id": 4,
+      "nom": "z",
+      "role": "axe 3",
+      "source": "216 000 · 250 · 5/2 (terre normalisée)",
+      "statut": "opérationnel",
+      "unite": "comptes",
+      "valeur": "135000000"
+    },
+    {
+      "id": 5,
+      "nom": "z_brut",
+      "role": "variante non normalisée du même axe, facteur 144/5",
+      "source": "produit des quatre niveaux, coefficients bruts 300 · 50 · 30 · 24/60 ; z_brut / z = 144/5",
+      "statut": "opérationnel",
+      "unite": "comptes",
+      "valeur": "3888000000"
+    },
+    {
+      "id": 6,
+      "nom": "1 / dt",
+      "role": "période si dt était une fréquence",
+      "source": "horlogerie.periode_ns() — conséquence d'une hypothèse de lecture « Hz »",
+      "statut": "spécifié",
+      "unite": "ns",
+      "valeur": "7.402087700463514758963767311054249071434"
+    },
+    {
+      "id": 7,
+      "nom": "annee_julienne",
+      "role": "céleste cité",
+      "source": "Union astronomique internationale, Résolution B2 (2009) : l'année julienne vaut 365,25 jours exactement, soit 31 557 600 s",
+      "statut": "opérationnel",
+      "unite": "jours",
+      "valeur": "1461/4"
+    },
+    {
+      "id": 8,
+      "nom": "annee_tropique",
+      "role": "céleste cité",
+      "source": "NASA Glenn Research Center, Planetary Fact Sheet — Earth : 365,2422 jours (moyenne tropique)",
+      "statut": "opérationnel",
+      "unite": "jours",
+      "valeur": "1826211/5000"
+    },
+    {
+      "id": 9,
+      "nom": "annee_tropique_2000",
+      "role": "céleste cité",
+      "source": "Wikipedia, Tropical year : 365,24219 ephemeris days à l'équinoxe J2000",
+      "statut": "opérationnel",
+      "unite": "jours",
+      "valeur": "36524219/100000"
+    },
+    {
+      "id": 10,
+      "nom": "lunaison",
+      "role": "céleste cité",
+      "source": "Explanatory Supplement to the Astronomical Almanac — mois synodique moyen 29,53059 d",
+      "statut": "opérationnel",
+      "unite": "jours",
+      "valeur": "2953059/100000"
+    },
+    {
+      "id": 11,
+      "nom": "lunaisons_12",
+      "role": "céleste cité",
+      "source": "12 × mois synodique moyen (ligne précédente) = 354,36708 d",
+      "statut": "opérationnel",
+      "unite": "jours",
+      "valeur": "8859177/25000"
+    },
+    {
+      "id": 12,
+      "nom": "annee_lunaire_civile",
+      "role": "céleste cité",
+      "source": "année lunaire de douze mois de 29 ou 30 jours — 354 jours, convention civile",
+      "statut": "opérationnel",
+      "unite": "jours",
+      "valeur": "354"
+    },
+    {
+      "id": 13,
+      "nom": "tau",
+      "role": "rythme réel d'un tick",
+      "source": "calibrer_horloge_almizan.mesurer et en_direct() — dépend de la machine, hors scellement",
+      "statut": "simulé",
+      "unite": "ns/tick",
+      "valeur": "à produire par --en-direct"
+    },
+    {
+      "id": 14,
+      "nom": "tau / (1 / dt)",
+      "role": "précision du mesuré contre le spécifié",
+      "source": "quand τ ≈ 1/dt seulement la lecture en hertz devient défendable",
+      "statut": "simulé",
+      "unite": "sans unité",
+      "valeur": "à produire avec tau"
+    }
+  ],
+  "stabilite_hote": null,
+  "stabilite_simulee": {
+    "adev_mesure": 0.0010151900738460536,
+    "bande": {
+      "borne_basse": 0.0009604665872624097,
+      "borne_haute": 0.0010395334127375905,
+      "eps": 0.001,
+      "relatif": 0.03953341273759034
+    },
+    "ecart_relatif": 0.015190073846053616,
+    "eps_injecte": 0.001,
+    "formule": "y_i = (tau_i - moyenne)/moyenne ; sigma = sqrt(1/(2(N-1)) sum (y_{i+1}-y_i)^2)",
+    "graine": 20261109,
+    "pas": 4000,
+    "recupere": true,
+    "statut": "simulé — le bruit est déclaré avant mesure ; ce que le contrôle porte est la capacité de l'instrument à le retrouver",
+    "tau_base_ns": 1000.0
+  },
+  "trajectoire": {
+    "fermeture": {
+      "dt_divise_par_periode_commune": 27,
+      "dt_en_entiers": 17292418731,
+      "methode": "pgcd : période d'un axe = dt / pgcd(pas de l'axe, dt) ; fermeture = ppcm des trois périodes",
+      "periode_commune": 640459953,
+      "periode_par_axe": {
+        "dx": 640459953,
+        "dy": 640459953,
+        "dz": 640459953
+      },
+      "statut": "opérationnel (arithmétique) — la figure ne montre qu'un préfixe, la fermeture se démontre",
+      "unite": "pas ; le pas vaut une avance de dx, dy, dz sur dt = 17292418731/128"
+    },
+    "normalisation": "u = (k·dx mod dt)/dt, même formule sur v et w ; projections orthogonales (u,v), (u,w), (v,w)",
+    "pas": 4096,
+    "residu_max_absolu": 0,
+    "residus_non_nuls": 0,
+    "statut": "opérationnel — arithmétique entière exacte, aucun nombre d'hôte"
+  },
+  "verdict": "LABORATOIRE CONFORME"
+}

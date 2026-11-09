@@ -7,9 +7,14 @@ résultats relus et dirigés par l'auteur humain.
 
 **Périmètre** : `horlogerie.py` (15 équations, 15 contrôles, certificat à six sous-scellés),
 `verifier_certificats.py` (16 contrôles V01–V16, zéro import du dépôt),
-`calibrer_horloge_almizan.py` (mesure τ = T/N), `tests/test_horlogerie.py` (30 tests).
+`calibrer_horloge_almizan.py` (mesure τ = T/N), `laboratoire.py` (5 contrôles L01–L05 :
+trajectoire entière x+y+z−k·dt, repère à quatorze coordonnées, écart-type d'Allan),
+`tests/test_horlogerie.py` et `tests/test_laboratoire.py` (64 tests au total).
 Artefacts : `artefacts/certificats.json` (19 159 o) et
-`artefacts/confrontation_astronomique.csv` (823 o, UTF-8 BOM, `;`, CRLF, virgule).
+`artefacts/confrontation_astronomique.csv` (823 o, UTF-8 BOM, `;`, CRLF, virgule), plus les
+quatre livrables du laboratoire — `laboratoire.json` (7 147 o),
+`trajectoire_laboratoire.csv` (34 165 o), `stabilite_laboratoire.csv` (331 o) et
+`trajectoire_laboratoire.svg` (18 775 o) — même format Excel français, et aucun nombre d'hôte.
 
 Le dossier répond à une objection adressée à AL-MIZAN le 2026-11-09 :
 
@@ -174,14 +179,21 @@ PYTHONIOENCODING=utf-8 py -3 HORLOGERIE/calibrer_horloge_almizan.py --ticks 1000
 PYTHONIOENCODING=utf-8 py -3 HORLOGERIE/calibrer_horloge_almizan.py --ticks 10000 --series 7 \
     --sortie calibrage_almizan.csv
 
-# 4. rejouer les 30 tests du dossier, puis l'audit des piliers
+# 4. faire tourner le laboratoire : trajectoire, repère, stabilité, écran en direct
+PYTHONIOENCODING=utf-8 py -3 HORLOGERIE/laboratoire.py --pas 4096
+PYTHONIOENCODING=utf-8 py -3 HORLOGERIE/laboratoire.py --en-direct --secondes 20 --ticks 50000
+PYTHONIOENCODING=utf-8 py -3 HORLOGERIE/laboratoire.py --ecrit        # les quatre livrables
+
+# 5. rejouer les 64 tests du dossier, puis l'audit des piliers
 PYTHONIOENCODING=utf-8 py -3 -m unittest HORLOGERIE.tests.test_horlogerie -v
+PYTHONIOENCODING=utf-8 py -3 -m unittest HORLOGERIE.tests.test_laboratoire -v
 PYTHONIOENCODING=utf-8 py -3 FONDATION/OUTILS/audit_piliers.py HORLOGERIE/horlogerie.py --rigide
 ```
 
 Codes de sortie : `horlogerie.py` 0 si tous les contrôles sont verts, 1 sinon ;
 `verifier_certificats.py` 0 conforme, 1 non conforme ou fichier illisible, 2 usage invalide ;
-`calibrer_horloge_almizan.py` refuse `--ticks < 100` ou `--series < 3` avec rc=2.
+`calibrer_horloge_almizan.py` refuse `--ticks < 100` ou `--series < 3` avec rc=2 ;
+`laboratoire.py` 0 sur « LABORATOIRE CONFORME », 1 si un contrôle L01–L05 tombe.
 
 ## 7. Limites du dossier
 
