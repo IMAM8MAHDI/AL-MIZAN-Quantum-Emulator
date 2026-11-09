@@ -42,7 +42,7 @@
       "id": "C04",
       "limite": "le comptage du parc est une expression régulière sur les fichiers : il mesure la déclaration, pas la justesse. La discipline de source ne dit pas si la chaîne a raison : elle dit seulement que nous ne lui prêtons ni chiffre, ni minutage, ni phrase",
       "nom": "les douze cases pilier × couche sont habitées ; chaque dossier du parc déclare autant de contrôles que d'équations et porte ses tests ; la chaîne est citée mot pour mot et n'est jamais minutée",
-      "obtenu": "aucune · 4 sources · ABONDANCE 54/54 et 107t · CHIFFRES 17/17 et 30t · FONDATION 18/18 et 45t · extraits tous retrouvés · horodatages []",
+      "obtenu": "aucune · 4 sources · ABONDANCE 54/54 et 107t · CHIFFRES 17/17 et 32t · FONDATION 18/18 et 45t · HORLOGERIE 15/15 et 30t · extraits tous retrouvés · horodatages []",
       "ok": true
     },
     {
@@ -50,7 +50,7 @@
       "id": "C05",
       "limite": "la stdlib reconnue est celle de CETTE interprétation Python ; un tiers sans ce module n'a pas le même contrôle",
       "nom": "aucun import tiers, ici ni dans le parc",
-      "obtenu": "ici [] · parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'code': [], 'bibliotheques': []}",
+      "obtenu": "ici [] · parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'HORLOGERIE': [], 'code': [], 'bibliotheques': []}",
       "ok": true
     },
     {
@@ -224,7 +224,7 @@
       "piliers": [
         "P3 CONFRONTATION"
       ],
-      "resultat": "4 sources publiques · ABONDANCE 54eq/54c/107t · CHIFFRES 17eq/17c/30t · FONDATION 18eq/18c/45t · 10 extraits verbatimes · 0 horodatage cité",
+      "resultat": "4 sources publiques · ABONDANCE 54eq/54c/107t · CHIFFRES 17eq/17c/32t · FONDATION 18eq/18c/45t · HORLOGERIE 15eq/15c/30t · 10 extraits verbatimes · 0 horodatage cité",
       "statut": "OPÉRATIONNEL"
     },
     {
@@ -242,7 +242,7 @@
       "piliers": [
         "P4 TRANSMISSION"
       ],
-      "resultat": "ici ['__future__', 'hashlib', 'inspect', 'json', 'math', 'pathlib', 're', 'sys', 'typing'] ; tiers ici [] ; tiers du parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'code': [], 'bibliotheques': []}",
+      "resultat": "ici ['__future__', 'hashlib', 'inspect', 'json', 'math', 'pathlib', 're', 'sys', 'typing'] ; tiers ici [] ; tiers du parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'HORLOGERIE': [], 'code': [], 'bibliotheques': []}",
       "statut": "OPÉRATIONNEL"
     },
     {

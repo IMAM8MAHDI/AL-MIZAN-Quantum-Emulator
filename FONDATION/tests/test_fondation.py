@@ -442,7 +442,7 @@ class TestTransmission(unittest.TestCase):
     def test_parc_entier_sans_tiers(self):
         parc = FB.imports_parc()
         self.assertEqual(sorted(parc), ["ABONDANCE", "CHIFFRES", "FONDATION",
-                                        "bibliotheques", "code"])
+                                        "HORLOGERIE", "bibliotheques", "code"])
         for dossier, bilan in parc.items():
             self.assertGreater(bilan["fichiers"], 0, dossier)
             self.assertEqual(bilan["tiers"], [], dossier)

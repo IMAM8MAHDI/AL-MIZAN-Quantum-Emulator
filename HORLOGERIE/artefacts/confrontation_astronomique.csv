@@ -1,0 +1,10 @@
+﻿cycle;reference;nature;declare_jours;reference_jours;ecart_s_an;verdict
+Soleil;annee_julienne;définition exacte;365,25;365,25;0,0;CONFORME
+Soleil;annee_tropique;éphéméride mesurée;365,25;365,2422;673,92;ÉCART SIGNALÉ
+Soleil;annee_tropique_2000;éphéméride mesurée;365,25;365,24219;674,784;ÉCART SIGNALÉ
+Lune;annee_lunaire_civile;convention de calendrier;354,0;354,0;0,0;CONFORME
+Lune;lunaisons_12;éphéméride mesurée;354,0;354,36708;-31715,712;HORS TOLÉRANCE
+Lune;annee_tropique;éphéméride mesurée;354,0;365,2422;-971326,08;HORS TOLÉRANCE
+Terre;annee_julienne;définition exacte;360,0;365,25;-453600,0;HORS TOLÉRANCE
+Terre;annee_tropique;éphéméride mesurée;360,0;365,2422;-452926,08;HORS TOLÉRANCE
+Terre;lunaisons_12;éphéméride mesurée;360,0;354,36708;486684,288;HORS TOLÉRANCE

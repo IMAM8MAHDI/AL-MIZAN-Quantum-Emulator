@@ -5,7 +5,7 @@
 
     py -3 FONDATION/OUTILS/audit_piliers.py FONDATION/fondation_base.py
     py -3 FONDATION/OUTILS/audit_piliers.py ABONDANCE/electricite_abondance.py CHIFFRES/chiffres_pi.py
-    py -3 FONDATION/OUTILS/audit_piliers.py --tous            # les trois modules principaux
+    py -3 FONDATION/OUTILS/audit_piliers.py --tous            # les six modules principaux
     py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide   # un pilier NON TENU fait échouer
 
 L'outil n'invente rien : il appelle `resoudre()` du module visé et lit ce que le module
@@ -140,7 +140,8 @@ def main() -> int:
     cibles = [Path(c) for c in arguments.chemins]
     if arguments.tous:
         cibles += [RACINE / "FONDATION" / "fondation_base.py",
-                   RACINE / "CHIFFRES" / "chiffres_pi.py"]
+                   RACINE / "CHIFFRES" / "chiffres_pi.py",
+                   RACINE / "HORLOGERIE" / "horlogerie.py"]
         cibles += [RACINE / "ABONDANCE" / m for m in FB.MODULES_PRINCIPAUX
                    if m.endswith("_abondance.py")]
     if not cibles:

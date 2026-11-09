@@ -248,7 +248,7 @@
             "chiffres_pi.py"
           ],
           "present": true,
-          "tests": 30
+          "tests": 32
         },
         "FONDATION": {
           "controles": 18,
@@ -258,6 +258,15 @@
           ],
           "present": true,
           "tests": 45
+        },
+        "HORLOGERIE": {
+          "controles": 15,
+          "equations": 15,
+          "modules": [
+            "horlogerie.py"
+          ],
+          "present": true,
+          "tests": 30
         }
       },
       "sources_publiques": [
@@ -306,11 +315,15 @@
           "tiers": []
         },
         "CHIFFRES": {
-          "fichiers": 3,
+          "fichiers": 4,
           "tiers": []
         },
         "FONDATION": {
           "fichiers": 6,
+          "tiers": []
+        },
+        "HORLOGERIE": {
+          "fichiers": 4,
           "tiers": []
         },
         "bibliotheques": {

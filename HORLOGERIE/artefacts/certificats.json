@@ -1,0 +1,500 @@
+{
+  "astronomie": {
+    "coherence_des_sources": {
+      "fausses": [],
+      "identites": [
+        {
+          "droite": "8859177/25000",
+          "enonce": "lunaisons_12 = 12 × lunaison",
+          "gauche": "8859177/25000",
+          "vraie": true
+        },
+        {
+          "droite": "annee_julienne=1461/4 · annee_tropique=1826211/5000 · annee_tropique_2000=36524219/100000 · lunaison=2953059/100000 · lunaisons_12=8859177/25000 · annee_lunaire_civile=354",
+          "enonce": "pour chaque référence, la fraction du fichier est la décimale citée",
+          "gauche": "annee_julienne=1461/4 · annee_tropique=1826211/5000 · annee_tropique_2000=36524219/100000 · lunaison=2953059/100000 · lunaisons_12=8859177/25000 · annee_lunaire_civile=354",
+          "vraie": true
+        }
+      ],
+      "portee": "une identité entre deux lignes citées du même dossier ; elle ne dit rien du ciel, elle dit que la citation est cohérente avec sa source"
+    },
+    "conclusion": "sur les six comparaisons à une éphéméride MESURÉE, aucune ne tombe sous les 60 s par an : aucun des trois cycles déclarés ne reproduit la période astronomique qu'il nomme. En revanche 365,25 j est exactement l'année julienne définie par l'UAI et 354 j exactement l'année lunaire civile : ce sont des calendriers, pas des mesures.",
+    "cycles_declares": [
+      {
+        "attendu": "365,25 j est l'année julienne (définition de l'UAI), pas l'année tropique (mesure)",
+        "constant": "dx",
+        "heures": "8766",
+        "id": "Soleil",
+        "jours": "1461/4"
+      },
+      {
+        "attendu": "354 j est l'année lunaire civile (12 × 29,5), pas douze lunaisons moyennes",
+        "constant": "dy",
+        "heures": "8496",
+        "id": "Lune",
+        "jours": "354"
+      },
+      {
+        "attendu": "360 j n'est la période de rien : c'est une base de calcul",
+        "constant": "dz",
+        "heures": "8640",
+        "id": "Terre",
+        "jours": "360"
+      }
+    ],
+    "empreinte_du_gel": "ccbb45f6069a4bf37cc719e42994a669810607d47a3669834bb83eb4f725ad78",
+    "paires": [
+      {
+        "cycle": "Soleil",
+        "reference": "annee_julienne"
+      },
+      {
+        "cycle": "Soleil",
+        "reference": "annee_tropique"
+      },
+      {
+        "cycle": "Soleil",
+        "reference": "annee_tropique_2000"
+      },
+      {
+        "cycle": "Lune",
+        "reference": "annee_lunaire_civile"
+      },
+      {
+        "cycle": "Lune",
+        "reference": "lunaisons_12"
+      },
+      {
+        "cycle": "Lune",
+        "reference": "annee_tropique"
+      },
+      {
+        "cycle": "Terre",
+        "reference": "annee_julienne"
+      },
+      {
+        "cycle": "Terre",
+        "reference": "annee_tropique"
+      },
+      {
+        "cycle": "Terre",
+        "reference": "lunaisons_12"
+      }
+    ],
+    "par_cycle": {
+      "Lune": {
+        "attendu": "354 j est l'année lunaire civile (12 × 29,5), pas douze lunaisons moyennes",
+        "constante": "dy",
+        "ecart_max_s": 971326.08,
+        "ephemerides_mesurees": 2,
+        "face_a": "lunaisons_12",
+        "heures": "8496",
+        "jours": "354",
+        "paires": 3,
+        "verdict": "HORS TOLÉRANCE",
+        "verdict_sur_ephemeride": "HORS TOLÉRANCE"
+      },
+      "Soleil": {
+        "attendu": "365,25 j est l'année julienne (définition de l'UAI), pas l'année tropique (mesure)",
+        "constante": "dx",
+        "ecart_max_s": 674.784,
+        "ephemerides_mesurees": 2,
+        "face_a": "annee_tropique",
+        "heures": "8766",
+        "jours": "1461/4",
+        "paires": 3,
+        "verdict": "ÉCART SIGNALÉ",
+        "verdict_sur_ephemeride": "ÉCART SIGNALÉ"
+      },
+      "Terre": {
+        "attendu": "360 j n'est la période de rien : c'est une base de calcul",
+        "constante": "dz",
+        "ecart_max_s": 486684.288,
+        "ephemerides_mesurees": 2,
+        "face_a": "annee_julienne",
+        "heures": "8640",
+        "jours": "360",
+        "paires": 3,
+        "verdict": "HORS TOLÉRANCE",
+        "verdict_sur_ephemeride": "HORS TOLÉRANCE"
+      }
+    },
+    "references": [
+      {
+        "decite": "365,25",
+        "id": "annee_julienne",
+        "jours": "1461/4",
+        "nature": "définition exacte",
+        "source": "Union astronomique internationale, Résolution B2 (2009) : l'année julienne vaut 365,25 jours exactement, soit 31 557 600 s"
+      },
+      {
+        "decite": "365,2422",
+        "id": "annee_tropique",
+        "jours": "1826211/5000",
+        "nature": "éphéméride mesurée",
+        "source": "NASA Glenn Research Center, Planetary Fact Sheet — Earth : 365,2422 jours (moyenne tropique)"
+      },
+      {
+        "decite": "365,24219",
+        "id": "annee_tropique_2000",
+        "jours": "36524219/100000",
+        "nature": "éphéméride mesurée",
+        "source": "Wikipedia, Tropical year : 365,24219 ephemeris days à l'équinoxe J2000"
+      },
+      {
+        "decite": "29,53059",
+        "id": "lunaison",
+        "jours": "2953059/100000",
+        "nature": "éphéméride mesurée",
+        "source": "Explanatory Supplement to the Astronomical Almanac — mois synodique moyen 29,53059 d"
+      },
+      {
+        "decite": "354,36708",
+        "id": "lunaisons_12",
+        "jours": "8859177/25000",
+        "nature": "éphéméride mesurée",
+        "source": "12 × mois synodique moyen (ligne précédente) = 354,36708 d"
+      },
+      {
+        "decite": "354",
+        "id": "annee_lunaire_civile",
+        "jours": "354",
+        "nature": "convention de calendrier",
+        "source": "année lunaire de douze mois de 29 ou 30 jours — 354 jours, convention civile"
+      }
+    ],
+    "resultats": [
+      {
+        "cycle": "Soleil",
+        "declare_jours": "1461/4",
+        "ecart_s_arrondi": 0.0,
+        "ecart_s_par_an": "0/1",
+        "nature_reference": "définition exacte",
+        "reference": "annee_julienne",
+        "reference_jours": "1461/4",
+        "source_reference": "Union astronomique internationale, Résolution B2 (2009) : l'année julienne vaut 365,25 jours exactement, soit 31 557 600 s",
+        "verdict": "CONFORME"
+      },
+      {
+        "cycle": "Soleil",
+        "declare_jours": "1461/4",
+        "ecart_s_arrondi": 673.92,
+        "ecart_s_par_an": "16848/25",
+        "nature_reference": "éphéméride mesurée",
+        "reference": "annee_tropique",
+        "reference_jours": "1826211/5000",
+        "source_reference": "NASA Glenn Research Center, Planetary Fact Sheet — Earth : 365,2422 jours (moyenne tropique)",
+        "verdict": "ÉCART SIGNALÉ"
+      },
+      {
+        "cycle": "Soleil",
+        "declare_jours": "1461/4",
+        "ecart_s_arrondi": 674.784,
+        "ecart_s_par_an": "84348/125",
+        "nature_reference": "éphéméride mesurée",
+        "reference": "annee_tropique_2000",
+        "reference_jours": "36524219/100000",
+        "source_reference": "Wikipedia, Tropical year : 365,24219 ephemeris days à l'équinoxe J2000",
+        "verdict": "ÉCART SIGNALÉ"
+      },
+      {
+        "cycle": "Lune",
+        "declare_jours": "354",
+        "ecart_s_arrondi": 0.0,
+        "ecart_s_par_an": "0/1",
+        "nature_reference": "convention de calendrier",
+        "reference": "annee_lunaire_civile",
+        "reference_jours": "354",
+        "source_reference": "année lunaire de douze mois de 29 ou 30 jours — 354 jours, convention civile",
+        "verdict": "CONFORME"
+      },
+      {
+        "cycle": "Lune",
+        "declare_jours": "354",
+        "ecart_s_arrondi": -31715.712,
+        "ecart_s_par_an": "-3964464/125",
+        "nature_reference": "éphéméride mesurée",
+        "reference": "lunaisons_12",
+        "reference_jours": "8859177/25000",
+        "source_reference": "12 × mois synodique moyen (ligne précédente) = 354,36708 d",
+        "verdict": "HORS TOLÉRANCE"
+      },
+      {
+        "cycle": "Lune",
+        "declare_jours": "354",
+        "ecart_s_arrondi": -971326.08,
+        "ecart_s_par_an": "-24283152/25",
+        "nature_reference": "éphéméride mesurée",
+        "reference": "annee_tropique",
+        "reference_jours": "1826211/5000",
+        "source_reference": "NASA Glenn Research Center, Planetary Fact Sheet — Earth : 365,2422 jours (moyenne tropique)",
+        "verdict": "HORS TOLÉRANCE"
+      },
+      {
+        "cycle": "Terre",
+        "declare_jours": "360",
+        "ecart_s_arrondi": -453600.0,
+        "ecart_s_par_an": "-453600/1",
+        "nature_reference": "définition exacte",
+        "reference": "annee_julienne",
+        "reference_jours": "1461/4",
+        "source_reference": "Union astronomique internationale, Résolution B2 (2009) : l'année julienne vaut 365,25 jours exactement, soit 31 557 600 s",
+        "verdict": "HORS TOLÉRANCE"
+      },
+      {
+        "cycle": "Terre",
+        "declare_jours": "360",
+        "ecart_s_arrondi": -452926.08,
+        "ecart_s_par_an": "-11323152/25",
+        "nature_reference": "éphéméride mesurée",
+        "reference": "annee_tropique",
+        "reference_jours": "1826211/5000",
+        "source_reference": "NASA Glenn Research Center, Planetary Fact Sheet — Earth : 365,2422 jours (moyenne tropique)",
+        "verdict": "HORS TOLÉRANCE"
+      },
+      {
+        "cycle": "Terre",
+        "declare_jours": "360",
+        "ecart_s_arrondi": 486684.288,
+        "ecart_s_par_an": "60835536/125",
+        "nature_reference": "éphéméride mesurée",
+        "reference": "lunaisons_12",
+        "reference_jours": "8859177/25000",
+        "source_reference": "12 × mois synodique moyen (ligne précédente) = 354,36708 d",
+        "verdict": "HORS TOLÉRANCE"
+      }
+    ],
+    "sensibilite": {
+      "conclusion": "le verdict ne change pas : le seuil est franchi par plus de deux ordres de grandeur, la sixième décimale n'y peut rien",
+      "ecart_s_par_an": "-19821024/625",
+      "lunaison_alternee": "29530588/1000000",
+      "question": "et si le mois synodique valait 29,530588 d au lieu de 29,53059 d",
+      "verdict": "HORS TOLÉRANCE"
+    },
+    "seuils": {
+      "conforme_s_par_an": 60,
+      "correction_apportee": "2026-11-09 : la fraction de lunaisons_12 était écrite 8884173/25000 (= 355,36692 d), ce que ne donnait pas sa propre source « 12 × 29,53059 ». Elle est réécrite 8859177/25000 (= 354,36708 d) et l'identité 12 × lunaison = lunaisons_12 est devenue un contrôle, C15 côté production et V16 côté vérificateur : une référence citée depuis une autre ne peut plus se tromper silencieusement",
+      "enonce": "CONFORME si |écart| ≤ 60 s par an ; ÉCART SIGNALÉ si 60 < |écart| ≤ 3 600 s ; HORS TOLÉRANCE au-delà",
+      "gele_le": "2026-11-09T15:32:44Z",
+      "justification": "une période invoquée pour régler une horloge doit suivre le calendrier qu'elle prétend décrire à la minute près sur un an ; sous 60 s par an l'écart ne se voit pas, au-delà d'une heure par an il se voit dans la saison",
+      "signale_s_par_an": 3600
+    }
+  },
+  "attribution": {
+    "avertissements_sonde": [
+      "aucun en-tete de chapitres : horodatages pris dans toute la description",
+      "timedtext repond sans contenu : le transcript est tenu pour absent"
+    ],
+    "ce_que_la_video_n_a_pas_fourni": [
+      "aucun transcript : donc aucune citation, aucune phrase attribuée à la bande-son",
+      "aucun nombre : ni borne, ni délai, ni taux de réussite d'une preuve automatique",
+      "aucune mention d'AL-MIZAN, que la vidéo ne nomme pas"
+    ],
+    "chaine": "Adem B10",
+    "chapitres_publics": 8,
+    "chapitres_verbatims": [
+      {
+        "debut": "0:00",
+        "titre": "\"I believe the proof is correct\""
+      },
+      {
+        "debut": "1:08",
+        "titre": "Cups, looks and a quantum computer"
+      },
+      {
+        "debut": "2:15",
+        "titre": "The dial and the switch that matters"
+      },
+      {
+        "debut": "3:23",
+        "titre": "The 2019 proof that failed"
+      },
+      {
+        "debut": "3:58",
+        "titre": "Reason one: the Lean certificate"
+      },
+      {
+        "debut": "5:12",
+        "titre": "Reason two: the humans"
+      },
+      {
+        "debut": "6:12",
+        "titre": "Is quantum supremacy dead?"
+      },
+      {
+        "debut": "8:58",
+        "titre": "How Aaronson feels"
+      }
+    ],
+    "duree_s": 593,
+    "mesure_le": "2026-11-09T15:32:44Z",
+    "outils": "scripts/extraire_chapitres_youtube.py (Skill extraire-chapitres-youtube-sans-transcript)",
+    "principe_repris_ici": "séparer celui qui produit la preuve de celui qui la vérifie : le certificat s'écrit avec le dépôt et se relit sans lui. C'est une décision de ce dossier, pas une citation de la vidéo.",
+    "sonde_transcript_octets": {
+      "json3": 0,
+      "srv3": 0,
+      "xml": 0
+    },
+    "titre": "AI Proved His 18-Year-Old Conjecture. He Hasn't Understood It Yet.",
+    "transcript": "absent (timedtext : 0 octet en json3, srv3 et xml)",
+    "url": "https://www.youtube.com/watch?v=qa8IsnneG0c",
+    "video_id": "qa8IsnneG0c"
+  },
+  "derivation": {
+    "formules": {
+      "celeste": "(c1·A/12) · (c2·M/S) · (c3·S/24) · c4, avec A l'année en heures, M le mois, S la semaine",
+      "somme": "dt = dx + dy + dz",
+      "terre_brut": "même produit sur les semences de la Terre, coefficients 300 · 50 · 30 · 24/60",
+      "terre_normalise": "216 000 · 250 · 5/2 — les deux premiers niveaux du brut, puis l'ancre de force 5/2 sur l'axe numérique de LA TABLE"
+    },
+    "niveaux": {
+      "celeste": [
+        "5/2",
+        "3/2",
+        "3/2",
+        "24/60"
+      ],
+      "terre_brut": [
+        "300",
+        "50",
+        "30",
+        "24/60"
+      ],
+      "terre_normalise": [
+        "216000",
+        "250",
+        "5/2"
+      ]
+    },
+    "semences": {
+      "lune": {
+        "annee_h": "8496",
+        "mois_h": "708",
+        "semaine_h": "168"
+      },
+      "soleil": {
+        "annee_h": "8766",
+        "mois_h": "1461/2",
+        "semaine_h": "168"
+      },
+      "terre": {
+        "annee_h": "8640",
+        "mois_h": "720",
+        "semaine_h": "144"
+      }
+    }
+  },
+  "dossier": "HORLOGERIE",
+  "empreintes_souche": {
+    "astronomie": "af9c2072ce5a7b74857b4b78b4a74d96593f7b0b7885de86af8fe4e96c5f17eb",
+    "derivation": "7b8a5863923972dcac2175012cc815f020176ad59a251edd4660e39981700a9e",
+    "identites": "daa38b8ebc85e48872767c162276aef849abbe5a91aa56b396f0d7736b9d9066",
+    "periode": "d7031b09d5c6b9ec37e17c302936ffc090f52ee8f1dd84637cdda637fce16e84",
+    "rationnels": "1c914508af1d447e1e0811b17d3d3adb474eaf388bd0dd8777dc3c22a3e2288f",
+    "unites": "e23e0155c14957be7bb00c6fc3a60cc4a94cde35a636d71d8c51ccb130660e3f"
+  },
+  "englobe": [
+    "astronomie",
+    "derivation",
+    "identites",
+    "periode",
+    "rationnels",
+    "unites"
+  ],
+  "identites": [
+    {
+      "enonce": "dt = dx + dy + dz",
+      "id": "somme",
+      "produit_croise": "17292418731×128 = 17292418731×128 = 2213429597568",
+      "second_membre": "17292418731/128",
+      "vraie": true
+    },
+    {
+      "enonce": "dz_brut = dz × 144/5",
+      "id": "normalisation",
+      "rapport_brut_sur_normalise": "144/5",
+      "vraie": true
+    },
+    {
+      "denominateur": 128,
+      "enonce": "128·dt est un entier impair : 2^7 est le plus petit dénominateur possible",
+      "id": "denominateur",
+      "numerateur": 17292418731,
+      "numerateur_impair": true,
+      "puissance_de_deux": 7,
+      "vraie": true
+    }
+  ],
+  "limites": [
+    "le certificat porte l'arithmétique des nombres déclarés, jamais leur valeur de prévision : rien ici n'affirme qu'AL-MIZAN prédit une période astronomique",
+    "les semences (8766 h, 8496 h, 8640 h) viennent du dépôt ; le certificat montre qu'elles produisent exactement les constantes publiées, pas qu'elles sont vraies",
+    "les références astronomiques sont des valeurs publiques moyennes, citées avec leur source ; elles ne sont pas recalculées depuis une éphéméride du jour",
+    "le rythme d'exécution est absent de ce fichier : il dépend de la machine et sort à part, hors scellement"
+  ],
+  "mode_emploi": "py -3 HORLOGERIE/verifier_certificats.py — se relit sans exécuter une ligne du dépôt",
+  "objet": "certificat arithmétique de l'horloge du kernel AL-MIZAN, et portée de sa lecture en unités de temps",
+  "periode": {
+    "flottant": 7.402087700463515,
+    "fraction": "128000000000/17292418731",
+    "hypothese": "dt serait une fréquence en s⁻¹ — c'est ainsi que les actes A134 et A136 l'écrivent (« Hz »)",
+    "statut": "conséquence arithmétique d'une hypothèse de lecture : le dépôt n'observe aucun compteur de cycles par seconde",
+    "valeur_ns": "7.402087700463514758963767311054249071434"
+  },
+  "racine_merkle_sha256": "76e1ed631223446aedcbda2cc16846df22d0a712c53da790ef2e63f39ffe7984",
+  "rationnels": {
+    "dt": {
+      "denominateur": 128,
+      "flottant": "135097021.3359375",
+      "numerateur": 17292418731,
+      "reduit": true
+    },
+    "dx": {
+      "denominateur": 128,
+      "flottant": "50027.8359375",
+      "numerateur": 6403563,
+      "reduit": true
+    },
+    "dy": {
+      "denominateur": 2,
+      "flottant": "46993.5",
+      "numerateur": 93987,
+      "reduit": true
+    },
+    "dz": {
+      "denominateur": 1,
+      "flottant": "135000000.0",
+      "numerateur": 135000000,
+      "reduit": true
+    },
+    "dz_brut": {
+      "denominateur": 1,
+      "flottant": "3888000000.0",
+      "numerateur": 3888000000,
+      "reduit": true
+    }
+  },
+  "unites": {
+    "condition_de_refutation": "la lecture hertz tombe dès que le temps mesuré d'un tick dépasse 2 × la période ci-dessus ; la mesure est produite par calibrer_horloge_almizan.py, hors scellement",
+    "enonce_retenu": "dt = 17 292 418 731/128 est un BUDGET DE COMPTES adimensionnel. Son rythme d'exécution est une mesure dépendante de la machine ; sa valeur est un rationnel exact qui ne dépend de rien.",
+    "lecture_retenue": "cycle logique",
+    "lectures_rencontrees": [
+      {
+        "forme_verbatim": "dx_soleil ≈ 50027.8359375 Hz · dt = dx + dy + dz ≈ 135097021.3359375 Hz",
+        "lieu": "horloge_noyau/actes/almizan_acte_a134_zero_expansion_matrice_complexe.json",
+        "portee": "déclaration d'un acte scellé, lu en lecture seule : ce dossier ne modifie pas la capsule horloge_noyau/"
+      },
+      {
+        "forme_verbatim": "7.402087700463515",
+        "lieu": "bibliotheques/lib_informe.py → porteur_dt.periode_ns",
+        "portee": "arithmétique 1/dt en nanosecondes : un nombre dérivé, pas une mesure"
+      },
+      {
+        "forme_verbatim": "135097021.3359375",
+        "lieu": "resultats/run_cycle_solaire_lunaire_terrestre_*.json → pulsation_dt_hz",
+        "portee": "un champ nommé « hz » rempli par la constante du noyau, non par un compteur de cycles par seconde"
+      }
+    ],
+    "pourquoi_pas_hz": "une constante physique ne change pas du simple au double d'un ordinateur à l'autre ; le temps par tick, si. La quantité qui porte le nom de l'horloge n'est donc pas la cadence de la machine."
+  },
+  "version": 1
+}
