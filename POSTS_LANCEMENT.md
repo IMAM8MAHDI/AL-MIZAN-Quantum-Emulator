@@ -15,7 +15,7 @@ I built a complete quantum emulator in pure Python with zero external dependenci
 - OpenQASM 2.0 frontend with 8 canonical circuits
 - Sealed SHA-256 mathematical certificates: Riemann zeros ≤100 (29 certified), BSD on named curves, Point Square Conjecture
 
-53/53 tests pass. Every artifact carries explicit computational bounds — no open millennium problem is claimed as solved.
+53/53 emulator tests pass, and 245/245 across the whole deposit (emulator, core clock, ABONDANCE, CHIFFRES, FONDATION). Every artifact carries explicit computational bounds — no open millennium problem is claimed as solved.
 
 GitHub: https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 Zenodo: https://doi.org/10.5281/zenodo.24028242
@@ -26,7 +26,7 @@ Happy to answer questions about the QEC implementation, the interval arithmetic 
 
 ## 2. Reddit r/QuantumComputing
 
-**Title:** I built a pure-Python quantum emulator with QEC, ZNE, and sealed math certificates — 53/53 tests, 0 dependencies
+**Title:** I built a pure-Python quantum emulator with QEC, ZNE, and sealed math certificates — 53/53 emulator tests, 0 dependencies
 
 **Body:**
 Hey r/QuantumComputing,
@@ -42,7 +42,7 @@ I've been working on AL-MIZAN, a quantum emulator in pure Python (stdlib only, n
 **Mathematical certificates (the unique part):**
 - Riemann strip ≤100: 29 zeros certified on Re=½ via interval arithmetic
 - BSD conjecture verified on 3 named elliptic curves (matches LMFDB)
-- Point Square Conjecture PC-1..PC-5 proven by exhaustion
+- Point Square Conjecture PC-1..PC-6 verified by exhaustion on the declared finite domain
 
 **Honest architecture:** Every result carries its computational bound. VQE/Shor are toy demos (H₂, N=15). GDSII is pedagogical, not fabricable. No QPU connected.
 
@@ -114,7 +114,7 @@ Archived on Zenodo: https://doi.org/10.5281/zenodo.24028242
 
 A pure-Python quantum emulator with sealed mathematical certificates.
 
-0 dependencies. 53/53 tests. Full QEC stack.
+0 dependencies. 53/53 emulator tests (245/245 on the whole deposit). Full QEC stack.
 
 🔗 github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 
@@ -132,7 +132,7 @@ The unique part — sealed math certificates:
 
 ✅ Riemann zeros ≤100: 29 certified on Re=½
 ✅ BSD on 3 named elliptic curves
-✅ Point Square Conjecture PC-1..PC-5
+✅ Point Square Conjecture PC-1..PC-6 (exhaustion, declared domain)
 
 Each sealed SHA-256 with explicit bounds.
 

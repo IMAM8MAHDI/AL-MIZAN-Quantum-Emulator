@@ -13,12 +13,12 @@
 AL-MIZAN unifie en un seul paquetage open source (licence AGPL-3.0/GPL-3.0) :
 
 - **Simulation quantique complète** : vecteur d'état (16 qubits), matrice densité (8 qubits), code de correction d'erreur Steane [[7,1,3]], extrapolation à bruit nul (ZNE Richardson), et générateur de layout GDSII pédagogique.
-- **Certificats mathématiques scellés SHA-256** : vérification bornée de la conjecture du Point Carré (PC-1 à PC-5 prouvés par exhaustion), théorème de Turing sur la bande de Riemann ≤100 (29 zéros non triviaux certifiés sur Re=½ par arithmétique d'intervalles), et vérification de la conjecture BSD sur trois courbes elliptiques nommées.
+- **Certificats mathématiques scellés SHA-256** : vérification bornée de la conjecture du Point Carré (PC-1 à PC-6 vérifiés par exhaustion sur le domaine fini déclaré), théorème de Turing sur la bande de Riemann ≤100 (29 zéros non triviaux certifiés sur Re=½ par arithmétique d'intervalles), et vérification de la conjecture BSD sur trois courbes elliptiques nommées.
 - **Contraintes d'honnêteté strictes** : chaque artefact porte sa borne de calcul explicite. Aucun problème ouvert du millénaire n'est revendiqué comme résolu.
 
 ### Des résultats reproductibles
 
-Le logiciel passe **53 tests unitaires et d'intégration avec un taux de réussite de 100%** (0 ignoré), couvrant la préparation d'états, les opérations de portes, les permutations, les métriques d'intrication, l'échantillonnage de Born, les modèles de bruit (trajectoire et Kraus), l'analyse QASM, les algorithmes Deutsch-Jozsa/téléportation/QPE, les bornes variationnelles VQE, la factorisation de Shor, l'encodage GDSII, les règles DRC, l'extrapolation ZNE, le code Steane, et l'arbre des sept problèmes du millénaire.
+Le paquetage d'émulation quantique passe **53 tests unitaires et d'intégration avec un taux de réussite de 100%** (0 ignoré), couvrant la préparation d'états, les opérations de portes, les permutations, les métriques d'intrication, l'échantillonnage de Born, les modèles de bruit (trajectoire et Kraus), l'analyse QASM, les algorithmes Deutsch-Jozsa/téléportation/QPE, les bornes variationnelles VQE, la factorisation de Shor, l'encodage GDSII, les règles DRC, l'extrapolation ZNE, le code Steane, et l'arbre des sept problèmes du millénaire. Le dépôt complet — émulateur, horloge du noyau, et les dossiers ABONDANCE, CHIFFRES et FONDATION — en compte **245, tous verts** (53 + 10 + 107 + 30 + 45), et ses 89 équations sont notées par un seul outil, `FONDATION/OUTILS/audit_piliers.py --tous --rigide`, qui rend 5 modules CONFORME et sort sur code 0.
 
 ### Pourquoi c'est important
 
@@ -29,8 +29,9 @@ Le logiciel fonctionne sur tout environnement Python 3.10+ sans accès matériel
 ### Disponibilité
 
 - **GitHub** : https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
-- **Zenodo (archive peer-reviewed)** : https://doi.org/10.5281/zenodo.24028242
-- **Version 3.1** : https://doi.org/10.5281/zenodo.24062292
+- **Zenodo (archive peer-reviewed)** : https://doi.org/10.5281/zenodo.24028242 — DOI de concept, c'est la référence citable, il résout toujours vers la dernière version déposée
+- **Dernière version** : v3.2.0, https://doi.org/10.5281/zenodo.24074846 (9 novembre 2026) — dossiers FONDATION et CHIFFRES, audit des quatre piliers sur le parc entier
+- **Versions précédentes** : v3.1.0, https://doi.org/10.5281/zenodo.24062292 (8 novembre 2026) ; v3.0.0, https://doi.org/10.5281/zenodo.24054060
 - **Licence** : AGPL-3.0 / GPL-3.0 (double licence open source)
 
 ### À propos de l'auteur

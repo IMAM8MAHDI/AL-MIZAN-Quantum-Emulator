@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Si vous utilisez, deployez ou citez ce logiciel, veuillez citer le DOI de concept 10.5281/zenodo.24028242 (il resout vers la derniere version deposee) et respecter la double licence GPL-3.0 / AGPL-3.0."
 title: "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems"
-version: "2.0.0"
-date-released: "2026-11-07"
+version: "3.2.0"
+date-released: "2026-11-09"
 doi: "10.5281/zenodo.24028242"
 url: "https://doi.org/10.5281/zenodo.24028242"
 repository-code: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
@@ -22,6 +22,12 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.24032527"
     description: "DOI de la version 2.0.0 (2026-11-07)"
+  - type: doi
+    value: "10.5281/zenodo.24062292"
+    description: "DOI de la version 3.1.0 (2026-11-08), dossier ABONDANCE"
+  - type: doi
+    value: "10.5281/zenodo.24074846"
+    description: "DOI de la version 3.2.0 (2026-11-09), dossiers FONDATION et CHIFFRES"
   - type: url
     value: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
     description: "Depot GitHub officiel"
@@ -44,7 +50,7 @@ abstract: >-
   unifying state vector simulation (up to 16 qubits), density matrix evolution (up to 8 qubits),
   Steane [[7,1,3]] quantum error correction, zero-noise extrapolation (Richardson), and pedagogical
   GDSII layout generation. It provides sealed SHA-256 mathematical certificates for bounded verifications:
-  Point Square Conjecture (PC-1..PC-5 proven by exhaustion), Turing theorem on the Riemann strip <= 100
+  Point Square Conjecture (PC-1..PC-6 verified by exhaustion on the declared finite domain), Turing theorem on the Riemann strip <= 100
   (29 zeros certified via interval arithmetic), and BSD verification on named elliptic curves.
   Strict honesty constraints: every artifact carries its computational bound, no open millennium problem
   is claimed as solved. Developed by M. Ahmed EL BAHLOUL under the IMAM8MAHDI initiative.
