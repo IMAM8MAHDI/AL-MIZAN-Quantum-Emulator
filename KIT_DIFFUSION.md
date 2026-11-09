@@ -85,6 +85,27 @@ arithmétique expérimentale — MathOverflow, revues exp. math., séminaires.
 > (i) et (ii) ont-ils un nom dans la littérature ? (iii) semble classique
 > — la référence exacte m'intéresse.
 
+**Variante — dossier CHIFFRES** (mêmes cibles, autre question) :
+
+> Objet : 108 cellules pré-déclarées sur π, e et √2 — structure connue ?
+>
+> Bonjour,
+>
+> `CHIFFRES/chiffres_pi.py` produit π, e et √2 par **deux voies
+> indépendantes** (Chudnovsky 1989 contre Machin 1706 pour π ; Σ 1/k! pour
+> e ; encadrement entier pour √2), annonce 108 cellules de test avant de
+> lire les chiffres, puis les confronte sur n = 10⁶ : une exclusion contre
+> 0,108 attendues, p globale 0,2047 — verdict CONTENU. Rien ici ne prétend
+> prouver la normalité de π : le domaine est fini et déclaré, et le dernier
+> chapitre de la vidéo d'amorce (« A pattern nobody has proven ») est pris
+> au mot.
+>
+> Rejeu : `cd CHIFFRES && py -3 chiffres_pi.py` (domaine court, 17/17
+> contrôles). L'audit des quatre piliers pour tout le dépôt :
+> `py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide`.
+> Ces fréquences par longueur ont-elles un nom dans la littérature
+> (runs, mots distincts, auto-localisation du numéro à sa propre place) ?
+
 ---
 
 ## Règles d'envoi

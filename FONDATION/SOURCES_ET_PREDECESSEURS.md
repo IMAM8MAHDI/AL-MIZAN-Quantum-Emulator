@@ -182,6 +182,13 @@ coûte des phrases, pas quand il est annoncé.
 7. **La validation Monte-Carlo teste l'arithmétique, pas le détecteur.**
    `SIMULATIONS/simuler_kaons.py` rend cinq verdicts verts (V1 à V5) sur des lois de comptage
    à fond connu ; un désaccord de 5 écarts-types invaliderait la validation, pas la nature.
+8. **Les quatre piliers ne sont pas ceux du dossier sécurité.** Même auteur, autre registre :
+   `SECURITE_INFRASTRUCTURES_PUBLIQUES/trois_couches_quatre_piliers.py` note Identité et
+   mandat / Intégrité et provenance / Confidentialité et maîtrise / Résilience et preuve sur
+   trois couches de garde (Publique, Entreprises, Individus). Ce dossier-ci note UNITE,
+   BORNE, CONFRONTATION, TRANSMISSION sur trois couches d'énoncé (MESURABLE, REGULARITE,
+   HORS_MATRICE). `audit_piliers.py` ne juge que les seconds ; les confondre serait un
+   abus de titre, pas une convergence de fond.
 
 ## 7. Comment revérifier
 
@@ -204,6 +211,15 @@ worktree — un `sha256sum` sur un fichier Windows en CRLF divergerait et n'est 
 réfutation du sceau. `--verifier` n'écrit rien et rend 1 dès qu'une entrée manque, part ou
 change ; la régénération (`sans option`) ne se joue qu'après un commit, puisque le fichier
 qu'il produit est exclu de son propre empreinte.
+
+**Couple à connaître.** `EQ-05` fait le recensement des `.py` du parc, et deux productrices
+l'écrivent : `fondation_base.py --ecrit` (`artefacts/inventaire.json`,
+`artefacts/confrontation.json`) et `generer_fondation.py`
+(`artefacts/donnees/fondation.json`, champ `imports_parc`). Ajouter un outil à un dossier
+change donc ces trois artefacts : après tout ajout, rejouer les deux générateurs, puis
+committer, puis resceller — dans cet ordre. Mesuré le 2026-11-09 : `FONDATION` passe de 5 à 6
+en ajoutant `sceller_manifeste.py` ; `confrontation.json`, écrit plus tôt sur un dossier à
+2 fichiers, est remonté à 6 dans le même mouvement.
 
 **Fins de ligne.** Le dépôt normalise les blobs en LF (`core.autocrlf=true`) : l'archive
 Zenodo contient la variante LF. Les empreintes du manifeste sont calculées sur le blob
