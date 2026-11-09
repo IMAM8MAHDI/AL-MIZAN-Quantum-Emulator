@@ -1,7 +1,7 @@
 {
   "title": "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems",
   "upload_type": "software",
-  "description": "Simulateur quantique à vecteur d'état et matrice densité (QEC Steane [[7,1,3]], ZNE, GDSII, diélectrique TCP). Conjecture du Point Carré vérifiée par exhaustion sur le domaine fini déclaré (PC-1..PC-6), théorème de Turing complet sur le strip Riemann ≤ 100 (29 zéros certifiés par intervalles), BSD vérifiée par équation fonctionnelle sur courbes nommées, chasseur de théorèmes (invariants quadratiques cachés), échelles de lemmes et équations de recherche précises pour les problèmes ouverts. Honnêteté : aucun problème ouvert n'est résolu ; chaque artefact est borné et scellé SHA-256.",
+  "description": "Simulateur quantique à vecteur d'état et matrice densité (QEC Steane [[7,1,3]], ZNE, GDSII, diélectrique TCP). Conjecture du Point Carré vérifiée par exhaustion sur le domaine fini déclaré (PC-1..PC-6), théorème de Turing complet sur le strip Riemann ≤ 100 (29 zéros certifiés par intervalles), BSD vérifiée par équation fonctionnelle sur courbes nommées, chasseur de théorèmes (invariants quadratiques cachés), échelles de lemmes et équations de recherche précises pour les problèmes ouverts. Base universelle (FONDATION/) : quatre piliers — UNITÉ, BORNE, CONFRONTATION, TRANSMISSION — et trois couches, 18 équations dont une prédiction gelée avant toute lecture du comparateur, confrontée aux mesures publiques de NA62 sur le kaon rare K⁺ → π⁺νν̄. CHIFFRES/ : π, e et √2 produits par deux voies indépendantes, 108 cellules pré-déclarées puis confrontées sur n = 10⁶. Le même outil (FONDATION/OUTILS/audit_piliers.py) audite les 89 équations et les 89 contrôles du dépôt. Honnêteté : aucun problème ouvert n'est résolu ; chaque artefact est borné et scellé SHA-256.",
   "creators": [
     {
       "name": "EL BAHLOUL, M. Ahmed (IMAM8MAHDI)",
@@ -19,7 +19,11 @@
     "certificats",
     "AL-MIZAN",
     "interval arithmetic",
-    "OpenQASM"
+    "OpenQASM",
+    "quatre piliers",
+    "NA62",
+    "kaon rare",
+    "chiffres de pi"
   ],
   "related_identifiers": [
     {
