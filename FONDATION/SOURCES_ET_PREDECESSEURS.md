@@ -190,12 +190,20 @@ cd ZENODO_DEPOT_ALMIZAN
 py -3 FONDATION/fondation_base.py                     # 18/18 contrôles, rc=0
 py -3 -m unittest FONDATION.tests.test_fondation      # 45 tests, OK
 py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide   # 5 modules CONFORME, rc=0
+py -3 FONDATION/OUTILS/sceller_manifeste.py --verifier    # manifeste = HEAD, rc=0 si conforme
 py -3 FONDATION/SIMULATIONS/simuler_kaons.py          # V1..V5 verts, rc=0
 ```
 
 `fondation_base.py` n'écrit ses artefacts que sur demande explicite (`--ecrit`) ; sans
 l'option, il rend le verdict complet sur la sortie standard. Aucun import tiers : la stdlib
 seule (`__future__`, `hashlib`, `inspect`, `json`, `math`, `pathlib`, `re`, `sys`, `typing`).
+
+`OUTILS/sceller_manifeste.py` est l'unique gardien de la convention du manifeste : il lit
+`git ls-tree -z HEAD` puis `git cat-file --batch`, donc les octets du **blob**, jamais le
+worktree — un `sha256sum` sur un fichier Windows en CRLF divergerait et n'est pas une
+réfutation du sceau. `--verifier` n'écrit rien et rend 1 dès qu'une entrée manque, part ou
+change ; la régénération (`sans option`) ne se joue qu'après un commit, puisque le fichier
+qu'il produit est exclu de son propre empreinte.
 
 **Fins de ligne.** Le dépôt normalise les blobs en LF (`core.autocrlf=true`) : l'archive
 Zenodo contient la variante LF. Les empreintes du manifeste sont calculées sur le blob

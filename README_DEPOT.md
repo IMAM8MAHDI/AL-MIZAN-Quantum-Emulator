@@ -77,14 +77,21 @@ ZENODO_DEPOT_ALMIZAN/
 ```
 
 **Convention du manifeste** : une empreinte par fichier, deux espaces,
-puis le chemin ; groupé par répertoire de premier niveau, trié à
-l'intérieur de chaque groupe. Les hashes
+puis le chemin ; tri global par chemin, ce qui regroupe de fait les
+répertoires de premier niveau. Les hashes
 portent sur les octets **normalisés LF** du blob git — donc `sha256sum`
 sur un worktree Windows (`core.autocrlf=true`, fins CRLF) ne correspondra
 pas. Pour vérifier depuis n'importe quel système :
 
 ```
 git cat-file blob HEAD:CHEMIN | sha256sum     # une ligne du manifeste
+```
+
+Le même contrat est rejouable par un tiers sans copier de commande :
+
+```
+py -3 FONDATION/OUTILS/sceller_manifeste.py --verifier   # lecture seule, rc 1 si divergent
+py -3 FONDATION/OUTILS/sceller_manifeste.py              # régénère après un commit
 ```
 
 Le manifeste scelle tout fichier suivi par git **sauf lui-même** (pas
