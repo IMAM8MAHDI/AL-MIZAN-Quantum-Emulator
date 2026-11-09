@@ -2,6 +2,7 @@
 
 **Auteurs** : M. Ahmed EL BAHLOUL (IMAM8MAHDI) — développement assisté par IA générative (Devin SWE-2, Cognition AI), résultats relus et dirigés par l'auteur humain
 **DOI Zenodo** : [10.5281/zenodo.24028242](https://doi.org/10.5281/zenodo.24028242) — DOI de concept, il résout toujours vers la dernière version publiée
+**Chaîne de versions** : la dernière version publiée est v3.2.1, [10.5281/zenodo.24075082](https://doi.org/10.5281/zenodo.24075082), archive `AL-MIZAN_v321_c05f7ee.zip` (818 588 octets, SHA-256 `1d681d2d68ac45d2…`), construite par `git -c core.autocrlf=false archive --format=zip HEAD` — donc sur les octets des blobs scellés, jamais sur l'arbre de travail Windows. Un record publié n'est pas amendable : corriger un document du dépôt coûte un numéro de version. `CITATION.cff` porte la version du **contenu** de l'archive, jamais son propre DOI de version — même règle d'auto-référence que `MANIFESTE_SHA256.txt`, qui s'exclut lui-même du scellement.
 **Licence** : AGPL-3.0 / GPL-3.0 (double licence, voir LICENSE.md, LICENSE-AGPL, LICENSE-GPL). Le champ licence, unique sur Zenodo, y porte AGPL-3.0-only.
 **Horloge noyau** : copie intégrale scellée conforme au verrou A137 (lecture/copie autorisées, contenu intact)
 
