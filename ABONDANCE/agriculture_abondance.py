@@ -661,9 +661,9 @@ def ponts_dossier() -> List[Dict[str, str]]:
 # ============================================================================
 
 def _eq(id_: str, chemin: str, formule: str, resultat: str, statut: str,
-        detail: Any) -> Dict[str, Any]:
+        detail: Any, limite: str = "") -> Dict[str, Any]:
     return {"id": id_, "chemin": chemin, "formule": formule,
-            "resultat": resultat, "statut": statut, "detail": detail}
+            "resultat": resultat, "statut": statut, "limite": limite, "detail": detail}
 
 
 def resoudre() -> Dict[str, Any]:
@@ -681,107 +681,161 @@ def resoudre() -> Dict[str, Any]:
             f"{_f(st['masse_reactifs_g'], 3)} g de réactifs = {_f(st['masse_produits_g'], 3)} g de "
             f"produits · {_f(st['co2_par_g_biomasse'], 3)} g CO2 par g de biomasse · "
             f"{st['desequilibre_atomique']:.0f} atome d'écart",
-            "OPÉRATIONNEL", st),
+            "OPÉRATIONNEL", st,
+            limite="l'égalité atome par atome est une clôture de compte sur des masses atomiques "
+                   "déclarées : elle fixe ce qui entre et sort par mole de glucose, ni la vitesse "
+                   "de la réaction, ni le rendement d'une parcelle"),
         _eq("EQ-02", "agriculture_abondance.py → exigence_quantique() → C02",
             "E = N_A·hc/λ par einstein ;  4 photons/CO2 au minimum, 8,5 mesurés",
             f"680 nm → {_f(eq2['e_photon_eV'], 4)} eV = {_f(eq2['einstein_kJ_par_mol_photons'], 2)} "
             f"kJ/mol de photons · plafond {100 * eq2['rendement_plafond_min']:.1f} % (4 photons), "
             f"{100 * eq2['rendement_plafond_mesure']:.1f} % (8,5)",
-            "OPÉRATIONNEL", eq2),
+            "OPÉRATIONNEL", eq2,
+            limite="4 photons est un plancher de compte (le schéma en Z : 2 NADPH + 3 ATP) et "
+                   "8,5 une mesure de feuille rapportée en littérature : le plafond énergétique "
+                   "qui en sort borne le registre, il ne prédit aucune culture"),
         _eq("EQ-03", "agriculture_abondance.py → spectre_PAR() → C03",
             "M_λ(T) intégrée sur 400–700 nm ;  φ = ∫M_λλ/(hc)dλ",
             f"PAR = {100 * sp['fraction_energie_PAR']:.1f} % de l'énergie · "
             f"{_f(sp['umol_par_joule_de_rayonnement_total'], 3)} µmol/J · pleine lumière hors "
             f"atmosphère ≈ {sp['ppfd_1000_W_m2_hors_atmosphere']:.0f} µmol/m²/s · "
             f"STEFAN-BOLTZMANN re-vérifiée par l'intégrale à {sp['ecart_integration_stefan']:.1e}",
-            "OPÉRATIONNEL", sp),
+            "OPÉRATIONNEL", sp,
+            limite="le corps noir à 5772 K est un modèle de la photosphère, pas un relevé du "
+                   "Soleil : l'intégrale est exacte hors atmosphère, tandis que les 45 % au sol "
+                   "et les 2 000 µmol sont deux valeurs déclarées d'origine différente"),
         _eq("EQ-04", "agriculture_abondance.py → budget_solaire_agricole() → C04",
             "E_PAR = I·f_PAR·S ;  demande = N·(kcal/j)·365·4184",
             f"PAR sur les cultivables = {bs['energie_PAR_ZJ_par_an']:.1f} ZJ/an contre "
             f"{bs['demande_alimentaire_ZJ_par_an']:.3f} ZJ/an demandés · à 0,5 % de conversion : "
             f"{bs['facteurs_de_conversion']['0.5 %']:.1f}× la demande",
-            "SIMULÉ", bs),
+            "SIMULÉ", bs,
+            limite="220 W/m², 1,4 milliard d'hectares et l'étage 0,2 à 2 % sont saisis en "
+                   "valeurs déclarées : le ZJ de PAR disponible n'est pas un ZJ captable, et "
+                   "ni la saison ni l'eau n'entrent dans ce ratio"),
         _eq("EQ-05", "agriculture_abondance.py → rayonnement_use_efficiency() → C05",
             "ΔB = ε·fAPAR·PAR  (Monteith) ;  ε ≤ plafond EQ-02",
             f"plafond {rue['plafond_a_8_5_photons_g_par_MJ_PAR']:.2f} g/MJ PAR · C4 déclaré à "
             f"{100 * rue['part_du_plafond_C4']:.1f} % du plafond, C3 à "
             f"{100 * rue['part_du_plafond_C3']:.1f} %",
-            "OPÉRATIONNEL", rue),
+            "OPÉRATIONNEL", rue,
+            limite="l'identité de Monteith ne borne rien toute seule : ε à 1,5 et 3,0 g/MJ et "
+                   "fAPAR à 0,85 sont déclarés, et le rapport au plafond d'EQ-02 dit seulement "
+                   "qu'aucune de ces constantes ne le franchit"),
         _eq("EQ-06", "agriculture_abondance.py → voies_photosynthetiques() → C06",
             "Rubisco : v_C/v_O = 85 · C4 = pompe à CO2 devant Rubisco",
             f"C4/C3 en ε = {voy['gain_C4_sur_C3']:.2f}× · coût de la photorespiration = "
             f"{100 * voy['part_perdue_par_photorespiration']:.1f} % des photons",
-            "SIMULÉ", voy),
+            "SIMULÉ", voy,
+            limite="les trois voies sont des colonnes de valeurs déclarées (ε, compensation, "
+                   "optimum, WUE) : aucun essai, aucun cultivar, aucun climat — le gain de 2× "
+                   "est le quotient de deux chiffres du fichier"),
         _eq("EQ-07", "agriculture_abondance.py → loi_du_minimum() → C07",
             "Y = Y_max · minᵢ(fᵢ) ;  doubler un facteur non limitant ne change rien",
             f"P limitant : {_fa(lim['y0'])} t/ha · P ×2 : {_fa(lim['y1'])} · P ×4 : "
             f"{_fa(lim['y2'])} (plateau, limitant = {lim['limitant_apres_P_x4']}) · eau ×2 : "
             f"{_fa(lim['y3'])} · toutes les planches pleines : {_fa(lim['y4'])}",
-            "OPÉRATIONNEL", lim),
+            "OPÉRATIONNEL", lim,
+            limite="les cinq planches et le Y_max de 3,5 t/ha sont posés par le fichier : min "
+                   "d'un facteur saturé est une loi exacte appliquée à des nombres choisis, et "
+                   "le plateau dit ce qui change, pas ce qui limite un champ"),
         _eq("EQ-08", "agriculture_abondance.py → azote_haber_bosch() → C08",
             "NH3 = 82,25 % d'azote ;  31 GJ/t NH3 ⇒ 37,7 MJ par kg N",
             f"grain : {_fa(az['azote_du_grain_kg_ha'])} kg N/ha sur "
             f"{az['azote_applique_kg_ha']:.0f} kg appliqués → NUE {100 * az['noue_recuperation_grain']:.1f} % · "
             f"{_f(az['energie_azote_kwh_par_t_grain'], 0)} kWh par tonne de blé",
-            "OPÉRATIONNEL", az),
+            "OPÉRATIONNEL", az,
+            limite="31 GJ/t NH3 est le milieu d'une fourchette déclarée de 28 à 34 : l'énergie "
+                   "par tonne ne compte que les 120 kg d'azote minéral appliqué, et rien ici ne "
+                   "suit l'azote qui ne revient pas au grain"),
         _eq("EQ-09", "agriculture_abondance.py → evapotranspiration() → C09",
             "ET = R_n/(ρL) ;  1 mm sur 1 ha = 10 m³",
             f"R_n 100 W/m² → {_f(ev['mm_par_jour'], 3)} mm/jour · blé {ET_BLE_MM_AN:.0f} mm = "
             f"{ev['besoin_m3_ha_an']:.0f} m³/ha = {_fa(ev['besoin_litre_par_kg_grain'])} L/kg",
-            "OPÉRATIONNEL", ev),
+            "OPÉRATIONNEL", ev,
+            limite="R_n à 100 W/m² est une déclaration pour une culture de référence et "
+                   "1 mm = 10 m³/ha une identité géométrique : le débit tenu constant sur "
+                   "365 jours n'est pas un suivi pluviométrique ni un bilan de saison"),
         _eq("EQ-10", "agriculture_abondance.py → energie_irrigation() → C10",
             "e = kWh/m³ du dossier EAU (ρgH/η à 50 m) × volume prélevé",
             f"{ir['kWh_par_m3_depuis_eau']:.4f} kWh/m³ · goutte-à-goutte "
             f"{_f(ir['energie_gouttelette_GJ_ha'], 3)} GJ/ha vs superficielle "
             f"{_f(ir['energie_superficielle_GJ_ha'], 3)} GJ/ha · irrigation/azote = "
             f"{ir['ratio_irrigation_sur_azote']:.2f}",
-            "OPÉRATIONNEL", ir),
+            "OPÉRATIONNEL", ir,
+            limite="goutte-à-goutte 0,90 et surface 0,60 sont deux efficacités déclarées : "
+                   "l'écart entre les deux est un calcul sur ces deux nombres, pas un essai "
+                   "sur parcelle, et le kWh/m³ hérite du pompage à 50 m du dossier EAU"),
         _eq("EQ-11", "agriculture_abondance.py → eau_virtuelle() → C11",
             "L/kg dérivé (EQ-09) contre L/kg déclaré (dossier EAU EQ-12)",
             f"dérivé {_fa(vv['litres_par_kg_derive_agriculture'])} vs déclaré "
             f"{vv['litres_par_kg_declareEAU']:.0f} L/kg · écart "
             f"{100 * vv['ecart_relatif']:.1f} % · compartiments vert/bleu/gris fermés",
-            "SIMULÉ", vv),
+            "SIMULÉ", vv,
+            limite="l'accord confronte deux déclarations — l'eau virtuelle du "
+                   "dossier EAU et nos propres rendements — non un bassin mesuré ; les parts "
+                   "70, 20 et 10 % comme les 90 kg par personne sont admises, pas comptées"),
         _eq("EQ-12", "agriculture_abondance.py → discrimination_carbone() → C12",
             "Δ¹³C = a + (b−a)·ci/ca ;  WUE ∝ ca·(1 − ci/ca)",
             f"Δ {DELTA_13C_C3_POURMILLE}‰ ⇒ ci/ca = {dc['ci_sur_ca']:.4f} · 300 → 420 ppm : "
             f"efficience hydrique +{100 * dc['gain_d_efficience_hydrique']:.1f} % à Δ constant",
-            "OPÉRATIONNEL", dc),
+            "OPÉRATIONNEL", dc,
+            limite="a, b et Δ sont trois constantes saisies de littérature : la proportionnalité "
+                   "strictement exacte du gain à c_a est une identité de la formule, pas un δ¹³C "
+                   "relevé sur un échantillon"),
         _eq("EQ-13", "agriculture_abondance.py → calories_par_hectare() → C13",
             "personnes/ha = (t/ha)·(kcal/t) / (2100 kcal/j × 365)",
             f"blé {_fa(cal['ble']['personnes_par_ha'])} pers/ha · maïs "
             f"{_fa(cal['mais']['personnes_par_ha'])} pers/ha · ratio "
             f"{cal['rapport_mais_sur_ble']:.2f}",
-            "SIMULÉ", cal),
+            "SIMULÉ", cal,
+            limite="multiplier t/ha par kcal/t et diviser par 2 100 kcal/j est une identité "
+                   "d'unités : elle borne un flux calorique et reste muette sur les ravageurs, "
+                   "le travail, le marché et les jachères"),
         _eq("EQ-14", "agriculture_abondance.py → surface_nourrir_le_monde() → C14",
             "S = N·(kcal/j)·365 / (kcal/ha) ;  élevage = surface × indice de conversion",
             f"8 Md en céréales seules : {sf['surface_ble_ha'] / 1e6:.0f} Mha sur "
             f"{SURFACE_CULTIVABLE_HA / 1e6:.0f} Mha disponibles ({sf['marge_cerealiere']:.1f}×) · "
             f"avec 25 % d'apport animal : {sf['surface_avec_elevage_ha'] / 1e6:.0f} Mha",
-            "SIMULÉ", sf),
+            "SIMULÉ", sf,
+            limite="nourrir 8 milliards en régime céréalier unique ne porte aucune allégation "
+                   "sur la distribution, la logistique ni les politiques agricoles ; les 25 % "
+                   "d'apport animal et l'indice 6,0 sont deux déclarations juxtaposées"),
         _eq("EQ-15", "agriculture_abondance.py → dette_de_sol() → C15",
             "M = z·S·ρ ;  dette = débit d'érosion − taux de formation",
             f"horizon 30 cm = {ds['masse_horizon_t_ha']:.0f} t/ha · érosion {SOL_ÉROSION_T_HA_AN:.0f} "
             f"t/ha/an = {ds['ratio_erosion_sur_formation']:.0f}× la formation · "
             f"{ds['annees_avant_horizon_perdu']:.0f} ans avant disparition",
-            "SIMULÉ", ds),
+            "SIMULÉ", ds,
+            limite="les deux durées naissent d'un quotient de deux déclarations tenues "
+                   "constantes sur tout l'horizon : ni la pente, ni la pluie, ni le travail "
+                   "mécanique n'entrent au calcul, et 30 cm est une hypothèse de fichier"),
         _eq("EQ-16", "agriculture_abondance.py → serre_led_bilan() → C16",
             "kWh/m² = DLI·E_einstein ;  WPE = φ·E_photon/Pélec",
             f"15 mol/m²/j : minimum {_f(sl['kWh_m2_jour_minimum_photons'], 4)} kWh, système "
             f"{_f(sl['kWh_m2_jour_systeme_led'], 4)} kWh ({sl['W_electrique_m2']:.0f} W/m²) · "
             f"{_fa(sl['kWh_par_kg_tomate_lumiere_seule'])} kWh/kg de tomate (lumière seule)",
-            "OPÉRATIONNEL", sl),
+            "OPÉRATIONNEL", sl,
+            limite="le kWh par kilogramme de tomate sort d'un µmol/J commercial déclaré à 660 nm "
+                   "et de 40 kg/m²/an : lumière seule, hors climat, eau ni main-d'œuvre, et le "
+                   "PPFD étale les 15 mol sur une photopériode de 16 h déclarée"),
         _eq("EQ-17", "agriculture_abondance.py → materiaux_optimisants() → C17",
             "quantité/ha = f(EQ-08, EQ-09, EQ-10, EQ-16) avec facteurs stoechiométriques exacts",
             f"{len(ma['materiaux'])} matériaux dimensionnés · film {_fa(ma['materiaux'][1]['quantite_par_ha'])} "
             f"kg/ha · SAP {_fa(ma['materiaux'][2]['quantite_par_ha'])} kg/ha · biochar "
             f"{ma['materiaux'][3]['surface_interne_km2_ha']:.0f} km² de surface interne par ha traité",
-            "SIMULÉ", ma),
+            "SIMULÉ", ma,
+            limite="huit quantités héritées d'EQ-08, EQ-09, EQ-10 et EQ-16 : cinq lignes "
+                   "restent sans colonne d'énergie, les performances des matériaux sont "
+                   "déclarées, et rien ne compte l'extraction, le transport ni la durée de vie"),
         _eq("EQ-18", "agriculture_abondance.py → ponts_dossier() → C18",
             "P1 ↔ plafond · P2 ↔ photopériode et siècles de sol · P3 ↔ planche la plus basse · "
             "P4 ↔ dettes",
             "4 ponts déclarés comme lectures, chacun borné par une limite",
-            "SPÉCIFIÉ", pd),
+            "SPÉCIFIÉ", pd,
+            limite="quatre lectures du dossier, pas des dérivations : aucun nombre du fichier ne "
+                   "bouge si l'un des ponts tombe, et la limite attachée à chaque pont engage le "
+                   "registre, pas une contrainte numérique"),
     ]
 
     controles = [

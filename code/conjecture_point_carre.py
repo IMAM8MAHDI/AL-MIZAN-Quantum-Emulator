@@ -69,9 +69,16 @@ if hasattr(sys.stdout, "reconfigure"):
         pass
 
 RACINE = Path(__file__).resolve().parent
-RACINE_SYSTEME_AQ = RACINE.parent / "ASTRO-Q°ODE_SYSTEME"
-if str(RACINE_SYSTEME_AQ) not in sys.path:
-    sys.path.insert(0, str(RACINE_SYSTEME_AQ))
+RACINE_DEPOT = RACINE.parent
+RACINE_SYSTEME_AQ = RACINE_DEPOT / "ASTRO-Q°ODE_SYSTEME"
+
+# `bibliotheques/` est embarqué à la racine du dépôt : c'est elle qui porte la
+# clôture du point carré (PC-3/PC-4/PC-5 rejoués depuis LA TABLE, pas depuis des
+# constantes recopiées). La racine du dépôt passe en premier ; un moteur voisin
+# n'est plus qu'un repli historique.
+for _racine in reversed((RACINE_DEPOT, RACINE_SYSTEME_AQ)):
+    if _racine.is_dir() and str(_racine) not in sys.path:
+        sys.path.insert(0, str(_racine))
 
 DOSSIER_RESULTATS = RACINE / "resultats"
 

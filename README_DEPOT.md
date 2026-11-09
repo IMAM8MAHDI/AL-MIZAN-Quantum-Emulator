@@ -35,9 +35,41 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── plan_global.py           # échelles de lemmes ×5
 │   ├── equations_recherche.py   # énoncés exacts des goulots
 │   └── arbre_savoir.py          # orchestrateur (10 branches)
-├── tests/                 # 48 tests unittest — tous verts
+├── ABONDANCE/             # 54 équations · 54 contrôles · 3 dossiers
+│   ├── electricite_abondance.py #   électricité  · 21 équations bornées
+│   ├── eau_abondance.py         #   eau          · 15 équations bornées
+│   ├── agriculture_abondance.py #   agriculture  · 18 équations bornées
+│   ├── generer_abondance.py     # pages FR/EN/AR + SVG + JSON + CSV Excel
+│   ├── moteur_page_trilingue.py # garde-fou numérique des textes traduits
+│   ├── artefacts/               # 31 livrables régénérés
+│   └── tests/                   # 107 tests
+├── CHIFFRES/              # π, e, √2 : 17 équations · 17 contrôles
+│   ├── generer_chiffres.py      # deux voies INDÉPENDANTES par constante
+│   ├── chiffres_pi.py           # 108 cellules pré-déclarées puis confrontées
+│   ├── artefacts/               # predictions / mesures / confrontation (n = 10⁶)
+│   ├── SOURCES_ET_PREDECESSEURS.md
+│   └── tests/                   # 30 tests
+├── FONDATION/             # la base universelle : 4 piliers, 3 couches, 18 équations
+│   ├── fondation_base.py        # axiome hors matrice → prédiction gelée → NA62
+│   ├── generer_fondation.py     # pages FR/EN/AR + SVG + JSON + CSV Excel
+│   ├── OUTILS/audit_piliers.py  # rejoue les 4 piliers sur tout module du dépôt
+│   ├── SIMULATIONS/simuler_kaons.py  # V1..V5 Monte-Carlo Poisson, graine 20261109
+│   ├── artefacts/               # 13 livrables, dont la confrontation de 18 équations
+│   ├── SOURCES_ET_PREDECESSEURS.md
+│   └── tests/                   # 45 tests
+├── tests/                 # 53 tests unittest — tous verts, 0 ignoré
 ├── resultats/             # rapports JSON scellés SHA-256 + .gds
-├── horloge_noyau/         # noyau logique scellé (copie A137)
+├── bibliotheques/         # 5 modules du moteur ASTRO-Q°ODE : clôture
+│   │                      # transitive exacte de ce que ce dépôt importe
+│   ├── lib_informe.py           # MatriceLogiqueComplexe, Q·degré
+│   ├── lib_physique.py          # états Sol/Terre/Lune, 14 Formes
+│   ├── lib_temporelle.py        # cycles dx dy dz dt
+│   ├── lib_monade.py            # MonadeSupreme, transcription >>=
+│   └── lib_almizan_extension.py # 27 Formes, invariants 0.6225 / 0.122
+├── moteur/                # 2 briques quantiques souveraines, pur stdlib
+│   ├── qubit_logique_mizan.py              # Steane [[7,1,3]]
+│   └── transducteur_quantique_deterministe_mizan.py  # A–S, MIZAN 0.6225
+├── horloge_noyau/         # noyau logique scellé (copie A137) + ses 10 tests
 ├── HOMMAGE_PREDECESSSEURS.md
 ├── .zenodo.json           # métadonnées du dépôt
 ├── CITATION.cff, NOTICE.txt, LICENSE-*
@@ -56,10 +88,22 @@ git cat-file blob HEAD:CHEMIN | sha256sum     # une ligne du manifeste
 ```
 
 Le manifeste scelle tout fichier suivi par git **sauf lui-même** (pas
-d'auto-référence). `python code/conjecture_point_carre.py` se rejoue sans
-le moteur ASTRO-Q°ODE : dans ce cas PC-3/PC-4/PC-5 utilisent les
-constantes déclarées et le champ `controles_en_repli` du certificat le
-dit explicitement.
+d'auto-référence).
+
+`python code/conjecture_point_carre.py` se rejoue **avec** le moteur : les
+cinq modules de `bibliotheques/` sont la clôture transitive exacte de ce que
+ce dépôt importe, donc PC-3, PC-4 et PC-5 sont recalculés depuis la table et
+`controles_en_repli` reste vide. Le repli sur les constantes déclarées — et la
+note qui l'annonce dans le champ `statut` — ne se repeuple que si l'on retire
+`bibliotheques/` du dépôt. Les deux modes rendent les mêmes nombres ; une
+seule feuille diffère, `PC-4.ppcm_12`, que le repli ne sait pas calculer et
+laisse à `null`.
+
+`.gitattributes` impose `eol=lf` sur `horloge_noyau/`, `bibliotheques/` et
+`moteur/` : la capsule `horloge_noyau` recompte le SHA-256 des octets **sur
+disque** à chaque import, et un worktree Windows en CRLF faisait échouer son
+propre sceau (`ALTERATION DÉTECTÉE`) sans que le dépôt ait bougé. Pour les
+autres chemins, la commande `git cat-file` ci-dessus reste la voie sûre.
 
 ## Ce qui est démontré (théorèmes, pas mesures)
 
@@ -83,6 +127,31 @@ Hodge T²/CPⁿ · gap spectral Ising · Navier-Stokes 2D · Poincaré χ=2.
 Échelles de lemmes + équations précises des goulots pour BSD, Navier-Stokes,
 Yang-Mills, Hodge, P vs NP — frontières exactes écrites, preuves ouvertes.
 
+## Correction spectrale (matrice densité)
+
+`noyau_matrice_densite.valeurs_propres()` diagonalisait la **partie réelle**
+de ρ. C'était faux dès qu'une cohérence est imaginaire — portes S, T et les
+rotations d'axe X ou Y — puisque la partie réelle d'un terme purement
+imaginaire est nulle. Deux états **pur** rendaient donc une entropie non
+nulle :
+
+| état | entropie avant | entropie après |
+|---|---|---|
+| |+i⟩ = (|0⟩ + i|1⟩)/√2 | 1,000000 bit | 0,0 |
+| Bell + T sur le contrôle | 0,6008760 bit | 0,0 |
+| QPE idéal (3 qubits) | 0,9844738 bit | 0,0 |
+
+Le solveur utilise maintenant des rotations **unitaires** de Jacobi : à
+chaque pivot, une mise en phase rend le terme hors diagonale réel positif
+(sans toucher la diagonale), puis la rotation réelle de Jacobi l'annule.
+Contrôle croisé sur 300 états densité complexes aléatoires (dim ≤ 16) contre
+`numpy.linalg.eigvalsh`, employé ici comme référence **externe et jetable** —
+numpy n'est pas une dépendance du dépôt : écart spectral maximal
+**1,2 × 10⁻¹⁵**. Les sept autres circuits canoniques sont inchangés — leurs
+cohérences étaient déjà réelles, ce qui explique que la faute n'apparaisse
+que sur QPE. `metriques.entropie_intrication_2q` employait déjà la formule
+correcte en `|r01|²` : le défaut était isolé dans `valeurs_propres()`.
+
 ## Clause d'honnêteté
 
 Aucun problème ouvert du millénaire n'est résolu ici. Émulation classique,
@@ -94,5 +163,32 @@ pas de QPU. GDSII pédagogique, pas de PDK. Chaque fait porte sa borne.
 py emulateur_mizan.py demo        # Bell, Grover, QEC, ZNE
 py emulateur_mizan.py arbre       # arbre des 10 branches
 py emulateur_mizan.py conjecture  # Point Carré PC-1..PC-6
-py -m unittest tests.test_emulateur  # 48 tests
+py -m unittest tests.test_emulateur                     # 53 tests
+py -m unittest horloge_noyau.tests.test_horloge_noyau_complet   # 10 tests
+cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
+    tests.test_eau_abondance tests.test_agriculture_abondance   # 107 tests
+cd CHIFFRES && py -m unittest tests.test_chiffres                #  30 tests
+cd FONDATION && py -m unittest tests.test_fondation              #  45 tests
+
+py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 5 modules CONFORME
 ```
+
+245 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
+sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
+
+## Les quatre piliers, appliqués à tout le dépôt
+
+`FONDATION/OUTILS/audit_piliers.py` appelle `resoudre()` de chaque module visé
+et ne juge que ce que le module déclare déjà :
+
+| Pilier | Exigence | Vérifié |
+|---|---|---|
+| **P1 UNITE** | une équation = un identifiant = un contrôle, en chaîne continue sans trou ni doublon | 89 équations, 89 contrôles |
+| **P2 BORNE** | toute équation porte une `limite` écrite d'au moins 40 caractères | 89/89 |
+| **P3 CONFRONTATION** | chemin `module → fonction → contrôle`, statut parmi OPÉRATIONNEL / SIMULÉ / SPÉCIFIÉ, attendu et obtenu non vides, aucun contrôle rouge | 89/89 |
+| **P4 TRANSMISSION** | imports stdlib ou locaux seuls, `verifier()` callable, garde `__main__` | 5/5 modules |
+
+Le coût est réel : l'audit exécute `resoudre()`, donc CHIFFRES calcule son
+domaine court (20 000 chiffres de π, e et √2 plus un calibrage Monte-Carlo) et
+demande une à deux minutes. `--rigide` fait échouer un pilier NON TENU ; le
+code de sortie est 0 sur les cinq modules principaux.

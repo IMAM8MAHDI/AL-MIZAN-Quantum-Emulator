@@ -102,7 +102,7 @@ py emulateur_mizan.py arbre
 # Point Square Conjecture verification
 py emulateur_mizan.py conjecture
 
-# Full test suite (48 tests)
+# Full test suite (53 tests)
 py -m unittest tests.test_emulateur -v
 ```
 
@@ -110,7 +110,7 @@ Each execution writes a SHA-256 sealed JSON report to `resultats/`, enabling ind
 
 # Testing and Validation
 
-AL-MIZAN ships with 48 unit and integration tests covering state preparation, gate operations, permutations, entanglement metrics, Born rule sampling, noise models (trajectory and Kraus), QASM parsing, circuit rendering, Deutsch-Jozsa/teleportation/QPE algorithms, VQE variational bounds, Shor factorization, GDSII TLV encoding, DRC rules, ZNE extrapolation, Steane code, transducer logic, Point Square Conjecture (PC-1 and PC-3 asserted individually, and the full six-control certificate PC-1..PC-6 re-executed and sealed), and the seven-problem certificate tree. The full test suite completes in approximately 118 minutes on standard hardware, with clock-sensitive tests (p7 load) documented for reproducibility.
+AL-MIZAN ships with 53 unit and integration tests covering state preparation, gate operations, permutations, entanglement metrics, Born rule sampling, noise models (trajectory and Kraus), QASM parsing, circuit rendering, Deutsch-Jozsa/teleportation/QPE algorithms, VQE variational bounds, Shor factorization, GDSII TLV encoding, DRC rules, ZNE extrapolation, Steane code, transducer logic, Point Square Conjecture (PC-1 and PC-3 asserted individually, and the full six-control certificate PC-1..PC-6 re-executed and sealed), and the seven-problem certificate tree. The full test suite completes in approximately 118 minutes on standard hardware, with clock-sensitive tests (p7 load) documented for reproducibility.
 
 # Related Work
 

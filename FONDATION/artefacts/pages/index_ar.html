@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الأساس — القاعدة المحسوبة — AL-MIZAN × ASTRO-Q°ODE</title>
+<meta name="description" content="ثماني عشرة معادلة وثمانية عشر تحققًا وشكلٌ واحد وملف JSON وملف CSV وملف Markdown يولّدها المولّد نفسه من fondation_base.resoudre().">
+<link rel="canonical" href="index_ar.html">
+<meta property="og:url" content="index_ar.html">
+<link rel="alternate" hreflang="fr" href="index.html">
+<link rel="alternate" hreflang="en" href="index_en.html">
+<link rel="alternate" hreflang="ar" href="index_ar.html">
+<link rel="alternate" hreflang="x-default" href="index.html">
+<meta property="og:title" content="الأساس — القاعدة المحسوبة — AL-MIZAN × ASTRO-Q°ODE">
+<meta property="og:description" content="ثماني عشرة معادلة وثمانية عشر تحققًا وشكلٌ واحد وملف JSON وملف CSV وملف Markdown يولّدها المولّد نفسه من fondation_base.resoudre().">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ar_SA">
+<style>
+:root{--encre:#10263a;--bleu:#1f5f8b;--pale:#f5f7fa;--or:#b45309;--gris:#5b6b7a;--cible:#0f3d5c}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--encre);
+background:#fbfcfd;line-height:1.62;font-size:17px}
+html[dir="rtl"] body{font-family:'Segoe UI',Tahoma,'Traditional Arabic',Arial,sans-serif}
+html[dir="rtl"] .formule,html[dir="rtl"] .nb,html[dir="rtl"] table,html[dir="rtl"] pre,
+html[dir="rtl"] code{direction:ltr;text-align:left}
+html[dir="rtl"] td.titre,html[dir="rtl"] td.lecture{text-align:right}
+a{color:var(--cible)}
+header.site{background:#0f2438;color:#f2f6fa;padding:14px 22px}
+header.site .bande{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;
+align-items:center;justify-content:space-between;gap:12px}
+header.site strong{font-size:19px;letter-spacing:.2px}
+header.site a{color:#e8f1f8;text-decoration:none}
+header.site nav{display:flex;flex-wrap:wrap;gap:4px}
+header.site nav .langues{display:flex;flex-wrap:wrap;gap:4px}
+header.site nav .langues a{padding:7px 12px;border:1px solid #47688a;border-radius:6px;min-height:30px}
+header.site nav .langues a.on{background:#fdf3e7;color:#0f2438;border-color:#fdf3e7;font-weight:700}
+header.site :focus-visible{outline:3px solid #fdf3e7;outline-offset:2px}
+:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.saut a{position:absolute;left:-9999px;top:auto;background:#fdf3e7;color:#0f2438;
+padding:10px 14px;border-radius:6px;min-height:30px}
+.saut a:focus{left:12px;top:12px;z-index:9}
+main{max-width:1120px;margin:0 auto;padding:30px 22px 60px}
+main p{max-width:38em}
+h1{font-size:33px;line-height:1.2;margin:6px 0 10px}
+h2{font-size:25px;margin:34px 0 10px;border-bottom:2px solid #dbe6ef;padding-bottom:6px}
+h3{font-size:20px;margin:22px 0 8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.badges span{border:1px solid #cfdce7;background:var(--pale);border-radius:20px;
+padding:6px 13px;font-size:14px;min-height:30px;display:inline-flex;align-items:center}
+.badges .or{border-color:var(--or);color:#7a3c07;background:#fff7ed}
+.formule{display:block;font-family:Consolas,Menlo,monospace;font-size:13.5px;color:#1f4e6b;
+background:#f4f8fb;padding:10px 12px;border-radius:6px;overflow-x:auto}
+.chemin{font-family:Consolas,Menlo,monospace;font-size:12px;color:var(--gris);white-space:nowrap}
+.tableau{overflow-x:auto}
+pre{background:#0f2438;color:#eaf2f8;padding:14px 16px;border-radius:8px;
+overflow-x:auto;font-size:13.5px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0}
+caption{caption-side:top;text-align:left;font-size:13.5px;color:var(--gris);padding:0 0 8px}
+html[dir="rtl"] caption{text-align:right}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #e2e9ef;vertical-align:top}
+html[dir="rtl"] th,html[dir="rtl"] td{text-align:right}
+html[dir="rtl"] td.nb,html[dir="rtl"] th.nb{text-align:left}
+th{background:#eef4f9;color:#0f2438}
+td.id{white-space:nowrap;font-weight:700;color:var(--cible)}
+.statut{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.3px;
+padding:4px 10px;border-radius:20px;border:1px solid;min-height:26px}
+.statut.o{color:#14532d;border-color:#86efac;background:#f0fdf4}
+.statut.s{color:#7c2d12;border-color:#fdba74;background:#fff7ed}
+.statut.p{color:#334155;border-color:#cbd5e1;background:#f8fafc}
+.grille{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+.carte{border:1px solid #dbe6ef;border-radius:10px;padding:14px 16px;background:#fff}
+.carte h3{margin:0 0 6px;font-size:18px}
+.carte .gros{font-size:26px;font-weight:700;color:var(--cible)}
+html[dir="rtl"] .carte .gros{direction:ltr;text-align:left}
+.etape{border-left:4px solid var(--bleu);padding:4px 0 4px 16px;margin:0 0 18px}
+html[dir="rtl"] .etape{border-left:0;border-right:4px solid var(--bleu);padding:4px 16px 4px 0}
+.etape h3{margin:0 0 4px;font-size:19px}
+figure{margin:22px 0;padding:0}
+figcaption{font-size:13.5px;color:var(--gris);margin-top:8px}
+footer.site{border-top:2px solid #dbe6ef;margin-top:40px;padding:22px;color:var(--gris);font-size:14px}
+footer.site .interieur{max-width:1120px;margin:0 auto}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
+.actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+padding:10px 16px;border:1px solid var(--cible);border-radius:8px;text-decoration:none;font-weight:700}
+.actions a.principal{background:var(--cible);color:#fff}
+.sommaire{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 8px}
+.sommaire a{display:inline-flex;align-items:center;min-height:30px;padding:6px 12px;
+border:1px solid #cfdce7;border-radius:8px;text-decoration:none;font-size:14.5px}
+ul{margin:10px 0 10px 22px;padding:0}
+html[dir="rtl"] ul{margin:10px 22px 10px 0}
+@media (max-width:900px){.grille{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
+</head>
+<body><div class="saut"><a href="#contenu">الانتقال إلى المحتوى</a></div>
+<header class="site"><div class="bande">
+<strong>الأساس — الميزان × ASTRO-Q°ODE</strong>
+<nav aria-label="اللغة"><span class="langues"><a href="index.html" lang="fr">Français</a><a href="index_en.html" lang="en">English</a><a href="index_ar.html" class="on" aria-current="page" lang="ar">العربية</a></span></nav>
+</div></header>
+<main id="contenu" tabindex="-1"><h1>الأساس — القاعدة المحسوبة</h1><p>ثماني عشرة معادلة وثمانية عشر تحققًا وشكلٌ واحد وملف JSON وملف CSV وملف Markdown يولّدها المولّد نفسه من fondation_base.resoudre().</p><div class="badges"><span class="">18 EQ</span><span class="or">18/18 التحققات العددية</span><span class="">عامِل 15</span><span class="">محاكى 1</span><span class="">محدَّد 2</span></div><p class="chemin">عامل = محسوب ومُتحقَّق منه هنا؛ محاكى = نموذج بقيم معلَنة؛ محدَّد = إطار مقرر والقياسُ باقٍ.</p><p class="chemin">وحدةٌ تحسب وهذا المولّد ينسّق. لا يُكتب أي رقم في الصفحة باليد: احذف المُخرَج وأعد تشغيل المولّد فيعود حرفيًا بايتً ببايت.</p><div class="tableau"><table id="dossiers"><caption>صفحةٌ لكل لغة، وشكل SVG مستقل، وملف JSON، وملف CSV لإكسل، وملف Markdown، يولّدها جميعًا المولّد نفسه.</caption><thead><tr><th scope="col">الملف</th><th scope="col"nb>المعادلات</th><th scope="col"nb>التحققات المستوفاة</th><th scope="col"nb>عامِل</th><th scope="col"nb>محاكى</th><th scope="col"nb>محدَّد</th><th scope="col">الصفحات</th><th scope="col">البيانات</th></tr></thead><tbody><tr><td class="id" scope="row">الأساس — القاعدة المقرَّرة والمواجهة</td><td class="nb"><span class="nb">18</span></td><td class="nb"><span class="nb">18/18</span></td><td class="nb"><span class="nb">15</span></td><td class="nb"><span class="nb">1</span></td><td class="nb"><span class="nb">2</span></td><td class=""><a href="fondation.html" lang="fr">FR</a> · <a href="fondation_en.html" lang="en">EN</a> · <a href="fondation_ar.html" lang="ar">AR</a></td><td class=""><a href="../donnees/fondation.json">JSON</a> · <a href="../donnees/fondation.csv">CSV</a> · <a href="../figures/fondation_ar.svg">SVG</a> · <a href="../dossiers/fondation.md">MD</a></td></tr></tbody></table></div><div class="tableau"><table id="parc"><caption>عدٌّ معلَن مقروء من كتلة `dossiers` في المعجم المحسوب: تعبيرٌ نظامي على ملفات المستودع. يقيس الإعلان لا الصواب.</caption><thead><tr><th scope="col">ملفٌّ من المستودع</th><th scope="col"nb>معادلات معلَنة</th><th scope="col"nb>تحققات معلَنة</th><th scope="col"nb>اختبارات معلَنة</th></tr></thead><tbody><tr><td class="id" scope="row">ABONDANCE</td><td class="nb"><span class="nb">54</span></td><td class="nb"><span class="nb">54</span></td><td class="nb"><span class="nb">107</span></td></tr><tr><td class="id" scope="row">CHIFFRES</td><td class="nb"><span class="nb">17</span></td><td class="nb"><span class="nb">17</span></td><td class="nb"><span class="nb">30</span></td></tr><tr><td class="id" scope="row">FONDATION</td><td class="nb"><span class="nb">18</span></td><td class="nb"><span class="nb">18</span></td><td class="nb"><span class="nb">45</span></td></tr></tbody></table></div><div class="tableau"><table id="livrables"><caption>كل ما يكتبه المولّد ولا شيء غيره: الصفحات والشكل وملف JSON وملف CSV لإكسل وملف Markdown.</caption><thead><tr><th scope="col">صفحات ثلاث اللغات</th><th scope="col"></th></tr></thead><tbody><tr><td class="id" scope="row">صفحات ثلاث اللغات</td><td class=""><a href="fondation.html" lang="fr">FR</a> · <a href="fondation_en.html" lang="en">EN</a> · <a href="fondation_ar.html" lang="ar">AR</a></td></tr><tr><td class="id" scope="row">شكل SVG</td><td class=""><a href="../figures/fondation.svg" lang="fr">FR</a> · <a href="../figures/fondation_en.svg" lang="en">EN</a> · <a href="../figures/fondation_ar.svg" lang="ar">AR</a></td></tr><tr><td class="id" scope="row">بيانات JSON</td><td class=""><a href="../donnees/fondation.json">fondation.json</a></td></tr><tr><td class="id" scope="row">بيانات CSV</td><td class=""><a href="../donnees/fondation.csv">fondation.csv</a></td></tr><tr><td class="id" scope="row">ملف Markdown</td><td class=""><a href="../dossiers/fondation.md">fondation.md</a></td></tr><tr><td class="id" scope="row">لوحة الإنتاج</td><td class=""><a href="index.html">index.html</a></td></tr></tbody></table></div><div class="actions"><a class="principal" href="fondation_ar.html">اذهب إلى صفحة الأساس</a><a href="https://doi.org/10.5281/zenodo.24028242">العودة إلى الإيداع</a></div><h2 id="reproduction">إعادة الحساب</h2><pre># من جذر المستودع
+py -3 FONDATION/fondation_base.py                 # ‏18 معادلة و18 تحقّقًا
+py -3 FONDATION/generer_fondation.py              # يعيد بناء الصفحات والشكل وJSON وCSV وMarkdown
+py -3 -m unittest FONDATION.tests.test_fondation  # ‏45 اختبارًا
+py -3 FONDATION/OUTILS/audit_piliers.py FONDATION/fondation_base.py --rigide
+# خارج ويندوز: استبدل py -3 بـ python3</pre></main><footer class="site"><div class="interieur"><p>وثيقة محسوبة لا مكتوبة باليد: أعد تشغيل الوحدة تُعاد الصفحة.</p><p>M. Ahmed EL BAHLOUL (IMAM8MAHDI) · GPL-3.0-only OR AGPL-3.0-only · https://doi.org/10.5281/zenodo.24028242</p></div></footer>
+</body>
+</html>

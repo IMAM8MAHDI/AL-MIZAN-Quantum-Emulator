@@ -1,0 +1,334 @@
+{
+  "domaine": {
+    "alpha": 0.001,
+    "graine": 20261109,
+    "kmax": 6,
+    "n": 1000000,
+    "n_sim": 100000,
+    "n_sim2": 50000,
+    "repiliques": 200,
+    "rmax": 7,
+    "z_seuil": 3.2905267314918953
+  },
+  "predictions": {
+    "attentes": {
+      "00000": {
+        "fenetres": 999996,
+        "longueur": 5,
+        "mediane": 69314.71805599453,
+        "moyenne_inconditionnelle": 99999.99999999999,
+        "probabilite_de_presence": 0.9999546005242386,
+        "probabilite_par_position": 1e-05,
+        "quantile_de_rejet": 760086.4454966444
+      },
+      "0123456789": {
+        "fenetres": 999991,
+        "longueur": 10,
+        "mediane": 6931471805.599453,
+        "moyenne_inconditionnelle": 10000000000.0,
+        "probabilite_de_presence": 9.999410853478441e-05,
+        "probabilite_par_position": 1e-10,
+        "quantile_de_rejet": 76009024591.62038
+      },
+      "12345": {
+        "fenetres": 999996,
+        "longueur": 5,
+        "mediane": 69314.71805599453,
+        "moyenne_inconditionnelle": 99999.99999999999,
+        "probabilite_de_presence": 0.9999546005242386,
+        "probabilite_par_position": 1e-05,
+        "quantile_de_rejet": 760086.4454966444
+      },
+      "54321": {
+        "fenetres": 999996,
+        "longueur": 5,
+        "mediane": 69314.71805599453,
+        "moyenne_inconditionnelle": 99999.99999999999,
+        "probabilite_de_presence": 0.9999546005242386,
+        "probabilite_par_position": 1e-05,
+        "quantile_de_rejet": 760086.4454966444
+      },
+      "999999": {
+        "fenetres": 999995,
+        "longueur": 6,
+        "mediane": 693147.1805599453,
+        "moyenne_inconditionnelle": 1000000.0,
+        "probabilite_de_presence": 0.6321189033771292,
+        "probabilite_par_position": 1e-06,
+        "quantile_de_rejet": 7600898.659090219
+      }
+    },
+    "auto_local": {
+      "algebre": "classe complète : 9·10^(k−1) candidats × 10^(−k) = 9/10 = 0,9",
+      "intervalle_total": [
+        0,
+        14
+      ],
+      "par_classe": {
+        "1": {
+          "candidats": 9,
+          "complete": true,
+          "esperance": 0.9,
+          "esperance_exacte": "9/10",
+          "intervalle": [
+            0,
+            5
+          ],
+          "p_zero": 0.4065696597405991
+        },
+        "2": {
+          "candidats": 90,
+          "complete": true,
+          "esperance": 0.9,
+          "esperance_exacte": "9/10",
+          "intervalle": [
+            0,
+            5
+          ],
+          "p_zero": 0.4065696597405991
+        },
+        "3": {
+          "candidats": 900,
+          "complete": true,
+          "esperance": 0.9,
+          "esperance_exacte": "9/10",
+          "intervalle": [
+            0,
+            5
+          ],
+          "p_zero": 0.4065696597405991
+        },
+        "4": {
+          "candidats": 9000,
+          "complete": true,
+          "esperance": 0.9,
+          "esperance_exacte": "9/10",
+          "intervalle": [
+            0,
+            5
+          ],
+          "p_zero": 0.4065696597405991
+        },
+        "5": {
+          "candidats": 90000,
+          "complete": true,
+          "esperance": 0.9,
+          "esperance_exacte": "9/10",
+          "intervalle": [
+            0,
+            5
+          ],
+          "p_zero": 0.4065696597405991
+        },
+        "6": {
+          "candidats": 899996,
+          "complete": false,
+          "esperance": 0.899996,
+          "esperance_exacte": "224999/250000",
+          "intervalle": [
+            0,
+            5
+          ],
+          "p_zero": 0.40657128602249065
+        }
+      },
+      "total_attendu": 5.399996
+    },
+    "cumul": {
+      "alpha_par_point": 3.3333333333333335e-05,
+      "attendu": [
+        4.500001,
+        4.600001,
+        4.700001,
+        4.800001,
+        4.900001,
+        5.000001,
+        5.100001,
+        5.200001,
+        5.300001,
+        5.399996
+      ],
+      "grille": [
+        100000,
+        200000,
+        300000,
+        400000,
+        500000,
+        600000,
+        700000,
+        800000,
+        900000,
+        1000000
+      ],
+      "points": 10,
+      "tests": 30,
+      "z_seuil_bonferroni": 4.149409984347946
+    },
+    "domaine": {
+      "constantes": [
+        "pi",
+        "e",
+        "racine2"
+      ],
+      "kmax": 6,
+      "longueurs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "n": 1000000,
+      "rmax": 7,
+      "sondes": [
+        "12345",
+        "54321",
+        "00000",
+        "999999",
+        "0123456789"
+      ]
+    },
+    "frequence": {
+      "attendu_par_chiffre": 100000.0,
+      "bande": [
+        99012.84198055243,
+        100987.15801944757
+      ],
+      "chi2_attendu": 9.0,
+      "chi2_ecart_type": 4.242640687119285,
+      "chi2_intervalle": [
+        0.8660766431098155,
+        29.913532683260655
+      ],
+      "df": 9,
+      "sigma": 300.0
+    },
+    "occulence": {
+      "1": {
+        "absentes_attendues": 0.0,
+        "fenetres": 1000000,
+        "presentes_attendues": 10.0,
+        "sigma_independant": 0.0
+      },
+      "2": {
+        "absentes_attendues": 0.0,
+        "fenetres": 999999,
+        "presentes_attendues": 100.0,
+        "sigma_independant": 0.0
+      },
+      "3": {
+        "absentes_attendues": 0.0,
+        "fenetres": 999998,
+        "presentes_attendues": 1000.0,
+        "sigma_independant": 0.0
+      },
+      "4": {
+        "absentes_attendues": 0.0,
+        "fenetres": 999997,
+        "presentes_attendues": 10000.0,
+        "sigma_independant": 0.0
+      },
+      "5": {
+        "absentes_attendues": 4.5399475759331835,
+        "fenetres": 999996,
+        "presentes_attendues": 99995.46005242407,
+        "sigma_independant": 2.130666906086522
+      },
+      "6": {
+        "absentes_attendues": 367881.09663344943,
+        "fenetres": 999995,
+        "presentes_attendues": 632118.9033665506,
+        "sigma_independant": 482.2287790802412
+      }
+    },
+    "regles": {
+      "alpha": 0.001,
+      "bande_kappa": [
+        0.0,
+        1.35
+      ],
+      "bande_rapport": [
+        0.5,
+        2.0
+      ],
+      "cellules_par_constante": 36,
+      "cellules_total": 108,
+      "limite_poisson_exact": 500,
+      "methodes": {
+        "binaire": "Bernoulli bilatère exact",
+        "compte": "Poisson bilatère exact, normale au-delà de λ",
+        "frequence": "normale (binomiale) bilatère",
+        "position": "transformée intégrale, uniforme"
+      },
+      "pas_cumul": 10,
+      "z_seuil": 3.2905267314918953
+    },
+    "runs": {
+      "attendu": {
+        "1": 810000.18,
+        "2": 80999.937,
+        "3": 8099.9856,
+        "4": 809.99775,
+        "5": 80.999694,
+        "6": 8.0999613,
+        "7": 0.80999532
+      },
+      "queue_non_comptee": 0.08999937993939966,
+      "somme_comptee": 900000.01000062,
+      "total_runs_exact": 900000.1
+    }
+  },
+  "video": {
+    "auteur": "Euclidea",
+    "chapitres": [
+      [
+        "0:00",
+        "Five digits at position 16470"
+      ],
+      [
+        "1:33",
+        "Where position one is"
+      ],
+      [
+        "2:57",
+        "Ninety thousand candidates"
+      ],
+      [
+        "4:17",
+        "Zero point nine every time"
+      ],
+      [
+        "5:37",
+        "Matches by length"
+      ],
+      [
+        "7:03",
+        "The running total"
+      ],
+      [
+        "8:22",
+        "Three ways to count"
+      ],
+      [
+        "9:39",
+        "The same search in e and root two"
+      ],
+      [
+        "11:02",
+        "Every short string shows up"
+      ],
+      [
+        "12:46",
+        "A pattern nobody has proven"
+      ]
+    ],
+    "duree_s": 854,
+    "horodatage_utc": "2026-11-08T23:43:25Z",
+    "id": "M90ZAVojI30",
+    "outils": "scripts/extraire_chapitres_youtube.py (Skill extraire-chapitres-youtube-sans-transcript)",
+    "titre": "What Is Actually Hiding in the Digits of Pi?",
+    "transcript": "absent — timedtext 0 octet en json3, srv3 et xml",
+    "url": "https://www.youtube.com/watch?v=M90ZAVojI30"
+  }
+}

@@ -15,7 +15,7 @@ I built a complete quantum emulator in pure Python with zero external dependenci
 - OpenQASM 2.0 frontend with 8 canonical circuits
 - Sealed SHA-256 mathematical certificates: Riemann zeros ≤100 (29 certified), BSD on named curves, Point Square Conjecture
 
-48/48 tests pass. Every artifact carries explicit computational bounds — no open millennium problem is claimed as solved.
+53/53 tests pass. Every artifact carries explicit computational bounds — no open millennium problem is claimed as solved.
 
 GitHub: https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 Zenodo: https://doi.org/10.5281/zenodo.24028242
@@ -26,7 +26,7 @@ Happy to answer questions about the QEC implementation, the interval arithmetic 
 
 ## 2. Reddit r/QuantumComputing
 
-**Title:** I built a pure-Python quantum emulator with QEC, ZNE, and sealed math certificates — 48/48 tests, 0 dependencies
+**Title:** I built a pure-Python quantum emulator with QEC, ZNE, and sealed math certificates — 53/53 tests, 0 dependencies
 
 **Body:**
 Hey r/QuantumComputing,
@@ -46,7 +46,7 @@ I've been working on AL-MIZAN, a quantum emulator in pure Python (stdlib only, n
 
 **Honest architecture:** Every result carries its computational bound. VQE/Shor are toy demos (H₂, N=15). GDSII is pedagogical, not fabricable. No QPU connected.
 
-48/48 unit tests, all green. AGPL-3.0/GPL-3.0.
+53/53 unit tests, all green. AGPL-3.0/GPL-3.0.
 
 GitHub: https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 Zenodo DOI: https://doi.org/10.5281/zenodo.24028242
@@ -93,7 +93,7 @@ What makes it different:
 🎯 Radical honesty — every artifact states what it can and cannot claim
 
 Key results:
-- 48/48 unit tests passing
+- 53/53 unit tests passing
 - 29 Riemann zeros certified on Re=½ (strip ≤100)
 - BSD verified on named elliptic curves
 - Exact QEC failure rates for code-capacity noise
@@ -114,7 +114,7 @@ Archived on Zenodo: https://doi.org/10.5281/zenodo.24028242
 
 A pure-Python quantum emulator with sealed mathematical certificates.
 
-0 dependencies. 48/48 tests. Full QEC stack.
+0 dependencies. 53/53 tests. Full QEC stack.
 
 🔗 github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 

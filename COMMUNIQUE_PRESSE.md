@@ -18,7 +18,7 @@ AL-MIZAN unifie en un seul paquetage open source (licence AGPL-3.0/GPL-3.0) :
 
 ### Des résultats reproductibles
 
-Le logiciel passe **48 tests unitaires et d'intégration avec un taux de réussite de 100%** (0 ignoré), couvrant la préparation d'états, les opérations de portes, les permutations, les métriques d'intrication, l'échantillonnage de Born, les modèles de bruit (trajectoire et Kraus), l'analyse QASM, les algorithmes Deutsch-Jozsa/téléportation/QPE, les bornes variationnelles VQE, la factorisation de Shor, l'encodage GDSII, les règles DRC, l'extrapolation ZNE, le code Steane, et l'arbre des sept problèmes du millénaire.
+Le logiciel passe **53 tests unitaires et d'intégration avec un taux de réussite de 100%** (0 ignoré), couvrant la préparation d'états, les opérations de portes, les permutations, les métriques d'intrication, l'échantillonnage de Born, les modèles de bruit (trajectoire et Kraus), l'analyse QASM, les algorithmes Deutsch-Jozsa/téléportation/QPE, les bornes variationnelles VQE, la factorisation de Shor, l'encodage GDSII, les règles DRC, l'extrapolation ZNE, le code Steane, et l'arbre des sept problèmes du millénaire.
 
 ### Pourquoi c'est important
 

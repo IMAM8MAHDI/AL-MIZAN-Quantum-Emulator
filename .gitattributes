@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 IMAM8MAHDI / Astro-Code Ecosystem
+# SPDX-License-Identifier: GPL-3.0-only OR AGPL-3.0-only
+#
+# La capsule `horloge_noyau/` scelle ses propres fichiers : `sceau/EMPREINTES.json`
+# porte le SHA-256 des octets **LF** et `verrou.py` le recompte à chaque import.
+# Sans cette règle, un clone sur Windows (`core.autocrlf=true`) écrit du CRLF sur
+# disque, l'empreinte diverge et l'import échoue en `ALTERATION DÉTECTÉE` — alors
+# que le dépôt git, lui, n'a jamais changé.
+#
+# `eol=lf` force l'arbre de travail à rendre exactement les octets scellés.
+# Les autres chemins du dépôt gardent le comportement par défaut.
+horloge_noyau/** text eol=lf
+bibliotheques/** text eol=lf
+moteur/** text eol=lf

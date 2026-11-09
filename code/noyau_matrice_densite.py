@@ -297,33 +297,65 @@ class SimulateurMatriceDensite:
         return max(0.0, min(1.0, total.real))
 
     def valeurs_propres(self) -> List[float]:
-        """Diagonalisation de Jacobi (matrice hermitienne réelle symétrisée)."""
+        """Spectre d'une matrice hermitienne par rotations unitaires de Jacobi.
+
+        Les cohérences imaginaires comptent : S, T et les rotations d'axe X ou
+        Y engendrent des termes hors diagonale purement imaginaires. Diagonaliser
+        la seule partie réelle les jetait — sur ρ = |+i⟩⟨+i| =
+        [[1/2, i/2], [-i/2, 1/2]] l'ancienne version rendait {1/2, 1/2} et donc
+        1 bit d'entropie pour un état pur, alors que le spectre exact est
+        {1, 0} et S = 0.
+
+        Chaque pivot (p, q) subit deux transformations unitaires : une mise en
+        phase qui rend le pivot réel positif sans toucher la diagonale, puis la
+        rotation réelle de Jacobi. stdlib uniquement, O(dim²) paires × O(dim)
+        par paire, dim = 2**nb_qubits.
+        """
         dim = self.dim
-        # Partie hermitienne : ρ est hermitienne → partie réelle symétrique
-        a = [[self.rho[i * dim + j].real for j in range(dim)] for i in range(dim)]
-        for _ in range(60):  # balayages Jacobi
-            off = 0.0
+        a = [complex(self.rho[i * dim + j]) for i in range(dim) for j in range(dim)]
+
+        def norm_hors_diag() -> float:
+            return sum(abs(a[p * dim + q]) ** 2
+                       for p in range(dim) for q in range(p + 1, dim))
+
+        def rot(p: int, q: int, module: complex) -> None:
+            # (1) U†AU avec U = diag(…, 1, u_q, …) : le pivot devient réel
+            #     positif, la diagonale est invariée (u puis ū sur a[q][q]).
+            u = module.conjugate() / abs(module)
+            for k in range(dim):
+                a[k * dim + q] *= u
+                a[q * dim + k] *= u.conjugate()
+            # (2) rotation réelle A ← R A Rᵀ dans le plan (p, q).
+            app = a[p * dim + p].real
+            aqq = a[q * dim + q].real
+            theta = 0.5 * math.atan2(2 * abs(module), aqq - app)
+            c, s = math.cos(theta), math.sin(theta)
+            for k in range(dim):
+                apk, aqk = a[p * dim + k], a[q * dim + k]
+                a[p * dim + k] = c * apk - s * aqk
+                a[q * dim + k] = s * apk + c * aqk
+            for k in range(dim):
+                akp, akq = a[k * dim + p], a[k * dim + q]
+                a[k * dim + p] = c * akp - s * akq
+                a[k * dim + q] = s * akp + c * akq
+            a[p * dim + q] = 0j
+            a[q * dim + p] = 0j
+
+        depart = norm_hors_diag()
+        if depart == 0.0:
+            return [self.rho[i * dim + i].real for i in range(dim)]
+        for _ in range(60):  # balayages cycliques
+            if norm_hors_diag() <= max(1e-30, depart * 1e-26):
+                break
             for p in range(dim):
                 for q in range(p + 1, dim):
-                    if abs(a[p][q]) > 1e-14:
-                        off += a[p][q] ** 2
-                        theta = 0.5 * math.atan2(2 * a[p][q], a[q][q] - a[p][p])
-                        c, s = math.cos(theta), math.sin(theta)
-                        for k in range(dim):
-                            apk, aqk = a[p][k], a[q][k]
-                            a[p][k] = c * apk - s * aqk
-                            a[q][k] = s * apk + c * aqk
-                        for k in range(dim):
-                            akp, akq = a[k][p], a[k][q]
-                            a[k][p] = c * akp - s * akq
-                            a[k][q] = s * akp + c * akq
-                        a[p][q] = a[q][p] = 0.0
-            if off < 1e-24:
-                break
-        return [a[i][i] for i in range(dim)]
+                    apq = a[p * dim + q]
+                    if abs(apq) > 1e-16:
+                        rot(p, q, apq)
+        return [a[i * dim + i].real for i in range(dim)]
 
     def entropie_von_neumann(self) -> float:
-        """S(ρ) = −Tr(ρ log₂ ρ) en bits — exact via diagonalisation."""
+        """S(ρ) = −Tr(ρ log₂ ρ) en bits — spectre hermitien complexe exact."""
         s = 0.0
         for lam in self.valeurs_propres():
             if lam > 1e-12:

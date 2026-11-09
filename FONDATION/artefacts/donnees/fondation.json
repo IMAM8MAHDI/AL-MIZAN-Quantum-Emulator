@@ -1,0 +1,1313 @@
+{
+  "source": {
+    "titre": "Le CERN a Enfin Détecté un Événement que la Science Attendait depuis 40 Ans",
+    "chaine": "Nocturne",
+    "video_id": "5pP1e69T3HQ",
+    "url": "https://www.youtube.com/watch?v=5pP1e69T3HQ",
+    "duree_s": 8018,
+    "chapitres_publics": 0,
+    "transcript": "absent (timedtext : 0 octet en json3, srv3 et xml)",
+    "mesure_le": "2026-11-09T01:44:02Z",
+    "outils": "scripts/extraire_chapitres_youtube.py (Skill extraire-chapitres-youtube-sans-transcript)",
+    "avertissements_sonde": [
+      "aucun en-tete de chapitres : horodatages pris dans toute la description",
+      "aucun chapitre horodate dans la description",
+      "timedtext repond sans contenu : le transcript est tenu pour absent"
+    ],
+    "sonde_transcript_octets": {
+      "json3": 0,
+      "srv3": 0,
+      "xml": 0
+    },
+    "description_mesuree_caracteres": 1908,
+    "description_retenue": "les deux premiers paragraphes, recopiés mot pour mot ; les paragraphes suivants sont des remerciements, des appels à s'abonner et la liste des sources",
+    "description_verbatim": "En septembre 2024, l’expérience NA62 du CERN a annoncé l’observation d’une des désintégrations les plus rares jamais mesurées : un kaon chargé qui se transforme en un pion et deux neutrinos invisibles. Pour la trouver, les physiciens ont dû suivre des centaines de millions de particules par seconde et écarter des milliards de désintégrations ordinaires qui lui ressemblent. Ils ont ainsi rassemblé assez d’événements pour franchir le seuil des cinq sigma, celui qui transforme un simple indice en véritable découverte.\n\nDans ce documentaire, on remonte à la découverte du kaon dans les rayons cosmiques des années 1940. On voit pourquoi le modèle standard rend cette désintégration presque impossible, et comment les expériences de Brookhaven n’en ont capté que quelques événements en deux décennies. On découvre aussi comment le CERN a fini par réussir en étudiant les kaons en plein vol. On regarde enfin ce que ce résultat nous apprend sur la physique au-delà du modèle standard, et ce qu’il laisse encore sans réponse.",
+    "extraits_description": [
+      "En septembre 2024, l’expérience NA62 du CERN a annoncé l’observation",
+      "un kaon chargé qui se transforme en un pion et deux neutrinos invisibles",
+      "suivre des centaines de millions de particules par seconde",
+      "écarter des milliards de désintégrations ordinaires qui lui ressemblent",
+      "franchir le seuil des cinq sigma",
+      "la découverte du kaon dans les rayons cosmiques des années 1940",
+      "le modèle standard rend cette désintégration presque impossible",
+      "les expériences de Brookhaven n’en ont capté que quelques événements en deux décennies",
+      "en étudiant les kaons en plein vol",
+      "ce que ce résultat nous apprend sur la physique au-delà du modèle standard"
+    ],
+    "sources_citees_par_la_chaine": [
+      "Collaboration NA62, Measurement of the very rare K+→π+νν̄ decay (2021) — https://arxiv.org/pdf/2103.15389",
+      "Collaboration NA62, Recent Results from NA62 in Kaon and Dump Mode (2026) — https://arxiv.org/pdf/2605.02415"
+    ],
+    "ce_que_la_video_n_a_pas_fourni": [
+      "aucun chapitre horodaté (donc aucun minutage citable)",
+      "aucun transcript (donc aucune citation, aucune phrase attribuée à la bande-son)",
+      "aucun chiffre : les nombres de ce dossier viennent des publications arXiv et du communiqué CERN, jamais de la vidéo"
+    ]
+  },
+  "axiome": {
+    "enonce": "Il n'y a de dieu que Allah — posé HORS MATRICE.",
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "formalisation": "la régularité d'un système fini n'est pas un élément de ce système ; toute chaîne de dérivation s'arrête donc sur une source déclarée hors d'elle",
+    "statut": "SPÉCIFIÉ — posé, jamais dérivé, jamais réfuté par ce dossier",
+    "hors_matrice": true,
+    "nombres_fournis_par_l_axiome": 0,
+    "ce_que_ca_ne_veut_pas_dire": [
+      "aucune équation ci-dessous ne prouve l'axiome",
+      "aucune mesure du CERN ne confirme ni n'infirmé l'axiome",
+      "l'axiome ne fournit aucun nombre : il interdit seulement de déclarer deux fois la même grandeur avec deux valeurs"
+    ]
+  },
+  "piliers": {
+    "P1 UNITE": "une seule source de régularité : un seul registre de grandeurs déclarées, aucune valeur double en conflit",
+    "P2 BORNE": "toute assertion porte un domaine fini et une `limite` écrite ; rien n'est annoncé comme preuve universelle",
+    "P3 CONFRONTATION": "tout nombre est confronté à une source publique ou étiqueté SPÉCIFIÉ ; la prédiction est gelée avant la lecture du comparateur",
+    "P4 TRANSMISSION": "tout est re-jouable par un tiers : bibliothèque standard seule, trois commandes, verdict entier"
+  },
+  "couches": {
+    "S1 MESURABLE": "les nombres : comptes, taux, intervalles — ce qu'une expérience publie",
+    "S2 REGULARITE": "les lois et les identités : ce qui se calcule sans mesure",
+    "S3 HORS_MATRICE": "la source de la régularité : posée, non dérivée, non réfutable ici"
+  },
+  "statuts": {
+    "OPÉRATIONNEL": "calcul exact reproductible, contrôle attaché",
+    "SIMULÉ": "scénario ou valeur déclarée, explicité comme tel",
+    "SPÉCIFIÉ": "posé ou structurant, non évalué par ce dossier"
+  },
+  "declare": {
+    "BR_sm": 8.4e-11,
+    "dBR_sm": 1e-11,
+    "N_K_2016_2018": 2700000000000.0,
+    "SES_2016_2018": 8.39e-12,
+    "N_K_2021_2022": 2850000000000.0,
+    "SES_2021_2022": 8.48e-12,
+    "secondaires_par_s": 1000000000.0,
+    "fraction_K_plus": 0.06,
+    "annees_prises_2016_2018": 3.0,
+    "rejection_mu": 10000000.0,
+    "rejection_pi0": 100000000.0,
+    "rejection_autres_canaux": 10000.0,
+    "seuil_observation": 5.0,
+    "z_declare_2024": 1.7
+  },
+  "comparateur": {
+    "NA62_2021": {
+      "candidates": 20,
+      "fond": 7.03,
+      "d_fond": [
+        1.05,
+        0.82
+      ],
+      "BR": 1.06e-10,
+      "d_BR": [
+        4e-11,
+        3.4e-11
+      ],
+      "p_value": 0.00034,
+      "N_exp_SM": 10.01,
+      "d_N_exp": [
+        0.42,
+        1.19
+      ],
+      "source": "arXiv:2103.15389 — JHEP 06 (2021) 093, DOI 10.1007/JHEP06(2021)093",
+      "verbe_publie": "evidence à 3,4 sigma — pas une observation"
+    },
+    "NA62_2024": {
+      "candidates": 51,
+      "fond": 18.0,
+      "d_fond": [
+        3.0,
+        2.0
+      ],
+      "BR": 1.3e-10,
+      "d_BR": [
+        3.3e-11,
+        3e-11
+      ],
+      "p_value": 2e-07,
+      "source": "arXiv:2412.12015 — JHEP 02 (2025) 191, DOI 10.1007/JHEP02(2025)191",
+      "verbe_publie": "observation au-delà de 5 sigma"
+    },
+    "NA62_2026": {
+      "BR_2016_2024": 9.6e-11,
+      "d_BR_26": [
+        1.9e-11,
+        1.8e-11
+      ],
+      "BR_2023_2024": 7.2e-11,
+      "POT_2021_2024": 6.3e+17,
+      "source": "arXiv:2605.02415 — MPP-2026-83",
+      "verbe_publie": "accord avec le modèle standard à moins de 1 sigma"
+    },
+    "CERN_2024": {
+      "desintegrations_ordinaires": 9999999999,
+      "source": "https://home.cern — 2024-09-25, « the other 9 999 999 999 decays »"
+    }
+  },
+  "graphe": {
+    "noeuds": 18,
+    "aretes": 25,
+    "acyclique": true,
+    "cycle": [],
+    "racines": [
+      "EQ-01"
+    ],
+    "self_references": [],
+    "atteignables": 18,
+    "racines_fondees_dehors": true,
+    "couche_vide": [],
+    "matrice_pilier_couche": {
+      "P1 UNITE": {
+        "S1 MESURABLE": [
+          "EQ-06",
+          "EQ-08",
+          "EQ-13"
+        ],
+        "S2 REGULARITE": [
+          "EQ-09"
+        ],
+        "S3 HORS_MATRICE": [
+          "EQ-01",
+          "EQ-02"
+        ]
+      },
+      "P2 BORNE": {
+        "S1 MESURABLE": [
+          "EQ-12"
+        ],
+        "S2 REGULARITE": [
+          "EQ-03",
+          "EQ-11",
+          "EQ-15"
+        ],
+        "S3 HORS_MATRICE": [
+          "EQ-01",
+          "EQ-18"
+        ]
+      },
+      "P3 CONFRONTATION": {
+        "S1 MESURABLE": [
+          "EQ-04",
+          "EQ-07",
+          "EQ-10",
+          "EQ-12",
+          "EQ-14"
+        ],
+        "S2 REGULARITE": [
+          "EQ-09",
+          "EQ-17"
+        ],
+        "S3 HORS_MATRICE": [
+          "EQ-18"
+        ]
+      },
+      "P4 TRANSMISSION": {
+        "S1 MESURABLE": [
+          "EQ-07",
+          "EQ-16"
+        ],
+        "S2 REGULARITE": [
+          "EQ-05",
+          "EQ-17"
+        ],
+        "S3 HORS_MATRICE": [
+          "EQ-18"
+        ]
+      }
+    },
+    "cases_vides": [],
+    "aretes_vers_l_exterieur": 18
+  },
+  "gel": {
+    "valeurs": {
+      "acceptance_2016_2018": 0.04414426345296429,
+      "n_signal_2016_2018": 10.0119189511323,
+      "kaons_par_seconde": 60000000.0
+    },
+    "variables_libres": [
+      "BR_sm",
+      "N_K_2016_2018",
+      "N_K_2021_2022",
+      "SES_2016_2018",
+      "SES_2021_2022",
+      "annees_prises_2016_2018",
+      "dBR_sm",
+      "fraction_K_plus",
+      "rejection_autres_canaux",
+      "rejection_mu",
+      "rejection_pi0",
+      "secondaires_par_s",
+      "seuil_observation",
+      "z_declare_2024"
+    ],
+    "cle_interdites_trouvees": [],
+    "a_lu_le_comparateur": false,
+    "digest": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba"
+  },
+  "imports": {
+    "imports": [
+      "__future__",
+      "hashlib",
+      "inspect",
+      "json",
+      "math",
+      "pathlib",
+      "re",
+      "sys",
+      "typing"
+    ],
+    "stdlib": [
+      "__future__",
+      "hashlib",
+      "inspect",
+      "json",
+      "math",
+      "pathlib",
+      "re",
+      "sys",
+      "typing"
+    ],
+    "local": [],
+    "tiers": [],
+    "resolu_local": {}
+  },
+  "imports_parc": {
+    "ABONDANCE": {
+      "fichiers": 8,
+      "tiers": []
+    },
+    "CHIFFRES": {
+      "fichiers": 3,
+      "tiers": []
+    },
+    "FONDATION": {
+      "fichiers": 5,
+      "tiers": []
+    },
+    "code": {
+      "fichiers": 18,
+      "tiers": []
+    },
+    "bibliotheques": {
+      "fichiers": 6,
+      "tiers": []
+    }
+  },
+  "registre": {
+    "entrees": 14,
+    "noms_uniques": 14,
+    "doublons_en_conflit": [],
+    "valeurs_non_numeriques": [],
+    "unites_vide": [],
+    "hors_declare": [],
+    "declare_sans_entree": []
+  },
+  "dossiers": {
+    "ABONDANCE": {
+      "present": true,
+      "equations": 54,
+      "controles": 54,
+      "tests": 107,
+      "modules": [
+        "agriculture_abondance.py",
+        "eau_abondance.py",
+        "electricite_abondance.py"
+      ]
+    },
+    "CHIFFRES": {
+      "present": true,
+      "equations": 17,
+      "controles": 17,
+      "tests": 30,
+      "modules": [
+        "chiffres_pi.py"
+      ]
+    },
+    "FONDATION": {
+      "present": true,
+      "equations": 18,
+      "controles": 18,
+      "tests": 45,
+      "modules": [
+        "fondation_base.py"
+      ]
+    }
+  },
+  "equations": [
+    {
+      "id": "EQ-01",
+      "chemin": "fondation_base.py → eq01_axiome() → C01",
+      "formule": "AX : la régularité d'un système fini n'appartient pas à ce système",
+      "resultat": "Il n'y a de dieu que Allah — posé HORS MATRICE. — SPÉCIFIÉ — posé, jamais dérivé, jamais réfuté par ce dossier",
+      "statut": "SPÉCIFIÉ",
+      "limite": "l'axiome n'entre dans aucun calcul : aucun nombre de ce dossier n'a l'axiome pour source ; il n'engage que la discipline du registre",
+      "detail": {
+        "enonce": "Il n'y a de dieu que Allah — posé HORS MATRICE.",
+        "formalisation": "la régularité d'un système fini n'est pas un élément de ce système ; toute chaîne de dérivation s'arrête donc sur une source déclarée hors d'elle",
+        "hors_matrice": true,
+        "nombres_fournis_par_l_axiome": 0,
+        "piliers_engendres": [
+          "P1 UNITE",
+          "P2 BORNE",
+          "P3 CONFRONTATION",
+          "P4 TRANSMISSION"
+        ],
+        "statut_axiome": "SPÉCIFIÉ — posé, jamais dérivé, jamais réfuté par ce dossier",
+        "interdit": "déclarer deux fois la même grandeur avec deux valeurs (P1)"
+      },
+      "couche": "S3 HORS_MATRICE",
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE"
+      ],
+      "depend_de": [],
+      "fonde_hors_du_dossier": [
+        "AXIOME (hors matrice)"
+      ],
+      "_titre_fr": "L'axiome posé hors matrice"
+    },
+    {
+      "id": "EQ-02",
+      "chemin": "fondation_base.py → graphe_dependances() → C02",
+      "formule": "∀ nœud sans prédécesseur interne, une source déclarée hors du dossier",
+      "resultat": "1 racine : EQ-01 — fondée dehors : True ; 18 aretes vers l'exterieur",
+      "statut": "OPÉRATIONNEL",
+      "limite": "la propriété porte sur le graphe de CE dossier (18 nœuds), pas sur toute théorie possible",
+      "detail": {
+        "noeuds": 18,
+        "aretes": 25,
+        "acyclique": true,
+        "cycle": [],
+        "racines": [
+          "EQ-01"
+        ],
+        "self_references": [],
+        "atteignables": 18,
+        "racines_fondees_dehors": true,
+        "couche_vide": [],
+        "matrice_pilier_couche": {
+          "P1 UNITE": {
+            "S1 MESURABLE": [
+              "EQ-06",
+              "EQ-08",
+              "EQ-13"
+            ],
+            "S2 REGULARITE": [
+              "EQ-09"
+            ],
+            "S3 HORS_MATRICE": [
+              "EQ-01",
+              "EQ-02"
+            ]
+          },
+          "P2 BORNE": {
+            "S1 MESURABLE": [
+              "EQ-12"
+            ],
+            "S2 REGULARITE": [
+              "EQ-03",
+              "EQ-11",
+              "EQ-15"
+            ],
+            "S3 HORS_MATRICE": [
+              "EQ-01",
+              "EQ-18"
+            ]
+          },
+          "P3 CONFRONTATION": {
+            "S1 MESURABLE": [
+              "EQ-04",
+              "EQ-07",
+              "EQ-10",
+              "EQ-12",
+              "EQ-14"
+            ],
+            "S2 REGULARITE": [
+              "EQ-09",
+              "EQ-17"
+            ],
+            "S3 HORS_MATRICE": [
+              "EQ-18"
+            ]
+          },
+          "P4 TRANSMISSION": {
+            "S1 MESURABLE": [
+              "EQ-07",
+              "EQ-16"
+            ],
+            "S2 REGULARITE": [
+              "EQ-05",
+              "EQ-17"
+            ],
+            "S3 HORS_MATRICE": [
+              "EQ-18"
+            ]
+          }
+        },
+        "cases_vides": [],
+        "aretes_vers_l_exterieur": 18
+      },
+      "couche": "S3 HORS_MATRICE",
+      "piliers": [
+        "P1 UNITE"
+      ],
+      "depend_de": [
+        "EQ-01"
+      ],
+      "fonde_hors_du_dossier": [],
+      "_titre_fr": "Tout nœud sans prédécesseur interne est fondé dehors"
+    },
+    {
+      "id": "EQ-03",
+      "chemin": "fondation_base.py → graphe_dependances() → C03",
+      "formule": "DAG : acyclique, toutes racines atteignables, zéro auto-référence",
+      "resultat": "acyclique=True · nœuds=18 · atteignables=18 · auto-références=[]",
+      "statut": "OPÉRATIONNEL",
+      "limite": "l'acyclicité est une propriété du registre NOEUDS ; elle ne dit rien de la vérité des équations, seulement de leur non-circularité",
+      "detail": {
+        "noeuds": 18,
+        "aretes": 25,
+        "acyclique": true,
+        "cycle": [],
+        "racines": [
+          "EQ-01"
+        ],
+        "self_references": [],
+        "atteignables": 18,
+        "racines_fondees_dehors": true,
+        "couche_vide": [],
+        "matrice_pilier_couche": {
+          "P1 UNITE": {
+            "S1 MESURABLE": [
+              "EQ-06",
+              "EQ-08",
+              "EQ-13"
+            ],
+            "S2 REGULARITE": [
+              "EQ-09"
+            ],
+            "S3 HORS_MATRICE": [
+              "EQ-01",
+              "EQ-02"
+            ]
+          },
+          "P2 BORNE": {
+            "S1 MESURABLE": [
+              "EQ-12"
+            ],
+            "S2 REGULARITE": [
+              "EQ-03",
+              "EQ-11",
+              "EQ-15"
+            ],
+            "S3 HORS_MATRICE": [
+              "EQ-01",
+              "EQ-18"
+            ]
+          },
+          "P3 CONFRONTATION": {
+            "S1 MESURABLE": [
+              "EQ-04",
+              "EQ-07",
+              "EQ-10",
+              "EQ-12",
+              "EQ-14"
+            ],
+            "S2 REGULARITE": [
+              "EQ-09",
+              "EQ-17"
+            ],
+            "S3 HORS_MATRICE": [
+              "EQ-18"
+            ]
+          },
+          "P4 TRANSMISSION": {
+            "S1 MESURABLE": [
+              "EQ-07",
+              "EQ-16"
+            ],
+            "S2 REGULARITE": [
+              "EQ-05",
+              "EQ-17"
+            ],
+            "S3 HORS_MATRICE": [
+              "EQ-18"
+            ]
+          }
+        },
+        "cases_vides": [],
+        "aretes_vers_l_exterieur": 18
+      },
+      "couche": "S2 REGULARITE",
+      "piliers": [
+        "P2 BORNE"
+      ],
+      "depend_de": [
+        "EQ-02"
+      ],
+      "fonde_hors_du_dossier": [],
+      "_titre_fr": "Le graphe est un DAG"
+    },
+    {
+      "id": "EQ-04",
+      "chemin": "fondation_base.py → eq04_confrontation_et_parc() → C04",
+      "formule": "chaque nombre ⇒ source publique ; douze cases pilier × couche habitées ; chaque extrait de la chaîne ⇒ sous-chaîne du texte mesuré",
+      "resultat": "4 sources publiques · ABONDANCE 54eq/54c/107t · CHIFFRES 17eq/17c/30t · FONDATION 18eq/18c/45t · 10 extraits verbatimes · 0 horodatage cité",
+      "statut": "OPÉRATIONNEL",
+      "limite": "le comptage du parc est une expression régulière sur les fichiers : il mesure la déclaration, pas la justesse. La discipline de source ne dit pas si la chaîne a raison : elle dit seulement que nous ne lui prêtons ni chiffre, ni minutage, ni phrase",
+      "detail": {
+        "dossiers": {
+          "ABONDANCE": {
+            "present": true,
+            "equations": 54,
+            "controles": 54,
+            "tests": 107,
+            "modules": [
+              "agriculture_abondance.py",
+              "eau_abondance.py",
+              "electricite_abondance.py"
+            ]
+          },
+          "CHIFFRES": {
+            "present": true,
+            "equations": 17,
+            "controles": 17,
+            "tests": 30,
+            "modules": [
+              "chiffres_pi.py"
+            ]
+          },
+          "FONDATION": {
+            "present": true,
+            "equations": 18,
+            "controles": 18,
+            "tests": 45,
+            "modules": [
+              "fondation_base.py"
+            ]
+          }
+        },
+        "sources_publiques": [
+          "NA62_2021 — arXiv:2103.15389 — JHEP 06 (2021) 093, DOI 10.1007/JHEP06(2021)093",
+          "NA62_2024 — arXiv:2412.12015 — JHEP 02 (2025) 191, DOI 10.1007/JHEP02(2025)191",
+          "NA62_2026 — arXiv:2605.02415 — MPP-2026-83",
+          "CERN_2024 — https://home.cern — 2024-09-25, « the other 9 999 999 999 decays »"
+        ],
+        "discipline_source": {
+          "extraits_verbatimes": {
+            "En septembre 2024, l’expérience NA62 du CERN a annoncé l’observation": true,
+            "un kaon chargé qui se transforme en un pion et deux neutrinos invisibles": true,
+            "suivre des centaines de millions de particules par seconde": true,
+            "écarter des milliards de désintégrations ordinaires qui lui ressemblent": true,
+            "franchir le seuil des cinq sigma": true,
+            "la découverte du kaon dans les rayons cosmiques des années 1940": true,
+            "le modèle standard rend cette désintégration presque impossible": true,
+            "les expériences de Brookhaven n’en ont capté que quelques événements en deux décennies": true,
+            "en étudiant les kaons en plein vol": true,
+            "ce que ce résultat nous apprend sur la physique au-delà du modèle standard": true
+          },
+          "extraits_non_trouves": [],
+          "horodatages_cites": [],
+          "caracteres_retenus": 1024,
+          "caracteres_mesures": 1908,
+          "transcript_octets": {
+            "json3": 0,
+            "srv3": 0,
+            "xml": 0
+          },
+          "chapitres_publics": 0
+        },
+        "cases_matrice": [],
+        "aretes_vers_l_exterieur": 18
+      },
+      "couche": "S1 MESURABLE",
+      "piliers": [
+        "P3 CONFRONTATION"
+      ],
+      "depend_de": [
+        "EQ-03"
+      ],
+      "fonde_hors_du_dossier": [
+        "publications NA62",
+        "parc du dépôt"
+      ],
+      "_titre_fr": "Discipline de source et parc compté"
+    },
+    {
+      "id": "EQ-05",
+      "chemin": "fondation_base.py → imports_de(), imports_parc() → C05",
+      "formule": "imports ⊆ stdlib ∪ modules locaux — ici et dans tout le parc",
+      "resultat": "ici ['__future__', 'hashlib', 'inspect', 'json', 'math', 'pathlib', 're', 'sys', 'typing'] ; tiers ici [] ; tiers du parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'code': [], 'bibliotheques': []}",
+      "statut": "OPÉRATIONNEL",
+      "limite": "la stdlib reconnue est celle de CETTE interprétation Python ; un tiers sans ce module n'a pas le même contrôle",
+      "detail": {
+        "imports_ici": {
+          "imports": [
+            "__future__",
+            "hashlib",
+            "inspect",
+            "json",
+            "math",
+            "pathlib",
+            "re",
+            "sys",
+            "typing"
+          ],
+          "stdlib": [
+            "__future__",
+            "hashlib",
+            "inspect",
+            "json",
+            "math",
+            "pathlib",
+            "re",
+            "sys",
+            "typing"
+          ],
+          "local": [],
+          "tiers": [],
+          "resolu_local": {}
+        },
+        "parc": {
+          "ABONDANCE": {
+            "fichiers": 8,
+            "tiers": []
+          },
+          "CHIFFRES": {
+            "fichiers": 3,
+            "tiers": []
+          },
+          "FONDATION": {
+            "fichiers": 5,
+            "tiers": []
+          },
+          "code": {
+            "fichiers": 18,
+            "tiers": []
+          },
+          "bibliotheques": {
+            "fichiers": 6,
+            "tiers": []
+          }
+        },
+        "commandes_publish": [
+          "py -3 FONDATION/fondation_base.py",
+          "py -3 FONDATION/fondation_base.py --ecrit",
+          "cd FONDATION && py -3 -m unittest tests.test_fondation"
+        ]
+      },
+      "couche": "S2 REGULARITE",
+      "piliers": [
+        "P4 TRANSMISSION"
+      ],
+      "depend_de": [
+        "EQ-03"
+      ],
+      "fonde_hors_du_dossier": [
+        "bibliothèque standard Python"
+      ],
+      "_titre_fr": "Bibliothèque standard seule, ici et dans le parc"
+    },
+    {
+      "id": "EQ-06",
+      "chemin": "fondation_base.py → registre_grandeurs() → C06",
+      "formule": "|registre| = noms uniques · aucun doublon en conflit · unité non vide partout",
+      "resultat": "14 entrées, 14 noms uniques, doublons []",
+      "statut": "OPÉRATIONNEL",
+      "limite": "le registre est tenu à la main : une grandeur publique absente d'ici n'est pas interdite, elle est simplement hors domaine",
+      "detail": {
+        "entrees": 14,
+        "noms_uniques": 14,
+        "doublons_en_conflit": [],
+        "valeurs_non_numeriques": [],
+        "unites_vide": [],
+        "hors_declare": [],
+        "declare_sans_entree": []
+      },
+      "couche": "S1 MESURABLE",
+      "piliers": [
+        "P1 UNITE"
+      ],
+      "depend_de": [
+        "EQ-01",
+        "EQ-04"
+      ],
+      "fonde_hors_du_dossier": [
+        "registre DECLARE"
+      ],
+      "_titre_fr": "Un registre, une valeur par grandeur"
+    },
+    {
+      "id": "EQ-07",
+      "chemin": "fondation_base.py → prediction_gel() → C07",
+      "formule": "signature(prediction) ∩ clés_comparateur = ∅ · digest stable",
+      "resultat": "signature=['declares'] · digest=242389d120565971… · drapeau sous contamination True",
+      "statut": "OPÉRATIONNEL",
+      "limite": "c'est une preuve d'indépendance structurelle, pas d'exactitude : la prédiction peut être fausse sans avoir jamais vu le comparateur",
+      "detail": {
+        "signature_prediction": [
+          "declares"
+        ],
+        "variables_libres": [
+          "BR_sm",
+          "N_K_2016_2018",
+          "N_K_2021_2022",
+          "SES_2016_2018",
+          "SES_2021_2022",
+          "annees_prises_2016_2018",
+          "dBR_sm",
+          "fraction_K_plus",
+          "rejection_autres_canaux",
+          "rejection_mu",
+          "rejection_pi0",
+          "secondaires_par_s",
+          "seuil_observation",
+          "z_declare_2024"
+        ],
+        "digest": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba",
+        "intersection": [],
+        "cle_interdites_trouvees": [],
+        "digest_sous_comparateur_faussee": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba",
+        "drapeau_leve_sous_contamination": true
+      },
+      "couche": "S1 MESURABLE",
+      "piliers": [
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "depend_de": [
+        "EQ-06"
+      ],
+      "fonde_hors_du_dossier": [
+        "inspect.signature"
+      ],
+      "_titre_fr": "La prédiction est gelée avant la lecture du comparateur"
+    },
+    {
+      "id": "EQ-08",
+      "chemin": "fondation_base.py → intervalle_ordinaires() → C08",
+      "formule": "N_ordinaires = 1/BR − 1, intervalle par les deux branches d'incertitude",
+      "resultat": "SM 1.19048e+10 ∈ [1.06383e+10, 1.35135e+10] ; communiqué 9999999999 ⇒ taux implicite 1e-10 ; intervalle 2024 [6.135e+09, 1e+10]",
+      "statut": "OPÉRATIONNEL",
+      "limite": "le communiqué arrondit à BR = 10⁻¹⁰ : l'accord est un accord d'arrondi, pas une mesure nouvelle. Le compte arrondi ne tombe PAS dans l'intervalle à un sigma calculé depuis BR_sm = 8,4·10⁻¹¹ — c'est écrit, et cela dit seulement que 10⁻¹⁰ est un arrondi",
+      "detail": {
+        "centre_modele_standard": 11904761903.761906,
+        "intervalle_modele_standard": [
+          10638297871.340425,
+          13513513512.513515
+        ],
+        "intervalle_mesure_2024": [
+          6134969324.153374,
+          9999999999.0
+        ],
+        "valeur_communiquee": 9999999999,
+        "taux_implicite_du_communique": 1e-10,
+        "communique_dans_intervalle_2024": true,
+        "communique_dans_intervalle_sm": false
+      },
+      "couche": "S1 MESURABLE",
+      "piliers": [
+        "P1 UNITE"
+      ],
+      "depend_de": [
+        "EQ-06",
+        "EQ-07"
+      ],
+      "fonde_hors_du_dossier": [
+        "communiqué CERN 2024-09-25"
+      ],
+      "_titre_fr": "Désintégrations ordinaires par désintégration rare"
+    },
+    {
+      "id": "EQ-09",
+      "chemin": "fondation_base.py → acceptance(), eq09_cloture_acceptance() → C09",
+      "formule": "A·ε = 1/(N_K·SES) puis N = N_K·BR_sm·A·ε",
+      "resultat": "A·ε 2016-18 4.4144% · 2021-22 4.1377% (rapport 0.9373) · N calculé 10.0119 vs publié 10.01 (écart 0.0192%)",
+      "statut": "OPÉRATIONNEL",
+      "limite": "fermeture de trois chiffres PUBLIÉS entre eux : le calcul ne peut pas découvrir une erreur commune aux trois",
+      "detail": {
+        "acceptance_2016_2018": 0.04414426345296429,
+        "acceptance_2021_2022": 0.04137702747434625,
+        "rapport_acceptances": 0.9373138033763655,
+        "n_attendu_calcule": 10.0119189511323,
+        "n_attendu_publie": 10.01,
+        "ecart_relatif": 0.00019170340982016938,
+        "formule": "A·ε = 1/(N_K·SES) puis N = N_K·BR_sm·A·ε"
+      },
+      "couche": "S2 REGULARITE",
+      "piliers": [
+        "P1 UNITE",
+        "P3 CONFRONTATION"
+      ],
+      "depend_de": [
+        "EQ-06",
+        "EQ-07"
+      ],
+      "fonde_hors_du_dossier": [
+        "arXiv:2103.15389",
+        "arXiv:2412.12015"
+      ],
+      "_titre_fr": "L'acceptance ferme sur des chiffres publiés"
+    },
+    {
+      "id": "EQ-10",
+      "chemin": "fondation_base.py → prediction_gel() → eq10_prediction_gelee() → C10",
+      "formule": "N gelé = 10,01 contre excès publié (candidates − fond)",
+      "resultat": "prévu 10.0119 · publié 12.97 · écart +0.7166 σ",
+      "statut": "OPÉRATIONNEL",
+      "limite": "l'incertitude du comparateur est celle que NA62 déclare ; nous ne reconstruisons pas sa vraisemblance",
+      "detail": {
+        "prevu": 10.0119189511323,
+        "observe_excess": 12.969999999999999,
+        "ecart_en_sigma": 0.7165571293476164,
+        "sigma_utilise": 4.1281859152819536,
+        "br_publiee": 1.06e-10,
+        "br_sm": 8.4e-11,
+        "ecart_br_en_sigma": 0.5335783750799326,
+        "digest_gel": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba"
+      },
+      "couche": "S1 MESURABLE",
+      "piliers": [
+        "P3 CONFRONTATION"
+      ],
+      "depend_de": [
+        "EQ-07",
+        "EQ-09"
+      ],
+      "fonde_hors_du_dossier": [
+        "arXiv:2103.15389"
+      ],
+      "_titre_fr": "Prédiction gelée contre l'excès publié en 2021"
+    },
+    {
+      "id": "EQ-11",
+      "chemin": "fondation_base.py → signification_lima(), z_de_p_seuil() → C11",
+      "formule": "z(20 | 7,03) par Li–Ma contre z implicite de la p-value publiée",
+      "resultat": "Li–Ma 3.9852 σ · publié 3.3975 σ · écart +0.5877 · les deux sous 5 σ : True",
+      "statut": "OPÉRATIONNEL",
+      "limite": "notre formule ignore l'incertitude systématique du fond : le surestime est attendu, et n'est PAS résorbé ici",
+      "detail": {
+        "z_lima": 3.985200460360394,
+        "p_publiee": 0.00034,
+        "z_publiee": 3.3975184597785804,
+        "ecart": 0.5876820005818137,
+        "les_deux_sous_cinq_sigma": true,
+        "verbe": "evidence à 3,4 sigma — pas une observation"
+      },
+      "couche": "S2 REGULARITE",
+      "piliers": [
+        "P2 BORNE"
+      ],
+      "depend_de": [
+        "EQ-10"
+      ],
+      "fonde_hors_du_dossier": [
+        "arXiv:2103.15389"
+      ],
+      "_titre_fr": "Signification Li–Ma sur les chiffres 2021"
+    },
+    {
+      "id": "EQ-12",
+      "chemin": "fondation_base.py → evenements_requis() → C12",
+      "formule": "excès requis pour z = 5 à fond connu, contre excès publié 2024",
+      "resultat": "requis 25.0624 · publié 33.00 · marge 7.9376 · Li–Ma 6.3426 vs publié 5.0690",
+      "statut": "OPÉRATIONNEL",
+      "limite": "le fond utilisé est celui que la même publication annonce : contrôle de cohérence interne, pas prédiction indépendante",
+      "detail": {
+        "fond": 18.0,
+        "excess_requis": 25.06239503689593,
+        "excess_publie": 33.0,
+        "marge": 7.9376049631040715,
+        "z_lima": 6.342577964240759,
+        "z_publiee": 5.068957749717791,
+        "ecart": 1.2736202145229676,
+        "les_deux_au_dessus_de_cinq": true
+      },
+      "couche": "S1 MESURABLE",
+      "piliers": [
+        "P2 BORNE",
+        "P3 CONFRONTATION"
+      ],
+      "depend_de": [
+        "EQ-11"
+      ],
+      "fonde_hors_du_dossier": [
+        "arXiv:2412.12015"
+      ],
+      "_titre_fr": "Ce que cinq sigma coûtent en événements"
+    },
+    {
+      "id": "EQ-13",
+      "chemin": "fondation_base.py → eq13_confrontation_2024() → C13",
+      "formule": "z = (BR_obs − BR_sm)/√(σ_obs² + σ_sm²), sur les deux branches",
+      "resultat": "z ∈ [1.3340, 1.4546] · NA62 déclare 1.7 · chevauchement à 1 σ : False",
+      "statut": "OPÉRATIONNEL",
+      "limite": "l'addition en quadrature est NOTRE hypothèse déclarée ; NA62 publie un traitement de vraisemblance complet. Les intervalles à un sigma ne se recouvrent pas : c'est écrit, pas gommé",
+      "detail": {
+        "z_branches": [
+          1.3340340183012054,
+          1.4546477236774544
+        ],
+        "ecart_absolu": 4.5999999999999996e-11,
+        "intervalle_sm": [
+          7.399999999999999e-11,
+          9.4e-11
+        ],
+        "intervalle_observe": [
+          9.999999999999999e-11,
+          1.63e-10
+        ],
+        "chevauchement_a_un_sigma": false,
+        "z_declare_par_na62": 1.7,
+        "nos_z_sous_le_z_declare": true
+      },
+      "couche": "S1 MESURABLE",
+      "piliers": [
+        "P1 UNITE"
+      ],
+      "depend_de": [
+        "EQ-07",
+        "EQ-10"
+      ],
+      "fonde_hors_du_dossier": [
+        "arXiv:2412.12015"
+      ],
+      "_titre_fr": "Confrontation 2024 : notre z contre le leur"
+    },
+    {
+      "id": "EQ-14",
+      "chemin": "fondation_base.py → eq14_confrontation_2026() → C14",
+      "formule": "même formule, chiffres 2016-2024 de la mise à jour 2026",
+      "resultat": "BR 9.6e-11 · z = 0.5589 (branche basse 0.5828) · sous 1 σ : True",
+      "statut": "OPÉRATIONNEL",
+      "limite": "les chiffres 2026 viennent d'une prépublication ; ils peuvent bouger",
+      "detail": {
+        "br_2016_2024": 9.6e-11,
+        "z_contre_sm": 0.5588957193991473,
+        "z_branche_inf": 0.5827715174143591,
+        "sous_un_sigma": true,
+        "br_2023_2024_seule": 7.2e-11,
+        "declaration_publique": "accord avec le modèle standard à moins de 1 sigma"
+      },
+      "couche": "S1 MESURABLE",
+      "piliers": [
+        "P3 CONFRONTATION"
+      ],
+      "depend_de": [
+        "EQ-13"
+      ],
+      "fonde_hors_du_dossier": [
+        "arXiv:2605.02415"
+      ],
+      "_titre_fr": "Confrontation 2026 : l'écart se referme"
+    },
+    {
+      "id": "EQ-15",
+      "chemin": "fondation_base.py → eq15_budget_fond() → C15",
+      "formule": "suppression totale requise = N_K/fond, contre la chaîne de rejets publiée",
+      "resultat": "requise 3.841e+11 · chaîne μ×π⁰ 1e+15 · marge +3.416 ordres",
+      "statut": "OPÉRATIONNEL",
+      "limite": "les facteurs O(10⁷), O(10⁸) sont des ordres de grandeur publiés ; nous ne savons pas quel canal domine le fond réel, seulement que la chaîne annoncée le permet",
+      "detail": {
+        "suppression_totale_requise": 384068278805.1209,
+        "chaine_declaree_mu_x_pi0": 1000000000000000.0,
+        "marge_en_ordres_de_grandeur": 3.4155915608608365,
+        "chainement_suffisant": true,
+        "suppression_requise_2024": 150000000000.0,
+        "rejection_autres_canaux": 10000.0
+      },
+      "couche": "S2 REGULARITE",
+      "piliers": [
+        "P2 BORNE"
+      ],
+      "depend_de": [
+        "EQ-06",
+        "EQ-12"
+      ],
+      "fonde_hors_du_dossier": [
+        "arXiv:2605.02415"
+      ],
+      "_titre_fr": "Budget de fond contre chaîne de rejets"
+    },
+    {
+      "id": "EQ-16",
+      "chemin": "fondation_base.py → eq16_geometrie() → C16",
+      "formule": "fraction = N_K / (secondaires/s × 6 % × 3 ans × 3,15576·10⁷ s)",
+      "resultat": "0.0004753 — un kaon sur 2104 produits · 6e+07 K⁺/s",
+      "statut": "SIMULÉ",
+      "limite": "bornée inférieurement : tout temps mort réel rend la fraction plus grande ; le communiqué ne donne ni le temps utile ni l'acceptance du faisceau",
+      "detail": {
+        "kaons_produits_par_s": 60000000.0,
+        "produits_sur_la_periode": 5680368000000000.0,
+        "fraction_dans_volume_fiduciel": 0.00047532131721043426,
+        "un_sur": 2103.84,
+        "hypothese_temps_utile": "100 % — la fraction est donc MINORÉE (borne inférieure)"
+      },
+      "couche": "S1 MESURABLE",
+      "piliers": [
+        "P4 TRANSMISSION"
+      ],
+      "depend_de": [
+        "EQ-08"
+      ],
+      "fonde_hors_du_dossier": [
+        "communiqué CERN 2024-09-25"
+      ],
+      "_titre_fr": "Géométrie du faisceau : une borne inférieure simulée"
+    },
+    {
+      "id": "EQ-17",
+      "chemin": "fondation_base.py → eq17_loi_racine_n() → C17",
+      "formule": "σ_Poisson = √(s+b)/s contre erreur relative publiée, deux périodes",
+      "resultat": "2021 0.3448 vs 0.3774 · 2024 0.2164 vs 0.2538 · √N prévu 1.5951 vs mesuré 1.4866",
+      "statut": "OPÉRATIONNEL",
+      "limite": "l'excédent des deux périodes est un faisceau d'indices sur un plancher systématique, pas la mesure de ce plancher",
+      "detail": {
+        "sigma_poisson_2021": 0.34480616461060754,
+        "sigma_poisson_2024": 0.21640692207705609,
+        "erreur_publiee_relative_2021": 0.3773584905660377,
+        "erreur_publiee_relative_2024": 0.2538461538461539,
+        "sur_2021": 0.03255232595543017,
+        "sur_2024": 0.0374392317690978,
+        "surcroit_dans_les_deux": true,
+        "gain_prevu_racine_n": 1.5950965727284327,
+        "gain_mesure": 1.4865637507146938,
+        "rapport_gains": 0.9319584632872152
+      },
+      "couche": "S2 REGULARITE",
+      "piliers": [
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "depend_de": [
+        "EQ-10",
+        "EQ-13"
+      ],
+      "fonde_hors_du_dossier": [
+        "arXiv:2103.15389",
+        "arXiv:2412.12015"
+      ],
+      "_titre_fr": "Erreur de comptage contre erreur publiée"
+    },
+    {
+      "id": "EQ-18",
+      "chemin": "fondation_base.py → eq18_limite_de_la_base() → C18",
+      "formule": "liste des réfutations internes et des non-preuves",
+      "resultat": "5 conditions de chute, 4 choses non prouvées",
+      "statut": "SPÉCIFIÉ",
+      "limite": "la limite EST le produit de cette équation : un dossier qui n'écrit pas sa réfutation n'a pas de limite, il a un silence",
+      "detail": {
+        "ne_prouve_pas": [
+          "l'axiome lui-même",
+          "la normalité de π",
+          "l'unicité d'une théorie physique",
+          "qu'une loi en √N tienne hors du domaine mesuré"
+        ],
+        "domaine": "dix-huit nœuds, un dossier, deux publications NA62 (2021, 2024), une prépublication 2026, un communiqué CERN",
+        "refutation": [
+          "si A·ε ne valait plus 1/(N_K·SES), EQ-09 tombe",
+          "si la prédiction gelée bougeait après lecture du comparateur, EQ-07 tombe",
+          "si un nœud du graphe n'avait plus de source hors de lui, EQ-02 tombe",
+          "si une grandeur était déclarée deux fois avec deux valeurs, EQ-06 tombe",
+          "si un import tiers entrait dans le parc, EQ-05 tombe"
+        ]
+      },
+      "couche": "S3 HORS_MATRICE",
+      "piliers": [
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "depend_de": [
+        "EQ-01",
+        "EQ-17"
+      ],
+      "fonde_hors_du_dossier": [],
+      "_titre_fr": "La limite est le produit"
+    }
+  ],
+  "controles": [
+    {
+      "id": "C01",
+      "nom": "l'axiome est posé hors matrice et ne fournit aucun nombre",
+      "attendu": "hors_matrice True · 0 nombre · quatre piliers engendrés",
+      "obtenu": "True · 0 · ['P1 UNITE', 'P2 BORNE', 'P3 CONFRONTATION', 'P4 TRANSMISSION']",
+      "ok": true,
+      "limite": "l'axiome n'entre dans aucun calcul : aucun nombre de ce dossier n'a l'axiome pour source ; il n'engage que la discipline du registre"
+    },
+    {
+      "id": "C02",
+      "nom": "la racine unique du graphe est fondée sur une source extérieure",
+      "attendu": "racines = ['EQ-01'] et fondée dehors True",
+      "obtenu": "['EQ-01'] · True",
+      "ok": true,
+      "limite": "la propriété porte sur le graphe de CE dossier (18 nœuds), pas sur toute théorie possible"
+    },
+    {
+      "id": "C03",
+      "nom": "graphe acyclique, dix-huit nœuds atteignables, zéro auto-référence",
+      "attendu": "acyclique et atteignables = 18",
+      "obtenu": "acyclique=True atteignables=18 self=[] couches vides=[]",
+      "ok": true,
+      "limite": "l'acyclicité est une propriété du registre NOEUDS ; elle ne dit rien de la vérité des équations, seulement de leur non-circularité"
+    },
+    {
+      "id": "C04",
+      "nom": "les douze cases pilier × couche sont habitées ; chaque dossier du parc déclare autant de contrôles que d'équations et porte ses tests ; la chaîne est citée mot pour mot et n'est jamais minutée",
+      "attendu": "aucune case vide · eq = c > 0 et tests > 0 par dossier · extraits verbatimes · 0 horodatage · 0 octet de transcript",
+      "obtenu": "aucune · 4 sources · ABONDANCE 54/54 et 107t · CHIFFRES 17/17 et 30t · FONDATION 18/18 et 45t · extraits tous retrouvés · horodatages []",
+      "ok": true,
+      "limite": "le comptage du parc est une expression régulière sur les fichiers : il mesure la déclaration, pas la justesse. La discipline de source ne dit pas si la chaîne a raison : elle dit seulement que nous ne lui prêtons ni chiffre, ni minutage, ni phrase"
+    },
+    {
+      "id": "C05",
+      "nom": "aucun import tiers, ici ni dans le parc",
+      "attendu": "listes vides",
+      "obtenu": "ici [] · parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'code': [], 'bibliotheques': []}",
+      "ok": true,
+      "limite": "la stdlib reconnue est celle de CETTE interprétation Python ; un tiers sans ce module n'a pas le même contrôle"
+    },
+    {
+      "id": "C06",
+      "nom": "registre clos : une valeur par grandeur, unité non vide, registre = DECLARE",
+      "attendu": "0 doublon · 0 unité vide · entrées = noms uniques · hors_declare et declare_sans_entree vides",
+      "obtenu": "[] · [] · 14/14 · ∅ · ∅",
+      "ok": true,
+      "limite": "le registre est tenu à la main : une grandeur publique absente d'ici n'est pas interdite, elle est simplement hors domaine"
+    },
+    {
+      "id": "C07",
+      "nom": "la prédiction ne voit aucune clé du comparateur et ne change pas",
+      "attendu": "intersection vide · digest inaltéré · drapeau levé sous contamination",
+      "obtenu": "∅ · 242389d12056… · True · inaltéré True",
+      "ok": true,
+      "limite": "c'est une preuve d'indépendance structurelle, pas d'exactitude : la prédiction peut être fausse sans avoir jamais vu le comparateur"
+    },
+    {
+      "id": "C08",
+      "nom": "le compte communiqué est l'arrondi 10⁻¹⁰ ; il tombe dans l'intervalle mesuré 2024 — et l'intervalle du modèle standard ne le contient pas",
+      "attendu": "taux implicite = 1,0e-10 · 2024 True · SM écrit tel quel",
+      "obtenu": "taux 1e-10 · 2024 True · SM (arrondi hors domaine) False",
+      "ok": true,
+      "limite": "le communiqué arrondit à BR = 10⁻¹⁰ : l'accord est un accord d'arrondi, pas une mesure nouvelle. Le compte arrondi ne tombe PAS dans l'intervalle à un sigma calculé depuis BR_sm = 8,4·10⁻¹¹ — c'est écrit, et cela dit seulement que 10⁻¹⁰ est un arrondi"
+    },
+    {
+      "id": "C09",
+      "nom": "les deux Acceptations concordent et le N calculé ferme sur le publié",
+      "attendu": "écart relatif ≤ 1 % · rapport d'acceptations dans [0,9 ; 1,1]",
+      "obtenu": "écart 0.0192% · rapport 0.9373",
+      "ok": true,
+      "limite": "fermeture de trois chiffres PUBLIÉS entre eux : le calcul ne peut pas découvrir une erreur commune aux trois"
+    },
+    {
+      "id": "C10",
+      "nom": "l'excès publié reste à moins de 2 σ de la prédiction gelée",
+      "attendu": "|écart| ≤ 2 σ",
+      "obtenu": "+0.7166 σ",
+      "ok": true,
+      "limite": "l'incertitude du comparateur est celle que NA62 déclare ; nous ne reconstruisons pas sa vraisemblance"
+    },
+    {
+      "id": "C11",
+      "nom": "2021 : les deux calculs disent evidence, aucun ne dit observation",
+      "attendu": "max(z) < 5 et Li–Ma > publié",
+      "obtenu": "3.9852 · 3.3975",
+      "ok": true,
+      "limite": "notre formule ignore l'incertitude systématique du fond : le surestime est attendu, et n'est PAS résorbé ici"
+    },
+    {
+      "id": "C12",
+      "nom": "2024 : l'excès publié dépasse le nombre d'événements requis pour 5 σ",
+      "attendu": "marge > 0 et les deux z > 5",
+      "obtenu": "requis 25.0624 · publié 33.00 · marge 7.9376",
+      "ok": true,
+      "limite": "le fond utilisé est celui que la même publication annonce : contrôle de cohérence interne, pas prédiction indépendante"
+    },
+    {
+      "id": "C13",
+      "nom": "2024 : nos z restent sous le z déclaré par NA62, non-chevauchement écrit",
+      "attendu": "max(z) < 1,7 et chevauchement False",
+      "obtenu": "z 1.3340/1.4546 · False",
+      "ok": true,
+      "limite": "l'addition en quadrature est NOTRE hypothèse déclarée ; NA62 publie un traitement de vraisemblance complet. Les intervalles à un sigma ne se recouvrent pas : c'est écrit, pas gommé"
+    },
+    {
+      "id": "C14",
+      "nom": "2026 : l'écart au modèle standard passe sous 1 σ",
+      "attendu": "z < 1 sur les deux branches",
+      "obtenu": "0.5589 · 0.5828",
+      "ok": true,
+      "limite": "les chiffres 2026 viennent d'une prépublication ; ils peuvent bouger"
+    },
+    {
+      "id": "C15",
+      "nom": "la chaîne de rejets publiée est au moins à la hauteur du fond annoncé",
+      "attendu": "marge en ordres de grandeur > 0",
+      "obtenu": "requise 3.841e+11 · chaîne 1e+15 · +3.416",
+      "ok": true,
+      "limite": "les facteurs O(10⁷), O(10⁸) sont des ordres de grandeur publiés ; nous ne savons pas quel canal domine le fond réel, seulement que la chaîne annoncée le permet"
+    },
+    {
+      "id": "C16",
+      "nom": "fraction des kaons produits qui désintègrent dans le volume utile",
+      "attendu": "0 < fraction < 1",
+      "obtenu": "0.0004753 (un sur 2104)",
+      "ok": true,
+      "limite": "bornée inférieurement : tout temps mort réel rend la fraction plus grande ; le communiqué ne donne ni le temps utile ni l'acceptance du faisceau"
+    },
+    {
+      "id": "C17",
+      "nom": "les deux périodes publient une erreur au-dessus du seul Poisson, et le gain mesuré reste SOUS la loi √N",
+      "attendu": "surcroîts > 0 · gain mesuré < gain prévu",
+      "obtenu": "+0.0326 · +0.0374 · 1.4866 < 1.5951",
+      "ok": true,
+      "limite": "l'excédent des deux périodes est un faisceau d'indices sur un plancher systématique, pas la mesure de ce plancher"
+    },
+    {
+      "id": "C18",
+      "nom": "la limite est écrite : cinq réfutations, quatre non-preuves, dix-huit limites d'équation non vides",
+      "attendu": "≥ 4 conditions et ≥ 3 non-preuves et 18/18 limites",
+      "obtenu": "5 · 4 · 18/18",
+      "ok": true,
+      "limite": "la limite EST le produit de cette équation : un dossier qui n'écrit pas sa réfutation n'a pas de limite, il a un silence"
+    }
+  ],
+  "conclusion": {
+    "controles_verts": 18,
+    "controles_total": 18,
+    "equations": 18,
+    "statuts_par_label": {
+      "OPÉRATIONNEL": 15,
+      "SIMULÉ": 1,
+      "SPÉCIFIÉ": 2
+    },
+    "digest_prediction_gel": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba",
+    "verdict": "BASE EN CONFORMITÉ AVEC SES QUATRE PILIERS",
+    "limite_globale": "aucune preuve universelle : dix-huit énoncés sur un graphe de dix-huit nœuds et quatre sources publiques"
+  },
+  "resume": {
+    "equations": 18,
+    "controles_ok": 18,
+    "controles_total": 18,
+    "statuts": {
+      "OPÉRATIONNEL": 15,
+      "SIMULÉ": 1,
+      "SPÉCIFIÉ": 2
+    }
+  },
+  "valeurs_declarees": {
+    "BR_sm": 8.4e-11,
+    "dBR_sm": 1e-11,
+    "N_K_2016_2018": 2700000000000.0,
+    "SES_2016_2018": 8.39e-12,
+    "N_K_2021_2022": 2850000000000.0,
+    "SES_2021_2022": 8.48e-12,
+    "secondaires_par_s": 1000000000.0,
+    "fraction_K_plus": 0.06,
+    "annees_prises_2016_2018": 3.0,
+    "rejection_mu": 10000000.0,
+    "rejection_pi0": 100000000.0,
+    "rejection_autres_canaux": 10000.0,
+    "seuil_observation": 5.0,
+    "z_declare_2024": 1.7
+  }
+}

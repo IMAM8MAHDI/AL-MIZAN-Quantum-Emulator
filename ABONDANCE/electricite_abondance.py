@@ -560,9 +560,9 @@ def ponts_dossier() -> List[Dict[str, str]]:
 
 
 def _eq(id_: str, chemin: str, formule: str, resultat: str, statut: str,
-        detail: Any) -> Dict[str, Any]:
+        detail: Any, limite: str = "") -> Dict[str, Any]:
     return {"id": id_, "chemin": chemin, "formule": formule,
-            "resultat": resultat, "statut": statut, "detail": detail}
+            "resultat": resultat, "statut": statut, "limite": limite, "detail": detail}
 
 
 def resoudre() -> Dict[str, Any]:
@@ -578,106 +578,186 @@ def resoudre() -> Dict[str, Any]:
             "F = q₁q₂/(4π ε₀ r²) ;  k = 1/(4πε₀) = μ₀c²/4π ;  1 C = 1/e",
             f"k = {_exp(cq['ke_m2_c2'])} N·m²/C² · 1 C = {_exp(cq['electrons_par_coulomb'])} e · "
             f"2 × 1 C à 1 m : {_exp(cq['force_entre_2x1C_a_1m_N'])} N",
-            "OPÉRATIONNEL", cq),
+            "OPÉRATIONNEL", cq,
+            limite="l'accord des deux écritures de k éprouve la cohérence des constantes "
+                   "déclarées, non un équilibre de forces mesuré ; deux charges de 1 C tenues "
+                   "à 1 m sont une expérience de pensée : aucun électromètre n'a pesé ce newton"),
         _eq("EQ-02", "electricite_abondance.py → condensateur() → C02",
             "E = U/d ;  C = ε₀S/d ;  W = ½CU² = ½QU = ½ε₀E²·(Sd)",
             f"C(1 m², 1 mm) = {_f(cd['capacite_F'], 12)} F · W à 1 kV = {_f(cd['energie_J'], 4)} J",
-            "OPÉRATIONNEL", cd),
+            "OPÉRATIONNEL", cd,
+            limite="C = ε₀S/d s'écrit pour des armatures infinies : aucun condensateur réel "
+                   "n'échappe aux effets de bord, et le diélectrique est absent d'ici ; 1 m², "
+                   "1 mm, 1 kV sont des entrées choisies pour faire parler la formule"),
         _eq("EQ-03", "electricite_abondance.py → ohm() → C03",
             "R = ρ·ℓ/S ;  σ = 1/ρ ;  v_dérive = I/(n·e·S)",
             f"1 km sous 10 mm² : Cu {_f(oh['R_cu_ohm'], 3)} Ω, Al {_f(oh['R_al_ohm'], 3)} Ω · "
             f"dérive {_f(oh['derive_mm_s'], 4)} mm/s",
-            "OPÉRATIONNEL", oh),
+            "OPÉRATIONNEL", oh,
+            limite="résistivités et densité d'électrons libres se lisent dans une table "
+                   "déclarée à 20 °C : un conducteur réel varie en température et en état "
+                   "métallurgique ; la vitesse de dérive est une moyenne de modèle, personne "
+                   "n'a suivi les électrons sur un mètre"),
         _eq("EQ-04", "electricite_abondance.py → puissance() → C04",
             "P = UI = I²R = U²/R ;  1 kW·h = 3,6 MJ",
             f"230 V × 10 A = {_f(pu['P_UI_W'], 1)} W · trois écritures à "
             f"{pu['ecart_max_W']:.2e} W près",
-            "OPÉRATIONNEL", pu),
+            "OPÉRATIONNEL", pu,
+            limite="les trois écritures coïncident parce que U, I et R ont été choisis pour "
+                   "satisfaire R = U/I : identité algébrique pour charge purement résistive, "
+                   "muette sur tout appareil branché ; les 2 500 A et 0,05 Ω des pertes ligne "
+                   "sont des scénarios écrits dans la fonction"),
         _eq("EQ-05", "electricite_abondance.py → kirchhoff() → C05",
             "ΣI(nœud) = 0 ;  ΣU(maille) = 0 ;  résolution en rationnels",
             f"I = {ki['I_total_A']:.6f} A · nœud {ki['somme_noeud_exacte']} · "
             f"bilan {ki['bilan_puissance_exact']} (exact, sans arrondi)",
-            "OPÉRATIONNEL", ki),
+            "OPÉRATIONNEL", ki,
+            limite="les deux zéros sont une clôture du modèle résolu en fractions exactes : "
+                   "la source de 12 V est déclarée sans résistance interne, les capacités "
+                   "parasites n'existent pas ici ; l'arithmétique garantit la résolution, pas "
+                   "l'existence d'un montage"),
         _eq("EQ-06", "electricite_abondance.py → champ_fil() → C06",
             "B = μ₀I/(2πr) ;  F/ℓ = μ₀I₁I₂/(2πd)",
             f"B(1 A, 1 m) = {_exp(ch['B_T'], 11)} T · écart relatif à 2·10⁻⁷ = "
             f"{_exp(ch['ecart_relatif'], 2)}",
-            "OPÉRATIONNEL", ch),
+            "OPÉRATIONNEL", ch,
+            limite="le fil infini est une fiction de calcul : une ligne réelle a un retour et "
+                   "une fin ; l'écart à 2·10⁻⁷ T mesure la dérive de μ₀ après la réforme de "
+                   "2019, non le champ produit par un ampère quelconque"),
         _eq("EQ-07", "electricite_abondance.py → faraday() → C07",
             "ℰ = −N·dΦ/dt ;  Φ = B·S·cos(ωt) ;  ℰ_rms = N·B·S·ω/√2",
             f"100 spires à 50 Hz : crête {_fa(fa['f_em_pic_V'])} V, rms {_fa(fa['f_em_rms_V'])} V",
-            "OPÉRATIONNEL", fa),
+            "OPÉRATIONNEL", fa,
+            limite="flux sinusoïdal déclaré, 1 T sans saturation, 100 spires et 0,01 m² "
+                   "choisies : l'accord numérique/analytique teste une chaîne de dérivation, "
+                   "pas une machine ; le rapport au pic ne vaut que pour la sinusoïde pure "
+                   "qu'aucun alternateur réel ne fournit"),
         _eq("EQ-08", "electricite_abondance.py → inductance() → C08",
             "L = μ₀N²S/ℓ ;  W = ½LI² ;  u_B = B²/(2μ₀) ;  u_E = ½ε₀E²",
             f"L = {_f(in_['L_H'], 9)} H · W = {_f(in_['energie_J'], 6)} J · "
             f"u_B/u_E = {_exp(in_['ratio_mag_sur_elec'], 2)}",
-            "OPÉRATIONNEL", in_),
+            "OPÉRATIONNEL", in_,
+            limite="le solénoïde long ignore fuites et circuit magnétique dans une géométrie "
+                   "déclarée ; u_B/u_E compare deux intensités posées sans lien, 2 A et "
+                   "10⁶ V/m : confrontation de formules, non de deux états d'un même "
+                   "composant"),
         _eq("EQ-09", "electricite_abondance.py → ondes() → C09",
             "c = 1/√(μ₀ε₀) ;  Z₀ = √(μ₀/ε₀) = μ₀c ;  E/B = c",
             f"c calculée = {_exp(on['v_calculee_m_s'], 9)} m/s · Z₀ = {_f(on['z0_ohm'], 4)} Ω",
-            "OPÉRATIONNEL", on),
+            "OPÉRATIONNEL", on,
+            limite="depuis 2019 ε₀ se déduit de μ₀ et de c : 1/√(μ₀ε₀) = c est une identité "
+                   "du SI vérifiée par les déclarations, non par la lumière ; l'onde plane "
+                   "dans le vide ne dit rien d'une onde guidée par une ligne réelle"),
         _eq("EQ-10", "electricite_abondance.py → courant_alternatif() → C10",
             "U_rms = Û/√2 ;  P = UI·cos φ ;  S² = P² + Q²",
             f"325 V crête → {_fa(ca['valeur_efficace_V'])} V · cos 60° = {ca['cos_phi']:.6f} · "
             f"P = {_fa(ca['P_W'])} W sur {(_fa(ca['S_VA']))} VA",
-            "OPÉRATIONNEL", ca),
+            "OPÉRATIONNEL", ca,
+            limite="π ici contrôle une intégration numérique de sin², pas une période relevée "
+                   "en poste ; le triangle des puissances se ferme pour tout φ sur une "
+                   "sinusoïde pure déclarée, et 60° est choisi — aucune charge industrielle "
+                   "ne fournit ce déphasage"),
         _eq("EQ-11", "electricite_abondance.py → triphase() → C11",
             "U_ligne = √3·U_phase ;  Σ phasores = 0 ;  P = √3·U_L·I_L·cos φ",
             f"√3 = {tr['racine_3']:.12f} · somme = {tr['somme_phasores']:.1e} · "
             f"230 V → {_fa(tr['U_composee_V'])} V",
-            "OPÉRATIONNEL", tr),
+            "OPÉRATIONNEL", tr,
+            limite="la somme des phasores ne s'annule que pour trois phases rigoureusement "
+                   "égales et décalées de 120° exactement : le déséquilibre d'un réseau réel "
+                   "reste hors modèle ; √3 est une identité trigonométrique et 230 V une "
+                   "tension de lecture, pas relevée ici"),
         _eq("EQ-12", "electricite_abondance.py → transformateur() → C12",
             "U₂/U₁ = N₂/N₁ ;  I₂/I₁ = N₁/N₂ ;  S = UI conservée",
             f"20 kV → 400 V : I₂ = {_fa(tf['I_secondaire_A'])} A · rendement "
             f"{100 * tf['rendement']:.2f} % avec pertes déclarées",
-            "SIMULÉ", tf),
+            "SIMULÉ", tf,
+            limite="rapport de spires et conservation de S sont des propriétés du "
+                   "transformateur idéal : pas de courant aimantant, pas de fuites ; le "
+                   "rendement divise par des pertes déclarées (0,01 Ω d'enroulement, 800 W "
+                   "de fer) — un scénario de table, pas un essai de banc"),
         _eq("EQ-13", "electricite_abondance.py → transport_haute_tension() → C13",
             "P_pertes = (P/U)²·R  ⇒  pertes ∝ 1/U²",
             f"1 GW : 400 V → {_exp(ht['table'][0]['pertes_W'], 2)} W · 400 kV → "
             f"{_exp(ht['table'][2]['pertes_W'], 2)} W · facteur {_exp(ht['gain_400V_vers_400kV'], 1)}",
-            "OPÉRATIONNEL", ht),
+            "OPÉRATIONNEL", ht,
+            limite="la loi en 1/U² est une identité du modèle pour une résistance unique "
+                   "déclarée de 0,05 Ω quel que soit le trajet : ni effet couronne, ni "
+                   "réactif, ni température ; le facteur 10⁶ confronte deux scénarios "
+                   "arithmétiques, non deux réseaux existants"),
         _eq("EQ-14", "electricite_abondance.py → hydro() → C14",
             "P = ρ·g·Q·H·η ;  e = ρ·g·H (par m³)",
             f"100 m, 10 m³/s, η = 0,90 → {_f(hy['P_MW'], 2)} MW · "
             f"{hy['kWh_par_m3']:.4f} kWh/m³",
-            "OPÉRATIONNEL", hy),
+            "OPÉRATIONNEL", hy,
+            limite="P = ρgQHη vaut pour une chute d'eau posée une fois pour toutes : 100 m, "
+                   "10 m³/s et surtout η = 0,90 sont des entrées déclarées ; ni turbine, ni "
+                   "conduite forcée, ni étiage n'entrent ici, et le module ne promet aucune "
+                   "centrale"),
         _eq("EQ-15", "electricite_abondance.py → betz() → C15",
             "C_P(a) = 4a(1−a)² ;  a* = 1/3 ;  C_P,max = 16/27",
             f"C_P,max = {bz['cp_max']:.9f} · 16/27 = {bz['seize_sur_vingt_sept']:.9f} · "
             f"a* = {bz['a_max_bissection']:.9f}",
-            "OPÉRATIONNEL", bz),
+            "OPÉRATIONNEL", bz,
+            limite="le disque actuator est un modèle déclaré : fluide incompressible, poussée "
+                   "uniforme, sillage sans rotation ; 16/27 borne ce modèle seulement — une "
+                   "machine réelle est sous 16/27, et cette équation ne dit rien de la "
+                   "distance"),
         _eq("EQ-16", "electricite_abondance.py → carnot() → C16",
             "η ≤ 1 − T_froid/T_source ;  rejet = T_froid/T_source",
             f"800 K / 300 K → {100 * car['eta_carnot']:.2f} % · meilleur rendement déclaré à "
             f"{100 * car['ratio_meilleur_sur_carnot']:.1f} % du plafond",
-            "OPÉRATIONNEL", car),
+            "OPÉRATIONNEL", car,
+            limite="Carnot borne les machines réversibles entre deux températures choisies "
+                   "comme entrées, 800 K et 300 K : le rapport aux quatre rendements de la "
+                   "table compare des déclarations à un théorème et ne mesure aucune "
+                   "chaufferie"),
         _eq("EQ-17", "electricite_abondance.py → photovoltaique() → C17",
             "λ_seuil = hc/E_g ;  perte = (E_photon − E_g)/E_photon",
             f"Si 1,12 eV → {pv['lambda_seuil_si_nm']:.1f} nm · un photon à 2E_g perd "
             f"{100 * pv['perte_thermalisation_photon_2Eg']:.0f} %",
-            "OPÉRATIONNEL", pv),
+            "OPÉRATIONNEL", pv,
+            limite="les longueurs d'onde seuil convertissent des gaps déclarés pour des "
+                   "cristaux parfaits à 300 K : ni impuretés, ni désordre de bande ; la "
+                   "thermalisation est comptée photon par photon sans spectre ni "
+                   "recombinaison, et les 33,7 % de littérature sont rappelés, non démontrés"),
         _eq("EQ-18", "electricite_abondance.py → stockage_materiau() → C18",
             "e = U·capacité (Wh/kg) ;  Wh = J/3600 ;  gravitaire = g·h",
             f"LiFePO₄ actif {st['cathode_LFP_Wh_kg']:.0f} Wh/kg · H₂ LHV "
             f"{_f(st['kWh_par_kg']['dihydrogene LHV'], 2)} kWh/kg · 100 m d'eau "
             f"{st['Wh_par_kg']['stockage gravitaire 100 m']:.3f} Wh/kg",
-            "SIMULÉ", st),
+            "SIMULÉ", st,
+            limite="l'échelle classe des matériaux actifs à leur capacité théorique : "
+                   "collecteurs, électrolyte, boîtier, température et vieillissement ne "
+                   "pèsent pas ici ; les 250 Wh/kg de cellule comme les 35 du plomb sont des "
+                   "ordres de grandeur déclarés, sans promesse sur un pack commercial"),
         _eq("EQ-19", "electricite_abondance.py → supraconductivite() → C19",
             "2Δ(0)/(k_B·T_c) ≈ 3,53 (déclaré) ;  R = 0 ⇒ pertes ohmiques nulles",
             f"NbTi Δ = {su['gap_nbti_meV']:.3f} meV · rapport recalculé "
             f"{su['rapport_verifie']:.3f} · 1 km de Cu à 50 A : "
             f"{_fa(su['pertes_cuivre_W_pour_50A_sur_1km'])} W",
-            "SIMULÉ", su),
+            "SIMULÉ", su,
+            limite="le rapport 3,53 est une valeur de modèle BCS déclarée puis reproduite par "
+                   "calcul : C19 vérifie que l'arithmétique rend ce qu'on lui a prêté ; le "
+                   "zéro des pertes ohmiques est la définition de l'état supraconducteur, non "
+                   "une performance relevée, et aucun cryostat ne vient consommer le gain"),
         _eq("EQ-20", "electricite_abondance.py → budget_solaire_terre() → C20",
             "Φ = L☉/(4π·AU²) ;  P interceptée = Φ·πR⊕² ;  S = P/(η·Φ)",
             f"Φ = {_fa(bs['irradiance_hors_atmosphere_W_m2'])} W/m² · interceptée = "
             f"{_exp(bs['puissance_interceptee_W'], 3)} W = {bs['ratio_interceptee_sur_consommee']:.0f}× "
             f"la consommation déclarée",
-            "SIMULÉ", bs),
+            "SIMULÉ", bs,
+            limite="L☉, rayon terrestre, 1,9·10¹³ W de consommation et 22 % de rendement sont "
+                   "quatre déclarations : le rapport est une confrontation de tables, pas un "
+                   "gisement ; ni la nuit, ni les nuages, ni le foncier, ni les calendriers "
+                   "n'entrent dans une surface calculée en soleil de midi"),
         _eq("EQ-21", "electricite_abondance.py → ponts_dossier() → C21",
             "P1 ↔ contrôle · P2 ↔ 50 Hz · P3 ↔ redondance N-1 · P4 ↔ comptage",
             "4 ponts déclarés comme analogies de lecture, chacun avec sa limite",
-            "SPÉCIFIÉ", po),
+            "SPÉCIFIÉ", po,
+            limite="ces quatre lignes rangent la lecture, n'affermissent aucune identité : le "
+                   "50 Hz n'est pas une horloge quantique et la redondance réseau n'est pas "
+                   "un code correcteur sur les kilowatts ; chaque pont porte déjà sa limite "
+                   "interne, celle-ci rappelle qu'aucun pont n'est un résultat"),
     ]
 
     controles = [

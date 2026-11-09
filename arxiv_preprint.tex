@@ -19,7 +19,7 @@
 \ead{elbahloulahmed505@gmail.com}
 
 \begin{abstract}
-AL-MIZAN is a complete quantum emulator implemented in pure Python with zero external dependencies, unifying state vector simulation (up to 16 qubits), density matrix evolution (up to 8 qubits), Steane [[7,1,3]] quantum error correction, zero-noise extrapolation via Richardson method, and pedagogical GDSII layout generation. Beyond quantum simulation, the package introduces a sealed SHA-256 certificate architecture for bounded mathematical verification: the Point Square Conjecture (PC-1 through PC-5 proven by exhaustion over a finite domain), Turing's theorem on the Riemann strip up to $\mathrm{Im}=100$ (29 non-trivial zeros certified on $\mathrm{Re}=1/2$ via interval arithmetic), and Birch and Swinnerton-Dyer verification on named elliptic curves. The architecture enforces strict honesty constraints---every computational artifact carries explicit bounds, and no open millennium problem is claimed as solved. We report 48/48 passing unit tests, exact QEC failure rates for code-capacity noise models, and a deterministic transducer mapping quantum measurements to a symbolic domain. The software is published under AGPL-3.0/GPL-3.0 dual license.
+AL-MIZAN is a complete quantum emulator implemented in pure Python with zero external dependencies, unifying state vector simulation (up to 16 qubits), density matrix evolution (up to 8 qubits), Steane [[7,1,3]] quantum error correction, zero-noise extrapolation via Richardson method, and pedagogical GDSII layout generation. Beyond quantum simulation, the package introduces a sealed SHA-256 certificate architecture for bounded mathematical verification: the Point Square Conjecture (PC-1 through PC-5 proven by exhaustion over a finite domain), Turing's theorem on the Riemann strip up to $\mathrm{Im}=100$ (29 non-trivial zeros certified on $\mathrm{Re}=1/2$ via interval arithmetic), and Birch and Swinnerton-Dyer verification on named elliptic curves. The architecture enforces strict honesty constraints---every computational artifact carries explicit bounds, and no open millennium problem is claimed as solved. We report 53/53 passing unit tests, exact QEC failure rates for code-capacity noise models, and a deterministic transducer mapping quantum measurements to a symbolic domain. The software is published under AGPL-3.0/GPL-3.0 dual license.
 \end{abstract}
 
 \begin{keyword}
@@ -76,7 +76,7 @@ Every component enforces strict honesty: the emulator is classical (exponential 
 
 \section{Testing}
 
-AL-MIZAN ships with 48 unit and integration tests covering state preparation, gate operations, permutations, entanglement metrics, Born rule sampling, noise models, QASM parsing, circuit rendering, Deutsch-Jozsa/teleportation/QPE algorithms, VQE variational bounds, Shor factorization, GDSII encoding, DRC rules, ZNE extrapolation, Steane code, transducer logic, Point Square Conjecture, and the seven-problem certificate tree. All 48 tests pass with 0 skipped.
+AL-MIZAN ships with 53 unit and integration tests covering state preparation, gate operations, permutations, entanglement metrics, Born rule sampling, noise models, QASM parsing, circuit rendering, Deutsch-Jozsa/teleportation/QPE algorithms, VQE variational bounds, Shor factorization, GDSII encoding, DRC rules, ZNE extrapolation, Steane code, transducer logic, Point Square Conjecture, and the seven-problem certificate tree. All 53 tests pass with 0 skipped.
 
 \section{Related Work}
 

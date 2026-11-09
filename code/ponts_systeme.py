@@ -3,16 +3,20 @@
 # SPDX-License-Identifier: GPL-3.0-only OR AGPL-3.0-only
 """
 ===============================================================================
-   PONTS VERS ASTRO-Q°ODE_SYSTEME — ÉMULATEUR QUANTIQUE AL-MIZAN
+   PONTS VERS LE MOTEUR ASTRO-Q°ODE — ÉMULATEUR QUANTIQUE AL-MIZAN
 ===============================================================================
-Réutilisation (IMPORT LECTURE SEULE) des briques souveraines existantes :
+Import LECTURE SEULE des briques souveraines, désormais embarquées ici même
+(`moteur/`) pour que l'archive se suffise à elle-même :
 
-  • qubit_logique_mizan.py        → couche de correction d'erreur [[7,1,3]] Steane
-  • transducteur_quantique_...py  → traduction déterministe (MIZAN 0.6225, A–S)
-  • horloge_noyau/                → horodatage de phase (capsule SCELLÉE, jamais écrite)
+  • moteur/qubit_logique_mizan.py                    → couche [[7,1,3]] Steane
+  • moteur/transducteur_quantique_deterministe_mizan.py → traduction déterministe
+                                          (MIZAN 0.6225, A–S)
+  • horloge_noyau/                                   → horodatage de phase
+                                          (capsule SCELLÉE, jamais écrite)
 
-Chaque pont se dégrade proprement : si la brique est absente, l'émulateur
-continue de fonctionner et le rapport indique "disponible": false.
+Un `ASTRO-Q°ODE_SYSTEME` voisin reste accepté en repli ; il n'est plus requis.
+Chaque pont se dégrade proprement : si la brique manque dans les deux racines,
+l'émulateur continue de fonctionner et le rapport indique "disponible": false.
 ===============================================================================
 """
 
@@ -25,10 +29,16 @@ from typing import Any, Dict, Optional
 RACINE = Path(__file__).resolve().parent
 RACINE_DEPOT = RACINE.parent
 RACINE_IMAM = RACINE_DEPOT.parent
+RACINE_MOTEUR = RACINE_DEPOT / "moteur"
 RACINE_SYSTEME_AQ = RACINE_IMAM / "ASTRO-Q\u00b0ODE_SYSTEME"
 
-if str(RACINE_SYSTEME_AQ) not in sys.path and RACINE_SYSTEME_AQ.is_dir():
-    sys.path.insert(0, str(RACINE_SYSTEME_AQ))
+# Le moteur embarqué passe en premier : deux machines qui extraient la même
+# archive importent les mêmes octets, donc `empreinte_source()` désigne le même
+# fichier où qu'existe ou non un `ASTRO-Q°ODE_SYSTEME` voisin. Le voisin n'est
+# plus qu'un repli, conservé pour les installations historiques.
+for _racine in reversed((RACINE_MOTEUR, RACINE_SYSTEME_AQ)):
+    if _racine.is_dir() and str(_racine) not in sys.path:
+        sys.path.insert(0, str(_racine))
 
 
 # ---------------------------------------------------------------------------
@@ -55,7 +65,7 @@ def analyse_qec_steane(p_depolarisant: float = 1e-3,
     qlm = charger_module_qec()
     if qlm is None:
         return {"disponible": False,
-                "raison": "qubit_logique_mizan.py introuvable dans ASTRO-Q°ODE_SYSTEME"}
+                "raison": "qubit_logique_mizan.py introuvable dans moteur/ ni ASTRO-Q°ODE_SYSTEME"}
 
     preuve = qlm.preuve_distance()
     taux_exact = qlm.taux_echec_depolarisant(p_depolarisant)
@@ -125,7 +135,7 @@ def traduire_deterministe(distribution: Dict[str, float],
         from dataclasses import asdict
     except Exception:
         return {"disponible": False,
-                "raison": "transducteur_quantique_deterministe_mizan.py introuvable"}
+                "raison": "transducteur_quantique_deterministe_mizan.py introuvable dans moteur/ ni ASTRO-Q°ODE_SYSTEME"}
 
     transducteur = TransducteurQuantiqueDeterministe()
     res = transducteur.traduire_distribution(

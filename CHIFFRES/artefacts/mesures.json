@@ -1,0 +1,227 @@
+{
+  "certificats": {
+    "e": {
+      "ancre_publiee": {
+        "ancre_complete": true,
+        "chiffres_comparables": 50,
+        "identique": true,
+        "premier_desaccord": null
+      },
+      "certifie": true,
+      "constante": "e",
+      "entier": "2",
+      "factorielle_egale": true,
+      "marge_chiffres": 40,
+      "n": 1000000,
+      "termes": 205030
+    },
+    "pi": {
+      "alternance_valide": true,
+      "ancre_publiee": {
+        "ancre_complete": true,
+        "chiffres_comparables": 50,
+        "identique": true,
+        "premier_desaccord": null
+      },
+      "certifie": true,
+      "constante": "pi",
+      "contraction_valide": true,
+      "entier": "3",
+      "marge_chiffres": 40,
+      "n": 1000000,
+      "termes": 71434
+    },
+    "racine2": {
+      "ancre_publiee": {
+        "ancre_complete": true,
+        "chiffres_comparables": 50,
+        "identique": true,
+        "premier_desaccord": null
+      },
+      "certifie": true,
+      "constante": "racine2",
+      "entier": "1",
+      "marge_chiffres": 0,
+      "n": 1000000,
+      "preuve": "w² ≤ 2·10^(2n) < (w+1)²",
+      "termes": null
+    }
+  },
+  "domaine": {
+    "alpha": 0.001,
+    "graine": 20261109,
+    "kmax": 6,
+    "n": 1000000,
+    "n_sim": 100000,
+    "n_sim2": 50000,
+    "repiliques": 200,
+    "rmax": 7,
+    "z_seuil": 3.2905267314918953
+  },
+  "mesures": {
+    "e": {
+      "attentes": {
+        "00000": 89296,
+        "0123456789": null,
+        "12345": 166412,
+        "54321": 138862,
+        "999999": 384340
+      },
+      "auto_local_classes": {
+        "1": 0,
+        "2": 0,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2
+      },
+      "auto_local_positions": [
+        338,
+        2543,
+        91668,
+        170596,
+        420297
+      ],
+      "auto_local_total": 5,
+      "chi2": 9.50566,
+      "frequence": [
+        99425,
+        100132,
+        99845,
+        100228,
+        100389,
+        100087,
+        100479,
+        99910,
+        99814,
+        99691
+      ],
+      "n": 1000000,
+      "occulence": {
+        "1": 10,
+        "2": 100,
+        "3": 1000,
+        "4": 10000,
+        "5": 99999,
+        "6": 632318
+      },
+      "runs": {
+        "1": 810861,
+        "2": 80796,
+        "3": 7978,
+        "4": 788,
+        "5": 82,
+        "6": 6,
+        "7": 1
+      }
+    },
+    "pi": {
+      "attentes": {
+        "00000": 17534,
+        "0123456789": null,
+        "12345": 49702,
+        "54321": 64224,
+        "999999": 762
+      },
+      "auto_local_classes": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 2,
+        "6": 0
+      },
+      "auto_local_positions": [
+        1,
+        16470,
+        44899
+      ],
+      "auto_local_total": 3,
+      "chi2": 5.50908,
+      "frequence": [
+        99959,
+        99758,
+        100026,
+        100229,
+        100230,
+        100359,
+        99548,
+        99800,
+        99985,
+        100106
+      ],
+      "n": 1000000,
+      "occulence": {
+        "1": 10,
+        "2": 100,
+        "3": 1000,
+        "4": 10000,
+        "5": 99992,
+        "6": 631548
+      },
+      "runs": {
+        "1": 809776,
+        "2": 81256,
+        "3": 7976,
+        "4": 830,
+        "5": 77,
+        "6": 12,
+        "7": 1
+      }
+    },
+    "racine2": {
+      "attentes": {
+        "00000": 109812,
+        "0123456789": null,
+        "12345": 59518,
+        "54321": 25865,
+        "999999": null
+      },
+      "auto_local_classes": {
+        "1": 0,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 2
+      },
+      "auto_local_positions": [
+        565,
+        855262,
+        891665
+      ],
+      "auto_local_total": 3,
+      "chi2": 16.65732,
+      "frequence": [
+        99814,
+        98924,
+        100436,
+        100191,
+        100024,
+        100155,
+        99886,
+        100008,
+        100441,
+        100121
+      ],
+      "n": 1000000,
+      "occulence": {
+        "1": 10,
+        "2": 100,
+        "3": 1000,
+        "4": 10000,
+        "5": 99998,
+        "6": 632084
+      },
+      "runs": {
+        "1": 809717,
+        "2": 81083,
+        "3": 8112,
+        "4": 828,
+        "5": 79,
+        "6": 10,
+        "7": 2
+      }
+    }
+  }
+}

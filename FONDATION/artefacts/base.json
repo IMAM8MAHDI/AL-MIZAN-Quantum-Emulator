@@ -1,0 +1,109 @@
+{
+  "axiome": {
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "ce_que_ca_ne_veut_pas_dire": [
+      "aucune équation ci-dessous ne prouve l'axiome",
+      "aucune mesure du CERN ne confirme ni n'infirmé l'axiome",
+      "l'axiome ne fournit aucun nombre : il interdit seulement de déclarer deux fois la même grandeur avec deux valeurs"
+    ],
+    "enonce": "Il n'y a de dieu que Allah — posé HORS MATRICE.",
+    "formalisation": "la régularité d'un système fini n'est pas un élément de ce système ; toute chaîne de dérivation s'arrête donc sur une source déclarée hors d'elle",
+    "hors_matrice": true,
+    "nombres_fournis_par_l_axiome": 0,
+    "statut": "SPÉCIFIÉ — posé, jamais dérivé, jamais réfuté par ce dossier"
+  },
+  "couches": {
+    "S1 MESURABLE": "les nombres : comptes, taux, intervalles — ce qu'une expérience publie",
+    "S2 REGULARITE": "les lois et les identités : ce qui se calcule sans mesure",
+    "S3 HORS_MATRICE": "la source de la régularité : posée, non dérivée, non réfutable ici"
+  },
+  "graphe": {
+    "acyclique": true,
+    "aretes": 25,
+    "aretes_vers_l_exterieur": 18,
+    "atteignables": 18,
+    "cases_vides": [],
+    "couche_vide": [],
+    "cycle": [],
+    "matrice_pilier_couche": {
+      "P1 UNITE": {
+        "S1 MESURABLE": [
+          "EQ-06",
+          "EQ-08",
+          "EQ-13"
+        ],
+        "S2 REGULARITE": [
+          "EQ-09"
+        ],
+        "S3 HORS_MATRICE": [
+          "EQ-01",
+          "EQ-02"
+        ]
+      },
+      "P2 BORNE": {
+        "S1 MESURABLE": [
+          "EQ-12"
+        ],
+        "S2 REGULARITE": [
+          "EQ-03",
+          "EQ-11",
+          "EQ-15"
+        ],
+        "S3 HORS_MATRICE": [
+          "EQ-01",
+          "EQ-18"
+        ]
+      },
+      "P3 CONFRONTATION": {
+        "S1 MESURABLE": [
+          "EQ-04",
+          "EQ-07",
+          "EQ-10",
+          "EQ-12",
+          "EQ-14"
+        ],
+        "S2 REGULARITE": [
+          "EQ-09",
+          "EQ-17"
+        ],
+        "S3 HORS_MATRICE": [
+          "EQ-18"
+        ]
+      },
+      "P4 TRANSMISSION": {
+        "S1 MESURABLE": [
+          "EQ-07",
+          "EQ-16"
+        ],
+        "S2 REGULARITE": [
+          "EQ-05",
+          "EQ-17"
+        ],
+        "S3 HORS_MATRICE": [
+          "EQ-18"
+        ]
+      }
+    },
+    "noeuds": 18,
+    "racines": [
+      "EQ-01"
+    ],
+    "racines_fondees_dehors": true,
+    "self_references": []
+  },
+  "piliers": {
+    "P1 UNITE": "une seule source de régularité : un seul registre de grandeurs déclarées, aucune valeur double en conflit",
+    "P2 BORNE": "toute assertion porte un domaine fini et une `limite` écrite ; rien n'est annoncé comme preuve universelle",
+    "P3 CONFRONTATION": "tout nombre est confronté à une source publique ou étiqueté SPÉCIFIÉ ; la prédiction est gelée avant la lecture du comparateur",
+    "P4 TRANSMISSION": "tout est re-jouable par un tiers : bibliothèque standard seule, trois commandes, verdict entier"
+  },
+  "registre": {
+    "declare_sans_entree": [],
+    "doublons_en_conflit": [],
+    "entrees": 14,
+    "hors_declare": [],
+    "noms_uniques": 14,
+    "unites_vide": [],
+    "valeurs_non_numeriques": []
+  }
+}

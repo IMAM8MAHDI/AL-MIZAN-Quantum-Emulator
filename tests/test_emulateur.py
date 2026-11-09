@@ -199,6 +199,60 @@ class TestMatriceDensite(unittest.TestCase):
         self.assertAlmostEqual(tr, 1.0, places=9)
 
 
+class TestSpectralComplexe(unittest.TestCase):
+    """Le spectre de ρ doit tenir compte des cohérences imaginaires.
+
+    Régler une matrice densité sur sa seule partie réelle rendait 1 bit
+    d'entropie à l'état pur |+i⟩ et 0,9844738 bits à QPE sans bruit. Ces cinq
+    contrôles échouent dès que le solveur retombe sur la partie réelle.
+    """
+
+    def _sim_from(self, matrice):
+        sim = SimulateurMatriceDensite(int(math.log2(len(matrice))))
+        sim.rho = [z for ligne in matrice for z in ligne]
+        return sim
+
+    def test_etat_pur_plus_i(self):
+        sim = SimulateurMatriceDensite(1)
+        sim.executer([Operation("h", (0,)), Operation("s", (0,))])
+        self.assertEqual(sorted(round(v, 9) for v in sim.valeurs_propres()),
+                         [0.0, 1.0])
+        self.assertAlmostEqual(sim.entropie_von_neumann(), 0.0, places=12)
+
+    def test_analytique_2x2_cas_complex(self):
+        for (a, d, zr, zi) in ((0.5, 0.5, 0.0, 0.5), (0.8, 0.2, 0.3, -0.1),
+                               (0.25, 0.75, -0.2, 0.2)):
+            z = complex(zr, zi)
+            sim = self._sim_from([[complex(a), z], [z.conjugate(), complex(d)]])
+            delta = math.sqrt(((a - d) / 2.0) ** 2 + abs(z) ** 2)
+            attendu = sorted(((a + d) / 2.0 - delta, (a + d) / 2.0 + delta))
+            for x, y in zip(attendu, sorted(sim.valeurs_propres())):
+                self.assertAlmostEqual(x, y, places=12)
+
+    def test_invariants_trace_et_purete(self):
+        sim = SimulateurMatriceDensite(2)
+        sim.executer([Operation("h", (0,)), Operation("t", (0,)),
+                      Operation("cx", (0, 1)), Operation("ry", (1,), params=[0.7])],
+                     ModeleBruit(0.1, 0.05), dephasage=0.2)
+        valeurs = sim.valeurs_propres()
+        self.assertAlmostEqual(sum(valeurs), 1.0, places=9)
+        self.assertAlmostEqual(sum(v * v for v in valeurs), sim.purete(), places=9)
+        self.assertGreater(min(valeurs), -1e-9)
+
+    def test_qpe_reste_pur(self):
+        ops, n = parser_openqasm(CIRCUITS_CANONIQUES["QPE"])
+        res = comparer_vecteur_densite(ops, n)
+        self.assertAlmostEqual(res["entropie_von_neumann_bits"], 0.0, places=9)
+        self.assertAlmostEqual(res["purete_tr_rho2"], 1.0, places=6)
+
+    def test_etat_maximalement_mixte(self):
+        sim = self._sim_from([[complex(0.25) if i == j else 0j
+                               for j in range(4)] for i in range(4)])
+        for v in sim.valeurs_propres():
+            self.assertAlmostEqual(v, 0.25, places=12)
+        self.assertAlmostEqual(sim.entropie_von_neumann(), 2.0, places=12)
+
+
 class TestMetriques(unittest.TestCase):
     def test_bloch_etat_zero(self):
         sim = SimulateurVecteurEtat(1)

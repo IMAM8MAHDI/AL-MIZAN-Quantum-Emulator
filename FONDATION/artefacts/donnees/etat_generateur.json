@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "module": "fondation_base.py",
+  "equations": 18,
+  "controles_ok": 18,
+  "controles_total": 18,
+  "statuts": {
+    "OPÉRATIONNEL": 15,
+    "SIMULÉ": 1,
+    "SPÉCIFIÉ": 2
+  },
+  "digest_prediction_gel": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba",
+  "artefacts": [
+    "artefacts/donnees/fondation.csv",
+    "artefacts/donnees/fondation.json",
+    "artefacts/dossiers/fondation.md",
+    "artefacts/figures/fondation.svg",
+    "artefacts/figures/fondation_ar.svg",
+    "artefacts/figures/fondation_en.svg",
+    "artefacts/pages/fondation.html",
+    "artefacts/pages/fondation_ar.html",
+    "artefacts/pages/fondation_en.html",
+    "artefacts/pages/index.html",
+    "artefacts/pages/index_ar.html",
+    "artefacts/pages/index_en.html"
+  ]
+}

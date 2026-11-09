@@ -1,0 +1,493 @@
+{
+  "comparateur": {
+    "CERN_2024": {
+      "desintegrations_ordinaires": 9999999999,
+      "source": "https://home.cern — 2024-09-25, « the other 9 999 999 999 decays »"
+    },
+    "NA62_2021": {
+      "BR": 1.06e-10,
+      "N_exp_SM": 10.01,
+      "candidates": 20,
+      "d_BR": [
+        4e-11,
+        3.4e-11
+      ],
+      "d_N_exp": [
+        0.42,
+        1.19
+      ],
+      "d_fond": [
+        1.05,
+        0.82
+      ],
+      "fond": 7.03,
+      "p_value": 0.00034,
+      "source": "arXiv:2103.15389 — JHEP 06 (2021) 093, DOI 10.1007/JHEP06(2021)093",
+      "verbe_publie": "evidence à 3,4 sigma — pas une observation"
+    },
+    "NA62_2024": {
+      "BR": 1.3e-10,
+      "candidates": 51,
+      "d_BR": [
+        3.3e-11,
+        3e-11
+      ],
+      "d_fond": [
+        3.0,
+        2.0
+      ],
+      "fond": 18.0,
+      "p_value": 2e-07,
+      "source": "arXiv:2412.12015 — JHEP 02 (2025) 191, DOI 10.1007/JHEP02(2025)191",
+      "verbe_publie": "observation au-delà de 5 sigma"
+    },
+    "NA62_2026": {
+      "BR_2016_2024": 9.6e-11,
+      "BR_2023_2024": 7.2e-11,
+      "POT_2021_2024": 6.3e+17,
+      "d_BR_26": [
+        1.9e-11,
+        1.8e-11
+      ],
+      "source": "arXiv:2605.02415 — MPP-2026-83",
+      "verbe_publie": "accord avec le modèle standard à moins de 1 sigma"
+    }
+  },
+  "equations_chiffrees": {
+    "EQ-02": {
+      "acyclique": true,
+      "aretes": 25,
+      "aretes_vers_l_exterieur": 18,
+      "atteignables": 18,
+      "cases_vides": [],
+      "couche_vide": [],
+      "cycle": [],
+      "matrice_pilier_couche": {
+        "P1 UNITE": {
+          "S1 MESURABLE": [
+            "EQ-06",
+            "EQ-08",
+            "EQ-13"
+          ],
+          "S2 REGULARITE": [
+            "EQ-09"
+          ],
+          "S3 HORS_MATRICE": [
+            "EQ-01",
+            "EQ-02"
+          ]
+        },
+        "P2 BORNE": {
+          "S1 MESURABLE": [
+            "EQ-12"
+          ],
+          "S2 REGULARITE": [
+            "EQ-03",
+            "EQ-11",
+            "EQ-15"
+          ],
+          "S3 HORS_MATRICE": [
+            "EQ-01",
+            "EQ-18"
+          ]
+        },
+        "P3 CONFRONTATION": {
+          "S1 MESURABLE": [
+            "EQ-04",
+            "EQ-07",
+            "EQ-10",
+            "EQ-12",
+            "EQ-14"
+          ],
+          "S2 REGULARITE": [
+            "EQ-09",
+            "EQ-17"
+          ],
+          "S3 HORS_MATRICE": [
+            "EQ-18"
+          ]
+        },
+        "P4 TRANSMISSION": {
+          "S1 MESURABLE": [
+            "EQ-07",
+            "EQ-16"
+          ],
+          "S2 REGULARITE": [
+            "EQ-05",
+            "EQ-17"
+          ],
+          "S3 HORS_MATRICE": [
+            "EQ-18"
+          ]
+        }
+      },
+      "noeuds": 18,
+      "racines": [
+        "EQ-01"
+      ],
+      "racines_fondees_dehors": true,
+      "self_references": []
+    },
+    "EQ-03": {
+      "acyclique": true,
+      "aretes": 25,
+      "aretes_vers_l_exterieur": 18,
+      "atteignables": 18,
+      "cases_vides": [],
+      "couche_vide": [],
+      "cycle": [],
+      "matrice_pilier_couche": {
+        "P1 UNITE": {
+          "S1 MESURABLE": [
+            "EQ-06",
+            "EQ-08",
+            "EQ-13"
+          ],
+          "S2 REGULARITE": [
+            "EQ-09"
+          ],
+          "S3 HORS_MATRICE": [
+            "EQ-01",
+            "EQ-02"
+          ]
+        },
+        "P2 BORNE": {
+          "S1 MESURABLE": [
+            "EQ-12"
+          ],
+          "S2 REGULARITE": [
+            "EQ-03",
+            "EQ-11",
+            "EQ-15"
+          ],
+          "S3 HORS_MATRICE": [
+            "EQ-01",
+            "EQ-18"
+          ]
+        },
+        "P3 CONFRONTATION": {
+          "S1 MESURABLE": [
+            "EQ-04",
+            "EQ-07",
+            "EQ-10",
+            "EQ-12",
+            "EQ-14"
+          ],
+          "S2 REGULARITE": [
+            "EQ-09",
+            "EQ-17"
+          ],
+          "S3 HORS_MATRICE": [
+            "EQ-18"
+          ]
+        },
+        "P4 TRANSMISSION": {
+          "S1 MESURABLE": [
+            "EQ-07",
+            "EQ-16"
+          ],
+          "S2 REGULARITE": [
+            "EQ-05",
+            "EQ-17"
+          ],
+          "S3 HORS_MATRICE": [
+            "EQ-18"
+          ]
+        }
+      },
+      "noeuds": 18,
+      "racines": [
+        "EQ-01"
+      ],
+      "racines_fondees_dehors": true,
+      "self_references": []
+    },
+    "EQ-04": {
+      "aretes_vers_l_exterieur": 18,
+      "cases_matrice": [],
+      "discipline_source": {
+        "caracteres_mesures": 1908,
+        "caracteres_retenus": 1024,
+        "chapitres_publics": 0,
+        "extraits_non_trouves": [],
+        "extraits_verbatimes": {
+          "En septembre 2024, l’expérience NA62 du CERN a annoncé l’observation": true,
+          "ce que ce résultat nous apprend sur la physique au-delà du modèle standard": true,
+          "en étudiant les kaons en plein vol": true,
+          "franchir le seuil des cinq sigma": true,
+          "la découverte du kaon dans les rayons cosmiques des années 1940": true,
+          "le modèle standard rend cette désintégration presque impossible": true,
+          "les expériences de Brookhaven n’en ont capté que quelques événements en deux décennies": true,
+          "suivre des centaines de millions de particules par seconde": true,
+          "un kaon chargé qui se transforme en un pion et deux neutrinos invisibles": true,
+          "écarter des milliards de désintégrations ordinaires qui lui ressemblent": true
+        },
+        "horodatages_cites": [],
+        "transcript_octets": {
+          "json3": 0,
+          "srv3": 0,
+          "xml": 0
+        }
+      },
+      "dossiers": {
+        "ABONDANCE": {
+          "controles": 54,
+          "equations": 54,
+          "modules": [
+            "agriculture_abondance.py",
+            "eau_abondance.py",
+            "electricite_abondance.py"
+          ],
+          "present": true,
+          "tests": 107
+        },
+        "CHIFFRES": {
+          "controles": 17,
+          "equations": 17,
+          "modules": [
+            "chiffres_pi.py"
+          ],
+          "present": true,
+          "tests": 30
+        },
+        "FONDATION": {
+          "controles": 18,
+          "equations": 18,
+          "modules": [
+            "fondation_base.py"
+          ],
+          "present": true,
+          "tests": 45
+        }
+      },
+      "sources_publiques": [
+        "NA62_2021 — arXiv:2103.15389 — JHEP 06 (2021) 093, DOI 10.1007/JHEP06(2021)093",
+        "NA62_2024 — arXiv:2412.12015 — JHEP 02 (2025) 191, DOI 10.1007/JHEP02(2025)191",
+        "NA62_2026 — arXiv:2605.02415 — MPP-2026-83",
+        "CERN_2024 — https://home.cern — 2024-09-25, « the other 9 999 999 999 decays »"
+      ]
+    },
+    "EQ-05": {
+      "commandes_publish": [
+        "py -3 FONDATION/fondation_base.py",
+        "py -3 FONDATION/fondation_base.py --ecrit",
+        "cd FONDATION && py -3 -m unittest tests.test_fondation"
+      ],
+      "imports_ici": {
+        "imports": [
+          "__future__",
+          "hashlib",
+          "inspect",
+          "json",
+          "math",
+          "pathlib",
+          "re",
+          "sys",
+          "typing"
+        ],
+        "local": [],
+        "resolu_local": {},
+        "stdlib": [
+          "__future__",
+          "hashlib",
+          "inspect",
+          "json",
+          "math",
+          "pathlib",
+          "re",
+          "sys",
+          "typing"
+        ],
+        "tiers": []
+      },
+      "parc": {
+        "ABONDANCE": {
+          "fichiers": 8,
+          "tiers": []
+        },
+        "CHIFFRES": {
+          "fichiers": 3,
+          "tiers": []
+        },
+        "FONDATION": {
+          "fichiers": 2,
+          "tiers": []
+        },
+        "bibliotheques": {
+          "fichiers": 6,
+          "tiers": []
+        },
+        "code": {
+          "fichiers": 18,
+          "tiers": []
+        }
+      }
+    },
+    "EQ-06": {
+      "declare_sans_entree": [],
+      "doublons_en_conflit": [],
+      "entrees": 14,
+      "hors_declare": [],
+      "noms_uniques": 14,
+      "unites_vide": [],
+      "valeurs_non_numeriques": []
+    },
+    "EQ-07": {
+      "cle_interdites_trouvees": [],
+      "digest": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba",
+      "digest_sous_comparateur_faussee": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba",
+      "drapeau_leve_sous_contamination": true,
+      "intersection": [],
+      "signature_prediction": [
+        "declares"
+      ],
+      "variables_libres": [
+        "BR_sm",
+        "N_K_2016_2018",
+        "N_K_2021_2022",
+        "SES_2016_2018",
+        "SES_2021_2022",
+        "annees_prises_2016_2018",
+        "dBR_sm",
+        "fraction_K_plus",
+        "rejection_autres_canaux",
+        "rejection_mu",
+        "rejection_pi0",
+        "secondaires_par_s",
+        "seuil_observation",
+        "z_declare_2024"
+      ]
+    },
+    "EQ-08": {
+      "centre_modele_standard": 11904761903.761906,
+      "communique_dans_intervalle_2024": true,
+      "communique_dans_intervalle_sm": false,
+      "intervalle_mesure_2024": [
+        6134969324.153374,
+        9999999999.0
+      ],
+      "intervalle_modele_standard": [
+        10638297871.340425,
+        13513513512.513515
+      ],
+      "taux_implicite_du_communique": 1e-10,
+      "valeur_communiquee": 9999999999
+    },
+    "EQ-09": {
+      "acceptance_2016_2018": 0.04414426345296429,
+      "acceptance_2021_2022": 0.04137702747434625,
+      "ecart_relatif": 0.00019170340982016938,
+      "formule": "A·ε = 1/(N_K·SES) puis N = N_K·BR_sm·A·ε",
+      "n_attendu_calcule": 10.0119189511323,
+      "n_attendu_publie": 10.01,
+      "rapport_acceptances": 0.9373138033763655
+    },
+    "EQ-10": {
+      "br_publiee": 1.06e-10,
+      "br_sm": 8.4e-11,
+      "digest_gel": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba",
+      "ecart_br_en_sigma": 0.5335783750799326,
+      "ecart_en_sigma": 0.7165571293476164,
+      "observe_excess": 12.969999999999999,
+      "prevu": 10.0119189511323,
+      "sigma_utilise": 4.1281859152819536
+    },
+    "EQ-11": {
+      "ecart": 0.5876820005818137,
+      "les_deux_sous_cinq_sigma": true,
+      "p_publiee": 0.00034,
+      "verbe": "evidence à 3,4 sigma — pas une observation",
+      "z_lima": 3.985200460360394,
+      "z_publiee": 3.3975184597785804
+    },
+    "EQ-12": {
+      "ecart": 1.2736202145229676,
+      "excess_publie": 33.0,
+      "excess_requis": 25.06239503689593,
+      "fond": 18.0,
+      "les_deux_au_dessus_de_cinq": true,
+      "marge": 7.9376049631040715,
+      "z_lima": 6.342577964240759,
+      "z_publiee": 5.068957749717791
+    },
+    "EQ-13": {
+      "chevauchement_a_un_sigma": false,
+      "ecart_absolu": 4.5999999999999996e-11,
+      "intervalle_observe": [
+        9.999999999999999e-11,
+        1.63e-10
+      ],
+      "intervalle_sm": [
+        7.399999999999999e-11,
+        9.4e-11
+      ],
+      "nos_z_sous_le_z_declare": true,
+      "z_branches": [
+        1.3340340183012054,
+        1.4546477236774544
+      ],
+      "z_declare_par_na62": 1.7
+    },
+    "EQ-14": {
+      "br_2016_2024": 9.6e-11,
+      "br_2023_2024_seule": 7.2e-11,
+      "declaration_publique": "accord avec le modèle standard à moins de 1 sigma",
+      "sous_un_sigma": true,
+      "z_branche_inf": 0.5827715174143591,
+      "z_contre_sm": 0.5588957193991473
+    },
+    "EQ-15": {
+      "chaine_declaree_mu_x_pi0": 1000000000000000.0,
+      "chainement_suffisant": true,
+      "marge_en_ordres_de_grandeur": 3.4155915608608365,
+      "rejection_autres_canaux": 10000.0,
+      "suppression_requise_2024": 150000000000.0,
+      "suppression_totale_requise": 384068278805.1209
+    },
+    "EQ-16": {
+      "fraction_dans_volume_fiduciel": 0.00047532131721043426,
+      "hypothese_temps_utile": "100 % — la fraction est donc MINORÉE (borne inférieure)",
+      "kaons_produits_par_s": 60000000.0,
+      "produits_sur_la_periode": 5680368000000000.0,
+      "un_sur": 2103.84
+    },
+    "EQ-17": {
+      "erreur_publiee_relative_2021": 0.3773584905660377,
+      "erreur_publiee_relative_2024": 0.2538461538461539,
+      "gain_mesure": 1.4865637507146938,
+      "gain_prevu_racine_n": 1.5950965727284327,
+      "rapport_gains": 0.9319584632872152,
+      "sigma_poisson_2021": 0.34480616461060754,
+      "sigma_poisson_2024": 0.21640692207705609,
+      "sur_2021": 0.03255232595543017,
+      "sur_2024": 0.0374392317690978,
+      "surcroit_dans_les_deux": true
+    }
+  },
+  "prediction_gel": {
+    "a_lu_le_comparateur": false,
+    "cle_interdites_trouvees": [],
+    "digest": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba",
+    "valeurs": {
+      "acceptance_2016_2018": 0.04414426345296429,
+      "kaons_par_seconde": 60000000.0,
+      "n_signal_2016_2018": 10.0119189511323
+    },
+    "variables_libres": [
+      "BR_sm",
+      "N_K_2016_2018",
+      "N_K_2021_2022",
+      "SES_2016_2018",
+      "SES_2021_2022",
+      "annees_prises_2016_2018",
+      "dBR_sm",
+      "fraction_K_plus",
+      "rejection_autres_canaux",
+      "rejection_mu",
+      "rejection_pi0",
+      "secondaires_par_s",
+      "seuil_observation",
+      "z_declare_2024"
+    ]
+  }
+}

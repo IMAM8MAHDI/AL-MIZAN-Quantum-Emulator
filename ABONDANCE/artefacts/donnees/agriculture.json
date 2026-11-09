@@ -61,6 +61,7 @@
       "formule": "6 CO2 + 6 H2O → C6H12O6 + 6 O2 ;  équilibre atome par atome",
       "resultat": "372.144 g de réactifs = 372.144 g de produits · 1.466 g CO2 par g de biomasse · 0 atome d'écart",
       "statut": "OPÉRATIONNEL",
+      "limite": "l'égalité atome par atome est une clôture de compte sur des masses atomiques déclarées : elle fixe ce qui entre et sort par mole de glucose, ni la vitesse de la réaction, ni le rendement d'une parcelle",
       "detail": {
         "equation": "6 CO2 + 6 H2O + lumière → C6H12O6 + 6 O2",
         "masses_molaires_g_mol": {
@@ -96,6 +97,7 @@
       "formule": "E = N_A·hc/λ par einstein ;  4 photons/CO2 au minimum, 8,5 mesurés",
       "resultat": "680 nm → 1.8233 eV = 175.92 kJ/mol de photons · plafond 68.0 % (4 photons), 32.0 % (8,5)",
       "statut": "OPÉRATIONNEL",
+      "limite": "4 photons est un plancher de compte (le schéma en Z : 2 NADPH + 3 ATP) et 8,5 une mesure de feuille rapportée en littérature : le plafond énergétique qui en sort borne le registre, il ne prédit aucune culture",
       "detail": {
         "lambda_nm": 680.0,
         "e_photon_J": 2.921243907571954e-19,
@@ -120,6 +122,7 @@
       "formule": "M_λ(T) intégrée sur 400–700 nm ;  φ = ∫M_λλ/(hc)dλ",
       "resultat": "PAR = 36.6 % de l'énergie · 1.673 µmol/J · pleine lumière hors atmosphère ≈ 1673 µmol/m²/s · STEFAN-BOLTZMANN re-vérifiée par l'intégrale à 7.9e-07",
       "statut": "OPÉRATIONNEL",
+      "limite": "le corps noir à 5772 K est un modèle de la photosphère, pas un relevé du Soleil : l'intégrale est exacte hors atmosphère, tandis que les 45 % au sol et les 2 000 µmol sont deux valeurs déclarées d'origine différente",
       "detail": {
         "T_photosphere_K": 5772.0,
         "exitance_integree_W_m2": 62938542.899772756,
@@ -143,6 +146,7 @@
       "formule": "E_PAR = I·f_PAR·S ;  demande = N·(kcal/j)·365·4184",
       "resultat": "PAR sur les cultivables = 43.7 ZJ/an contre 0.026 ZJ/an demandés · à 0,5 % de conversion : 8.5× la demande",
       "statut": "SIMULÉ",
+      "limite": "220 W/m², 1,4 milliard d'hectares et l'étage 0,2 à 2 % sont saisis en valeurs déclarées : le ZJ de PAR disponible n'est pas un ZJ captable, et ni la saison ni l'eau n'entrent dans ce ratio",
       "detail": {
         "irradiance_hors_atmosphere_W_m2": 1361.1664654085753,
         "insolation_moyenne_declaree_W_m2": 220.0,
@@ -169,6 +173,7 @@
       "formule": "ΔB = ε·fAPAR·PAR  (Monteith) ;  ε ≤ plafond EQ-02",
       "resultat": "plafond 20.08 g/MJ PAR · C4 déclaré à 33.2 % du plafond, C3 à 16.6 %",
       "statut": "OPÉRATIONNEL",
+      "limite": "l'identité de Monteith ne borne rien toute seule : ε à 1,5 et 3,0 g/MJ et fAPAR à 0,85 sont déclarés, et le rapport au plafond d'EQ-02 dit seulement qu'aucune de ces constantes ne le franchit",
       "detail": {
         "einstein_kJ": 175.92142005690735,
         "einstein_par_MJ": 5.684356115796009,
@@ -192,6 +197,7 @@
       "formule": "Rubisco : v_C/v_O = 85 · C4 = pompe à CO2 devant Rubisco",
       "resultat": "C4/C3 en ε = 2.00× · coût de la photorespiration = 52.9 % des photons",
       "statut": "SIMULÉ",
+      "limite": "les trois voies sont des colonnes de valeurs déclarées (ε, compensation, optimum, WUE) : aucun essai, aucun cultivar, aucun climat — le gain de 2× est le quotient de deux chiffres du fichier",
       "detail": {
         "voies": {
           "C3": {
@@ -228,6 +234,7 @@
       "formule": "Y = Y_max · minᵢ(fᵢ) ;  doubler un facteur non limitant ne change rien",
       "resultat": "P limitant : 1.40 t/ha · P ×2 : 2.45 · P ×4 : 2.45 (plateau, limitant = eau) · eau ×2 : 2.80 · toutes les planches pleines : 3.50",
       "statut": "OPÉRATIONNEL",
+      "limite": "les cinq planches et le Y_max de 3,5 t/ha sont posés par le fichier : min d'un facteur saturé est une loi exacte appliquée à des nombres choisis, et le plateau dit ce qui change, pas ce qui limite un champ",
       "detail": {
         "planches": {
           "lumière": 0.9,
@@ -283,6 +290,7 @@
       "formule": "NH3 = 82,25 % d'azote ;  31 GJ/t NH3 ⇒ 37,7 MJ par kg N",
       "resultat": "grain : 73.68 kg N/ha sur 120 kg appliqués → NUE 61.4 % · 359 kWh par tonne de blé",
       "statut": "OPÉRATIONNEL",
+      "limite": "31 GJ/t NH3 est le milieu d'une fourchette déclarée de 28 à 34 : l'énergie par tonne ne compte que les 120 kg d'azote minéral appliqué, et rien ici ne suit l'azote qui ne revient pas au grain",
       "detail": {
         "M_NH3_g_mol": 17.031,
         "fraction_N_dans_NH3": 0.8224414303329224,
@@ -306,6 +314,7 @@
       "formule": "ET = R_n/(ρL) ;  1 mm sur 1 ha = 10 m³",
       "resultat": "R_n 100 W/m² → 3.549 mm/jour · blé 500 mm = 5000 m³/ha = 1428.57 L/kg",
       "statut": "OPÉRATIONNEL",
+      "limite": "R_n à 100 W/m² est une déclaration pour une culture de référence et 1 mm = 10 m³/ha une identité géométrique : le débit tenu constant sur 365 jours n'est pas un suivi pluviométrique ni un bilan de saison",
       "detail": {
         "L_J_kg": 2442000.0,
         "Rn_W_m2_declare": 100.0,
@@ -327,6 +336,7 @@
       "formule": "e = kWh/m³ du dossier EAU (ρgH/η à 50 m) × volume prélevé",
       "resultat": "0.2089 kWh/m³ · goutte-à-goutte 4.178 GJ/ha vs superficielle 6.267 GJ/ha · irrigation/azote = 0.92",
       "statut": "OPÉRATIONNEL",
+      "limite": "goutte-à-goutte 0,90 et surface 0,60 sont deux efficacités déclarées : l'écart entre les deux est un calcul sur ces deux nombres, pas un essai sur parcelle, et le kWh/m³ hérite du pompage à 50 m du dossier EAU",
       "detail": {
         "kWh_par_m3_depuis_eau": 0.208915172008547,
         "besoin_net_m3_ha": 5000.0,
@@ -347,6 +357,7 @@
       "formule": "L/kg dérivé (EQ-09) contre L/kg déclaré (dossier EAU EQ-12)",
       "resultat": "dérivé 1428.57 vs déclaré 1500 L/kg · écart 4.8 % · compartiments vert/bleu/gris fermés",
       "statut": "SIMULÉ",
+      "limite": "l'accord confronte deux déclarations — l'eau virtuelle du dossier EAU et nos propres rendements — non un bassin mesuré ; les parts 70, 20 et 10 % comme les 90 kg par personne sont admises, pas comptées",
       "detail": {
         "litres_par_kg_declareEAU": 1500.0,
         "litres_par_kg_derive_agriculture": 1428.5714285714287,
@@ -368,6 +379,7 @@
       "formule": "Δ¹³C = a + (b−a)·ci/ca ;  WUE ∝ ca·(1 − ci/ca)",
       "resultat": "Δ 19.5‰ ⇒ ci/ca = 0.6681 · 300 → 420 ppm : efficience hydrique +40.0 % à Δ constant",
       "statut": "OPÉRATIONNEL",
+      "limite": "a, b et Δ sont trois constantes saisies de littérature : la proportionnalité strictement exacte du gain à c_a est une identité de la formule, pas un δ¹³C relevé sur un échantillon",
       "detail": {
         "a_diffusion_pourmille": 4.4,
         "b_rubisco_pourmille": 27.0,
@@ -389,6 +401,7 @@
       "formule": "personnes/ha = (t/ha)·(kcal/t) / (2100 kcal/j × 365)",
       "resultat": "blé 15.53 pers/ha · maïs 47.62 pers/ha · ratio 3.07",
       "statut": "SIMULÉ",
+      "limite": "multiplier t/ha par kcal/t et diviser par 2 100 kcal/j est une identité d'unités : elle borne un flux calorique et reste muette sur les ravageurs, le travail, le marché et les jachères",
       "detail": {
         "ble": {
           "tonnes_par_ha": 3.5,
@@ -417,6 +430,7 @@
       "formule": "S = N·(kcal/j)·365 / (kcal/ha) ;  élevage = surface × indice de conversion",
       "resultat": "8 Md en céréales seules : 515 Mha sur 1400 Mha disponibles (2.7×) · avec 25 % d'apport animal : 1159 Mha",
       "statut": "SIMULÉ",
+      "limite": "nourrir 8 milliards en régime céréalier unique ne porte aucune allégation sur la distribution, la logistique ni les politiques agricoles ; les 25 % d'apport animal et l'indice 6,0 sont deux déclarations juxtaposées",
       "detail": {
         "demande_kcal_par_an": 6132000000000000.0,
         "surface_ble_ha": 515294117.64705884,
@@ -437,6 +451,7 @@
       "formule": "M = z·S·ρ ;  dette = débit d'érosion − taux de formation",
       "resultat": "horizon 30 cm = 3900 t/ha · érosion 10 t/ha/an = 20× la formation · 390 ans avant disparition",
       "statut": "SIMULÉ",
+      "limite": "les deux durées naissent d'un quotient de deux déclarations tenues constantes sur tout l'horizon : ni la pente, ni la pluie, ni le travail mécanique n'entrent au calcul, et 30 cm est une hypothèse de fichier",
       "detail": {
         "masse_horizon_t_ha": 3900.0,
         "profondeur_m": 0.3,
@@ -459,6 +474,7 @@
       "formule": "kWh/m² = DLI·E_einstein ;  WPE = φ·E_photon/Pélec",
       "resultat": "15 mol/m²/j : minimum 0.7330 kWh, système 1.4881 kWh (93 W/m²) · 13.58 kWh/kg de tomate (lumière seule)",
       "statut": "OPÉRATIONNEL",
+      "limite": "le kWh par kilogramme de tomate sort d'un µmol/J commercial déclaré à 660 nm et de 40 kg/m²/an : lumière seule, hors climat, eau ni main-d'œuvre, et le PPFD étale les 15 mol sur une photopériode de 16 h déclarée",
       "detail": {
         "dli_mol_m2_jour": 15.0,
         "einstein_J_par_mol_photons": 175921.42005690734,
@@ -483,6 +499,7 @@
       "formule": "quantité/ha = f(EQ-08, EQ-09, EQ-10, EQ-16) avec facteurs stoechiométriques exacts",
       "resultat": "8 matériaux dimensionnés · film 276.00 kg/ha · SAP 666.67 kg/ha · biochar 2000 km² de surface interne par ha traité",
       "statut": "SIMULÉ",
+      "limite": "huit quantités héritées d'EQ-08, EQ-09, EQ-10 et EQ-16 : cinq lignes restent sans colonne d'énergie, les performances des matériaux sont déclarées, et rien ne compte l'extraction, le transport ni la durée de vie",
       "detail": {
         "materiaux": [
           {
@@ -562,6 +579,7 @@
       "formule": "P1 ↔ plafond · P2 ↔ photopériode et siècles de sol · P3 ↔ planche la plus basse · P4 ↔ dettes",
       "resultat": "4 ponts déclarés comme lectures, chacun borné par une limite",
       "statut": "SPÉCIFIÉ",
+      "limite": "quatre lectures du dossier, pas des dérivations : aucun nombre du fichier ne bouge si l'un des ponts tombe, et la limite attachée à chaque pont engage le registre, pas une contrainte numérique",
       "detail": [
         {
           "pilier": "P1 — Scellement",

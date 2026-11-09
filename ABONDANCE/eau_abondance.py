@@ -448,9 +448,9 @@ def ponts_dossier() -> List[Dict[str, str]]:
 # ============================================================================
 
 def _eq(id_: str, chemin: str, formule: str, resultat: str, statut: str,
-        detail: Any) -> Dict[str, Any]:
+        detail: Any, limite: str = "") -> Dict[str, Any]:
     return {"id": id_, "chemin": chemin, "formule": formule,
-            "resultat": resultat, "statut": statut, "detail": detail}
+            "resultat": resultat, "statut": statut, "limite": limite, "detail": detail}
 
 
 def resoudre() -> Dict[str, Any]:
@@ -466,89 +466,140 @@ def resoudre() -> Dict[str, Any]:
             f"douce = {rp['douce_km3'] / 1e6:.2f} × 10⁶ km³ sur {rp['total_km3'] / 1e6:.2f} × 10⁶ km³ · "
             f"renouvelable {100 * rp['fractions']['renouvelable_sur_douce']:.2f} % du stock · "
             f"{rp['annees_pour_renouveler_la_douce']:.0f} ans pour rajeunir toute l'eau douce",
-            "SIMULÉ", rp),
+            "SIMULÉ", rp,
+            limite="les volumes et les 12 000 km³/an de renouvellement sont des ordres de "
+                   "grandeur déclarés, non des relevés : C01 ne fait que refermer des "
+                   "pourcentages entre eux, il ne peut découvrir une erreur commune à la table"),
         _eq("EQ-02", "eau_abondance.py → hydrostatique() → C02",
             "P = ρ·g·h ;  F = P·S",
             f"10 m (douce 25 °C) : {hs['P_a_10m_Pa'] / 1000.0:.3f} kPa = "
             f"{hs['atm_a_10m']:.3f} atm absolue · 100 m en mer : "
             f"{hs['table'][2]['P_Pa'] / 1000.0:.1f} kPa · ρgH(100 m) = "
             f"{_f(hs['J_par_m3_convention_std'], 4)} J/m³",
-            "OPÉRATIONNEL", hs),
+            "OPÉRATIONNEL", hs,
+            limite="P = ρgH suppose l'eau au repos : ni houle, ni courant, ni capteur ; le "
+                   "zéro de l'écart avec le dossier électricité est la convention ρ = 1000 "
+                   "partagée entre les deux modules, pas une pression relevée quelque part"),
         _eq("EQ-03", "eau_abondance.py → architecte_flottant() → C03",
             "F_poussée = ρ_fluide·V·g ;  part immergée = ρ_objet/ρ_fluide",
             f"iceberg immergé {100 * ar['part_immergee_glace']:.2f} % · émerge "
             f"{100 * ar['part_emergee_glace']:.2f} % · 50 000 t ⇒ "
             f"{_exp(ar['volume_deplace_m3_pour_50000t'], 3)} m³ déplacés",
-            "OPÉRATIONNEL", ar),
+            "OPÉRATIONNEL", ar,
+            limite="Archimède s'énonce pour un solide dans un fluide de densité déclarée : "
+                   "la glace réelle porte bulles d'air et poches de saumure, et les 50 000 t "
+                   "sont un port en lourd annoncé, pas un franc-bord observé sur une coque"),
         _eq("EQ-04", "eau_abondance.py → continuite() → C04",
             "Q = A·v constant ;  v = Q/A",
             f"10 m³/s : 10 m² → {co['vitesses_m_s'][0]:.1f} m/s, 0,5 m² → "
             f"{co['vitesses_m_s'][2]:.1f} m/s · écart max {co['max_ecart']:.2e}",
-            "OPÉRATIONNEL", co),
+            "OPÉRATIONNEL", co,
+            limite="Q = A·v est une identité pour un fluide incompressible remplissant "
+                   "uniformément la section : profil de vitesse, rugosité du lit et régime "
+                   "non permanent restent hors modèle, et le 10 m³/s est choisi, pas jaugé"),
         _eq("EQ-05", "eau_abondance.py → bernoulli() → C05",
             "P + ½ρv² + ρgh = const ;  v = √(2gh)",
             f"10 m → {be['v10m_m_s']:.3f} m/s · 100 m → {be['vitesses_m_s'][2]:.2f} m/s · "
             f"dPE/dh = {be['dPE_dh']:.6f} m/s²",
-            "OPÉRATIONNEL", be),
+            "OPÉRATIONNEL", be,
+            limite="v = √(2gh) ignore la viscosité et la contraction à l'orifice : la vitesse "
+                   "d'un écoulement réel est plus basse ; dPE/dh = g ne mesure pas la pesanteur, "
+                   "il éprouve la dérivation numérique de la constante déclarée"),
         _eq("EQ-06", "eau_abondance.py → pompage() → C06",
             "e = ρ·g·H/η (par m³) ;  P = e·Q",
             f"50 m à η 0,65 → {po['table'][1]['kWh_par_m3_rendement']:.4f} kWh/m³ · "
             f"1000 m³/j → {po['pour_1000_m3_jour_kW']:.1f} kW en moyenne · "
             f"{po['ratio_pompage_sur_borne_dessalement']:.2f}× la borne de EQ-08",
-            "OPÉRATIONNEL", po),
+            "OPÉRATIONNEL", po,
+            limite="η = 0,65 est un rendement global d'ordre de grandeur, pas un relevé sur "
+                   "une station : pertes de ligne, NPSH et calendrier réel de pompage restent "
+                   "dehors, et le 0,12 €/kWh est un prix d'entrée supposé, non un tarif constaté"),
         _eq("EQ-07", "eau_abondance.py → osmose() → C07",
             "π = i·c·R·T ;  c en osmoles par m³",
             f"35 g/kg → π idéale {osm['pi_ideale_bar']:.2f} bar "
             f"({osm['pi_ideale_bar_seconde_voie']:.2f} bar par la voie molaire), π réelle ≈ "
             f"{osm['pi_reelle_bar']:.1f} bar · colonne d'eau de "
             f"{osm['hauteur_equivalente_m']:.1f} m",
-            "OPÉRATIONNEL", osm),
+            "OPÉRATIONNEL", osm,
+            limite="π = i·c·RT est une solution idéale à 298,15 K et 35 g/kg, sans membrane, "
+                   "sans polarisation de concentration ni entartrage ; la valeur « réelle » "
+                   "n'est que l'idéal multiplié par un i = 1,78 déclaré, et les 60 bar une "
+                   "pression aval d'usine annoncée"),
         _eq("EQ-08", "eau_abondance.py → travail_minimum_dessalement() → C08",
             "w_min = R·T·ln(1/x_eau) par mole d'eau douce extraite",
             f"x_eau = {wm['x_eau']:.6f} → {wm['kWh_par_m3']:.4f} kWh/m³ (borne) · RO déclarée "
             f"{wm['sec_ro_declare_kWh_m3']:.1f} kWh/m³ = {wm['ratio_ro_sur_borne']:.2f}× la borne",
-            "OPÉRATIONNEL", wm),
+            "OPÉRATIONNEL", wm,
+            limite="borne réversible isotherme d'un modèle de solution idéale : elle interdit "
+                   "un devis plus bas, elle ne prédit le coût d'aucune usine — pertes de "
+                   "charge, pompage et saumure sont dehors ; 3,0 kWh/m³ et 12 millions de "
+                   "m³/jour y sont des valeurs déclarées"),
         _eq("EQ-09", "eau_abondance.py → recuperation_concentration() → C09",
             "C_saumure = C_alim/(1−Y) ;  bilan salin fermé",
             f"Y = 0,45 → {rc['table'][1]['saumure_g_kg']:.1f} g/kg "
             f"({rc['table'][1]['sur_concentration']:.2f}×) · "
             f"{rc['table'][1]['eau_rejetee_m3_par_m3_produit']:.2f} m³ rejetés par m³ produit · "
             f"résidu {rc['residus_bilan_max']:.2e}",
-            "OPÉRATIONNEL", rc),
+            "OPÉRATIONNEL", rc,
+            limite="résidu nul : le bilan salin se referme sur sa propre écriture en "
+                   "concentrations, volumes additifs et densité marine commune ; rien ici ne "
+                   "dit qu'une membrane atteigne Y = 0,45 sur une eau de mer réelle"),
         _eq("EQ-10", "eau_abondance.py → vapeur_eau_air() → C10",
             "e_s(Magnus) = 6,1094·exp(17,625·t/(t+243,04)) ;  d ln e/dT = L/(R_v·T²)",
             f"25 °C : Magnus {va['magnus_25C_hPa']:.3f} hPa, Clausius "
             f"{va['clausius_clapeyron_25C_hPa']:.3f} hPa · écart "
             f"{100 * va['ecart_relatif_25C']:.2f} % · évaporer 1 m³ coûte "
             f"{va['equivalent_kWh_par_m3']:.1f} kWh",
-            "OPÉRATIONNEL", va),
+            "OPÉRATIONNEL", va,
+            limite="l'accord des deux formules compare deux paramétrisations déclarées — "
+                   "Magnus ajustée, Clausius–Clapeyron intégrée avec une chaleur latente "
+                   "tenue pour constante : il ne dit rien du vent, de la salinité ni de "
+                   "l'humidité réelle d'une parcelle d'air"),
         _eq("EQ-11", "eau_abondance.py → cycle_global() → C11",
             "P_terre = ET_terre + R ;  P_océan + R = ET_océan",
             f"119 000 = 72 000 + 47 000 km³/an · {cy['mm_par_an_sur_terre_emergee']:.0f} mm/an "
             f"sur les terres émergées · {cy['mm_par_an_planete']:.0f} mm/an sur la planète",
-            "SIMULÉ", cy),
+            "SIMULÉ", cy,
+            limite="le zéro de C11 est une clôture choisie : 406 000 km³/an est calé pour "
+                   "fermer le bilan et l'écart avec la table souvent citée reste revendiqué, "
+                   "non résolu ; ni année particulière, ni tendance, ni répartition régionale"),
         _eq("EQ-12", "eau_abondance.py → eau_par_aliment() → C12",
             "V_eau = Σᵢ (L/kg)ᵢ × mᵢ ;  mᵢ en kg par personne et par an",
             f"bœuf/tomate = {ea['ratio_boeuf_sur_tomate']:.0f}× · régime déclaré ≈ "
             f"{ea['litres_par_personne_par_jour']:.0f} L/j contre "
             f"{ea['domestique_declare_litres_par_jour']:.0f} L/j au robinet",
-            "SIMULÉ", ea),
+            "SIMULÉ", ea,
+            limite="les L/kg et les kg/personne/an sont des chiffres déclarés d'ordre de "
+                   "grandeur, très dépendants du pays et du climat : le ratio bœuf/tomate "
+                   "oppose deux valeurs de table, et le total suppose le régime à huit "
+                   "lignes exactement consommé"),
         _eq("EQ-13", "eau_abondance.py → salinite_conductivite() → C13",
             "S (g/kg) ≈ 0,64 × EC (dS/m)",
             f"35 g/kg → {sc['EC_eau_de_mer_dS_m']:.1f} dS/m = "
             f"{sc['conductivite_eau_de_mer_S_m']:.2f} S/m · seuil potable à "
             f"{sc['EC_seuil_potable_dS_m']:.2f} dS/m",
-            "SIMULÉ", sc),
+            "SIMULÉ", sc,
+            limite="le facteur 0,64 est une calibration déclarée pour une composition ionique "
+                   "marine moyenne à température de référence : la conductivité bouge avec la "
+                   "température et avec la nature des ions ; C13 ne vérifie que la réciprocité "
+                   "de la division"),
         _eq("EQ-14", "eau_abondance.py → stockage_gravitaire_eau() → C14",
             "E = ρ·g·H·V ;  même membre que le dossier électricité",
             f"1 km³ sous 100 m = {sg['energie_GWh']:.1f} GWh = {sg['energie_TWh']:.4f} TWh · "
             f"décharge en 8 h = {sg['puissance_decharge_8h_W'] / 1e9:.1f} GW · "
             f"{sg['Wh_par_kg_d_eau']:.3f} Wh/kg d'eau",
-            "OPÉRATIONNEL", sg),
+            "OPÉRATIONNEL", sg,
+            limite="E = ρgHV est le potentiel d'un volume et d'une chute déclarés à la "
+                   "convention ρ = 1000 : ni évaporation, ni fuites, ni plage réelle de plan "
+                   "d'eau ; le round-trip 0,80 et les 250 Wh/kg de comparaison sont des "
+                   "valeurs annoncées"),
         _eq("EQ-15", "eau_abondance.py → ponts_dossier() → C15",
             "P1 ↔ borne · P2 ↔ cycles · P3 ↔ redondance · P4 ↔ dette hydrologique",
             "4 ponts déclarés comme lectures, chacun borné par une limite",
-            "SPÉCIFIÉ", pd),
+            "SPÉCIFIÉ", pd,
+            limite="quatre ponts posés comme grille de lecture, aucun calcul : chacun porte "
+                   "déjà sa borne dans le détail, et rien dans cette liste n'établit un "
+                   "lien causal entre l'eau et les piliers du noyau"),
     ]
 
     controles = [

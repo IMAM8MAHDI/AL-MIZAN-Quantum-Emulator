@@ -1,0 +1,322 @@
+{
+  "controles": [
+    {
+      "attendu": "True True True et 50/50 conformes",
+      "id": "C01",
+      "nom": "certificat de π : alternance, contraction, plancher forcé ; et les 50 décimales publiées des trois sont rendues sans désaccord",
+      "obtenu": "True True True ; ancre = 3/3 et 50 chiffres comparés ; désaccords = aucun",
+      "ok": true
+    },
+    {
+      "attendu": "identique + certifié",
+      "id": "C02",
+      "nom": "Machin rend les mêmes chiffres que Chudnovsky",
+      "obtenu": "True/True",
+      "ok": true
+    },
+    {
+      "attendu": "True True",
+      "id": "C03",
+      "nom": "certificat de e et Q = m! exact",
+      "obtenu": "True/True",
+      "ok": true
+    },
+    {
+      "attendu": "True True",
+      "id": "C04",
+      "nom": "√2 prouvé par les carrés et concordant avec Newton",
+      "obtenu": "True/True",
+      "ok": true
+    },
+    {
+      "attendu": "1 ; décalage 1",
+      "id": "C05",
+      "nom": "convention d'indexage : décalage exactement 1, position 1 = 1",
+      "obtenu": "1 ; 1",
+      "ok": true
+    },
+    {
+      "attendu": "identique et n=0 défini",
+      "id": "C06",
+      "nom": "predire(n) ne lit aucun chiffre : table identique, définie à n = 0",
+      "obtenu": "identique=True, n0=True",
+      "ok": true
+    },
+    {
+      "attendu": "True",
+      "id": "C07",
+      "nom": "Σ comptes = n, chaînes pures, χ²(9) dans l'intervalle des trois",
+      "obtenu": "True",
+      "ok": true
+    },
+    {
+      "attendu": "True",
+      "id": "C08",
+      "nom": "algèbre du 0,9 exacte en fractions, k = 1..20",
+      "obtenu": "True",
+      "ok": true
+    },
+    {
+      "attendu": "True",
+      "id": "C09",
+      "nom": "chaque position rendue relit bien son propre numéro",
+      "obtenu": "True",
+      "ok": true
+    },
+    {
+      "attendu": "90000 (n ≥ 100005)",
+      "id": "C10",
+      "nom": "candidats de classe 5 = 90 000 dès que le domaine le permet, et classes cohérentes avec la liste",
+      "obtenu": "90000, n = 1000000",
+      "ok": true
+    },
+    {
+      "attendu": "grille et ≤ 4.149",
+      "id": "C11",
+      "nom": "cumul auto-local : grille annoncée retrouvée, courbe croissante, |z| sous le seuil de Bonferroni",
+      "obtenu": "1.842 monotone=True grille=True",
+      "ok": true
+    },
+    {
+      "attendu": "Δ ≤ 0.4460 et 0.5 ≤ rapport ≤ 2.0",
+      "id": "C12",
+      "nom": "trois voies de comptage : simulé ≈ analytique à ±3 σ de la moyenne, rapports d'écarts-types dans la bande √n",
+      "obtenu": "Δ = 0.1500 ; rapports = [0.785, 1.119, 1.11, 1.133, 0.929, 1.007]",
+      "ok": true
+    },
+    {
+      "attendu": "≤ 3√(0,09n) = 900.0",
+      "id": "C13",
+      "nom": "bilan des runs : comptés + queue = 1 + 0,9(n−1)",
+      "obtenu": "72.0",
+      "ok": true
+    },
+    {
+      "attendu": "0.0 ≤ κ ≤ 1.35 ; |Δ| ≤ 632.1",
+      "id": "C14",
+      "nom": "variances simulées dans la bande κ déclarée (occulence et runs) ; moyenne simulée ≈ analytique",
+      "obtenu": "κ=[0.81, 0.539, 0.425, 0.806, 0.936, 0.988, 0.996] Δ=9.53",
+      "ok": true
+    },
+    {
+      "attendu": "[2, 23] (λ = 10.896)",
+      "id": "C15",
+      "nom": "les cinq sondes déclarées : le nombre de celles qu'on retrouve tombe dans l'intervalle Poisson de leurs probabilités de présence",
+      "obtenu": "11 sur 15",
+      "ok": true
+    },
+    {
+      "attendu": "[4.33, 44.61]",
+      "id": "C16",
+      "nom": "G² auto-local dans l'intervalle χ²(3·KMAX)",
+      "obtenu": "21.036",
+      "ok": true
+    },
+    {
+      "attendu": "p ≥ 0.001",
+      "id": "C17",
+      "nom": "verdict global : exclusions ~ Poisson(α·cellules)",
+      "obtenu": "0.2047 (1/108)",
+      "ok": true
+    }
+  ],
+  "domaine": {
+    "alpha": 0.001,
+    "graine": 20261109,
+    "kmax": 6,
+    "n": 1000000,
+    "n_sim": 100000,
+    "n_sim2": 50000,
+    "repiliques": 200,
+    "rmax": 7,
+    "z_seuil": 3.2905267314918953
+  },
+  "equations": [
+    {
+      "chapitre": null,
+      "chemin": "chiffres_pi.py → generer_chiffres.decimales_pi() → C01",
+      "formule": "π = 426880·√10005 / Σ(−1)ᵏ(6k)!(A+Bk)/((3k)!(k!)³C³), splitting binaire",
+      "id": "EQ-01",
+      "limite": "l'identité de Chudnovsky est déclarée (littérature) ; alternance, contraction et plancher sont vérifiés ici en entiers",
+      "resultat": "1000000 décimales certifiées · 71434 termes · marge 40 chiffres de garde",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": null,
+      "chemin": "chiffres_pi.py → generer_chiffres.pi_par_machin() → C02",
+      "formule": "π = 16·arccot 5 − 4·arccot 239 (Machin 1706), bornes alternées",
+      "id": "EQ-02",
+      "limite": "",
+      "resultat": "accord sur 500 chiffres · premier désaccord None",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": null,
+      "chemin": "chiffres_pi.py → generer_chiffres.decimales_e() → C03",
+      "formule": "e = Σ 1/k!, queue < 1/(m·m!) avec m·m! > 10^(n+40)",
+      "id": "EQ-03",
+      "limite": "",
+      "resultat": "1000000 décimales certifiées · m = 205029 · Q = m! vérifié True",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": null,
+      "chemin": "chiffres_pi.py → generer_chiffres.decimales_racine2() → C04",
+      "formule": "w = ⌊√2·10ⁿ⌋ éprouvé par w² ≤ 2·10²ⁿ < (w+1)²",
+      "id": "EQ-04",
+      "limite": "aucune série, aucun emprunt : la seule inégalité entière qui définit les décimales est mise à l'épreuve",
+      "resultat": "1000000 décimales, preuve True · voie Newton True",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "1:33",
+        "titre": "Where position one is"
+      },
+      "chemin": "chiffres_pi.py → convention_indexage() → C05",
+      "formule": "position 1 = première décimale ; l'autre convention décale de 1",
+      "id": "EQ-05",
+      "limite": "",
+      "resultat": "première décimale de π = 1 et elle est en position 1 ; 16470 auto-localisé : True",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": null,
+      "chemin": "chiffres_pi.py → predire() → C06",
+      "formule": "H0 : décimales i.i.d. uniformes sur {0,…,9}",
+      "id": "EQ-06",
+      "limite": "H0 n'est démontrée pour aucune des trois constantes — normalité simple, ouverte depuis Borel (1909)",
+      "resultat": "108 cellules déclarées · ALPHA = 0.001 · z seuil 3.290527 · 0.108 exclusion(s) attendue(s)",
+      "statut": "SPÉCIFIÉ"
+    },
+    {
+      "chapitre": null,
+      "chemin": "chiffres_pi.py → mesurer_frequence() → C07",
+      "formule": "E[compte] = n/10, σ = √(0,09n), χ²(9) : 9 ± √18, intervalle Wilson–Hilferty",
+      "id": "EQ-07",
+      "limite": "",
+      "resultat": "π χ² 5.5091 · e 9.5057 · √2 16.6573 dans [0.866, 29.914]",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "4:17",
+        "titre": "Zero point nine every time"
+      },
+      "chemin": "chiffres_pi.py → esperance_auto_local() → C08",
+      "formule": "λ_k = 9·10^(k−1) · 10^(−k) = 9/10",
+      "id": "EQ-08",
+      "limite": "identité du modèle, pas une mesure : elle dit ce que H0 promet",
+      "resultat": "exact en fractions pour k = 1..20 : 9/10",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "0:00",
+        "titre": "Five digits at position 16470"
+      },
+      "chemin": "chiffres_pi.py → positions_auto_local() → C09",
+      "formule": "p tel que la lecture en p redonne p",
+      "id": "EQ-09",
+      "limite": "",
+      "resultat": "π : [1, 16470, 44899] … 3 au total",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "2:57",
+        "titre": "Ninety thousand candidates"
+      },
+      "chemin": "chiffres_pi.py → classes_auto_local() → C10",
+      "formule": "compte par classe de longueur, Poisson(λ_k) indépendante du nombre de chiffres",
+      "id": "EQ-10",
+      "limite": "",
+      "resultat": "π k1:1/0.9000∈(0, 5), k2:0/0.9000∈(0, 5), k3:0/0.9000∈(0, 5), k4:0/0.9000∈(0, 5), k5:2/0.9000∈(0, 5), k6:0/0.9000∈(0, 5)",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "7:03",
+        "titre": "The running total"
+      },
+      "chemin": "chiffres_pi.py → mesurer_cumul() → C11",
+      "formule": "E[N(x)] = Σ_{k'<k}λ_k' + (x − 10^(k−1) + 1)·10^(−k)",
+      "id": "EQ-11",
+      "limite": "",
+      "resultat": "cumul sur 10 points déclarés · |z| maximal 1.842 contre le seuil de Bonferroni 4.149",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "8:22",
+        "titre": "Three ways to count"
+      },
+      "chemin": "chiffres_pi.py → calibrage() → C12",
+      "formule": "analytique / Monte-Carlo (MT19937, graine déclarée) / balayage direct",
+      "id": "EQ-12",
+      "limite": "",
+      "resultat": "à n_sim = 100000 : simulé 4.650 ± 2.102 vs analytique 4.500",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "5:37",
+        "titre": "Matches by length"
+      },
+      "chemin": "chiffres_pi.py → mesurer_runs() → C13",
+      "formule": "E[run de longueur r] = (n−r−1)·0,81·10^(−(r−1)) + 1,8·10^(−(r−1))",
+      "id": "EQ-13",
+      "limite": "",
+      "resultat": "π r1:809776/810000.2, r2:81256/80999.9, r3:7976/8100.0, r4:830/810.0, r5:77/81.0, r6:12/8.1, r7:1/0.8",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "11:02",
+        "titre": "Every short string shows up"
+      },
+      "chemin": "chiffres_pi.py → mesurer_occulence() → C14",
+      "formule": "E[k-présentes] = 10^k·(1 − (1 − 10^(−k))^m)",
+      "id": "EQ-14",
+      "limite": "",
+      "resultat": "π k1:10/10, k2:100/100, k3:1000/1000, k4:10000/10000, k5:99992/99995, k6:631548/632119",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "11:02",
+        "titre": "Every short string shows up"
+      },
+      "chemin": "chiffres_pi.py → mesurer_attentes() → C15",
+      "formule": "T ~ géométrique(10^(−L)) ; u = P(T ≤ t) doit suivre une uniforme",
+      "id": "EQ-15",
+      "limite": "les cinq sondes sont déclarées avant toute mesure ; aucune n'est choisie après avoir vu les chiffres",
+      "resultat": "π 12345:49702, 54321:64224, 00000:17534, 999999:762, 0123456789:None",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "9:39",
+        "titre": "The same search in e and root two"
+      },
+      "chemin": "chiffres_pi.py → deviance_auto_local() → C16",
+      "formule": "G² = 2Σ[x·ln(x/λ) + λ − x] ~ χ²(3·KMAX)",
+      "id": "EQ-16",
+      "limite": "",
+      "resultat": "G² = 21.036 sur 18 ddl, [4.33, 44.61] → CONTENU",
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chapitre": {
+        "debut": "12:46",
+        "titre": "A pattern nobody has proven"
+      },
+      "chemin": "chiffres_pi.py → confronter() → C17",
+      "formule": "rejet si p < 0.001 ; global : Poisson(α·cellules) sur le nombre d'exclusions",
+      "id": "EQ-17",
+      "limite": "aucune preuve de normalité : confrontation sur domaine fini déclaré. Un échec ici ne prouverait rien ; une réussite ne prouve rien",
+      "resultat": "1 exclues sur 108 (attendu 0.11), p = 0.2047 → CONTENU",
+      "statut": "OPÉRATIONNEL"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "a_lu_le_comparateur": false,
+  "cle_interdites_trouvees": [],
+  "comparateur_lu_ensuite": {
+    "CERN_2024": {
+      "desintegrations_ordinaires": 9999999999,
+      "source": "https://home.cern — 2024-09-25, « the other 9 999 999 999 decays »"
+    },
+    "NA62_2021": {
+      "BR": 1.06e-10,
+      "N_exp_SM": 10.01,
+      "candidates": 20,
+      "d_BR": [
+        4e-11,
+        3.4e-11
+      ],
+      "d_N_exp": [
+        0.42,
+        1.19
+      ],
+      "d_fond": [
+        1.05,
+        0.82
+      ],
+      "fond": 7.03,
+      "p_value": 0.00034,
+      "source": "arXiv:2103.15389 — JHEP 06 (2021) 093, DOI 10.1007/JHEP06(2021)093",
+      "verbe_publie": "evidence à 3,4 sigma — pas une observation"
+    },
+    "NA62_2024": {
+      "BR": 1.3e-10,
+      "candidates": 51,
+      "d_BR": [
+        3.3e-11,
+        3e-11
+      ],
+      "d_fond": [
+        3.0,
+        2.0
+      ],
+      "fond": 18.0,
+      "p_value": 2e-07,
+      "source": "arXiv:2412.12015 — JHEP 02 (2025) 191, DOI 10.1007/JHEP02(2025)191",
+      "verbe_publie": "observation au-delà de 5 sigma"
+    },
+    "NA62_2026": {
+      "BR_2016_2024": 9.6e-11,
+      "BR_2023_2024": 7.2e-11,
+      "POT_2021_2024": 6.3e+17,
+      "d_BR_26": [
+        1.9e-11,
+        1.8e-11
+      ],
+      "source": "arXiv:2605.02415 — MPP-2026-83",
+      "verbe_publie": "accord avec le modèle standard à moins de 1 sigma"
+    }
+  },
+  "digest": "242389d12056597169a02602e69feea1213e6248e7573300b5eed00fbaf8feba",
+  "prediction": {
+    "acceptance_2016_2018": 0.04414426345296429,
+    "kaons_par_seconde": 60000000.0,
+    "n_signal_2016_2018": 10.0119189511323
+  },
+  "variables_libres": [
+    "BR_sm",
+    "N_K_2016_2018",
+    "N_K_2021_2022",
+    "SES_2016_2018",
+    "SES_2021_2022",
+    "annees_prises_2016_2018",
+    "dBR_sm",
+    "fraction_K_plus",
+    "rejection_autres_canaux",
+    "rejection_mu",
+    "rejection_pi0",
+    "secondaires_par_s",
+    "seuil_observation",
+    "z_declare_2024"
+  ]
+}

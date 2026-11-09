@@ -36,6 +36,7 @@
       "formule": "V_douce = V_totale × 2,59 % ;  V_douce = Σ V_compartiments",
       "resultat": "douce = 35.90 × 10⁶ km³ sur 1386.00 × 10⁶ km³ · renouvelable 0.03 % du stock · 2991 ans pour rajeunir toute l'eau douce",
       "statut": "SIMULÉ",
+      "limite": "les volumes et les 12 000 km³/an de renouvellement sont des ordres de grandeur déclarés, non des relevés : C01 ne fait que refermer des pourcentages entre eux, il ne peut découvrir une erreur commune à la table",
       "detail": {
         "total_km3": 1386000000.0,
         "sale_pct": 97.41,
@@ -68,6 +69,7 @@
       "formule": "P = ρ·g·h ;  F = P·S",
       "resultat": "10 m (douce 25 °C) : 97.772 kPa = 1.965 atm absolue · 100 m en mer : 1005.2 kPa · ρgH(100 m) = 980 665.0000 J/m³",
       "statut": "OPÉRATIONNEL",
+      "limite": "P = ρgH suppose l'eau au repos : ni houle, ni courant, ni capteur ; le zéro de l'écart avec le dossier électricité est la convention ρ = 1000 partagée entre les deux modules, pas une pression relevée quelque part",
       "detail": {
         "table": [
           {
@@ -108,6 +110,7 @@
       "formule": "F_poussée = ρ_fluide·V·g ;  part immergée = ρ_objet/ρ_fluide",
       "resultat": "iceberg immergé 89.46 % · émerge 10.54 % · 50 000 t ⇒ 4.878 × 10^4 m³ déplacés",
       "statut": "OPÉRATIONNEL",
+      "limite": "Archimède s'énonce pour un solide dans un fluide de densité déclarée : la glace réelle porte bulles d'air et poches de saumure, et les 50 000 t sont un port en lourd annoncé, pas un franc-bord observé sur une coque",
       "detail": {
         "part_immergee_glace": 0.8946341463414634,
         "part_emergee_glace": 0.10536585365853657,
@@ -126,6 +129,7 @@
       "formule": "Q = A·v constant ;  v = Q/A",
       "resultat": "10 m³/s : 10 m² → 1.0 m/s, 0,5 m² → 20.0 m/s · écart max 0.00e+00",
       "statut": "OPÉRATIONNEL",
+      "limite": "Q = A·v est une identité pour un fluide incompressible remplissant uniformément la section : profil de vitesse, rugosité du lit et régime non permanent restent hors modèle, et le 10 m³/s est choisi, pas jaugé",
       "detail": {
         "debit_m3_s": 10.0,
         "sections_m2": [
@@ -155,6 +159,7 @@
       "formule": "P + ½ρv² + ρgh = const ;  v = √(2gh)",
       "resultat": "10 m → 14.005 m/s · 100 m → 44.29 m/s · dPE/dh = 9.806650 m/s²",
       "statut": "OPÉRATIONNEL",
+      "limite": "v = √(2gh) ignore la viscosité et la contraction à l'orifice : la vitesse d'un écoulement réel est plus basse ; dPE/dh = g ne mesure pas la pesanteur, il éprouve la dérivation numérique de la constante déclarée",
       "detail": {
         "hauteurs_m": [
           1.0,
@@ -184,6 +189,7 @@
       "formule": "e = ρ·g·H/η (par m³) ;  P = e·Q",
       "resultat": "50 m à η 0,65 → 0.2089 kWh/m³ · 1000 m³/j → 8.7 kW en moyenne · 0.26× la borne de EQ-08",
       "statut": "OPÉRATIONNEL",
+      "limite": "η = 0,65 est un rendement global d'ordre de grandeur, pas un relevé sur une station : pertes de ligne, NPSH et calendrier réel de pompage restent dehors, et le 0,12 €/kWh est un prix d'entrée supposé, non un tarif constaté",
       "detail": {
         "table": [
           {
@@ -229,6 +235,7 @@
       "formule": "π = i·c·R·T ;  c en osmoles par m³",
       "resultat": "35 g/kg → π idéale 30.44 bar (29.69 bar par la voie molaire), π réelle ≈ 27.1 bar · colonne d'eau de 302.8 m",
       "statut": "OPÉRATIONNEL",
+      "limite": "π = i·c·RT est une solution idéale à 298,15 K et 35 g/kg, sans membrane, sans polarisation de concentration ni entartrage ; la valeur « réelle » n'est que l'idéal multiplié par un i = 1,78 déclaré, et les 60 bar une pression aval d'usine annoncée",
       "detail": {
         "mol_eau_par_kg": 55.50929780738274,
         "mol_sel_par_kg": 0.5989048596851472,
@@ -255,6 +262,7 @@
       "formule": "w_min = R·T·ln(1/x_eau) par mole d'eau douce extraite",
       "resultat": "x_eau = 0.978877 → 0.8136 kWh/m³ (borne) · RO déclarée 3.0 kWh/m³ = 3.69× la borne",
       "statut": "OPÉRATIONNEL",
+      "limite": "borne réversible isotherme d'un modèle de solution idéale : elle interdit un devis plus bas, elle ne prédit le coût d'aucune usine — pertes de charge, pompage et saumure sont dehors ; 3,0 kWh/m³ et 12 millions de m³/jour y sont des valeurs déclarées",
       "detail": {
         "x_eau": 0.9788772559276595,
         "J_par_mol_eau": 52.92330642946861,
@@ -277,6 +285,7 @@
       "formule": "C_saumure = C_alim/(1−Y) ;  bilan salin fermé",
       "resultat": "Y = 0,45 → 63.6 g/kg (1.82×) · 1.22 m³ rejetés par m³ produit · résidu 0.00e+00",
       "statut": "OPÉRATIONNEL",
+      "limite": "résidu nul : le bilan salin se referme sur sa propre écriture en concentrations, volumes additifs et densité marine commune ; rien ici ne dit qu'une membrane atteigne Y = 0,45 sur une eau de mer réelle",
       "detail": {
         "table": [
           {
@@ -318,6 +327,7 @@
       "formule": "e_s(Magnus) = 6,1094·exp(17,625·t/(t+243,04)) ;  d ln e/dT = L/(R_v·T²)",
       "resultat": "25 °C : Magnus 31.617 hPa, Clausius 31.002 hPa · écart 1.95 % · évaporer 1 m³ coûte 676.3 kWh",
       "statut": "OPÉRATIONNEL",
+      "limite": "l'accord des deux formules compare deux paramétrisations déclarées — Magnus ajustée, Clausius–Clapeyron intégrée avec une chaleur latente tenue pour constante : il ne dit rien du vent, de la salinité ni de l'humidité réelle d'une parcelle d'air",
       "detail": {
         "serie_magnus": [
           {
@@ -363,6 +373,7 @@
       "formule": "P_terre = ET_terre + R ;  P_océan + R = ET_océan",
       "resultat": "119 000 = 72 000 + 47 000 km³/an · 799 mm/an sur les terres émergées · 1029 mm/an sur la planète",
       "statut": "SIMULÉ",
+      "limite": "le zéro de C11 est une clôture choisie : 406 000 km³/an est calé pour fermer le bilan et l'écart avec la table souvent citée reste revendiqué, non résolu ; ni année particulière, ni tendance, ni répartition régionale",
       "detail": {
         "km3_par_an": {
           "precip_terre": 119000.0,
@@ -389,6 +400,7 @@
       "formule": "V_eau = Σᵢ (L/kg)ᵢ × mᵢ ;  mᵢ en kg par personne et par an",
       "resultat": "bœuf/tomate = 60× · régime déclaré ≈ 2201 L/j contre 150 L/j au robinet",
       "statut": "SIMULÉ",
+      "limite": "les L/kg et les kg/personne/an sont des chiffres déclarés d'ordre de grandeur, très dépendants du pays et du climat : le ratio bœuf/tomate oppose deux valeurs de table, et le total suppose le régime à huit lignes exactement consommé",
       "detail": {
         "litres_par_kg": {
           "blé": 1500.0,
@@ -427,6 +439,7 @@
       "formule": "S (g/kg) ≈ 0,64 × EC (dS/m)",
       "resultat": "35 g/kg → 54.7 dS/m = 5.47 S/m · seuil potable à 1.56 dS/m",
       "statut": "SIMULÉ",
+      "limite": "le facteur 0,64 est une calibration déclarée pour une composition ionique marine moyenne à température de référence : la conductivité bouge avec la température et avec la nature des ions ; C13 ne vérifie que la réciprocité de la division",
       "detail": {
         "facteur_declare": 0.64,
         "EC_eau_de_mer_dS_m": 54.6875,
@@ -445,6 +458,7 @@
       "formule": "E = ρ·g·H·V ;  même membre que le dossier électricité",
       "resultat": "1 km³ sous 100 m = 272.4 GWh = 0.2724 TWh · décharge en 8 h = 34.1 GW · 0.272 Wh/kg d'eau",
       "statut": "OPÉRATIONNEL",
+      "limite": "E = ρgHV est le potentiel d'un volume et d'une chute déclarés à la convention ρ = 1000 : ni évaporation, ni fuites, ni plage réelle de plan d'eau ; le round-trip 0,80 et les 250 Wh/kg de comparaison sont des valeurs annoncées",
       "detail": {
         "volume_m3": 1000000000.0,
         "hauteur_m": 100.0,
@@ -469,6 +483,7 @@
       "formule": "P1 ↔ borne · P2 ↔ cycles · P3 ↔ redondance · P4 ↔ dette hydrologique",
       "resultat": "4 ponts déclarés comme lectures, chacun borné par une limite",
       "statut": "SPÉCIFIÉ",
+      "limite": "quatre ponts posés comme grille de lecture, aucun calcul : chacun porte déjà sa borne dans le détail, et rien dans cette liste n'établit un lien causal entre l'eau et les piliers du noyau",
       "detail": [
         {
           "pilier": "P1 — Scellement",

@@ -65,6 +65,40 @@ BSD sur 3 courbes (L'(37a1)=0.306 = valeur LMFDB) · Hasse p≤97 · Hodge T²/C
 | Horloge | `ponts_systeme.py` | Pulsation de `horloge_noyau/` (capsule scellée, **lecture seule**) |
 | Conjecture | `conjecture_point_carre.py` | Point Carré PC-1..PC-4 : preuve par exhaustion + certificat scellé |
 | Arbre de savoir | `certificats/` | Les 7 problèmes du millénaire : énoncé formel → certificat borné → sceau |
+| Base universelle | `FONDATION/fondation_base.py` | 4 piliers · 3 couches · 18 équations : axiome posé hors matrice → registre de 14 grandeurs → prédiction gelée → confrontée aux mesures publiques NA62 (K⁺ → π⁺νν̄) |
+| Piliers rejoués | `FONDATION/OUTILS/audit_piliers.py` | Audite `resoudre()` de chaque module du dépôt contre les 4 piliers — `--tous --rigide` |
+| Chiffres | `CHIFFRES/chiffres_pi.py` | π, e, √2 par deux voies indépendantes, 108 cellules pré-déclarées avant mesure, confrontées sur domaine fini |
+| Abondance | `ABONDANCE/` | 54 équations et 54 contrôles bornés (électricité 21 · eau 15 · agriculture 18) |
+
+## Base universelle — FONDATION
+
+`FONDATION/fondation_base.py` pose 18 équations, 18 contrôles, quatre piliers
+et trois couches. Le pilier P2 BORNE exige une clause de limite écrite sur
+chaque équation ; `FONDATION/OUTILS/audit_piliers.py` rejoue ces quatre piliers
+sur n'importe quel module du dépôt, y compris ceux qui n'ont pas été écrits ici.
+
+| Couche | Ce qu'elle porte |
+|---|---|
+| **S1 MESURABLE** | les nombres : comptes, taux, intervalles — ce qu'une expérience publie |
+| **S2 REGULARITE** | les lois et les identités : ce qui se calcule sans mesure |
+| **S3 HORS_MATRICE** | la source de la régularité : posée, non dérivée, non réfutable ici |
+
+Le cas d'épreuve est le kaon rare K⁺ → π⁺νν̄ de NA62. La prédiction
+(`prediction_gel`) ne reçoit **que** théorie, exposition et acceptances : sa
+signature d'arguments est `['declares']` et son intersection avec les clés du
+comparateur est vide. Elle rend 10,0119 événements attendus sur le domaine
+2016-2018 contre 12,97 publiés (écart +0,7166 σ), 3,9852 σ de signification
+Li-Ma contre 3,3975 publiés, et un `z` de désaccord au modèle standard dans
+[1,3340 ; 1,4546] contre 1,7 déclaré par la collaboration.
+
+Ce dernier point est un **désaccord de méthode assumé**, pas une erreur
+corrigée : l'addition en quadrature est nôtre, NA62 ne la déclare pas. Aucun
+de ces nombres ne confirme ni n'infirmé l'axiome, et le dossier l'écrit dans
+la limite de chaque équation. Les sources publiques sont arXiv:1503.02693
+(BR du modèle standard), arXiv:2103.15389, arXiv:2412.12015, arXiv:2605.02415
+et le communiqué CERN du 2024-09-25 ; la vidéo d'amorce n'a fourni **aucun**
+chiffre, aucune citation et aucun minutage (0 chapitre public, transcript de
+0 octet) — voir `FONDATION/SOURCES_ET_PREDECESSEURS.md`.
 
 ## Circuits canoniques
 
@@ -113,14 +147,28 @@ complet sous CAO + PDK propriétaire + sign-off DRC/LVS fonderie.
 ## Tests
 
 ```bash
-py -m unittest tests.test_emulateur -v
+py -m unittest tests.test_emulateur -v                           # 53 tests
+py -m unittest horloge_noyau.tests.test_horloge_noyau_complet     # 10 tests
+cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
+    tests.test_eau_abondance tests.test_agriculture_abondance     # 107 tests
+cd CHIFFRES && py -m unittest tests.test_chiffres                  # 30 tests
+cd FONDATION && py -m unittest tests.test_fondation                # 45 tests
+py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide             # 5 modules CONFORME
 ```
 
-47 tests : états, portes, permutations, intrication, Born, bruit
+53 tests : états, portes, permutations, intrication, Born, bruit
 (trajectoire + Kraus), métriques, QASM, rendu, DJ/téléportation/QPE,
 VQE (borne variationnelle vérifiée), Shor ([3,5]), TLV GDSII, DRC,
-ZNE, Steane, transducteur, Point Carré (PC-1..PC-4) et l'arbre des
-7 problèmes (octaèdre χ=2, Hasse, Hodge, gap spectral, Navier 2D, RH≤200).
+ZNE, Steane, transducteur, Point Carré (PC-1..PC-4), l'arbre des
+7 problèmes (octaèdre χ=2, Hasse, Hodge, gap spectral, Navier 2D, RH≤200)
+et le spectre hermitien complexe de la matrice densité.
+
+**0 ignoré, et plus rien d'extérieur à l'archive.** Les deux ponts
+(Steane, transducteur) se chargent depuis `moteur/` et la capsule
+`horloge_noyau` depuis `bibliotheques/` : un `ASTRO-Q°ODE_SYSTEME`
+voisin n'est plus requis. 245 tests au total, tous verts — et les 89
+équations du parc (ABONDANCE 54, CHIFFRES 17, FONDATION 18) portent
+chacune sa clause de limite, contrôlée par le même audit.
 
 ## Statut honnête
 
@@ -131,3 +179,11 @@ le modèle de bruit de capacité de code, pas des mesures de laboratoire.
 Le die :5030 et le canal SCPI :5025 sont des interfaces réseau locales —
 sans matériel branché, rien de physique ne se produit. Le .gds n'est pas
 un masque fabricable.
+
+Les trois dossiers d'équations ne prouvent rien d'universel. ABONDANCE calcule
+des régularités finies et les confronte ; CHIFFRES annonce 108 cellules avant
+mesure puis constate un verdict de **CONTENU** — l'absence d'un rejet sur
+n = 10⁶ chiffres n'établit pas que π est normal, et un résultat discordant
+n'aurait pas prouvé le contraire ; FONDATION pose un axiome hors matrice qui
+ne fournit **aucun** nombre et ne livre que des bornes. Chaque équation porte
+sa clause de limite, lue par `audit_piliers.py`.

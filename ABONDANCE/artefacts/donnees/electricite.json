@@ -57,6 +57,7 @@
       "formule": "F = q₁q₂/(4π ε₀ r²) ;  k = 1/(4πε₀) = μ₀c²/4π ;  1 C = 1/e",
       "resultat": "k = 8.9876 × 10^9 N·m²/C² · 1 C = 6.2415 × 10^18 e · 2 × 1 C à 1 m : 8.9876 × 10^9 N",
       "statut": "OPÉRATIONNEL",
+      "limite": "l'accord des deux écritures de k éprouve la cohérence des constantes déclarées, non un équilibre de forces mesuré ; deux charges de 1 C tenues à 1 m sont une expérience de pensée : aucun électromètre n'a pesé ce newton",
       "detail": {
         "ke_m2_c2": 8987551792.261171,
         "ke_par_mu0_c2": 8987551792.260782,
@@ -74,6 +75,7 @@
       "formule": "E = U/d ;  C = ε₀S/d ;  W = ½CU² = ½QU = ½ε₀E²·(Sd)",
       "resultat": "C(1 m², 1 mm) = 0.000000008854 F · W à 1 kV = 0.0044 J",
       "statut": "OPÉRATIONNEL",
+      "limite": "C = ε₀S/d s'écrit pour des armatures infinies : aucun condensateur réel n'échappe aux effets de bord, et le diélectrique est absent d'ici ; 1 m², 1 mm, 1 kV sont des entrées choisies pour faire parler la formule",
       "detail": {
         "capacite_F": 8.854187812800001e-09,
         "charge_C": 8.8541878128e-06,
@@ -93,6 +95,7 @@
       "formule": "R = ρ·ℓ/S ;  σ = 1/ρ ;  v_dérive = I/(n·e·S)",
       "resultat": "1 km sous 10 mm² : Cu 1.680 Ω, Al 2.650 Ω · dérive 0.3671 mm/s",
       "statut": "OPÉRATIONNEL",
+      "limite": "résistivités et densité d'électrons libres se lisent dans une table déclarée à 20 °C : un conducteur réel varie en température et en état métallurgique ; la vitesse de dérive est une moyenne de modèle, personne n'a suivi les électrons sur un mètre",
       "detail": {
         "longueur_m": 1000.0,
         "section_m2": 1e-05,
@@ -116,6 +119,7 @@
       "formule": "P = UI = I²R = U²/R ;  1 kW·h = 3,6 MJ",
       "resultat": "230 V × 10 A = 2 300.0 W · trois écritures à 0.00e+00 W près",
       "statut": "OPÉRATIONNEL",
+      "limite": "les trois écritures coïncident parce que U, I et R ont été choisis pour satisfaire R = U/I : identité algébrique pour charge purement résistive, muette sur tout appareil branché ; les 2 500 A et 0,05 Ω des pertes ligne sont des scénarios écrits dans la fonction",
       "detail": {
         "U_V": 230.0,
         "I_A": 10.0,
@@ -137,6 +141,7 @@
       "formule": "ΣI(nœud) = 0 ;  ΣU(maille) = 0 ;  résolution en rationnels",
       "resultat": "I = 0.005455 A · nœud 0 · bilan 0 (exact, sans arrondi)",
       "statut": "OPÉRATIONNEL",
+      "limite": "les deux zéros sont une clôture du modèle résolu en fractions exactes : la source de 12 V est déclarée sans résistance interne, les capacités parasites n'existent pas ici ; l'arithmétique garantit la résolution, pas l'existence d'un montage",
       "detail": {
         "I_total_A": 0.005454545454545455,
         "I2_A": 0.0032727272727272726,
@@ -161,6 +166,7 @@
       "formule": "B = μ₀I/(2πr) ;  F/ℓ = μ₀I₁I₂/(2πd)",
       "resultat": "B(1 A, 1 m) = 2.00000000109 × 10^-7 T · écart relatif à 2·10⁻⁷ = 5.44 × 10^-10",
       "statut": "OPÉRATIONNEL",
+      "limite": "le fil infini est une fiction de calcul : une ligne réelle a un retour et une fin ; l'écart à 2·10⁻⁷ T mesure la dérive de μ₀ après la réforme de 2019, non le champ produit par un ampère quelconque",
       "detail": {
         "B_T": 2.0000000010887514e-07,
         "B_attendu_avant_2019_T": 2e-07,
@@ -178,6 +184,7 @@
       "formule": "ℰ = −N·dΦ/dt ;  Φ = B·S·cos(ωt) ;  ℰ_rms = N·B·S·ω/√2",
       "resultat": "100 spires à 50 Hz : crête 314.16 V, rms 222.14 V",
       "statut": "OPÉRATIONNEL",
+      "limite": "flux sinusoïdal déclaré, 1 T sans saturation, 100 spires et 0,01 m² choisies : l'accord numérique/analytique teste une chaîne de dérivation, pas une machine ; le rapport au pic ne vaut que pour la sinusoïde pure qu'aucun alternateur réel ne fournit",
       "detail": {
         "omega_rad_s": 314.1592653589793,
         "f_em_pic_V": 314.1592653589793,
@@ -197,6 +204,7 @@
       "formule": "L = μ₀N²S/ℓ ;  W = ½LI² ;  u_B = B²/(2μ₀) ;  u_E = ½ε₀E²",
       "resultat": "L = 0.000314159 H · W = 0.000628 J · u_B/u_E = 1.42 × 10^1",
       "statut": "OPÉRATIONNEL",
+      "limite": "le solénoïde long ignore fuites et circuit magnétique dans une géométrie déclarée ; u_B/u_E compare deux intensités posées sans lien, 2 A et 10⁶ V/m : confrontation de formules, non de deux états d'un même composant",
       "detail": {
         "L_H": 0.00031415926553,
         "energie_J": 0.00062831853106,
@@ -214,6 +222,7 @@
       "formule": "c = 1/√(μ₀ε₀) ;  Z₀ = √(μ₀/ε₀) = μ₀c ;  E/B = c",
       "resultat": "c calculée = 2.997924580 × 10^8 m/s · Z₀ = 376.7303 Ω",
       "statut": "OPÉRATIONNEL",
+      "limite": "depuis 2019 ε₀ se déduit de μ₀ et de c : 1/√(μ₀ε₀) = c est une identité du SI vérifiée par les déclarations, non par la lumière ; l'onde plane dans le vide ne dit rien d'une onde guidée par une ligne réelle",
       "detail": {
         "v_calculee_m_s": 299792458.0000065,
         "v_exacte_c": 299792458.0,
@@ -232,6 +241,7 @@
       "formule": "U_rms = Û/√2 ;  P = UI·cos φ ;  S² = P² + Q²",
       "resultat": "325 V crête → 229.81 V · cos 60° = 0.500000 · P = 1149.05 W sur 2298.10 VA",
       "statut": "OPÉRATIONNEL",
+      "limite": "π ici contrôle une intégration numérique de sin², pas une période relevée en poste ; le triangle des puissances se ferme pour tout φ sur une sinusoïde pure déclarée, et 60° est choisi — aucune charge industrielle ne fournit ce déphasage",
       "detail": {
         "aire_sin2_sur_periode": 3.1415926535897936,
         "aire_attendue_pi": 3.141592653589793,
@@ -253,6 +263,7 @@
       "formule": "U_ligne = √3·U_phase ;  Σ phasores = 0 ;  P = √3·U_L·I_L·cos φ",
       "resultat": "√3 = 1.732050807569 · somme = 3.1e-16 · 230 V → 398.37 V",
       "statut": "OPÉRATIONNEL",
+      "limite": "la somme des phasores ne s'annule que pour trois phases rigoureusement égales et décalées de 120° exactement : le déséquilibre d'un réseau réel reste hors modèle ; √3 est une identité trigonométrique et 230 V une tension de lecture, pas relevée ici",
       "detail": {
         "somme_phasores": 3.1401849173675503e-16,
         "U_composee_V": 398.3716857408417,
@@ -271,6 +282,7 @@
       "formule": "U₂/U₁ = N₂/N₁ ;  I₂/I₁ = N₁/N₂ ;  S = UI conservée",
       "resultat": "20 kV → 400 V : I₂ = 1000.00 A · rendement 97.37 % avec pertes déclarées",
       "statut": "SIMULÉ",
+      "limite": "rapport de spires et conservation de S sont des propriétés du transformateur idéal : pas de courant aimantant, pas de fuites ; le rendement divise par des pertes déclarées (0,01 Ω d'enroulement, 800 W de fer) — un scénario de table, pas un essai de banc",
       "detail": {
         "rapport_spires": 50.0,
         "rapport_tensions": 50.0,
@@ -291,6 +303,7 @@
       "formule": "P_pertes = (P/U)²·R  ⇒  pertes ∝ 1/U²",
       "resultat": "1 GW : 400 V → 3.12 × 10^11 W · 400 kV → 3.12 × 10^5 W · facteur 1.0 × 10^6",
       "statut": "OPÉRATIONNEL",
+      "limite": "la loi en 1/U² est une identité du modèle pour une résistance unique déclarée de 0,05 Ω quel que soit le trajet : ni effet couronne, ni réactif, ni température ; le facteur 10⁶ confronte deux scénarios arithmétiques, non deux réseaux existants",
       "detail": {
         "puissance_W": 1000000000.0,
         "resistance_ohm": 0.05,
@@ -343,6 +356,7 @@
       "formule": "P = ρ·g·Q·H·η ;  e = ρ·g·H (par m³)",
       "resultat": "100 m, 10 m³/s, η = 0,90 → 8.83 MW · 0.2724 kWh/m³",
       "statut": "OPÉRATIONNEL",
+      "limite": "P = ρgQHη vaut pour une chute d'eau posée une fois pour toutes : 100 m, 10 m³/s et surtout η = 0,90 sont des entrées déclarées ; ni turbine, ni conduite forcée, ni étiage n'entrent ici, et le module ne promet aucune centrale",
       "detail": {
         "P_W": 8825985.0,
         "P_MW": 8.825985,
@@ -360,6 +374,7 @@
       "formule": "C_P(a) = 4a(1−a)² ;  a* = 1/3 ;  C_P,max = 16/27",
       "resultat": "C_P,max = 0.592592593 · 16/27 = 0.592592593 · a* = 0.333333322",
       "statut": "OPÉRATIONNEL",
+      "limite": "le disque actuator est un modèle déclaré : fluide incompressible, poussée uniforme, sillage sans rotation ; 16/27 borne ce modèle seulement — une machine réelle est sous 16/27, et cette équation ne dit rien de la distance",
       "detail": {
         "cp_max": 0.5925925925925921,
         "a_max_bissection": 0.33333332246245906,
@@ -378,6 +393,7 @@
       "formule": "η ≤ 1 − T_froid/T_source ;  rejet = T_froid/T_source",
       "resultat": "800 K / 300 K → 62.50 % · meilleur rendement déclaré à 97.6 % du plafond",
       "statut": "OPÉRATIONNEL",
+      "limite": "Carnot borne les machines réversibles entre deux températures choisies comme entrées, 800 K et 300 K : le rapport aux quatre rendements de la table compare des déclarations à un théorème et ne mesure aucune chaufferie",
       "detail": {
         "T_source_K": 800.0,
         "T_froid_K": 300.0,
@@ -401,6 +417,7 @@
       "formule": "λ_seuil = hc/E_g ;  perte = (E_photon − E_g)/E_photon",
       "resultat": "Si 1,12 eV → 1107.0 nm · un photon à 2E_g perd 50 %",
       "statut": "OPÉRATIONNEL",
+      "limite": "les longueurs d'onde seuil convertissent des gaps déclarés pour des cristaux parfaits à 300 K : ni impuretés, ni désordre de bande ; la thermalisation est comptée photon par photon sans spectre ni recombinaison, et les 33,7 % de littérature sont rappelés, non démontrés",
       "detail": {
         "constante_eV_nm": 1239.8419843320025,
         "lambda_seuil_si_nm": 1107.001771725002,
@@ -421,6 +438,7 @@
       "formule": "e = U·capacité (Wh/kg) ;  Wh = J/3600 ;  gravitaire = g·h",
       "resultat": "LiFePO₄ actif 586 Wh/kg · H₂ LHV 33.33 kWh/kg · 100 m d'eau 0.272 Wh/kg",
       "statut": "SIMULÉ",
+      "limite": "l'échelle classe des matériaux actifs à leur capacité théorique : collecteurs, électrolyte, boîtier, température et vieillissement ne pèsent pas ici ; les 250 Wh/kg de cellule comme les 35 du plomb sont des ordres de grandeur déclarés, sans promesse sur un pack commercial",
       "detail": {
         "Wh_par_kg": {
           "LiFePO4 materiau actif (theorique)": 586.5,
@@ -465,6 +483,7 @@
       "formule": "2Δ(0)/(k_B·T_c) ≈ 3,53 (déclaré) ;  R = 0 ⇒ pertes ohmiques nulles",
       "resultat": "NbTi Δ = 1.399 meV · rapport recalculé 3.530 · 1 km de Cu à 50 A : 4200.00 W",
       "statut": "SIMULÉ",
+      "limite": "le rapport 3,53 est une valeur de modèle BCS déclarée puis reproduite par calcul : C19 vérifie que l'arithmétique rend ce qu'on lui a prêté ; le zéro des pertes ohmiques est la définition de l'état supraconducteur, non une performance relevée, et aucun cryostat ne vient consommer le gain",
       "detail": {
         "k_B_eV_K": 8.617333262145179e-05,
         "gap_nbti_meV": 1.399282575107134,
@@ -490,6 +509,7 @@
       "formule": "Φ = L☉/(4π·AU²) ;  P interceptée = Φ·πR⊕² ;  S = P/(η·Φ)",
       "resultat": "Φ = 1361.17 W/m² · interceptée = 1.736 × 10^17 W = 9135× la consommation déclarée",
       "statut": "SIMULÉ",
+      "limite": "L☉, rayon terrestre, 1,9·10¹³ W de consommation et 22 % de rendement sont quatre déclarations : le rapport est une confrontation de tables, pas un gisement ; ni la nuit, ni les nuages, ni le foncier, ni les calendriers n'entrent dans une surface calculée en soleil de midi",
       "detail": {
         "irradiance_hors_atmosphere_W_m2": 1361.1664654085753,
         "constante_solaire_declaree_W_m2": 1361.0,
@@ -512,6 +532,7 @@
       "formule": "P1 ↔ contrôle · P2 ↔ 50 Hz · P3 ↔ redondance N-1 · P4 ↔ comptage",
       "resultat": "4 ponts déclarés comme analogies de lecture, chacun avec sa limite",
       "statut": "SPÉCIFIÉ",
+      "limite": "ces quatre lignes rangent la lecture, n'affermissent aucune identité : le 50 Hz n'est pas une horloge quantique et la redondance réseau n'est pas un code correcteur sur les kilowatts ; chaque pont porte déjà sa limite interne, celle-ci rappelle qu'aucun pont n'est un résultat",
       "detail": [
         {
           "pilier": "P1 — Scellement (preuve attachée à la valeur)",

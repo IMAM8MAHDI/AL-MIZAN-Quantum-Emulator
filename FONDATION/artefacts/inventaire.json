@@ -1,0 +1,55 @@
+{
+  "imports_parc": {
+    "ABONDANCE": {
+      "fichiers": 8,
+      "tiers": []
+    },
+    "CHIFFRES": {
+      "fichiers": 3,
+      "tiers": []
+    },
+    "FONDATION": {
+      "fichiers": 2,
+      "tiers": []
+    },
+    "bibliotheques": {
+      "fichiers": 6,
+      "tiers": []
+    },
+    "code": {
+      "fichiers": 18,
+      "tiers": []
+    }
+  },
+  "parc": {
+    "ABONDANCE": {
+      "controles": 54,
+      "equations": 54,
+      "modules": [
+        "agriculture_abondance.py",
+        "eau_abondance.py",
+        "electricite_abondance.py"
+      ],
+      "present": true,
+      "tests": 107
+    },
+    "CHIFFRES": {
+      "controles": 17,
+      "equations": 17,
+      "modules": [
+        "chiffres_pi.py"
+      ],
+      "present": true,
+      "tests": 30
+    },
+    "FONDATION": {
+      "controles": 18,
+      "equations": 18,
+      "modules": [
+        "fondation_base.py"
+      ],
+      "present": true,
+      "tests": 45
+    }
+  }
+}

@@ -1,0 +1,936 @@
+{
+  "calibrage": {
+    "auto_local_attendu_a_n_sim": 4.49997,
+    "kappa_occulence": {
+      "4": {
+        "kappa": 0.8099203992663775,
+        "rapport_sqrt_n": 0.055158337440595125,
+        "sigma_independant": 0.6737120269296989,
+        "sigma_simule": 0.6063110301871748
+      },
+      "5": {
+        "kappa": 0.5393530082484671,
+        "rapport_sqrt_n": 0.9326857108404576,
+        "sigma_independant": 152.49510161162365,
+        "sigma_simule": 111.99340432840376
+      }
+    },
+    "kappa_runs": {
+      "1": 0.42528625511795654,
+      "2": 0.8064743382150124,
+      "3": 0.9361645429190038,
+      "4": 0.988425930126572,
+      "5": 0.9960020165933361
+    },
+    "note": "κ ≤ 1 : l'indépendance surestime la variance ; la bande reste prudente",
+    "rapport_loi_sqrt_n": {
+      "auto_local_total": 0.7854720599272417,
+      "runs": {
+        "1": 1.1186645482583824,
+        "2": 1.1098099099364325,
+        "3": 1.1328148564360567,
+        "4": 0.9285242659538971,
+        "5": 1.0065393074223283
+      },
+      "testes": 6
+    }
+  },
+  "confrontation": {
+    "cellules": [
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "pi.frequence.0",
+        "obtenu": 99959,
+        "p_bilatere": 0.8912942784020708,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "pi.frequence.1",
+        "obtenu": 99758,
+        "p_bilatere": 0.41985855348421286,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "pi.frequence.2",
+        "obtenu": 100026,
+        "p_bilatere": 0.930936472836679,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "pi.frequence.3",
+        "obtenu": 100229,
+        "p_bilatere": 0.44526462753435625,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "pi.frequence.4",
+        "obtenu": 100230,
+        "p_bilatere": 0.4432797270885092,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "pi.frequence.5",
+        "obtenu": 100359,
+        "p_bilatere": 0.23143650434179758,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "pi.frequence.6",
+        "obtenu": 99548,
+        "p_bilatere": 0.1318961197548918,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "pi.frequence.7",
+        "obtenu": 99800,
+        "p_bilatere": 0.5049850750938459,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "pi.frequence.8",
+        "obtenu": 99985,
+        "p_bilatere": 0.960122388323255,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "pi.frequence.9",
+        "obtenu": 100106,
+        "p_bilatere": 0.7238385586652081,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 9.0,
+        "methode": "intervalle Wilson–Hilferty",
+        "nom": "pi.chi2",
+        "obtenu": 5.50908,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "pi.auto_local.k1",
+        "obtenu": 1,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "pi.auto_local.k2",
+        "obtenu": 0,
+        "p_bilatere": 0.8131393194811982,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "pi.auto_local.k3",
+        "obtenu": 0,
+        "p_bilatere": 0.8131393194811982,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "pi.auto_local.k4",
+        "obtenu": 0,
+        "p_bilatere": 0.8131393194811982,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "pi.auto_local.k5",
+        "obtenu": 2,
+        "p_bilatere": 0.4550352929857233,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.899996,
+        "methode": "compte",
+        "nom": "pi.auto_local.k6",
+        "obtenu": 0,
+        "p_bilatere": 0.8131425720449813,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 5.399996,
+        "methode": "compte",
+        "nom": "pi.auto_local.total",
+        "obtenu": 3,
+        "p_bilatere": 0.42658298513392634,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 810000.18,
+        "methode": "compte",
+        "nom": "pi.run1",
+        "obtenu": 809776,
+        "p_bilatere": 0.8032920454314699,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 80999.937,
+        "methode": "compte",
+        "nom": "pi.run2",
+        "obtenu": 81256,
+        "p_bilatere": 0.3682724595726957,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 8099.9856,
+        "methode": "compte",
+        "nom": "pi.run3",
+        "obtenu": 7976,
+        "p_bilatere": 0.16832095088363774,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 809.99775,
+        "methode": "compte",
+        "nom": "pi.run4",
+        "obtenu": 830,
+        "p_bilatere": 0.4821751604319587,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 80.999694,
+        "methode": "compte",
+        "nom": "pi.run5",
+        "obtenu": 77,
+        "p_bilatere": 0.7091303167430223,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 8.0999613,
+        "methode": "compte",
+        "nom": "pi.run6",
+        "obtenu": 12,
+        "p_bilatere": 0.23855014996609247,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.80999532,
+        "methode": "compte",
+        "nom": "pi.run7",
+        "obtenu": 1,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 10.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "pi.occulence.k1",
+        "obtenu": 10,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "pi.occulence.k2",
+        "obtenu": 100,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 1000.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "pi.occulence.k3",
+        "obtenu": 1000,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 10000.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "pi.occulence.k4",
+        "obtenu": 10000,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 99995.46005242407,
+        "methode": "compte, variance calibrée κ",
+        "nom": "pi.occulence.k5",
+        "obtenu": 99992,
+        "p_bilatere": 0.02702109518929843,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 632118.9033665506,
+        "methode": "compte, variance calibrée κ",
+        "nom": "pi.occulence.k6",
+        "obtenu": 631548,
+        "p_bilatere": 0.10695556810414591,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "pi.attente.12345",
+        "obtenu": 0.3916606949214183,
+        "p_bilatere": 0.7833213898428366,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "pi.attente.54321",
+        "obtenu": 0.4738890785625942,
+        "p_bilatere": 0.9477781571251884,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "pi.attente.00000",
+        "obtenu": 0.16082908180843847,
+        "p_bilatere": 0.32165816361687694,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "pi.attente.999999",
+        "obtenu": 0.0007617101324596254,
+        "p_bilatere": 0.0015234202649192508,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 9.999410853478441e-05,
+        "methode": "binaire",
+        "nom": "pi.attente.0123456789",
+        "obtenu": "absente",
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "e.frequence.0",
+        "obtenu": 99425,
+        "p_bilatere": 0.05528029258602082,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "e.frequence.1",
+        "obtenu": 100132,
+        "p_bilatere": 0.6599371073211873,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "e.frequence.2",
+        "obtenu": 99845,
+        "p_bilatere": 0.6053888688805218,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "e.frequence.3",
+        "obtenu": 100228,
+        "p_bilatere": 0.4472545848751989,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "e.frequence.4",
+        "obtenu": 100389,
+        "p_bilatere": 0.19474590323244578,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "e.frequence.5",
+        "obtenu": 100087,
+        "p_bilatere": 0.7718162376022454,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "e.frequence.6",
+        "obtenu": 100479,
+        "p_bilatere": 0.11034002969170759,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "e.frequence.7",
+        "obtenu": 99910,
+        "p_bilatere": 0.7641771556220948,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "e.frequence.8",
+        "obtenu": 99814,
+        "p_bilatere": 0.5352577869379662,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "e.frequence.9",
+        "obtenu": 99691,
+        "p_bilatere": 0.3030100055766875,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 9.0,
+        "methode": "intervalle Wilson–Hilferty",
+        "nom": "e.chi2",
+        "obtenu": 9.50566,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "e.auto_local.k1",
+        "obtenu": 0,
+        "p_bilatere": 0.8131393194811982,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "e.auto_local.k2",
+        "obtenu": 0,
+        "p_bilatere": 0.8131393194811982,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "e.auto_local.k3",
+        "obtenu": 1,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "e.auto_local.k4",
+        "obtenu": 1,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "e.auto_local.k5",
+        "obtenu": 1,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.899996,
+        "methode": "compte",
+        "nom": "e.auto_local.k6",
+        "obtenu": 2,
+        "p_bilatere": 0.45503236568482364,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 5.399996,
+        "methode": "compte",
+        "nom": "e.auto_local.total",
+        "obtenu": 5,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 810000.18,
+        "methode": "compte",
+        "nom": "e.run1",
+        "obtenu": 810861,
+        "p_bilatere": 0.3388365709563167,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 80999.937,
+        "methode": "compte",
+        "nom": "e.run2",
+        "obtenu": 80796,
+        "p_bilatere": 0.47364448788306834,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 8099.9856,
+        "methode": "compte",
+        "nom": "e.run3",
+        "obtenu": 7978,
+        "p_bilatere": 0.17529118125747578,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 809.99775,
+        "methode": "compte",
+        "nom": "e.run4",
+        "obtenu": 788,
+        "p_bilatere": 0.4395678203765806,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 80.999694,
+        "methode": "compte",
+        "nom": "e.run5",
+        "obtenu": 82,
+        "p_bilatere": 0.9409634709266337,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 8.0999613,
+        "methode": "compte",
+        "nom": "e.run6",
+        "obtenu": 6,
+        "p_bilatere": 0.6026366668863318,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.80999532,
+        "methode": "compte",
+        "nom": "e.run7",
+        "obtenu": 1,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 10.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "e.occulence.k1",
+        "obtenu": 10,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "e.occulence.k2",
+        "obtenu": 100,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 1000.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "e.occulence.k3",
+        "obtenu": 1000,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 10000.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "e.occulence.k4",
+        "obtenu": 10000,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 99995.46005242407,
+        "methode": "compte, variance calibrée κ",
+        "nom": "e.occulence.k5",
+        "obtenu": 99999,
+        "p_bilatere": 0.02368063635241622,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 632118.9033665506,
+        "methode": "compte, variance calibrée κ",
+        "nom": "e.occulence.k6",
+        "obtenu": 632318,
+        "p_bilatere": 0.5739944028704687,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "e.attente.12345",
+        "obtenu": 0.8106443565310699,
+        "p_bilatere": 0.37871128693786016,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "e.attente.54321",
+        "obtenu": 0.7505824659161608,
+        "p_bilatere": 0.4988350681676783,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "e.attente.00000",
+        "obtenu": 0.590559819131905,
+        "p_bilatere": 0.8188803617361899,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "e.attente.999999",
+        "obtenu": 0.31910024899688916,
+        "p_bilatere": 0.6382004979937783,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 9.999410853478441e-05,
+        "methode": "binaire",
+        "nom": "e.attente.0123456789",
+        "obtenu": "absente",
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "racine2.frequence.0",
+        "obtenu": 99814,
+        "p_bilatere": 0.5352577869379662,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "racine2.frequence.1",
+        "obtenu": 98924,
+        "p_bilatere": 0.00033493202293875026,
+        "verdict": "EXCLUE"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "racine2.frequence.2",
+        "obtenu": 100436,
+        "p_bilatere": 0.1461312265913425,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "racine2.frequence.3",
+        "obtenu": 100191,
+        "p_bilatere": 0.5243419903252762,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "racine2.frequence.4",
+        "obtenu": 100024,
+        "p_bilatere": 0.9362372559720252,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "racine2.frequence.5",
+        "obtenu": 100155,
+        "p_bilatere": 0.6053888688805218,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "racine2.frequence.6",
+        "obtenu": 99886,
+        "p_bilatere": 0.7039454151516744,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "racine2.frequence.7",
+        "obtenu": 100008,
+        "p_bilatere": 0.9787255998188599,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "racine2.frequence.8",
+        "obtenu": 100441,
+        "p_bilatere": 0.14156175398337115,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100000.0,
+        "methode": "frequence",
+        "nom": "racine2.frequence.9",
+        "obtenu": 100121,
+        "p_bilatere": 0.6867030230816304,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 9.0,
+        "methode": "intervalle Wilson–Hilferty",
+        "nom": "racine2.chi2",
+        "obtenu": 16.65732,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "racine2.auto_local.k1",
+        "obtenu": 0,
+        "p_bilatere": 0.8131393194811982,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "racine2.auto_local.k2",
+        "obtenu": 0,
+        "p_bilatere": 0.8131393194811982,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "racine2.auto_local.k3",
+        "obtenu": 1,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "racine2.auto_local.k4",
+        "obtenu": 0,
+        "p_bilatere": 0.8131393194811982,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.9,
+        "methode": "compte",
+        "nom": "racine2.auto_local.k5",
+        "obtenu": 0,
+        "p_bilatere": 0.8131393194811982,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.899996,
+        "methode": "compte",
+        "nom": "racine2.auto_local.k6",
+        "obtenu": 2,
+        "p_bilatere": 0.45503236568482364,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 5.399996,
+        "methode": "compte",
+        "nom": "racine2.auto_local.total",
+        "obtenu": 3,
+        "p_bilatere": 0.42658298513392634,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 810000.18,
+        "methode": "compte",
+        "nom": "racine2.run1",
+        "obtenu": 809717,
+        "p_bilatere": 0.7530316565667691,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 80999.937,
+        "methode": "compte",
+        "nom": "racine2.run2",
+        "obtenu": 81083,
+        "p_bilatere": 0.7703984497995032,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 8099.9856,
+        "methode": "compte",
+        "nom": "racine2.run3",
+        "obtenu": 8112,
+        "p_bilatere": 0.8938031424760459,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 809.99775,
+        "methode": "compte",
+        "nom": "racine2.run4",
+        "obtenu": 828,
+        "p_bilatere": 0.5270370401339175,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 80.999694,
+        "methode": "compte",
+        "nom": "racine2.run5",
+        "obtenu": 79,
+        "p_bilatere": 0.8819108350061319,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 8.0999613,
+        "methode": "compte",
+        "nom": "racine2.run6",
+        "obtenu": 10,
+        "p_bilatere": 0.5917070596174889,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.80999532,
+        "methode": "compte",
+        "nom": "racine2.run7",
+        "obtenu": 2,
+        "p_bilatere": 0.3896104275388894,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 10.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "racine2.occulence.k1",
+        "obtenu": 10,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 100.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "racine2.occulence.k2",
+        "obtenu": 100,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 1000.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "racine2.occulence.k3",
+        "obtenu": 1000,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 10000.0,
+        "methode": "compte, variance calibrée κ",
+        "nom": "racine2.occulence.k4",
+        "obtenu": 10000,
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 99995.46005242407,
+        "methode": "compte, variance calibrée κ",
+        "nom": "racine2.occulence.k5",
+        "obtenu": 99998,
+        "p_bilatere": 0.10454617394959505,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 632118.9033665506,
+        "methode": "compte, variance calibrée κ",
+        "nom": "racine2.occulence.k6",
+        "obtenu": 632084,
+        "p_bilatere": 0.9214917849454854,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "racine2.attente.12345",
+        "obtenu": 0.4485383475658693,
+        "p_bilatere": 0.8970766951317386,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "racine2.attente.54321",
+        "obtenu": 0.22790779013319928,
+        "p_bilatere": 0.45581558026639857,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.5,
+        "methode": "position",
+        "nom": "racine2.attente.00000",
+        "obtenu": 0.6665043611527014,
+        "p_bilatere": 0.6669912776945972,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 0.6321189033771292,
+        "methode": "binaire",
+        "nom": "racine2.attente.999999",
+        "obtenu": "absente",
+        "p_bilatere": 0.7357621932457417,
+        "verdict": "CONTENU"
+      },
+      {
+        "attendu": 9.999410853478441e-05,
+        "methode": "binaire",
+        "nom": "racine2.attente.0123456789",
+        "obtenu": "absente",
+        "p_bilatere": 1.0,
+        "verdict": "CONTENU"
+      }
+    ],
+    "deviance_auto_local": {
+      "df": 18,
+      "g2": 21.035709066826094,
+      "intervalle": [
+        4.332393995802286,
+        44.60918918817599
+      ],
+      "lambda_total": 16.199988000000005,
+      "verdict": "CONTENU",
+      "x_total": 11
+    },
+    "exclues": [
+      "racine2.frequence.1"
+    ],
+    "exclues_attendues": 0.108,
+    "nombre_cellules": 108,
+    "nombre_exclues": 1,
+    "p_globale": 0.20474480713913024,
+    "verdict_global": "CONTENU"
+  },
+  "domaine": {
+    "alpha": 0.001,
+    "graine": 20261109,
+    "kmax": 6,
+    "n": 1000000,
+    "n_sim": 100000,
+    "n_sim2": 50000,
+    "repiliques": 200,
+    "rmax": 7,
+    "z_seuil": 3.2905267314918953
+  }
+}
