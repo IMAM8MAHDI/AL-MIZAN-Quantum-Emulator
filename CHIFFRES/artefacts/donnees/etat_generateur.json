@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "module": "chiffres_pi.py",
+  "equations": 17,
+  "controles_ok": 17,
+  "controles_total": 17,
+  "statuts": {
+    "OPÉRATIONNEL": 16,
+    "SPÉCIFIÉ": 1
+  },
+  "verdict_global": "CONTENU",
+  "domaine": {
+    "n": 1000000,
+    "n_sim": 100000,
+    "n_sim2": 50000,
+    "repiliques": 200,
+    "graine": 20261109,
+    "alpha": 0.001,
+    "z_seuil": 3.2905267314918953,
+    "kmax": 6,
+    "rmax": 7
+  },
+  "artefacts": [
+    "artefacts/donnees/chiffres.csv",
+    "artefacts/donnees/chiffres.json",
+    "artefacts/dossiers/chiffres.md",
+    "artefacts/figures/chiffres.svg",
+    "artefacts/figures/chiffres_ar.svg",
+    "artefacts/figures/chiffres_en.svg",
+    "artefacts/pages/chiffres.html",
+    "artefacts/pages/chiffres_ar.html",
+    "artefacts/pages/chiffres_en.html"
+  ]
+}

@@ -222,20 +222,30 @@ def _norm(x: str) -> str:
              .replace("\u2009", "").replace(" ", ""))
 
 
+def _eclater(brut: str) -> List[str]:
+    """« 0.866, 29.914 » et « √2 16.6573 » sont deux nombres, pas un seul « 216.6573 »."""
+    morceaux: List[str] = []
+    for morceau in re.split(r"[.,]\s+", brut):
+        morceaux.extend(re.split(r"\s+(?=\d*[.,]\d)", morceau))
+    return [m for m in morceaux if m]
+
+
 def nombres(texte: str) -> List[str]:
     """Nombre écrits dans un texte, virgule décimale acceptée, séparés de milliers ôtés."""
     out: List[str] = []
-    for m in re.finditer(r"\d[\d\s.,\u202f\u00a0]*", texte):
-        tok = _norm(m.group(0))
-        if not tok or tok in (",", "."):
-            continue
-        if tok.count(",") == 1 and tok.count(".") == 0:
-            tok = tok.replace(",", ".")
-        elif tok.count(",") == 1 and tok.count(".") == 1 and tok.index(",") < tok.index("."):
-            tok = tok.replace(",", "")
-        elif tok.count(",") > 1 and tok.count(".") == 0:
-            tok = tok.replace(",", ".") if len(tok.split(",")[-1]) != 3 else tok.replace(",", "")
-        out.append(tok.rstrip(".,"))
+    for brut in re.findall(r"\d[\d\s.,\u202f\u00a0]*", texte):
+        for morceau in _eclater(brut):
+            tok = _norm(morceau)
+            if not tok or tok in (",", "."):
+                continue
+            if tok.count(",") == 1 and tok.count(".") == 0:
+                tok = tok.replace(",", ".")
+            elif tok.count(",") == 1 and tok.count(".") == 1 and tok.index(",") < tok.index("."):
+                tok = tok.replace(",", "")
+            elif tok.count(",") > 1 and tok.count(".") == 0:
+                tok = (tok.replace(",", ".") if len(tok.split(",")[-1]) != 3
+                       else tok.replace(",", ""))
+            out.append(tok.rstrip(".,"))
     return out
 
 
