@@ -4,12 +4,12 @@
 <rect x="250" y="22" width="220.00" height="16" fill="#1c3550" data-libelle="fichiers de l'arbre" data-valeur="336"/>
 <text x="8" y="34" font-size="13" fill="#0f1c2b" xml:lang="fr">fichiers de l'arbre</text>
 <text x="476.00" y="34" font-size="13" fill="#1c3550">336</text>
-<rect x="250" y="52" width="133.57" height="16" fill="#2f5f86" data-libelle="couverts par le sceau" data-valeur="204"/>
+<rect x="250" y="52" width="157.14" height="16" fill="#2f5f86" data-libelle="couverts par le sceau" data-valeur="240"/>
 <text x="8" y="64" font-size="13" fill="#0f1c2b" xml:lang="fr">couverts par le sceau</text>
-<text x="389.57" y="64" font-size="13" fill="#1c3550">204</text>
-<rect x="250" y="82" width="86.43" height="16" fill="#7fb2d6" data-libelle="publiés hors du sceau" data-valeur="132"/>
+<text x="413.14" y="64" font-size="13" fill="#1c3550">240</text>
+<rect x="250" y="82" width="65.48" height="16" fill="#7fb2d6" data-libelle="publiés hors du sceau" data-valeur="100"/>
 <text x="8" y="94" font-size="13" fill="#0f1c2b" xml:lang="fr">publiés hors du sceau</text>
-<text x="342.43" y="94" font-size="13" fill="#1c3550">132</text>
+<text x="321.48" y="94" font-size="13" fill="#1c3550">100</text>
 <rect x="250" y="112" width="52.38" height="16" fill="#4d87b0" data-libelle="sources Python avec en-tête SPDX" data-valeur="80"/>
 <text x="8" y="124" font-size="13" fill="#0f1c2b" xml:lang="fr">sources Python avec en-tête SPDX</text>
 <text x="308.38" y="124" font-size="13" fill="#1c3550">80</text>
@@ -25,5 +25,5 @@
 <rect x="250" y="232" width="0.00" height="16" fill="#5c2f2f" data-libelle="artefacts précompilés livrables" data-valeur="0"/>
 <text x="8" y="244" font-size="13" fill="#0f1c2b" xml:lang="fr">artefacts précompilés livrables</text>
 <text x="256.00" y="244" font-size="13" fill="#1c3550">0</text>
-<text x="8" y="280" font-size="12" fill="#5c2f2f" xml:lang="fr">sceau : 163/204 entrées conformes, 41 en dérive — aucun verrou contractuel posé</text>
+<text x="8" y="280" font-size="12" fill="#5c2f2f" xml:lang="fr">sceau : 231/240 entrées conformes, 9 en dérive — aucun verrou contractuel posé</text>
 </svg>

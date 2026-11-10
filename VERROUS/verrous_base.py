@@ -23,8 +23,9 @@ Ce que ce module fait, dans l'ordre
      ceux qui n'en ont pas (EQ-03) ;
   4. il cherche dans les textes GNU la clause que l'avis reçu prétend voir (« usage non commercial
      uniquement ») ; le nombre rendu est ce qu'il est (EQ-04) ;
-  5. il mesure la frontière « cœur secret » : ce qui est gardé, ce qui reste hors du sceau, et si
-     les heuristiques fines sont vraiment hors du dépôt public (EQ-05) ;
+  5. il mesure la frontière « cœur secret » : ce qui est gardé, ce qui reste hors du sceau — un
+     module d'équations hors du sceau signale une dérive, jamais un choix — et si les heuristiques
+     fines sont réellement publiées (EQ-05) ;
   6. il date par le journal des commits joignables (`git log`), qui voyage avec le dépôt, et confronte
      ce nombre au journal local de références qui, lui, ne voyage pas ; puis il oppose ce qu'un dépôt
      prouve à ce qu'il ne prouve pas (EQ-06) ;
@@ -627,12 +628,17 @@ def frontiere() -> Dict[str, Any]:
             "ce_que_l_avis_prescrivait": "« Ne publiez jamais l'intégralité des briques clés… "
                                          "Gardez en secret de fabrique les heuristiques fines, les "
                                          "paramètres de calibration »",
-            "mesure": f"{len(hors_eq)} module(s) porteur(s) d'équations et "
+            "mesure": f"{len(modules_eq)} module(s) porteur(s) d'équations et "
                       f"{sum(k for _, k in heur)} occurrence(s) de heuristiques et calibrages sont "
-                      "dans le dépôt public, 0 fichier n'est gardé hors de lui",
-            "strategie_incompatible_ecrite": (len(hors_eq) > 0
+                      "dans le dépôt public, 0 fichier n'est gardé hors de lui ; "
+                      f"{len(hors_eq)} de ces module(s) échappe(ent) au sceau",
+            # L'incompatibilité avec l'avis se lit dans la publication elle-même : les modules sont
+            # sur le disque du dépôt public. Elle ne doit surtout pas dépendre de `hors_eq`, qui ne
+            # mesure qu'un sceau périmé — un manifeste non rescellé rendrait faux un verdict vrai.
+            "strategie_incompatible_ecrite": (len(modules_eq) > 0
                                               and len(gardes) == 0
-                                              and sum(k for _, k in heur) > 0)}
+                                              and sum(k for _, k in heur) > 0),
+            "tous_les_modules_d_equations_scelles": len(hors_eq) == 0}
 
 
 def horodatages() -> Dict[str, Any]:
@@ -1242,7 +1248,8 @@ def equations(etat: Dict[str, Any]) -> List[Dict[str, Any]]:
         _eq("EQ-05", "verrous_base.py → frontiere() → C05",
             "garde_hors_depot = |{fichiers dont le nom porte secret/credential/.pem/.env}| ; "
             "equations_hors_sceau = |{fichiers .py contenant « def equations( » et absents du "
-            "manifeste}|",
+            "manifeste}| — un résultat non nul signale une dérive du sceau, pas une publication "
+            "choisie",
             f"{fr['coeur_secret_reelement_garde']} fichier gardé hors du dépôt · "
             f"{len(fr['modules_portant_des_equations'])} modules porteurs d'équations, "
             f"{len(fr['modules_d_equations_hors_sceau'])} hors du sceau · "
@@ -1438,16 +1445,21 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
             and rc["clause_reseau_agpl"] == 1 and rc["clause_reseau_gpl"] == 0
             and rc["seules_differences_mesurees"]
             == ["clause d'interaction à distance"])
-    ajouter("C05", "rien n'est gardé hors du dépôt et le sceau ne couvre pas tout",
-            "0 fichier au nom secret, au moins un module d'équations hors du sceau, et des "
-            "heuristiques réellement publiées",
-            "0 gardé · ≥1 module d'équations hors sceau",
+    ajouter("C05", "rien n'est gardé hors du dépôt, et tout module d'équations est sous le sceau",
+            "0 fichier au nom secret, au moins un module d'équations publié et lisible, aucun hors "
+            "du sceau, le drapeau de couverture égal au compte mesuré, et des heuristiques "
+            "réellement publiées",
+            "0 gardé · ≥1 module publié · 0 module hors sceau · drapeau = (compte = 0)",
             f"{fr['coeur_secret_reelement_garde']} gardé · "
-            f"{len(fr['modules_d_equations_hors_sceau'])} module(s) d'équations hors sceau · "
+            f"{len(fr['modules_portant_des_equations'])} module(s) d'équations publié(s), "
+            f"{len(fr['modules_d_equations_hors_sceau'])} hors sceau · "
             f"{fr['occurrences_heuristiques']} occurrence(s) d'heuristiques · hors sceau "
             f"{fr['hors_manifeste']} fichiers",
             fr["coeur_secret_reelement_garde"] == 0
-            and len(fr["modules_d_equations_hors_sceau"]) >= 1
+            and len(fr["modules_portant_des_equations"]) > 0
+            and len(fr["modules_d_equations_hors_sceau"]) == 0
+            and fr["tous_les_modules_d_equations_scelles"]
+            == (len(fr["modules_d_equations_hors_sceau"]) == 0)
             and fr["occurrences_heuristiques"] > 0 and fr["hors_manifeste"] > 0)
     ajouter("C06", "l'horodatage est lisible dans ce qui voyage, et ne prouve pas la paternité",
             "toutes les lignes des deux sources parsees, somme des auteurs = lignes, tête du dépôt "
@@ -1744,8 +1756,8 @@ def resume_markdown(cert: Dict[str, Any]) -> bytes:
         f"permission(s) de facturer, clause réseau {rc['clause_reseau_agpl']} en AGPL contre "
         f"{rc['clause_reseau_gpl']} en GPL.",
         f"**Frontière** {fr['coeur_secret_reelement_garde']} fichier gardé ; "
-        f"{len(fr['modules_d_equations_hors_sceau'])} module(s) porteurs d'équations hors du sceau "
-        f"et publiés quand même.",
+        f"{len(fr['modules_portant_des_equations'])} module(s) porteurs d'équations publiés, "
+        f"{len(fr['modules_d_equations_hors_sceau'])} hors du sceau.",
         f"**Horodatage** {h['commits_attestes']} commits atteignables du {h['premiere']} au "
         f"{h['derniere']} (lus par {h['source_des_commits']}) ; "
         f"{h['journal_local']['parsees']} écritures du journal local, qui ne voyage pas ; "

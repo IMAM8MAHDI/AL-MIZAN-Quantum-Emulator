@@ -732,6 +732,23 @@ class TestNonVacuite(unittest.TestCase):
             cs = {c["id"]: c for c in V.controles(EQS, muter(chemin, valeur))}
             self.assertEqual([k for k, c in cs.items() if not c["ok"]], ["C06"], chemin)
 
+    def test_trois_mensonges_sur_la_frontiere_rougissent_seuls_c05(self):
+        """La frontière ne se prouve plus par un manifeste périmé : trois mensonges, un contrôle.
+
+        Sortir un module d'équations du sceau, inverser le drapeau d'épuisement, ou supprimer les
+        modules publiés : C05 rougit à chaque fois, et lui seul. Les valeurs viennent de la mesure,
+        donc ces trois mutations gardent leur effet dans une archive sans dépôt git.
+        """
+        fr = CERT["frontiere"]
+        for nom, clef, valeur in (
+                ("module sorti du sceau", "modules_d_equations_hors_sceau",
+                 [fr["modules_portant_des_equations"][0]]),
+                ("drapeau d'épuisement inversé", "tous_les_modules_d_equations_scelles",
+                 not fr["tous_les_modules_d_equations_scelles"]),
+                ("modules publiés supprimés", "modules_portant_des_equations", [])):
+            cs = {c["id"]: c for c in V.controles(EQS, muter(("frontiere", clef), valeur))}
+            self.assertEqual([k for k, c in cs.items() if not c["ok"]], ["C05"], nom)
+
     def test_trois_mensonges_sur_les_deux_sources_rougissent_leur_seul_controle(self):
         """Décréter l'autre source, reprendre de la matière ou gommer l'écart : chacun rougit.
 
@@ -846,7 +863,12 @@ class TestVerdictsDefavorables(unittest.TestCase):
         self.assertEqual(fr["coeur_secret_reelement_garde"], 0)
         self.assertEqual(fr["fichiers_gardes_listes"], [])
         self.assertTrue(fr["strategie_incompatible_ecrite"])
-        self.assertGreaterEqual(len(fr["modules_d_equations_hors_sceau"]), 1)
+        self.assertGreaterEqual(len(fr["modules_portant_des_equations"]), 1,
+                                "l'incompatibilité se prouve par les modules publiés, jamais par "
+                                "un sceau périmé")
+        self.assertEqual(fr["modules_d_equations_hors_sceau"], [],
+                         "un module d'équations hors du sceau serait une dérive du manifeste")
+        self.assertTrue(fr["tous_les_modules_d_equations_scelles"])
         self.assertGreater(fr["occurrences_heuristiques"], 0,
                            "les heuristiques sont publiées : c'est ce que l'avis défendait de taire")
         self.assertIn("0 fichier gardé", EQS["EQ-05"]["resultat"])
