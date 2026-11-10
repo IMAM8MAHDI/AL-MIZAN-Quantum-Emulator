@@ -82,11 +82,11 @@ ZENODO_DEPOT_ALMIZAN/
 ├── VERROUS/               # l'état de la protection mesuré : 16 équations · 16 contrôles
 │   ├── verrous_base.py          # arbre, sceau re-haché, SPDX, 8 clauses, 4 instruments
 │   ├── artefacts/               # certificat.json + registre d'accès + clauses MD + plan SVG
-│   └── tests/                   # 51 tests
+│   └── tests/                   # 61 tests
 ├── DECLARATION/           # l'antériorité re-mesurée : 16 équations · 16 contrôles
-│   ├── declaration_base.py      # 66 commits, 0 date au sceau, 3 ablations rejouées
+│   ├── declaration_base.py      # 70 commits, 0 date au sceau, 3 ablations rejouées
 │   ├── artefacts/               # certificat.json + chaîne d'antériorité CSV + ablations MD + plan SVG
-│   └── tests/                   # 31 tests
+│   └── tests/                   # 37 tests
 ├── GUERRE/                # la richesse face à la guerre : 16 équations · 16 contrôles
 │   ├── guerre_base.py           # 153 pays, ρ(revenu, charge) = 0,0619 contre ρ(masse) = 0,5036
 │   ├── snapshot/                # Banque mondiale 2022 + chapitres YouTube, engagés par SHA-256
@@ -215,8 +215,8 @@ cd HORLOGERIE && py -m unittest tests.test_horlogerie tests.test_laboratoire   #
 cd CONTINUITE && py -m unittest tests.test_continuite               #  23 tests
 cd REDACTION && py -m unittest tests.test_redaction                 #  32 tests
 cd CONSTRUCTION && py -m unittest tests.test_construction           #  42 tests
-cd VERROUS && py -m unittest tests.test_verrous                     #  51 tests
-cd DECLARATION && py -m unittest tests.test_declaration             #  31 tests
+cd VERROUS && py -m unittest tests.test_verrous                     #  61 tests
+cd DECLARATION && py -m unittest tests.test_declaration             #  37 tests
 cd GUERRE && py -m unittest tests.test_guerre                        #  56 tests
 
 py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 12 modules CONFORME

@@ -15,8 +15,10 @@ prouver.
 
 Ce que ce module fait, dans l'ordre
 ----------------------------------
-  1. il parse le journal de références git et l'histoire atteignable depuis la tête : dates, auteurs,
-     part humaine, part d'automate, commits signés — et vérifie dans son propre source qu'aucune
+  1. il parse deux sources distinctes — le journal local de références (`.git/logs/HEAD`, qui n'existe
+     que sur le disque qui l'a produit) et l'histoire atteignable depuis la tête (`git log`, qui
+     voyage avec le dépôt) : dates, auteurs, part humaine, part d'automate, commits signés ; les
+     dates publiées viennent de la seconde, et le module vérifie dans son propre source qu'aucune
      horloge murale n'est lue (EQ-01) ;
   2. il range les antécédents déclarés (quatre identifiants vidéo) et confronte l'ordre raconté à
      l'ordre daté sur disque (EQ-02) ;
@@ -95,7 +97,9 @@ SOURCE: Dict[str, Any] = {
         {"id": "iuVxYHTJrhU", "role_declare": "source des équations d'harmonisation"},
     ],
     "antecedents_uses": [
-        ".git/logs/HEAD et `git log` — les seules dates que ce dossier manipulate ; l'heure de la "
+        "`git log HEAD` et `.git/logs/HEAD` — les deux seules dates que ce dossier manipule : les "
+        "dates publiées viennent de l'histoire atteignable, qui voyage avec le dépôt, le journal "
+        "local n'étant qu'une source de confrontation absente de l'archive extraite ; l'heure de la "
         "machine n'entre dans aucun nœud",
         "MANIFESTE_SHA256.txt — le sceau, dont ce dossier compte les entrées et l'absence de date",
         ".zenodo.json, CITATION.cff — la chaîne de versions et ses identifiants",
@@ -271,6 +275,15 @@ def _iso(texte: str) -> datetime:
     return datetime.fromisoformat(texte)
 
 
+def _tete_git() -> str:
+    """Le contenu de `.git/HEAD`, vide quand l'archive extraite ne porte aucun dépôt git.
+
+    Une tête absente ne peut pas être « citée » : on teste la chaîne avant de la chercher, sinon
+    le vide satisferait n'importe quelle recherche par sous-chaîne.
+    """
+    return _texte(".git/HEAD") if (RACINE / ".git" / "HEAD").exists() else ""
+
+
 def _decimale(v: Fraction, decimales: int) -> str:
     signe = "-" if v < 0 else ""
     v = abs(v)
@@ -330,7 +343,11 @@ _CACHE: Dict[str, Any] = {}
 
 
 def horodatages_git() -> Dict[str, Any]:
-    bruts = (RACINE / ".git" / "logs" / "HEAD").read_bytes()
+    # Le journal des références n'existe que sur le disque qui l'a produit : l'archive publiée,
+    # extraite sans `.git`, ne le contient pas. Son absence est mesurée et nommée, pas simulée.
+    chemin_journal = RACINE / ".git" / "logs" / "HEAD"
+    journal_present = chemin_journal.exists()
+    bruts = chemin_journal.read_bytes() if journal_present else b""
     lignes = [l for l in bruts.split(b"\n") if l]
     parsees: List[Tuple[int, str, str, str, str]] = []
     strictes = 0
@@ -355,7 +372,7 @@ def horodatages_git() -> Dict[str, Any]:
     auteurs: Dict[str, int] = {}
     for _, _, mail, _, _ in parsees:
         auteurs[mail] = auteurs.get(mail, 0) + 1
-    tete = _texte(".git/HEAD").strip() if (RACINE / ".git" / "HEAD").exists() else ""
+    tete = _tete_git().strip()
     sha_tete = ""
     if tete.startswith("ref:"):
         cible = RACINE / ".git" / tete[4:].strip()
@@ -385,6 +402,7 @@ def horodatages_git() -> Dict[str, Any]:
     plus_ancienne = min(atteignables, key=lambda a: _iso(a[3])) if atteignables else None
     racine_log = atteignables[-1] if atteignables else None
     return {"git_disponible": log is not None,
+            "journal_present": journal_present,
             "journal_lignes": len(lignes), "journal_parsees": len(parsees),
             "journal_tout_parse": len(parsees) == len(lignes),
             "utf8_stricte": strictes, "utf8_integrale": strictes == len(lignes),
@@ -396,6 +414,12 @@ def horodatages_git() -> Dict[str, Any]:
             "duree_attestee_seconde": (ordre[-1][0] - ordre[0][0]) if ordre else 0,
             "sha_tete": sha_tete, "tete_longueur": len(sha_tete),
             "tete_coherente": bool(sha_tete) and sha_tete == (parsees[-1][1] if parsees else ""),
+            "tete_coincide_avec_l_histoire": bool(sha_tete) and bool(atteignables)
+                                             and sha_tete == atteignables[0][0],
+            "dates_publiees_par": "git log HEAD — l'histoire qui voyage avec le dépôt"
+                                  if atteignables else
+                                  "aucune : l'archive lue ici ne contient ni dépôt git ni "
+                                  "journal de références",
             "commits_atteignables": len(atteignables),
             "commits_humains": sum(1 for a in atteignables if not EST_AUTOMATE.search(a[2])),
             "commits_automate": automate,
@@ -527,7 +551,7 @@ def sceau_contenu() -> Dict[str, Any]:
             "algorithme_nomme_dans_le_fichier": len(re.findall(r"sha[\s-]?256", texte, re.I)),
             "dates_trouvees": len(re.findall(r"20\d{2}-\d{2}-\d{2}", texte)),
             "identifiants_git_40_hex": len(re.findall(r"\b[0-9a-f]{40}\b", texte)),
-            "tete_git_citee": _texte(".git/HEAD")[:40] in texte,
+            "tete_git_citee": bool(_tete_git()) and _tete_git()[:40] in texte,
             "le_manifeste_ne_se_scelle_pas_lui_meme": MANIFESTE_CHEMIN not in chemins,
             "absents_de_disque": len(absents), "absents_listes": absents[:6],
             "fichiers_arbre": len(arbre), "dans_le_sceau": len(set(arbre) & set(chemins)),
@@ -1051,6 +1075,11 @@ def limites_ouvertes() -> Dict[str, Any]:
         "trousseau, aucun commit ne rend ce dépôt probant par signature",
         f"le sceau ne porte aucune date : {s['dates_trouvees']} date dans {s['total_lignes']} "
         "entrées — dater un contenu demande un tiers de confiance, pas un hash",
+        f"les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte "
+        f"{h['commits_atteignables']} commit(s) dans l'histoire git et {h['journal_lignes']} "
+        f"ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en "
+        "compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le "
+        "zéro honnête dans ce second cas",
         f"aucune trace d'éducation des IA dans l'archive : {e['instruments_fichiers']} instrument "
         "(poids fins, dataset, journal, config) — la demande reste déclarée",
         f"le dossier de preuves externe est cité {ch['references_dossier_externe']} fois dans "
@@ -1197,7 +1226,8 @@ def octets_declaration_md(cert: Dict[str, Any]) -> bytes:
         f"textuelles dont {i['lignes_absence']} lignes d'absence | OPÉRATIONNEL |",
         f"| dépôt public horodaté | commits git, blocs de signature | {h['signatures_portees']}/"
         f"{h['commits_atteignables']} portent gpgsig, {h['signatures_verifiees']} vérifiée(s) "
-        f"faute de clé publique, du {h['date_debut']} au {h['date_fin']} | OPÉRATIONNEL |",
+        f"faute de clé publique, du {h['date_debut'] or 'aucune date'} au "
+        f"{h['date_fin'] or 'aucune date'} | OPÉRATIONNEL |",
         f"| « j'ai commencé par les fractales » | trace fractale datée dans l'archive | "
         f"{fr['occurrences']} occurrences, {fr['nb_fichiers']} fichiers, première trace fractale "
         f"{fr['la_plus_ancienne_trace_fractale'] or 'aucune'} contre {fr['la_plus_ancienne_trace_du_depot']} "
@@ -1385,14 +1415,18 @@ def equations(etat: Dict[str, Any]) -> List[Dict[str, Any]]:
     return [
         _eq("EQ-01", "declaration_base.py → horodatages_git() → C01",
             "J = { (n, n′, auteur, t, Δ) } lus octet à octet dans .git/logs/HEAD ; C = commits "
-            "atteignables par `git log HEAD` ; la couche exige Σ_a J_a = |J| et |J| ≥ |C|",
+            "atteignables par `git log HEAD` ; la couche exige Σ_a J_a = |J| (aucune ligne de "
+            "journal perdue) et que |J| = 0 quand le journal est absent ; les deux sources ne sont "
+            "pas comparées : seul C donne les dates publiées, |J| ne borne ni |C| ni l'inverse",
             f"{h['journal_lignes']} lignes de journal · {h['journal_parsees']} parsées "
             f"(intégralement {h['journal_tout_parse']}) · {h['commits_atteignables']} commits "
             f"atteignables · {len(h['auteurs_journal'])} auteur(s) additifs "
             f"{h['auteurs_additifs']} · {h['signatures_portees']} bloc(s) de signature porté(s), "
             f"{h['signatures_verifiees']} vérifiée(s), {h['signatures_non_verifiees']} non "
-            f"vérifiable(s) · du {h['date_debut']} au {h['date_fin']} · tête {h['sha_tete'][:12]}… "
-            f"longue de {h['tete_longueur']} · date d'auteur la plus ancienne "
+            f"vérifiable(s) · du {h['date_debut'] or 'aucune date lisible'} au "
+            f"{h['date_fin'] or 'aucune date lisible'} · tête {h['sha_tete'][:12] or 'aucune'}… "
+            f"longue de {h['tete_longueur']} · dates publiées lues dans : "
+            f"{h['dates_publiees_par']} · date d'auteur la plus ancienne "
             f"{h['date_auteur_plus_ancienne']} signée par {h['auteur_plus_ancien']} "
             f"(automate : {h['auteur_plus_ancien_est_automate']}), antérieure à la date d'auteur de "
             f"la racine ({h['date_auteur_racine']}) : {h['date_auteur_antérieure_à_la_racine']} · "
@@ -1655,44 +1689,61 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
 
     ajouter("C01", "le journal est parseé sans horloge murale et les comptes sont additifs",
             "toutes les lignes du journal parsées, la somme des comptes par auteur égale le nombre "
-            "de lignes, la tête git longue de 40 hex, signatures portées et absentes épuisant les "
-            "commits, et aucun motif d'heure système dans le source de ce module",
-            "100 % des lignes · Σ auteurs = |J| · tête 40 hex · signées + non signées = |C| · "
-            "horloge absente",
+            "de lignes, un journal déclaré absent ne laissant aucune ligne à compter, la tête git "
+            "longue de 40 hex quand un dépôt est lisible et nulle quand il ne l'est pas, sa "
+            "coïncidence avec l'histoire atteignable égale au fait qu'une histoire existe, la source "
+            "nommée des dates publiées égale au fait que cette histoire est non vide, signatures "
+            "portées et absentes épuisant les commits, et aucun motif d'heure système dans le source "
+            "de ce module",
+            "100 % des lignes · Σ auteurs = |J| · |J| = 0 si journal absent · tête 40 hex si dépôt "
+            "git, 0 sinon · tête = tête de l'histoire si |C| > 0, fausse sinon · source des dates "
+            "citée si |C| > 0, « aucune » sinon · signées + non signées = |C| · horloge absente",
             f"{h['journal_parsees']}/{h['journal_lignes']} lignes · Σ = "
-            f"{h['somme_auteurs_journal']} pour {h['journal_parsees']} · tête "
-            f"{h['tete_longueur']} hex cohérente avec le journal : {h['tete_coherente']} · "
+            f"{h['somme_auteurs_journal']} pour {h['journal_parsees']} · journal local présent "
+            f"{h['journal_present']} · source git lisible {h['git_disponible']} · tête "
+            f"{h['tete_longueur']} hex cohérente avec le journal : {h['tete_coherente']}, avec "
+            f"l'histoire : {h['tete_coincide_avec_l_histoire']} · dates publiées par "
+            f"« {h['dates_publiees_par']} » · "
             f"{h['signatures_portees']} + {h['commits_sans_signature']} = "
             f"{h['signatures_portees'] + h['commits_sans_signature']} commits sur "
             f"{h['commits_atteignables']}, {h['signatures_verifiees']} vérifiée(s) · "
             f"motifs d'horloge reposés : {len(h['motifs_horloge_reposes'])}",
-            h["journal_tout_parse"] and h["auteurs_additifs"] and h["tete_longueur"] == 40
+            h["journal_tout_parse"] and h["auteurs_additifs"]
+            and (h["journal_present"] or h["journal_lignes"] == 0)
+            and h["tete_longueur"] == (40 if h["git_disponible"] else 0)
+            and h["tete_coincide_avec_l_histoire"] == (h["commits_atteignables"] > 0)
+            and ("git log" in h["dates_publiees_par"]) == (h["commits_atteignables"] > 0)
             and h["signatures_portees"] + h["commits_sans_signature"] == h["commits_atteignables"]
-            and h["aucune_horloge"] and h["git_disponible"])
+            and h["aucune_horloge"])
     ajouter("C02", "la chronologie est celle des dates du dépôt, pas du récit",
-            "un objet daté au moins un, chaque dossier daté appartient au registre, et les "
+            "un objet daté au moins un quand une histoire git est lisible, et exactement zéro "
+            "quand elle ne l'est pas, chaque dossier daté appartient au registre, et les "
             "antécédents comptés sont exactement ceux déclarés dans SOURCE",
-            f"objets datés > 0 · dossiers ⊆ {len(FB.DOSSIERS_EQUATIONS)} du registre · "
+            f"objets datés > 0 si une histoire git est lisible, 0 sinon · dossiers ⊆ "
+            f"{len(FB.DOSSIERS_EQUATIONS)} du registre · "
             f"antécédents = {len(SOURCE['antecedents_declares'])}",
-            f"{ch['objets_dates']} objets datés · {ch['dossiers_avec_date']} dossier(s) daté(s) "
+            f"{ch['objets_dates']} objets datés · histoire git lisible {h['git_disponible']} · "
+            f"{ch['dossiers_avec_date']} dossier(s) daté(s) "
             f"sur {ch['dossiers_attendus']} attendu(s) · {ch['antecedents_total']} antécédent(s) "
             f"compté(s), {ch['antecedents_cites']} nommé(s) dans l'archive · ordre raconté tenu : "
             f"{ch['narratif_ordre_tenu']}",
-            ch["objets_dates"] > 0 and ch["dossiers_avec_date"] <= ch["dossiers_attendus"]
+            (ch["objets_dates"] > 0) == h["git_disponible"]
+            and ch["dossiers_avec_date"] <= ch["dossiers_attendus"]
             and all(d in FB.DOSSIERS_EQUATIONS for d in ch["dossiers_dates"])
             and ch["antecedents_total"] == len(SOURCE["antecedents_declares"]))
     ajouter("C03", "les fractales sont comptées, pas racontées",
             "la somme des occurrences par fichier égale le total, le nombre de fichiers égale la "
-            "taille de l'index, et la comparaison avec l'objet le plus ancien du dépôt est faite",
-            f"Σ occurrences = {fr['occurrences']} · |fichiers| = {fr['nb_fichiers']} · comparaison "
-            "des deux dates bornées",
+            "taille de l'index, et la comparaison avec l'objet le plus ancien du dépôt est faite "
+            "quand une histoire git est lisible — et rendue vide quand elle ne l'est pas",
+            f"Σ occurrences = {fr['occurrences']} · |fichiers| = {fr['nb_fichiers']} · date la plus "
+            "ancienne du dépôt non vide si une histoire git est lisible",
             f"Σ = {sum(fr['par_fichier'].values())} · index de {len(fr['par_fichier'])} fichier(s)"
             f" · première trace fractale {fr['la_plus_ancienne_trace_fractale'] or 'aucune'}, objet "
             f"le plus ancien {fr['la_plus_ancienne_trace_du_depot'] or 'aucun'} · égalité : "
             f"{fr['fractales_sont_la_premiere_trace_du_depot']}",
             sum(fr["par_fichier"].values()) == fr["occurrences"]
             and len(fr["par_fichier"]) == fr["nb_fichiers"]
-            and bool(fr["la_plus_ancienne_trace_du_depot"]))
+            and bool(fr["la_plus_ancienne_trace_du_depot"]) == h["git_disponible"])
     ajouter("C04", "le sceau ne porte ni date, ni commit, ni lui-même",
             "les entrées conformes plus les non conformes épuisent le fichier, les chemins sont "
             "uniques, le manifeste ne se scelle pas lui-même, et le compte des dates et des "
@@ -1765,16 +1816,20 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
             and ed["statut_du_claim"] == "déclaré · non vérifié"
             and len(ed["instruments_par_categorie"]) == len(INSTRUMENTS_EDUCATION))
     ajouter("C09", "le partage humain / machine est additif des deux côtés",
-            "commits humains + commits d'automate = commits atteignables, et la partition des "
-            "fichiers (automate seul, humain seul, les deux) épuise leur union",
+            "commits humains + commits d'automate = commits atteignables, le total du nœud égale "
+            "celui de la source des dates, et la partition des fichiers (automate seul, humain "
+            "seul, les deux) épuise leur union — union vide quand aucune histoire git n'est lisible",
             f"|C_h| + |C_a| = {rm['commits_total']} · Σ 3 cellules = |M ∪ H| = "
-            f"{rm['fichiers_union']}",
-            f"{rm['commits_humains']} + {rm['commits_automate']} = {rm['commits_total']} · "
-            f"{rm['fichiers_automate_seul']} + {rm['fichiers_humain_seul']} + "
+            f"{rm['fichiers_union']} · |M ∪ H| > 0 si une histoire git est lisible",
+            f"{rm['commits_humains']} + {rm['commits_automate']} = {rm['commits_total']} "
+            f"(source : {h['commits_atteignables']}) · {rm['fichiers_automate_seul']} + "
+            f"{rm['fichiers_humain_seul']} + "
             f"{rm['fichiers_mixtes']} = {rm['fichiers_union']} fichiers",
             rm["additif_commits"]
+            and rm["commits_total"] == h["commits_atteignables"]
+            and (rm["fichiers_union"] > 0) == h["git_disponible"]
             and rm["fichiers_automate_seul"] + rm["fichiers_humain_seul"] + rm["fichiers_mixtes"]
-            == rm["fichiers_union"] and rm["git_disponible"])
+            == rm["fichiers_union"])
     ajouter("C10", "la frontière de publication se referme sur le registre du parc",
             "modules dans le sceau + hors du sceau = modules porteurs, et la somme module à module "
             "des équations égale le total du parc calculé par la même marche",
@@ -1847,14 +1902,19 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
             and ec["absence_partout"] and rr["phrase_absente_du_csv_par_design"]
             and rr["nb_lignes_texte"] == rr["lignes_de_donnees"] + 1)
     ajouter("C16", "les limites sont énoncées et ouvertes",
-            "au moins une limite, chacune longue d'au moins le seuil de la borne, et aucune remplie "
-            "par l'exécution de ce module",
-            f"|L| > 0 · min |l| ≥ {AP.MIN_LIMITE} · remplies = 0",
+            "au moins une limite, chacune longue d'au moins le seuil de la borne, aucune remplie "
+            "par l'exécution de ce module, et l'une d'elles dit que les dates ne voyagent pas avec "
+            "une archive extraite hors de tout dépôt git",
+            f"|L| > 0 · min |l| ≥ {AP.MIN_LIMITE} · remplies = 0 · « les dates ne voyagent pas » "
+            "présente dans la liste",
             f"{lo['nb_limites']} limite(s) · plus courte {lo['plus_courte']} caractères · toutes au "
-            f"moins {AP.MIN_LIMITE} : {lo['toutes_au_moins_quarante']} · {lo['remplies']} remplie(s)",
+            f"moins {AP.MIN_LIMITE} : {lo['toutes_au_moins_quarante']} · {lo['remplies']} remplie(s)"
+            f" · non-portabilité des dates écrite : "
+            f"{any(l.startswith('les dates ne voyagent pas') for l in lo['liste'])}",
             lo["nb_limites"] > 0 and lo["toutes_au_moins_quarante"] and lo["remplies"] == 0
             and lo["nb_limites"] == len(lo["liste"])
-            and lo["aucune_limite_remplie_en_execuant_le_module"])
+            and lo["aucune_limite_remplie_en_execuant_le_module"]
+            and any(l.startswith("les dates ne voyagent pas") for l in lo["liste"]))
     return out
 
 
@@ -1985,7 +2045,8 @@ def resume_markdown(cert: Dict[str, Any]) -> bytes:
         "qui l'étayerait.",
         "",
         f"**Journal** {h['journal_parsees']}/{h['journal_lignes']} lignes parsées, "
-        f"{h['commits_atteignables']} commits du {h['date_debut']} au {h['date_fin']}, "
+        f"{h['commits_atteignables']} commits du {h['date_debut'] or 'aucune date'} au "
+        f"{h['date_fin'] or 'aucune date'}, "
         f"{len(h['auteurs_journal'])} auteur(s), {h['signatures_portees']} bloc(s) de signature "
         f"porté(s) et {h['signatures_verifiees']} vérifiée(s), aucune horloge "
         f"murale dans ce module.",

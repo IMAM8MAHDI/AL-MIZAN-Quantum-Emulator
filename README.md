@@ -74,7 +74,7 @@ BSD sur 3 courbes (L'(37a1)=0.306 = valeur LMFDB) · Hasse p≤97 · Hodge T²/C
 | Rédaction | `REDACTION/redaction_mizan.py` | 16 équations et 16 contrôles : l'intelligibilité est comptée. Sur 89 lignes d'équation, la page anglaise ne portait les nombres du calcul français que sur 56 lignes, l'arabe sur 55 ; la correction est appliquée au moteur, re-mesurée, et la forme mesurée (longueur de phrase, coupe arabe, distance au premier tableau) sans emprunter d'indice de lisibilité externe |
 | Construction | `CONSTRUCTION/construction_base.py` | 16 équations et 16 contrôles : plans de l'emboîtement à l'échelle humaine — 43 crans, cote de tête 622,50 mm clampée à 122,00 mm au cran 42, tolérance relative 1/1000, facteur de matière 1/(1−ρ²) — 0 prototype construit, et la phrase l'écrit |
 | Verrous | `VERROUS/verrous_base.py` | 16 équations et 16 contrôles : l'état réel de la protection mesuré au lieu d'être déclaré — arbre scanné, sceau re-haché, couverture SPDX, les 8 clauses d'une feuille de route externe, les 4 instruments, le registre d'accès, et les corrections que les faits imposent à cette feuille de route |
-| Déclaration | `DECLARATION/declaration_base.py` | 16 équations et 16 contrôles : l'antériorité re-mesurée par `git` brut plutôt que recopiée — 66 commits datés par l'horloge cliente, 204 entrées de sceau portant **0 date**, 0 instrument d'horodatage qualifié, 0 instrument d'éducation sur disque, 48 commits humains contre 18 d'automate, trois ablations rejouées ; l'antériorité est accessible, la paternité n'est pas instrumentée |
+| Déclaration | `DECLARATION/declaration_base.py` | 16 équations et 16 contrôles : l'antériorité re-mesurée par `git` brut plutôt que recopiée — 70 commits datés par l'horloge cliente, 204 entrées de sceau portant **0 date**, 0 instrument d'horodatage qualifié, 0 instrument d'éducation sur disque, 52 commits humains contre 18 d'automate, trois ablations rejouées ; les dates sont lues dans l'histoire qui voyage avec le dépôt, pas dans le journal local qui reste sur la machine ; l'antériorité est accessible, la paternité n'est pas instrumentée |
 | Guerre | `GUERRE/guerre_base.py` | 16 équations et 16 contrôles : « il faut être riche pour faire la guerre » testée sur un snapshot Banque mondiale 2022 engagé par SHA-256 — 153 pays comparables sur 217 entités, ρ(revenu, charge) = 0,0619 plat alors que ρ(revenu, masse) = 0,5036 monte, 23 pays sous la médiane de revenu arment à plus d'un Md$, effort fiscal médian 5,62 % des recettes ; l'énoncé initial est **réfuté par la mesure** et remplacé par un énoncé borné |
 
 ## Base universelle — FONDATION
@@ -164,8 +164,8 @@ cd HORLOGERIE && py -m unittest tests.test_horlogerie tests.test_laboratoire   #
 cd CONTINUITE && py -m unittest tests.test_continuite              # 23 tests
 cd REDACTION && py -m unittest tests.test_redaction                # 32 tests
 cd CONSTRUCTION && py -m unittest tests.test_construction          # 42 tests
-cd VERROUS && py -m unittest tests.test_verrous                    # 51 tests
-cd DECLARATION && py -m unittest tests.test_declaration             # 31 tests
+cd VERROUS && py -m unittest tests.test_verrous                    # 61 tests
+cd DECLARATION && py -m unittest tests.test_declaration             # 37 tests
 cd GUERRE && py -m unittest tests.test_guerre                       # 56 tests
 py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide             # 12 modules CONFORME
 ```

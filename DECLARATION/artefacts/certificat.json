@@ -192,10 +192,10 @@
         "presentation": 4
       }
     },
-    "racine_apres_nombre_injecte": "c1db4a836ac0faf72aa1c7e2170adc48a4fc42d769594aae3438e963b7fdf8b3",
-    "racine_apres_retrait_attribution": "21710f215f6a8d289f6b2a1c75d37ad14318a4e6e9a3854b829daf75eb12fd40",
-    "racine_avant": "21710f215f6a8d289f6b2a1c75d37ad14318a4e6e9a3854b829daf75eb12fd40",
-    "racine_certificat_complet": "fcd317e6c405bae00a2faa8c16ef147ecbce3e9b11296d589ab6543b3cea70b0",
+    "racine_apres_nombre_injecte": "f46082f920a32072150aedbfea50e63b9f34372465a542a859436f7ab67238e7",
+    "racine_apres_retrait_attribution": "db8994d0d46bc2087cf25df861d1749671c9318b7619233c0e8768132888e2d4",
+    "racine_avant": "db8994d0d46bc2087cf25df861d1749671c9318b7619233c0e8768132888e2d4",
+    "racine_certificat_complet": "660959211ae43c0f63d13a7a94fd0d1c1eaf16bad4daa8883044e3504a1d4b9b",
     "racine_formule_reproduite": true,
     "racine_sensible_aux_nombres": true
   },
@@ -224,9 +224,9 @@
     "largeurs_de_colonnes": [
       6
     ],
-    "lignes_de_donnees": 22,
-    "nb_lignes_texte": 23,
-    "octets": 3770,
+    "lignes_de_donnees": 28,
+    "nb_lignes_texte": 29,
+    "octets": 4900,
     "phrase_absente_du_csv_par_design": true,
     "separateur": ";"
   },
@@ -358,16 +358,22 @@
     ],
     "antecedents_cites": 4,
     "antecedents_total": 4,
-    "date_derniere": "2026-11-09T19:51:17+01:00",
+    "date_derniere": "2026-11-10T05:20:44+01:00",
     "date_racine": "2026-11-07T06:05:23+01:00",
     "dossier_externel_nomme": "DOSSIER_JUSTICE_EL_BAHLOUL/PREUVES",
     "dossiers_attendus": 10,
-    "dossiers_avec_date": 4,
+    "dossiers_avec_date": 10,
     "dossiers_dates": {
       "ABONDANCE": "2026-11-08T22:19:56+01:00",
       "CHIFFRES": "2026-11-09T04:13:21+01:00",
+      "CONSTRUCTION": "2026-11-10T04:16:11+01:00",
+      "CONTINUITE": "2026-11-10T04:16:11+01:00",
+      "DECLARATION": "2026-11-10T04:16:11+01:00",
       "FONDATION": "2026-11-09T04:13:21+01:00",
-      "HORLOGERIE": "2026-11-09T17:16:21+01:00"
+      "GUERRE": "2026-11-10T04:16:11+01:00",
+      "HORLOGERIE": "2026-11-09T17:16:21+01:00",
+      "REDACTION": "2026-11-10T04:16:11+01:00",
+      "VERROUS": "2026-11-10T04:16:11+01:00"
     },
     "dossiers_portant_fractal": [
       "CONTINUITE",
@@ -381,14 +387,13 @@
     ],
     "narratif_ordre_tenu": true,
     "objets_anterieurs_a_la_racine": 71,
-    "objets_dates": 205,
-    "ordre_non_tenu": [
-      "VERROUS"
-    ],
+    "objets_dates": 241,
+    "ordre_non_tenu": [],
     "ordre_raconte": "fractales → base universelle → horloge → protection → déclaration",
     "ordre_verifie": [
       "FONDATION",
-      "HORLOGERIE"
+      "HORLOGERIE",
+      "VERROUS"
     ],
     "plus_ancienne_date": "2026-11-07T05:44:16+01:00",
     "references_dossier_externe": 0
@@ -397,9 +402,9 @@
     "absence_partout": true,
     "auto_reference": "certificat.json porte ce nœud : sa taille et son empreinte ne peuvent pas être scellées par lui-même",
     "empreintes": {
-      "chaine_anteriorite.csv": "7ec25bc6af4054bd",
-      "declaration_et_ablations.md": "83bfd09cc22ffd3b",
-      "frontiere_anteriorite.svg": "e610b3b27b5b5760"
+      "chaine_anteriorite.csv": "faddf7ae3b37bf92",
+      "declaration_et_ablations.md": "13e180a19f57642a",
+      "frontiere_anteriorite.svg": "46c3b7947ceaabf5"
     },
     "nom_sans_empreinte": "certificat.json",
     "nom_sans_phrase": "chaine_anteriorite.csv",
@@ -416,8 +421,8 @@
     ],
     "raison_sans_phrase": "une chaîne d'antériorité se lit dans un tableur : la phrase de verdict y deviendrait une donnée datée comme les autres",
     "tailles": {
-      "chaine_anteriorite.csv": 3770,
-      "declaration_et_ablations.md": 5130,
+      "chaine_anteriorite.csv": 4900,
+      "declaration_et_ablations.md": 5459,
       "frontiere_anteriorite.svg": 3876
     }
   },
@@ -480,15 +485,16 @@
     },
     "statut_du_claim": "déclaré · non vérifié"
   },
-  "empreinte_execution": "7f5c19864830e9a71b56c814687149494cd97a130ad7db6237d60e2acfc81c44",
+  "empreinte_execution": "0836b7c01daf89c505ccdb262532937c12e05cd975cc9eaba9bf45c6e437821d",
   "fractales": {
     "auteur_de_la_premiere_trace": "devin@cognition.ai",
     "auteurs_par_fichier": {
+      "CONTINUITE/continuite_base.py": "elbahloulahmed505@gmail.com",
       "bibliotheques/lib_almizan_extension.py": "elbahloulahmed505@gmail.com",
       "horloge_noyau/architecture_informe_couche_matiere_table_mizan.py": "devin@cognition.ai"
     },
     "dates_ajout": {
-      "CONTINUITE/continuite_base.py": "",
+      "CONTINUITE/continuite_base.py": "2026-11-10T04:16:11+01:00",
       "bibliotheques/lib_almizan_extension.py": "2026-11-09T04:13:21+01:00",
       "horloge_noyau/architecture_informe_couche_matiere_table_mizan.py": "2026-11-07T05:44:16+01:00"
     },
@@ -513,7 +519,7 @@
     },
     "premiere_trace_par_un_automate": true,
     "scelle_dans_le_manifeste": 0,
-    "traces_sans_date_commit": 1
+    "traces_sans_date_commit": 0
   },
   "frontiere_publication": {
     "artefacts_dans_le_sceau": 0,
@@ -557,24 +563,26 @@
     "auteurs_additifs": true,
     "auteurs_journal": {
       "devin@cognition.ai": 18,
-      "elbahloulahmed505@gmail.com": 55
+      "elbahloulahmed505@gmail.com": 59
     },
-    "commits_atteignables": 66,
+    "commits_atteignables": 70,
     "commits_automate": 18,
-    "commits_humains": 48,
-    "commits_sans_signature": 65,
+    "commits_humains": 52,
+    "commits_sans_signature": 69,
     "date_auteur_antérieure_à_la_racine": true,
     "date_auteur_plus_ancienne": "2026-11-07T05:44:16+01:00",
     "date_auteur_racine": "2026-11-07T06:05:23+01:00",
     "date_committer_racine": "2026-11-07T06:05:23+01:00",
     "date_debut": "2026-11-07T06:05:23+01:00",
-    "date_fin": "2026-11-09T19:51:17+01:00",
-    "derniere": "2026-11-09T19:51:17+01:00",
-    "duree_attestee_seconde": 223621,
+    "date_fin": "2026-11-10T05:20:44+01:00",
+    "dates_publiees_par": "git log HEAD — l'histoire qui voyage avec le dépôt",
+    "derniere": "2026-11-10T05:20:44+01:00",
+    "duree_attestee_seconde": 257788,
     "git_disponible": true,
-    "journal_lignes": 73,
-    "journal_parsees": 73,
+    "journal_lignes": 77,
+    "journal_parsees": 77,
     "journal_plus_que_commits": 7,
+    "journal_present": true,
     "journal_tout_parse": true,
     "motifs_horloge_reposes": [],
     "nb_motifs_horloge_cherches": 5,
@@ -584,7 +592,7 @@
       "e82bdccd3f9a57f72fd641f208d27daa3cb00262|2026-11-07T06:05:23+01:00"
     ],
     "remote": "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator.git",
-    "sha_tete": "a5f01264d177421d65ad8a53f3767ca7c8be1d97",
+    "sha_tete": "885879f1d7d37a30f4250a31b65c83c9e8860cc0",
     "signatures_detail": [
       {
         "bloc_de_signature": "E",
@@ -596,11 +604,12 @@
     "signatures_non_verifiees": 1,
     "signatures_portees": 1,
     "signatures_verifiees": 0,
-    "somme_auteurs_journal": 73,
+    "somme_auteurs_journal": 77,
     "tete_coherente": true,
+    "tete_coincide_avec_l_histoire": true,
     "tete_longueur": 40,
     "utf8_integrale": true,
-    "utf8_stricte": 73
+    "utf8_stricte": 77
   },
   "instruments_horodatage": {
     "classifieur_non_vacue": true,
@@ -621,9 +630,9 @@
     "instruments_trouves": 5,
     "lignes_absence": 12,
     "lignes_affirmatives": [
-      "VERROUS/artefacts/certificat.json:294|\"horodatage RFC 3161\": {",
-      "VERROUS/artefacts/certificat.json:440|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
-      "VERROUS/artefacts/certificat.json:455|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
+      "VERROUS/artefacts/certificat.json:322|\"horodatage RFC 3161\": {",
+      "VERROUS/artefacts/certificat.json:494|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
+      "VERROUS/artefacts/certificat.json:512|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
       "VERROUS/artefacts/verrous_et_clauses.md:28|- un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus"
     ],
     "lignes_affirmatives_total": 19,
@@ -637,9 +646,9 @@
     "par_instrument": {
       "RFC 3161": {
         "exemples_affirmatives": [
-          "VERROUS/artefacts/certificat.json:294|\"horodatage RFC 3161\": {",
-          "VERROUS/artefacts/certificat.json:440|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
-          "VERROUS/artefacts/certificat.json:455|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\","
+          "VERROUS/artefacts/certificat.json:322|\"horodatage RFC 3161\": {",
+          "VERROUS/artefacts/certificat.json:494|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
+          "VERROUS/artefacts/certificat.json:512|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\","
         ],
         "fichiers": [
           "VERROUS/artefacts/certificat.json",
@@ -652,8 +661,8 @@
       },
       "autorité d'horodatage (TSA)": {
         "exemples_affirmatives": [
-          "VERROUS/artefacts/certificat.json:260|\".tsa\",",
-          "VERROUS/verrous_base.py:119|EXTENSIONS_INSTRUMENT = (\".tsa\", \".p7s\", \".p7m\", \".sig\", \".asc\", \".der\")"
+          "VERROUS/artefacts/certificat.json:268|\".tsa\",",
+          "VERROUS/verrous_base.py:124|EXTENSIONS_INSTRUMENT = (\".tsa\", \".p7s\", \".p7m\", \".sig\", \".asc\", \".der\")"
         ],
         "fichiers": [
           "VERROUS/artefacts/certificat.json",
@@ -665,9 +674,9 @@
       },
       "coffre-fort numérique": {
         "exemples_affirmatives": [
-          "VERROUS/artefacts/certificat.json:250|\"contraste_naif_contexte\": \"DECLARATION/artefacts/certificat.json:630 — \\\"bibliotheques/lib_physique.py:630|role_systeme=\\\\\\\"Coffre-fort cryptographique ultime et archive \",",
-          "VERROUS/artefacts/certificat.json:273|\"coffre-fort numérique horodaté\": {",
-          "VERROUS/verrous_base.py:150|(\"coffre-fort numérique horodaté\", r\"coffre[- ]fort\\s+num[ée]rique|coffre[- ]fort\\s+horodat[ée]\"),"
+          "VERROUS/artefacts/certificat.json:257|\"contraste_naif_contexte\": \"DECLARATION/artefacts/certificat.json:631 — \\\"bibliotheques/lib_physique.py:630|role_systeme=\\\\\\\"Coffre-fort cryptographique ultime et archive \",",
+          "VERROUS/artefacts/certificat.json:301|\"coffre-fort numérique horodaté\": {",
+          "VERROUS/verrous_base.py:155|(\"coffre-fort numérique horodaté\", r\"coffre[- ]fort\\s+num[ée]rique|coffre[- ]fort\\s+horodat[ée]\"),"
         ],
         "fichiers": [
           "VERROUS/artefacts/certificat.json",
@@ -681,9 +690,9 @@
       },
       "dépôt e-Soleau": {
         "exemples_affirmatives": [
-          "VERROUS/artefacts/certificat.json:286|\"enveloppe e-Soleau INPI\": {",
-          "VERROUS/artefacts/certificat.json:440|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
-          "VERROUS/artefacts/certificat.json:455|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\","
+          "VERROUS/artefacts/certificat.json:314|\"enveloppe e-Soleau INPI\": {",
+          "VERROUS/artefacts/certificat.json:494|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
+          "VERROUS/artefacts/certificat.json:512|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\","
         ],
         "fichiers": [
           "VERROUS/artefacts/certificat.json",
@@ -716,8 +725,9 @@
   },
   "limites": [
     "aucun instrument d'horodatage qualifié (RFC 3161, TSA, eIDAS, cachet) n'est dans l'archive : 0 fichier — ce dossier ne peut pas en produire un",
-    "1 commit sur 66 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
+    "1 commit sur 70 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
     "le sceau ne porte aucune date : 0 date dans 204 entrées — dater un contenu demande un tiers de confiance, pas un hash",
+    "les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 70 commit(s) dans l'histoire git et 77 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas",
     "aucune trace d'éducation des IA dans l'archive : 0 instrument (poids fins, dataset, journal, config) — la demande reste déclarée",
     "le dossier de preuves externe est cité 0 fois dans l'archive et n'y est pas scellé : sa valeur probante ne se transmet pas avec le ZIP",
     "4/4 antécédents vidéo sont nommés dans l'archive ; aucun n'y porte de date mesurable",
@@ -732,8 +742,9 @@
     "aucune_limite_remplie_en_execuant_le_module": true,
     "liste": [
       "aucun instrument d'horodatage qualifié (RFC 3161, TSA, eIDAS, cachet) n'est dans l'archive : 0 fichier — ce dossier ne peut pas en produire un",
-      "1 commit sur 66 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
+      "1 commit sur 70 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
       "le sceau ne porte aucune date : 0 date dans 204 entrées — dater un contenu demande un tiers de confiance, pas un hash",
+      "les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 70 commit(s) dans l'histoire git et 77 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas",
       "aucune trace d'éducation des IA dans l'archive : 0 instrument (poids fins, dataset, journal, config) — la demande reste déclarée",
       "le dossier de preuves externe est cité 0 fois dans l'archive et n'y est pas scellé : sa valeur probante ne se transmet pas avec le ZIP",
       "4/4 antécédents vidéo sont nommés dans l'archive ; aucun n'y porte de date mesurable",
@@ -742,8 +753,8 @@
       "la date d'auteur la plus ancienne (2026-11-07T05:44:16+01:00) est signée devin@cognition.ai et la première trace fractale (2026-11-07T05:44:16+01:00) devin@cognition.ai : la plus vieille date du dépôt n'attribue pas l'idée à un humain",
       "le classifieur statue ligne à ligne : 19 lignes affirmatives sur les mentions d'horodatage, dont des clés de fichiers qui nomment l'instrument sans l'employer — le mot compte, il ne prouve pas"
     ],
-    "nb_limites": 10,
-    "non_remplies": 10,
+    "nb_limites": 11,
+    "non_remplies": 11,
     "plus_courte": 84,
     "remplies": 0,
     "toutes_au_moins_quarante": true
@@ -806,7 +817,7 @@
     "octets": 3876,
     "plus_grande_valeur": 204,
     "valeurs_attendues": [
-      66,
+      70,
       18,
       204,
       0,
@@ -820,7 +831,7 @@
       15
     ],
     "valeurs_ecrites": [
-      66,
+      70,
       18,
       204,
       0,
@@ -834,7 +845,7 @@
       15
     ]
   },
-  "racine_merkle_sha256": "8fd608a8b59470bd610fdc3bcf4d70beee7b89ceb50b8e3123c95346d645bbeb",
+  "racine_merkle_sha256": "3ec2fcf5f0a536e4e6c4b89cb4a9087ee422b6bc1f8a56d85a08b7b6b5af1055",
   "rejoue_identique": true,
   "repartition_humain_machine": {
     "additif_commits": true,
@@ -844,8 +855,8 @@
     "automate_seul_sur_disque": 65,
     "ce_que_compte_ce_noeud": "qui a signé le commit, pas qui a pensé la décision",
     "commits_automate": 18,
-    "commits_humains": 48,
-    "commits_total": 66,
+    "commits_humains": 52,
+    "commits_total": 70,
     "exemples_automate_seul": [
       "DOSSIER_DEVIS/steane_tile_almizan.gds",
       "DOSSIER_DEVIS/steane_tile_manifeste.json",
@@ -856,18 +867,18 @@
     ],
     "exemples_portant_limite": [],
     "fichiers_automate_seul": 65,
-    "fichiers_humain_seul": 119,
+    "fichiers_humain_seul": 155,
     "fichiers_mixtes": 21,
     "fichiers_touches_par_automate": 86,
-    "fichiers_touches_par_humain": 140,
-    "fichiers_union": 205,
+    "fichiers_touches_par_humain": 176,
+    "fichiers_union": 241,
     "git_disponible": true,
     "par_auteur_fichiers": {
       "devin@cognition.ai": 86,
-      "elbahloulahmed505@gmail.com": 140
+      "elbahloulahmed505@gmail.com": 176
     },
-    "part_automate_pct": "27.27",
-    "part_humaine_pct": "72.73",
+    "part_automate_pct": "25.71",
+    "part_humaine_pct": "74.29",
     "preuve_de_paternite": false
   },
   "sceau_contenu": {
@@ -923,7 +934,7 @@
       }
     ],
     "antecedents_uses": [
-      ".git/logs/HEAD et `git log` — les seules dates que ce dossier manipulate ; l'heure de la machine n'entre dans aucun nœud",
+      "`git log HEAD` et `.git/logs/HEAD` — les deux seules dates que ce dossier manipule : les dates publiées viennent de l'histoire atteignable, qui voyage avec le dépôt, le journal local n'étant qu'une source de confrontation absente de l'archive extraite ; l'heure de la machine n'entre dans aucun nœud",
       "MANIFESTE_SHA256.txt — le sceau, dont ce dossier compte les entrées et l'absence de date",
       ".zenodo.json, CITATION.cff — la chaîne de versions et ses identifiants",
       "VERROUS/verrous_base.py — le pendant contractuel : ce dossier date, VERROUS verrouille",
@@ -1093,7 +1104,7 @@
         "modules": [
           "declaration_base.py"
         ],
-        "tests": 31
+        "tests": 37
       },
       "FONDATION": {
         "controles": 18,
@@ -1133,7 +1144,7 @@
         "modules": [
           "verrous_base.py"
         ],
-        "tests": 51
+        "tests": 61
       }
     },
     "statuts_cherches": [
@@ -1141,16 +1152,16 @@
       "SIMULÉ",
       "SPÉCIFIÉ"
     ],
-    "tests": 483
+    "tests": 499
   },
-  "taille_octets": 27293,
+  "taille_octets": 28111,
   "verdict": {
-    "commits_atteignables": 66,
+    "commits_atteignables": 70,
     "dates_dans_le_sceau": 0,
     "enonce": "antériorité accessible, paternité non instrumentée",
     "equations_hors_sceau": 95,
     "instruments_d_education": 0,
     "instruments_d_horodatage_sur_disque": 0,
-    "limites_ouvertes": 10
+    "limites_ouvertes": 11
   }
 }

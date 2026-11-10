@@ -5,13 +5,19 @@
 
 Six exigences, dans l'ordre :
     1. les comptes publiés sont re-mesurés ICI par une écriture différente (subprocess git brut,
-       dénombrement de lignes par `str.count`, sonde du manifeste par un autre regex, numérotation
-       des versions faite à la main) : aucun nombre n'est accepté sur parole ;
+       re-parse du journal de références par `split`, dénombrement de lignes par `str.count`, sonde
+       du manifeste par un autre regex, numérotation des versions faite à la main) : aucun nombre
+       n'est accepté sur parole ; la suite se joue dans trois contextes — arbre de travail, clone,
+       archive extraite par `git archive` où ni `.git` ni journal n'existent, et le vide y est
+       mesuré et asserté, pas ignoré ;
     2. les identités arithmétiques assertées par le module sont éprouvées sur des jeux étrangers au
-       dépôt : si l'additivité de la partition ne tenait qu'aux 66 commits d'ici, ce serait une
-       coïncidence, pas une règle de comptage ;
-    3. chaque contrôle peut rougir : seize mutations en mémoire, une par contrôle, montrent que la
-       grille n'est pas décorative — et qu'une seule rougit à la fois ;
+       dépôt : si l'additivité de la partition ne tenait qu'aux commits de cette machine, ce serait
+       une coïncidence, pas une règle de comptage ;
+    3. chaque contrôle peut rougir : seize mutations en mémoire, une par contrôle, six mensonges
+       ciblés sur les deux sources de dates, un sur le drapeau de portabilité et un sur la limite de
+       non-portabilité montrent que la grille n'est pas décorative — et qu'une seule rougit à la fois.
+       Les valeurs fausses sont fabriquées à partir de la valeur mesurée, jamais d'un littéral, pour
+       rester des mensonges dans les trois contextes ;
     4. les trois ablations sont rejouées et leurs effets comparés à une réécriture indépendante de
        la grille de l'auditeur et de la racine Merkle ; le fichier muté du parc est contrôlé octet
        pour octet avant et après : l'ablation n'écrit rien ;
@@ -30,6 +36,7 @@ import copy
 import hashlib
 import json
 import re
+import shutil
 import subprocess
 import sys
 import unittest
@@ -49,6 +56,16 @@ CERT = DEC.certificat()
 HORS_NOEUDS = frozenset({"source", "empreinte_execution", "rejoue_identique", "limites",
                          "attribution", "racine_merkle_sha256", "taille_octets",
                          "noeuds_certificat"})
+# Deux contextes, un seul fichier : la suite se joue dans l'arbre de travail (dépot git + journal),
+# dans un clone (dépot git, journal recréé par le clone) et dans l'archive extraite par
+# `git archive` (aucun des deux). Ce qui n'est pas mesurable ici est déclaré absent, pas ignoré.
+DEPOT_GIT = (RACINE_DEPOT / ".git").exists()
+JOURNAL_LOCAL = (RACINE_DEPOT / ".git" / "logs" / "HEAD").exists()
+GIT_TROUVE = shutil.which("git") is not None
+SOUS_GIT = unittest.skipUnless(DEPOT_GIT and GIT_TROUVE,
+                               "aucun dépôt git lisible ici : l'histoire ne se relit pas")
+SOUS_JOURNAL = unittest.skipUnless(JOURNAL_LOCAL,
+                                   "aucun journal local de références ici : rien à re-parser")
 
 
 def etat_de(cert):
@@ -77,6 +94,22 @@ def git_brut(*argumens: str) -> str:
     return p.stdout
 
 
+def journal_brut():
+    """.git/logs/HEAD re-parsé par `split` — aucune des regex du module."""
+    if not JOURNAL_LOCAL:
+        return None
+    bruts = (RACINE_DEPOT / ".git" / "logs" / "HEAD").read_bytes().split(b"\n")
+    rendu = []
+    for b in (l for l in bruts if l):
+        l = b.decode("utf-8")
+        ancien, nouveau, reste = l.split(" ", 2)
+        _, suite = reste.split(" <", 1)
+        courriel, fin = suite.split("> ", 1)
+        epoch, reste_f = fin.split(" ", 1)
+        rendu.append((ancien, nouveau, courriel, int(epoch)))
+    return rendu
+
+
 def racine_depuis(noeuds):
     """La formule de `certificat()` réécrite ici : racine des empreintes de nœuds triés."""
     return hashlib.sha256(DEC.canonique(
@@ -98,9 +131,17 @@ class TestReMesureIndependante(unittest.TestCase):
     """Aucun nombre publié n'est accepté sur parole : chacun est re-mesuré autrement."""
 
     def test_commits_atteignables_recomptes_par_rev_list(self):
+        if not DEPOT_GIT:
+            # l'archive extraite hors de tout dépôt git ne date rien : le zéro doit être mesuré
+            self.assertFalse(CERT["horodatages_git"]["git_disponible"])
+            self.assertEqual(CERT["horodatages_git"]["commits_atteignables"], 0)
+            self.assertEqual(CERT["chronologie"]["objets_dates"], 0)
+            self.assertEqual(CERT["fractales"]["la_plus_ancienne_trace_du_depot"], "")
+            return
         brute = git_brut("rev-list", "--count", "HEAD").strip()
         self.assertEqual(int(brute), CERT["horodatages_git"]["commits_atteignables"])
 
+    @SOUS_GIT
     def test_signature_portees_recomptees_un_a_un(self):
         lignes = [l for l in git_brut("log", "--format=%H|%G?|%GK", "HEAD").splitlines() if l]
         avec_bloc = [l.split("|")[0] for l in lignes if not l.endswith("|N|")]
@@ -114,6 +155,7 @@ class TestReMesureIndependante(unittest.TestCase):
                                           capture_output=True, timeout=120).returncode == 0)
         self.assertEqual(verifiees, h["signatures_verifiees"])
 
+    @SOUS_GIT
     def test_partage_humain_machine_refait_par_ensemble_de_seules(self):
         mails = [l for l in git_brut("log", "--format=%ae", "HEAD").splitlines() if l]
         automate = {m for m in mails if re.search(r"cognition|devin|bot|noreply", m, re.I)}
@@ -169,6 +211,35 @@ class TestReMesureIndependante(unittest.TestCase):
         self.assertEqual(sorted(ancetres), zp["ancetres_cites"])
         self.assertLess(len(ancetres), zp["recids_distincts"])
 
+    def test_le_journal_local_se_reparse_par_split_ou_se_declare_absent(self):
+        """Les deux sources de dates sont re-mesurées séparément : l'histoire voyage, le journal non."""
+        h = CERT["horodatages_git"]
+        bruts = journal_brut()
+        if bruts is None:
+            self.assertFalse(h["journal_present"])
+            self.assertEqual((h["journal_lignes"], h["journal_parsees"]), (0, 0))
+            self.assertEqual((h["somme_auteurs_journal"], h["duree_attestee_seconde"]), (0, 0))
+            self.assertEqual(h["tete_longueur"], 0)
+            self.assertFalse(h["tete_coherente"])
+            self.assertFalse(h["tete_coincide_avec_l_histoire"])
+            self.assertTrue(h["dates_publiees_par"].startswith("aucune"))
+            return
+        self.assertTrue(h["journal_present"])
+        self.assertEqual(len(bruts), h["journal_lignes"])
+        self.assertEqual(len(bruts), h["journal_parsees"], "une ligne que le module ne parse pas")
+        mails = {}
+        for _, _, mail, _ in bruts:
+            mails[mail] = mails.get(mail, 0) + 1
+        self.assertEqual(mails, h["auteurs_journal"])
+        self.assertEqual(sum(mails.values()), h["somme_auteurs_journal"])
+        self.assertTrue(all(bruts[i][0] == bruts[i - 1][1] for i in range(1, len(bruts))),
+                        "le journal n'est pas une chaîne : un sha ne reprend pas le précédent")
+        self.assertEqual(bruts[-1][1], h["sha_tete"])
+        self.assertTrue(h["tete_coherente"])
+        if DEPOT_GIT and GIT_TROUVE:
+            self.assertEqual(git_brut("rev-parse", "HEAD").strip(), h["sha_tete"])
+            self.assertTrue(h["tete_coincide_avec_l_histoire"])
+
 
 class TestIdentitesStructurelles(unittest.TestCase):
     """Les règles de comptage assertées tiennent sur des jeux étrangers au dépôt."""
@@ -212,6 +283,12 @@ class TestIdentitesStructurelles(unittest.TestCase):
         self.assertFalse(h["preuve_de_paternite"])
         self.assertTrue(h["aucune_horloge"])
         self.assertEqual(h["motifs_horloge_reposes"], [])
+        if not h["git_disponible"]:
+            # aucune histoire lisible : le nœud doit rendre le vide, pas une date de complaisance
+            self.assertEqual((h["date_auteur_plus_ancienne"], h["date_auteur_racine"]), ("", ""))
+            self.assertFalse(h["date_auteur_antérieure_à_la_racine"])
+            self.assertFalse(h["auteur_plus_ancien_est_automate"])
+            return
         self.assertTrue(h["date_auteur_antérieure_à_la_racine"])
         self.assertLess(h["date_auteur_plus_ancienne"], h["date_auteur_racine"])
         self.assertTrue(h["auteur_plus_ancien_est_automate"])
@@ -225,7 +302,8 @@ class TestIdentitesStructurelles(unittest.TestCase):
 
 
 class TestChaqueControlePeutRougir(unittest.TestCase):
-    """Seize mutations en mémoire, une par contrôle : la grille n'est pas décorative."""
+    """Vingt-quatre mutations en mémoire : seize contrôles attaqués un à un, plus les mensonges
+    qui touchent les deux sources de dates, le drapeau de portabilité et la limite ouverte."""
 
     MUTATIONS = {
         "C01": ("horodatages_git", "signatures_portees", 5),
@@ -260,6 +338,54 @@ class TestChaqueControlePeutRougir(unittest.TestCase):
                 rouges = sorted(c for c, v in rendu.items() if not v["ok"])
                 self.assertEqual(rouges, [id_], rendu[id_]["obtenu"])
 
+    def test_cinq_mensonges_sur_les_deux_sources_de_dates_rougissent_seuls_c01(self):
+        """C01 n'exige plus un dépôt : il confronte les deux sources, et chaque couple brisé rougit.
+
+        Chaque mutation est dérivée de la valeur mesurée, jamais d'un littéral : dans l'archive « git
+        archive », les valeurs mesurées sont déjà le zéro honnête — y écrire un faux littéral ne
+        mentirait à rien et le test y deviendrait décoratif.
+        """
+        h = CERT["horodatages_git"]
+        avant = sorted(h.items())
+        cite = "git log HEAD — l'histoire qui voyage avec le dépôt"
+        tait = "aucune : l'archive lue ici ne contient ni dépôt git ni journal de références"
+        for mensonge, mensonge_champs in (
+            ("tête tronquée", {"tete_longueur": h["tete_longueur"] + 1}),
+            ("tête étrangère à l'histoire",
+             {"tete_coincide_avec_l_histoire": not h["tete_coincide_avec_l_histoire"]}),
+            ("source des dates inversée",
+             {"dates_publiees_par": cite if h["commits_atteignables"] == 0 else tait}),
+            ("journal déclaré absent avec ses lignes",
+             {"journal_present": False, "journal_lignes": h["journal_lignes"] + 1}),
+            ("lignes non parsées", {"journal_tout_parse": not h["journal_tout_parse"]}),
+            ("comptes d'auteurs non additifs", {"auteurs_additifs": not h["auteurs_additifs"]}),
+        ):
+            with self.subTest(mensonge=mensonge):
+                mute = copy.deepcopy(CERT)
+                mute["horodatages_git"].update(mensonge_champs)
+                self.assertNotEqual(sorted(mute["horodatages_git"].items()), avant,
+                                    "la mutation ne change rien de mesuré")
+                rendu = controls_de(mute)
+                self.assertEqual([c for c, v in rendu.items() if not v["ok"]], ["C01"], mensonge)
+
+    def test_inverser_le_drapeau_de_portabilite_rougit_les_quatre(self):
+        """Le drapeau n'est pas décoratif : le contredire laisse des comptes orphelins des identités."""
+        mute = copy.deepcopy(CERT)
+        mute["horodatages_git"]["git_disponible"] = not CERT["horodatages_git"]["git_disponible"]
+        rendu = controls_de(mute)
+        self.assertEqual(sorted(c for c, v in rendu.items() if not v["ok"]),
+                         ["C01", "C02", "C03", "C09"])
+
+    def test_effacer_la_limite_sur_les_dates_qui_ne_voyagent_pas_rougit_c16(self):
+        lo = CERT["limites_ouvertes"]
+        cible = [l for l in lo["liste"] if l.startswith("les dates ne voyagent pas")]
+        self.assertEqual(len(cible), 1, "la limite de non-portabilité doit être écrite une fois")
+        mute = copy.deepcopy(CERT)
+        mute["limites_ouvertes"]["liste"] = [l for l in lo["liste"] if l not in cible]
+        mute["limites_ouvertes"]["nb_limites"] = len(mute["limites_ouvertes"]["liste"])
+        rendu = controls_de(mute)
+        self.assertEqual([c for c, v in rendu.items() if not v["ok"]], ["C16"])
+
     def test_la_grille_de_l_auditeur_est_reecrite_ici_et_tombe_juste(self):
         """`_regles` du module contre une écriture indépendante de P2 et P3 sur l'échantillon."""
         echantillon = list(CONT.equations(CONT.certificat()))
@@ -271,6 +397,43 @@ class TestChaqueControlePeutRougir(unittest.TestCase):
         al = CERT["ablation_limites"]
         self.assertEqual(al["equations"], len(echantillon))
         self.assertEqual(al["born_avant"], born)
+
+
+class TestSansAucuneHistoireLisible(unittest.TestCase):
+    """`git archive` ne livre ni `.git` ni journal : le module doit mesurer le vide, pas lever."""
+
+    def test_le_module_survit_aux_octets_seuls_sans_depot_git(self):
+        from tempfile import TemporaryDirectory
+        racine, git = DEC.RACINE, DEC.GIT
+        try:
+            with TemporaryDirectory(prefix="declaration-sans-git-") as td:
+                DEC.RACINE = Path(td)
+                DEC.GIT = None
+                h = DEC.horodatages_git()
+        finally:
+            DEC.RACINE, DEC.GIT = racine, git
+        self.assertFalse(h["journal_present"])
+        self.assertFalse(h["git_disponible"])
+        self.assertEqual((h["journal_lignes"], h["journal_parsees"]), (0, 0))
+        self.assertEqual((h["commits_atteignables"], h["tete_longueur"]), (0, 0))
+        self.assertEqual((h["sha_tete"], h["premiere"], h["derniere"]), ("", "", ""))
+        self.assertEqual(h["duree_attestee_seconde"], 0)
+        self.assertEqual(h["auteurs_journal"], {})
+        self.assertFalse(h["tete_coherente"])
+        self.assertFalse(h["tete_coincide_avec_l_histoire"])
+        self.assertTrue(h["journal_tout_parse"] and h["auteurs_additifs"] and h["utf8_integrale"])
+        self.assertTrue(h["dates_publiees_par"].startswith("aucune"))
+
+    def test_une_tete_absente_ne_satisfait_pas_une_recherche_par_sous_chaine(self):
+        """Le sceau ne cite pas la tête git ; et une tête manquante ne doit pas feindre une citation."""
+        s = CERT["sceau_contenu"]
+        manifeste = DEC._texte(DEC.MANIFESTE_CHEMIN)
+        self.assertFalse(s["tete_git_citee"])
+        tete = DEC._tete_git().strip()
+        if not tete:
+            return
+        self.assertNotIn(tete, manifeste)
+        self.assertNotIn(tete[5:], manifeste)
 
 
 class TestAblationsRejouees(unittest.TestCase):
