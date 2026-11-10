@@ -25,8 +25,9 @@ Ce que ce module fait, dans l'ordre
      uniquement ») ; le nombre rendu est ce qu'il est (EQ-04) ;
   5. il mesure la frontière « cœur secret » : ce qui est gardé, ce qui reste hors du sceau, et si
      les heuristiques fines sont vraiment hors du dépôt public (EQ-05) ;
-  6. il parse le journal de références git ligne par ligne pour dater, attribuer et contrôler la
-     tête, puis confronte ce qu'un dépôt prouve à ce qu'il ne prouve pas (EQ-06) ;
+  6. il date par le journal des commits joignables (`git log`), qui voyage avec le dépôt, et confronte
+     ce nombre au journal local de références qui, lui, ne voyage pas ; puis il oppose ce qu'un dépôt
+     prouve à ce qu'il ne prouve pas (EQ-06) ;
   7. il ouvre le registre d'accès demandé par la phase 2 — six colonnes, zéro ligne — et compte la
      matière de contact déjà présente dans le dépôt mais non reprise dans ce registre (EQ-07) ;
   8. il cherche les huit clauses de la phase 3, avec un contrôle positif qui prouve que la recherche
@@ -56,11 +57,13 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import shutil
+import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 from fractions import Fraction
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 RACINE = Path(__file__).resolve().parents[1]
 if str(RACINE) not in sys.path:
@@ -68,6 +71,7 @@ if str(RACINE) not in sys.path:
 
 DOSSIER = Path(__file__).resolve().parent
 ARTEFACTS = DOSSIER / "artefacts"
+GIT = shutil.which("git") if (RACINE / ".git").exists() else None
 
 from FONDATION import fondation_base as FB                                    # noqa: E402
 
@@ -82,8 +86,9 @@ SOURCE: Dict[str, Any] = {
     "antecedents_uses": [
         "MANIFESTE_SHA256.txt — le sceau du dépôt, dont ce dossier re-hache chaque entrée au lieu de "
         "recopier un verdict déjà écrit",
-        ".git/logs/HEAD — l'unique source d'horodatage : les dates viennent du contenu du journal, "
-        "jamais de l'heure de la machine",
+        "git log HEAD — la source d'horodatage publiée : les dates viennent du contenu des commits "
+        "atteignables, jamais de l'heure de la machine, et ce journal voyage avec le dépôt ; "
+        ".git/logs/HEAD n'est qu'une source locale de confrontation, absente de l'archive publiée",
         "LICENSE, LICENSE-GPL, LICENSE-AGPL, .zenodo.json, CITATION.cff, DOSSIER_DEVIS/ — les textes "
         "dont les compteurs de clauses, de mentions et de montants sont tirés",
         "FONDATION/fondation_base.py — STATUTS et COUCHES : cette couche étiquette avec les mêmes mots "
@@ -217,6 +222,135 @@ def _corpus_texte() -> List[str]:
             if Path(c).suffix in EXTENSIONS_TEXTE and c not in EXCLUS_AUTO]
 
 
+_CACHE: Dict[str, Any] = {}
+
+
+def _git(argumens: List[str]) -> Optional[str]:
+    """git exécuté dans ce dépôt ; None si git, le dépôt ou la commande font défaut."""
+    if not GIT:
+        return None
+    try:
+        p = subprocess.run(["git", *argumens], cwd=str(RACINE), capture_output=True,
+                           text=True, encoding="utf-8", errors="replace", timeout=120)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    return p.stdout if p.returncode == 0 else None
+
+
+def _suivis_par_git() -> Optional[List[str]]:
+    """Les chemins que git suit — ce sont eux seuls qui voyagent dans un clone et dans l'archive."""
+    if "_SUIVI" not in _CACHE:
+        brut = _git(["ls-files", "-z"])
+        _CACHE["_SUIVI"] = sorted(c for c in brut.split("\0") if c) if brut is not None else None
+    return _CACHE["_SUIVI"]
+
+
+def _iso_epoch(epoch: int, decal: str) -> str:
+    """Rendu ISO d'une seconde POSIX lue dans le dépôt, avec le fuseau qui l'accompagne."""
+    signe = 1 if decal[0] == "+" else -1
+    tz = timezone(signe * timedelta(hours=int(decal[1:3]), minutes=int(decal[3:5])))
+    return datetime.fromtimestamp(epoch, tz=tz).isoformat()
+
+
+def _journal_local() -> Dict[str, Any]:
+    """.git/logs/HEAD — le journal des références, qui n'existe que sur le disque qui l'a produit."""
+    chemin = RACINE / ".git" / "logs" / "HEAD"
+    if not chemin.exists():
+        return {"present": False, "lignes": 0, "parsees": 0, "tout_parse": True,
+                "utf8_stricte": 0, "utf8_integrale": True, "auteurs": {}, "somme_auteurs": 0,
+                "auteurs_additifs": True, "premiere": "", "derniere": "",
+                "duree_attestee_seconde": 0, "sha_dernier": "", "sha_tete": _sha_tete(),
+                "tete_coherente": False}
+    bruts = chemin.read_bytes()
+    lignes = [l for l in bruts.split(b"\n") if l]
+    parsees: List[Tuple[int, str, str, str, str]] = []
+    strictes = 0
+    for b in lignes:
+        try:
+            l = b.decode("utf-8")
+            strictes += 1
+        except UnicodeDecodeError:
+            l = b.decode("utf-8", "replace")
+        m = re.match(r"^([0-9a-f]{40}) ([0-9a-f]{40}) (.+?) <([^>]*)> (\d+) ([+-]\d{2})(\d{2})\t"
+                     r"(.*)$", l)
+        if m:
+            parsees.append((int(m.group(5)), m.group(2), m.group(4),
+                            f"{m.group(6)}{m.group(7)}", m.group(8)))
+    ordre = sorted(parsees)
+    tete = _sha_tete()
+    auteurs: Dict[str, int] = {}
+    for _, _, mail, _, _ in parsees:
+        auteurs[mail] = auteurs.get(mail, 0) + 1
+    return {"present": True, "lignes": len(lignes), "parsees": len(parsees),
+            "tout_parse": len(parsees) == len(lignes),
+            "utf8_stricte": strictes, "utf8_integrale": strictes == len(lignes),
+            "auteurs": dict(sorted(auteurs.items(), key=lambda kv: (-kv[1], kv[0]))),
+            "somme_auteurs": sum(auteurs.values()),
+            "auteurs_additifs": sum(auteurs.values()) == len(parsees),
+            "premiere": (_iso_epoch(ordre[0][0], ordre[0][3]) if ordre else ""),
+            "derniere": (_iso_epoch(ordre[-1][0], ordre[-1][3]) if ordre else ""),
+            "duree_attestee_seconde": (ordre[-1][0] - ordre[0][0]) if ordre else 0,
+            "sha_dernier": parsees[-1][1] if parsees else "", "sha_tete": tete,
+            "tete_coherente": bool(tete) and bool(parsees) and tete == parsees[-1][1]}
+
+
+def _sha_tete() -> str:
+    tete = (_texte(".git/HEAD") if (RACINE / ".git" / "HEAD").exists() else "").strip()
+    if not tete.startswith("ref:"):
+        return tete
+    cible = RACINE / ".git" / tete[4:].strip()
+    return cible.read_text(encoding="utf-8", errors="replace").strip() if cible.exists() else ""
+
+
+def _chemins_scelles() -> List[str]:
+    """Les chemins que le manifeste couvre : cette liste voyage avec le dépôt publié."""
+    if "_SCEAU" not in _CACHE:
+        _CACHE["_SCEAU"] = sorted({g.group(2).strip() for g in
+                                   (re.match(r"^([0-9a-f]{64})  (.+)$", l)
+                                    for l in _texte(MANIFESTE_CHEMIN).splitlines()) if g})
+    return _CACHE["_SCEAU"]
+
+
+def _lignes_du_registre() -> List[str]:
+    """Les lignes de données du registre posé sur disque, en-tête retiré — pas celles voulues."""
+    cible = ARTEFACTS / "registre_acces.csv"
+    if not cible.exists():
+        return []
+    texte = cible.read_bytes().decode("utf-8-sig", "replace")
+    lignes = [l for l in texte.replace("\r\n", "\n").split("\n") if l != ""]
+    return lignes[1:]
+
+
+def _histoire_atteignable() -> Dict[str, Any]:
+    """git log HEAD — l'histoire qui voyage avec le dépôt, contrairement au journal local."""
+    if "_HISTOIRE" not in _CACHE:
+        sortie = _git(["log", "--format=%H%x09%ae%x09%at%x09%aI", "HEAD"])
+        commits: List[Tuple[str, str, int, str]] = []
+        for l in (sortie or "").splitlines():
+            c = l.split("\t")
+            if len(c) == 4 and c[2].isdigit():
+                commits.append((c[0], c[1], int(c[2]), c[3]))
+        ordre = sorted(commits, key=lambda c: c[2])
+        lignes = len([l for l in (sortie or "").splitlines() if l])
+        auteurs: Dict[str, int] = {}
+        for _, mail, _, _ in commits:
+            auteurs[mail] = auteurs.get(mail, 0) + 1
+        _CACHE["_HISTOIRE"] = {
+            "git_disponible": sortie is not None, "commits": len(commits),
+            "lignes": lignes, "tout_parse": lignes == len(commits),
+            "sha_distincts": len({c[0] for c in commits}),
+            "auteurs": dict(sorted(auteurs.items(), key=lambda kv: (-kv[1], kv[0]))),
+            "somme_auteurs": sum(auteurs.values()),
+            "auteurs_additifs": sum(auteurs.values()) == len(commits),
+            "premiere": ordre[0][3] if ordre else "", "derniere": ordre[-1][3] if ordre else "",
+            "duree_attestee_seconde": (ordre[-1][2] - ordre[0][2]) if ordre else 0,
+            "sha_tete": _sha_tete(),
+            "tete_coherente": bool(ordre) and ordre[-1][0] == _sha_tete(),
+            "commits_d_outils_automates": sum(v for k, v in auteurs.items()
+                                              if "cognition" in k or "bot" in k)}
+    return _CACHE["_HISTOIRE"]
+
+
 def _instruments_sur_disque() -> List[str]:
     """Les artefacts d'horodatage réellement présents, toutes extensions d'instrument."""
     return [c for c in _chemins_sous_arbre()
@@ -290,11 +424,24 @@ def inventaire() -> Dict[str, Any]:
         par_extension[cle] = par_extension.get(cle, 0) + 1
     hors_public = [c for c in chemins if any(c.startswith(p) for p in HORS_DEPOT_PUBLIC)]
     source = _texte("VERROUS/verrous_base.py")
+    suivis = _suivis_par_git()
+    ensemble = set(chemins)
+    dans_suivi = sorted(ensemble & set(suivis)) if suivis is not None else None
+    hors_suivi = sorted(ensemble - set(suivis)) if suivis is not None else None
     return {"regles": {"repertoires_exclus": list(EXCLUS_REPERTOIRES),
                        "suffixes_exclus": list(EXCLUS_SUFFIXES),
                        "prefixes_exclus": list(EXCLUS_PREFIXES),
                        "noms_exclus_par_prefixe": NOM_TEMPORAIRE},
             "fichiers": len(chemins),
+            "git_disponible": suivis is not None,
+            "fichiers_suivis_par_git": None if dans_suivi is None else len(dans_suivi),
+            "fichiers_non_suivis_par_git": None if hors_suivi is None else len(hors_suivi),
+            "exemples_non_suivis": (hors_suivi or [])[:6],
+            "suivi_additif": True if suivis is None
+            else len(dans_suivi) + len(hors_suivi) == len(chemins),
+            "ce_que_le_suivi_dit": "un arbre scanné sur disque n'est pas l'arbre publié : les "
+                                   "fichiers que git ne suit pas ne voyagent ni dans un clone ni "
+                                   "dans l'archive, et l'écart est compté ici plutôt que subi",
             "octets_total": sum(tailles.values()),
             "par_extension": dict(sorted(par_extension.items(), key=lambda kv: (-kv[1], kv[0]))),
             "empreinte_arbre": hashlib.sha256(ruban.encode("utf-8")).hexdigest(),
@@ -489,37 +636,9 @@ def frontiere() -> Dict[str, Any]:
 
 
 def horodatages() -> Dict[str, Any]:
-    bruts = (RACINE / ".git" / "logs" / "HEAD").read_bytes()
-    lignes = [l for l in bruts.split(b"\n") if l]
-    parsees: List[Tuple[int, str, str, str, str]] = []
-    strictes = 0
-    for b in lignes:
-        try:
-            l = b.decode("utf-8")
-            strictes += 1
-        except UnicodeDecodeError:
-            l = b.decode("utf-8", "replace")
-        m = re.match(r"^([0-9a-f]{40}) ([0-9a-f]{40}) (.+?) <([^>]*)> (\d+) ([+-]\d{2})(\d{2})\t"
-                     r"(.*)$", l)
-        if m:
-            parsees.append((int(m.group(5)), m.group(2), m.group(4),
-                            f"{m.group(6)}{m.group(7)}", m.group(8)))
-    epochs = [p[0] for p in parsees]
-
-    def iso(epoch: int, decal: str) -> str:
-        signe = 1 if decal[0] == "+" else -1
-        tz = timezone(signe * timedelta(hours=int(decal[1:3]), minutes=int(decal[3:5])))
-        return datetime.fromtimestamp(epoch, tz=tz).isoformat()
-
-    ordre = sorted(parsees)
-    auteurs: Dict[str, int] = {}
-    for _, _, mail, _, _ in parsees:
-        auteurs[mail] = auteurs.get(mail, 0) + 1
-    tete = _texte(".git/HEAD").strip()
-    sha_tete = ""
-    if tete.startswith("ref:"):
-        cible = RACINE / ".git" / tete[4:].strip()
-        sha_tete = cible.read_text(encoding="utf-8", errors="replace").strip() if cible.exists() else ""
+    """Les deux journaux de dates du dépôt, séparés par ce qu'ils traversent."""
+    local = _journal_local()
+    histoire = _histoire_atteignable()
     corpus = _corpus_texte()
     instruments = {}
     for lib, pat in INSTRUMENTS_HORODATAGE:
@@ -529,18 +648,18 @@ def horodatages() -> Dict[str, Any]:
     artefacts = _instruments_sur_disque()
     mentions = sum(v["occurrences"] for v in instruments.values())
     fichiers_mentions = sorted({c for v in instruments.values() for c in v["fichiers"]})
-    return {"lignes_journal": len(lignes), "lignes_parsees": len(parsees),
-            "tout_parse": len(parsees) == len(lignes),
-            "utf8_stricte": strictes, "utf8_integrale": strictes == len(lignes),
-            "auteurs": dict(sorted(auteurs.items(), key=lambda kv: (-kv[1], kv[0]))),
-            "somme_auteurs": sum(auteurs.values()),
-            "auteurs_additifs": sum(auteurs.values()) == len(parsees),
-            "premiere": iso(ordre[0][0], ordre[0][3]) if ordre else "",
-            "derniere": iso(ordre[-1][0], ordre[-1][3]) if ordre else "",
-            "sha_dernier": parsees[-1][1] if parsees else "",
-            "sha_tete": sha_tete, "tete_coherente": bool(sha_tete) and sha_tete == parsees[-1][1],
-            "sha_distincts": len({p[1] for p in parsees}),
-            "duree_attestee_seconde": (max(epochs) - min(epochs)) if epochs else 0,
+    return {"histoire": histoire, "journal_local": local,
+            "dates_publiees_par": "histoire",
+            "commits_attestes": histoire["commits"], "premiere": histoire["premiere"],
+            "derniere": histoire["derniere"],
+            "duree_attestee_seconde": histoire["duree_attestee_seconde"],
+            "journal_plus_que_commits": local["parsees"] - histoire["commits"],
+            "source_des_commits": "git log HEAD", "source_du_journal": ".git/logs/HEAD",
+            "ce_que_compte_chaque_source": "« histoire » compte les commits atteignables depuis "
+                                           "HEAD : ils voyagent avec le dépôt. « journal_local » "
+                                           "compte les écritures de .git/logs/HEAD : elles restent "
+                                           "sur le disque qui les a produites et ne voyagent ni "
+                                           "dans un clone ni dans l'archive",
             "instruments_horodatage": instruments,
             "artefacts_horodatage": artefacts,
             "nb_artefacts_horodatage": len(artefacts),
@@ -557,8 +676,7 @@ def horodatages() -> Dict[str, Any]:
             "preuve_de_paternite": False,
             "ce_que_prouve_un_depot": "un dépôt horodaté atteste qu'un contenu était accessible à "
                                       "une date, pas qu'il est de vous : antériorité légale = False",
-            "commits_d_outils_automates": sum(v for k, v in auteurs.items()
-                                             if "cognition" in k or "bot" in k),
+            "commits_d_outils_automates": histoire["commits_d_outils_automates"],
             "exclus_auto": list(EXCLUS_AUTO)}
 
 
@@ -566,13 +684,30 @@ def registre_acces() -> Dict[str, Any]:
     chemins = _chemins_sous_arbre()
     deja = [c for c in chemins if "registre" in c.lower() and c != CHEMIN_REGISTRE]
     matiere = [c for c in chemins if c.startswith("emails") or c.startswith("EMAIL_")]
+    suivis = _suivis_par_git()
+    matiere_suivie = sorted(set(matiere) & set(suivis)) if suivis is not None else None
+    lignes = _lignes_du_registre()
+    sous_sceau = set(_chemins_scelles())
+    repris = sorted({c for c in matiere if any(c in l or Path(c).name in l for l in lignes)})
     return {"chemin": CHEMIN_REGISTRE, "colonnes": list(COLONNES_REGISTRE),
-            "nb_colonnes": len(COLONNES_REGISTRE), "nb_entrees": 0,
+            "nb_colonnes": len(COLONNES_REGISTRE),
+            "registre_posé_sur_disque": (ARTEFACTS / "registre_acces.csv").exists(),
+            "lignes_de_donnees_lues": len(lignes), "nb_entrees": len(lignes),
             "absent_avant_ce_dossier": len(deja) == 0,
             "registres_preexistants": sorted(deja),
-            "matiere_premiere_fichiers": len(matiere),
-            "matiere_premiere_par_repertoire": _compter_par_repertoire(matiere),
-            "matiere_reprise_dans_le_registre": 0,
+            "matiere_sur_disque": len(matiere),
+            "matiere_sur_disque_par_repertoire": _compter_par_repertoire(matiere),
+            "matiere_exemples": sorted(matiere)[:6],
+            "git_disponible": suivis is not None,
+            "matiere_suivie_par_git": matiere_suivie if matiere_suivie is None
+            else len(matiere_suivie),
+            "matiere_hors_suivi_git": None if matiere_suivie is None
+            else len(matiere) - len(matiere_suivie),
+            "matiere_entree_du_sceau": len({c for c in matiere if c in sous_sceau}),
+            "matiere_reprise_dans_le_registre": len(repris),
+            "matiere_hors_registre": len(matiere) - len(repris),
+            "suivi_additif": True if matiere_suivie is None
+            else len(matiere_suivie) + (len(matiere) - len(matiere_suivie)) == len(matiere),
             "ce_que_l_avis_demandaite": ["qui contacte", "entité représentée", "date",
                                           "questions techniques posées"],
             "couvre_quatre_champs_demandes": all(any(col.startswith(pref)
@@ -580,7 +715,11 @@ def registre_acces() -> Dict[str, Any]:
                                                  for col in ("date_contact", "personne", "entite",
                                                              "question_posee"))
             and any("canal" in col for col in COLONNES_REGISTRE),
-            "ligne_est_une_donnee_pas_un_commentaire": True}
+            "ligne_est_une_donnee_pas_un_commentaire": True,
+            "ce_que_compte_le_suivi": "la matière de contact est comptée là où elle est : sur ce "
+                                      "disque, dans ce que git suit, dans ce que le sceau couvre ; "
+                                      "un fichier que git ne suit pas ne part ni dans le clone ni "
+                                      "dans l'archive"}
 
 
 def clauses() -> Dict[str, Any]:
@@ -741,8 +880,10 @@ def exposition() -> Dict[str, Any]:
             "licences_divergentes": licence_zenodo != licence_cff,
             "branches_non_reprises_dans_zenodo": perdues,
             "upload_type": str(z.get("upload_type", "")),
-            "depot_distant": next(iter(re.findall(r"url\s*=\s*(\S+)", _texte(".git/config"))), ""),
+            "depot_distant": (next(iter(re.findall(r"url\s*=\s*(\S+)", _texte(".git/config"))), "")
+                              if (RACINE / ".git" / "config").exists() else ""),
             "references_zenodo": len(z.get("references", []) or []),
+            "date_release_lue": champ("date-released"),
             "expose": bool(champ("doi")) and bool(_chemins_sous_arbre())}
 
 
@@ -750,30 +891,56 @@ def chronologie() -> Dict[str, Any]:
     h, e = horodatages(), exposition()
     cs, st = clauses(), structure_contrat()
     verrous = cs["clauses_redigees"] + st["instruments_signes"]
+    expose = bool(e["doi_cff"])
+    ordre = verrous > 0 and expose
+    ordre_sans_dates = verrous > 0
     return {"premiere_trace_datee": h["premiere"], "derniere_trace_datee": h["derniere"],
             "secondes_attestees": h["duree_attestee_seconde"],
-            "commits_attestes": h["lignes_parsees"],
-            "doi_deja_publie": bool(e["doi_cff"]),
+            "commits_attestes": h["commits_attestes"],
+            "source_des_dates": h["source_des_commits"],
+            "date_de_exposition_lue": e["date_release_lue"],
+            "exposition_datee_sans_le_journal": bool(e["date_release_lue"]),
+            "ecritures_du_journal_local": h["journal_local"]["parsees"],
+            "journal_local_present": h["journal_local"]["present"],
+            "divergence_journal_moins_histoire": h["journal_plus_que_commits"],
+            "doi_deja_publie": expose,
             "verrous_pos_avant_exposition": verrous,
-            "verrouillage_avant_exposition": verrous > 0 and bool(e["doi_cff"]),
-            "exposition_attestee_anterieure_aux_verrous": bool(e["doi_cff"]) and verrous == 0,
+            "verrouillage_avant_exposition": ordre,
+            "verrouillage_sans_consulter_une_date": ordre_sans_dates,
+            "ordre_independant_des_sources_de_dates": ordre == ordre_sans_dates,
+            "exposition_attestee_anterieure_aux_verrous": expose and verrous == 0,
             "second_term_manquant_pour_dater_un_verrou": True,
             "ce_que_l_avis_prescrivait": "« Phase 1 : Verrouillage et traçabilité pré-exposition »",
-            "mesure": "le dépôt porte un DOI publié et "
-                      f"{h['lignes_parsees']} commits datés avant tout verrou : la phase 1 arrive "
-                      "après l'exposition, elle ne la précède plus",
+            "mesure": f"l'histoire suivie par git porte {h['commits_attestes']} commits datés, le "
+                      f"journal local enregistre {h['journal_local']['parsees']} écritures (écart "
+                      f"{h['journal_plus_que_commits']}) : le DOI est publié et aucun verrou n'a été "
+                      f"posé, la phase 1 arrive après l'exposition, elle ne la précède plus",
+            "portee_des_deux_sources": "les commits se lisent dans un clone et "
+                                                         "dans l'archive tant que git y est "
+                                                         "disponible ; le journal de références "
+                                                         "reste sur le disque qui l'a produit",
             "gouvernable_desormais": ["prochaine divulgation", "prochain contact",
                                       "prochain document avant envoi"],
             "retroactif_impossible": True}
 
 
 def limites_ouvertes() -> Dict[str, Any]:
-    nb_courriers = registre_acces()["matiere_premiere_fichiers"]
+    reg = registre_acces()
+    chemins = _chemins_sous_arbre()
+    suivis = _suivis_par_git()
+    nb_courriers = reg["matiere_sur_disque"]
+    nb_suivis = reg["matiere_suivie_par_git"]
+    hors_suivi = None if suivis is None else len({c for c in chemins} - {c for c in suivis})
+    suivi_texte = ("git indisponible ici" if nb_suivis is None
+                   else f"{nb_suivis} seulement suivi(s) par git")
+    arbre_texte = ("git indisponible ici" if hors_suivi is None
+                   else f"{hors_suivi} fichier(s) hors du suivi git")
     liste = [
         "aucune clause n'a été rédigée ici : les huit recherchées restent à écrire par un juriste, "
         "et ce module ne peut pas les écrire à sa place",
-        f"le registre d'accès est vide : il ne dira rien tant que personne n'y portera une ligne, "
-        f"et les {nb_courriers} fichiers de courriers déjà présents n'y sont pas repris",
+        f"le registre d'accès est vide : {reg['nb_entrees']} ligne lue dans ses octets, et les "
+        f"{nb_courriers} fichier(s) de courriers posés sur ce disque ({suivi_texte}, "
+        f"{reg['matiere_entree_du_sceau']} sous le sceau) n'y sont pas repris",
         "un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni "
         "constat d'huissier n'existe dans ce corpus",
         "les concepts mathématiques ne sont pas protégeables par le droit d'auteur : seule "
@@ -790,8 +957,15 @@ def limites_ouvertes() -> Dict[str, Any]:
         "ne qualifie aucun droit",
         "les prix, redevances et pourcentages sont absents du corpus : rien n'est négocié, et rien "
         "n'est ici proposé à la place",
+        f"ce certificat est mesuré sous le chemin où on le lance : l'arbre vu d'ici compte "
+        f"{len(chemins)} fichiers ({arbre_texte}) — les compteurs d'arbre et de matière ne "
+        f"voyagent pas avec le dépôt, EQ-01 et EQ-07 publient l'écart des fichiers hors du suivi "
+        f"git",
+        "les dates du journal local de références ne voyagent pas : seule l'histoire atteignable "
+        "par git se relit dans un clone, et l'archive publiée peut ne contenir aucun dépôt git",
     ]
     return {"liste": liste, "nb": len(liste), "compte_courriers": nb_courriers,
+            "marqueur_courriers": f"{nb_courriers} fichier(s) de courriers",
             "toutes_au_dela_de_20": all(len(l) > 40 for l in liste),
             "remplies_dans_ce_lot": 0,
             "longueur_minimale": min(len(l) for l in liste)}
@@ -865,7 +1039,9 @@ def octets_clauses_md(cert: Dict[str, Any]) -> bytes:
         f"{len(cert['frontiere']['modules_d_equations_hors_sceau'])} module(s) d'équations hors "
         f"sceau et publiés quand même | OPÉRATIONNEL |",
         f"| 2 | registre d'accès | {reg['nb_colonnes']} colonnes, {reg['nb_entrees']} ligne, "
-        f"{reg['matiere_premiere_fichiers']} fichiers de courriers déjà là sans être repris | "
+        f"{reg['matiere_sur_disque']} fichier(s) de courriers sur ce disque, "
+        f"{reg['matiere_suivie_par_git']} suivi(s) par git, "
+        f"{reg['matiere_entree_du_sceau']} sous le sceau, aucun repris | "
         f"OPÉRATIONNEL |",
         f"| 3 | NDA bilatéral en droit français, non-contournement, non-débauchage | "
         f"{cls['clauses_redigees']}/{cls['nb_clauses_cherchees']} clause présente | SPÉCIFIÉ |",
@@ -1012,6 +1188,7 @@ def equations(etat: Dict[str, Any]) -> List[Dict[str, Any]]:
     st, rm, av = etat["structure_contrat"], etat["remuneration"], etat["relecture_avocat"]
     exp, chr_, lo = etat["exposition"], etat["chronologie"], etat["limites_ouvertes"]
     rr, sv, ec = etat["registre_relu"], etat["plan_svg"], etat["ecritures"]
+    hi, hj = h["histoire"], h["journal_local"]
     # les listes publiées dans un énoncé s'écrivent en français, pas en repr Python
     versions_gnu = " / ".join(k + " " + ", ".join(v)
                                for k, v in sorted(lic["textes_gnu_versions"].items()))
@@ -1024,9 +1201,12 @@ def equations(etat: Dict[str, Any]) -> List[Dict[str, Any]]:
             f"{inv['fichiers']} fichiers · {inv['octets_total']} octets · "
             f"{len(inv['par_extension'])} extensions · {inv['hors_depot_public']['fichiers']} "
             f"fichier(s) hors dépôt public ({inv['hors_depot_public']['octets']} octets) · "
-            f"aucune horloge dans le source {inv['aucune_horloge']}", "OPÉRATIONNEL",
+            f"{inv['fichiers_suivis_par_git']} suivis par git et "
+            f"{inv['fichiers_non_suivis_par_git']} hors suivi · aucune horloge dans le source "
+            f"{inv['aucune_horloge']}", "OPÉRATIONNEL",
             "l'empreinte est une adresse, pas une preuve : elle dit que ces octets étaient là, elle "
-            "ne dit pas de qui ni depuis quand", inv),
+            "ne dit pas de qui ni depuis quand · un fichier hors du suivi git n'est pas publié : "
+            "il ne voyage ni dans un clone, ni dans l'archive", inv),
         _eq("EQ-02", "verrous_base.py → manifeste() → C02",
             "pour chaque entrée (h, chemin) du manifeste : h == sha256(octets) ou "
             "h == sha256(octets sans CRLF) ; sinon la dérive est comptée et listée",
@@ -1068,27 +1248,35 @@ def equations(etat: Dict[str, Any]) -> List[Dict[str, Any]]:
             "la frontière conseillée par l'avis est incompatible avec la stratégie déjà exécutée : "
             "le dépôt publie ses modules d'équations et n'en garde aucun", fr),
         _eq("EQ-06", "verrous_base.py → horodatages() → C06",
-            "journal git : (ancien, nouveau, auteur, courriel, epoch, fuseau) parsed pour chaque "
-            "ligne ; tête du dépôt = nouveau SHA de la dernière ligne",
-            f"{h['lignes_parsees']}/{h['lignes_journal']} lignes · {h['premiere']} → "
-            f"{h['derniere']} · {h['duree_attestee_seconde']} s · auteurs {h['auteurs']} · tête "
-            f"cohérente {h['tete_coherente']} · {h['nb_artefacts_horodatage']} artefact "
-            f"d'horodatage sur disque ({h['extensions_instrument']}) et "
-            f"{h['mentions_instrument_occurrences']} mention(s) du mot dans "
-            f"{h['mentions_instrument_fichiers']} fichier(s)",
+            "histoire = |{commits atteignables depuis HEAD}| lue par git log ; journal = |{lignes "
+            "de .git/logs/HEAD}| ; écart = journal − histoire",
+            f"{hi['commits']}/{hi['lignes']} commit(s) atteignable(s) · {hi['premiere']} → "
+            f"{hi['derniere']} · {hi['duree_attestee_seconde']} s · auteurs {hi['auteurs']} · tête "
+            f"cohérente {hi['tete_coherente']} · journal local {hj['parsees']} écriture(s), présent "
+            f"{hj['present']}, écart {h['journal_plus_que_commits']} · "
+            f"{h['nb_artefacts_horodatage']} artefact d'horodatage sur disque "
+            f"({h['extensions_instrument']}) et {h['mentions_instrument_occurrences']} mention(s) "
+            f"du mot dans {h['mentions_instrument_fichiers']} fichier(s)",
             "OPÉRATIONNEL",
             "un dépôt horodaté prouve une accessibilité, pas une paternité : "
             "antériorité légale = False · le mot « coffre-fort » ou « INPI » dans un fichier ne "
-            "date rien : seul un artefact remis par l'autorité de temps date", h),
+            "date rien : seul un artefact remis par l'autorité de temps date · le journal local de "
+            "références ne voyage ni dans un clone ni dans l'archive : les dates citées viennent de "
+            "l'histoire atteignable, pas de lui", h),
         _eq("EQ-07", "verrous_base.py → registre_acces() → C07",
-            "registre = 6 colonnes (date, personne, entité, canal, question, réponse) ; entrées = 0",
-            f"{reg['nb_colonnes']} colonnes · {reg['nb_entrees']} entrée · "
-            f"{reg['matiere_premiere_fichiers']} fichier(s) de courriers déjà présents · "
+            "registre = 6 colonnes (date, personne, entité, canal, question, réponse) ; entrées = "
+            "|{lignes de données lues dans ses octets}| ; matière comptée sur disque, dans le suivi "
+            "git et sous le sceau",
+            f"{reg['nb_colonnes']} colonnes · {reg['nb_entrees']} entrée lue sur disque · "
+            f"{reg['matiere_sur_disque']} fichier(s) de courriers sur ce disque, "
+            f"{reg['matiere_suivie_par_git']} suivi(s) par git, "
+            f"{reg['matiere_entree_du_sceau']} sous le sceau · "
             f"{reg['matiere_reprise_dans_le_registre']} repris · registre préexistant "
             f"{reg['absent_avant_ce_dossier']}", "OPÉRATIONNEL",
             "le cadre est posé, la matière ne l'est pas : "
-            f"{reg['matiere_premiere_fichiers']} fichiers de correspondance dorment hors du "
-            "registre, et un registre vide ne protège personne", reg),
+            f"{reg['matiere_hors_registre']} fichier(s) de correspondance dorment hors du registre "
+            f"et {reg['matiere_entree_du_sceau']} n'entre dans le sceau ; un registre vide ne "
+            "protège personne, et une matière que git ne suit pas n'est pas publiée", reg),
         _eq("EQ-08", "verrous_base.py → clauses() → C08",
             "|{c ∈ CLAUSES : occurrences(c, corpus hors ce module)}| avec contrôle positif SPDX et "
             "contraste naïf « nda »",
@@ -1149,9 +1337,12 @@ def equations(etat: Dict[str, Any]) -> List[Dict[str, Any]]:
             "les deux fichiers de citation ne disent pas la même licence : l'écart est publié, la "
             "correction relève d'une décision d'auteur, pas de ce module", exp),
         _eq("EQ-14", "verrous_base.py → chronologie() → C14",
-            "verrouiller_avant_exposer = (verrous > 0) ∧ (exposition attestée) ; mesuré avec les "
-            "seuls horodatages du journal git",
-            f"première trace {chr_['premiere_trace_datee']} · {chr_['commits_attestes']} commits · "
+            "verrouiller_avant_exposer = (verrous > 0) ∧ (DOI publié) ; le verdict ne consulte "
+            "aucune date, les dates ne font que dater l'antériorité déjà publique",
+            f"première trace {chr_['premiere_trace_datee']} · {chr_['commits_attestes']} commits "
+            f"({chr_['source_des_dates']}) · journal local {chr_['ecritures_du_journal_local']} "
+            f"écriture(s), écart {chr_['divergence_journal_moins_histoire']} · "
+            f"{chr_['secondes_attestees']} s d'amplitude · "
             f"{chr_['verrous_pos_avant_exposition']} verrou · DOI déjà publié "
             f"{chr_['doi_deja_publie']} · ordre tenu {chr_['verrouillage_avant_exposition']} · "
             f"{chr_['mesure']}", "SPÉCIFIÉ",
@@ -1189,17 +1380,22 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
     st, rm, av = etat["structure_contrat"], etat["remuneration"], etat["relecture_avocat"]
     exp, chr_, lo = etat["exposition"], etat["chronologie"], etat["limites_ouvertes"]
     rr, sv, ec = etat["registre_relu"], etat["plan_svg"], etat["ecritures"]
+    hi, hj = h["histoire"], h["journal_local"]
 
     ajouter("C01", "l'inventaire est clos, additif et sans horloge murale",
-            "chemins uniques, somme des extensions = nombre de fichiers, empreinte longue de 64 "
-            "caractères hexadécimaux, aucune fonction d'heure dans le source de ce module",
-            "arbre additif · empreinte 64 hex · datetime.now absent",
-            f"{inv['fichiers']} fichiers · extensions {inv['somme_extensions']} · empreinte "
-            f"{len(inv['empreinte_arbre'])} caractères · horloge absente {inv['aucune_horloge']} · "
-            f"ecritures {inv['ecrit_uniquement_dans']}",
-            inv["chemins_uniques"] and inv["extensions_additives"]
+            "chemins uniques, somme des extensions = nombre de fichiers, suivi git + hors suivi = "
+            "nombre de fichiers, empreinte longue de 64 caractères hexadécimaux, aucune fonction "
+            "d'heure dans le source de ce module",
+            "arbre additif · suivi additif · empreinte 64 hex · datetime.now absent",
+            f"{inv['fichiers']} fichiers · extensions {inv['somme_extensions']} · suivi git "
+            f"{inv['fichiers_suivis_par_git']} + hors suivi {inv['fichiers_non_suivis_par_git']} · "
+            f"empreinte {len(inv['empreinte_arbre'])} caractères · horloge absente "
+            f"{inv['aucune_horloge']} · ecritures {inv['ecrit_uniquement_dans']} · hors du suivi "
+            f"écrit dans EQ-01 {'hors du suivi git' in eqs['EQ-01']['limite']}",
+            inv["chemins_uniques"] and inv["extensions_additives"] and inv["suivi_additif"]
             and len(inv["empreinte_arbre"]) == 64 and inv["aucune_horloge"]
-            and inv["horloge_noyau_fichiers"] >= 0)
+            and inv["horloge_noyau_fichiers"] >= 0
+            and "hors du suivi git" in eqs["EQ-01"]["limite"])
     ajouter("C02", "la dérive du sceau est mesurée, chiffrée et écrite dans le résultat",
             "les quatre comptes épuisent les entrées, le nombre dérivé paraît dans le texte publié "
             "de EQ-02 et le manifeste ne se scelle pas lui-même",
@@ -1250,32 +1446,51 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
             fr["coeur_secret_reelement_garde"] == 0
             and len(fr["modules_d_equations_hors_sceau"]) >= 1
             and fr["occurrences_heuristiques"] > 0 and fr["hors_manifeste"] > 0)
-    ajouter("C06", "l'horodatage git est complet, cohérent, et ne prouve pas la paternité",
-            "toutes les lignes du journal parsees, somme des auteurs = lignes, tête = dernier SHA, "
-            "0 artefact d'horodatage sur disque, paternité False",
-            f"{h['lignes_journal']}/{h['lignes_journal']} · 0 artefact · paternité False",
-            f"{h['lignes_parsees']} parsees · auteurs {h['somme_auteurs']} · tête cohérente "
-            f"{h['tete_coherente']} · {h['nb_artefacts_horodatage']} artefact(s) sur disque et "
+    ajouter("C06", "l'horodatage est lisible dans ce qui voyage, et ne prouve pas la paternité",
+            "toutes les lignes des deux sources parsees, somme des auteurs = lignes, tête du dépôt "
+            "= sha du commit le plus récent, dates publiées lues dans l'histoire git et non dans le "
+            "journal local, 0 artefact d'horodatage sur disque, paternité False",
+            "histoire = source des dates · 0 artefact · paternité False",
+            f"histoire {hi['commits']}/{hi['lignes']} · auteurs {hi['somme_auteurs']} · tête "
+            f"cohérente {hi['tete_coherente']} · journal local {hj['parsees']}/{hj['lignes']} "
+            f"(utf8 intégral {hj['utf8_integrale']}) · écart publié "
+            f"{h['journal_plus_que_commits']} = {hj['parsees']} − {hi['commits']} "
+            f"{h['journal_plus_que_commits'] == hj['parsees'] - hi['commits']} · "
+            f"{h['nb_artefacts_horodatage']} artefact(s) sur disque et "
             f"{h['mentions_instrument_occurrences']} mention(s) · cohérence compte/drapeau "
             f"{h['aucun_instrument_strict'] == (h['nb_artefacts_horodatage'] == 0)} · preuve de "
             f"paternité {h['preuve_de_paternite']} · antériorité écrite dans EQ-06 "
             f"{'antériorité légale = False' in eqs['EQ-06']['resultat'] + eqs['EQ-06']['limite']}",
-            h["tout_parse"] and h["auteurs_additifs"] and h["tete_coherente"]
-            and h["aucun_instrument_strict"] and h["utf8_integrale"]
+            hi["tout_parse"] and hi["auteurs_additifs"] and hj["tout_parse"]
+            and hj["auteurs_additifs"] and hj["utf8_integrale"]
+            and h["dates_publiees_par"] == "histoire"
+            and h["commits_attestes"] == hi["commits"] and h["premiere"] == hi["premiere"]
+            and h["journal_plus_que_commits"] == hj["parsees"] - hi["commits"]
+            and hi["tete_coherente"] == (hi["commits"] > 0)
+            and h["aucun_instrument_strict"]
             and h["aucun_instrument_strict"] == (h["nb_artefacts_horodatage"] == 0)
             and h["preuve_de_paternite"] is False
             and "antériorité légale = False" in (eqs["EQ-06"]["resultat"]
-                                                 + eqs["EQ-06"]["limite"]))
-    ajouter("C07", "le registre existe, est vide et n'a pas été amorcé en secret",
-            "6 colonnes, 0 entrée, aucun registre préexistant, et de la matière de contact non "
-            "reprise",
-            "6 · 0 · 0 préexistant",
-            f"{reg['nb_colonnes']} colonnes · {reg['nb_entrees']} entrée · préexistants "
-            f"{len(reg['registres_preexistants'])} · matière {reg['matiere_premiere_fichiers']} "
-            f"fichiers · reprise {reg['matiere_reprise_dans_le_registre']}",
+                                                 + eqs["EQ-06"]["limite"])
+            and "journal local de références ne voyage" in eqs["EQ-06"]["limite"])
+    ajouter("C07", "le registre existe, est vide, et rien n'y a été porté en secret",
+            "6 colonnes, 0 ligne lue dans les octets posés sur le disque du registre, aucun registre "
+            "préexistant, 0 matière reprise, la matière comptée séparément sur disque, dans le suivi "
+            "git et sous le sceau",
+            "6 · 0 entrée lue · 0 préexistant · 0 repris",
+            f"{reg['nb_colonnes']} colonnes · {reg['nb_entrees']} entrée lue sur disque "
+            f"(registre présent : {reg['registre_posé_sur_disque']}) · préexistants "
+            f"{len(reg['registres_preexistants'])} · matière {reg['matiere_sur_disque']} sur disque, "
+            f"{reg['matiere_suivie_par_git']} suivie par git, "
+            f"{reg['matiere_entree_du_sceau']} sous le sceau · reprise "
+            f"{reg['matiere_reprise_dans_le_registre']} · hors registre "
+            f"{reg['matiere_hors_registre']} · compte additif du suivi "
+            f"{reg['suivi_additif']}",
             reg["nb_colonnes"] == 6 and reg["nb_entrees"] == 0
-            and reg["absent_avant_ce_dossier"] and reg["matiere_premiere_fichiers"] > 0
+            and reg["absent_avant_ce_dossier"]
             and reg["matiere_reprise_dans_le_registre"] == 0
+            and reg["matiere_hors_registre"] == reg["matiere_sur_disque"]
+            and reg["matiere_entree_du_sceau"] == 0 and reg["suivi_additif"]
             and reg["couvre_quatre_champs_demandes"])
     ajouter("C08", "aucune clause n'est rédigée, et le comptage n'est pas sourd",
             "0 clause sur 8, contrôle positif SPDX non vide, contraste naïf strictement supérieur, "
@@ -1340,17 +1555,29 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
             and exp["licences_divergentes"] and exp["licence_zenodo_couvre_une_branche"]
             and "contre" in eqs["EQ-13"]["resultat"])
     ajouter("C14", "l'ordre conseillé est mesuré comme tenu à l'envers",
-            "DOI publié, commits datés, 0 verrou : la phase 1 ne peut plus précéder l'exposition, "
-            "et le résultat l'écrit",
+            "DOI publié et daté dans le dépôt, commits atteignables rendus par git, 0 verrou : la "
+            "phase 1 ne peut plus précéder l'exposition, et le verdict ne change selon aucune des "
+            "deux sources de dates consultée",
             "verrouillage avant exposition = False",
-            f"{chr_['verrous_pos_avant_exposition']} verrou · DOI {exp['doi_cff']} · "
-            f"{chr_['commits_attestes']} commits · ordre {chr_['verrouillage_avant_exposition']} · "
-            f"rétroactif impossible {chr_['retroactif_impossible']} · suites gouvernables "
+            f"{chr_['verrous_pos_avant_exposition']} verrou · DOI {exp['doi_cff']} daté "
+            f"{chr_['date_de_exposition_lue']} · {chr_['commits_attestes']} commits atteignables · "
+            f"{chr_['ecritures_du_journal_local']} écritures locales · écart "
+            f"{chr_['divergence_journal_moins_histoire']} · ordre "
+            f"{chr_['verrouillage_avant_exposition']} · sans consulter une date "
+            f"{chr_['verrouillage_sans_consulter_une_date']} · rétroactif impossible "
+            f"{chr_['retroactif_impossible']} · suites gouvernables "
             f"{len(chr_['gouvernable_desormais'])}",
             chr_["verrous_pos_avant_exposition"] == 0 and exp["expose"]
             and not chr_["verrouillage_avant_exposition"]
             and chr_["exposition_attestee_anterieure_aux_verrous"]
-            and chr_["secondes_attestees"] > 0 and len(chr_["gouvernable_desormais"]) >= 3)
+            and chr_["ordre_independant_des_sources_de_dates"]
+            and chr_["exposition_datee_sans_le_journal"]
+            and bool(re.match(r"^\d{4}-\d{2}-\d{2}$", chr_["date_de_exposition_lue"]))
+            and chr_["commits_attestes"] == hi["commits"]
+            and chr_["ecritures_du_journal_local"] == hj["parsees"]
+            and chr_["divergence_journal_moins_histoire"] == hj["parsees"] - hi["commits"]
+            and chr_["secondes_attestees"] == hi["duree_attestee_seconde"]
+            and len(chr_["gouvernable_desormais"]) >= 3)
     ajouter("C15", "les octets relus disent les nombres du calcul",
             "registre relu : BOM, séparateur « ; », 6 colonnes, 0 entrée ; SVG : une barre par "
             "indicateur dont la longueur retombe sur la valeur ; un seul fichier hors empreinte et "
@@ -1368,16 +1595,21 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
             and sorted(set(ec["noms"]) - set(ec["tailles"])) == [ec["nom_sans_empreinte"]]
             and sorted(set(ec["noms"]) - set(ec["noms_avec_phrase"])) == [ec["nom_sans_phrase"]])
     ajouter("C16", "les limites ouvertes ne sont pas déclarées franchies",
-            "liste d'au moins huit limites, toutes longues d'au moins 40 caractères, zéro remplie "
-            "dans ce lot, et le compte de courriers qu'une limite cite retombe sur la mesure",
-            "≥8 limites · 0 remplie",
+            "liste d'au moins douze limites, toutes longues d'au moins 40 caractères, zéro remplie "
+            "dans ce lot, le compte de courriers qu'une limite cite retombe sur la mesure, et deux "
+            "limites disent ce qui ne voyage pas : l'arbre hors suivi et le journal local",
+            "≥12 limites · 0 remplie · compte lié à la mesure",
             f"{lo['nb']} limites · plus courte {lo['longueur_minimale']} caractères · remplies "
             f"{lo['remplies_dans_ce_lot']} · verrous posés "
             f"{cls['clauses_redigees'] + st['instruments_signes']} · courriers "
-            f"{lo['compte_courriers']} = {reg['matiere_premiere_fichiers']}",
-            lo["nb"] >= 8 and lo["toutes_au_dela_de_20"] and lo["remplies_dans_ce_lot"] == 0
-            and lo["compte_courriers"] == reg["matiere_premiere_fichiers"]
-            and any(str(reg["matiere_premiere_fichiers"]) in l for l in lo["liste"]))
+            f"{lo['compte_courriers']} = {reg['matiere_sur_disque']} · marqueur "
+            f"« {lo['marqueur_courriers']} » présent "
+            f"{any(lo['marqueur_courriers'] in l for l in lo['liste'])}",
+            lo["nb"] >= 12 and lo["toutes_au_dela_de_20"] and lo["remplies_dans_ce_lot"] == 0
+            and lo["compte_courriers"] == reg["matiere_sur_disque"]
+            and any(lo["marqueur_courriers"] in l for l in lo["liste"])
+            and any("hors du suivi git" in l for l in lo["liste"])
+            and any("journal local de références" in l for l in lo["liste"]))
     return out
 
 
@@ -1467,7 +1699,7 @@ def resoudre() -> Dict[str, Any]:
                 "clauses_redigees": cert["clauses"]["clauses_redigees"],
                 "instruments_signes": cert["structure_contrat"]["instruments_signes"],
                 "registre_entrees": cert["registre_acces"]["nb_entrees"],
-                "commits_attestes": cert["horodatages"]["lignes_parsees"],
+                "commits_attestes": cert["horodatages"]["commits_attestes"],
                 "racine_merkle_sha256": cert["racine_merkle_sha256"]}}
 
 
@@ -1509,11 +1741,15 @@ def resume_markdown(cert: Dict[str, Any]) -> bytes:
         f"**Frontière** {fr['coeur_secret_reelement_garde']} fichier gardé ; "
         f"{len(fr['modules_d_equations_hors_sceau'])} module(s) porteurs d'équations hors du sceau "
         f"et publiés quand même.",
-        f"**Horodatage** {h['lignes_parsees']} commits du {h['premiere']} au {h['derniere']} ; "
+        f"**Horodatage** {h['commits_attestes']} commits atteignables du {h['premiere']} au "
+        f"{h['derniere']} (lus par {h['source_des_commits']}) ; "
+        f"{h['journal_local']['parsees']} écritures du journal local, qui ne voyage pas ; "
         f"{h['commits_d_outils_automates']} d'entre eux signés par un outil d'automatisation ; "
         f"0 instrument d'horodatage juridique.",
-        f"**Registre** {reg['nb_colonnes']} colonnes, {reg['nb_entrees']} entrée, alors que "
-        f"{reg['matiere_premiere_fichiers']} fichiers de correspondance sont déjà dans le dépôt.",
+        f"**Registre** {reg['nb_colonnes']} colonnes, {reg['nb_entrees']} entrée lue dans ses "
+        f"octets, alors que {reg['matiere_sur_disque']} fichier(s) de correspondance sont posés sur "
+        f"ce disque, {reg['matiere_suivie_par_git']} suivi(s) par git et "
+        f"{reg['matiere_entree_du_sceau']} sous le sceau.",
         f"**Clauses et instruments** {cls['clauses_redigees']}/{cls['nb_clauses_cherchees']} clause "
         f"rédigée, {st['instruments_cites']}/{st['nb_instruments']} instrument cité, "
         f"{st['instruments_signes']} signé.",

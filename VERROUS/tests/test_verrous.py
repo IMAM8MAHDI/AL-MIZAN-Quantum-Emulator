@@ -4,9 +4,10 @@
 """Tests du dossier VERROUS — les compteurs sont re-derivés, pas recopiés.
 
 Six exigences, dans l'ordre :
-    1. l'arbre, le sceau, la couverture de licence et le journal git sont recalculés ICI par une
-       écriture différente : la marche de l'arbre vient d'`os.walk` (et non de `rglob`), le
-       partage d'une ligne de reflog vient de `split` (et non d'une regex), le classement des
+    1. l'arbre, le sceau, la couverture de licence, l'histoire des commits et le journal local sont
+       recalculés ICI par une écriture différente : la marche de l'arbre vient d'`os.walk` (et non de
+       `rglob`), le compte publié de commits vient de `git rev-list --count` (et non de `git log`),
+       le partage d'une ligne de reflog vient de `split` (et non d'une regex), le classement des
        empreintes vient d'un `split("  ")` (et non de `re.match`), et les largeurs du plan viennent
        d'une division entière à arrondi half-up (et non de `Fraction`) ;
     2. la structure est testée hors du dépôt : le même fabricant de plan, appliqué à un certificat
@@ -34,6 +35,8 @@ import io
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
 import unittest
 from datetime import datetime, timedelta, timezone
@@ -107,6 +110,39 @@ def iso_de(epoch, fuseau):
     return datetime.fromtimestamp(epoch, timezone(
         (1 if fuseau[0] == "+" else -1) * timedelta(hours=int(fuseau[1:3]),
                                                     minutes=int(fuseau[3:5])))).isoformat()
+
+
+DEPOT_GIT = (RACINE_DEPOT / ".git").exists()
+GIT_TROUVE = shutil.which("git") is not None
+SOUS_GIT = unittest.skipUnless(DEPOT_GIT and GIT_TROUVE,
+                               "aucun dépôt git lisible : l'histoire ne se relit pas ici")
+SOUS_JOURNAL = unittest.skipUnless(DEPOT_GIT,
+                                    "aucun journal local de références ici")
+
+
+def git_brut(*argumens):
+    """git lancé depuis les tests, hors du module et hors de son cache."""
+    rendu = subprocess.run(["git", *argumens], cwd=str(RACINE_DEPOT), capture_output=True,
+                           text=True, encoding="utf-8", errors="replace")
+    assert rendu.returncode == 0, rendu.stderr[:200]
+    return rendu.stdout
+
+
+def histoire_brute():
+    """(sha, courriel, epoch, iso) par un séparateur « | » — le module emploie %x09."""
+    rendu = []
+    for l in git_brut("log", "--format=%H|%ae|%at|%aI", "HEAD").splitlines():
+        if not l:
+            continue
+        c = l.split("|")
+        assert len(c) == 4 and c[2].isdigit(), l[:80]
+        rendu.append((c[0], c[1], int(c[2]), c[3]))
+    return rendu
+
+
+def matiere_de_contact(chemins):
+    """La matière de contact, re-comptée par une autre écriture que le module (mêmes préfixes)."""
+    return sorted(c for c in chemins if c[:6] == "emails" or c[:6] == "EMAIL_")
 
 
 def classement_manifeste():
@@ -205,38 +241,158 @@ class TestReDerivation(unittest.TestCase):
         self.assertEqual(list(expressions), [lic["expression_lue"]])
         self.assertEqual(len(avec) + len(sans), lic["python_total"])
 
+    @SOUS_GIT
+    def test_l_histoire_des_commits_se_rederive_par_deux_commandes(self):
+        hi = CERT["horodatages"]["histoire"]
+        brute = histoire_brute()
+        self.assertEqual(len(brute), hi["commits"])
+        # deux commandes git distinctes, le même compte : c'est lui qui est publié
+        self.assertEqual(int(git_brut("rev-list", "--count", "HEAD").strip()), hi["commits"])
+        self.assertEqual(int(git_brut("rev-list", "--count", "HEAD").strip()),
+                         CERT["horodatages"]["commits_attestes"])
+        self.assertEqual(len(brute), hi["lignes"], "une ligne lue, un commit compté")
+        self.assertEqual(len({c[0] for c in brute}), hi["sha_distincts"])
+        mails = {}
+        for _, mail, _, _ in brute:
+            mails[mail] = mails.get(mail, 0) + 1
+        self.assertEqual(mails, hi["auteurs"])
+        self.assertEqual(sum(mails.values()), hi["somme_auteurs"])
+        ordre = sorted(brute, key=lambda c: c[2])
+        self.assertEqual(ordre[0][3], hi["premiere"])
+        self.assertEqual(ordre[-1][3], hi["derniere"])
+        self.assertEqual(ordre[-1][2] - ordre[0][2], hi["duree_attestee_seconde"])
+        self.assertGreaterEqual(hi["commits_d_outils_automates"], 0,
+                                "les commits signés par un outil sont un compte, pas une accusation")
+
+    @SOUS_JOURNAL
     def test_le_journal_git_se_reparse_par_split(self):
         ici = journal_parse()
-        h = CERT["horodatages"]
-        self.assertEqual(len(ici), h["lignes_parsees"])
-        self.assertEqual(len(ici), h["lignes_journal"])
-        self.assertEqual(len({p[1] for p in ici}), h["sha_distincts"])
+        hj = CERT["horodatages"]["journal_local"]
+        self.assertEqual(len(ici), hj["lignes"])
+        self.assertEqual(len(ici), hj["parsees"])
+        self.assertEqual(len(ici), hj["utf8_stricte"], "tout le journal se décode sans replacement")
+        self.assertTrue(hj["utf8_integrale"])
         self.assertEqual(ici[0][0], "0" * 40, "la première ligne du journal naît du vide")
         self.assertTrue(all(ici[i][0] == ici[i - 1][1] for i in range(1, len(ici))),
                         "chaque ligne part du sha de la précédente : le journal est une chaîne")
-        self.assertEqual(ici[-1][1], h["sha_dernier"])
+        self.assertEqual(ici[-1][1], hj["sha_dernier"])
         mails = {}
         for _, _, _, mail, _, _, _ in ici:
             mails[mail] = mails.get(mail, 0) + 1
-        self.assertEqual(mails, h["auteurs"])
-        self.assertEqual(sum(mails.values()), h["somme_auteurs"])
+        self.assertEqual(mails, hj["auteurs"])
+        self.assertEqual(sum(mails.values()), hj["somme_auteurs"])
         # même clé de tri que le module : epoch d'abord, puis le sha, pour que les égalités
         # d'horodatage ne soient pas tranchées par l'ordre de lecture du fichier
         ordre = sorted(ici, key=lambda p: (p[4], p[1], p[3], p[5], p[6]))
-        self.assertEqual(iso_de(ordre[0][4], ordre[0][5]), h["premiere"])
-        self.assertEqual(iso_de(ordre[-1][4], ordre[-1][5]), h["derniere"])
+        self.assertEqual(iso_de(ordre[0][4], ordre[0][5]), hj["premiere"])
+        self.assertEqual(iso_de(ordre[-1][4], ordre[-1][5]), hj["derniere"])
         self.assertEqual(max(p[4] for p in ici) - min(p[4] for p in ici),
-                         h["duree_attestee_seconde"])
+                         hj["duree_attestee_seconde"])
 
-    def test_la_tete_du_depot_retombe_sur_la_derniere_ligne_du_journal(self):
+    @SOUS_GIT
+    def test_les_dates_publiees_viennent_de_l_histoire_et_non_du_journal(self):
+        """Le compte rendu par le certificat se relit dans ce qui voyage avec le dépôt."""
         h = CERT["horodatages"]
+        hi, hj = h["histoire"], h["journal_local"]
+        self.assertEqual("histoire", h["dates_publiees_par"])
+        self.assertEqual("git log HEAD", h["source_des_commits"])
+        self.assertEqual(".git/logs/HEAD", h["source_du_journal"])
+        self.assertEqual(h["commits_attestes"], hi["commits"])
+        self.assertEqual(h["premiere"], hi["premiere"])
+        self.assertEqual(h["derniere"], hi["derniere"])
+        self.assertEqual(h["duree_attestee_seconde"], hi["duree_attestee_seconde"])
+        self.assertEqual(h["journal_plus_que_commits"], hj["parsees"] - hi["commits"])
+        self.assertEqual(CERT["chronologie"]["commits_attestes"], hi["commits"])
+        self.assertEqual(CERT["chronologie"]["secondes_attestees"], hi["duree_attestee_seconde"])
+
+    @SOUS_JOURNAL
+    @SOUS_GIT
+    def test_la_tete_du_depot_retombe_sur_les_deux_sources(self):
+        h = CERT["horodatages"]
+        hi, hj = h["histoire"], h["journal_local"]
         tete = lire(".git/HEAD").decode("utf-8").strip()
         self.assertTrue(tete.startswith("ref: "), f"tête lue : {tete!r}")
         cible = RACINE_DEPOT / ".git" / Path(*tete[4:].strip().split("/"))
-        self.assertEqual(cible.read_text(encoding="utf-8").strip(), h["sha_tete"],
-                         "le sha publié est bien celui que git pose sur le pointeur de la branche")
-        self.assertEqual(h["sha_tete"], journal_parse()[-1][1])
-        self.assertTrue(h["tete_coherente"])
+        sha = cible.read_text(encoding="utf-8").strip()
+        self.assertEqual(sha, hi["sha_tete"], "le sha publié est celui du pointeur de la branche")
+        self.assertEqual(sha, hj["sha_tete"])
+        self.assertEqual(sha, git_brut("rev-parse", "HEAD").strip())
+        self.assertEqual(sha, journal_parse()[-1][1])
+        self.assertEqual(sha, sorted(histoire_brute(), key=lambda c: c[2])[-1][0])
+        self.assertTrue(hi["tete_coherente"])
+        self.assertTrue(hj["tete_coherente"])
+        self.assertEqual(hi["tete_coherente"], hi["commits"] > 0)
+
+    def test_le_module_survit_aux_octets_seuls_sans_depot_git(self):
+        """Le chemin de l'archive publiée : ni `.git`, ni `git` — dater ne doit pas lever d'erreur."""
+        gardes = (V.RACINE, V.GIT, dict(V._CACHE))
+        try:
+            with TemporaryDirectory(prefix="verrous-sans-git-") as td:
+                V.RACINE, V.GIT = Path(td), None
+                V._CACHE.clear()
+                hj = V._journal_local()
+                hi = V._histoire_atteignable()
+                h = V.horodatages()
+        finally:
+            V.RACINE, V.GIT = gardes[0], gardes[1]
+            V._CACHE.clear()
+            V._CACHE.update(gardes[2])
+        self.assertFalse(hj["present"])
+        self.assertEqual((hj["lignes"], hj["parsees"], hj["utf8_stricte"],
+                          hj["duree_attestee_seconde"]), (0, 0, 0, 0))
+        self.assertTrue(hj["tout_parse"] and hj["utf8_integrale"] and hj["auteurs_additifs"])
+        self.assertFalse(hi["git_disponible"])
+        self.assertEqual((hi["commits"], hi["lignes"], hi["sha_distincts"],
+                          hi["somme_auteurs"], hi["duree_attestee_seconde"]), (0, 0, 0, 0, 0))
+        self.assertEqual((hi["premiere"], hi["derniere"], hi["sha_tete"]), ("", "", ""))
+        self.assertTrue(hi["tout_parse"])
+        self.assertFalse(hi["tete_coherente"])
+        self.assertEqual(h["commits_attestes"], 0)
+        self.assertEqual(h["journal_plus_que_commits"], 0)
+        self.assertEqual("histoire", h["dates_publiees_par"])
+        # et le certificat reconstruit sur ce seul chemin ne rouge nulle part faute de git
+        self.assertTrue(h["aucun_instrument_strict"])
+
+    @SOUS_GIT
+    def test_l_inventaire_se_repartit_entre_suivi_et_hors_suivi(self):
+        """Ce que git suit est re-compté par `ls-files` sans l'option `-z` du module."""
+        inv = CERT["inventaire"]
+        suivis = set(l for l in git_brut("ls-files").splitlines() if l)
+        ici = set(marche_arbre())
+        self.assertEqual(len(ici & suivis), inv["fichiers_suivis_par_git"])
+        self.assertEqual(len(ici - suivis), inv["fichiers_non_suivis_par_git"])
+        self.assertEqual(inv["fichiers_suivis_par_git"] + inv["fichiers_non_suivis_par_git"],
+                         inv["fichiers"])
+        self.assertEqual(sorted(ici - suivis)[:6], inv["exemples_non_suivis"])
+
+    def test_le_registre_et_sa_matiere_se_recomptent_sur_disque(self):
+        """Le compte d'entrées sort des octets posés, pas d'une intention ; la matière aussi."""
+        reg = CERT["registre_acces"]
+        chemin = RACINE_DEPOT / reg["chemin"]
+        self.assertEqual(reg["registre_posé_sur_disque"], chemin.exists())
+        if chemin.exists():
+            lignes = list(csv.reader(io.StringIO(chemin.read_bytes().decode("utf-8-sig")),
+                                     delimiter=";"))
+            self.assertEqual(max(len(lignes) - 1, 0), reg["nb_entrees"])
+            self.assertEqual(len(lignes[0]), reg["nb_colonnes"])
+        matiere = matiere_de_contact(marche_arbre())
+        self.assertEqual(len(matiere), reg["matiere_sur_disque"])
+        self.assertEqual(matiere[:6], reg["matiere_exemples"])
+        par_repertoire = {}
+        for c in matiere:
+            cle = c.split("/")[0] if "/" in c else c
+            par_repertoire[cle] = par_repertoire.get(cle, 0) + 1
+        self.assertEqual(par_repertoire, reg["matiere_sur_disque_par_repertoire"])
+        self.assertEqual(reg["matiere_hors_registre"] + reg["matiere_reprise_dans_le_registre"],
+                         reg["matiere_sur_disque"])
+        scelles = {l.split("  ", 1)[1] for l in
+                   lire(V.MANIFESTE_CHEMIN).decode("utf-8").splitlines() if len(l) >= 66}
+        self.assertEqual(len({c for c in matiere if c in scelles}), reg["matiere_entree_du_sceau"])
+        if reg["matiere_suivie_par_git"] is not None:
+            suivis = set(l for l in git_brut("ls-files").splitlines() if l)
+            self.assertEqual(len(set(matiere) & suivis), reg["matiere_suivie_par_git"])
+            self.assertEqual(reg["matiere_suivie_par_git"] + reg["matiere_hors_suivi_git"],
+                             reg["matiere_sur_disque"])
 
     def test_les_huit_clauses_se_recomptent_a_zero_sur_un_corpus_reconstruit(self):
         corpus = [c for c in marche_arbre()
@@ -542,6 +698,42 @@ class TestNonVacuite(unittest.TestCase):
             cs = {c["id"]: c for c in V.controles(EQS, muter(chemin, valeur))}
             self.assertEqual([k for k, c in cs.items() if not c["ok"]], ["C06"], chemin)
 
+    def test_trois_mensonges_sur_les_deux_sources_rougissent_leur_seul_controle(self):
+        """Décréter l'autre source, reprendre de la matière ou gommer l'écart : chacun rougit."""
+        for cid, chemin, valeur in (
+                ("C06", ("horodatages", "dates_publiees_par"), "journal_local"),
+                ("C07", ("registre_acces", "matiere_reprise_dans_le_registre"), 3),
+                ("C14", ("chronologie", "divergence_journal_moins_histoire"), 0)):
+            cs = {c["id"]: c for c in V.controles(EQS, muter(chemin, valeur))}
+            self.assertEqual([k for k, c in cs.items() if not c["ok"]], [cid], chemin)
+
+    def test_deux_mensonges_sur_la_matire_du_registre_rougissent_seuls_c07(self):
+        """Faire entrer la matière sous le sceau, ou la gonfler hors registre : C07 rougit.
+
+        Les valeurs mutées viennent de la mesure : un littéral deviendrait inopérant dans un
+        clone où la matière de contact n'existe pas.
+        """
+        reg = CERT["registre_acces"]
+        for chemin, valeur in ((("registre_acces", "matiere_entree_du_sceau"), 1),
+                               (("registre_acces", "matiere_hors_registre"),
+                                reg["matiere_hors_registre"] + 1)):
+            cs = {c["id"]: c for c in V.controles(EQS, muter(chemin, valeur))}
+            self.assertEqual([k for k, c in cs.items() if not c["ok"]], ["C07"], chemin)
+
+    def test_un_marqueur_de_limite_qui_ne_retombe_plus_rougit_c16(self):
+        lo = copy.deepcopy(CERT["limites_ouvertes"])
+        lo["marqueur_courriers"] = "9 999 fichier(s) de courriers"
+        cs = {c["id"]: c for c in V.controles(EQS, muter(("limites_ouvertes",), lo))}
+        self.assertEqual([k for k, c in cs.items() if not c["ok"]], ["C16"])
+
+    def test_une_limite_sur_le_non_voyageant_effacee_rougit_c16(self):
+        """Retirer la limite qui dit que le journal local ne voyage pas : C16 la réclame."""
+        lo = copy.deepcopy(CERT["limites_ouvertes"])
+        lo["liste"] = [l for l in lo["liste"] if "journal local de références" not in l]
+        lo["nb"] = len(lo["liste"])
+        cs = {c["id"]: c for c in V.controles(EQS, muter(("limites_ouvertes",), lo))}
+        self.assertEqual([k for k, c in cs.items() if not c["ok"]], ["C16"])
+
     def test_quatre_mensonges_sur_les_octets_publies_rougissent_seuls_c15(self):
         for chemin, valeur in ((("plan_svg", "largeurs_conformes"), False),
                                (("plan_svg", "absence_ecrite"), False),
@@ -619,31 +811,51 @@ class TestVerdictsDefavorables(unittest.TestCase):
 
     def test_l_ordre_de_la_phase_un_est_rendu_à_l_envers(self):
         chr_, exp = CERT["chronologie"], CERT["exposition"]
+        h = CERT["horodatages"]
+        hi, hj = h["histoire"], h["journal_local"]
         self.assertEqual(chr_["verrous_pos_avant_exposition"], 0)
         self.assertFalse(chr_["verrouillage_avant_exposition"])
         self.assertTrue(chr_["retroactif_impossible"])
         self.assertTrue(exp["expose"])
         self.assertGreater(chr_["secondes_attestees"], 0)
         self.assertGreaterEqual(len(chr_["gouvernable_desormais"]), 3)
+        # les deux sources de dates sont publiées séparément, et le verdict ne dépend d'aucune
+        self.assertEqual(chr_["commits_attestes"], hi["commits"])
+        self.assertEqual(chr_["ecritures_du_journal_local"], hj["parsees"])
+        self.assertEqual(chr_["divergence_journal_moins_histoire"], hj["parsees"] - hi["commits"])
+        self.assertEqual("git log HEAD", chr_["source_des_dates"])
+        self.assertTrue(chr_["ordre_independant_des_sources_de_dates"])
+        self.assertFalse(chr_["verrouillage_sans_consulter_une_date"])
+        self.assertRegex(chr_["date_de_exposition_lue"], r"^\d{4}-\d{2}-\d{2}$")
+        self.assertTrue(chr_["exposition_datee_sans_le_journal"],
+                        "la date d'exposition se lit hors du journal local : elle voyage")
         self.assertIn("l'ordre est donc tenu", "\n".join(CERT["limites_ouvertes"]["liste"]))
 
     def test_le_registre_vide_avoue_sa_matière_non_reprise(self):
         reg, lo = CERT["registre_acces"], CERT["limites_ouvertes"]
-        self.assertEqual(reg["nb_entrees"], 0)
+        self.assertEqual(reg["nb_entrees"], 0, "mesuré dans les octets du registre, non décrété")
+        self.assertEqual(reg["lignes_de_donnees_lues"], reg["nb_entrees"])
         self.assertTrue(reg["absent_avant_ce_dossier"])
-        self.assertGreater(reg["matiere_premiere_fichiers"], 0)
+        self.assertGreaterEqual(reg["matiere_sur_disque"], 0)
         self.assertEqual(reg["matiere_reprise_dans_le_registre"], 0)
-        self.assertEqual(lo["compte_courriers"], reg["matiere_premiere_fichiers"])
-        self.assertIn(f"{reg['matiere_premiere_fichiers']} fichiers de courriers",
-                      "\n".join(lo["liste"]))
+        self.assertEqual(lo["compte_courriers"], reg["matiere_sur_disque"])
+        self.assertIn(lo["marqueur_courriers"], "\n".join(lo["liste"]))
+        if reg["matiere_suivie_par_git"] is not None:
+            self.assertEqual(reg["matiere_entree_du_sceau"], 0,
+                             "la matière de contact n'est pas sous le sceau : c'est la mesure")
+            self.assertEqual(reg["matiere_hors_registre"], reg["matiere_sur_disque"])
 
     def test_les_limites_ouvertes_ne_sont_pas_declarees_franchies(self):
         lo = CERT["limites_ouvertes"]
-        self.assertGreaterEqual(lo["nb"], 8)
+        self.assertGreaterEqual(lo["nb"], 12)
         self.assertEqual(lo["remplies_dans_ce_lot"], 0)
         self.assertTrue(lo["toutes_au_dela_de_20"])
         self.assertGreaterEqual(lo["longueur_minimale"], 40)
         self.assertEqual(len(CERT["limites"]), lo["nb"] + 1)
+        # deux limites nomment ce qui ne voyage pas : l'arbre hors suivi et le journal local
+        self.assertEqual(sum(1 for l in lo["liste"] if "ne voyagent" in l), 2)
+        self.assertTrue(any("hors du suivi git" in l for l in lo["liste"]))
+        self.assertTrue(any("journal local de références" in l for l in lo["liste"]))
 
     def test_le_régime_commercial_est_corrige_sans_etre_adouci(self):
         rc = CERT["regime_commercial"]
@@ -710,6 +922,12 @@ class TestDeterminismeEtSceau(unittest.TestCase):
         self.assertEqual(c["instruments_signes"], 0)
         self.assertEqual(c["derive_de_sceau"], CERT["manifeste"]["derivent"])
         self.assertEqual(c["entrees_de_sceau"], CERT["manifeste"]["total_lignes"])
+        # la conclusion ne relit aucun compte périmé : chaque nombre vient du nœud publié
+        self.assertEqual(c["fichiers_inventories"], CERT["inventaire"]["fichiers"])
+        self.assertEqual(c["registre_entrees"], CERT["registre_acces"]["nb_entrees"])
+        self.assertEqual(c["commits_attestes"], CERT["horodatages"]["commits_attestes"])
+        self.assertEqual(c["commits_attestes"], CERT["horodatages"]["histoire"]["commits"])
+        self.assertNotIn("lignes_parsees", json.dumps(CERT["horodatages"], default=str))
         self.assertEqual(c["statuts_par_label"]["SIMULÉ"], 0)
         self.assertIn(V.PHRASE_ABSENCE, c["enonce_verrous"])
 
@@ -744,8 +962,8 @@ class TestPiliersEtTransmission(unittest.TestCase):
         self.assertEqual(len(corpus), CERT["clauses"]["corpus_texte"])
 
     def test_le_module_ne_depend_que_de_la_bibliothèque_standard(self):
-        autorises = {"__future__", "hashlib", "json", "re", "sys", "datetime", "fractions",
-                     "pathlib", "typing", "FONDATION"}
+        autorises = {"__future__", "hashlib", "json", "re", "shutil", "subprocess", "sys",
+                     "datetime", "fractions", "pathlib", "typing", "FONDATION"}
         texte = (RACINE_DEPOT / "VERROUS" / "verrous_base.py").read_text("utf-8")
         noms = set()
         for ligne in texte.splitlines():

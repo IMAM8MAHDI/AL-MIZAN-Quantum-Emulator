@@ -41,21 +41,30 @@
   },
   "chronologie": {
     "ce_que_l_avis_prescrivait": "« Phase 1 : Verrouillage et traçabilité pré-exposition »",
-    "commits_attestes": 73,
-    "derniere_trace_datee": "2026-11-09T19:51:17+01:00",
+    "commits_attestes": 67,
+    "date_de_exposition_lue": "2026-11-10",
+    "derniere_trace_datee": "2026-11-10T04:16:11+01:00",
+    "divergence_journal_moins_histoire": 7,
     "doi_deja_publie": true,
+    "ecritures_du_journal_local": 74,
     "exposition_attestee_anterieure_aux_verrous": true,
+    "exposition_datee_sans_le_journal": true,
     "gouvernable_desormais": [
       "prochaine divulgation",
       "prochain contact",
       "prochain document avant envoi"
     ],
-    "mesure": "le dépôt porte un DOI publié et 73 commits datés avant tout verrou : la phase 1 arrive après l'exposition, elle ne la précède plus",
+    "journal_local_present": true,
+    "mesure": "l'histoire suivie par git porte 67 commits datés, le journal local enregistre 74 écritures (écart 7) : le DOI est publié et aucun verrou n'a été posé, la phase 1 arrive après l'exposition, elle ne la précède plus",
+    "ordre_independant_des_sources_de_dates": true,
+    "portee_des_deux_sources": "les commits se lisent dans un clone et dans l'archive tant que git y est disponible ; le journal de références reste sur le disque qui l'a produit",
     "premiere_trace_datee": "2026-11-07T05:44:16+01:00",
     "retroactif_impossible": true,
     "second_term_manquant_pour_dater_un_verrou": true,
-    "secondes_attestees": 223621,
+    "secondes_attestees": 253915,
+    "source_des_dates": "git log HEAD",
     "verrouillage_avant_exposition": false,
+    "verrouillage_sans_consulter_une_date": false,
     "verrous_pos_avant_exposition": 0
   },
   "clauses": {
@@ -117,7 +126,7 @@
     "empreintes": {
       "frontiere_publique.svg": "85380e933aa3116e",
       "registre_acces.csv": "6234ee7886b03c0a",
-      "verrous_et_clauses.md": "007fde176a47d031"
+      "verrous_et_clauses.md": "f44b80e928e39470"
     },
     "nom_sans_empreinte": "certificat.json",
     "nom_sans_phrase": "registre_acces.csv",
@@ -136,10 +145,10 @@
     "tailles": {
       "frontiere_publique.svg": 2704,
       "registre_acces.csv": 72,
-      "verrous_et_clauses.md": 4469
+      "verrous_et_clauses.md": 4986
     }
   },
-  "empreinte_execution": "c47b2769bc39b0493065e13539bda35e22091878b2777ae6f13ad7f7bffeb720",
+  "empreinte_execution": "18f79998cab1f21f260d3243e6e4b79c7e06c6a151b0edd064a1e918be72b8d0",
   "exposition": {
     "branches_de_l_expression": [
       "AGPL-3.0-only",
@@ -149,6 +158,7 @@
       "GPL-3.0-only"
     ],
     "cle_doi_dans_zenodo": false,
+    "date_release_lue": "2026-11-10",
     "depot_distant": "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator.git",
     "doi_cff": "10.5281/zenodo.24028242",
     "expose": true,
@@ -189,7 +199,7 @@
       ]
     ],
     "hors_manifeste": 132,
-    "hors_manifeste_octets": 1272830,
+    "hors_manifeste_octets": 1300902,
     "hors_manifeste_par_repertoire": {
       "CONSTRUCTION": 6,
       "CONTINUITE": 5,
@@ -239,19 +249,17 @@
   "horodatages": {
     "artefacts_horodatage": [],
     "aucun_instrument_strict": true,
-    "auteurs": {
-      "devin@cognition.ai": 18,
-      "elbahloulahmed505@gmail.com": 55
-    },
-    "auteurs_additifs": true,
+    "ce_que_compte_chaque_source": "« histoire » compte les commits atteignables depuis HEAD : ils voyagent avec le dépôt. « journal_local » compte les écritures de .git/logs/HEAD : elles restent sur le disque qui les a produites et ne voyagent ni dans un clone ni dans l'archive",
     "ce_que_compte_le_strict": "le strict compte les artefacts d'horodatage sur disque (.tsa, .p7s, .p7m, .sig, .asc, .der), pas les mots qui les nomment : une mention n'est pas un instrument",
     "ce_que_prouve_un_depot": "un dépôt horodaté atteste qu'un contenu était accessible à une date, pas qu'il est de vous : antériorité légale = False",
+    "commits_attestes": 67,
     "commits_d_outils_automates": 18,
-    "contraste_naif_contexte": "DECLARATION/artefacts/certificat.json:630 — \"bibliotheques/lib_physique.py:630|role_systeme=\\\"Coffre-fort cryptographique ultime et archive ",
+    "contraste_naif_contexte": "DECLARATION/artefacts/certificat.json:631 — \"bibliotheques/lib_physique.py:630|role_systeme=\\\"Coffre-fort cryptographique ultime et archive ",
     "contraste_naif_fichiers": 4,
     "contraste_naif_occurrences": 10,
-    "derniere": "2026-11-09T19:51:17+01:00",
-    "duree_attestee_seconde": 223621,
+    "dates_publiees_par": "histoire",
+    "derniere": "2026-11-10T04:16:11+01:00",
+    "duree_attestee_seconde": 253915,
     "exclus_auto": [
       "VERROUS/verrous_base.py",
       "VERROUS/tests/test_verrous.py"
@@ -269,6 +277,26 @@
       "DECLARATION/artefacts/declaration_et_ablations.md",
       "DECLARATION/declaration_base.py"
     ],
+    "histoire": {
+      "auteurs": {
+        "Elbahloulahmed505@gmail.com": 1,
+        "devin@cognition.ai": 18,
+        "elbahloulahmed505@gmail.com": 48
+      },
+      "auteurs_additifs": true,
+      "commits": 67,
+      "commits_d_outils_automates": 18,
+      "derniere": "2026-11-10T04:16:11+01:00",
+      "duree_attestee_seconde": 253915,
+      "git_disponible": true,
+      "lignes": 67,
+      "premiere": "2026-11-07T05:44:16+01:00",
+      "sha_distincts": 67,
+      "sha_tete": "8c82d26b8d0f1f3354552d2bdda0639171e184df",
+      "somme_auteurs": 67,
+      "tete_coherente": true,
+      "tout_parse": true
+    },
     "instruments_horodatage": {
       "coffre-fort numérique horodaté": {
         "fichiers": [
@@ -297,33 +325,58 @@
           "DECLARATION/artefacts/declaration_et_ablations.md",
           "DECLARATION/declaration_base.py"
         ],
-        "occurrences": 35
+        "occurrences": 36
       }
     },
-    "lignes_journal": 73,
-    "lignes_parsees": 73,
+    "journal_local": {
+      "auteurs": {
+        "devin@cognition.ai": 18,
+        "elbahloulahmed505@gmail.com": 56
+      },
+      "auteurs_additifs": true,
+      "derniere": "2026-11-10T04:16:11+01:00",
+      "duree_attestee_seconde": 253915,
+      "lignes": 74,
+      "parsees": 74,
+      "premiere": "2026-11-07T05:44:16+01:00",
+      "present": true,
+      "sha_dernier": "8c82d26b8d0f1f3354552d2bdda0639171e184df",
+      "sha_tete": "8c82d26b8d0f1f3354552d2bdda0639171e184df",
+      "somme_auteurs": 74,
+      "tete_coherente": true,
+      "tout_parse": true,
+      "utf8_integrale": true,
+      "utf8_stricte": 74
+    },
+    "journal_plus_que_commits": 7,
     "mentions_instrument_fichiers": 3,
-    "mentions_instrument_occurrences": 60,
+    "mentions_instrument_occurrences": 61,
     "nb_artefacts_horodatage": 0,
     "premiere": "2026-11-07T05:44:16+01:00",
     "preuve_de_paternite": false,
-    "sha_dernier": "a5f01264d177421d65ad8a53f3767ca7c8be1d97",
-    "sha_distincts": 70,
-    "sha_tete": "a5f01264d177421d65ad8a53f3767ca7c8be1d97",
-    "somme_auteurs": 73,
-    "tete_coherente": true,
-    "tout_parse": true,
-    "utf8_integrale": true,
-    "utf8_stricte": 73
+    "source_des_commits": "git log HEAD",
+    "source_du_journal": ".git/logs/HEAD"
   },
   "inventaire": {
     "aucune_horloge": true,
+    "ce_que_le_suivi_dit": "un arbre scanné sur disque n'est pas l'arbre publié : les fichiers que git ne suit pas ne voyagent ni dans un clone ni dans l'archive, et l'écart est compté ici plutôt que subi",
     "chemins_uniques": true,
     "ecrit_uniquement_dans": "VERROUS/artefacts/",
-    "empreinte_arbre": "fa211e1da11c80457daed4448338153569c377261b7821b9650178ab9b7714cc",
+    "empreinte_arbre": "2b9575067ee070b337041d7e16d3ff18639dfe3f1a9b1e2186b009dbda33800b",
     "empreintes_distinctes": false,
+    "exemples_non_suivis": [
+      "EMAIL_QUANTUM_MEET.txt",
+      "EMAIL_UNIFIE_TOUS_MEDIAS.txt",
+      "code/resultats/run_bell_20261108_101003.json",
+      "code/resultats/run_bell_20261108_112335.json",
+      "code/resultats/run_bell_20261108_144407.json",
+      "corriger_adresses_v2.py"
+    ],
     "extensions_additives": true,
     "fichiers": 336,
+    "fichiers_non_suivis_par_git": 99,
+    "fichiers_suivis_par_git": 237,
+    "git_disponible": true,
     "horloge_noyau_fichiers": 10,
     "hors_depot_public": {
       "exemples": [
@@ -343,7 +396,7 @@
     },
     "motifs_horloge_reposes": [],
     "nb_motifs_horloge_cherches": 5,
-    "octets_total": 4269553,
+    "octets_total": 4297627,
     "par_extension": {
       "(sans extension)": 5,
       ".bib": 1,
@@ -374,7 +427,8 @@
         ".pyc"
       ]
     },
-    "somme_extensions": 336
+    "somme_extensions": 336,
+    "suivi_additif": true
   },
   "licence": {
     "avec_en_tete": 80,
@@ -436,7 +490,7 @@
   },
   "limites": [
     "aucune clause n'a été rédigée ici : les huit recherchées restent à écrire par un juriste, et ce module ne peut pas les écrire à sa place",
-    "le registre d'accès est vide : il ne dira rien tant que personne n'y portera une ligne, et les 87 fichiers de courriers déjà présents n'y sont pas repris",
+    "le registre d'accès est vide : 0 ligne lue dans ses octets, et les 87 fichier(s) de courriers posés sur ce disque (0 seulement suivi(s) par git, 0 sous le sceau) n'y sont pas repris",
     "un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus",
     "les concepts mathématiques ne sont pas protégeables par le droit d'auteur : seule l'expression du code est sous licence, le rapport ρ ne l'est pas",
     "la phase 1 conseillait de verrouiller avant d'exposer ; le DOI et les commits datés sont antérieurs, l'ordre est donc tenu et non réparable",
@@ -445,13 +499,15 @@
     "la démonstration en boîte noire n'existe pas : aucun artefact précompilé n'est livrable, et le dossier de devis nomme déjà le générateur de layout",
     "ce module ne donne pas un conseil juridique : il compte des octets posés sur un disque et ne qualifie aucun droit",
     "les prix, redevances et pourcentages sont absents du corpus : rien n'est négocié, et rien n'est ici proposé à la place",
+    "ce certificat est mesuré sous le chemin où on le lance : l'arbre vu d'ici compte 336 fichiers (99 fichier(s) hors du suivi git) — les compteurs d'arbre et de matière ne voyagent pas avec le dépôt, EQ-01 et EQ-07 publient l'écart des fichiers hors du suivi git",
+    "les dates du journal local de références ne voyagent pas : seule l'histoire atteignable par git se relit dans un clone, et l'archive publiée peut ne contenir aucun dépôt git",
     "cette couche ne prétend qu'une chose : elle mesure l'état du dépôt tel qu'il est écrit sur disque ; elle ne verrouille rien, ne rédige rien et ne conseille personne"
   ],
   "limites_ouvertes": {
     "compte_courriers": 87,
     "liste": [
       "aucune clause n'a été rédigée ici : les huit recherchées restent à écrire par un juriste, et ce module ne peut pas les écrire à sa place",
-      "le registre d'accès est vide : il ne dira rien tant que personne n'y portera une ligne, et les 87 fichiers de courriers déjà présents n'y sont pas repris",
+      "le registre d'accès est vide : 0 ligne lue dans ses octets, et les 87 fichier(s) de courriers posés sur ce disque (0 seulement suivi(s) par git, 0 sous le sceau) n'y sont pas repris",
       "un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus",
       "les concepts mathématiques ne sont pas protégeables par le droit d'auteur : seule l'expression du code est sous licence, le rapport ρ ne l'est pas",
       "la phase 1 conseillait de verrouiller avant d'exposer ; le DOI et les commits datés sont antérieurs, l'ordre est donc tenu et non réparable",
@@ -459,10 +515,13 @@
       "aucun avocat n'a été saisi et aucune date de saisine n'existe : la relecture reste une condition suspensive à venir, pas une étape accomplie",
       "la démonstration en boîte noire n'existe pas : aucun artefact précompilé n'est livrable, et le dossier de devis nomme déjà le générateur de layout",
       "ce module ne donne pas un conseil juridique : il compte des octets posés sur un disque et ne qualifie aucun droit",
-      "les prix, redevances et pourcentages sont absents du corpus : rien n'est négocié, et rien n'est ici proposé à la place"
+      "les prix, redevances et pourcentages sont absents du corpus : rien n'est négocié, et rien n'est ici proposé à la place",
+      "ce certificat est mesuré sous le chemin où on le lance : l'arbre vu d'ici compte 336 fichiers (99 fichier(s) hors du suivi git) — les compteurs d'arbre et de matière ne voyagent pas avec le dépôt, EQ-01 et EQ-07 publient l'écart des fichiers hors du suivi git",
+      "les dates du journal local de références ne voyagent pas : seule l'histoire atteignable par git se relit dans un clone, et l'archive publiée peut ne contenir aucun dépôt git"
     ],
     "longueur_minimale": 113,
-    "nb": 10,
+    "marqueur_courriers": "87 fichier(s) de courriers",
+    "nb": 12,
     "remplies_dans_ce_lot": 0,
     "toutes_au_dela_de_20": true
   },
@@ -528,7 +587,7 @@
       "CONSTRUCTION/construction_base.py",
       "CONSTRUCTION/tests/test_construction.py"
     ],
-    "hors_manifeste_octets": 1272830,
+    "hors_manifeste_octets": 1300902,
     "hors_manifeste_par_repertoire": {
       "CONSTRUCTION": 6,
       "CONTINUITE": 5,
@@ -590,7 +649,7 @@
       0
     ]
   },
-  "racine_merkle_sha256": "21872f1407d01b2bc567102261c18a61ee8ef706b422a8c4e9a2497096f4fd1c",
+  "racine_merkle_sha256": "eff964cdb2e81549952617e8aad9ccf70cb42cc1b5e1f852c575c0d91a108fe6",
   "regime_commercial": {
     "ce_que_les_textes_disent": "les deux textes GNU autorisent l'usage commercial et permettent de facturer des copies ; le seul mot « noncommercially » qu'ils contiennent règle une offre ponctuelle de source, pas un champ d'exploitation",
     "clause_reseau_agpl": 1,
@@ -663,6 +722,7 @@
   },
   "registre_acces": {
     "absent_avant_ce_dossier": true,
+    "ce_que_compte_le_suivi": "la matière de contact est comptée là où elle est : sur ce disque, dans ce que git suit, dans ce que le sceau couvre ; un fichier que git ne suit pas ne part ni dans le clone ni dans l'archive",
     "ce_que_l_avis_demandaite": [
       "qui contacte",
       "entité représentée",
@@ -679,18 +739,34 @@
       "reponse_transmise"
     ],
     "couvre_quatre_champs_demandes": true,
+    "git_disponible": true,
     "ligne_est_une_donnee_pas_un_commentaire": true,
-    "matiere_premiere_fichiers": 87,
-    "matiere_premiere_par_repertoire": {
+    "lignes_de_donnees_lues": 0,
+    "matiere_entree_du_sceau": 0,
+    "matiere_exemples": [
+      "EMAIL_QUANTUM_MEET.txt",
+      "EMAIL_UNIFIE_TOUS_MEDIAS.txt",
+      "emails_international/AR_01_CLARIN_CIENCIA.txt",
+      "emails_international/AT_01_DER_STANDARD.txt",
+      "emails_international/AT_02_OEAW_PRESS.txt",
+      "emails_international/AU_01_SCIMEX.txt"
+    ],
+    "matiere_hors_registre": 87,
+    "matiere_hors_suivi_git": 87,
+    "matiere_reprise_dans_le_registre": 0,
+    "matiere_suivie_par_git": 0,
+    "matiere_sur_disque": 87,
+    "matiere_sur_disque_par_repertoire": {
       "EMAIL_QUANTUM_MEET.txt": 1,
       "EMAIL_UNIFIE_TOUS_MEDIAS.txt": 1,
       "emails_international": 71,
       "emails_prets": 14
     },
-    "matiere_reprise_dans_le_registre": 0,
     "nb_colonnes": 6,
     "nb_entrees": 0,
-    "registres_preexistants": []
+    "registre_posé_sur_disque": true,
+    "registres_preexistants": [],
+    "suivi_additif": true
   },
   "registre_relu": {
     "absence_structurale": true,
@@ -767,7 +843,7 @@
   "source": {
     "antecedents_uses": [
       "MANIFESTE_SHA256.txt — le sceau du dépôt, dont ce dossier re-hache chaque entrée au lieu de recopier un verdict déjà écrit",
-      ".git/logs/HEAD — l'unique source d'horodatage : les dates viennent du contenu du journal, jamais de l'heure de la machine",
+      "git log HEAD — la source d'horodatage publiée : les dates viennent du contenu des commits atteignables, jamais de l'heure de la machine, et ce journal voyage avec le dépôt ; .git/logs/HEAD n'est qu'une source locale de confrontation, absente de l'archive publiée",
       "LICENSE, LICENSE-GPL, LICENSE-AGPL, .zenodo.json, CITATION.cff, DOSSIER_DEVIS/ — les textes dont les compteurs de clauses, de mentions et de montants sont tirés",
       "FONDATION/fondation_base.py — STATUTS et COUCHES : cette couche étiquette avec les mêmes mots que le reste du dépôt"
     ],
@@ -809,7 +885,7 @@
     },
     "pieces_listees": []
   },
-  "taille_octets": 21548,
+  "taille_octets": 25042,
   "verdict": {
     "clauses_redigees": 0,
     "enonce": "aucun verrou contractuel posé",
