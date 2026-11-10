@@ -283,6 +283,34 @@
       "fichiers": 6,
       "tiers": []
     },
+    "HORLOGERIE": {
+      "fichiers": 6,
+      "tiers": []
+    },
+    "CONTINUITE": {
+      "fichiers": 2,
+      "tiers": []
+    },
+    "REDACTION": {
+      "fichiers": 2,
+      "tiers": []
+    },
+    "CONSTRUCTION": {
+      "fichiers": 2,
+      "tiers": []
+    },
+    "VERROUS": {
+      "fichiers": 2,
+      "tiers": []
+    },
+    "DECLARATION": {
+      "fichiers": 2,
+      "tiers": []
+    },
+    "GUERRE": {
+      "fichiers": 2,
+      "tiers": []
+    },
     "code": {
       "fichiers": 18,
       "tiers": []
@@ -317,7 +345,7 @@
       "present": true,
       "equations": 17,
       "controles": 17,
-      "tests": 30,
+      "tests": 32,
       "modules": [
         "chiffres_pi.py"
       ]
@@ -329,6 +357,69 @@
       "tests": 45,
       "modules": [
         "fondation_base.py"
+      ]
+    },
+    "HORLOGERIE": {
+      "present": true,
+      "equations": 15,
+      "controles": 15,
+      "tests": 64,
+      "modules": [
+        "horlogerie.py"
+      ]
+    },
+    "CONTINUITE": {
+      "present": true,
+      "equations": 15,
+      "controles": 15,
+      "tests": 23,
+      "modules": [
+        "continuite_base.py"
+      ]
+    },
+    "REDACTION": {
+      "present": true,
+      "equations": 16,
+      "controles": 16,
+      "tests": 32,
+      "modules": [
+        "redaction_mizan.py"
+      ]
+    },
+    "CONSTRUCTION": {
+      "present": true,
+      "equations": 16,
+      "controles": 16,
+      "tests": 42,
+      "modules": [
+        "construction_base.py"
+      ]
+    },
+    "VERROUS": {
+      "present": true,
+      "equations": 16,
+      "controles": 16,
+      "tests": 51,
+      "modules": [
+        "verrous_base.py"
+      ]
+    },
+    "DECLARATION": {
+      "present": true,
+      "equations": 16,
+      "controles": 16,
+      "tests": 31,
+      "modules": [
+        "declaration_base.py"
+      ]
+    },
+    "GUERRE": {
+      "present": true,
+      "equations": 16,
+      "controles": 16,
+      "tests": 56,
+      "modules": [
+        "guerre_base.py"
       ]
     }
   },
@@ -551,7 +642,7 @@
       "id": "EQ-04",
       "chemin": "fondation_base.py → eq04_confrontation_et_parc() → C04",
       "formule": "chaque nombre ⇒ source publique ; douze cases pilier × couche habitées ; chaque extrait de la chaîne ⇒ sous-chaîne du texte mesuré",
-      "resultat": "4 sources publiques · ABONDANCE 54eq/54c/107t · CHIFFRES 17eq/17c/30t · FONDATION 18eq/18c/45t · 10 extraits verbatimes · 0 horodatage cité",
+      "resultat": "4 sources publiques · ABONDANCE 54eq/54c/107t · CHIFFRES 17eq/17c/32t · FONDATION 18eq/18c/45t · HORLOGERIE 15eq/15c/64t · CONTINUITE 15eq/15c/23t · REDACTION 16eq/16c/32t · CONSTRUCTION 16eq/16c/42t · VERROUS 16eq/16c/51t · DECLARATION 16eq/16c/31t · GUERRE 16eq/16c/56t · 10 extraits verbatimes · 0 horodatage cité",
       "statut": "OPÉRATIONNEL",
       "limite": "le comptage du parc est une expression régulière sur les fichiers : il mesure la déclaration, pas la justesse. La discipline de source ne dit pas si la chaîne a raison : elle dit seulement que nous ne lui prêtons ni chiffre, ni minutage, ni phrase",
       "detail": {
@@ -571,7 +662,7 @@
             "present": true,
             "equations": 17,
             "controles": 17,
-            "tests": 30,
+            "tests": 32,
             "modules": [
               "chiffres_pi.py"
             ]
@@ -583,6 +674,69 @@
             "tests": 45,
             "modules": [
               "fondation_base.py"
+            ]
+          },
+          "HORLOGERIE": {
+            "present": true,
+            "equations": 15,
+            "controles": 15,
+            "tests": 64,
+            "modules": [
+              "horlogerie.py"
+            ]
+          },
+          "CONTINUITE": {
+            "present": true,
+            "equations": 15,
+            "controles": 15,
+            "tests": 23,
+            "modules": [
+              "continuite_base.py"
+            ]
+          },
+          "REDACTION": {
+            "present": true,
+            "equations": 16,
+            "controles": 16,
+            "tests": 32,
+            "modules": [
+              "redaction_mizan.py"
+            ]
+          },
+          "CONSTRUCTION": {
+            "present": true,
+            "equations": 16,
+            "controles": 16,
+            "tests": 42,
+            "modules": [
+              "construction_base.py"
+            ]
+          },
+          "VERROUS": {
+            "present": true,
+            "equations": 16,
+            "controles": 16,
+            "tests": 51,
+            "modules": [
+              "verrous_base.py"
+            ]
+          },
+          "DECLARATION": {
+            "present": true,
+            "equations": 16,
+            "controles": 16,
+            "tests": 31,
+            "modules": [
+              "declaration_base.py"
+            ]
+          },
+          "GUERRE": {
+            "present": true,
+            "equations": 16,
+            "controles": 16,
+            "tests": 56,
+            "modules": [
+              "guerre_base.py"
             ]
           }
         },
@@ -636,7 +790,7 @@
       "id": "EQ-05",
       "chemin": "fondation_base.py → imports_de(), imports_parc() → C05",
       "formule": "imports ⊆ stdlib ∪ modules locaux — ici et dans tout le parc",
-      "resultat": "ici ['__future__', 'hashlib', 'inspect', 'json', 'math', 'pathlib', 're', 'sys', 'typing'] ; tiers ici [] ; tiers du parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'code': [], 'bibliotheques': []}",
+      "resultat": "ici ['__future__', 'hashlib', 'inspect', 'json', 'math', 'pathlib', 're', 'sys', 'typing'] ; tiers ici [] ; tiers du parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'HORLOGERIE': [], 'CONTINUITE': [], 'REDACTION': [], 'CONSTRUCTION': [], 'VERROUS': [], 'DECLARATION': [], 'GUERRE': [], 'code': [], 'bibliotheques': []}",
       "statut": "OPÉRATIONNEL",
       "limite": "la stdlib reconnue est celle de CETTE interprétation Python ; un tiers sans ce module n'a pas le même contrôle",
       "detail": {
@@ -678,6 +832,34 @@
           },
           "FONDATION": {
             "fichiers": 6,
+            "tiers": []
+          },
+          "HORLOGERIE": {
+            "fichiers": 6,
+            "tiers": []
+          },
+          "CONTINUITE": {
+            "fichiers": 2,
+            "tiers": []
+          },
+          "REDACTION": {
+            "fichiers": 2,
+            "tiers": []
+          },
+          "CONSTRUCTION": {
+            "fichiers": 2,
+            "tiers": []
+          },
+          "VERROUS": {
+            "fichiers": 2,
+            "tiers": []
+          },
+          "DECLARATION": {
+            "fichiers": 2,
+            "tiers": []
+          },
+          "GUERRE": {
+            "fichiers": 2,
             "tiers": []
           },
           "code": {
@@ -1154,7 +1336,7 @@
       "id": "C04",
       "nom": "les douze cases pilier × couche sont habitées ; chaque dossier du parc déclare autant de contrôles que d'équations et porte ses tests ; la chaîne est citée mot pour mot et n'est jamais minutée",
       "attendu": "aucune case vide · eq = c > 0 et tests > 0 par dossier · extraits verbatimes · 0 horodatage · 0 octet de transcript",
-      "obtenu": "aucune · 4 sources · ABONDANCE 54/54 et 107t · CHIFFRES 17/17 et 30t · FONDATION 18/18 et 45t · extraits tous retrouvés · horodatages []",
+      "obtenu": "aucune · 4 sources · ABONDANCE 54/54 et 107t · CHIFFRES 17/17 et 32t · FONDATION 18/18 et 45t · HORLOGERIE 15/15 et 64t · CONTINUITE 15/15 et 23t · REDACTION 16/16 et 32t · CONSTRUCTION 16/16 et 42t · VERROUS 16/16 et 51t · DECLARATION 16/16 et 31t · GUERRE 16/16 et 56t · extraits tous retrouvés · horodatages []",
       "ok": true,
       "limite": "le comptage du parc est une expression régulière sur les fichiers : il mesure la déclaration, pas la justesse. La discipline de source ne dit pas si la chaîne a raison : elle dit seulement que nous ne lui prêtons ni chiffre, ni minutage, ni phrase"
     },
@@ -1162,7 +1344,7 @@
       "id": "C05",
       "nom": "aucun import tiers, ici ni dans le parc",
       "attendu": "listes vides",
-      "obtenu": "ici [] · parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'code': [], 'bibliotheques': []}",
+      "obtenu": "ici [] · parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'HORLOGERIE': [], 'CONTINUITE': [], 'REDACTION': [], 'CONSTRUCTION': [], 'VERROUS': [], 'DECLARATION': [], 'GUERRE': [], 'code': [], 'bibliotheques': []}",
       "ok": true,
       "limite": "la stdlib reconnue est celle de CETTE interprétation Python ; un tiers sans ce module n'a pas le même contrôle"
     },

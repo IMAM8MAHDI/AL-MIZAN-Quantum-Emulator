@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Si vous utilisez, deployez ou citez ce logiciel, veuillez citer le DOI de concept 10.5281/zenodo.24028242 (il resout vers la derniere version deposee) et respecter la double licence GPL-3.0 / AGPL-3.0."
 title: "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems"
-version: "3.2.2"
-date-released: "2026-11-09"
+version: "3.3.0"
+date-released: "2026-11-10"
 doi: "10.5281/zenodo.24028242"
 url: "https://doi.org/10.5281/zenodo.24028242"
 repository-code: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"

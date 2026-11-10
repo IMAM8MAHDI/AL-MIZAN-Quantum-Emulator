@@ -250,6 +250,33 @@
           "present": true,
           "tests": 32
         },
+        "CONSTRUCTION": {
+          "controles": 16,
+          "equations": 16,
+          "modules": [
+            "construction_base.py"
+          ],
+          "present": true,
+          "tests": 42
+        },
+        "CONTINUITE": {
+          "controles": 15,
+          "equations": 15,
+          "modules": [
+            "continuite_base.py"
+          ],
+          "present": true,
+          "tests": 23
+        },
+        "DECLARATION": {
+          "controles": 16,
+          "equations": 16,
+          "modules": [
+            "declaration_base.py"
+          ],
+          "present": true,
+          "tests": 31
+        },
         "FONDATION": {
           "controles": 18,
           "equations": 18,
@@ -259,6 +286,15 @@
           "present": true,
           "tests": 45
         },
+        "GUERRE": {
+          "controles": 16,
+          "equations": 16,
+          "modules": [
+            "guerre_base.py"
+          ],
+          "present": true,
+          "tests": 56
+        },
         "HORLOGERIE": {
           "controles": 15,
           "equations": 15,
@@ -266,7 +302,25 @@
             "horlogerie.py"
           ],
           "present": true,
-          "tests": 30
+          "tests": 64
+        },
+        "REDACTION": {
+          "controles": 16,
+          "equations": 16,
+          "modules": [
+            "redaction_mizan.py"
+          ],
+          "present": true,
+          "tests": 32
+        },
+        "VERROUS": {
+          "controles": 16,
+          "equations": 16,
+          "modules": [
+            "verrous_base.py"
+          ],
+          "present": true,
+          "tests": 51
         }
       },
       "sources_publiques": [
@@ -318,12 +372,36 @@
           "fichiers": 4,
           "tiers": []
         },
+        "CONSTRUCTION": {
+          "fichiers": 2,
+          "tiers": []
+        },
+        "CONTINUITE": {
+          "fichiers": 2,
+          "tiers": []
+        },
+        "DECLARATION": {
+          "fichiers": 2,
+          "tiers": []
+        },
         "FONDATION": {
           "fichiers": 6,
           "tiers": []
         },
+        "GUERRE": {
+          "fichiers": 2,
+          "tiers": []
+        },
         "HORLOGERIE": {
-          "fichiers": 4,
+          "fichiers": 6,
+          "tiers": []
+        },
+        "REDACTION": {
+          "fichiers": 2,
+          "tiers": []
+        },
+        "VERROUS": {
+          "fichiers": 2,
           "tiers": []
         },
         "bibliotheques": {

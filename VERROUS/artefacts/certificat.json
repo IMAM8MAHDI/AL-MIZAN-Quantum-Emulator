@@ -1,0 +1,820 @@
+{
+  "attribution": {
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "ce_qu_un_depot_ne_prouve_pas": "une paternité",
+    "ce_qu_un_depot_prouve": "une date d'accessibilité",
+    "statut_de_la_demande": "déclaré · non vérifié pour toute valeur juridique, toute paternité et toute négociation"
+  },
+  "boite_noire": {
+    "artefacts_precompiles": 0,
+    "audits_sur_serveurs_tiers_attestes": 0,
+    "boite_noire_evoquee_dans_le_corpus": 0,
+    "boite_noire_fichiers": [],
+    "ce_que_l_avis_prescrivait": "« Structurer les démonstrations en boîte noire… tests en mode API fermée ou conteneur chiffré précompilé »",
+    "conseil_deja_contredit": true,
+    "conteneur_chiffre": 0,
+    "extensions_binaires": {
+      ".a": 0,
+      ".bin": 0,
+      ".dll": 0,
+      ".elf": 0,
+      ".exe": 0,
+      ".o": 0,
+      ".pyd": 0,
+      ".so": 0,
+      ".wasm": 0,
+      ".whl": 0
+    },
+    "fichiers_dossier_devis": [
+      "DOSSIER_DEVIS/PLAN_TECHNIQUE_DEVIS.md",
+      "DOSSIER_DEVIS/steane_tile_almizan.gds",
+      "DOSSIER_DEVIS/steane_tile_manifeste.json"
+    ],
+    "generateur_gds_cite": 3,
+    "ligne_citant_le_generateur": "| `generateur_gds.py` (dans ../code/) | Générateur du layout — reproductible | Python |",
+    "octets_compiles_sur_disque": 69,
+    "tailles_octets": {
+      "DOSSIER_DEVIS/PLAN_TECHNIQUE_DEVIS.md": 3658,
+      "DOSSIER_DEVIS/steane_tile_almizan.gds": 4536,
+      "DOSSIER_DEVIS/steane_tile_manifeste.json": 818
+    }
+  },
+  "chronologie": {
+    "ce_que_l_avis_prescrivait": "« Phase 1 : Verrouillage et traçabilité pré-exposition »",
+    "commits_attestes": 73,
+    "derniere_trace_datee": "2026-11-09T19:51:17+01:00",
+    "doi_deja_publie": true,
+    "exposition_attestee_anterieure_aux_verrous": true,
+    "gouvernable_desormais": [
+      "prochaine divulgation",
+      "prochain contact",
+      "prochain document avant envoi"
+    ],
+    "mesure": "le dépôt porte un DOI publié et 73 commits datés avant tout verrou : la phase 1 arrive après l'exposition, elle ne la précède plus",
+    "premiere_trace_datee": "2026-11-07T05:44:16+01:00",
+    "retroactif_impossible": true,
+    "second_term_manquant_pour_dater_un_verrou": true,
+    "secondes_attestees": 223621,
+    "verrouillage_avant_exposition": false,
+    "verrous_pos_avant_exposition": 0
+  },
+  "clauses": {
+    "auto_contient_motifs": 26,
+    "auto_exclusion": [
+      "VERROUS/verrous_base.py",
+      "VERROUS/tests/test_verrous.py"
+    ],
+    "clauses_redigees": 0,
+    "contraste_naif_exemple": ".zenodo.json:6 — \"description\": \"Simulateur quantique à vecteur d'état et matrice densité (QEC Steane [[7,1,3]], ",
+    "contraste_naif_fichiers": 171,
+    "contraste_naif_occurrences": 2251,
+    "controle_positif_fichiers": 81,
+    "controle_positif_occurrences": 173,
+    "corpus_texte": 307,
+    "exclusion_est_portante": true,
+    "naif_supere_stricte": true,
+    "nb_clauses_cherchees": 8,
+    "par_clause": {
+      "boite_noire_demontrable": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "condition_suspensive_de_relecture": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "confidentialite bilaterale": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "droit_applicable_francais": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "duree_et_territorialite": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "non_contournement": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "non_debauchage": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "retrocession": {
+        "fichiers": [],
+        "occurrences": 0
+      }
+    },
+    "recherche_fonctionne": true,
+    "toutes_absentes": true
+  },
+  "ecritures": {
+    "absence_partout": true,
+    "auto_reference": "certificat.json porte ce nœud : sa taille et son empreinte ne peuvent pas être scellées par lui-même",
+    "empreintes": {
+      "frontiere_publique.svg": "85380e933aa3116e",
+      "registre_acces.csv": "6234ee7886b03c0a",
+      "verrous_et_clauses.md": "007fde176a47d031"
+    },
+    "nom_sans_empreinte": "certificat.json",
+    "nom_sans_phrase": "registre_acces.csv",
+    "noms": [
+      "certificat.json",
+      "frontiere_publique.svg",
+      "registre_acces.csv",
+      "verrous_et_clauses.md"
+    ],
+    "noms_avec_phrase": [
+      "certificat.json",
+      "frontiere_publique.svg",
+      "verrous_et_clauses.md"
+    ],
+    "raison_sans_phrase": "une ligne de commentaire dans un registre Excel devient une donnée ; l'absence y est structurelle : zéro ligne",
+    "tailles": {
+      "frontiere_publique.svg": 2704,
+      "registre_acces.csv": 72,
+      "verrous_et_clauses.md": 4469
+    }
+  },
+  "empreinte_execution": "c47b2769bc39b0493065e13539bda35e22091878b2777ae6f13ad7f7bffeb720",
+  "exposition": {
+    "branches_de_l_expression": [
+      "AGPL-3.0-only",
+      "GPL-3.0-only"
+    ],
+    "branches_non_reprises_dans_zenodo": [
+      "GPL-3.0-only"
+    ],
+    "cle_doi_dans_zenodo": false,
+    "depot_distant": "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator.git",
+    "doi_cff": "10.5281/zenodo.24028242",
+    "expose": true,
+    "expression_corpus": "GPL-3.0-only OR AGPL-3.0-only",
+    "licence_cff": "GPL-3.0-only OR AGPL-3.0-only",
+    "licence_zenodo": "agpl-3.0-only",
+    "licence_zenodo_couvre_une_branche": true,
+    "licences_divergentes": true,
+    "references_zenodo": 0,
+    "titre": "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems",
+    "titre_egal": true,
+    "upload_type": "software",
+    "version_cff": "3.3.0",
+    "version_zenodo": "3.3.0",
+    "versions_egales": true
+  },
+  "frontiere": {
+    "au_manifeste": 204,
+    "cache_compiles_sur_disque": 69,
+    "cache_hors_depôt_public": true,
+    "ce_que_l_avis_prescrivait": "« Ne publiez jamais l'intégralité des briques clés… Gardez en secret de fabrique les heuristiques fines, les paramètres de calibration »",
+    "coeur_secret_reelement_garde": 0,
+    "fichiers_gardes_listes": [],
+    "fichiers_total": 336,
+    "heuristiques_dans_le_seul_cache": false,
+    "heuristiques_et_calibrages": [
+      [
+        "ABONDANCE/eau_abondance.py",
+        1
+      ],
+      [
+        "CHIFFRES/generer_pages.py",
+        1
+      ],
+      [
+        "moteur/transducteur_quantique_deterministe_mizan.py",
+        1
+      ]
+    ],
+    "hors_manifeste": 132,
+    "hors_manifeste_octets": 1272830,
+    "hors_manifeste_par_repertoire": {
+      "CONSTRUCTION": 6,
+      "CONTINUITE": 5,
+      "DECLARATION": 6,
+      "EMAIL_QUANTUM_MEET.txt": 1,
+      "EMAIL_UNIFIE_TOUS_MEDIAS.txt": 1,
+      "GUERRE": 8,
+      "MANIFESTE_SHA256.txt": 1,
+      "REDACTION": 5,
+      "VERROUS": 2,
+      "code": 3,
+      "corriger_adresses_v2.py": 1,
+      "emails_international": 71,
+      "emails_prets": 14,
+      "envoyer_emails.py": 1,
+      "envoyer_emails_batch3.py": 1,
+      "envoyer_emails_batch4.py": 1,
+      "envoyer_emails_batch5.py": 1,
+      "envoyer_emails_batch6.py": 1,
+      "envoyer_emails_international.py": 1,
+      "repondre_elpais.py": 1,
+      "repondre_et_corriger.py": 1
+    },
+    "mesure": "6 module(s) porteur(s) d'équations et 3 occurrence(s) de heuristiques et calibrages sont dans le dépôt public, 0 fichier n'est gardé hors de lui",
+    "modules_d_equations_hors_sceau": [
+      "CONSTRUCTION/construction_base.py",
+      "CONTINUITE/continuite_base.py",
+      "DECLARATION/declaration_base.py",
+      "GUERRE/guerre_base.py",
+      "REDACTION/redaction_mizan.py",
+      "VERROUS/verrous_base.py"
+    ],
+    "modules_portant_des_equations": [
+      "CONSTRUCTION/construction_base.py",
+      "CONTINUITE/continuite_base.py",
+      "DECLARATION/declaration_base.py",
+      "FONDATION/fondation_base.py",
+      "GUERRE/guerre_base.py",
+      "HORLOGERIE/horlogerie.py",
+      "HORLOGERIE/tests/test_horlogerie.py",
+      "REDACTION/redaction_mizan.py",
+      "VERROUS/verrous_base.py"
+    ],
+    "occurrences_heuristiques": 3,
+    "strategie_incompatible_ecrite": true
+  },
+  "horodatages": {
+    "artefacts_horodatage": [],
+    "aucun_instrument_strict": true,
+    "auteurs": {
+      "devin@cognition.ai": 18,
+      "elbahloulahmed505@gmail.com": 55
+    },
+    "auteurs_additifs": true,
+    "ce_que_compte_le_strict": "le strict compte les artefacts d'horodatage sur disque (.tsa, .p7s, .p7m, .sig, .asc, .der), pas les mots qui les nomment : une mention n'est pas un instrument",
+    "ce_que_prouve_un_depot": "un dépôt horodaté atteste qu'un contenu était accessible à une date, pas qu'il est de vous : antériorité légale = False",
+    "commits_d_outils_automates": 18,
+    "contraste_naif_contexte": "DECLARATION/artefacts/certificat.json:630 — \"bibliotheques/lib_physique.py:630|role_systeme=\\\"Coffre-fort cryptographique ultime et archive ",
+    "contraste_naif_fichiers": 4,
+    "contraste_naif_occurrences": 10,
+    "derniere": "2026-11-09T19:51:17+01:00",
+    "duree_attestee_seconde": 223621,
+    "exclus_auto": [
+      "VERROUS/verrous_base.py",
+      "VERROUS/tests/test_verrous.py"
+    ],
+    "extensions_instrument": [
+      ".tsa",
+      ".p7s",
+      ".p7m",
+      ".sig",
+      ".asc",
+      ".der"
+    ],
+    "fichiers_mentionnant_un_instrument": [
+      "DECLARATION/artefacts/certificat.json",
+      "DECLARATION/artefacts/declaration_et_ablations.md",
+      "DECLARATION/declaration_base.py"
+    ],
+    "instruments_horodatage": {
+      "coffre-fort numérique horodaté": {
+        "fichiers": [
+          "DECLARATION/artefacts/certificat.json",
+          "DECLARATION/declaration_base.py"
+        ],
+        "occurrences": 4
+      },
+      "constat d'huissier": {
+        "fichiers": [
+          "DECLARATION/artefacts/certificat.json"
+        ],
+        "occurrences": 7
+      },
+      "enveloppe e-Soleau INPI": {
+        "fichiers": [
+          "DECLARATION/artefacts/certificat.json",
+          "DECLARATION/artefacts/declaration_et_ablations.md",
+          "DECLARATION/declaration_base.py"
+        ],
+        "occurrences": 14
+      },
+      "horodatage RFC 3161": {
+        "fichiers": [
+          "DECLARATION/artefacts/certificat.json",
+          "DECLARATION/artefacts/declaration_et_ablations.md",
+          "DECLARATION/declaration_base.py"
+        ],
+        "occurrences": 35
+      }
+    },
+    "lignes_journal": 73,
+    "lignes_parsees": 73,
+    "mentions_instrument_fichiers": 3,
+    "mentions_instrument_occurrences": 60,
+    "nb_artefacts_horodatage": 0,
+    "premiere": "2026-11-07T05:44:16+01:00",
+    "preuve_de_paternite": false,
+    "sha_dernier": "a5f01264d177421d65ad8a53f3767ca7c8be1d97",
+    "sha_distincts": 70,
+    "sha_tete": "a5f01264d177421d65ad8a53f3767ca7c8be1d97",
+    "somme_auteurs": 73,
+    "tete_coherente": true,
+    "tout_parse": true,
+    "utf8_integrale": true,
+    "utf8_stricte": 73
+  },
+  "inventaire": {
+    "aucune_horloge": true,
+    "chemins_uniques": true,
+    "ecrit_uniquement_dans": "VERROUS/artefacts/",
+    "empreinte_arbre": "fa211e1da11c80457daed4448338153569c377261b7821b9650178ab9b7714cc",
+    "empreintes_distinctes": false,
+    "extensions_additives": true,
+    "fichiers": 336,
+    "horloge_noyau_fichiers": 10,
+    "hors_depot_public": {
+      "exemples": [
+        "code/resultats/run_bell_20261108_101003.json",
+        "code/resultats/run_bell_20261108_112335.json",
+        "code/resultats/run_bell_20261108_144407.json",
+        "resultats/arbre_savoir_millenaire.json"
+      ],
+      "fichiers": 22,
+      "motifs_gitignore": [
+        "*.pyc",
+        "__pycache__/",
+        "code/resultats/",
+        "resultats/"
+      ],
+      "octets": 69076
+    },
+    "motifs_horloge_reposes": [],
+    "nb_motifs_horloge_cherches": 5,
+    "octets_total": 4269553,
+    "par_extension": {
+      "(sans extension)": 5,
+      ".bib": 1,
+      ".cff": 1,
+      ".csv": 15,
+      ".gds": 2,
+      ".html": 21,
+      ".json": 54,
+      ".md": 33,
+      ".py": 94,
+      ".svg": 19,
+      ".tex": 1,
+      ".txt": 89,
+      ".xml": 1
+    },
+    "regles": {
+      "noms_exclus_par_prefixe": ".qoder_tmp",
+      "prefixes_exclus": [
+        "VERROUS/artefacts/"
+      ],
+      "repertoires_exclus": [
+        ".git",
+        ".mypy_cache",
+        ".pytest_cache",
+        "__pycache__"
+      ],
+      "suffixes_exclus": [
+        ".pyc"
+      ]
+    },
+    "somme_extensions": 336
+  },
+  "licence": {
+    "avec_en_tete": 80,
+    "choix_laisse_au_licencie": true,
+    "compte_additif": true,
+    "double_licence_declaree": true,
+    "expression_lue": "GPL-3.0-only OR AGPL-3.0-only",
+    "expression_unique": true,
+    "expressions_dans_les_sources": {
+      "GPL-3.0-only OR AGPL-3.0-only": 80
+    },
+    "license_md_porte_l_expression": false,
+    "occurrences_en_tete": 88,
+    "python_total": 94,
+    "sans_en_tete": 14,
+    "sans_en_tete_listes": [
+      "corriger_adresses_v2.py",
+      "envoyer_emails.py",
+      "envoyer_emails_batch3.py",
+      "envoyer_emails_batch4.py",
+      "envoyer_emails_batch5.py",
+      "envoyer_emails_batch6.py",
+      "envoyer_emails_international.py",
+      "horloge_noyau/__init__.py",
+      "horloge_noyau/architecture_informe_couche_matiere_table_mizan.py",
+      "horloge_noyau/horloge_logique_mizan.py",
+      "horloge_noyau/tests/test_horloge_noyau_complet.py",
+      "horloge_noyau/verrou.py",
+      "repondre_elpais.py",
+      "repondre_et_corriger.py"
+    ],
+    "sans_en_tete_par_repertoire": {
+      "corriger_adresses_v2.py": 1,
+      "envoyer_emails.py": 1,
+      "envoyer_emails_batch3.py": 1,
+      "envoyer_emails_batch4.py": 1,
+      "envoyer_emails_batch5.py": 1,
+      "envoyer_emails_batch6.py": 1,
+      "envoyer_emails_international.py": 1,
+      "horloge_noyau": 5,
+      "repondre_elpais.py": 1,
+      "repondre_et_corriger.py": 1
+    },
+    "textes_gnu_versions": {
+      "AGPL": [
+        "3"
+      ],
+      "GPL": [
+        "3"
+      ]
+    },
+    "textes_licence_octets": {
+      "LICENSE": 1377,
+      "LICENSE-AGPL": 35184,
+      "LICENSE-GPL": 35823,
+      "LICENSE.md": 711
+    },
+    "uniforme_avec_licenc_racine": true
+  },
+  "limites": [
+    "aucune clause n'a été rédigée ici : les huit recherchées restent à écrire par un juriste, et ce module ne peut pas les écrire à sa place",
+    "le registre d'accès est vide : il ne dira rien tant que personne n'y portera une ligne, et les 87 fichiers de courriers déjà présents n'y sont pas repris",
+    "un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus",
+    "les concepts mathématiques ne sont pas protégeables par le droit d'auteur : seule l'expression du code est sous licence, le rapport ρ ne l'est pas",
+    "la phase 1 conseillait de verrouiller avant d'exposer ; le DOI et les commits datés sont antérieurs, l'ordre est donc tenu et non réparable",
+    "le manifeste ne couvre pas tout l'arbre : les fichiers hors sceau sont publics sans être certifiés, et leur nombre est publié par EQ-02",
+    "aucun avocat n'a été saisi et aucune date de saisine n'existe : la relecture reste une condition suspensive à venir, pas une étape accomplie",
+    "la démonstration en boîte noire n'existe pas : aucun artefact précompilé n'est livrable, et le dossier de devis nomme déjà le générateur de layout",
+    "ce module ne donne pas un conseil juridique : il compte des octets posés sur un disque et ne qualifie aucun droit",
+    "les prix, redevances et pourcentages sont absents du corpus : rien n'est négocié, et rien n'est ici proposé à la place",
+    "cette couche ne prétend qu'une chose : elle mesure l'état du dépôt tel qu'il est écrit sur disque ; elle ne verrouille rien, ne rédige rien et ne conseille personne"
+  ],
+  "limites_ouvertes": {
+    "compte_courriers": 87,
+    "liste": [
+      "aucune clause n'a été rédigée ici : les huit recherchées restent à écrire par un juriste, et ce module ne peut pas les écrire à sa place",
+      "le registre d'accès est vide : il ne dira rien tant que personne n'y portera une ligne, et les 87 fichiers de courriers déjà présents n'y sont pas repris",
+      "un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus",
+      "les concepts mathématiques ne sont pas protégeables par le droit d'auteur : seule l'expression du code est sous licence, le rapport ρ ne l'est pas",
+      "la phase 1 conseillait de verrouiller avant d'exposer ; le DOI et les commits datés sont antérieurs, l'ordre est donc tenu et non réparable",
+      "le manifeste ne couvre pas tout l'arbre : les fichiers hors sceau sont publics sans être certifiés, et leur nombre est publié par EQ-02",
+      "aucun avocat n'a été saisi et aucune date de saisine n'existe : la relecture reste une condition suspensive à venir, pas une étape accomplie",
+      "la démonstration en boîte noire n'existe pas : aucun artefact précompilé n'est livrable, et le dossier de devis nomme déjà le générateur de layout",
+      "ce module ne donne pas un conseil juridique : il compte des octets posés sur un disque et ne qualifie aucun droit",
+      "les prix, redevances et pourcentages sont absents du corpus : rien n'est négocié, et rien n'est ici proposé à la place"
+    ],
+    "longueur_minimale": 113,
+    "nb": 10,
+    "remplies_dans_ce_lot": 0,
+    "toutes_au_dela_de_20": true
+  },
+  "manifeste": {
+    "a_l_identique": 82,
+    "absents_de_disque": 0,
+    "absents_listes": [],
+    "apres_normalisation_des_fins_de_ligne": 81,
+    "chemin": "MANIFESTE_SHA256.txt",
+    "comptes_additifs": true,
+    "conformes": 163,
+    "couverture_%": "48.51",
+    "derivent": 41,
+    "derivent_listes": [
+      ".zenodo.json",
+      "ABONDANCE/artefacts/pages/agriculture.html",
+      "ABONDANCE/artefacts/pages/agriculture_ar.html",
+      "ABONDANCE/artefacts/pages/agriculture_en.html",
+      "ABONDANCE/artefacts/pages/eau.html",
+      "ABONDANCE/artefacts/pages/eau_ar.html",
+      "ABONDANCE/artefacts/pages/eau_en.html",
+      "ABONDANCE/artefacts/pages/electricite.html",
+      "ABONDANCE/artefacts/pages/electricite_ar.html",
+      "ABONDANCE/artefacts/pages/electricite_en.html",
+      "ABONDANCE/artefacts/pages/index.html",
+      "ABONDANCE/artefacts/pages/index_ar.html",
+      "ABONDANCE/artefacts/pages/index_en.html",
+      "ABONDANCE/moteur_page_trilingue.py",
+      "CHIFFRES/artefacts/pages/chiffres.html",
+      "CHIFFRES/artefacts/pages/chiffres_ar.html",
+      "CHIFFRES/artefacts/pages/chiffres_en.html",
+      "CITATION.cff",
+      "COMMUNIQUE_PRESSE.md",
+      "FONDATION/OUTILS/audit_piliers.py",
+      "FONDATION/artefacts/confrontation.csv",
+      "FONDATION/artefacts/confrontation.json",
+      "FONDATION/artefacts/donnees/fondation.csv",
+      "FONDATION/artefacts/donnees/fondation.json",
+      "FONDATION/artefacts/dossiers/fondation.md",
+      "FONDATION/artefacts/etat.json",
+      "FONDATION/artefacts/inventaire.json",
+      "FONDATION/artefacts/pages/fondation.html",
+      "FONDATION/artefacts/pages/fondation_ar.html",
+      "FONDATION/artefacts/pages/fondation_en.html",
+      "FONDATION/artefacts/pages/index.html",
+      "FONDATION/artefacts/pages/index_ar.html",
+      "FONDATION/artefacts/pages/index_en.html",
+      "FONDATION/fondation_base.py",
+      "FONDATION/tests/test_fondation.py",
+      "METADONNEES_HAL.md",
+      "POSTS_LANCEMENT.md",
+      "PRESENTATION_TROIS_SECTIONS.md",
+      "README.md",
+      "README_DEPOT.md",
+      "paper.md"
+    ],
+    "hors_manifeste": 132,
+    "hors_manifeste_exemples": [
+      "CONSTRUCTION/artefacts/certificat.json",
+      "CONSTRUCTION/artefacts/nomenclature_crans.csv",
+      "CONSTRUCTION/artefacts/plan_emboitement.svg",
+      "CONSTRUCTION/artefacts/predictions_falsifiables.md",
+      "CONSTRUCTION/construction_base.py",
+      "CONSTRUCTION/tests/test_construction.py"
+    ],
+    "hors_manifeste_octets": 1272830,
+    "hors_manifeste_par_repertoire": {
+      "CONSTRUCTION": 6,
+      "CONTINUITE": 5,
+      "DECLARATION": 6,
+      "EMAIL_QUANTUM_MEET.txt": 1,
+      "EMAIL_UNIFIE_TOUS_MEDIAS.txt": 1,
+      "GUERRE": 8,
+      "MANIFESTE_SHA256.txt": 1,
+      "REDACTION": 5,
+      "VERROUS": 2,
+      "code": 3,
+      "corriger_adresses_v2.py": 1,
+      "emails_international": 71,
+      "emails_prets": 14,
+      "envoyer_emails.py": 1,
+      "envoyer_emails_batch3.py": 1,
+      "envoyer_emails_batch4.py": 1,
+      "envoyer_emails_batch5.py": 1,
+      "envoyer_emails_batch6.py": 1,
+      "envoyer_emails_international.py": 1,
+      "repondre_elpais.py": 1,
+      "repondre_et_corriger.py": 1
+    },
+    "le_manifeste_ne_se_scelle_pas_lui_meme": true,
+    "lignes_fichier": 204,
+    "total_lignes": 204,
+    "toutes_entrees_existent": true,
+    "un_sceau_ne_dit_rien_de_la_date": true,
+    "verdict": "HORS SCEAU : 41 fichier(s) du dépôt ne rendent pas l'empreinte inscrite dans le manifeste"
+  },
+  "plan_svg": {
+    "absence_ecrite": true,
+    "barre_de_zero_longueur": 4,
+    "barres": 8,
+    "chemin": "VERROUS/artefacts/frontiere_publique.svg",
+    "echelle": "220.0 px",
+    "largeurs_conformes": true,
+    "notes_texte": 17,
+    "octets": 2704,
+    "plus_grande_valeur": 336,
+    "valeurs_attendues": [
+      336,
+      204,
+      132,
+      80,
+      0,
+      0,
+      0,
+      0
+    ],
+    "valeurs_ecrites": [
+      336,
+      204,
+      132,
+      80,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "racine_merkle_sha256": "21872f1407d01b2bc567102261c18a61ee8ef706b422a8c4e9a2497096f4fd1c",
+  "regime_commercial": {
+    "ce_que_les_textes_disent": "les deux textes GNU autorisent l'usage commercial et permettent de facturer des copies ; le seul mot « noncommercially » qu'ils contiennent règle une offre ponctuelle de source, pas un champ d'exploitation",
+    "clause_reseau_agpl": 1,
+    "clause_reseau_gpl": 0,
+    "differences_de_presence": {
+      "clause d'interaction à distance": [
+        false,
+        true
+      ],
+      "grant irrevocable": [
+        true,
+        true
+      ],
+      "mention d'une licence propriétaire alternative": [
+        false,
+        false
+      ],
+      "permission de facturer des copies": [
+        true,
+        true
+      ],
+      "permission de faire tourner le programme": [
+        true,
+        true
+      ],
+      "restriction d'usage non commercial": [
+        false,
+        false
+      ]
+    },
+    "ecarts_de_compte": {
+      "clause d'interaction à distance": [
+        0,
+        1
+      ],
+      "permission de facturer des copies": [
+        4,
+        3
+      ]
+    },
+    "facturer_present_dans_les_deux": true,
+    "l_avis_recu_disait": "« type Affero GPL / AGPLv3 ou licence propriétaire à usage non commercial uniquement »",
+    "la_clause_pretendue_est_absente": true,
+    "licence_proprietaire_alternative": 0,
+    "par_texte": {
+      "AGPL": {
+        "clause d'interaction à distance": 1,
+        "grant irrevocable": 1,
+        "mention d'une licence propriétaire alternative": 0,
+        "permission de facturer des copies": 3,
+        "permission de faire tourner le programme": 1,
+        "restriction d'usage non commercial": 0
+      },
+      "GPL": {
+        "clause d'interaction à distance": 0,
+        "grant irrevocable": 1,
+        "mention d'une licence propriétaire alternative": 0,
+        "permission de facturer des copies": 4,
+        "permission de faire tourner le programme": 1,
+        "restriction d'usage non commercial": 0
+      }
+    },
+    "permissions_de_courir_total": 2,
+    "permissions_de_facturer_total": 7,
+    "restrictions_non_commerciales_total": 0,
+    "seules_differences_mesurees": [
+      "clause d'interaction à distance"
+    ],
+    "texte_non_commercial_unique": "LICENSE-GPL:271 — alternative is allowed only occasionally and noncommercially, and"
+  },
+  "registre_acces": {
+    "absent_avant_ce_dossier": true,
+    "ce_que_l_avis_demandaite": [
+      "qui contacte",
+      "entité représentée",
+      "date",
+      "questions techniques posées"
+    ],
+    "chemin": "VERROUS/artefacts/registre_acces.csv",
+    "colonnes": [
+      "date_contact",
+      "personne",
+      "entite",
+      "canal",
+      "question_posee",
+      "reponse_transmise"
+    ],
+    "couvre_quatre_champs_demandes": true,
+    "ligne_est_une_donnee_pas_un_commentaire": true,
+    "matiere_premiere_fichiers": 87,
+    "matiere_premiere_par_repertoire": {
+      "EMAIL_QUANTUM_MEET.txt": 1,
+      "EMAIL_UNIFIE_TOUS_MEDIAS.txt": 1,
+      "emails_international": 71,
+      "emails_prets": 14
+    },
+    "matiere_reprise_dans_le_registre": 0,
+    "nb_colonnes": 6,
+    "nb_entrees": 0,
+    "registres_preexistants": []
+  },
+  "registre_relu": {
+    "absence_structurale": true,
+    "bom": true,
+    "chemin": "VERROUS/artefacts/registre_acces.csv",
+    "colonnes_relues": [
+      "date_contact",
+      "personne",
+      "entite",
+      "canal",
+      "question_posee",
+      "reponse_transmise"
+    ],
+    "crlf": true,
+    "en_tete_conforme": true,
+    "entrees_relues": 0,
+    "nb_lignes_texte": 1,
+    "octets": 72,
+    "phrase_absente_du_csv_par_design": true,
+    "separateur": ";"
+  },
+  "rejoue_identique": true,
+  "relecture_avocat": {
+    "avocat_rencontre": 0,
+    "barreau_rencontre": 0,
+    "ce_que_l_avis_prescrivait": "« Ne signez aucun contrat de partenariat, protocole d'accord (MOU) ou contrat de licence sans relecture préalable par un avocat spécialisé »",
+    "condition_suspensive_rempie": false,
+    "date_de_saisine": null,
+    "instruments_a_relire": 4,
+    "mesure": "aucune saisine n'est écrite dans le dépôt : la relecture reste une condition à venir, pas une étape accomplie",
+    "par_terme": {
+      "avocat": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "barreau": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "cabinet": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "conseil juridique": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "service juridique": {
+        "fichiers": [],
+        "occurrences": 0
+      }
+    },
+    "saisine_attestee": false,
+    "termes_cherches": 5,
+    "termes_rencontres": 0
+  },
+  "remuneration": {
+    "ce_que_l_avis_prescrivait": "« Évitez les forfaits uniques sous-évalués sans intéressement. Négociez un modèle hybride »",
+    "devis_fichiers": [
+      "DOSSIER_DEVIS/PLAN_TECHNIQUE_DEVIS.md"
+    ],
+    "devis_lignes": 84,
+    "devis_octets": 3574,
+    "forfait_unique_impose": 0,
+    "lignes_avec_montant": [],
+    "mentions_de_prix_ou_cout": 5,
+    "mesure": "0 montant imposé et 0 clause de redevance dans tout le dépôt, alors que 5 ligne(s) du devis parlent de prix, de coût ou de tarif",
+    "modele_hybride_declare": "part fixe + redevance proportionnelle aux déploiements",
+    "modele_signe": false,
+    "montants_imposes": 0,
+    "redevances_fichiers": [],
+    "redevances_occurrences": 0
+  },
+  "source": {
+    "antecedents_uses": [
+      "MANIFESTE_SHA256.txt — le sceau du dépôt, dont ce dossier re-hache chaque entrée au lieu de recopier un verdict déjà écrit",
+      ".git/logs/HEAD — l'unique source d'horodatage : les dates viennent du contenu du journal, jamais de l'heure de la machine",
+      "LICENSE, LICENSE-GPL, LICENSE-AGPL, .zenodo.json, CITATION.cff, DOSSIER_DEVIS/ — les textes dont les compteurs de clauses, de mentions et de montants sont tirés",
+      "FONDATION/fondation_base.py — STATUTS et COUCHES : cette couche étiquette avec les mêmes mots que le reste du dépôt"
+    ],
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "ce_que_ce_module_n_utilise_pas": [
+      "aucune horloge murale : les appels datetime.now, date.today et time.time ne figurent pas dans ce fichier, et C01 le vérifie en relisant le source",
+      "aucun secret : rien n'est lu hors du dépôt, aucun fichier de credentials n'est ouvert",
+      "aucune rédaction contractuelle, aucun modèle reproduit, aucune clause inventée",
+      "aucun prix, redevance ou pourcentage proposé : les montants sont comptés, pas suggérés"
+    ],
+    "point_de_depart": "feuille de route externe reçue le 2026-11-09 en quatre phases — verrouillage et traçabilité pré-exposition, premiers contacts, NDA bilatéral en droit français et démonstration en boîte noire, formalisation du contrat — avec la consigne finale « tout fait en sorte que sa corresponde a ma base logique »"
+  },
+  "structure_contrat": {
+    "bilateralite_et_droit_francais": 0,
+    "ce_que_l_avis_prescrivait": "« Refuser les cessions globales déguisées… conservez la propriété exclusive des algorithmes sous-jacents »",
+    "distingue_licence_de_cession": false,
+    "documents_contractuels_sur_disque": 0,
+    "instruments_cites": 0,
+    "instruments_signes": 0,
+    "mesure": "les quatre instruments sont nommés par ce module, aucun n'apparaît dans une pièce du dépôt, et 0 document contractuel n'est posé sur disque",
+    "nb_instruments": 4,
+    "par_instrument": {
+      "accord de confidentialite bilatéral": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "cession de propriete intellectuelle": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "licence d'exploitation": {
+        "fichiers": [],
+        "occurrences": 0
+      },
+      "protocole d'accord": {
+        "fichiers": [],
+        "occurrences": 0
+      }
+    },
+    "pieces_listees": []
+  },
+  "taille_octets": 21548,
+  "verdict": {
+    "clauses_redigees": 0,
+    "enonce": "aucun verrou contractuel posé",
+    "entrees_du_registre": 0,
+    "instruments_signes": 0,
+    "occurrences_avocat": 0
+  }
+}

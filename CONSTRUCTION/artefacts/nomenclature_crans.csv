@@ -1,0 +1,45 @@
+﻿cran;cote_nominale_mm;resolution_plan_mm;borne_basse_mm;borne_haute_mm;largeur_encadrement_mm;clamp;tolerance_mm;outil_declare;heures_declarees;masse_kg;statut_construction;predicat_associe
+0;622,50;0,01;622,500000;622,500000;0,000000000000;NON;0,62250;scie à ruban;0,25;24,335;aucun prototype construit;P1
+1;598,39;0,01;598,389965;598,389965;0,000000000001;NON;0,59839;scie à ruban;0,25;22,487;aucun prototype construit;P2
+2;575,21;0,01;575,213736;575,213736;0,000000000001;NON;0,57521;scie à ruban;0,25;20,778;aucun prototype construit;P2
+3;552,94;0,01;552,935145;552,935145;0,000000000002;NON;0,55294;scie à ruban;0,25;19,201;aucun prototype construit;P2
+4;531,52;0,01;531,519425;531,519425;0,000000000002;NON;0,53152;scie à ruban;0,25;17,742;aucun prototype construit;P2
+5;510,93;0,01;510,933157;510,933157;0,000000000003;NON;0,51093;scie à ruban;0,25;16,394;aucun prototype construit;P2
+6;491,14;0,01;491,144216;491,144216;0,000000000003;NON;0,49114;dégauchisseuse-rabot;0,50;15,149;aucun prototype construit;P2
+7;472,12;0,01;472,121719;472,121719;0,000000000003;NON;0,47212;dégauchisseuse-rabot;0,50;13,998;aucun prototype construit;P2
+8;453,84;0,01;453,835983;453,835983;0,000000000004;NON;0,45384;dégauchisseuse-rabot;0,50;12,935;aucun prototype construit;P2
+9;436,26;0,01;436,258471;436,258471;0,000000000004;NON;0,43626;dégauchisseuse-rabot;0,50;11,952;aucun prototype construit;P2
+10;419,36;0,01;419,361753;419,361753;0,000000000004;NON;0,41936;dégauchisseuse-rabot;0,50;11,044;aucun prototype construit;P2
+11;403,12;0,01;403,119462;403,119462;0,000000000005;NON;0,40312;dégauchisseuse-rabot;0,50;10,205;aucun prototype construit;P2
+12;387,51;0,01;387,506250;387,506250;0,000000000005;NON;0,38751;dégauchisseuse-rabot;0,50;9,430;aucun prototype construit;P2
+13;372,50;0,01;372,497753;372,497753;0,000000000005;NON;0,37250;dégauchisseuse-rabot;0,50;8,714;aucun prototype construit;P2
+14;358,07;0,01;358,070551;358,070551;0,000000000005;NON;0,35807;dégauchisseuse-rabot;0,50;8,052;aucun prototype construit;P2
+15;344,20;0,01;344,202128;344,202128;0,000000000005;NON;0,34420;dégauchisseuse-rabot;0,50;7,440;aucun prototype construit;P2
+16;330,87;0,01;330,870842;330,870842;0,000000000006;NON;0,33087;dégauchisseuse-rabot;0,50;6,875;aucun prototype construit;P2
+17;318,06;0,01;318,055890;318,055890;0,000000000006;NON;0,31806;dégauchisseuse-rabot;0,50;6,353;aucun prototype construit;P2
+18;305,74;0,01;305,737274;305,737274;0,000000000006;NON;0,30574;dégauchisseuse-rabot;0,50;5,870;aucun prototype construit;P2
+19;293,90;0,01;293,895770;293,895770;0,000000000006;NON;0,29390;dégauchisseuse-rabot;0,50;5,424;aucun prototype construit;P2
+20;282,51;0,01;282,512899;282,512899;0,000000000006;NON;0,28251;dégauchisseuse-rabot;0,50;5,012;aucun prototype construit;P2
+21;271,57;0,01;271,570898;271,570898;0,000000000006;NON;0,27157;dégauchisseuse-rabot;0,50;4,632;aucun prototype construit;P2
+22;261,05;0,01;261,052691;261,052691;0,000000000006;NON;0,26105;dégauchisseuse-rabot;0,50;4,280;aucun prototype construit;P2
+23;250,94;0,01;250,941865;250,941865;0,000000000006;NON;0,25094;dégauchisseuse-rabot;0,50;3,955;aucun prototype construit;P2
+24;241,22;0,01;241,222641;241,222641;0,000000000006;NON;0,24122;dégauchisseuse-rabot;0,50;3,654;aucun prototype construit;P2
+25;231,88;0,01;231,879852;231,879852;0,000000000006;NON;0,23188;dégauchisseuse-rabot;0,50;3,377;aucun prototype construit;P2
+26;222,90;0,01;222,898918;222,898918;0,000000000006;NON;0,22290;dégauchisseuse-rabot;0,50;3,120;aucun prototype construit;P2
+27;214,27;0,01;214,265824;214,265824;0,000000000006;NON;0,21427;dégauchisseuse-rabot;0,50;2,883;aucun prototype construit;P2
+28;205,97;0,01;205,967099;205,967099;0,000000000006;NON;0,20597;dégauchisseuse-rabot;0,50;2,664;aucun prototype construit;P2
+29;197,99;0,01;197,989792;197,989792;0,000000000006;NON;0,19799;dégauchisseuse-rabot;0,50;2,462;aucun prototype construit;P2
+30;190,32;0,01;190,321453;190,321453;0,000000000006;NON;0,19032;dégauchisseuse-rabot;0,50;2,275;aucun prototype construit;P2
+31;182,95;0,01;182,950117;182,950117;0,000000000006;NON;0,18295;dégauchisseuse-rabot;0,50;2,102;aucun prototype construit;P2
+32;175,86;0,01;175,864280;175,864280;0,000000000006;NON;0,17586;dégauchisseuse-rabot;0,50;1,942;aucun prototype construit;P2
+33;169,05;0,01;169,052884;169,052884;0,000000000006;NON;0,16905;dégauchisseuse-rabot;0,50;1,795;aucun prototype construit;P2
+34;162,51;0,01;162,505300;162,505300;0,000000000006;NON;0,16251;dégauchisseuse-rabot;0,50;1,659;aucun prototype construit;P2
+35;156,21;0,01;156,211311;156,211311;0,000000000006;NON;0,15621;dégauchisseuse-rabot;0,50;1,532;aucun prototype construit;P2
+36;150,16;0,01;150,161094;150,161094;0,000000000006;NON;0,15016;dégauchisseuse-rabot;0,50;1,416;aucun prototype construit;P2
+37;144,35;0,01;144,345208;144,345208;0,000000000006;NON;0,14435;dégauchisseuse-rabot;0,50;1,309;aucun prototype construit;P2
+38;138,75;0,01;138,754576;138,754576;0,000000000005;NON;0,13875;dégauchisseuse-rabot;0,50;1,209;aucun prototype construit;P2
+39;133,38;0,01;133,380476;133,380476;0,000000000005;NON;0,13338;dégauchisseuse-rabot;0,50;1,117;aucun prototype construit;P2
+40;128,21;0,01;128,214519;128,214519;0,000000000005;NON;0,12821;dégauchisseuse-rabot;0,50;1,032;aucun prototype construit;P2
+41;123,25;0,01;123,248645;123,248645;0,000000000005;NON;0,12325;dégauchisseuse-rabot;0,50;0,954;aucun prototype construit;P2
+42;122,00;0,01;122,000000;122,000000;0,000000000000;OUI;0,12200;dégauchisseuse-rabot;0,50;0,935;aucun prototype construit;P4
+total;;;;;;;;;20,00;309,694;aucun prototype construit;P6

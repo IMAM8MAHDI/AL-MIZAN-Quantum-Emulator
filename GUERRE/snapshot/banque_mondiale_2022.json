@@ -1,0 +1,2214 @@
+{
+ "agregats_exclus": 79,
+ "annee_des_mesures": "2022",
+ "date_releve": "2026-11-10",
+ "derniere_mise_a_jour_source": "2026-10-08",
+ "entites_declarees": 296,
+ "entites_hors_agregats": 217,
+ "indicateurs": {
+  "depense_militaire_usd_courants": {
+   "indicateur": "MS.MIL.XPND.CD",
+   "octets_bruts": 60260,
+   "sha256_brut": "8b9f2497e6fed1aa17cf0659765657ca9ba0de677ce68307cf252e149ba37faf"
+  },
+  "depense_part_du_pib_pct": {
+   "indicateur": "MS.MIL.XPND.GD.ZS",
+   "octets_bruts": 59725,
+   "sha256_brut": "fd2afb38d85d960cd5e02db3bc02d9debbe740f1e4f2674de29ba830976626df"
+  },
+  "dette_publique_part_du_pib_pct": {
+   "indicateur": "GC.DOD.TOTL.GD.ZS",
+   "octets_bruts": 61218,
+   "sha256_brut": "b66ba64056d00c4b37722805669369421528b4213843f2b96858bee52c63fd69"
+  },
+  "pib_par_habitant_usd_courants": {
+   "indicateur": "NY.GDP.PCAP.CD",
+   "octets_bruts": 59443,
+   "sha256_brut": "001702a63f1341dfc60bb43563ce8abf3bac06c672bfe2e949dbb8095c8ba2a1"
+  },
+  "population": {
+   "indicateur": "SP.POP.TOTL",
+   "octets_bruts": 53608,
+   "sha256_brut": "34a394e5dd6179a55d89d5d2913faccc913415eaa4f12fc5e941ee46a36143b3"
+  },
+  "recettes_publiques_part_du_pib_pct": {
+   "indicateur": "GC.REV.XGRT.GD.ZS",
+   "octets_bruts": 61069,
+   "sha256_brut": "72f13d0fd995a2b42f5b5c4dde2332f1b416efd0c2cfc0f6733236919d52d85e"
+  }
+ },
+ "lignes": [
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ABW",
+   "nom": "Aruba",
+   "pib_par_habitant_usd_courants": 31000.5713798732,
+   "population": 107310,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "AFG",
+   "nom": "Afghanistan",
+   "pib_par_habitant_usd_courants": 357.261152798144,
+   "population": 40578842,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 1623340728.81429,
+   "depense_part_du_pib_pct": 1.4327220637,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "AGO",
+   "nom": "Angola",
+   "pib_par_habitant_usd_courants": 3598.53669077341,
+   "population": 35635029,
+   "recettes_publiques_part_du_pib_pct": 26.6205259336847
+  },
+  {
+   "depense_militaire_usd_courants": 228659049.023223,
+   "depense_part_du_pib_pct": 1.2023769532,
+   "dette_publique_part_du_pib_pct": 58.5241429999966,
+   "iso3": "ALB",
+   "nom": "Albania",
+   "pib_par_habitant_usd_courants": 7756.96188744253,
+   "population": 2451636,
+   "recettes_publiques_part_du_pib_pct": 24.7316613846173
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": 48.115804536322,
+   "iso3": "AND",
+   "nom": "Andorra",
+   "pib_par_habitant_usd_courants": 42414.0590111349,
+   "population": 79705,
+   "recettes_publiques_part_du_pib_pct": 28.0166478589307
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ARE",
+   "nom": "United Arab Emirates",
+   "pib_par_habitant_usd_courants": 50759.7590190204,
+   "population": 10074977,
+   "recettes_publiques_part_du_pib_pct": 3.21274975255741
+  },
+  {
+   "depense_militaire_usd_courants": 4338261310.30872,
+   "depense_part_du_pib_pct": 0.6845864093,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ARG",
+   "nom": "Argentina",
+   "pib_par_habitant_usd_courants": 13962.1894087223,
+   "population": 45407904,
+   "recettes_publiques_part_du_pib_pct": 17.893195301026
+  },
+  {
+   "depense_militaire_usd_courants": 795201580.049707,
+   "depense_part_du_pib_pct": 4.0817459593,
+   "dette_publique_part_du_pib_pct": 46.5518225541677,
+   "iso3": "ARM",
+   "nom": "Armenia",
+   "pib_par_habitant_usd_courants": 6571.97445545099,
+   "population": 2969200,
+   "recettes_publiques_part_du_pib_pct": 23.4564175842604
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ASM",
+   "nom": "American Samoa",
+   "pib_par_habitant_usd_courants": 18017.4589383973,
+   "population": 48342,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ATG",
+   "nom": "Antigua and Barbuda",
+   "pib_par_habitant_usd_courants": 20003.3909394099,
+   "population": 92840,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 32445330432.014,
+   "depense_part_du_pib_pct": 1.8771079679,
+   "dette_publique_part_du_pib_pct": 57.8834285733848,
+   "iso3": "AUS",
+   "nom": "Australia",
+   "pib_par_habitant_usd_courants": 65169.5191118657,
+   "population": 26018721,
+   "recettes_publiques_part_du_pib_pct": 26.131348255083
+  },
+  {
+   "depense_militaire_usd_courants": 3612733177.95148,
+   "depense_part_du_pib_pct": 0.7643605176,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "AUT",
+   "nom": "Austria",
+   "pib_par_habitant_usd_courants": 52336.7725223758,
+   "population": 9041851,
+   "recettes_publiques_part_du_pib_pct": 44.2589017091123
+  },
+  {
+   "depense_militaire_usd_courants": 2991035294.11765,
+   "depense_part_du_pib_pct": 3.7953702508,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "AZE",
+   "nom": "Azerbaijan",
+   "pib_par_habitant_usd_courants": 7770.594223351,
+   "population": 10141756,
+   "recettes_publiques_part_du_pib_pct": 38.4484212082014
+  },
+  {
+   "depense_militaire_usd_courants": 101434221.215165,
+   "depense_part_du_pib_pct": 2.5955299826,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BDI",
+   "nom": "Burundi",
+   "pib_par_habitant_usd_courants": 301.832255755105,
+   "population": 13321097,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 6898521628.4047,
+   "depense_part_du_pib_pct": 1.1670931399,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BEL",
+   "nom": "Belgium",
+   "pib_par_habitant_usd_courants": 50639.0264882739,
+   "population": 11680210,
+   "recettes_publiques_part_du_pib_pct": 37.1738301397491
+  },
+  {
+   "depense_militaire_usd_courants": 109994281.290977,
+   "depense_part_du_pib_pct": 0.6320874917,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BEN",
+   "nom": "Benin",
+   "pib_par_habitant_usd_courants": 1266.42711031904,
+   "population": 13759501,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 562583349.170273,
+   "depense_part_du_pib_pct": 2.9816156694,
+   "dette_publique_part_du_pib_pct": 63.1897248087734,
+   "iso3": "BFA",
+   "nom": "Burkina Faso",
+   "pib_par_habitant_usd_courants": 827.330843486661,
+   "population": 22509038,
+   "recettes_publiques_part_du_pib_pct": 19.8726301802779
+  },
+  {
+   "depense_militaire_usd_courants": 4290027254.25166,
+   "depense_part_du_pib_pct": 1.0029448344,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BGD",
+   "nom": "Bangladesh",
+   "pib_par_habitant_usd_courants": 2716.48592780431,
+   "population": 169384897,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 1436449732.77125,
+   "depense_part_du_pib_pct": 1.587129077,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BGR",
+   "nom": "Bulgaria",
+   "pib_par_habitant_usd_courants": 13999.9113358453,
+   "population": 6465097,
+   "recettes_publiques_part_du_pib_pct": 36.555940890438
+  },
+  {
+   "depense_militaire_usd_courants": 1598069148.93617,
+   "depense_part_du_pib_pct": 3.4233933455,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BHR",
+   "nom": "Bahrain",
+   "pib_par_habitant_usd_courants": 30470.5219276023,
+   "population": 1524693,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": 77.6639776530748,
+   "iso3": "BHS",
+   "nom": "Bahamas, The",
+   "pib_par_habitant_usd_courants": 34957.1613279737,
+   "population": 397538,
+   "recettes_publiques_part_du_pib_pct": 18.7489017543607
+  },
+  {
+   "depense_militaire_usd_courants": 184484799.336616,
+   "depense_part_du_pib_pct": 0.7520287307,
+   "dette_publique_part_du_pib_pct": 41.7435105198961,
+   "iso3": "BIH",
+   "nom": "Bosnia and Herzegovina",
+   "pib_par_habitant_usd_courants": 7655.59421024383,
+   "population": 3204802,
+   "recettes_publiques_part_du_pib_pct": 35.8744352834405
+  },
+  {
+   "depense_militaire_usd_courants": 1201466052.32093,
+   "depense_part_du_pib_pct": 1.6285504875,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BLR",
+   "nom": "Belarus",
+   "pib_par_habitant_usd_courants": 7994.64806074889,
+   "population": 9228071,
+   "recettes_publiques_part_du_pib_pct": 26.0725715874079
+  },
+  {
+   "depense_militaire_usd_courants": 27805037.5,
+   "depense_part_du_pib_pct": 0.999080222,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BLZ",
+   "nom": "Belize",
+   "pib_par_habitant_usd_courants": 7068.21728043145,
+   "population": 402733,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BMU",
+   "nom": "Bermuda",
+   "pib_par_habitant_usd_courants": 119969.173269085,
+   "population": 64749,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 428311004.11288,
+   "depense_part_du_pib_pct": 0.9732508885,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BOL",
+   "nom": "Bolivia",
+   "pib_par_habitant_usd_courants": 4219.46113742445,
+   "population": 12077154,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 20542063567.3716,
+   "depense_part_du_pib_pct": 1.0524008385,
+   "dette_publique_part_du_pib_pct": 79.1023218878495,
+   "iso3": "BRA",
+   "nom": "Brazil",
+   "pib_par_habitant_usd_courants": 9281.33334441234,
+   "population": 210306415,
+   "recettes_publiques_part_du_pib_pct": 26.9365134619689
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BRB",
+   "nom": "Barbados",
+   "pib_par_habitant_usd_courants": 24393.2193483944,
+   "population": 282318,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 435857351.159602,
+   "depense_part_du_pib_pct": 2.6119300246,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BRN",
+   "nom": "Brunei Darussalam",
+   "pib_par_habitant_usd_courants": 36632.9280952155,
+   "population": 455370,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "BTN",
+   "nom": "Bhutan",
+   "pib_par_habitant_usd_courants": 3711.32767981591,
+   "population": 780914,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 512727689.054822,
+   "depense_part_du_pib_pct": 2.5177828567,
+   "dette_publique_part_du_pib_pct": 18.3330501202164,
+   "iso3": "BWA",
+   "nom": "Botswana",
+   "pib_par_habitant_usd_courants": 8328.7090572666,
+   "population": 2439892,
+   "recettes_publiques_part_du_pib_pct": 29.457238249704
+  },
+  {
+   "depense_militaire_usd_courants": 42001802.6564659,
+   "depense_part_du_pib_pct": 1.7108622432,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CAF",
+   "nom": "Central African Republic",
+   "pib_par_habitant_usd_courants": 467.359825026238,
+   "population": 5098039,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 25122741481.5813,
+   "depense_part_du_pib_pct": 1.1416483558,
+   "dette_publique_part_du_pib_pct": 59.4286687896911,
+   "iso3": "CAN",
+   "nom": "Canada",
+   "pib_par_habitant_usd_courants": 56496.9275340663,
+   "population": 38950132,
+   "recettes_publiques_part_du_pib_pct": 18.9042624468735
+  },
+  {
+   "depense_militaire_usd_courants": 5650938777.22009,
+   "depense_part_du_pib_pct": 0.6820613026,
+   "dette_publique_part_du_pib_pct": 16.9722395480807,
+   "iso3": "CHE",
+   "nom": "Switzerland",
+   "pib_par_habitant_usd_courants": 97809.095567203,
+   "population": 8777088,
+   "recettes_publiques_part_du_pib_pct": 16.5821202856393
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CHI",
+   "nom": "Channel Islands",
+   "pib_par_habitant_usd_courants": 67627.1417347907,
+   "population": 167215,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 4649295736.32937,
+   "depense_part_du_pib_pct": 1.5455434927,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CHL",
+   "nom": "Chile",
+   "pib_par_habitant_usd_courants": 15399.1044717559,
+   "population": 19553036,
+   "recettes_publiques_part_du_pib_pct": 26.0922721173182
+  },
+  {
+   "depense_militaire_usd_courants": 291568533678.946,
+   "depense_part_du_pib_pct": 1.591812538,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CHN",
+   "nom": "China",
+   "pib_par_habitant_usd_courants": 12970.6056414327,
+   "population": 1412175000,
+   "recettes_publiques_part_du_pib_pct": 14.6559605630141
+  },
+  {
+   "depense_militaire_usd_courants": 607245699.55657,
+   "depense_part_du_pib_pct": 0.8652269049,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CIV",
+   "nom": "Cote d'Ivoire",
+   "pib_par_habitant_usd_courants": 2333.37128301259,
+   "population": 30395002,
+   "recettes_publiques_part_du_pib_pct": 12.0455846447337
+  },
+  {
+   "depense_militaire_usd_courants": 416638021.640202,
+   "depense_part_du_pib_pct": 0.9393529467,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CMR",
+   "nom": "Cameroon",
+   "pib_par_habitant_usd_courants": 1604.87726954895,
+   "population": 27632771,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 371081599.85082,
+   "depense_part_du_pib_pct": 0.5677072152,
+   "dette_publique_part_du_pib_pct": 14.9405246182608,
+   "iso3": "COD",
+   "nom": "Congo, Dem. Rep.",
+   "pib_par_habitant_usd_courants": 687.738587554685,
+   "population": 102396968,
+   "recettes_publiques_part_du_pib_pct": 13.2352471174197
+  },
+  {
+   "depense_militaire_usd_courants": 265847975.287255,
+   "depense_part_du_pib_pct": 1.9079848889,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "COG",
+   "nom": "Congo, Rep.",
+   "pib_par_habitant_usd_courants": 2620.83804267402,
+   "population": 6035104,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 9661013161.74645,
+   "depense_part_du_pib_pct": 2.7955330751,
+   "dette_publique_part_du_pib_pct": 70.2611599864283,
+   "iso3": "COL",
+   "nom": "Colombia",
+   "pib_par_habitant_usd_courants": 6680.44506854481,
+   "population": 51737944,
+   "recettes_publiques_part_du_pib_pct": 25.4074707206706
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "COM",
+   "nom": "Comoros",
+   "pib_par_habitant_usd_courants": 1533.87755393614,
+   "population": 834188,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 10250668.2732186,
+   "depense_part_du_pib_pct": 0.4560810051,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CPV",
+   "nom": "Cabo Verde",
+   "pib_par_habitant_usd_courants": 4323.31362032709,
+   "population": 519741,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 0,
+   "depense_part_du_pib_pct": 0,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CRI",
+   "nom": "Costa Rica",
+   "pib_par_habitant_usd_courants": 13971.7649991294,
+   "population": 5081765,
+   "recettes_publiques_part_du_pib_pct": 28.1762328387187
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CUB",
+   "nom": "Cuba",
+   "pib_par_habitant_usd_courants": null,
+   "population": 11059820,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CUW",
+   "nom": "Curacao",
+   "pib_par_habitant_usd_courants": 20057.1404960105,
+   "population": 153321,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CYM",
+   "nom": "Cayman Islands",
+   "pib_par_habitant_usd_courants": 92937.8838323153,
+   "population": 71591,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 532512389.879425,
+   "depense_part_du_pib_pct": 1.7078535526,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CYP",
+   "nom": "Cyprus",
+   "pib_par_habitant_usd_courants": 33231.05078125,
+   "population": 1331370,
+   "recettes_publiques_part_du_pib_pct": 38.2305530784052
+  },
+  {
+   "depense_militaire_usd_courants": 3887785246.39294,
+   "depense_part_du_pib_pct": 1.2880659394,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "CZE",
+   "nom": "Czechia",
+   "pib_par_habitant_usd_courants": 28282.2236715857,
+   "population": 10672118,
+   "recettes_publiques_part_du_pib_pct": 35.7542661767476
+  },
+  {
+   "depense_militaire_usd_courants": 56126481485.759,
+   "depense_part_du_pib_pct": 1.3360197925,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "DEU",
+   "nom": "Germany",
+   "pib_par_habitant_usd_courants": 50506.5179638543,
+   "population": 83177813,
+   "recettes_publiques_part_du_pib_pct": 28.5689040179075
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "DJI",
+   "nom": "Djibouti",
+   "pib_par_habitant_usd_courants": 3133.25779772463,
+   "population": 1137096,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "DMA",
+   "nom": "Dominica",
+   "pib_par_habitant_usd_courants": 9323.66089490562,
+   "population": 66826,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 5469774011.29943,
+   "depense_part_du_pib_pct": 1.3677962735,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "DNK",
+   "nom": "Denmark",
+   "pib_par_habitant_usd_courants": 67781.0940939514,
+   "population": 5903037,
+   "recettes_publiques_part_du_pib_pct": 35.8696678745175
+  },
+  {
+   "depense_militaire_usd_courants": 773360376.516256,
+   "depense_part_du_pib_pct": 0.6794277499,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "DOM",
+   "nom": "Dominican Republic",
+   "pib_par_habitant_usd_courants": 10104.2464008585,
+   "population": 11230734,
+   "recettes_publiques_part_du_pib_pct": 16.3623217477379
+  },
+  {
+   "depense_militaire_usd_courants": 9145810174.20728,
+   "depense_part_du_pib_pct": 4.0574881146,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "DZA",
+   "nom": "Algeria",
+   "pib_par_habitant_usd_courants": 4960.30334332888,
+   "population": 45477389,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 2586480000,
+   "depense_part_du_pib_pct": 2.2271682512,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ECU",
+   "nom": "Ecuador",
+   "pib_par_habitant_usd_courants": 6515.58528418336,
+   "population": 17823897,
+   "recettes_publiques_part_du_pib_pct": 30.9625405355437
+  },
+  {
+   "depense_militaire_usd_courants": 4645922047.5088,
+   "depense_part_du_pib_pct": 1.0147559656,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "EGY",
+   "nom": "Egypt, Arab Rep.",
+   "pib_par_habitant_usd_courants": 4233.30783744856,
+   "population": 112618250,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ERI",
+   "nom": "Eritrea",
+   "pib_par_habitant_usd_courants": null,
+   "population": 3409447,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 20722199550.6828,
+   "depense_part_du_pib_pct": 1.4319863242,
+   "dette_publique_part_du_pib_pct": 109.021131387118,
+   "iso3": "ESP",
+   "nom": "Spain",
+   "pib_par_habitant_usd_courants": 30319.4987196616,
+   "population": 47786102,
+   "recettes_publiques_part_du_pib_pct": 29.7429322541561
+  },
+  {
+   "depense_militaire_usd_courants": 819271840.46693,
+   "depense_part_du_pib_pct": 2.1431959375,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "EST",
+   "nom": "Estonia",
+   "pib_par_habitant_usd_courants": 28340.3826549406,
+   "population": 1348840,
+   "recettes_publiques_part_du_pib_pct": 35.1062660190468
+  },
+  {
+   "depense_militaire_usd_courants": 1024031605.97776,
+   "depense_part_du_pib_pct": 0.8608067057,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ETH",
+   "nom": "Ethiopia",
+   "pib_par_habitant_usd_courants": 982.103161502198,
+   "population": 125384287,
+   "recettes_publiques_part_du_pib_pct": 5.05571917896134
+  },
+  {
+   "depense_militaire_usd_courants": 4454922263.6187,
+   "depense_part_du_pib_pct": 1.5896067785,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "FIN",
+   "nom": "Finland",
+   "pib_par_habitant_usd_courants": 50440.560224974,
+   "population": 5556106,
+   "recettes_publiques_part_du_pib_pct": 37.1815056268435
+  },
+  {
+   "depense_militaire_usd_courants": 67772925.4747202,
+   "depense_part_du_pib_pct": 1.3609076995,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "FJI",
+   "nom": "Fiji",
+   "pib_par_habitant_usd_courants": 5414.12092119088,
+   "population": 919422,
+   "recettes_publiques_part_du_pib_pct": 20.7707097923036
+  },
+  {
+   "depense_militaire_usd_courants": 54743786501.9458,
+   "depense_part_du_pib_pct": 1.9587812677,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "FRA",
+   "nom": "France",
+   "pib_par_habitant_usd_courants": 40988.6396406579,
+   "population": 68184457,
+   "recettes_publiques_part_du_pib_pct": 43.4321332366138
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "FRO",
+   "nom": "Faroe Islands",
+   "pib_par_habitant_usd_courants": 67069.3987440509,
+   "population": 53903,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "FSM",
+   "nom": "Micronesia, Fed. Sts.",
+   "pib_par_habitant_usd_courants": 3703.66680343222,
+   "population": 112114,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 277674768.990569,
+   "depense_part_du_pib_pct": 1.3582460777,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GAB",
+   "nom": "Gabon",
+   "pib_par_habitant_usd_courants": 8409.20741452279,
+   "population": 2430747,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 64015768189.4026,
+   "depense_part_du_pib_pct": 2.0117668909,
+   "dette_publique_part_du_pib_pct": 138.215904304967,
+   "iso3": "GBR",
+   "nom": "United Kingdom",
+   "pib_par_habitant_usd_courants": 47034.7795621476,
+   "population": 67636000,
+   "recettes_publiques_part_du_pib_pct": 35.8232572592484
+  },
+  {
+   "depense_militaire_usd_courants": 401381726.184684,
+   "depense_part_du_pib_pct": 1.6078768198,
+   "dette_publique_part_du_pib_pct": 42.9693933571232,
+   "iso3": "GEO",
+   "nom": "Georgia",
+   "pib_par_habitant_usd_courants": 6729.84659930283,
+   "population": 3712502,
+   "recettes_publiques_part_du_pib_pct": 26.4891572879495
+  },
+  {
+   "depense_militaire_usd_courants": 249289686.185388,
+   "depense_part_du_pib_pct": 0.3356832664,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GHA",
+   "nom": "Ghana",
+   "pib_par_habitant_usd_courants": 2229.89122654479,
+   "population": 33149152,
+   "recettes_publiques_part_du_pib_pct": 15.5505506868353
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GIB",
+   "nom": "Gibraltar",
+   "pib_par_habitant_usd_courants": null,
+   "population": 37609,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 441260169.726193,
+   "depense_part_du_pib_pct": 2.1886571739,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GIN",
+   "nom": "Guinea",
+   "pib_par_habitant_usd_courants": 1416.59612011764,
+   "population": 14055137,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 15563929.9758283,
+   "depense_part_du_pib_pct": 0.7059231634,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GMB",
+   "nom": "Gambia, The",
+   "pib_par_habitant_usd_courants": 836.244875868476,
+   "population": 2636470,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 18698075.0971931,
+   "depense_part_du_pib_pct": 1.0654757521,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GNB",
+   "nom": "Guinea-Bissau",
+   "pib_par_habitant_usd_courants": 881.602654162231,
+   "population": 2105529,
+   "recettes_publiques_part_du_pib_pct": 10.7086609943088
+  },
+  {
+   "depense_militaire_usd_courants": 156791634.919832,
+   "depense_part_du_pib_pct": 1.1453301787,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GNQ",
+   "nom": "Equatorial Guinea",
+   "pib_par_habitant_usd_courants": 7589.29964909381,
+   "population": 1803545,
+   "recettes_publiques_part_du_pib_pct": 26.4498757804947
+  },
+  {
+   "depense_militaire_usd_courants": 8755994121.20627,
+   "depense_part_du_pib_pct": 4.0166918293,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GRC",
+   "nom": "Greece",
+   "pib_par_habitant_usd_courants": 20884.6773436263,
+   "population": 10437805,
+   "recettes_publiques_part_du_pib_pct": 45.2662217583919
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GRD",
+   "nom": "Grenada",
+   "pib_par_habitant_usd_courants": 10469.3867012856,
+   "population": 116913,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GRL",
+   "nom": "Greenland",
+   "pib_par_habitant_usd_courants": 55635.0006491223,
+   "population": 56661,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 441493596.532763,
+   "depense_part_du_pib_pct": 0.4616132678,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GTM",
+   "nom": "Guatemala",
+   "pib_par_habitant_usd_courants": 5356.92435887895,
+   "population": 17847877,
+   "recettes_publiques_part_du_pib_pct": 12.8979630928356
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GUM",
+   "nom": "Guam",
+   "pib_par_habitant_usd_courants": 41833.1517132825,
+   "population": 165180,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 88515539.5683453,
+   "depense_part_du_pib_pct": 0.601394233,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "GUY",
+   "nom": "Guyana",
+   "pib_par_habitant_usd_courants": 17913.4928066879,
+   "population": 821637,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "HKG",
+   "nom": "Hong Kong SAR, China",
+   "pib_par_habitant_usd_courants": 48825.0272275805,
+   "population": 7346100,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 460576131.559122,
+   "depense_part_du_pib_pct": 1.4655769802,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "HND",
+   "nom": "Honduras",
+   "pib_par_habitant_usd_courants": 3003.28996826399,
+   "population": 10463872,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 1282110612.8047,
+   "depense_part_du_pib_pct": 1.8029067504,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "HRV",
+   "nom": "Croatia",
+   "pib_par_habitant_usd_courants": 18465.531473659,
+   "population": 3855641,
+   "recettes_publiques_part_du_pib_pct": 38.2574357002352
+  },
+  {
+   "depense_militaire_usd_courants": 12889784.4597329,
+   "depense_part_du_pib_pct": 0.0687408576,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "HTI",
+   "nom": "Haiti",
+   "pib_par_habitant_usd_courants": 1748.40890116803,
+   "population": 11503606,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 3255307471.23224,
+   "depense_part_du_pib_pct": 1.8391299501,
+   "dette_publique_part_du_pib_pct": 77.9862613165307,
+   "iso3": "HUN",
+   "nom": "Hungary",
+   "pib_par_habitant_usd_courants": 18428.028825614,
+   "population": 9605074,
+   "recettes_publiques_part_du_pib_pct": 37.9213348196215
+  },
+  {
+   "depense_militaire_usd_courants": 10130672035.3097,
+   "depense_part_du_pib_pct": 0.7680126036,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "IDN",
+   "nom": "Indonesia",
+   "pib_par_habitant_usd_courants": 4730.83484836107,
+   "population": 278830529,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "IMN",
+   "nom": "Isle of Man",
+   "pib_par_habitant_usd_courants": 88328.548125887,
+   "population": 84132,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 79887011269.0325,
+   "depense_part_du_pib_pct": 2.3830980984,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "IND",
+   "nom": "India",
+   "pib_par_habitant_usd_courants": 2279.98145719369,
+   "population": 1425423212,
+   "recettes_publiques_part_du_pib_pct": 9.37969496475912
+  },
+  {
+   "depense_militaire_usd_courants": 1164312098.74881,
+   "depense_part_du_pib_pct": 0.2125909159,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "IRL",
+   "nom": "Ireland",
+   "pib_par_habitant_usd_courants": 105190.685952731,
+   "population": 5212836,
+   "recettes_publiques_part_du_pib_pct": 21.5136245436984
+  },
+  {
+   "depense_militaire_usd_courants": 7459331830.84591,
+   "depense_part_du_pib_pct": 2.2380736046,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "IRN",
+   "nom": "Iran, Islamic Rep.",
+   "pib_par_habitant_usd_courants": 4721.20437099984,
+   "population": 89524246,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 4724206896.55172,
+   "depense_part_du_pib_pct": 1.6400113453,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "IRQ",
+   "nom": "Iraq",
+   "pib_par_habitant_usd_courants": 6520.73154560584,
+   "population": 44070551,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 0,
+   "depense_part_du_pib_pct": 0,
+   "dette_publique_part_du_pib_pct": 85.0901362266873,
+   "iso3": "ISL",
+   "nom": "Iceland",
+   "pib_par_habitant_usd_courants": 76376.9599334915,
+   "population": 382003,
+   "recettes_publiques_part_du_pib_pct": 30.6560937835839
+  },
+  {
+   "depense_militaire_usd_courants": 22772600916.3363,
+   "depense_part_du_pib_pct": 4.3363233595,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ISR",
+   "nom": "Israel",
+   "pib_par_habitant_usd_courants": 54947.2091250715,
+   "population": 9557500,
+   "recettes_publiques_part_du_pib_pct": 33.2108684981106
+  },
+  {
+   "depense_militaire_usd_courants": 33664291063.2999,
+   "depense_part_du_pib_pct": 1.6019037546,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ITA",
+   "nom": "Italy",
+   "pib_par_habitant_usd_courants": 35653.9042103495,
+   "population": 59013667,
+   "recettes_publiques_part_du_pib_pct": 39.6180298954102
+  },
+  {
+   "depense_militaire_usd_courants": 220561019.105607,
+   "depense_part_du_pib_pct": 1.2899994473,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "JAM",
+   "nom": "Jamaica",
+   "pib_par_habitant_usd_courants": 6626.47502388538,
+   "population": 2839144,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 2334573239.43662,
+   "depense_part_du_pib_pct": 4.7983769064,
+   "dette_publique_part_du_pib_pct": 91.9482623432231,
+   "iso3": "JOR",
+   "nom": "Jordan",
+   "pib_par_habitant_usd_courants": 4754.41362207378,
+   "population": 11256263,
+   "recettes_publiques_part_du_pib_pct": 21.3748339067134
+  },
+  {
+   "depense_militaire_usd_courants": 43144132919.7069,
+   "depense_part_du_pib_pct": 0.9699722055,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "JPN",
+   "nom": "Japan",
+   "pib_par_habitant_usd_courants": 35548.2645222433,
+   "population": 125124989,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 1166798865.62429,
+   "depense_part_du_pib_pct": 0.5174358496,
+   "dette_publique_part_du_pib_pct": 21.3547830101811,
+   "iso3": "KAZ",
+   "nom": "Kazakhstan",
+   "pib_par_habitant_usd_courants": 11255.3396437881,
+   "population": 20034609,
+   "recettes_publiques_part_du_pib_pct": 16.8877605760788
+  },
+  {
+   "depense_militaire_usd_courants": 1155179523.0194,
+   "depense_part_du_pib_pct": 1.0097080412,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "KEN",
+   "nom": "Kenya",
+   "pib_par_habitant_usd_courants": 2109.56288513137,
+   "population": 54252461,
+   "recettes_publiques_part_du_pib_pct": 17.8826094865972
+  },
+  {
+   "depense_militaire_usd_courants": 352443311.100738,
+   "depense_part_du_pib_pct": 2.904370006,
+   "dette_publique_part_du_pib_pct": 47.085480540382,
+   "iso3": "KGZ",
+   "nom": "Kyrgyz Republic",
+   "pib_par_habitant_usd_courants": 1739.72018344174,
+   "population": 6975220,
+   "recettes_publiques_part_du_pib_pct": 29.8791490055397
+  },
+  {
+   "depense_militaire_usd_courants": 616669100.422586,
+   "depense_part_du_pib_pct": 1.5418834895,
+   "dette_publique_part_du_pib_pct": 27.4923946808839,
+   "iso3": "KHM",
+   "nom": "Cambodia",
+   "pib_par_habitant_usd_courants": 2325.03050040841,
+   "population": 17201724,
+   "recettes_publiques_part_du_pib_pct": 14.9538509771771
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "KIR",
+   "nom": "Kiribati",
+   "pib_par_habitant_usd_courants": 2078.7648751855,
+   "population": 130469,
+   "recettes_publiques_part_du_pib_pct": 65.8411689309463
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "KNA",
+   "nom": "St. Kitts and Nevis",
+   "pib_par_habitant_usd_courants": 21011.5744209816,
+   "population": 46709,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 46365420707.4157,
+   "depense_part_du_pib_pct": 2.576425604,
+   "dette_publique_part_du_pib_pct": 47.6110651856141,
+   "iso3": "KOR",
+   "nom": "Korea, Rep.",
+   "pib_par_habitant_usd_courants": 34822.4048404971,
+   "population": 51672569,
+   "recettes_publiques_part_du_pib_pct": 29.7729228756878
+  },
+  {
+   "depense_militaire_usd_courants": 8244121401.26598,
+   "depense_part_du_pib_pct": 4.4830246557,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "KWT",
+   "nom": "Kuwait",
+   "pib_par_habitant_usd_courants": 39981.7691035833,
+   "population": 4589643,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LAO",
+   "nom": "Lao PDR",
+   "pib_par_habitant_usd_courants": 2046.40440255621,
+   "population": 7559007,
+   "recettes_publiques_part_du_pib_pct": 13.9139885255551
+  },
+  {
+   "depense_militaire_usd_courants": 218747731.996173,
+   "depense_part_du_pib_pct": 1.012027798,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LBN",
+   "nom": "Lebanon",
+   "pib_par_habitant_usd_courants": 3654.35845534878,
+   "population": 5744489,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 52198000,
+   "depense_part_du_pib_pct": 1.3134876699,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LBR",
+   "nom": "Liberia",
+   "pib_par_habitant_usd_courants": 744.617175237387,
+   "population": 5373294,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 1212526035.30933,
+   "depense_part_du_pib_pct": 2.8037684,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LBY",
+   "nom": "Libya",
+   "pib_par_habitant_usd_courants": 5986.63694851258,
+   "population": 7223805,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LCA",
+   "nom": "St. Lucia",
+   "pib_par_habitant_usd_courants": 12976.1489693474,
+   "population": 178781,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LIE",
+   "nom": "Liechtenstein",
+   "pib_par_habitant_usd_courants": 188055.003235348,
+   "population": 39493,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 1005425134.78388,
+   "depense_part_du_pib_pct": 1.3480144929,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LKA",
+   "nom": "Sri Lanka",
+   "pib_par_habitant_usd_courants": 3342.63650438046,
+   "population": 22181000,
+   "recettes_publiques_part_du_pib_pct": 8.22495409658443
+  },
+  {
+   "depense_militaire_usd_courants": 34668499.8975518,
+   "depense_part_du_pib_pct": 1.4729015266,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LSO",
+   "nom": "Lesotho",
+   "pib_par_habitant_usd_courants": 1030.12582947757,
+   "population": 2286110,
+   "recettes_publiques_part_du_pib_pct": 35.9600821418698
+  },
+  {
+   "depense_militaire_usd_courants": 1815359243.39697,
+   "depense_part_du_pib_pct": 2.5587252679,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LTU",
+   "nom": "Lithuania",
+   "pib_par_habitant_usd_courants": 24946.5724005188,
+   "population": 2831639,
+   "recettes_publiques_part_du_pib_pct": 33.3740675935295
+  },
+  {
+   "depense_militaire_usd_courants": 461336844.850943,
+   "depense_part_du_pib_pct": 0.5657599092,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LUX",
+   "nom": "Luxembourg",
+   "pib_par_habitant_usd_courants": 123719.658915996,
+   "population": 653103,
+   "recettes_publiques_part_du_pib_pct": 41.979275834294
+  },
+  {
+   "depense_militaire_usd_courants": 856142771.799036,
+   "depense_part_du_pib_pct": 2.2546193106,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "LVA",
+   "nom": "Latvia",
+   "pib_par_habitant_usd_courants": 20221.103686109,
+   "population": 1879383,
+   "recettes_publiques_part_du_pib_pct": 30.9194502218698
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MAC",
+   "nom": "Macao SAR, China",
+   "pib_par_habitant_usd_courants": 36806.891255461,
+   "population": 677300,
+   "recettes_publiques_part_du_pib_pct": 20.5964614067144
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MAF",
+   "nom": "St. Martin (French part)",
+   "pib_par_habitant_usd_courants": null,
+   "population": 28870,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 4993737492.08639,
+   "depense_part_du_pib_pct": 3.804888346,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MAR",
+   "nom": "Morocco",
+   "pib_par_habitant_usd_courants": 3463.1376953125,
+   "population": 37329064,
+   "recettes_publiques_part_du_pib_pct": 26.8278450298459
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MCO",
+   "nom": "Monaco",
+   "pib_par_habitant_usd_courants": 226052.060664649,
+   "population": 38931,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 54362580.9269953,
+   "depense_part_du_pib_pct": 0.374260355,
+   "dette_publique_part_du_pib_pct": 34.4860324000827,
+   "iso3": "MDA",
+   "nom": "Moldova",
+   "pib_par_habitant_usd_courants": 5744.29618434435,
+   "population": 2528654,
+   "recettes_publiques_part_du_pib_pct": 29.3139159206351
+  },
+  {
+   "depense_militaire_usd_courants": 98947388.6527819,
+   "depense_part_du_pib_pct": 0.6531512112,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MDG",
+   "nom": "Madagascar",
+   "pib_par_habitant_usd_courants": 504.059106969168,
+   "population": 30437261,
+   "recettes_publiques_part_du_pib_pct": 10.1809924692036
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MDV",
+   "nom": "Maldives",
+   "pib_par_habitant_usd_courants": 11786.0191492983,
+   "population": 524106,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 10057300141.35,
+   "depense_part_du_pib_pct": 0.6855997055,
+   "dette_publique_part_du_pib_pct": 43.9694401581611,
+   "iso3": "MEX",
+   "nom": "Mexico",
+   "pib_par_habitant_usd_courants": 11405.7940469896,
+   "population": 128613117,
+   "recettes_publiques_part_du_pib_pct": 19.2711611455968
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MHL",
+   "nom": "Marshall Islands",
+   "pib_par_habitant_usd_courants": 6455.6603538189,
+   "population": 40077,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 207274879.935444,
+   "depense_part_du_pib_pct": 1.4877149247,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MKD",
+   "nom": "North Macedonia",
+   "pib_par_habitant_usd_courants": 7606.2375253797,
+   "population": 1831712,
+   "recettes_publiques_part_du_pib_pct": 28.9769065097465
+  },
+  {
+   "depense_militaire_usd_courants": 582017552.543412,
+   "depense_part_du_pib_pct": 3.0909171719,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MLI",
+   "nom": "Mali",
+   "pib_par_habitant_usd_courants": 976.914116406452,
+   "population": 23072640,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 79422526.4415593,
+   "depense_part_du_pib_pct": 0.4198632674,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MLT",
+   "nom": "Malta",
+   "pib_par_habitant_usd_courants": 35658.8318250199,
+   "population": 531113,
+   "recettes_publiques_part_du_pib_pct": 32.5063386860015
+  },
+  {
+   "depense_militaire_usd_courants": 2489905986.68778,
+   "depense_part_du_pib_pct": 3.8218465783,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MMR",
+   "nom": "Myanmar",
+   "pib_par_habitant_usd_courants": 1158.05005034332,
+   "population": 53756787,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 98011519.0118387,
+   "depense_part_du_pib_pct": 1.5676486318,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MNE",
+   "nom": "Montenegro",
+   "pib_par_habitant_usd_courants": 10038.1849482517,
+   "population": 623591,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 89801313.7445336,
+   "depense_part_du_pib_pct": 0.513936273,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MNG",
+   "nom": "Mongolia",
+   "pib_par_habitant_usd_courants": 4993.51487463495,
+   "population": 3433748,
+   "recettes_publiques_part_du_pib_pct": 29.8421433530881
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MNP",
+   "nom": "Northern Mariana Islands",
+   "pib_par_habitant_usd_courants": 23785.754590043,
+   "population": 46078,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 417039192.91056,
+   "depense_part_du_pib_pct": 2.2084812007,
+   "dette_publique_part_du_pib_pct": 76.632203944607,
+   "iso3": "MOZ",
+   "nom": "Mozambique",
+   "pib_par_habitant_usd_courants": 578.273222184503,
+   "population": 32656246,
+   "recettes_publiques_part_du_pib_pct": 24.5687682760021
+  },
+  {
+   "depense_militaire_usd_courants": 225544876.133748,
+   "depense_part_du_pib_pct": 2.3597545776,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MRT",
+   "nom": "Mauritania",
+   "pib_par_habitant_usd_courants": 1961.28166648869,
+   "population": 4875637,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 17902904.4689927,
+   "depense_part_du_pib_pct": 0.1386986872,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "MUS",
+   "nom": "Mauritius",
+   "pib_par_habitant_usd_courants": 10246.5017455553,
+   "population": 1262523,
+   "recettes_publiques_part_du_pib_pct": 23.8407553257005
+  },
+  {
+   "depense_militaire_usd_courants": 115992333.367538,
+   "depense_part_du_pib_pct": 0.9332349525,
+   "dette_publique_part_du_pib_pct": 55.5992119991912,
+   "iso3": "MWI",
+   "nom": "Malawi",
+   "pib_par_habitant_usd_courants": 604.269740360317,
+   "population": 20568728,
+   "recettes_publiques_part_du_pib_pct": 14.1361846816996
+  },
+  {
+   "depense_militaire_usd_courants": 3673788247.83366,
+   "depense_part_du_pib_pct": 0.9007454379,
+   "dette_publique_part_du_pib_pct": 60.1479261322487,
+   "iso3": "MYS",
+   "nom": "Malaysia",
+   "pib_par_habitant_usd_courants": 11754.5678336248,
+   "population": 34695493,
+   "recettes_publiques_part_du_pib_pct": 16.399628113794
+  },
+  {
+   "depense_militaire_usd_courants": 365821522.665427,
+   "depense_part_du_pib_pct": 2.9108995909,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "NAM",
+   "nom": "Namibia",
+   "pib_par_habitant_usd_courants": 4349.79908493314,
+   "population": 2889662,
+   "recettes_publiques_part_du_pib_pct": 31.2897457427708
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "NCL",
+   "nom": "New Caledonia",
+   "pib_par_habitant_usd_courants": 33516.363085906,
+   "population": 287123,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 242507046.323759,
+   "depense_part_du_pib_pct": 1.5729764924,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "NER",
+   "nom": "Niger",
+   "pib_par_habitant_usd_courants": 613.614736429298,
+   "population": 25311973,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 3088672239.20261,
+   "depense_part_du_pib_pct": 0.6501666918,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "NGA",
+   "nom": "Nigeria",
+   "pib_par_habitant_usd_courants": 2899.16047469267,
+   "population": 223150896,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 84174180.4850326,
+   "depense_part_du_pib_pct": 0.5378579251,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "NIC",
+   "nom": "Nicaragua",
+   "pib_par_habitant_usd_courants": 2322.89069619459,
+   "population": 6730654,
+   "recettes_publiques_part_du_pib_pct": 21.5053890391615
+  },
+  {
+   "depense_militaire_usd_courants": 13632443393.6069,
+   "depense_part_du_pib_pct": 1.3041999557,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "NLD",
+   "nom": "Netherlands",
+   "pib_par_habitant_usd_courants": 59123.318556487,
+   "population": 17700982,
+   "recettes_publiques_part_du_pib_pct": 39.1818437946509
+  },
+  {
+   "depense_militaire_usd_courants": 8697821939.02253,
+   "depense_part_du_pib_pct": 1.4580566048,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "NOR",
+   "nom": "Norway",
+   "pib_par_habitant_usd_courants": 113122.130765691,
+   "population": 5457127,
+   "recettes_publiques_part_du_pib_pct": 54.4201171517944
+  },
+  {
+   "depense_militaire_usd_courants": 456108205.313419,
+   "depense_part_du_pib_pct": 1.1474697974,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "NPL",
+   "nom": "Nepal",
+   "pib_par_habitant_usd_courants": 1385.91066002922,
+   "population": 29715436,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "NRU",
+   "nom": "Naoero",
+   "pib_par_habitant_usd_courants": 15309.8345351924,
+   "population": 11801,
+   "recettes_publiques_part_du_pib_pct": 124.128915662651
+  },
+  {
+   "depense_militaire_usd_courants": 2828419756.73934,
+   "depense_part_du_pib_pct": 1.1565339524,
+   "dette_publique_part_du_pib_pct": 53.9177830137181,
+   "iso3": "NZL",
+   "nom": "New Zealand",
+   "pib_par_habitant_usd_courants": 49141.6316294227,
+   "population": 5081700,
+   "recettes_publiques_part_du_pib_pct": 32.8241696446299
+  },
+  {
+   "depense_militaire_usd_courants": 5783485045.51365,
+   "depense_part_du_pib_pct": 5.2647590818,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "OMN",
+   "nom": "Oman",
+   "pib_par_habitant_usd_courants": 23223.5829405935,
+   "population": 4730226,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 10336494224.1435,
+   "depense_part_du_pib_pct": 3.1768320235,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PAK",
+   "nom": "Pakistan",
+   "pib_par_habitant_usd_courants": 1538.3228133171,
+   "population": 243700667,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 0,
+   "depense_part_du_pib_pct": 0,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PAN",
+   "nom": "Panama",
+   "pib_par_habitant_usd_courants": 17378.6070083597,
+   "population": 4400773,
+   "recettes_publiques_part_du_pib_pct": 11.9868353876048
+  },
+  {
+   "depense_militaire_usd_courants": 2797976204.75004,
+   "depense_part_du_pib_pct": 1.1370857266,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PER",
+   "nom": "Peru",
+   "pib_par_habitant_usd_courants": 7353.74598721667,
+   "population": 33475438,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 5322508900.53569,
+   "depense_part_du_pib_pct": 1.3163013554,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PHL",
+   "nom": "Philippines",
+   "pib_par_habitant_usd_courants": 3548.06930572116,
+   "population": 113964338,
+   "recettes_publiques_part_du_pib_pct": 16.0827426789485
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PLW",
+   "nom": "Palau",
+   "pib_par_habitant_usd_courants": 13934.951996171,
+   "population": 17759,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 133068892.697081,
+   "depense_part_du_pib_pct": 0.4209772418,
+   "dette_publique_part_du_pib_pct": 48.1887495719144,
+   "iso3": "PNG",
+   "nom": "Papua New Guinea",
+   "pib_par_habitant_usd_courants": 3102.29409730005,
+   "population": 10203169,
+   "recettes_publiques_part_du_pib_pct": 15.3203624359406
+  },
+  {
+   "depense_militaire_usd_courants": 15335286233.1778,
+   "depense_part_du_pib_pct": 2.2045890643,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "POL",
+   "nom": "Poland",
+   "pib_par_habitant_usd_courants": 18891.2121169279,
+   "population": 36821749,
+   "recettes_publiques_part_du_pib_pct": 33.870874115162
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PRI",
+   "nom": "Puerto Rico (US)",
+   "pib_par_habitant_usd_courants": 35353.5613891039,
+   "population": 3220148,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PRK",
+   "nom": "Korea, Dem. People's Rep.",
+   "pib_par_habitant_usd_courants": null,
+   "population": 26328845,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 3484311762.18163,
+   "depense_part_du_pib_pct": 1.3579437603,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PRT",
+   "nom": "Portugal",
+   "pib_par_habitant_usd_courants": 24620.5197587181,
+   "population": 10434332,
+   "recettes_publiques_part_du_pib_pct": 38.0831323751752
+  },
+  {
+   "depense_militaire_usd_courants": 365463195.877513,
+   "depense_part_du_pib_pct": 0.8711271453,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PRY",
+   "nom": "Paraguay",
+   "pib_par_habitant_usd_courants": 6189.10205375331,
+   "population": 6760464,
+   "recettes_publiques_part_du_pib_pct": 17.4421824565221
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PSE",
+   "nom": "West Bank and Gaza",
+   "pib_par_habitant_usd_courants": 3799.95527015163,
+   "population": 5043612,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "PYF",
+   "nom": "French Polynesia",
+   "pib_par_habitant_usd_courants": 20053.9569369322,
+   "population": 280378,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 15412087912.0879,
+   "depense_part_du_pib_pct": 6.5002056527,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "QAT",
+   "nom": "Qatar",
+   "pib_par_habitant_usd_courants": 88701.463352273,
+   "population": 2657333,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 5186547864.71081,
+   "depense_part_du_pib_pct": 1.7562500822,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ROU",
+   "nom": "Romania",
+   "pib_par_habitant_usd_courants": 15503.4691366242,
+   "population": 19048502,
+   "recettes_publiques_part_du_pib_pct": 30.0804970223122
+  },
+  {
+   "depense_militaire_usd_courants": 104402512815.165,
+   "depense_part_du_pib_pct": 4.5558544287,
+   "dette_publique_part_du_pib_pct": 19.2810466629119,
+   "iso3": "RUS",
+   "nom": "Russian Federation",
+   "pib_par_habitant_usd_courants": 15625.6328125,
+   "population": 144236933,
+   "recettes_publiques_part_du_pib_pct": 26.9931011274882
+  },
+  {
+   "depense_militaire_usd_courants": 177569665.357255,
+   "depense_part_du_pib_pct": 1.3334657434,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "RWA",
+   "nom": "Rwanda",
+   "pib_par_habitant_usd_courants": 1007.05989322914,
+   "population": 13651030,
+   "recettes_publiques_part_du_pib_pct": 19.0884858308362
+  },
+  {
+   "depense_militaire_usd_courants": 70920000000,
+   "depense_part_du_pib_pct": 5.7236235541,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SAU",
+   "nom": "Saudi Arabia",
+   "pib_par_habitant_usd_courants": 38510.2276211037,
+   "population": 32175224,
+   "recettes_publiques_part_du_pib_pct": 27.2926932054767
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SDN",
+   "nom": "Sudan",
+   "pib_par_habitant_usd_courants": 1046.24084472656,
+   "population": 49383346,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 421013743.846819,
+   "depense_part_du_pib_pct": 1.5241133607,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SEN",
+   "nom": "Senegal",
+   "pib_par_habitant_usd_courants": 1574.0281059306,
+   "population": 17651103,
+   "recettes_publiques_part_du_pib_pct": 22.1495867807185
+  },
+  {
+   "depense_militaire_usd_courants": 11995013297.8724,
+   "depense_part_du_pib_pct": 2.3565009766,
+   "dette_publique_part_du_pib_pct": 152.534986779861,
+   "iso3": "SGP",
+   "nom": "Singapore",
+   "pib_par_habitant_usd_courants": 91227.6970426492,
+   "population": 5637022,
+   "recettes_publiques_part_du_pib_pct": 15.7228590892291
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": 16.439440971058,
+   "iso3": "SLB",
+   "nom": "Solomon Islands",
+   "pib_par_habitant_usd_courants": 1877.78104490956,
+   "population": 781066,
+   "recettes_publiques_part_du_pib_pct": 24.6272216717746
+  },
+  {
+   "depense_militaire_usd_courants": 41451773.6795926,
+   "depense_part_du_pib_pct": 0.5822583743,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SLE",
+   "nom": "Sierra Leone",
+   "pib_par_habitant_usd_courants": 860.371067874555,
+   "population": 8276807,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 458494000,
+   "depense_part_du_pib_pct": 1.4386333412,
+   "dette_publique_part_du_pib_pct": 74.0361423289722,
+   "iso3": "SLV",
+   "nom": "El Salvador",
+   "pib_par_habitant_usd_courants": 5074.60050994225,
+   "population": 6280319,
+   "recettes_publiques_part_du_pib_pct": 28.1919328173012
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": 103.153575174879,
+   "iso3": "SMR",
+   "nom": "San Marino",
+   "pib_par_habitant_usd_courants": 54264.5837022908,
+   "population": 33755,
+   "recettes_publiques_part_du_pib_pct": 44.4115853216703
+  },
+  {
+   "depense_militaire_usd_courants": 118661000,
+   "depense_part_du_pib_pct": 1.1630010781,
+   "dette_publique_part_du_pib_pct": 43.3780260707635,
+   "iso3": "SOM",
+   "nom": "Somalia, Fed. Rep.",
+   "pib_par_habitant_usd_courants": 573.141165798229,
+   "population": 17801897,
+   "recettes_publiques_part_du_pib_pct": 2.57443639234191
+  },
+  {
+   "depense_militaire_usd_courants": 1451293371.86822,
+   "depense_part_du_pib_pct": 2.1722730678,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SRB",
+   "nom": "Serbia",
+   "pib_par_habitant_usd_courants": 10024.8191112596,
+   "population": 6664449,
+   "recettes_publiques_part_du_pib_pct": 38.6499916194589
+  },
+  {
+   "depense_militaire_usd_courants": 101385636.980549,
+   "depense_part_du_pib_pct": 1.5746737975,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SSD",
+   "nom": "South Sudan",
+   "pib_par_habitant_usd_courants": null,
+   "population": 11021177,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "STP",
+   "nom": "Sao Tome and Principe",
+   "pib_par_habitant_usd_courants": 2389.73729784737,
+   "population": 226305,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SUR",
+   "nom": "Suriname",
+   "pib_par_habitant_usd_courants": 6084.43876736445,
+   "population": 623164,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 2066522503.72327,
+   "depense_part_du_pib_pct": 1.7847448228,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SVK",
+   "nom": "Slovak Republic",
+   "pib_par_habitant_usd_courants": 21317.7943982363,
+   "population": 5431752,
+   "recettes_publiques_part_du_pib_pct": 39.2667210059404
+  },
+  {
+   "depense_militaire_usd_courants": 775156293.385613,
+   "depense_part_du_pib_pct": 1.2956732487,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SVN",
+   "nom": "Slovenia",
+   "pib_par_habitant_usd_courants": 28360.3041467268,
+   "population": 2112076,
+   "recettes_publiques_part_du_pib_pct": 42.3403234348526
+  },
+  {
+   "depense_militaire_usd_courants": 7721175892.3711,
+   "depense_part_du_pib_pct": 1.3426468561,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SWE",
+   "nom": "Sweden",
+   "pib_par_habitant_usd_courants": 54836.8907235124,
+   "population": 10486941,
+   "recettes_publiques_part_du_pib_pct": 34.3619222493581
+  },
+  {
+   "depense_militaire_usd_courants": 83200580.4806773,
+   "depense_part_du_pib_pct": 1.6549953349,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SWZ",
+   "nom": "Eswatini",
+   "pib_par_habitant_usd_courants": 3894.1620089869,
+   "population": 1218917,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SXM",
+   "nom": "Sint Maarten (Dutch part)",
+   "pib_par_habitant_usd_courants": 37793.1283815826,
+   "population": 42139,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 23445303.5389436,
+   "depense_part_du_pib_pct": 1.161605562,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SYC",
+   "nom": "Seychelles",
+   "pib_par_habitant_usd_courants": 16682.6990711785,
+   "population": 119878,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "SYR",
+   "nom": "Syrian Arab Republic",
+   "pib_par_habitant_usd_courants": 1056.78264718197,
+   "population": 22462173,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TCA",
+   "nom": "Turks and Caicos Islands",
+   "pib_par_habitant_usd_courants": 31280.5418020808,
+   "population": 45847,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 331746766.049468,
+   "depense_part_du_pib_pct": 2.0442448086,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TCD",
+   "nom": "Chad",
+   "pib_par_habitant_usd_courants": 966.036468278568,
+   "population": 18455316,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 336608323.297713,
+   "depense_part_du_pib_pct": 4.1415364948,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TGO",
+   "nom": "Togo",
+   "pib_par_habitant_usd_courants": 1071.61539220759,
+   "population": 8068616,
+   "recettes_publiques_part_du_pib_pct": 14.2234258590487
+  },
+  {
+   "depense_militaire_usd_courants": 6026999779.16833,
+   "depense_part_du_pib_pct": 1.2404364505,
+   "dette_publique_part_du_pib_pct": 60.3442670368319,
+   "iso3": "THA",
+   "nom": "Thailand",
+   "pib_par_habitant_usd_courants": 6910.00995211206,
+   "population": 71735329,
+   "recettes_publiques_part_du_pib_pct": 18.9750645034963
+  },
+  {
+   "depense_militaire_usd_courants": 202591315.89623,
+   "depense_part_du_pib_pct": 1.9308962407,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TJK",
+   "nom": "Tajikistan",
+   "pib_par_habitant_usd_courants": 1052.17949484894,
+   "population": 10182222,
+   "recettes_publiques_part_du_pib_pct": 17.0698949930488
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TKM",
+   "nom": "Turkmenistan",
+   "pib_par_habitant_usd_courants": 5198.18947409551,
+   "population": 7230193,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 44311000,
+   "depense_part_du_pib_pct": 1.3808351511,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TLS",
+   "nom": "Timor-Leste",
+   "pib_par_habitant_usd_courants": 2343.24955542816,
+   "population": 1369295,
+   "recettes_publiques_part_du_pib_pct": 51.4675236638262
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TON",
+   "nom": "Tonga",
+   "pib_par_habitant_usd_courants": 5298.01942454298,
+   "population": 105042,
+   "recettes_publiques_part_du_pib_pct": 22.3197253030917
+  },
+  {
+   "depense_militaire_usd_courants": 218284994.040573,
+   "depense_part_du_pib_pct": 0.7656349318,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TTO",
+   "nom": "Trinidad and Tobago",
+   "pib_par_habitant_usd_courants": 20750.5202434652,
+   "population": 1365805,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 1146732826.39515,
+   "depense_part_du_pib_pct": 2.5511996158,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TUN",
+   "nom": "Tunisia",
+   "pib_par_habitant_usd_courants": 3707.29283414381,
+   "population": 12119334,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 15047270052.3343,
+   "depense_part_du_pib_pct": 1.624804171,
+   "dette_publique_part_du_pib_pct": 35.3300843740665,
+   "iso3": "TUR",
+   "nom": "Turkiye",
+   "pib_par_habitant_usd_courants": 10897.8397861365,
+   "population": 84979913,
+   "recettes_publiques_part_du_pib_pct": 27.2698787256707
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TUV",
+   "nom": "Tuvalu",
+   "pib_par_habitant_usd_courants": 5414.74642912412,
+   "population": 9992,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 883638837.372797,
+   "depense_part_du_pib_pct": 1.1913415374,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "TZA",
+   "nom": "Tanzania",
+   "pib_par_habitant_usd_courants": 1207.52062988281,
+   "population": 64711821,
+   "recettes_publiques_part_du_pib_pct": 13.8622152349273
+  },
+  {
+   "depense_militaire_usd_courants": 924627059.661863,
+   "depense_part_du_pib_pct": 1.8452085709,
+   "dette_publique_part_du_pib_pct": 53.890283064004,
+   "iso3": "UGA",
+   "nom": "Uganda",
+   "pib_par_habitant_usd_courants": 963.067314117178,
+   "population": 47312719,
+   "recettes_publiques_part_du_pib_pct": 13.7785940939712
+  },
+  {
+   "depense_militaire_usd_courants": 41538018337.9404,
+   "depense_part_du_pib_pct": 25.6424104715,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "UKR",
+   "nom": "Ukraine",
+   "pib_par_habitant_usd_courants": 4199.6708984375,
+   "population": 41048766,
+   "recettes_publiques_part_du_pib_pct": 29.2810864585119
+  },
+  {
+   "depense_militaire_usd_courants": 1299092604.87438,
+   "depense_part_du_pib_pct": 1.8402286159,
+   "dette_publique_part_du_pib_pct": 53.7450190240355,
+   "iso3": "URY",
+   "nom": "Uruguay",
+   "pib_par_habitant_usd_courants": 21009.2883798725,
+   "population": 3390913,
+   "recettes_publiques_part_du_pib_pct": 29.419422679848
+  },
+  {
+   "depense_militaire_usd_courants": 860692200000,
+   "depense_part_du_pib_pct": 3.3034156257,
+   "dette_publique_part_du_pib_pct": 112.71753248772,
+   "iso3": "USA",
+   "nom": "United States",
+   "pib_par_habitant_usd_courants": 78008.6895811877,
+   "population": 333996304,
+   "recettes_publiques_part_du_pib_pct": 19.8715966392747
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "UZB",
+   "nom": "Uzbekistan",
+   "pib_par_habitant_usd_courants": 2698.60262953369,
+   "population": 34938955,
+   "recettes_publiques_part_du_pib_pct": 20.155434648709
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "VCT",
+   "nom": "St. Vincent and the Grenadines",
+   "pib_par_habitant_usd_courants": 9693.55867833025,
+   "population": 102046,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "VEN",
+   "nom": "Venezuela, RB",
+   "pib_par_habitant_usd_courants": 3155.04190923584,
+   "population": 28213017,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "VGB",
+   "nom": "British Virgin Islands",
+   "pib_par_habitant_usd_courants": null,
+   "population": 38319,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "VIR",
+   "nom": "Virgin Islands (U.S.)",
+   "pib_par_habitant_usd_courants": 44320.909185774,
+   "population": 105413,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 7093141365.10936,
+   "depense_part_du_pib_pct": 1.7156181369,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "VNM",
+   "nom": "Viet Nam",
+   "pib_par_habitant_usd_courants": 4147.69777213621,
+   "population": 99680655,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": 73.0673129026431,
+   "iso3": "VUT",
+   "nom": "Vanuatu",
+   "pib_par_habitant_usd_courants": 3679.53524327491,
+   "population": 313046,
+   "recettes_publiques_part_du_pib_pct": 21.5247208636884
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "WSM",
+   "nom": "Samoa",
+   "pib_par_habitant_usd_courants": 4132.44717734444,
+   "population": 215261,
+   "recettes_publiques_part_du_pib_pct": 31.0681161649239
+  },
+  {
+   "depense_militaire_usd_courants": 107601580.182924,
+   "depense_part_du_pib_pct": 1.1500461457,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "XKX",
+   "nom": "Kosovo",
+   "pib_par_habitant_usd_courants": 5298.1473871027,
+   "population": 1768096,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": null,
+   "depense_part_du_pib_pct": null,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "YEM",
+   "nom": "Yemen, Rep.",
+   "pib_par_habitant_usd_courants": null,
+   "population": 38222876,
+   "recettes_publiques_part_du_pib_pct": null
+  },
+  {
+   "depense_militaire_usd_courants": 3461428965.08899,
+   "depense_part_du_pib_pct": 0.8492302876,
+   "dette_publique_part_du_pib_pct": 76.2333180266081,
+   "iso3": "ZAF",
+   "nom": "South Africa",
+   "pib_par_habitant_usd_courants": 6534.24867783397,
+   "population": 62378410,
+   "recettes_publiques_part_du_pib_pct": 29.9911603935889
+  },
+  {
+   "depense_militaire_usd_courants": 325748739.403857,
+   "depense_part_du_pib_pct": 1.1165478996,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ZMB",
+   "nom": "Zambia",
+   "pib_par_habitant_usd_courants": 1447.12310138035,
+   "population": 20152938,
+   "recettes_publiques_part_du_pib_pct": 20.5075493981699
+  },
+  {
+   "depense_militaire_usd_courants": 332717337.278107,
+   "depense_part_du_pib_pct": 0.9949881094,
+   "dette_publique_part_du_pib_pct": null,
+   "iso3": "ZWE",
+   "nom": "Zimbabwe",
+   "pib_par_habitant_usd_courants": 2536.40197087505,
+   "population": 16069056,
+   "recettes_publiques_part_du_pib_pct": null
+  }
+ ],
+ "source": "Banque mondiale API v2, indicateurs declarees dans `indicateurs`",
+ "url_base": "https://api.worldbank.org/v2/country/ALL/indicator/<ID>?date=2022&format=json"
+}

@@ -1,0 +1,1156 @@
+{
+  "ablation_chemins": {
+    "auditeur_rouge_apres": true,
+    "controles_module_total": 15,
+    "controles_module_verts_apres": 15,
+    "controles_module_verts_avant": 15,
+    "enonce": "les contrôles du module restent verts quand le chemin et le statut disparaissent : seule la grille de l'auditeur voit la trace effacée",
+    "equations": 15,
+    "module": "CONTINUITE/continuite_base.py",
+    "nombres_inchanges": true,
+    "p3_apres": false,
+    "p3_avant": true,
+    "sans_chemin_apres": 15,
+    "sans_chemin_avant": 0,
+    "statuts_inconnus_apres": 15,
+    "statuts_inconnus_avant": 0
+  },
+  "ablation_limites": {
+    "born_apres": 0,
+    "born_avant": 15,
+    "controles": 15,
+    "controles_toujours_verts": 15,
+    "enonce": "retrancher la borne écrite par l'humain ne change aucun nombre : cela change seulement ce que ces nombres ont le droit de dire",
+    "equations": 15,
+    "limites_otrees": 15,
+    "longueurs_min_max": [
+      115,
+      214
+    ],
+    "module": "CONTINUITE/continuite_base.py",
+    "nombres_inchanges_par_otage": true,
+    "non_born_apres": 15,
+    "non_born_avant": 0,
+    "p2_apres": false,
+    "p2_avant": true,
+    "seuil": 40
+  },
+  "ablation_provenance": {
+    "attribution_dans_la_racine": false,
+    "certificat_complet_hors_racine": true,
+    "cle_injectee": "antecedent_eau",
+    "cles_attribution_dans_les_noeuds": [],
+    "enonce": "l'attribution n'entre pas dans la racine Merkle du certificat : elle n'est rendue probante que par le sceau du fichier qui la porte",
+    "enonces_de_lecture_de_mesure": [
+      "FONDATION/fondation_base.py → discipline_sources",
+      "DECLARATION/declaration_base.py → chronologie",
+      "DECLARATION/declaration_base.py → controles",
+      "GUERRE/guerre_base.py → controles"
+    ],
+    "fonctions_lisant_la_provenance": [
+      "(module)",
+      "(module/garde)",
+      "certificat",
+      "chronologie",
+      "controles",
+      "discipline_sources",
+      "resoudre"
+    ],
+    "lectures_hors_presentation": 18,
+    "lectures_presentation": 57,
+    "module_echantillon": "CONTINUITE/continuite_base.py",
+    "modules_audites": 12,
+    "modules_avec_lecture_de_mesure": [
+      "DECLARATION/declaration_base.py",
+      "FONDATION/fondation_base.py",
+      "GUERRE/guerre_base.py"
+    ],
+    "noeuds_exclus_du_scellement": [
+      "attribution",
+      "empreinte_execution",
+      "limites",
+      "racine_merkle_sha256",
+      "rejoue_identique",
+      "source"
+    ],
+    "par_module": {
+      "ABONDANCE/agriculture_abondance.py": {
+        "fonctions_citees": [
+          "(module)",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [],
+        "lectures": 2,
+        "presentation": 2
+      },
+      "ABONDANCE/eau_abondance.py": {
+        "fonctions_citees": [
+          "(module)",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [],
+        "lectures": 2,
+        "presentation": 2
+      },
+      "ABONDANCE/electricite_abondance.py": {
+        "fonctions_citees": [
+          "(module)",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [],
+        "lectures": 2,
+        "presentation": 2
+      },
+      "CHIFFRES/chiffres_pi.py": {
+        "fonctions_citees": [],
+        "fonctions_de_mesure": [],
+        "lectures": 0,
+        "presentation": 0
+      },
+      "CONSTRUCTION/construction_base.py": {
+        "fonctions_citees": [
+          "certificat",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [],
+        "lectures": 4,
+        "presentation": 4
+      },
+      "CONTINUITE/continuite_base.py": {
+        "fonctions_citees": [
+          "certificat",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [],
+        "lectures": 4,
+        "presentation": 4
+      },
+      "DECLARATION/declaration_base.py": {
+        "fonctions_citees": [
+          "certificat",
+          "chronologie",
+          "controles",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [
+          "chronologie",
+          "controles"
+        ],
+        "lectures": 10,
+        "presentation": 4
+      },
+      "FONDATION/fondation_base.py": {
+        "fonctions_citees": [
+          "(module/garde)",
+          "discipline_sources",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [
+          "discipline_sources"
+        ],
+        "lectures": 23,
+        "presentation": 13
+      },
+      "GUERRE/guerre_base.py": {
+        "fonctions_citees": [
+          "certificat",
+          "controles",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [
+          "controles"
+        ],
+        "lectures": 6,
+        "presentation": 4
+      },
+      "HORLOGERIE/horlogerie.py": {
+        "fonctions_citees": [
+          "(module/garde)",
+          "certificat",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [],
+        "lectures": 14,
+        "presentation": 14
+      },
+      "REDACTION/redaction_mizan.py": {
+        "fonctions_citees": [
+          "certificat",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [],
+        "lectures": 4,
+        "presentation": 4
+      },
+      "VERROUS/verrous_base.py": {
+        "fonctions_citees": [
+          "certificat",
+          "resoudre"
+        ],
+        "fonctions_de_mesure": [],
+        "lectures": 4,
+        "presentation": 4
+      }
+    },
+    "racine_apres_nombre_injecte": "c1db4a836ac0faf72aa1c7e2170adc48a4fc42d769594aae3438e963b7fdf8b3",
+    "racine_apres_retrait_attribution": "21710f215f6a8d289f6b2a1c75d37ad14318a4e6e9a3854b829daf75eb12fd40",
+    "racine_avant": "21710f215f6a8d289f6b2a1c75d37ad14318a4e6e9a3854b829daf75eb12fd40",
+    "racine_certificat_complet": "fcd317e6c405bae00a2faa8c16ef147ecbce3e9b11296d589ab6543b3cea70b0",
+    "racine_formule_reproduite": true,
+    "racine_sensible_aux_nombres": true
+  },
+  "attribution": {
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "ce_qu_un_depot_ne_prouve_pas": "une paternité, ni une priorité d'invention",
+    "ce_qu_un_depot_prouve": "une date d'accessibilité du contenu",
+    "statut_des_quatre_demandes": "déclarées ; comptées par ce dossier ; aucune rendue prouvée"
+  },
+  "chaine_relu": {
+    "aucun_separateur_dans_une_cellule": true,
+    "bom": true,
+    "chemin": "DECLARATION/artefacts/chaine_anteriorite.csv",
+    "colonnes_relues": [
+      "evenement",
+      "source",
+      "date_mesuree",
+      "type_de_date",
+      "ce_que_cela_prouve",
+      "ce_que_cela_ne_prouve_pas"
+    ],
+    "crlf": true,
+    "dates_dans_le_sceau_relues": 1,
+    "en_tete_conforme": true,
+    "largeur_unique": true,
+    "largeurs_de_colonnes": [
+      6
+    ],
+    "lignes_de_donnees": 22,
+    "nb_lignes_texte": 23,
+    "octets": 3770,
+    "phrase_absente_du_csv_par_design": true,
+    "separateur": ";"
+  },
+  "chaine_zenodo": {
+    "affiliations": [
+      "Astro-Code Ecosystem"
+    ],
+    "ancetres_cites": [
+      "24032527",
+      "24062292",
+      "24074846",
+      "24075082",
+      "24091259"
+    ],
+    "ce_qu_un_doi_ne_prouve_pas": "que le contenu est de vous avant cette date",
+    "ce_qu_un_doi_prouve": "qu'un contenu désigné est accessible publiquement sous cet identifiant, à la date serveurs",
+    "champs_vides": 0,
+    "createurs": [
+      "EL BAHLOUL, M. Ahmed (IMAM8MAHDI)"
+    ],
+    "date_publication_lue": "2026-11-10",
+    "date_release_cff": "2026-11-10",
+    "doi_cff": [
+      "10.5281/zenodo.24028242"
+    ],
+    "licence_cff": "GPL-3.0-only OR AGPL-3.0-only",
+    "licence_lue": "agpl-3.0-only",
+    "licences_zenodo_et_cff_concordantes": false,
+    "mentions_du_plus_cite": 128,
+    "mentions_par_recid": {
+      "23288947": 2,
+      "23479740": 2,
+      "23554838": 3,
+      "24028242": 128,
+      "24032527": 1,
+      "24042714": 111,
+      "24054060": 51,
+      "24062292": 4,
+      "24074846": 4,
+      "24075082": 4,
+      "24091259": 4
+    },
+    "nb_ancetres_cites": 5,
+    "paires_recid_version": {
+      "24032527": "2.0.0",
+      "24062292": "3.1.0",
+      "24074846": "3.2.0",
+      "24075082": "3.2.1",
+      "24091259": "3.2.2"
+    },
+    "recid_de_la_version_lue": [],
+    "recid_le_plus_cite": "24028242",
+    "recids": [
+      "23288947",
+      "23479740",
+      "23554838",
+      "24028242",
+      "24032527",
+      "24042714",
+      "24054060",
+      "24062292",
+      "24074846",
+      "24075082",
+      "24091259"
+    ],
+    "recids_distincts": 11,
+    "recids_sans_version_associee": [
+      "23288947",
+      "23479740",
+      "23554838",
+      "24028242",
+      "24042714",
+      "24054060"
+    ],
+    "resolutions_testées_en_ligne": false,
+    "titre_lu": "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems",
+    "total_mentions_doi": 314,
+    "version_cff": "3.3.0",
+    "version_lue": "3.3.0",
+    "versions_zenodo_et_cff_concordantes": true
+  },
+  "chronologie": {
+    "antecedents": [
+      {
+        "fichiers": [
+          "CHIFFRES/SOURCES_ET_PREDECESSEURS.md",
+          "CHIFFRES/artefacts/donnees/chiffres.json",
+          "CHIFFRES/artefacts/dossiers/chiffres.md",
+          "CHIFFRES/artefacts/pages/chiffres.html",
+          "CHIFFRES/artefacts/pages/chiffres_ar.html"
+        ],
+        "id": "M90ZAVojI30",
+        "mentionations": 33,
+        "role_declare": "source de la prédiction reprise par le dépôt"
+      },
+      {
+        "fichiers": [
+          "FONDATION/SOURCES_ET_PREDECESSEURS.md",
+          "FONDATION/artefacts/donnees/fondation.json",
+          "FONDATION/artefacts/dossiers/fondation.md",
+          "FONDATION/artefacts/etat.json",
+          "FONDATION/artefacts/pages/fondation.html"
+        ],
+        "id": "5pP1e69T3HQ",
+        "mentionations": 27,
+        "role_declare": "source de la base universelle"
+      },
+      {
+        "fichiers": [
+          "HORLOGERIE/SOURCES_ET_PREDECESSEURS.md",
+          "HORLOGERIE/artefacts/certificats.json",
+          "HORLOGERIE/horlogerie.py",
+          "HORLOGERIE/tests/test_horlogerie.py"
+        ],
+        "id": "qa8IsnneG0c",
+        "mentionations": 9,
+        "role_declare": "source des résultats et du code de preuve"
+      },
+      {
+        "fichiers": [
+          "REDACTION/artefacts/certificat.json",
+          "REDACTION/redaction_mizan.py",
+          "REDACTION/tests/test_redaction.py"
+        ],
+        "id": "iuVxYHTJrhU",
+        "mentionations": 7,
+        "role_declare": "source des équations d'harmonisation"
+      }
+    ],
+    "antecedents_cites": 4,
+    "antecedents_total": 4,
+    "date_derniere": "2026-11-09T19:51:17+01:00",
+    "date_racine": "2026-11-07T06:05:23+01:00",
+    "dossier_externel_nomme": "DOSSIER_JUSTICE_EL_BAHLOUL/PREUVES",
+    "dossiers_attendus": 10,
+    "dossiers_avec_date": 4,
+    "dossiers_dates": {
+      "ABONDANCE": "2026-11-08T22:19:56+01:00",
+      "CHIFFRES": "2026-11-09T04:13:21+01:00",
+      "FONDATION": "2026-11-09T04:13:21+01:00",
+      "HORLOGERIE": "2026-11-09T17:16:21+01:00"
+    },
+    "dossiers_portant_fractal": [
+      "CONTINUITE",
+      "DECLARATION"
+    ],
+    "exemples_anterieurs": [
+      ".gitignore",
+      ".zenodo.json",
+      "CITATION.cff",
+      "HOMMAGE_PREDECESSSEURS.md"
+    ],
+    "narratif_ordre_tenu": true,
+    "objets_anterieurs_a_la_racine": 71,
+    "objets_dates": 205,
+    "ordre_non_tenu": [
+      "VERROUS"
+    ],
+    "ordre_raconte": "fractales → base universelle → horloge → protection → déclaration",
+    "ordre_verifie": [
+      "FONDATION",
+      "HORLOGERIE"
+    ],
+    "plus_ancienne_date": "2026-11-07T05:44:16+01:00",
+    "references_dossier_externe": 0
+  },
+  "ecritures": {
+    "absence_partout": true,
+    "auto_reference": "certificat.json porte ce nœud : sa taille et son empreinte ne peuvent pas être scellées par lui-même",
+    "empreintes": {
+      "chaine_anteriorite.csv": "7ec25bc6af4054bd",
+      "declaration_et_ablations.md": "83bfd09cc22ffd3b",
+      "frontiere_anteriorite.svg": "e610b3b27b5b5760"
+    },
+    "nom_sans_empreinte": "certificat.json",
+    "nom_sans_phrase": "chaine_anteriorite.csv",
+    "noms": [
+      "certificat.json",
+      "chaine_anteriorite.csv",
+      "declaration_et_ablations.md",
+      "frontiere_anteriorite.svg"
+    ],
+    "noms_avec_phrase": [
+      "certificat.json",
+      "declaration_et_ablations.md",
+      "frontiere_anteriorite.svg"
+    ],
+    "raison_sans_phrase": "une chaîne d'antériorité se lit dans un tableur : la phrase de verdict y deviendrait une donnée datée comme les autres",
+    "tailles": {
+      "chaine_anteriorite.csv": 3770,
+      "declaration_et_ablations.md": 5130,
+      "frontiere_anteriorite.svg": 3876
+    }
+  },
+  "education_ia": {
+    "aucune_instruction_de_prix": "ce nœud ne propose aucune rémunération ni aucune licence",
+    "ce_que_la_trace_mesurée_est": "la répartition des commits entre humain et automate, comptée par repartition_humain_machine()",
+    "claim_fichiers": [],
+    "claim_lignes_affirmatives": [],
+    "claim_occurrences": 0,
+    "contraste_naif": {
+      "exemples": [
+        "EMAIL_QUANTUM_MEET.txt",
+        "EMAIL_UNIFIE_TOUS_MEDIAS.txt",
+        "POSTS_LANCEMENT.md",
+        "QUANTUM_MEET_2026_ABSTRACT.md"
+      ],
+      "fichiers": 41,
+      "occurrences": 57
+    },
+    "instruments_fichiers": 0,
+    "instruments_listes": [],
+    "instruments_par_categorie": {
+      "config de fine-tuning / LoRA / RLHF": {
+        "exemples": [],
+        "fichiers": 0
+      },
+      "dataset d'alignement": {
+        "exemples": [],
+        "fichiers": 0
+      },
+      "journal d'entraînement": {
+        "exemples": [],
+        "fichiers": 0
+      },
+      "poids fins (safetensors, ckpt, gguf, adapter)": {
+        "exemples": [],
+        "fichiers": 0
+      }
+    },
+    "instruments_toutes_categories": 0,
+    "par_motif": {
+      "alignement (RLHF, fine-tuning)": {
+        "fichiers": 0,
+        "lignes": 0,
+        "lignes_absence": 0,
+        "occurrences": 0
+      },
+      "contraste naive « educat »": {
+        "fichiers": 41,
+        "lignes": 54,
+        "lignes_absence": 3,
+        "occurrences": 57
+      },
+      "éduquer": {
+        "fichiers": 0,
+        "lignes": 0,
+        "lignes_absence": 0,
+        "occurrences": 0
+      }
+    },
+    "statut_du_claim": "déclaré · non vérifié"
+  },
+  "empreinte_execution": "7f5c19864830e9a71b56c814687149494cd97a130ad7db6237d60e2acfc81c44",
+  "fractales": {
+    "auteur_de_la_premiere_trace": "devin@cognition.ai",
+    "auteurs_par_fichier": {
+      "bibliotheques/lib_almizan_extension.py": "elbahloulahmed505@gmail.com",
+      "horloge_noyau/architecture_informe_couche_matiere_table_mizan.py": "devin@cognition.ai"
+    },
+    "dates_ajout": {
+      "CONTINUITE/continuite_base.py": "",
+      "bibliotheques/lib_almizan_extension.py": "2026-11-09T04:13:21+01:00",
+      "horloge_noyau/architecture_informe_couche_matiere_table_mizan.py": "2026-11-07T05:44:16+01:00"
+    },
+    "dossier_externel_present": true,
+    "equations_du_parc_nommant_fractal": 2,
+    "fichier_de_la_premiere_trace": "horloge_noyau/architecture_informe_couche_matiere_table_mizan.py",
+    "fichiers": [
+      "CONTINUITE/continuite_base.py",
+      "bibliotheques/lib_almizan_extension.py",
+      "horloge_noyau/architecture_informe_couche_matiere_table_mizan.py"
+    ],
+    "fonctions_nommant_fractal": 0,
+    "fractales_sont_la_premiere_trace_du_depot": true,
+    "la_plus_ancienne_trace_du_depot": "2026-11-07T05:44:16+01:00",
+    "la_plus_ancienne_trace_fractale": "2026-11-07T05:44:16+01:00",
+    "nb_fichiers": 3,
+    "occurrences": 10,
+    "par_fichier": {
+      "CONTINUITE/continuite_base.py": 1,
+      "bibliotheques/lib_almizan_extension.py": 8,
+      "horloge_noyau/architecture_informe_couche_matiere_table_mizan.py": 1
+    },
+    "premiere_trace_par_un_automate": true,
+    "scelle_dans_le_manifeste": 0,
+    "traces_sans_date_commit": 1
+  },
+  "frontiere_publication": {
+    "artefacts_dans_le_sceau": 0,
+    "artefacts_de_ce_dossier": 0,
+    "ce_que_publier_veut_dire": "une équation non scellée est lisible sur ce disque, pas encore démontrable comme publiée : la charnière est le commit, pas l'écriture du fichier",
+    "coeur_secret_garde": 0,
+    "controle_de_comptage": true,
+    "dossiers": 10,
+    "equations_non_scellees": 95,
+    "equations_par_module": {
+      "ABONDANCE/agriculture_abondance.py": 18,
+      "ABONDANCE/eau_abondance.py": 15,
+      "ABONDANCE/electricite_abondance.py": 21,
+      "CHIFFRES/chiffres_pi.py": 17,
+      "CONSTRUCTION/construction_base.py": 16,
+      "CONTINUITE/continuite_base.py": 15,
+      "DECLARATION/declaration_base.py": 16,
+      "FONDATION/fondation_base.py": 18,
+      "GUERRE/guerre_base.py": 16,
+      "HORLOGERIE/horlogerie.py": 15,
+      "REDACTION/redaction_mizan.py": 16,
+      "VERROUS/verrous_base.py": 16
+    },
+    "modules_dans_le_sceau": 6,
+    "modules_non_scelles": [
+      "CONSTRUCTION/construction_base.py",
+      "CONTINUITE/continuite_base.py",
+      "DECLARATION/declaration_base.py",
+      "GUERRE/guerre_base.py",
+      "REDACTION/redaction_mizan.py",
+      "VERROUS/verrous_base.py"
+    ],
+    "modules_porteurs": 12,
+    "somme_equations_par_module": 199,
+    "total_parc": 199
+  },
+  "horodatages_git": {
+    "aucune_horloge": true,
+    "auteur_plus_ancien": "devin@cognition.ai",
+    "auteur_plus_ancien_est_automate": true,
+    "auteurs_additifs": true,
+    "auteurs_journal": {
+      "devin@cognition.ai": 18,
+      "elbahloulahmed505@gmail.com": 55
+    },
+    "commits_atteignables": 66,
+    "commits_automate": 18,
+    "commits_humains": 48,
+    "commits_sans_signature": 65,
+    "date_auteur_antérieure_à_la_racine": true,
+    "date_auteur_plus_ancienne": "2026-11-07T05:44:16+01:00",
+    "date_auteur_racine": "2026-11-07T06:05:23+01:00",
+    "date_committer_racine": "2026-11-07T06:05:23+01:00",
+    "date_debut": "2026-11-07T06:05:23+01:00",
+    "date_fin": "2026-11-09T19:51:17+01:00",
+    "derniere": "2026-11-09T19:51:17+01:00",
+    "duree_attestee_seconde": 223621,
+    "git_disponible": true,
+    "journal_lignes": 73,
+    "journal_parsees": 73,
+    "journal_plus_que_commits": 7,
+    "journal_tout_parse": true,
+    "motifs_horloge_reposes": [],
+    "nb_motifs_horloge_cherches": 5,
+    "premiere": "2026-11-07T05:44:16+01:00",
+    "preuve_de_paternite": false,
+    "racine_commit": [
+      "e82bdccd3f9a57f72fd641f208d27daa3cb00262|2026-11-07T06:05:23+01:00"
+    ],
+    "remote": "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator.git",
+    "sha_tete": "a5f01264d177421d65ad8a53f3767ca7c8be1d97",
+    "signatures_detail": [
+      {
+        "bloc_de_signature": "E",
+        "cle": "B5690EEEBB952194",
+        "commit": "e82bdccd3f9a57f72fd641f208d27daa3cb00262",
+        "verifiee": false
+      }
+    ],
+    "signatures_non_verifiees": 1,
+    "signatures_portees": 1,
+    "signatures_verifiees": 0,
+    "somme_auteurs_journal": 73,
+    "tete_coherente": true,
+    "tete_longueur": 40,
+    "utf8_integrale": true,
+    "utf8_stricte": 73
+  },
+  "instruments_horodatage": {
+    "classifieur_non_vacue": true,
+    "controle_positif_absence": 81,
+    "controle_positif_affirmatives": 93,
+    "controle_positif_lignes": 174,
+    "fichiers_portant_mentions": [
+      ".zenodo.json",
+      "README.md",
+      "VERROUS/artefacts/certificat.json",
+      "VERROUS/artefacts/verrous_et_clauses.md",
+      "VERROUS/verrous_base.py",
+      "bibliotheques/lib_physique.py"
+    ],
+    "horodatage_qualifie": false,
+    "instruments_fichiers": 0,
+    "instruments_fichiers_listes": [],
+    "instruments_trouves": 5,
+    "lignes_absence": 12,
+    "lignes_affirmatives": [
+      "VERROUS/artefacts/certificat.json:294|\"horodatage RFC 3161\": {",
+      "VERROUS/artefacts/certificat.json:440|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
+      "VERROUS/artefacts/certificat.json:455|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
+      "VERROUS/artefacts/verrous_et_clauses.md:28|- un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus"
+    ],
+    "lignes_affirmatives_total": 19,
+    "lignes_hors_verrous": [
+      "bibliotheques/lib_physique.py:630|role_systeme=\"Coffre-fort cryptographique ultime et archive absolue avant le Seuil d'Infinie\","
+    ],
+    "lignes_total": 31,
+    "mentions_hors_verrous": 3,
+    "mentions_total": 31,
+    "nb_instruments_cherches": 6,
+    "par_instrument": {
+      "RFC 3161": {
+        "exemples_affirmatives": [
+          "VERROUS/artefacts/certificat.json:294|\"horodatage RFC 3161\": {",
+          "VERROUS/artefacts/certificat.json:440|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
+          "VERROUS/artefacts/certificat.json:455|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\","
+        ],
+        "fichiers": [
+          "VERROUS/artefacts/certificat.json",
+          "VERROUS/artefacts/verrous_et_clauses.md",
+          "VERROUS/verrous_base.py"
+        ],
+        "lignes": 8,
+        "lignes_absence": 2,
+        "occurrences": 8
+      },
+      "autorité d'horodatage (TSA)": {
+        "exemples_affirmatives": [
+          "VERROUS/artefacts/certificat.json:260|\".tsa\",",
+          "VERROUS/verrous_base.py:119|EXTENSIONS_INSTRUMENT = (\".tsa\", \".p7s\", \".p7m\", \".sig\", \".asc\", \".der\")"
+        ],
+        "fichiers": [
+          "VERROUS/artefacts/certificat.json",
+          "VERROUS/verrous_base.py"
+        ],
+        "lignes": 3,
+        "lignes_absence": 1,
+        "occurrences": 3
+      },
+      "coffre-fort numérique": {
+        "exemples_affirmatives": [
+          "VERROUS/artefacts/certificat.json:250|\"contraste_naif_contexte\": \"DECLARATION/artefacts/certificat.json:630 — \\\"bibliotheques/lib_physique.py:630|role_systeme=\\\\\\\"Coffre-fort cryptographique ultime et archive \",",
+          "VERROUS/artefacts/certificat.json:273|\"coffre-fort numérique horodaté\": {",
+          "VERROUS/verrous_base.py:150|(\"coffre-fort numérique horodaté\", r\"coffre[- ]fort\\s+num[ée]rique|coffre[- ]fort\\s+horodat[ée]\"),"
+        ],
+        "fichiers": [
+          "VERROUS/artefacts/certificat.json",
+          "VERROUS/artefacts/verrous_et_clauses.md",
+          "VERROUS/verrous_base.py",
+          "bibliotheques/lib_physique.py"
+        ],
+        "lignes": 7,
+        "lignes_absence": 3,
+        "occurrences": 7
+      },
+      "dépôt e-Soleau": {
+        "exemples_affirmatives": [
+          "VERROUS/artefacts/certificat.json:286|\"enveloppe e-Soleau INPI\": {",
+          "VERROUS/artefacts/certificat.json:440|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\",",
+          "VERROUS/artefacts/certificat.json:455|\"un dépôt horodaté ne prouve pas la paternité : ni enveloppe e-Soleau, ni RFC 3161, ni constat d'huissier n'existe dans ce corpus\","
+        ],
+        "fichiers": [
+          "VERROUS/artefacts/certificat.json",
+          "VERROUS/artefacts/verrous_et_clauses.md",
+          "VERROUS/verrous_base.py"
+        ],
+        "lignes": 10,
+        "lignes_absence": 3,
+        "occurrences": 10
+      },
+      "eIDAS / cachet qualifié": {
+        "exemples_affirmatives": [],
+        "fichiers": [
+          ".zenodo.json",
+          "README.md"
+        ],
+        "lignes": 3,
+        "lignes_absence": 3,
+        "occurrences": 3
+      },
+      "signature de commit": {
+        "exemples_affirmatives": [],
+        "fichiers": [],
+        "lignes": 0,
+        "lignes_absence": 0,
+        "occurrences": 0
+      }
+    },
+    "rfc3161_token_verifie": false
+  },
+  "limites": [
+    "aucun instrument d'horodatage qualifié (RFC 3161, TSA, eIDAS, cachet) n'est dans l'archive : 0 fichier — ce dossier ne peut pas en produire un",
+    "1 commit sur 66 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
+    "le sceau ne porte aucune date : 0 date dans 204 entrées — dater un contenu demande un tiers de confiance, pas un hash",
+    "aucune trace d'éducation des IA dans l'archive : 0 instrument (poids fins, dataset, journal, config) — la demande reste déclarée",
+    "le dossier de preuves externe est cité 0 fois dans l'archive et n'y est pas scellé : sa valeur probante ne se transmet pas avec le ZIP",
+    "4/4 antécédents vidéo sont nommés dans l'archive ; aucun n'y porte de date mesurable",
+    "la résolution en ligne des 11 identifiants Zenodo comptés n'est pas faite ici : ce module ne fait aucune requête réseau",
+    "132 fichiers de l'archive sont hors du sceau, dont 95 équations de modules non scellés",
+    "la date d'auteur la plus ancienne (2026-11-07T05:44:16+01:00) est signée devin@cognition.ai et la première trace fractale (2026-11-07T05:44:16+01:00) devin@cognition.ai : la plus vieille date du dépôt n'attribue pas l'idée à un humain",
+    "le classifieur statue ligne à ligne : 19 lignes affirmatives sur les mentions d'horodatage, dont des clés de fichiers qui nomment l'instrument sans l'employer — le mot compte, il ne prouve pas",
+    "cette couche ne prétend qu'une chose : elle date et retranche ce qui est écrit sur ce disque ; elle ne désigne personne comme inventeur et ne vaut aucun dépôt juridique",
+    "les nœuds d'ablation travaillent en mémoire sur une copie profonde d'un module du parc : aucun fichier du dépôt n'est modifié par leur exécution"
+  ],
+  "limites_ouvertes": {
+    "aucune_limite_remplie_en_execuant_le_module": true,
+    "liste": [
+      "aucun instrument d'horodatage qualifié (RFC 3161, TSA, eIDAS, cachet) n'est dans l'archive : 0 fichier — ce dossier ne peut pas en produire un",
+      "1 commit sur 66 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
+      "le sceau ne porte aucune date : 0 date dans 204 entrées — dater un contenu demande un tiers de confiance, pas un hash",
+      "aucune trace d'éducation des IA dans l'archive : 0 instrument (poids fins, dataset, journal, config) — la demande reste déclarée",
+      "le dossier de preuves externe est cité 0 fois dans l'archive et n'y est pas scellé : sa valeur probante ne se transmet pas avec le ZIP",
+      "4/4 antécédents vidéo sont nommés dans l'archive ; aucun n'y porte de date mesurable",
+      "la résolution en ligne des 11 identifiants Zenodo comptés n'est pas faite ici : ce module ne fait aucune requête réseau",
+      "132 fichiers de l'archive sont hors du sceau, dont 95 équations de modules non scellés",
+      "la date d'auteur la plus ancienne (2026-11-07T05:44:16+01:00) est signée devin@cognition.ai et la première trace fractale (2026-11-07T05:44:16+01:00) devin@cognition.ai : la plus vieille date du dépôt n'attribue pas l'idée à un humain",
+      "le classifieur statue ligne à ligne : 19 lignes affirmatives sur les mentions d'horodatage, dont des clés de fichiers qui nomment l'instrument sans l'employer — le mot compte, il ne prouve pas"
+    ],
+    "nb_limites": 10,
+    "non_remplies": 10,
+    "plus_courte": 84,
+    "remplies": 0,
+    "toutes_au_moins_quarante": true
+  },
+  "noms_et_attributions": {
+    "affirmation_de_paternite_juridique": false,
+    "automate_cite_comme_ayant_droit": 0,
+    "avec_en_tete": 80,
+    "couverture_en_tetes": "85.11",
+    "createur_declare": [
+      "EL BAHLOUL, M. Ahmed (IMAM8MAHDI)"
+    ],
+    "exemples_sans_en_tete": [
+      "corriger_adresses_v2.py",
+      "envoyer_emails.py",
+      "envoyer_emails_batch3.py",
+      "envoyer_emails_batch4.py",
+      "envoyer_emails_batch5.py",
+      "envoyer_emails_batch6.py"
+    ],
+    "expressions_brutes": 4,
+    "expressions_en_tete": [
+      "GPL-3.0-only OR AGPL-3.0-only"
+    ],
+    "expressions_rejetees": [
+      "\\s*(.+)\", _texte(c))})",
+      "\\s*(.+)\", racine_txt)",
+      "\\s*(.+)\", t)"
+    ],
+    "fichiers_ayant_droit_automate": [],
+    "occurrences_par_nom": {
+      "affiliation": {
+        "fichiers": 82,
+        "occurrences": 88
+      },
+      "mention d'IA": {
+        "fichiers": 41,
+        "occurrences": 42
+      },
+      "nom de l'auteur": {
+        "fichiers": 150,
+        "occurrences": 293
+      },
+      "pseudonyme": {
+        "fichiers": 234,
+        "occurrences": 436
+      }
+    },
+    "python_total": 94,
+    "rejet_contient_le_motif_de_recherche": 0,
+    "sans_en_tete": 14
+  },
+  "plan_svg": {
+    "absence_ecrite": true,
+    "barre_de_zero_longueur": 4,
+    "barres": 12,
+    "chemin": "DECLARATION/artefacts/frontiere_anteriorite.svg",
+    "largeurs_conformes": true,
+    "notes_texte": 25,
+    "octets": 3876,
+    "plus_grande_valeur": 204,
+    "valeurs_attendues": [
+      66,
+      18,
+      204,
+      0,
+      31,
+      0,
+      0,
+      0,
+      65,
+      95,
+      199,
+      15
+    ],
+    "valeurs_ecrites": [
+      66,
+      18,
+      204,
+      0,
+      31,
+      0,
+      0,
+      0,
+      65,
+      95,
+      199,
+      15
+    ]
+  },
+  "racine_merkle_sha256": "8fd608a8b59470bd610fdc3bcf4d70beee7b89ceb50b8e3123c95346d645bbeb",
+  "rejoue_identique": true,
+  "repartition_humain_machine": {
+    "additif_commits": true,
+    "automate_seul_portant_controle": 0,
+    "automate_seul_portant_equation": 0,
+    "automate_seul_portant_limite": 0,
+    "automate_seul_sur_disque": 65,
+    "ce_que_compte_ce_noeud": "qui a signé le commit, pas qui a pensé la décision",
+    "commits_automate": 18,
+    "commits_humains": 48,
+    "commits_total": 66,
+    "exemples_automate_seul": [
+      "DOSSIER_DEVIS/steane_tile_almizan.gds",
+      "DOSSIER_DEVIS/steane_tile_manifeste.json",
+      "HOMMAGE_PREDECESSSEURS.md",
+      "LICENSE-AGPL",
+      "LICENSE-GPL",
+      "LICENSE.md"
+    ],
+    "exemples_portant_limite": [],
+    "fichiers_automate_seul": 65,
+    "fichiers_humain_seul": 119,
+    "fichiers_mixtes": 21,
+    "fichiers_touches_par_automate": 86,
+    "fichiers_touches_par_humain": 140,
+    "fichiers_union": 205,
+    "git_disponible": true,
+    "par_auteur_fichiers": {
+      "devin@cognition.ai": 86,
+      "elbahloulahmed505@gmail.com": 140
+    },
+    "part_automate_pct": "27.27",
+    "part_humaine_pct": "72.73",
+    "preuve_de_paternite": false
+  },
+  "sceau_contenu": {
+    "absents_de_disque": 0,
+    "absents_listes": [],
+    "algorithme_nomme_dans_le_fichier": 0,
+    "ce_qu_un_sceau_ne_prouve_pas": "la date légale, la paternité, ni l'antériorité d'une idée",
+    "ce_qu_un_sceau_prouve": "que ces octets étaient là au moment du scellement",
+    "chemins_uniques": true,
+    "couverture_sceau_pct": "60.71",
+    "dans_le_sceau": 204,
+    "dates_trouvees": 0,
+    "empreintes_uniques": false,
+    "entrees_non_conformes": 0,
+    "entrees_parsees": 204,
+    "exemples_hors_manifeste": [
+      "CONSTRUCTION/artefacts/certificat.json",
+      "CONSTRUCTION/artefacts/nomenclature_crans.csv",
+      "CONSTRUCTION/artefacts/plan_emboitement.svg",
+      "CONSTRUCTION/artefacts/predictions_falsifiables.md",
+      "CONSTRUCTION/construction_base.py",
+      "CONSTRUCTION/tests/test_construction.py"
+    ],
+    "existe": true,
+    "fichiers_arbre": 336,
+    "hors_manifeste": 132,
+    "identifiants_git_40_hex": 0,
+    "le_manifeste_ne_se_scelle_pas_lui_meme": true,
+    "longueurs_empreintes": [
+      64
+    ],
+    "tete_git_citee": false,
+    "total_lignes": 204,
+    "trie": true
+  },
+  "source": {
+    "antecedents_declares": [
+      {
+        "id": "M90ZAVojI30",
+        "role_declare": "source de la prédiction reprise par le dépôt"
+      },
+      {
+        "id": "5pP1e69T3HQ",
+        "role_declare": "source de la base universelle"
+      },
+      {
+        "id": "qa8IsnneG0c",
+        "role_declare": "source des résultats et du code de preuve"
+      },
+      {
+        "id": "iuVxYHTJrhU",
+        "role_declare": "source des équations d'harmonisation"
+      }
+    ],
+    "antecedents_uses": [
+      ".git/logs/HEAD et `git log` — les seules dates que ce dossier manipulate ; l'heure de la machine n'entre dans aucun nœud",
+      "MANIFESTE_SHA256.txt — le sceau, dont ce dossier compte les entrées et l'absence de date",
+      ".zenodo.json, CITATION.cff — la chaîne de versions et ses identifiants",
+      "VERROUS/verrous_base.py — le pendant contractuel : ce dossier date, VERROUS verrouille",
+      "FONDATION/fondation_base.py — STATUTS, COUCHES, inventaire_parc : mêmes mots, même registre"
+    ],
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "ce_que_ce_module_n_utilise_pas": [
+      "aucune horloge murale : les appels à l'heure système ne figurent pas dans ce fichier, et C01 le vérifie en relisant le source",
+      "aucune requête réseau : les identifiants Zenodo et les DOI sont relus dans les fichiers, jamais résolus en ligne — la résolution reste à faire hors de ce module",
+      "aucun dépôt hors de cette archive : le dossier de preuves externe est nommé par son existence éventuelle sur la machine, pas par son contenu",
+      "aucune affirmation de paternité légale, de priorité d'invention ou d'antériorité juridique"
+    ],
+    "point_de_depart": "déclarations de l'auteur reprises telles que reçues : « j'ai eduquer les intelligence artificielle a travers le monde pour en arriver a cette bascule du savoire », « j'ai commencer par les fractales », « apporter les preuves d'anterriorite afin de demontrer que personne ne savait ceux qui sa passer réellement » — plus la consigne « tout fait en sorte que sa corresponde a ma base logique »"
+  },
+  "statuts_parc": {
+    "additif_par_dossier": true,
+    "controles": 199,
+    "dossiers": 10,
+    "echantillon_additif": true,
+    "echantillon_controles": 15,
+    "echantillon_equations": 15,
+    "echantillon_nomme": "CONTINUITE/continuite_base.py",
+    "echantillon_statuts": {
+      "OPÉRATIONNEL": 13,
+      "SPÉCIFIÉ": 2
+    },
+    "echantillon_verts": 15,
+    "equations": 199,
+    "litteraux_par_module": {
+      "ABONDANCE/agriculture_abondance.py": {
+        "OPÉRATIONNEL": 10,
+        "SIMULÉ": 7,
+        "SPÉCIFIÉ": 1,
+        "equations": 18,
+        "reconcilie": true,
+        "somme": 18
+      },
+      "ABONDANCE/eau_abondance.py": {
+        "OPÉRATIONNEL": 10,
+        "SIMULÉ": 4,
+        "SPÉCIFIÉ": 1,
+        "equations": 15,
+        "reconcilie": true,
+        "somme": 15
+      },
+      "ABONDANCE/electricite_abondance.py": {
+        "OPÉRATIONNEL": 17,
+        "SIMULÉ": 5,
+        "SPÉCIFIÉ": 2,
+        "equations": 21,
+        "reconcilie": false,
+        "somme": 24
+      },
+      "CHIFFRES/chiffres_pi.py": {
+        "OPÉRATIONNEL": 16,
+        "SIMULÉ": 0,
+        "SPÉCIFIÉ": 1,
+        "equations": 17,
+        "reconcilie": true,
+        "somme": 17
+      },
+      "CONSTRUCTION/construction_base.py": {
+        "OPÉRATIONNEL": 11,
+        "SIMULÉ": 3,
+        "SPÉCIFIÉ": 5,
+        "equations": 16,
+        "reconcilie": false,
+        "somme": 19
+      },
+      "CONTINUITE/continuite_base.py": {
+        "OPÉRATIONNEL": 14,
+        "SIMULÉ": 1,
+        "SPÉCIFIÉ": 3,
+        "equations": 15,
+        "reconcilie": false,
+        "somme": 18
+      },
+      "DECLARATION/declaration_base.py": {
+        "OPÉRATIONNEL": 15,
+        "SIMULÉ": 0,
+        "SPÉCIFIÉ": 1,
+        "equations": 16,
+        "reconcilie": true,
+        "somme": 16
+      },
+      "FONDATION/fondation_base.py": {
+        "OPÉRATIONNEL": 16,
+        "SIMULÉ": 2,
+        "SPÉCIFIÉ": 4,
+        "equations": 18,
+        "reconcilie": false,
+        "somme": 22
+      },
+      "GUERRE/guerre_base.py": {
+        "OPÉRATIONNEL": 14,
+        "SIMULÉ": 0,
+        "SPÉCIFIÉ": 2,
+        "equations": 16,
+        "reconcilie": true,
+        "somme": 16
+      },
+      "HORLOGERIE/horlogerie.py": {
+        "OPÉRATIONNEL": 14,
+        "SIMULÉ": 1,
+        "SPÉCIFIÉ": 3,
+        "equations": 15,
+        "reconcilie": false,
+        "somme": 18
+      },
+      "REDACTION/redaction_mizan.py": {
+        "OPÉRATIONNEL": 13,
+        "SIMULÉ": 1,
+        "SPÉCIFIÉ": 2,
+        "equations": 16,
+        "reconcilie": true,
+        "somme": 16
+      },
+      "VERROUS/verrous_base.py": {
+        "OPÉRATIONNEL": 11,
+        "SIMULÉ": 0,
+        "SPÉCIFIÉ": 5,
+        "equations": 16,
+        "reconcilie": true,
+        "somme": 16
+      }
+    },
+    "modules": 12,
+    "modules_reconcilies": 7,
+    "par_dossier": {
+      "ABONDANCE": {
+        "controles": 54,
+        "equations": 54,
+        "modules": [
+          "agriculture_abondance.py",
+          "eau_abondance.py",
+          "electricite_abondance.py"
+        ],
+        "tests": 107
+      },
+      "CHIFFRES": {
+        "controles": 17,
+        "equations": 17,
+        "modules": [
+          "chiffres_pi.py"
+        ],
+        "tests": 32
+      },
+      "CONSTRUCTION": {
+        "controles": 16,
+        "equations": 16,
+        "modules": [
+          "construction_base.py"
+        ],
+        "tests": 42
+      },
+      "CONTINUITE": {
+        "controles": 15,
+        "equations": 15,
+        "modules": [
+          "continuite_base.py"
+        ],
+        "tests": 23
+      },
+      "DECLARATION": {
+        "controles": 16,
+        "equations": 16,
+        "modules": [
+          "declaration_base.py"
+        ],
+        "tests": 31
+      },
+      "FONDATION": {
+        "controles": 18,
+        "equations": 18,
+        "modules": [
+          "fondation_base.py"
+        ],
+        "tests": 45
+      },
+      "GUERRE": {
+        "controles": 16,
+        "equations": 16,
+        "modules": [
+          "guerre_base.py"
+        ],
+        "tests": 56
+      },
+      "HORLOGERIE": {
+        "controles": 15,
+        "equations": 15,
+        "modules": [
+          "horlogerie.py"
+        ],
+        "tests": 64
+      },
+      "REDACTION": {
+        "controles": 16,
+        "equations": 16,
+        "modules": [
+          "redaction_mizan.py"
+        ],
+        "tests": 32
+      },
+      "VERROUS": {
+        "controles": 16,
+        "equations": 16,
+        "modules": [
+          "verrous_base.py"
+        ],
+        "tests": 51
+      }
+    },
+    "statuts_cherches": [
+      "OPÉRATIONNEL",
+      "SIMULÉ",
+      "SPÉCIFIÉ"
+    ],
+    "tests": 483
+  },
+  "taille_octets": 27293,
+  "verdict": {
+    "commits_atteignables": 66,
+    "dates_dans_le_sceau": 0,
+    "enonce": "antériorité accessible, paternité non instrumentée",
+    "equations_hors_sceau": 95,
+    "instruments_d_education": 0,
+    "instruments_d_horodatage_sur_disque": 0,
+    "limites_ouvertes": 10
+  }
+}

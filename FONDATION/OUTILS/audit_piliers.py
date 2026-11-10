@@ -139,11 +139,16 @@ def main() -> int:
     arguments = ap.parse_args()
     cibles = [Path(c) for c in arguments.chemins]
     if arguments.tous:
-        cibles += [RACINE / "FONDATION" / "fondation_base.py",
-                   RACINE / "CHIFFRES" / "chiffres_pi.py",
-                   RACINE / "HORLOGERIE" / "horlogerie.py"]
-        cibles += [RACINE / "ABONDANCE" / m for m in FB.MODULES_PRINCIPAUX
-                   if m.endswith("_abondance.py")]
+        # Une seule source de la liste : DOSSIERS_EQUATIONS × MODULES_PRINCIPAUX.
+        # Une variante « même nom, autre dossier » n'existe pas dans le dépôt ; le `vus` garde
+        # la propriété de la liste même si elle apparaissait.
+        vus = set()
+        for d in FB.DOSSIERS_EQUATIONS:
+            for m in FB.MODULES_PRINCIPAUX:
+                p = RACINE / d / m
+                if p.exists() and str(p) not in vus:
+                    vus.add(str(p))
+                    cibles.append(p)
     if not cibles:
         ap.error("donnez au moins un chemin, ou --tous")
     if hasattr(sys.stdout, "reconfigure"):

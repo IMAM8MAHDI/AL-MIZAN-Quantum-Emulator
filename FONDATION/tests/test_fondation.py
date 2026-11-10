@@ -441,22 +441,31 @@ class TestTransmission(unittest.TestCase):
 
     def test_parc_entier_sans_tiers(self):
         parc = FB.imports_parc()
-        self.assertEqual(sorted(parc), ["ABONDANCE", "CHIFFRES", "FONDATION",
-                                        "HORLOGERIE", "bibliotheques", "code"])
+        self.assertEqual(sorted(parc), sorted(FB.DOSSIERS_PARC))
+        self.assertEqual(len(FB.DOSSIERS_PARC), len(FB.DOSSIERS_EQUATIONS) + 2)
+        self.assertEqual(set(FB.DOSSIERS_EQUATIONS) & {"code", "bibliotheques"}, set())
         for dossier, bilan in parc.items():
             self.assertGreater(bilan["fichiers"], 0, dossier)
             self.assertEqual(bilan["tiers"], [], dossier)
 
     def test_inventaire_cohere_entre_modules(self):
         inv = FB.inventaire_parc()
-        self.assertEqual(inv["ABONDANCE"]["equations"], 54)
-        self.assertEqual(inv["CHIFFRES"]["equations"], 17)
-        self.assertEqual(inv["FONDATION"]["equations"], 18)
+        self.assertEqual(sorted(inv), sorted(FB.DOSSIERS_EQUATIONS))
+        attendues = {"ABONDANCE": 54, "CHIFFRES": 17, "FONDATION": 18, "HORLOGERIE": 15,
+                     "CONTINUITE": 15, "REDACTION": 16, "CONSTRUCTION": 16, "VERROUS": 16,
+                     "DECLARATION": 16, "GUERRE": 16}
         for d, v in inv.items():
             self.assertTrue(v["present"], d)
             self.assertEqual(v["equations"], v["controles"], d)
             self.assertGreater(v["tests"], 0, f"{d} : un dossier sans tests ne se rejoue pas")
             self.assertGreater(len(v["modules"]), 0, d)
+            self.assertTrue(set(v["modules"]) <= set(FB.MODULES_PRINCIPAUX), d)
+            self.assertEqual(v["equations"], attendues[d], d)
+        # les douze noms déclarés sont tous comptés quelque part, et une seule fois
+        comptes = [m for v in inv.values() for m in v["modules"]]
+        self.assertEqual(sorted(comptes), sorted(FB.MODULES_PRINCIPAUX))
+        self.assertEqual(len(comptes), len(set(comptes)), "un module compté deux fois")
+        self.assertEqual(sum(v["equations"] for v in inv.values()), sum(attendues.values()))
 
 
 class TestDossierComplet(unittest.TestCase):

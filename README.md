@@ -70,6 +70,12 @@ BSD sur 3 courbes (L'(37a1)=0.306 = valeur LMFDB) · Hasse p≤97 · Hodge T²/C
 | Chiffres | `CHIFFRES/chiffres_pi.py` | π, e, √2 par deux voies indépendantes, 108 cellules pré-déclarées avant mesure, confrontées sur domaine fini |
 | Abondance | `ABONDANCE/` | 54 équations et 54 contrôles bornés (électricité 21 · eau 15 · agriculture 18) |
 | Horlogerie | `HORLOGERIE/horlogerie.py` | 15 équations et 15 contrôles : l'arithmétique exacte des cycles (dx+dy+dz = dt) réécrite et recontrôlée par un vérificateur qui n'importe pas le dépôt (`verifier_certificats.py`, 16 contrôles), la portée physique de τ mesurée séparément, et un écran de laboratoire (`laboratoire.py`, 5 contrôles) qui joue la trajectoire 3D pas à pas et affiche sa stabilité |
+| Continuité | `CONTINUITE/continuite_base.py` | 15 équations et 15 contrôles : sur D = [61/500 ; 249/400], la chaîne x_k = MIZAN·ρ^k, ρ = (249/400)^(1/12), est strictement décroissante, ne perd rien (télescopage exact), sort du domaine au pas 42 et se clamp sur l'unique point fixe 61/500 — énoncé et vérifié en rationnels exacts, ρ encadré par comparaison d'entiers ; les flottants n'apparaissent qu'en écart mesuré et en rendu graphique |
+| Rédaction | `REDACTION/redaction_mizan.py` | 16 équations et 16 contrôles : l'intelligibilité est comptée. Sur 89 lignes d'équation, la page anglaise ne portait les nombres du calcul français que sur 56 lignes, l'arabe sur 55 ; la correction est appliquée au moteur, re-mesurée, et la forme mesurée (longueur de phrase, coupe arabe, distance au premier tableau) sans emprunter d'indice de lisibilité externe |
+| Construction | `CONSTRUCTION/construction_base.py` | 16 équations et 16 contrôles : plans de l'emboîtement à l'échelle humaine — 43 crans, cote de tête 622,50 mm clampée à 122,00 mm au cran 42, tolérance relative 1/1000, facteur de matière 1/(1−ρ²) — 0 prototype construit, et la phrase l'écrit |
+| Verrous | `VERROUS/verrous_base.py` | 16 équations et 16 contrôles : l'état réel de la protection mesuré au lieu d'être déclaré — arbre scanné, sceau re-haché, couverture SPDX, les 8 clauses d'une feuille de route externe, les 4 instruments, le registre d'accès, et les corrections que les faits imposent à cette feuille de route |
+| Déclaration | `DECLARATION/declaration_base.py` | 16 équations et 16 contrôles : l'antériorité re-mesurée par `git` brut plutôt que recopiée — 66 commits datés par l'horloge cliente, 204 entrées de sceau portant **0 date**, 0 instrument d'horodatage qualifié, 0 instrument d'éducation sur disque, 48 commits humains contre 18 d'automate, trois ablations rejouées ; l'antériorité est accessible, la paternité n'est pas instrumentée |
+| Guerre | `GUERRE/guerre_base.py` | 16 équations et 16 contrôles : « il faut être riche pour faire la guerre » testée sur un snapshot Banque mondiale 2022 engagé par SHA-256 — 153 pays comparables sur 217 entités, ρ(revenu, charge) = 0,0619 plat alors que ρ(revenu, masse) = 0,5036 monte, 23 pays sous la médiane de revenu arment à plus d'un Md$, effort fiscal médian 5,62 % des recettes ; l'énoncé initial est **réfuté par la mesure** et remplacé par un énoncé borné |
 
 ## Base universelle — FONDATION
 
@@ -155,7 +161,13 @@ cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
 cd CHIFFRES && py -m unittest tests.test_chiffres                  # 32 tests
 cd FONDATION && py -m unittest tests.test_fondation                # 45 tests
 cd HORLOGERIE && py -m unittest tests.test_horlogerie tests.test_laboratoire   # 64 tests
-py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide             # 6 modules CONFORME
+cd CONTINUITE && py -m unittest tests.test_continuite              # 23 tests
+cd REDACTION && py -m unittest tests.test_redaction                # 32 tests
+cd CONSTRUCTION && py -m unittest tests.test_construction          # 42 tests
+cd VERROUS && py -m unittest tests.test_verrous                    # 51 tests
+cd DECLARATION && py -m unittest tests.test_declaration             # 31 tests
+cd GUERRE && py -m unittest tests.test_guerre                       # 56 tests
+py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide             # 12 modules CONFORME
 ```
 
 53 tests : états, portes, permutations, intrication, Born, bruit
@@ -168,9 +180,13 @@ et le spectre hermitien complexe de la matrice densité.
 **0 ignoré, et plus rien d'extérieur à l'archive.** Les deux ponts
 (Steane, transducteur) se chargent depuis `moteur/` et la capsule
 `horloge_noyau` depuis `bibliotheques/` : un `ASTRO-Q°ODE_SYSTEME`
-voisin n'est plus requis. 311 tests au total, tous verts — et les 104
-équations du parc (ABONDANCE 54, CHIFFRES 17, FONDATION 18, HORLOGERIE 15)
-portent chacune sa clause de limite, contrôlée par le même audit.
+voisin n'est plus requis. 546 tests au total, tous verts — 63 hors dossiers
+d'équations, 483 dans les dix — et les 199 équations du parc (ABONDANCE 54,
+CHIFFRES 17, FONDATION 18, HORLOGERIE 15, CONTINUITE 15, REDACTION 16,
+CONSTRUCTION 16, VERROUS 16, DECLARATION 16, GUERRE 16) portent chacune sa clause de limite, contrôlée
+par le même audit. Les 483 tests et les 199 équations des dossiers sont relevés
+par `FONDATION/fondation_base.py → inventaire_parc()`, pas saisis à la main ;
+les 63 autres sont `tests.test_emulateur` et la suite `horloge_noyau`.
 
 ## Statut honnête
 
@@ -182,12 +198,30 @@ Le die :5030 et le canal SCPI :5025 sont des interfaces réseau locales —
 sans matériel branché, rien de physique ne se produit. Le .gds n'est pas
 un masque fabricable.
 
-Les quatre dossiers d'équations ne prouvent rien d'universel. ABONDANCE calcule
+Les dix dossiers d'équations ne prouvent rien d'universel. ABONDANCE calcule
 des régularités finies et les confronte ; CHIFFRES annonce 108 cellules avant
 mesure puis constate un verdict de **CONTENU** — l'absence d'un rejet sur
 n = 10⁶ chiffres n'établit pas que π est normal, et un résultat discordant
 n'aurait pas prouvé le contraire ; FONDATION pose un axiome hors matrice qui
 ne fournit **aucun** nombre et ne livre que des bornes ; HORLOGERIE scelle une
 identité arithmétique exacte et montre que le rythme mesuré dépend de la
-machine, ce qui réfute la lecture en hertz sur l'hôte qui l'a produite. Chaque
-équation porte sa clause de limite, lue par `audit_piliers.py`.
+machine, ce qui réfute la lecture en hertz sur l'hôte qui l'a produite ;
+CONTINUITE démontre une application qu'il déclare lui-même sur un intervalle
+qu'il déclare, et aucune croix du plan global n'est remplie par là — les 42 pas
+sont un compte d'itérations, ni une durée ni une prévision ; REDACTION compte
+des mots et des cellules, n'a testé aucun lecteur et n'emprunte aucun indice de
+lisibilité publié, avec encore 89 lignes de contrôle non traduites et 5 pages
+sur 21 au-dessus du seuil de longueur de phrase ; CONSTRUCTION écrit des cotes,
+des tolérances et une nomenclature cohérentes pour **0** prototype usiné, donc
+aucune de ses six prédictions n'a été ni confirmée ni réfutée ; VERROUS mesure
+l'état de la protection et ne la pose pas — 0 clause retrouvée sur 8, 0
+instrument signé sur 4, aucune saisine en relecture attestée, et une clause
+absente reste absente après exécution du module ; DECLARATION re-hache 66
+commits et montre que les 204 entrées du sceau portent **0 date** : l'antériorité
+reste accessible, la paternité n'est instrumentée par aucun horodatage qualifié
+et l'auteur reste déclaré, non prouvé ; GUERRE confronte une phrase de l'auteur à
+un snapshot et la réfute — 23 pays sous la médiane de revenu arment à plus d'un
+Md$ — mais un snapshot n'établit ni qu'une guerre a eu lieu, ni qu'un État l'a
+voulue, ni qu'un peuple est protégé, et l'émulateur quantique n'entre pour rien
+dans la trésorerie d'un État. Chaque équation porte sa clause
+de limite, lue par `audit_piliers.py`.

@@ -1,0 +1,600 @@
+{
+  "attribution": {
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "statut_de_la_demande": "déclaré · non vérifié pour tout ce qui déborde la mesure des pages",
+    "video": {
+      "auteur": "Silicon Carne 🌶️",
+      "elements_utilises": "titres et horodatages des 12 chapitres, rien d'autre",
+      "titre": "Anthropic et OpenAI deviennent consultants, les Big Four tremblent !",
+      "url": "https://www.youtube.com/watch?v=iuVxYHTJrhU"
+    }
+  },
+  "autoforme": {
+    "au_dessus_du_seuil": 0,
+    "chapitres_video": 12,
+    "chapitres_video_mots_max": 11,
+    "chapitres_video_moyenne": 8.67,
+    "lignes_mesurees": 38,
+    "limites_exemptees": 16,
+    "limites_mots_max": 32,
+    "mots_max": 20,
+    "moyenne": 9.58,
+    "seuil": 30
+  },
+  "badges": {
+    "badges_total": 534,
+    "classes_presentes": [
+      "o",
+      "p",
+      "s"
+    ],
+    "ecarts": [],
+    "exemples_mots": {
+      "ar": [
+        "عامِل",
+        "محاكى",
+        "محدَّد",
+        "مستوفى"
+      ],
+      "en": [
+        "OPERATIONAL",
+        "SIMULATED",
+        "SPECIFIED",
+        "met"
+      ],
+      "fr": [
+        "OPÉRATIONNEL",
+        "SIMULÉ",
+        "SPÉCIFIÉ",
+        "reçu"
+      ]
+    },
+    "mots_par_langue": {
+      "ar": 4,
+      "en": 4,
+      "fr": 4
+    },
+    "totaux_par_langue": {
+      "ar": 178,
+      "en": 178,
+      "fr": 178
+    },
+    "trios": 7,
+    "trios_alignes": 7
+  },
+  "charge": {
+    "max": 561,
+    "min": 40,
+    "moyenne": 210.0,
+    "pages": 21,
+    "pages_avec_tableau": 21,
+    "pages_sans_tableau": 0,
+    "par_page": {
+      "ABONDANCE/artefacts/pages/agriculture.html": 180,
+      "ABONDANCE/artefacts/pages/agriculture_ar.html": 134,
+      "ABONDANCE/artefacts/pages/agriculture_en.html": 163,
+      "ABONDANCE/artefacts/pages/eau.html": 152,
+      "ABONDANCE/artefacts/pages/eau_ar.html": 120,
+      "ABONDANCE/artefacts/pages/eau_en.html": 137,
+      "ABONDANCE/artefacts/pages/electricite.html": 181,
+      "ABONDANCE/artefacts/pages/electricite_ar.html": 118,
+      "ABONDANCE/artefacts/pages/electricite_en.html": 150,
+      "ABONDANCE/artefacts/pages/index.html": 51,
+      "ABONDANCE/artefacts/pages/index_ar.html": 40,
+      "ABONDANCE/artefacts/pages/index_en.html": 46,
+      "CHIFFRES/artefacts/pages/chiffres.html": 441,
+      "CHIFFRES/artefacts/pages/chiffres_ar.html": 359,
+      "CHIFFRES/artefacts/pages/chiffres_en.html": 422,
+      "FONDATION/artefacts/pages/fondation.html": 561,
+      "FONDATION/artefacts/pages/fondation_ar.html": 416,
+      "FONDATION/artefacts/pages/fondation_en.html": 542,
+      "FONDATION/artefacts/pages/index.html": 74,
+      "FONDATION/artefacts/pages/index_ar.html": 57,
+      "FONDATION/artefacts/pages/index_en.html": 65
+    },
+    "part_avant": 50.9
+  },
+  "chemins_machine": {
+    "avec_chemin": 89,
+    "exceptions": [],
+    "exceptions_identiques_entre_langues": true,
+    "exceptions_par_langue": {
+      "ar": [],
+      "en": [],
+      "fr": []
+    },
+    "forme": "module.py → une ou plusieurs fonctions() → Cnn",
+    "forme_regex": "[a-z_0-9]+\\.py\\s*→\\s*[A-Za-z_0-9.]+\\(\\)(?:\\s*(?:,|→)\\s*[A-Za-z_0-9.]+\\(\\))*\\s*→\\s*C\\d\\d",
+    "part": 100.0,
+    "part_une_seule_fonction": 95.5,
+    "total": 89,
+    "une_seule_fonction": 85
+  },
+  "corpus": {
+    "dossiers": [
+      "ABONDANCE",
+      "CHIFFRES",
+      "FONDATION"
+    ],
+    "empreintes_courtes": {
+      "ABONDANCE/artefacts/pages/agriculture.html": "c1a5b7bebc37c136",
+      "ABONDANCE/artefacts/pages/agriculture_ar.html": "7ca799cb7b8cbab5",
+      "ABONDANCE/artefacts/pages/agriculture_en.html": "33a6e99b3c46cd11",
+      "ABONDANCE/artefacts/pages/eau.html": "29ae55f0fcdc565b",
+      "ABONDANCE/artefacts/pages/eau_ar.html": "b7e97dfee7eaefe4",
+      "ABONDANCE/artefacts/pages/eau_en.html": "e0c113b9cb0607fd",
+      "ABONDANCE/artefacts/pages/electricite.html": "3f0df1ac0a0977af",
+      "ABONDANCE/artefacts/pages/electricite_ar.html": "51272c7aaf822b33",
+      "ABONDANCE/artefacts/pages/electricite_en.html": "c8fe1bcf09bf6a63",
+      "ABONDANCE/artefacts/pages/index.html": "6b5bf7532b4471db",
+      "ABONDANCE/artefacts/pages/index_ar.html": "1784ab87f62e23a5",
+      "ABONDANCE/artefacts/pages/index_en.html": "957ae89aadafcf61",
+      "CHIFFRES/artefacts/pages/chiffres.html": "d39d52f788ce4063",
+      "CHIFFRES/artefacts/pages/chiffres_ar.html": "615418a221ed5223",
+      "CHIFFRES/artefacts/pages/chiffres_en.html": "97b11a7d5219292b",
+      "FONDATION/artefacts/pages/fondation.html": "9f876930932793d2",
+      "FONDATION/artefacts/pages/fondation_ar.html": "89df24356ef6d1d3",
+      "FONDATION/artefacts/pages/fondation_en.html": "89dfa98601bd1685",
+      "FONDATION/artefacts/pages/index.html": "f98d7b633f7a5c80",
+      "FONDATION/artefacts/pages/index_ar.html": "a4f3762c1d31d3af",
+      "FONDATION/artefacts/pages/index_en.html": "b05e60778f6f5936"
+    },
+    "nb_pages": 21,
+    "nb_trios": 7,
+    "orphelines": [],
+    "pages": [
+      "ABONDANCE/agriculture·ar",
+      "ABONDANCE/agriculture·en",
+      "ABONDANCE/agriculture·fr",
+      "ABONDANCE/eau·ar",
+      "ABONDANCE/eau·en",
+      "ABONDANCE/eau·fr",
+      "ABONDANCE/electricite·ar",
+      "ABONDANCE/electricite·en",
+      "ABONDANCE/electricite·fr",
+      "ABONDANCE/index·ar",
+      "ABONDANCE/index·en",
+      "ABONDANCE/index·fr",
+      "CHIFFRES/chiffres·ar",
+      "CHIFFRES/chiffres·en",
+      "CHIFFRES/chiffres·fr",
+      "FONDATION/fondation·ar",
+      "FONDATION/fondation·en",
+      "FONDATION/fondation·fr",
+      "FONDATION/index·ar",
+      "FONDATION/index·en",
+      "FONDATION/index·fr"
+    ],
+    "pages_par_langue": {
+      "ar": 7,
+      "en": 7,
+      "fr": 7
+    },
+    "pages_sans_ligne_de_tableau": [
+      "ABONDANCE/artefacts/pages/index.html",
+      "ABONDANCE/artefacts/pages/index_ar.html",
+      "ABONDANCE/artefacts/pages/index_en.html",
+      "FONDATION/artefacts/pages/index.html",
+      "FONDATION/artefacts/pages/index_ar.html",
+      "FONDATION/artefacts/pages/index_en.html"
+    ],
+    "trios_complets": 7
+  },
+  "coupe": {
+    "ecart": 1.03,
+    "enonce": "le texte arabe sépare ses propositions par « ؛ » ; sans ce séparateur deux phrases ne font qu'une ligne comptée et la moyenne est fausse",
+    "interrogations_arabes": 0,
+    "moyenne_avec_coupe": 9.8,
+    "moyenne_sans_coupe": 10.83,
+    "pages_arabes": 7,
+    "points_virgule_arabes": 45
+  },
+  "definitions": {
+    "abbr": 0,
+    "dfn": 0,
+    "glossaire": 0,
+    "mecanisme": "aucun : ni <dfn>, ni <abbr>, ni section glossaire",
+    "nb_pages": 21,
+    "spans_title": 0
+  },
+  "empreinte_execution": "d87303eb5bd35b8a2195614145b787342568196b007a0b5837a552a18ef921ad",
+  "harmonisation": {
+    "ablation_fidele": true,
+    "avant_declare": {
+      "commit": "a5f0126",
+      "couverture": {
+        "ar": 55,
+        "en": 56,
+        "fr": 89
+      },
+      "couverture_sans_decodage": {
+        "ar": 48,
+        "en": 49,
+        "fr": 89
+      },
+      "date": "2026-11-09",
+      "definition": "nombres de la span lecture française ; span calcul retirée ; entités décodées"
+    },
+    "avec_ligne": {
+      "ar": 89,
+      "en": 89,
+      "fr": 89
+    },
+    "divergentes": [],
+    "ecart_decodage": {
+      "ar": 7,
+      "en": 7,
+      "fr": 0
+    },
+    "entite_en_cause": "&#x27;",
+    "exemple_ligne": {
+      "ar": "372.144 g de réactifs = 372.144 g de produits · 1.466 g CO2 par g de b",
+      "en": "372.144 g de réactifs = 372.144 g de produits · 1.466 g CO2 par g de b"
+    },
+    "gagne": {
+      "ar": 34,
+      "en": 33
+    },
+    "lignes_comparees": 178,
+    "lignes_identiques": 178,
+    "nb_divergentes": 0,
+    "sans_decodage_entites": {
+      "ar": 48,
+      "en": 49,
+      "fr": 89
+    },
+    "sans_ligne": {
+      "ar": 55,
+      "en": 56,
+      "fr": 89
+    },
+    "span_calcul_par_langue": {
+      "ar": 89,
+      "en": 89,
+      "fr": 0
+    },
+    "total": 89
+  },
+  "lignes_de_controle": {
+    "interpretation": "neutralité par absence de traduction, pas par équivalence",
+    "par_dossier": {
+      "ABONDANCE/agriculture": 18,
+      "ABONDANCE/eau": 15,
+      "ABONDANCE/electricite": 21,
+      "ABONDANCE/index": 0,
+      "CHIFFRES/chiffres": 17,
+      "FONDATION/fondation": 18,
+      "FONDATION/index": 0
+    },
+    "titres_arabes_en_page_arabe": 0,
+    "total": 89,
+    "trois_cellules_identiques": 89
+  },
+  "limites": [
+    "ce dossier compte des mots et des cellules : il ne mesure pas la compréhension, aucun lecteur n'a été testé",
+    "aucun indice de lisibilité publié n'est utilisé : le seul seuil est celui que l'auteur a retenu, 30 mots par phrase",
+    "la ligne calculée harmonisée n'est pas traduite : elle donne les nombres, pas la phrase qui les explique dans la langue du lecteur",
+    "89 lignes de contrôle restent en français dans les pages anglaise et arabe",
+    "5 pages sur 21 dépassent encore 10 % de phrases de plus de 30 mots",
+    "0 balise <dfn> : aucun terme n'est défini à sa première occurrence",
+    "les valeurs mesurées sont celles du corpus à l'instant de la lecture : une régénération des pages peut les déplacer",
+    "la vidéo n'a fourni que des titres de chapitres : son contenu parlé est absent et n'est cité nulle part"
+  ],
+  "moteur": {
+    "appels_garde_une_voie": 1,
+    "branche_lue": "ligne = e[\"resultat\"] if lang == \"fr\" else eq_texte(e[\"id\"], 1)",
+    "css_calcul": 1,
+    "fichier": "ABONDANCE/moteur_page_trilingue.py",
+    "garde_de_ligne_calculee": true,
+    "langues_controlees": [
+      "\"en\", \"ar\""
+    ],
+    "ligne_de_branche": 654,
+    "nb_lignes_source": 741,
+    "octets_source": 39116,
+    "sens_de_la_garde": "refuse un nombre énoncé hors calcul ; n'a jamais exigé la présence d'un nombre calculé",
+    "span_calcul_ecrite": 1
+  },
+  "ouvertures": {
+    "ce_que_la_correction_remplit": "la ligne calculée, dans les trois langues (EQ-06, EQ-07)",
+    "liste": [
+      "89 lignes de contrôle restent en français dans les pages anglaise et arabe",
+      "5 pages sur 21 dépassent 10 % de phrases de plus de 30 mots",
+      "0 balise <dfn> et 0 occurrence de « glossaire » : aucun terme n'est défini à sa première occurrence",
+      "aucune lecture humaine mesurée : aucun test de compréhension n'a été conduit",
+      "la ligne calculée harmonisée n'est pas traduite : elle porte les nombres, pas la phrase qui les explique"
+    ],
+    "nb": 5,
+    "remplies_dans_ce_lot": 0
+  },
+  "prose": {
+    "nb_pages_mesurees": 21,
+    "page_la_plus_longue": {
+      "mots": 95,
+      "page": "CHIFFRES/artefacts/pages/chiffres_en.html"
+    },
+    "pages_au_dessus_de_10_pct": {
+      "ar": 1,
+      "en": 2,
+      "fr": 2
+    },
+    "par_langue": {
+      "ar": {
+        "mots": 2524,
+        "moyenne_max": 16.21,
+        "moyenne_min": 6.21,
+        "pages": 7,
+        "part_max": 17.0,
+        "part_min": 0.0,
+        "phrases": 250
+      },
+      "en": {
+        "mots": 2979,
+        "moyenne_max": 20.05,
+        "moyenne_min": 7.53,
+        "pages": 7,
+        "part_max": 21.4,
+        "part_min": 0.0,
+        "phrases": 229
+      },
+      "fr": {
+        "mots": 3165,
+        "moyenne_max": 20.18,
+        "moyenne_min": 8.74,
+        "pages": 7,
+        "part_max": 18.2,
+        "part_min": 0.0,
+        "phrases": 231
+      }
+    },
+    "par_page": {
+      "ABONDANCE/artefacts/pages/agriculture.html": {
+        "max": 58,
+        "moyenne": 10.62,
+        "part": 7.5,
+        "phrases": 40
+      },
+      "ABONDANCE/artefacts/pages/agriculture_ar.html": {
+        "max": 44,
+        "moyenne": 8.0,
+        "part": 2.4,
+        "phrases": 42
+      },
+      "ABONDANCE/artefacts/pages/agriculture_en.html": {
+        "max": 68,
+        "moyenne": 10.35,
+        "part": 5.0,
+        "phrases": 40
+      },
+      "ABONDANCE/artefacts/pages/eau.html": {
+        "max": 49,
+        "moyenne": 9.74,
+        "part": 2.6,
+        "phrases": 38
+      },
+      "ABONDANCE/artefacts/pages/eau_ar.html": {
+        "max": 31,
+        "moyenne": 7.17,
+        "part": 2.4,
+        "phrases": 41
+      },
+      "ABONDANCE/artefacts/pages/eau_en.html": {
+        "max": 47,
+        "moyenne": 8.95,
+        "part": 2.6,
+        "phrases": 38
+      },
+      "ABONDANCE/artefacts/pages/electricite.html": {
+        "max": 37,
+        "moyenne": 8.74,
+        "part": 4.3,
+        "phrases": 47
+      },
+      "ABONDANCE/artefacts/pages/electricite_ar.html": {
+        "max": 23,
+        "moyenne": 6.21,
+        "part": 0.0,
+        "phrases": 48
+      },
+      "ABONDANCE/artefacts/pages/electricite_en.html": {
+        "max": 33,
+        "moyenne": 7.53,
+        "part": 2.1,
+        "phrases": 47
+      },
+      "ABONDANCE/artefacts/pages/index.html": {
+        "max": 22,
+        "moyenne": 12.67,
+        "part": 0.0,
+        "phrases": 6
+      },
+      "ABONDANCE/artefacts/pages/index_ar.html": {
+        "max": 18,
+        "moyenne": 10.17,
+        "part": 0.0,
+        "phrases": 6
+      },
+      "ABONDANCE/artefacts/pages/index_en.html": {
+        "max": 20,
+        "moyenne": 11.83,
+        "part": 0.0,
+        "phrases": 6
+      },
+      "CHIFFRES/artefacts/pages/chiffres.html": {
+        "max": 87,
+        "moyenne": 20.18,
+        "part": 18.2,
+        "phrases": 44
+      },
+      "CHIFFRES/artefacts/pages/chiffres_ar.html": {
+        "max": 82,
+        "moyenne": 16.21,
+        "part": 17.0,
+        "phrases": 47
+      },
+      "CHIFFRES/artefacts/pages/chiffres_en.html": {
+        "max": 95,
+        "moyenne": 20.05,
+        "part": 21.4,
+        "phrases": 42
+      },
+      "FONDATION/artefacts/pages/fondation.html": {
+        "max": 74,
+        "moyenne": 18.29,
+        "part": 16.3,
+        "phrases": 49
+      },
+      "FONDATION/artefacts/pages/fondation_ar.html": {
+        "max": 38,
+        "moyenne": 12.19,
+        "part": 5.3,
+        "phrases": 57
+      },
+      "FONDATION/artefacts/pages/fondation_en.html": {
+        "max": 71,
+        "moyenne": 17.71,
+        "part": 20.4,
+        "phrases": 49
+      },
+      "FONDATION/artefacts/pages/index.html": {
+        "max": 23,
+        "moyenne": 14.14,
+        "part": 0.0,
+        "phrases": 7
+      },
+      "FONDATION/artefacts/pages/index_ar.html": {
+        "max": 19,
+        "moyenne": 8.67,
+        "part": 0.0,
+        "phrases": 9
+      },
+      "FONDATION/artefacts/pages/index_en.html": {
+        "max": 21,
+        "moyenne": 12.86,
+        "part": 0.0,
+        "phrases": 7
+      }
+    },
+    "seuil": 30,
+    "total_pages_au_dessus": 5
+  },
+  "racine_merkle_sha256": "eac768b27c7314703b94a6bc72839034db77f7d1f249cbadd0882974c2be3a6c",
+  "rejoue_identique": true,
+  "source": {
+    "antecedents_uses": [
+      "ABONDANCE/moteur_page_trilingue.py — l'unique fabriquant des 21 pages publiées",
+      "CONTINUITE/continuite_base.py — la couche précédente : le théorème de continuité dont ces pages sont la sortie",
+      "certificats/plan_global.py — les sauts non remplis que la rédaction ne remplit pas"
+    ],
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "ce_que_ce_module_n_utilise_pas": [
+      "aucun contenu de la vidéo : ni phrase parlée, ni chiffre, ni opinion",
+      "aucun indice de lisibilité publié (Flesch, Gunning fog) : aucune échelle externe n'est invoquée ; le seul seuil est celui que l'auteur a retenu",
+      "aucun lecteur testé : ce dossier compte des mots, il n'affirme rien de la compréhension"
+    ],
+    "point_de_depart": "demande d'auteur 2026-11-09 : « pose les équations pour harmoniser et répondre à la demande optimalement dans la continuité de ce que tu fais déjà et il faut que ce soit simple et efficace pour tout le monde »",
+    "video": {
+      "auteur": "Silicon Carne 🌶️",
+      "avertissements": [
+        "aucun en-tête de chapitres dans la description : horodatages pris dans toute la description"
+      ],
+      "ce_que_la_video_n_a_pas_fourni": [
+        "aucun contenu parlé : le transcript est absent",
+        "aucun chiffre, aucune citation, aucune affirmation reprise",
+        "aucune mesure de compréhension humaine"
+      ],
+      "chapitres": [
+        {
+          "debut": "00:00",
+          "titre": "— Sommaire"
+        },
+        {
+          "debut": "02:20",
+          "titre": "— Anthropic et OpenAI lancent leurs propres armées de consultants"
+        },
+        {
+          "debut": "05:57",
+          "titre": "— La fuite des talents a tué la légitimité du conseil"
+        },
+        {
+          "debut": "08:44",
+          "titre": "— Big Four : changer la nappe ou renverser la table ?"
+        },
+        {
+          "debut": "11:34",
+          "titre": "— Accenture fait des records : les Big Four résistent vraiment ?"
+        },
+        {
+          "debut": "13:59",
+          "titre": "— Andreessen : créez des spinoffs AI-native, arrêtez de transformer"
+        },
+        {
+          "debut": "17:39",
+          "titre": "— Adopter l'IA maintenant ou attendre les agents autonomes ?"
+        },
+        {
+          "debut": "20:05",
+          "titre": "— McKinsey relève ses salaires : la bataille des talents est ouverte"
+        },
+        {
+          "debut": "23:01",
+          "titre": "— La formation IA est-elle vraiment inutile ?"
+        },
+        {
+          "debut": "25:53",
+          "titre": "— L'État face au conseil : Palantir et Mistral en embuscade"
+        },
+        {
+          "debut": "28:53",
+          "titre": "— Les Émirats créent le premier gouvernement full AI-native"
+        },
+        {
+          "debut": "30:44",
+          "titre": "— Steve Jobs avait tout prévu sur les consultants"
+        }
+      ],
+      "decision_de_forme": "les douze titres de chapitres sont des lignes courtes portant une seule idée ; c'est cette forme, et elle seule, qui est reprise ici",
+      "duree_s": 1964,
+      "horodatage_utc": "2026-11-09T20:13:32Z",
+      "id": "iuVxYHTJrhU",
+      "titre": "Anthropic et OpenAI deviennent consultants, les Big Four tremblent !",
+      "transcript": "absent — timedtext 200 avec 0 octet en json3, srv3 et XML (sonde du 2026-11-09)",
+      "url": "https://www.youtube.com/watch?v=iuVxYHTJrhU"
+    }
+  },
+  "structure": {
+    "controles_par_langue": {
+      "ar": 89,
+      "en": 89,
+      "fr": 89
+    },
+    "desequilibres": [],
+    "equations_par_langue": {
+      "ar": 89,
+      "en": 89,
+      "fr": 89
+    },
+    "h1": 21,
+    "h2": 111,
+    "largeurs_de_ligne": {
+      "5": 534
+    },
+    "lignes_total": 534,
+    "nb_desequilibres": 0,
+    "par_langue": {
+      "ar": {
+        "ctrl": 89,
+        "eq": 89
+      },
+      "en": {
+        "ctrl": 89,
+        "eq": 89
+      },
+      "fr": {
+        "ctrl": 89,
+        "eq": 89
+      }
+    },
+    "profondeur_max": 9
+  }
+}

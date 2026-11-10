@@ -1,0 +1,599 @@
+{
+  "antecedent_eau": {
+    "ce_que_ca_ne_prouve_pas": "trois sections et un débit déclarés par ABONDANCE : c'est leur exemple, pas un écoulement réel",
+    "debit": "10/1",
+    "equation": "Q = S_i · v_i pour chaque section i, avec v_i = Q / S_i",
+    "identique_al_debit": true,
+    "pigee_formelle": "Σ S_i·v_i = Q est faux : la somme vaut 3·Q sur trois sections ; le contrôle porte produit par produit",
+    "produits": [
+      "10/1",
+      "10/1",
+      "10/1"
+    ],
+    "registre_dossier": "EQ-04/C04 de ABONDANCE/eau_abondance.py",
+    "sections": [
+      "10/1",
+      "2/1",
+      "1/2"
+    ],
+    "somme_des_produits": "30/1",
+    "somme_est_triple_debit": true,
+    "source_lue": "ABONDANCE/eau_abondance.py → continuite()",
+    "vitesses": [
+      "1/1",
+      "5/1",
+      "20/1"
+    ]
+  },
+  "attribution": {
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "statut_de_la_demande": "déclaré · non vérifié pour toute portée hors du dépôt"
+  },
+  "bande_epsilon": {
+    "chaine_des_deux_eps": true,
+    "comble": "1161/2000",
+    "epsilon": "21/1000",
+    "plafond": "1203/2000",
+    "rapport_epsilon_sur_span": "0.0419580419580419580419580419580419580419580419580419580419580",
+    "span": "1001/2000",
+    "statut_de_la_bande": "déclarée par l'auteur dans lib_almizan_extension.py ; aucun instrument du dépôt ne la mesure"
+  },
+  "catalogue": {
+    "derive_maximale": "4.676118690709842845039112879803185902170153779827538E-9",
+    "derives": {
+      "OCTAVE_1_LUMIERE#0": "0.0",
+      "OCTAVE_1_LUMIERE#1": "7.06607577694339273071832800249790347330607041836886E-10",
+      "OCTAVE_1_LUMIERE#10": "1.390896510754000497850125129442129233260622982397319E-9",
+      "OCTAVE_1_LUMIERE#11": "4.283967073195131934342462656865116417176704510065178E-9",
+      "OCTAVE_1_LUMIERE#12": "2E-60",
+      "OCTAVE_1_LUMIERE#2": "1.70240347968917014001607923204508714765084396004969E-10",
+      "OCTAVE_1_LUMIERE#3": "1.515688282686660058110334454787501887008029907354611E-9",
+      "OCTAVE_1_LUMIERE#4": "3.991485954395523472436962848003368956449174135414403E-9",
+      "OCTAVE_1_LUMIERE#5": "3.786198008656401435078124592309835965990941125098388E-9",
+      "OCTAVE_1_LUMIERE#6": "1.902975002264414714497117063047111298331779572592252E-9",
+      "OCTAVE_1_LUMIERE#7": "4.676118690709842845039112879803185902170153779827538E-9",
+      "OCTAVE_1_LUMIERE#8": "2.484771468498437277348143165002320729444260961439209E-9",
+      "OCTAVE_1_LUMIERE#9": "3.67206896357565486971259858206659593483788951318131E-10",
+      "OCTAVE_2_DUALE_OMBRE#0": "4.257028112449799196787148594377510040160642570281124E-9",
+      "OCTAVE_2_DUALE_OMBRE#1": "4.014126707664723869373873732320523016266130025535582E-9",
+      "OCTAVE_2_DUALE_OMBRE#10": "3.663149599498814360260698368205719250670207222726951E-9",
+      "OCTAVE_2_DUALE_OMBRE#11": "4.084568647276796941349044890180793900233828032494702E-9",
+      "OCTAVE_2_DUALE_OMBRE#12": "1E-60",
+      "OCTAVE_2_DUALE_OMBRE#2": "4.72659722968340761914544310633011946664513580220712E-10",
+      "OCTAVE_2_DUALE_OMBRE#3": "2.80986297972325344722025387123012418016031564172309E-10",
+      "OCTAVE_2_DUALE_OMBRE#4": "9.28576246688748813434041016134279497691888763822399E-10",
+      "OCTAVE_2_DUALE_OMBRE#5": "1.458769225612721325173443855001124517508602703193569E-9",
+      "OCTAVE_2_DUALE_OMBRE#6": "2.872027389114444023825464607724100275668309866897582E-9",
+      "OCTAVE_2_DUALE_OMBRE#7": "4.513274730495420358080687917532548305116853395760707E-9",
+      "OCTAVE_2_DUALE_OMBRE#8": "6.45554828663760083796829773284685736558715120810308E-10",
+      "OCTAVE_2_DUALE_OMBRE#9": "1.309559451637553430665873569957891613807193169380221E-9"
+    },
+    "facteur_dual_decimal": "0.195983935742971887550200803212851405622489959839357429718876",
+    "facteur_dual_declare": "0.122/0.6225",
+    "facteur_dual_fraction": "244/1245",
+    "nb_noeuds_testes": 26,
+    "quotients_dual_sur_public_max": "0.195983942902142675394855303821272740740768087737635794943665",
+    "quotients_dual_sur_public_min": "0.195983929900760531622514467319851530452066171520773787302009",
+    "rapports_consecutifs_max": "0.961269051643470666638511463842573755337800975703845927166062",
+    "rapports_consecutifs_min": "0.961268984870931563746734227970181619298714135481595621775910",
+    "rho_exact": "0.961269020706607577694339273071832800249790347330607041836886"
+  },
+  "chaine": {
+    "bornes_D": {
+      "basse": "61/500",
+      "haute": "249/400"
+    },
+    "ordre_entier": {
+      "enonce": "x_k^12 = (249/400)^(12+k), donc x_k/x_{k+1} = (400/249)^(1/12) > 1 puisque 400 > 249 : la décroissance est une comparaison d'entiers",
+      "positive_partout": true,
+      "rapport_12puissances": "400/249",
+      "stricte": true,
+      "strictement_decroissante": true
+    },
+    "pas_de_sortie": 42,
+    "rapport_par_pas": "ρ = (249/400)^(1/12)",
+    "semences_rationnelles": {
+      "COMBLE_CIBLE": "1161/2000",
+      "EPSILON": "21/1000",
+      "LIGNE_REF": "61/500",
+      "MIZAN": "249/400",
+      "PLAFOND_EFFECTIF": "1203/2000"
+    },
+    "table": [
+      {
+        "ecart_signe": 1,
+        "k": 0,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 1,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 2,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 3,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 4,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 5,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 6,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 7,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 8,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 9,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 10,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 11,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 12,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 13,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 14,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 15,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 16,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 17,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 18,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 19,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 20,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 21,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 22,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 23,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 24,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 25,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 26,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 27,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 28,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 29,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 30,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 31,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 32,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 33,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 34,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 35,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 36,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 37,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 38,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 39,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 40,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": 1,
+        "k": 41,
+        "sortie_de_D": false
+      },
+      {
+        "ecart_signe": -1,
+        "k": 42,
+        "sortie_de_D": true
+      }
+    ],
+    "valeur_decimale_rho": "0.961269020706607577694339273071832800249790347330607041836886",
+    "valeurs_flottantes_indicatives": {
+      "0": 0.6225,
+      "1": 0.5983899653898632,
+      "2": 0.5752137360309746,
+      "3": 0.5529351447314841,
+      "4": 0.5315194250903,
+      "5": 0.5109331572430917,
+      "6": 0.49114421570960193,
+      "7": 0.47212171926088387,
+      "8": 0.4538359827282298,
+      "9": 0.4362584706785863,
+      "10": 0.41936175288416694,
+      "11": 0.40311946151676953,
+      "12": 0.38750625,
+      "13": 0.3724977534551899,
+      "14": 0.3580705506792817,
+      "15": 0.3442021275953488,
+      "16": 0.33087084211871176,
+      "17": 0.3180558903838246,
+      "18": 0.3057372742792272,
+      "19": 0.2938957702399002,
+      "20": 0.282512899248323,
+      "21": 0.27157089799741996,
+      "22": 0.2610526911703939,
+      "23": 0.250941864794189,
+      "24": 0.241222640625,
+      "25": 0.2318798515258557,
+      "26": 0.22289891779785287,
+      "27": 0.21426582442810463,
+      "28": 0.20596709921889805,
+      "29": 0.1979897917639308,
+      "30": 0.19032145323881894,
+      "31": 0.18295011697433788,
+      "32": 0.17586427978208108,
+      "33": 0.16905288400339394,
+      "34": 0.1625053002535702,
+      "35": 0.15621131083438267,
+      "36": 0.1501610937890625,
+      "37": 0.14434520757484517,
+      "38": 0.1387545763291634,
+      "39": 0.13338047570649514,
+      "40": 0.12821451926376404,
+      "41": 0.12324864537304693,
+      "42": 0.11847510464116479
+    },
+    "voisinage": {
+      "k_apres": {
+        "droite": 344554196017512463351258805348311232374637620667770470400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "ecart_signe": -1,
+        "gauche": 150870434919284171283054463556571467859019069806863476492803143437834043727082776258094764464096522973583128796507745062637249225158447265625000000000000000000000000,
+        "k": 43,
+        "sortie_de_D": true
+      },
+      "k_avant": {
+        "droite": 2153463725109452895945367533426945202341485129173565440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "ecart_signe": 1,
+        "gauche": 2433354863942261758408000896059280783519928223849026249460543272492928238691033632652614707248214109023775887429359930688815490478515625000000000000000000000000,
+        "k": 41,
+        "sortie_de_D": false
+      },
+      "k_premier": {
+        "droite": 861385490043781158378147013370778080936594051669426176000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "ecart_signe": -1,
+        "gauche": 605905361121623177843592223118760915096462127738407536115675274850739131434067374530501062104805313146920195969910622741515057129150390625000000000000000000000000,
+        "k": 42,
+        "sortie_de_D": true
+      }
+    }
+  },
+  "ecarts_ouverts": {
+    "coches": 15,
+    "demi_coches": 7,
+    "exemples": [
+      "✗ lemme OUVERT — le goulot précis où la démonstration bute",
+      "(\"L5\", \"Borne inférieure circuits non uniformes ∀ algos poly\", \"✗ GONGOULOT\"),",
+      "\"relativisation, natural proofs, algébrisation\", \"✗\"),",
+      "(\"L5\", \"Borne a priori ‖ω‖∞ ou ‖∇u‖ sur [0,T] ∀u₀ lisse\", \"✗ GONGOULOT\"),"
+    ],
+    "fichier": "certificats/plan_global.py",
+    "goulots": 6,
+    "lignes_a_croix": 12,
+    "que_dit_ce_dossier": "la continuité continuelle de cette couche est une propriété d'une chaîne déclarée sur un domaine fini ; aucune de ces croix n'est devenue une coche"
+  },
+  "empreinte_execution": "e2b6f5b087aa1b09d7de0326eda616a7db3b7c04a6fa0fb63bcd13fe2d2cfe79",
+  "graphe": {
+    "controles_comptes": 199,
+    "dossiers_comptes": [
+      "ABONDANCE",
+      "CHIFFRES",
+      "CONSTRUCTION",
+      "CONTINUITE",
+      "DECLARATION",
+      "FONDATION",
+      "GUERRE",
+      "HORLOGERIE",
+      "REDACTION",
+      "VERROUS"
+    ],
+    "equations_comptees": 199,
+    "modules_absents": [],
+    "modules_declares": [
+      "electricite_abondance.py",
+      "eau_abondance.py",
+      "agriculture_abondance.py",
+      "chiffres_pi.py",
+      "fondation_base.py",
+      "horlogerie.py",
+      "continuite_base.py",
+      "redaction_mizan.py",
+      "construction_base.py",
+      "verrous_base.py",
+      "declaration_base.py",
+      "guerre_base.py"
+    ],
+    "racines_fondees_dehors": true,
+    "tests_comptes": 483,
+    "tiers_par_dossier": {}
+  },
+  "limites": [
+    "le théorème porte sur une application déclarée sur un intervalle déclaré : il s'applique au catalogue du dépôt, pas à la propagation du savoir humain",
+    "les semences (0.6225, 0.122, 0.021) sont des constantes de conception de lib_almizan_extension.py ; rien dans ce dossier montre qu'elles mesurent quelque chose",
+    "les 42 pas sont un compte d'itérations : ni une durée, ni une portée, ni une prévision",
+    "le catalogue est stocké arrondi (8 et 6 décimales) : les dérives mesurées sont des défauts d'écriture du catalogue, pas des réfutations",
+    "aucune des croix du plan global n'est remplie par cette couche"
+  ],
+  "point_fixe": {
+    "absorption_maximale": 42,
+    "absorption_minimale": 0,
+    "absorptions_par_noeud": {
+      "F0": 0,
+      "F1": 0,
+      "F10": 36,
+      "F11": 38,
+      "F12": 40,
+      "F13": 42,
+      "F14": 0,
+      "F15": 8,
+      "F16": 13,
+      "F17": 18,
+      "F18": 22,
+      "F19": 25,
+      "F2": 8,
+      "F20": 28,
+      "F21": 31,
+      "F22": 33,
+      "F23": 35,
+      "F24": 37,
+      "F25": 39,
+      "F26": 41,
+      "F3": 14,
+      "F4": 18,
+      "F5": 22,
+      "F6": 26,
+      "F7": 29,
+      "F8": 31,
+      "F9": 34
+    },
+    "appartient_D": true,
+    "candidats_fixes_sur_grille": [
+      "61/500"
+    ],
+    "depts_hors_D": [],
+    "enonce": "sur D = [61/500 ; 249/400], T(x) = max(61/500, ρ·x) n'a qu'un point fixe, x = 61/500, et toute orbite de D l'atteint en au plus 42 pas",
+    "point_fixe": "61/500",
+    "preuve unicite": "ρ < 1 donc ρ·x < x pour tout x > 0 : aucun intérieur de D n'est fixe ; le maximum de la borne basse absorbe le reste, et ρ·(61/500) < 61/500",
+    "rho_pour_unicite": {
+      "bas": "96126/100000",
+      "haut": "96127/100000"
+    },
+    "suite_testee": [
+      "61/500",
+      "23935623/40000000",
+      "2300859632121/4000000000000",
+      "221174733856895367/400000000000000000",
+      "21260863641461780943609/40000000000000000000000"
+    ]
+  },
+  "queue": {
+    "borne_basse": "43257035790470723739288935713657685734048163484683014773137706014782852351180738546204844632296879328679266803847255607084447406058412339803260798450908237523470153072982736473340265192972397642369/8808456186670809984207153320312500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "borne_haute": "190329596792874174056957083619000904430834153040725170402135531779832313258359620913383560091423498647823436464553116786332705998197733478538121684584467164859632931870570813175217117121965128649491171300713729/38730000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "encadrement_valide": true,
+    "formule": "ρ^n/(1−ρ)",
+    "largeur_encadrement": "0.00341466528545243106119067539386532700187896510624394990640",
+    "n": 42,
+    "somme_totale": {
+      "basse": "50000/1937",
+      "formule": "1/(1−ρ)",
+      "haute": "100000/3873"
+    },
+    "valeur_decimal": "4.91393341224625665857651859365362978125244668337341199421100"
+  },
+  "racine_merkle_sha256": "21710f215f6a8d289f6b2a1c75d37ad14318a4e6e9a3854b829daf75eb12fd40",
+  "rejoue_identique": true,
+  "rho": {
+    "bornes": {
+      "bas": "48063/50000",
+      "haut": "96127/100000"
+    },
+    "conclusion": {
+      "contraction": true,
+      "rho_strictement_inferieur_a_un": true,
+      "rho_strictement_superieur_a_zero": true
+    },
+    "decimales": 5,
+    "inferieur": "96126/100000",
+    "largeur_encadrement": "1/100000",
+    "preuve": {
+      "chiffres_droite": 63,
+      "chiffres_gauche": 63,
+      "rho_inferieur_ou_egal_a_haut": true,
+      "rho_superieur_a_bas": true
+    },
+    "superieur": "96127/100000"
+  },
+  "semences": {
+    "domaine_D": {
+      "borne_basse": "61/500",
+      "borne_haute": "249/400",
+      "definition": "clamp_domaine_mizan, bibliotheques/lib_almizan_extension.py:97-99",
+      "largeur": "1001/2000",
+      "non_vide": true
+    },
+    "espece": {
+      "noeuds_catalogue": 27,
+      "pas_par_octave": 13,
+      "puissance": 12
+    },
+    "exactitude_float": {
+      "ecarts": {
+        "COMBLE_CIBLE": 0.0,
+        "EPSILON": 0.0,
+        "LIGNE_REF": 0.0,
+        "MIZAN": 0.0,
+        "PLAFOND_EFFECTIF": 0.0
+      },
+      "tous_egaux": true
+    },
+    "lues_flottantes": {
+      "COMBLE_CIBLE": 0.5805,
+      "EPSILON": 0.021,
+      "LIGNE_REF": 0.122,
+      "MIZAN": 0.6225,
+      "PLAFOND_EFFECTIF": 0.6015
+    },
+    "rationnels": {
+      "COMBLE_CIBLE": "1161/2000",
+      "EPSILON": "21/1000",
+      "LIGNE_REF": "61/500",
+      "MIZAN": "249/400",
+      "PLAFOND_EFFECTIF": "1203/2000"
+    }
+  },
+  "source": {
+    "antecedents_uses": [
+      "bibliotheques/lib_almizan_extension.py — octave duale d'échelle 0.6225^(k/12) : la seule auto-similarité écrite du corpus",
+      "ABONDANCE/eau_abondance.py → continuite() — conservation du débit, EQ-04/C04",
+      "certificats/plan_global.py — lignes « ✗ GONGOULOT » : les sauts non remplis",
+      "horloge_noyau/horloge_logique_mizan.py — `continuité_sans_arret = True` posé sans dérivation (capsule lue, jamais écrite)"
+    ],
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "ce_que_ce_module_n_utilise_pas": [
+      "aucune vidéo : ni transcript, ni chiffre, ni phrase citée d'une bande-son",
+      "aucun flottant pour conclure : les verdicts sortent de comparaisons d'entiers",
+      "aucune dimension de Hausdorff, aucun Mandelbrot, aucun itéré de Julia : le dépôt n'en contient pas et ce module n'en invente pas"
+    ],
+    "point_de_depart": "demande d'auteur 2026-11-09 : « rajouter une couche ... poser les équations pour la théorisation de théorème nouveau dans une continuité continuelle ... montrer le cheminement, le résultat »"
+  },
+  "telescage": {
+    "N": 42,
+    "difference_des_bords": "0.504024895358835212128606798741565220806014424389239643904553",
+    "ecart_absolu": "0E-60",
+    "identique": true,
+    "perte_cumulee": "0.504024895358835212128606798741565220806014424389239643904553",
+    "saut_max": "0.024110034610136782885273802512784081844505508786697116456538",
+    "saut_min": "0.004773540731882146596791231598023734268257374965849154546404",
+    "somme_des_sauts": "0.504024895358835212128606798741565220806014424389239643904553",
+    "span_decimal": "0.5005",
+    "span_declare": "1001/2000"
+  }
+}

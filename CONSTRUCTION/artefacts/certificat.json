@@ -1,0 +1,1658 @@
+{
+  "attribution": {
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "statut_de_la_demande": "déclaré · non vérifié pour tout objet réel, tout outil et toute portée hors du dépôt"
+  },
+  "cascade": {
+    "aire_tete_mm2": "387506.3",
+    "encadrement_valide": true,
+    "facteur_43_crans": {
+      "inferieur": "12.7239",
+      "superieur": "12.7239"
+    },
+    "facteur_infini": {
+      "inferieur": "13.1645",
+      "largeur": "0.0000000000",
+      "superieur": "13.1645"
+    },
+    "formule": "facteur = Σ ρ^(2j) = 1/(1−ρ²) pour la pile infinie, aire au carré de la cote",
+    "identite_partielle": true,
+    "monotone": "les trois grandeurs sont croissantes en ρ : les bornes se prennent aux bornes de l'encadrement, dans le même ordre",
+    "part_hors_des_43_crans": "3.35",
+    "reste_de_la_troncature": {
+      "inferieur": "0.4406",
+      "superieur": "0.4406"
+    }
+  },
+  "cout": {
+    "moyenne_par_cran": "0.4651",
+    "par_cran": [
+      {
+        "cran": 0,
+        "heures_declarees": "0.25"
+      },
+      {
+        "cran": 1,
+        "heures_declarees": "0.25"
+      },
+      {
+        "cran": 2,
+        "heures_declarees": "0.25"
+      },
+      {
+        "cran": 3,
+        "heures_declarees": "0.25"
+      },
+      {
+        "cran": 4,
+        "heures_declarees": "0.25"
+      },
+      {
+        "cran": 5,
+        "heures_declarees": "0.25"
+      },
+      {
+        "cran": 6,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 7,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 8,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 9,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 10,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 11,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 12,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 13,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 14,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 15,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 16,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 17,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 18,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 19,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 20,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 21,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 22,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 23,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 24,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 25,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 26,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 27,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 28,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 29,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 30,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 31,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 32,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 33,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 34,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 35,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 36,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 37,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 38,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 39,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 40,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 41,
+        "heures_declarees": "0.50"
+      },
+      {
+        "cran": 42,
+        "heures_declarees": "0.50"
+      }
+    ],
+    "somme_des_lignes": "20",
+    "total_exact": "20",
+    "total_heures": "20.00"
+  },
+  "crans": {
+    "cotes_indeterminees": 0,
+    "ecart_max_a_la_plage": "0.029963",
+    "invariance": {
+      "inferieur": "1.040292",
+      "nom": "1/ρ",
+      "superieur": "1.040292"
+    },
+    "masse_totale_kg": "309.694",
+    "nb_crans": 43,
+    "premier_clampe": [
+      42
+    ],
+    "rapports_consecutifs": [
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 1,
+        "marge_de_quantification": "0.00001705",
+        "plage_acceptee": "1.040274–1.040309",
+        "rapport": "1.040291"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 2,
+        "marge_de_quantification": "0.00001774",
+        "plage_acceptee": "1.040274–1.040309",
+        "rapport": "1.040298"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 3,
+        "marge_de_quantification": "0.00001845",
+        "plage_acceptee": "1.040273–1.040310",
+        "rapport": "1.040276"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 4,
+        "marge_de_quantification": "0.00001919",
+        "plage_acceptee": "1.040272–1.040311",
+        "rapport": "1.040300"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 5,
+        "marge_de_quantification": "0.00001997",
+        "plage_acceptee": "1.040272–1.040311",
+        "rapport": "1.040299"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 6,
+        "marge_de_quantification": "0.00002077",
+        "plage_acceptee": "1.040271–1.040312",
+        "rapport": "1.040294"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 7,
+        "marge_de_quantification": "0.00002161",
+        "plage_acceptee": "1.040270–1.040313",
+        "rapport": "1.040286"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 8,
+        "marge_de_quantification": "0.00002248",
+        "plage_acceptee": "1.040269–1.040314",
+        "rapport": "1.040279"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 9,
+        "marge_de_quantification": "0.00002338",
+        "plage_acceptee": "1.040268–1.040315",
+        "rapport": "1.040297"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 10,
+        "marge_de_quantification": "0.00002433",
+        "plage_acceptee": "1.040267–1.040316",
+        "rapport": "1.040300"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 11,
+        "marge_de_quantification": "0.00002531",
+        "plage_acceptee": "1.040266–1.040317",
+        "rapport": "1.040286"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 12,
+        "marge_de_quantification": "0.00002633",
+        "plage_acceptee": "1.040265–1.040318",
+        "rapport": "1.040283"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 13,
+        "marge_de_quantification": "0.00002739",
+        "plage_acceptee": "1.040264–1.040319",
+        "rapport": "1.040295"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 14,
+        "marge_de_quantification": "0.00002849",
+        "plage_acceptee": "1.040263–1.040320",
+        "rapport": "1.040299"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 15,
+        "marge_de_quantification": "0.00002964",
+        "plage_acceptee": "1.040262–1.040321",
+        "rapport": "1.040296"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 16,
+        "marge_de_quantification": "0.00003083",
+        "plage_acceptee": "1.040261–1.040322",
+        "rapport": "1.040288"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 17,
+        "marge_de_quantification": "0.00003207",
+        "plage_acceptee": "1.040259–1.040324",
+        "rapport": "1.040275"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 18,
+        "marge_de_quantification": "0.00003337",
+        "plage_acceptee": "1.040258–1.040325",
+        "rapport": "1.040296"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 19,
+        "marge_de_quantification": "0.00003471",
+        "plage_acceptee": "1.040257–1.040326",
+        "rapport": "1.040286"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 20,
+        "marge_de_quantification": "0.00003611",
+        "plage_acceptee": "1.040255–1.040328",
+        "rapport": "1.040317"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 21,
+        "marge_de_quantification": "0.00003756",
+        "plage_acceptee": "1.040254–1.040329",
+        "rapport": "1.040284"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 22,
+        "marge_de_quantification": "0.00003908",
+        "plage_acceptee": "1.040252–1.040331",
+        "rapport": "1.040299"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 23,
+        "marge_de_quantification": "0.00004065",
+        "plage_acceptee": "1.040251–1.040332",
+        "rapport": "1.040289"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 24,
+        "marge_de_quantification": "0.00004229",
+        "plage_acceptee": "1.040249–1.040334",
+        "rapport": "1.040295"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 25,
+        "marge_de_quantification": "0.00004399",
+        "plage_acceptee": "1.040248–1.040336",
+        "rapport": "1.040279"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 26,
+        "marge_de_quantification": "0.00004577",
+        "plage_acceptee": "1.040246–1.040337",
+        "rapport": "1.040287"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 27,
+        "marge_de_quantification": "0.00004761",
+        "plage_acceptee": "1.040244–1.040339",
+        "rapport": "1.040276"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 28,
+        "marge_de_quantification": "0.00004953",
+        "plage_acceptee": "1.040242–1.040341",
+        "rapport": "1.040297"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 29,
+        "marge_de_quantification": "0.00005153",
+        "plage_acceptee": "1.040240–1.040343",
+        "rapport": "1.040305"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 30,
+        "marge_de_quantification": "0.00005360",
+        "plage_acceptee": "1.040238–1.040345",
+        "rapport": "1.040301"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 31,
+        "marge_de_quantification": "0.00005576",
+        "plage_acceptee": "1.040236–1.040347",
+        "rapport": "1.040284"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 32,
+        "marge_de_quantification": "0.00005801",
+        "plage_acceptee": "1.040233–1.040350",
+        "rapport": "1.040316"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 33,
+        "marge_de_quantification": "0.00006035",
+        "plage_acceptee": "1.040231–1.040352",
+        "rapport": "1.040284"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 34,
+        "marge_de_quantification": "0.00006277",
+        "plage_acceptee": "1.040229–1.040354",
+        "rapport": "1.040244"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 35,
+        "marge_de_quantification": "0.00006531",
+        "plage_acceptee": "1.040226–1.040357",
+        "rapport": "1.040330"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 36,
+        "marge_de_quantification": "0.00006794",
+        "plage_acceptee": "1.040224–1.040359",
+        "rapport": "1.040290"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 37,
+        "marge_de_quantification": "0.00007067",
+        "plage_acceptee": "1.040221–1.040362",
+        "rapport": "1.040249"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 38,
+        "marge_de_quantification": "0.00007353",
+        "plage_acceptee": "1.040218–1.040365",
+        "rapport": "1.040360"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 39,
+        "marge_de_quantification": "0.00007648",
+        "plage_acceptee": "1.040215–1.040368",
+        "rapport": "1.040261"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 40,
+        "marge_de_quantification": "0.00007957",
+        "plage_acceptee": "1.040212–1.040371",
+        "rapport": "1.040324"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": true,
+        "ecart_a_la_plage": "0.000000",
+        "k": 41,
+        "marge_de_quantification": "0.00008277",
+        "plage_acceptee": "1.040209–1.040374",
+        "rapport": "1.040243"
+      },
+      {
+        "dans_la_plage_de_1_sur_rho": false,
+        "ecart_a_la_plage": "0.029963",
+        "k": 42,
+        "marge_de_quantification": "0.00008239",
+        "plage_acceptee": "1.040209–1.040374",
+        "rapport": "1.010246"
+      }
+    ],
+    "rapports_hors_plage": [
+      42
+    ],
+    "reglage_de_la_plage": "la plage est 1/ρ élargi du demi-tick porté par chacune des deux cotes : c'est la quantification du plan, pas ρ, qui fixe cette marge",
+    "surface_total_mm2": "4931428.7",
+    "table": [
+      {
+        "borne_basse_mm": "622.500000",
+        "borne_haute_mm": "622.500000",
+        "clamp": false,
+        "cote_exacte": "1245/2",
+        "cote_mm": "622.50",
+        "cran": 0,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000000",
+        "masse_exacte": "9734157/400000",
+        "masse_kg": "24.335",
+        "tolerance_exacte": "249/400",
+        "tolerance_mm": "0.62250"
+      },
+      {
+        "borne_basse_mm": "598.389965",
+        "borne_haute_mm": "598.389965",
+        "clamp": false,
+        "cote_exacte": "59839/100",
+        "cote_mm": "598.39",
+        "cran": 1,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000001",
+        "masse_exacte": "562170829597/25000000000",
+        "masse_kg": "22.487",
+        "tolerance_exacte": "59839/100000",
+        "tolerance_mm": "0.59839"
+      },
+      {
+        "borne_basse_mm": "575.213736",
+        "borne_haute_mm": "575.213736",
+        "clamp": false,
+        "cote_exacte": "57521/100",
+        "cote_mm": "575.21",
+        "cran": 2,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000001",
+        "masse_exacte": "519460474237/25000000000",
+        "masse_kg": "20.778",
+        "tolerance_exacte": "57521/100000",
+        "tolerance_mm": "0.57521"
+      },
+      {
+        "borne_basse_mm": "552.935145",
+        "borne_haute_mm": "552.935145",
+        "clamp": false,
+        "cote_exacte": "27647/50",
+        "cote_mm": "552.94",
+        "cran": 3,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000002",
+        "masse_exacte": "120003987613/6250000000",
+        "masse_kg": "19.201",
+        "tolerance_exacte": "27647/50000",
+        "tolerance_mm": "0.55294"
+      },
+      {
+        "borne_basse_mm": "531.519425",
+        "borne_haute_mm": "531.519425",
+        "clamp": false,
+        "cote_exacte": "13288/25",
+        "cote_mm": "531.52",
+        "cran": 4,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000002",
+        "masse_exacte": "866301194/48828125",
+        "masse_kg": "17.742",
+        "tolerance_exacte": "1661/3125",
+        "tolerance_mm": "0.53152"
+      },
+      {
+        "borne_basse_mm": "510.933157",
+        "borne_haute_mm": "510.933157",
+        "clamp": false,
+        "cote_exacte": "51093/100",
+        "cote_mm": "510.93",
+        "cran": 5,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000003",
+        "masse_exacte": "409847659893/25000000000",
+        "masse_kg": "16.394",
+        "tolerance_exacte": "51093/100000",
+        "tolerance_mm": "0.51093"
+      },
+      {
+        "borne_basse_mm": "491.144216",
+        "borne_haute_mm": "491.144216",
+        "clamp": false,
+        "cote_exacte": "24557/50",
+        "cote_mm": "491.14",
+        "cran": 6,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000003",
+        "masse_exacte": "94678261093/6250000000",
+        "masse_kg": "15.149",
+        "tolerance_exacte": "24557/50000",
+        "tolerance_mm": "0.49114"
+      },
+      {
+        "borne_basse_mm": "472.121719",
+        "borne_haute_mm": "472.121719",
+        "clamp": false,
+        "cote_exacte": "11803/25",
+        "cote_mm": "472.12",
+        "cran": 7,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000003",
+        "masse_exacte": "21871797013/1562500000",
+        "masse_kg": "13.998",
+        "tolerance_exacte": "11803/25000",
+        "tolerance_mm": "0.47212"
+      },
+      {
+        "borne_basse_mm": "453.835983",
+        "borne_haute_mm": "453.835983",
+        "clamp": false,
+        "cote_exacte": "11346/25",
+        "cote_mm": "453.84",
+        "cran": 8,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000004",
+        "masse_exacte": "5052719853/390625000",
+        "masse_kg": "12.935",
+        "tolerance_exacte": "5673/12500",
+        "tolerance_mm": "0.45384"
+      },
+      {
+        "borne_basse_mm": "436.258471",
+        "borne_haute_mm": "436.258471",
+        "clamp": false,
+        "cote_exacte": "21813/50",
+        "cote_mm": "436.26",
+        "cran": 9,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000004",
+        "masse_exacte": "74701694133/6250000000",
+        "masse_kg": "11.952",
+        "tolerance_exacte": "21813/50000",
+        "tolerance_mm": "0.43626"
+      },
+      {
+        "borne_basse_mm": "419.361753",
+        "borne_haute_mm": "419.361753",
+        "clamp": false,
+        "cote_exacte": "10484/25",
+        "cote_mm": "419.36",
+        "cran": 10,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000004",
+        "masse_exacte": "1078533637/97656250",
+        "masse_kg": "11.044",
+        "tolerance_exacte": "2621/6250",
+        "tolerance_mm": "0.41936"
+      },
+      {
+        "borne_basse_mm": "403.119462",
+        "borne_haute_mm": "403.119462",
+        "clamp": false,
+        "cote_exacte": "10078/25",
+        "cote_mm": "403.12",
+        "cran": 11,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000005",
+        "masse_exacte": "3986468797/390625000",
+        "masse_kg": "10.205",
+        "tolerance_exacte": "5039/12500",
+        "tolerance_mm": "0.40312"
+      },
+      {
+        "borne_basse_mm": "387.506250",
+        "borne_haute_mm": "387.506250",
+        "clamp": false,
+        "cote_exacte": "38751/100",
+        "cote_mm": "387.51",
+        "cran": 12,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000005",
+        "masse_exacte": "235757480157/25000000000",
+        "masse_kg": "9.430",
+        "tolerance_exacte": "38751/100000",
+        "tolerance_mm": "0.38751"
+      },
+      {
+        "borne_basse_mm": "372.497753",
+        "borne_haute_mm": "372.497753",
+        "clamp": false,
+        "cote_exacte": "745/2",
+        "cote_mm": "372.50",
+        "cran": 13,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000005",
+        "masse_exacte": "3485557/400000",
+        "masse_kg": "8.714",
+        "tolerance_exacte": "149/400",
+        "tolerance_mm": "0.37250"
+      },
+      {
+        "borne_basse_mm": "358.070551",
+        "borne_haute_mm": "358.070551",
+        "clamp": false,
+        "cote_exacte": "35807/100",
+        "cote_mm": "358.07",
+        "cran": 14,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000005",
+        "masse_exacte": "201296176093/25000000000",
+        "masse_kg": "8.052",
+        "tolerance_exacte": "35807/100000",
+        "tolerance_mm": "0.35807"
+      },
+      {
+        "borne_basse_mm": "344.202128",
+        "borne_haute_mm": "344.202128",
+        "clamp": false,
+        "cote_exacte": "1721/5",
+        "cote_mm": "344.20",
+        "cran": 15,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000005",
+        "masse_exacte": "465009037/62500000",
+        "masse_kg": "7.440",
+        "tolerance_exacte": "1721/5000",
+        "tolerance_mm": "0.34420"
+      },
+      {
+        "borne_basse_mm": "330.870842",
+        "borne_haute_mm": "330.870842",
+        "clamp": false,
+        "cote_exacte": "33087/100",
+        "cote_mm": "330.87",
+        "cran": 16,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "171875682333/25000000000",
+        "masse_kg": "6.875",
+        "tolerance_exacte": "33087/100000",
+        "tolerance_mm": "0.33087"
+      },
+      {
+        "borne_basse_mm": "318.055890",
+        "borne_haute_mm": "318.055890",
+        "clamp": false,
+        "cote_exacte": "15903/50",
+        "cote_mm": "318.06",
+        "cran": 17,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "39706149213/6250000000",
+        "masse_kg": "6.353",
+        "tolerance_exacte": "15903/50000",
+        "tolerance_mm": "0.31806"
+      },
+      {
+        "borne_basse_mm": "305.737274",
+        "borne_haute_mm": "305.737274",
+        "clamp": false,
+        "cote_exacte": "15287/50",
+        "cote_mm": "305.74",
+        "cran": 18,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "36689701933/6250000000",
+        "masse_kg": "5.870",
+        "tolerance_exacte": "15287/50000",
+        "tolerance_mm": "0.30574"
+      },
+      {
+        "borne_basse_mm": "293.895770",
+        "borne_haute_mm": "293.895770",
+        "clamp": false,
+        "cote_exacte": "2939/10",
+        "cote_mm": "293.90",
+        "cran": 19,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "1356122197/250000000",
+        "masse_kg": "5.424",
+        "tolerance_exacte": "2939/10000",
+        "tolerance_mm": "0.29390"
+      },
+      {
+        "borne_basse_mm": "282.512899",
+        "borne_haute_mm": "282.512899",
+        "clamp": false,
+        "cote_exacte": "28251/100",
+        "cote_mm": "282.51",
+        "cran": 20,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "125304683157/25000000000",
+        "masse_kg": "5.012",
+        "tolerance_exacte": "28251/100000",
+        "tolerance_mm": "0.28251"
+      },
+      {
+        "borne_basse_mm": "271.570898",
+        "borne_haute_mm": "271.570898",
+        "clamp": false,
+        "cote_exacte": "27157/100",
+        "cote_mm": "271.57",
+        "cran": 21,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "115787915893/25000000000",
+        "masse_kg": "4.632",
+        "tolerance_exacte": "27157/100000",
+        "tolerance_mm": "0.27157"
+      },
+      {
+        "borne_basse_mm": "261.052691",
+        "borne_haute_mm": "261.052691",
+        "clamp": false,
+        "cote_exacte": "5221/20",
+        "cote_mm": "261.05",
+        "cran": 22,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "4279638037/1000000000",
+        "masse_kg": "4.280",
+        "tolerance_exacte": "5221/20000",
+        "tolerance_mm": "0.26105"
+      },
+      {
+        "borne_basse_mm": "250.941865",
+        "borne_haute_mm": "250.941865",
+        "clamp": false,
+        "cote_exacte": "12547/50",
+        "cote_mm": "250.94",
+        "cran": 23,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "24716071813/6250000000",
+        "masse_kg": "3.955",
+        "tolerance_exacte": "12547/50000",
+        "tolerance_mm": "0.25094"
+      },
+      {
+        "borne_basse_mm": "241.222641",
+        "borne_haute_mm": "241.222641",
+        "clamp": false,
+        "cote_exacte": "12061/50",
+        "cote_mm": "241.22",
+        "cran": 24,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "22838432197/6250000000",
+        "masse_kg": "3.654",
+        "tolerance_exacte": "12061/50000",
+        "tolerance_mm": "0.24122"
+      },
+      {
+        "borne_basse_mm": "231.879852",
+        "borne_haute_mm": "231.879852",
+        "clamp": false,
+        "cote_exacte": "5797/25",
+        "cote_mm": "231.88",
+        "cran": 25,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "5276017813/1562500000",
+        "masse_kg": "3.377",
+        "tolerance_exacte": "5797/25000",
+        "tolerance_mm": "0.23188"
+      },
+      {
+        "borne_basse_mm": "222.898918",
+        "borne_haute_mm": "222.898918",
+        "clamp": false,
+        "cote_exacte": "2229/10",
+        "cote_mm": "222.90",
+        "cran": 26,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "780045237/250000000",
+        "masse_kg": "3.120",
+        "tolerance_exacte": "2229/10000",
+        "tolerance_mm": "0.22290"
+      },
+      {
+        "borne_basse_mm": "214.265824",
+        "borne_haute_mm": "214.265824",
+        "clamp": false,
+        "cote_exacte": "21427/100",
+        "cote_mm": "214.27",
+        "cran": 27,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "72081263653/25000000000",
+        "masse_kg": "2.883",
+        "tolerance_exacte": "21427/100000",
+        "tolerance_mm": "0.21427"
+      },
+      {
+        "borne_basse_mm": "205.967099",
+        "borne_haute_mm": "205.967099",
+        "clamp": false,
+        "cote_exacte": "20597/100",
+        "cote_mm": "205.97",
+        "cran": 28,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "66605116213/25000000000",
+        "masse_kg": "2.664",
+        "tolerance_exacte": "20597/100000",
+        "tolerance_mm": "0.20597"
+      },
+      {
+        "borne_basse_mm": "197.989792",
+        "borne_haute_mm": "197.989792",
+        "clamp": false,
+        "cote_exacte": "19799/100",
+        "cote_mm": "197.99",
+        "cran": 29,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "61544062957/25000000000",
+        "masse_kg": "2.462",
+        "tolerance_exacte": "19799/100000",
+        "tolerance_mm": "0.19799"
+      },
+      {
+        "borne_basse_mm": "190.321453",
+        "borne_haute_mm": "190.321453",
+        "clamp": false,
+        "cote_exacte": "4758/25",
+        "cote_mm": "190.32",
+        "cran": 30,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "888563637/390625000",
+        "masse_kg": "2.275",
+        "tolerance_exacte": "2379/12500",
+        "tolerance_mm": "0.19032"
+      },
+      {
+        "borne_basse_mm": "182.950117",
+        "borne_haute_mm": "182.950117",
+        "clamp": false,
+        "cote_exacte": "3659/20",
+        "cote_mm": "182.95",
+        "cran": 31,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "2101960117/1000000000",
+        "masse_kg": "2.102",
+        "tolerance_exacte": "3659/20000",
+        "tolerance_mm": "0.18295"
+      },
+      {
+        "borne_basse_mm": "175.864280",
+        "borne_haute_mm": "175.864280",
+        "clamp": false,
+        "cote_exacte": "8793/50",
+        "cote_mm": "175.86",
+        "cran": 32,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "12138745293/6250000000",
+        "masse_kg": "1.942",
+        "tolerance_exacte": "8793/50000",
+        "tolerance_mm": "0.17586"
+      },
+      {
+        "borne_basse_mm": "169.052884",
+        "borne_haute_mm": "169.052884",
+        "clamp": false,
+        "cote_exacte": "3381/20",
+        "cote_mm": "169.05",
+        "cran": 33,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "1794692277/1000000000",
+        "masse_kg": "1.795",
+        "tolerance_exacte": "3381/20000",
+        "tolerance_mm": "0.16905"
+      },
+      {
+        "borne_basse_mm": "162.505300",
+        "borne_haute_mm": "162.505300",
+        "clamp": false,
+        "cote_exacte": "16251/100",
+        "cote_mm": "162.51",
+        "cran": 34,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "41462915157/25000000000",
+        "masse_kg": "1.659",
+        "tolerance_exacte": "16251/100000",
+        "tolerance_mm": "0.16251"
+      },
+      {
+        "borne_basse_mm": "156.211311",
+        "borne_haute_mm": "156.211311",
+        "clamp": false,
+        "cote_exacte": "15621/100",
+        "cote_mm": "156.21",
+        "cran": 35,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "38310455637/25000000000",
+        "masse_kg": "1.532",
+        "tolerance_exacte": "15621/100000",
+        "tolerance_mm": "0.15621"
+      },
+      {
+        "borne_basse_mm": "150.161094",
+        "borne_haute_mm": "150.161094",
+        "clamp": false,
+        "cote_exacte": "3754/25",
+        "cote_mm": "150.16",
+        "cran": 36,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "553131253/390625000",
+        "masse_kg": "1.416",
+        "tolerance_exacte": "1877/12500",
+        "tolerance_mm": "0.15016"
+      },
+      {
+        "borne_basse_mm": "144.345208",
+        "borne_haute_mm": "144.345208",
+        "clamp": false,
+        "cote_exacte": "2887/20",
+        "cote_mm": "144.35",
+        "cran": 37,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000006",
+        "masse_exacte": "1308558733/1000000000",
+        "masse_kg": "1.309",
+        "tolerance_exacte": "2887/20000",
+        "tolerance_mm": "0.14435"
+      },
+      {
+        "borne_basse_mm": "138.754576",
+        "borne_haute_mm": "138.754576",
+        "clamp": false,
+        "cote_exacte": "555/4",
+        "cote_mm": "138.75",
+        "cran": 38,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000005",
+        "masse_exacte": "1934397/1600000",
+        "masse_kg": "1.209",
+        "tolerance_exacte": "111/800",
+        "tolerance_mm": "0.13875"
+      },
+      {
+        "borne_basse_mm": "133.380476",
+        "borne_haute_mm": "133.380476",
+        "clamp": false,
+        "cote_exacte": "6669/50",
+        "cote_mm": "133.38",
+        "cran": 39,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000005",
+        "masse_exacte": "6982663077/6250000000",
+        "masse_kg": "1.117",
+        "tolerance_exacte": "6669/50000",
+        "tolerance_mm": "0.13338"
+      },
+      {
+        "borne_basse_mm": "128.214519",
+        "borne_haute_mm": "128.214519",
+        "clamp": false,
+        "cote_exacte": "12821/100",
+        "cote_mm": "128.21",
+        "cran": 40,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000005",
+        "masse_exacte": "25807352437/25000000000",
+        "masse_kg": "1.032",
+        "tolerance_exacte": "12821/100000",
+        "tolerance_mm": "0.12821"
+      },
+      {
+        "borne_basse_mm": "123.248645",
+        "borne_haute_mm": "123.248645",
+        "clamp": false,
+        "cote_exacte": "493/4",
+        "cote_mm": "123.25",
+        "cran": 41,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000005",
+        "masse_exacte": "38158693/40000000",
+        "masse_kg": "0.954",
+        "tolerance_exacte": "493/4000",
+        "tolerance_mm": "0.12325"
+      },
+      {
+        "borne_basse_mm": "122.000000",
+        "borne_haute_mm": "122.000000",
+        "clamp": true,
+        "cote_exacte": "122",
+        "cote_mm": "122.00",
+        "cran": 42,
+        "indeterminee": false,
+        "largeur_mm": "0.000000000000",
+        "masse_exacte": "584197/625000",
+        "masse_kg": "0.935",
+        "tolerance_exacte": "61/500",
+        "tolerance_mm": "0.12200"
+      }
+    ]
+  },
+  "echelle_humaine": {
+    "cote_max_mm": "622.50",
+    "cote_min_mm": "122.00",
+    "crans_portables_seuls": 43,
+    "masse_tete_kg": "24.335",
+    "masse_totale_kg": "309.694",
+    "nb_crans": 43,
+    "pile_portable_par_un": false,
+    "portage_un_kg": "25.0",
+    "portee_declaree_mm": "700.0",
+    "saisie_min_declaree_mm": "100.0",
+    "tete_portable_par_un": true,
+    "toutes_dans_le_geste": true
+  },
+  "ecritures": {
+    "absence_partout": true,
+    "auto_reference": "certificat.json porte ce nœud : sa taille sur disque n'est pas mesurée ici, seul ce qui l'entoure l'est",
+    "empreintes": {
+      "nomenclature_crans.csv": "1acdd6669147cdb6",
+      "plan_emboitement.svg": "066c0ba83a46a974",
+      "predictions_falsifiables.md": "0ec59160804009e3"
+    },
+    "nom_sans_empreinte": "certificat.json",
+    "noms": [
+      "certificat.json",
+      "nomenclature_crans.csv",
+      "plan_emboitement.svg",
+      "predictions_falsifiables.md"
+    ],
+    "tailles": {
+      "nomenclature_crans.csv": 5667,
+      "plan_emboitement.svg": 10038,
+      "predictions_falsifiables.md": 2497
+    }
+  },
+  "empreinte_execution": "8b41546ec12aae6146c2dfe18a7158103eeb894b28ea49f9bf1bb99169f0de1d",
+  "lien_catalogue": {
+    "borne_propagee": "0.000000250101",
+    "catalogue_sous_la_borne_ecriture": true,
+    "demi_dernier_chiffre": "1/200000000",
+    "derive_maximale": "4.676118690709842845039112879803185902170153779827538E-9",
+    "ecart_hors_borne_plan": "0.000000035836",
+    "invariance_plan": "1.040292",
+    "nb_formes_catalogue": 27,
+    "part_de_la_borne": "14.33",
+    "plan_plus_fin_que_ecriture": true,
+    "rapport_des_finesses": "250100779.0",
+    "rapports_catalogue": {
+      "max": "0.961269051643470666638511463842573755337800975703845927166062",
+      "min": "0.961268984870931563746734227970181619298714135481595621775910"
+    },
+    "rho_exact_continuite": "0.961269020706607577694339273071832800249790347330607041836886"
+  },
+  "limites": [
+    "aucun prototype : rien n'a été usiné, par conséquent aucune des six prédictions n'a été ni confirmée ni réfutée",
+    "les capacités d'outil (0,5 mm à 0,005 mm) sont des ordres de grandeur déclarés : aucune machine du commerce n'a été mesurée ici",
+    "la tolérance relative ε_a = 1/1000 est un choix d'auteur : le dépôt ne contient aucun instrument qui l'ait vérifiée",
+    "le clampage au-delà du cran 42 est une déclaration de domaine, pas une propriété des plaques : la nature n'est pas engagée",
+    "le facteur 13,1645 ne vaut que pour une similitude d'aire au carré de la cote : une autre géométrie donne un autre facteur",
+    "la couche ne prétend qu'une chose : à partir du rapport démontré dans CONTINUITE, on peut écrire des cotes, des tolérances et une nomenclature cohérentes — pas qu'un objet construit sera conforme"
+  ],
+  "limites_ouvertes": {
+    "liste": [
+      "aucun prototype : rien n'a été usiné, par conséquent aucune des six prédictions n'a été ni confirmée ni réfutée",
+      "les capacités d'outil (0,5 mm à 0,005 mm) sont des ordres de grandeur déclarés : aucune machine du commerce n'a été mesurée ici",
+      "la tolérance relative ε_a = 1/1000 est un choix d'auteur : le dépôt ne contient aucun instrument qui l'ait vérifiée",
+      "le clampage au-delà du cran 42 est une déclaration de domaine, pas une propriété des plaques : la nature n'est pas engagée",
+      "le facteur 13,1645 ne vaut que pour une similitude d'aire au carré de la cote : une autre géométrie donne un autre facteur"
+    ],
+    "nb": 5,
+    "remplies_dans_ce_lot": 0,
+    "toutes_au_dela_de_20": true
+  },
+  "nomenclature": {
+    "absence_ecrite": true,
+    "bom": true,
+    "chemin": "CONSTRUCTION/artefacts/nomenclature_crans.csv",
+    "colonnes": 13,
+    "cotes_identiques_au_calcul": true,
+    "crans_relus": 43,
+    "crlf": true,
+    "heures_relues": "20.00",
+    "lignes": 45,
+    "masse_reluee_kg": "309.694",
+    "octets": 5667,
+    "separateur": ";",
+    "total_declare": "20,00;309,694"
+  },
+  "outillage": {
+    "hors_ligne": 0,
+    "ladder": [
+      {
+        "capacite_mm": "0.500",
+        "heures": "0.25",
+        "outil": "scie à ruban"
+      },
+      {
+        "capacite_mm": "0.100",
+        "heures": "0.50",
+        "outil": "dégauchisseuse-rabot"
+      },
+      {
+        "capacite_mm": "0.020",
+        "heures": "1.00",
+        "outil": "fraiseuse verticale"
+      },
+      {
+        "capacite_mm": "0.005",
+        "heures": "2.00",
+        "outil": "rectifieuse"
+      }
+    ],
+    "le_plus_fin_mm": "0.12200",
+    "le_plus_large_mm": "0.62250",
+    "outils_utilises": 2,
+    "par_cran": [
+      {
+        "cran": 0,
+        "outil_declare": "scie à ruban",
+        "tolerance_mm": "0.62250"
+      },
+      {
+        "cran": 1,
+        "outil_declare": "scie à ruban",
+        "tolerance_mm": "0.59839"
+      },
+      {
+        "cran": 2,
+        "outil_declare": "scie à ruban",
+        "tolerance_mm": "0.57521"
+      },
+      {
+        "cran": 3,
+        "outil_declare": "scie à ruban",
+        "tolerance_mm": "0.55294"
+      },
+      {
+        "cran": 4,
+        "outil_declare": "scie à ruban",
+        "tolerance_mm": "0.53152"
+      },
+      {
+        "cran": 5,
+        "outil_declare": "scie à ruban",
+        "tolerance_mm": "0.51093"
+      },
+      {
+        "cran": 6,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.49114"
+      },
+      {
+        "cran": 7,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.47212"
+      },
+      {
+        "cran": 8,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.45384"
+      },
+      {
+        "cran": 9,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.43626"
+      },
+      {
+        "cran": 10,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.41936"
+      },
+      {
+        "cran": 11,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.40312"
+      },
+      {
+        "cran": 12,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.38751"
+      },
+      {
+        "cran": 13,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.37250"
+      },
+      {
+        "cran": 14,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.35807"
+      },
+      {
+        "cran": 15,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.34420"
+      },
+      {
+        "cran": 16,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.33087"
+      },
+      {
+        "cran": 17,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.31806"
+      },
+      {
+        "cran": 18,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.30574"
+      },
+      {
+        "cran": 19,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.29390"
+      },
+      {
+        "cran": 20,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.28251"
+      },
+      {
+        "cran": 21,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.27157"
+      },
+      {
+        "cran": 22,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.26105"
+      },
+      {
+        "cran": 23,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.25094"
+      },
+      {
+        "cran": 24,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.24122"
+      },
+      {
+        "cran": 25,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.23188"
+      },
+      {
+        "cran": 26,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.22290"
+      },
+      {
+        "cran": 27,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.21427"
+      },
+      {
+        "cran": 28,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.20597"
+      },
+      {
+        "cran": 29,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.19799"
+      },
+      {
+        "cran": 30,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.19032"
+      },
+      {
+        "cran": 31,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.18295"
+      },
+      {
+        "cran": 32,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.17586"
+      },
+      {
+        "cran": 33,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.16905"
+      },
+      {
+        "cran": 34,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.16251"
+      },
+      {
+        "cran": 35,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.15621"
+      },
+      {
+        "cran": 36,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.15016"
+      },
+      {
+        "cran": 37,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.14435"
+      },
+      {
+        "cran": 38,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.13875"
+      },
+      {
+        "cran": 39,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.13338"
+      },
+      {
+        "cran": 40,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.12821"
+      },
+      {
+        "cran": 41,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.12325"
+      },
+      {
+        "cran": 42,
+        "outil_declare": "dégauchisseuse-rabot",
+        "tolerance_mm": "0.12200"
+      }
+    ],
+    "repartition": {
+      "dégauchisseuse-rabot": 37,
+      "scie à ruban": 6
+    }
+  },
+  "plans": {
+    "absence_ecrite": true,
+    "chemin": "CONSTRUCTION/artefacts/plan_emboitement.svg",
+    "cotes_escrites": 43,
+    "echelle": "1:10",
+    "largeur_attendue_premiere": "62.25",
+    "largeur_relevee_premiere": "62.25",
+    "largeurs_conformes": true,
+    "octets": 10038,
+    "rectangles": 43
+  },
+  "predictions": {
+    "au_moins_un_à_main": true,
+    "aucune_mesure_effectuee": true,
+    "champs_attendus": [
+      "id",
+      "grandeur",
+      "unite",
+      "prevue",
+      "instrument",
+      "refutation",
+      "mesure"
+    ],
+    "instruments": [
+      "balance d'atelier",
+      "compareur",
+      "pied à coulisse 0,01 mm",
+      "pied à coulisse 0,01 mm sur deux plateaux",
+      "règle"
+    ],
+    "liste": [
+      {
+        "grandeur": "cote usinée du cran 0",
+        "id": "P1",
+        "instrument": "pied à coulisse 0,01 mm",
+        "mesure": null,
+        "prevue": "622.50 ± 0.62250",
+        "refutation": "une mesure hors de l'intervalle réfute le plan de ce cran",
+        "unite": "mm"
+      },
+      {
+        "grandeur": "rapport de deux cotes consécutives avant le clampage",
+        "id": "P2",
+        "instrument": "pied à coulisse 0,01 mm sur deux plateaux",
+        "mesure": null,
+        "prevue": "entre 1.040292 et 1.040292",
+        "refutation": "un rapport stablement hors de cette plage réfute la contraction dans l'objet, pas seulement dans le calcul",
+        "unite": "sans"
+      },
+      {
+        "grandeur": "masse du cran 0",
+        "id": "P3",
+        "instrument": "balance d'atelier",
+        "mesure": null,
+        "prevue": "24.335 ± 0,5 %",
+        "refutation": "une masse hors de la bande réfute l'épaisseur ou l'acier déclarés",
+        "unite": "kg"
+      },
+      {
+        "grandeur": "cote des crans au-delà du 42ᵉ",
+        "id": "P4",
+        "instrument": "règle",
+        "mesure": null,
+        "prevue": "122.00 exactement (clamp)",
+        "refutation": "un plateau qui continue de rétrécir au-delà du 42ᵉ cran réfute la déclaration de domaine, pas le calcul",
+        "unite": "mm"
+      },
+      {
+        "grandeur": "cumul des tolérances des 43 plateaux",
+        "id": "P5",
+        "instrument": "compareur",
+        "mesure": null,
+        "prevue": "= 13.135, soit ε_a fois la hauteur nominale 13135.48 mm",
+        "refutation": "un cumul d'erreurs supérieur à ε_a fois la hauteur nominale réfute le budget d'erreur déclaré",
+        "unite": "mm"
+      },
+      {
+        "grandeur": "matière laissée dehors par la troncature aux 43 crans",
+        "id": "P6",
+        "instrument": "balance d'atelier",
+        "mesure": null,
+        "prevue": "3.35 % de la pile infinie",
+        "refutation": "une masse des 43 crans qui atteindrait la limite théorique montre que la troncature est mal comptée",
+        "unite": "%"
+      }
+    ],
+    "nb": 6
+  },
+  "prototypes": {
+    "enonce": "aucun prototype construit : la couche décrit ce qu'il faudrait usiner, elle n'a usiné ni mésuré aucun objet",
+    "fichiers": [],
+    "nb_prototypes": 0,
+    "repertoire": "CONSTRUCTION/prototypes",
+    "repertoire_existe": false
+  },
+  "racine_merkle_sha256": "e841eea870d2331e7439c64cbb8697056d5346ebe4c7e383a2f0f390daff24f7",
+  "rejoue_identique": true,
+  "semences": {
+    "cadre_mm": "1000/1",
+    "concorde_avec_continuite": true,
+    "cote_clampee_mm": "122.00",
+    "domaine_D": {
+      "borne_basse": "61/500",
+      "borne_haute": "249/400"
+    },
+    "encadrement_plans": {
+      "decimales": 15,
+      "inferieur": "961269020706607/1000000000000000",
+      "largeur": "1/1000000000000000",
+      "superieur": "961269020706608/1000000000000000"
+    },
+    "encadrement_theoreme": {
+      "decimales": 5,
+      "inferieur": "96126/100000",
+      "largeur": "1/100000",
+      "superieur": "96127/100000"
+    },
+    "eps_a_declaree": "1/1000",
+    "rho_publie_par_continuite": {
+      "inferieur": "96126/100000",
+      "superieur": "96127/100000"
+    }
+  },
+  "sensibilite": {
+    "ecart": 41,
+    "enonce": "l'encadrement publié par le théorème ne suffit pas pour coter un plan : c'est le nombre de crans rendus indéterminés qui le dit",
+    "plans_15_decimales": {
+      "crans_indetermines": 0,
+      "largeur_encadrement": "0.000000000000001",
+      "premier_cran_indetermine": null
+    },
+    "theoreme_5_decimales": {
+      "crans_indetermines": 41,
+      "largeur_encadrement": "0.00001",
+      "premier_cran_indetermine": 1
+    }
+  },
+  "source": {
+    "antecedents_uses": [
+      "CONTINUITE/continuite_base.py — le théorème dont cette couche tire les cotes : ρ, le pas 42 et le point fixe 61/500 y sont démontrés, ils ne sont pas recopiés ici",
+      "bibliotheques/lib_almizan_extension.py — MIZAN = 249/400, LIGNE_REF = 61/500 et le catalogue scellé des 27 formes étendues",
+      "ABONDANCE/moteur_page_trilingue.py — l'unique fabriquant des pages publiées : ce dossier écrit des plans, pas des pages"
+    ],
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "ce_que_ce_module_n_utilise_pas": [
+      "aucune mesure d'objet réel : aucun pied à coulisse, aucune balance, aucune machine n'est intervenu dans ce dossier",
+      "aucun flottant dans les verdicts : les cotes viennent d'une bissection entière, les bornes sont des fractions",
+      "aucune vidéo, aucun transcript, aucune citation parlée",
+      "aucune certification d'outil, de matériau ou de fournisseur : les outils sont des noms déclarés, pas des machines vérifiées"
+    ],
+    "point_de_depart": "demande d'auteur 2026-11-09 : « developper les outils applicatifs réels avec la creation de designs et de plans de construction materiel engin et tout ce qui peut etre produit à l'echelle de l'humanite »"
+  },
+  "taille_octets": 34756
+}

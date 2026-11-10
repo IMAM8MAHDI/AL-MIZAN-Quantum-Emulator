@@ -168,6 +168,9 @@ padding:6px 13px;font-size:14px;min-height:30px;display:inline-flex;align-items:
 .formule{display:block;font-family:Consolas,Menlo,monospace;font-size:13.5px;color:#1f4e6b;
 background:#f4f8fb;padding:10px 12px;border-radius:6px;overflow-x:auto}
 .chemin{font-family:Consolas,Menlo,monospace;font-size:12px;color:var(--gris);white-space:nowrap}
+.calcul{display:block;direction:ltr;text-align:left;font-family:Consolas,Menlo,monospace;
+font-size:12.5px;color:#1f4e6b;background:#f4f8fb;padding:8px 10px;border-radius:6px;
+margin-top:6px;white-space:normal}
 .tableau{overflow-x:auto}
 pre{background:#0f2438;color:#eaf2f8;padding:14px 16px;border-radius:8px;
 overflow-x:auto;font-size:13.5px}
@@ -649,12 +652,19 @@ def construire_page(spec: Dict[str, Any], donnees: Dict[str, Any], lang: str) ->
     for e in donnees["equations"]:
         titre_eq = eq_texte(e["id"], 0)
         ligne = e["resultat"] if lang == "fr" else eq_texte(e["id"], 1)
+        # Les nombres d'une ligne calculée ne se traduisent pas : sans eux, une page sur trois
+        # seule porte la valeur vérifiable.
+        calcul = ("" if lang == "fr"
+                  else f"<br><span class=\"calcul\">{ech(e['resultat'])}</span>")
+        cellule = (f"<span class=\"lecture\">{ech(ligne)}</span>{calcul}"
+                   f"<br><span class=\"chemin\">{ech(e['chemin'])}</span>")
+        if lang != "fr" and ech(e["resultat"]) not in cellule:
+            raise ValueError(f"{e['id']} : ligne calculée absente de la page «{lang}»")
         lignes_eq.append([
             ech(e["id"]),
             f"<span class=\"titre\">{ech(titre_eq)}</span>",
             f"<span class=\"formule\">{ech(e['formule'])}</span>",
-            f"<span class=\"lecture\">{ech(ligne)}</span>"
-            f"<br><span class=\"chemin\">{ech(e['chemin'])}</span>",
+            cellule,
             f"<span class=\"statut {STATUT_CLASSE[e['statut']]}\">{ech(lib_s(e['statut']))}</span>",
         ])
     corps.append(f"<h2 id=\"equations\">{ech(t['equations'])}</h2>" + tableau(

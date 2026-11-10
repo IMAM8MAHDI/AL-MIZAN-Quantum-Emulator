@@ -213,7 +213,16 @@ ARTIFACTS = ("base.json", "confrontation.csv", "confrontation.json", "etat.json"
 # Les modules qui PORTENT des équations : la liste est explicite, pas devinée par suffixe.
 MODULES_PRINCIPAUX = ("electricite_abondance.py", "eau_abondance.py",
                       "agriculture_abondance.py", "chiffres_pi.py", "fondation_base.py",
-                      "horlogerie.py")
+                      "horlogerie.py", "continuite_base.py", "redaction_mizan.py",
+                      "construction_base.py", "verrous_base.py", "declaration_base.py",
+                      "guerre_base.py")
+
+# Les dossiers qui portent des équations, puis le parc complet (code et bibliothèques compris).
+# Une seule liste pour les deux comptages : sinon `imports_parc` et `inventaire_parc` peuvent
+# compter deux parcelles différentes du même dépôt et publier des totaux incohérents.
+DOSSIERS_EQUATIONS = ("ABONDANCE", "CHIFFRES", "FONDATION", "HORLOGERIE", "CONTINUITE",
+                      "REDACTION", "CONSTRUCTION", "VERROUS", "DECLARATION", "GUERRE")
+DOSSIERS_PARC = DOSSIERS_EQUATIONS + ("code", "bibliotheques")
 
 _MODULES_LOCAUX: Optional[Dict[str, str]] = None
 
@@ -473,7 +482,7 @@ def imports_de(chemin: str) -> Dict[str, Any]:
 
 def imports_parc() -> Dict[str, Any]:
     bilans: Dict[str, Any] = {}
-    for d in ("ABONDANCE", "CHIFFRES", "FONDATION", "HORLOGERIE", "code", "bibliotheques"):
+    for d in DOSSIERS_PARC:
         racine = RACINE / d
         if not racine.exists():
             bilans[d] = {"fichiers": 0, "tiers": [f"DOSSIER ABSENT : {d}"]}
@@ -498,7 +507,7 @@ def inventaire_parc() -> Dict[str, Any]:
     une mise en ensemble à l'échelle du dossier les fusionnerait et sous-compterait.
     """
     out: Dict[str, Any] = {}
-    for d in ("ABONDANCE", "CHIFFRES", "FONDATION", "HORLOGERIE"):
+    for d in DOSSIERS_EQUATIONS:
         racine = RACINE / d
         if not racine.exists():
             out[d] = {"present": False, "equations": 0, "controles": 0, "tests": 0,

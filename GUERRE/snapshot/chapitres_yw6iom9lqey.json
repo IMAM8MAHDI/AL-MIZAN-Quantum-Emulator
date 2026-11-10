@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "source": {
+    "id": "Yw6iOM9lQeY",
+    "url": "https://www.youtube.com/watch?v=Yw6iOM9lQeY",
+    "horodatage_utc": "2026-11-10T01:58:13Z"
+  },
+  "titre": "La surveillance de masse est déjà là : il l’a vue de l’intérieur | Christophe Boutry",
+  "auteur": "Axel Gaubert",
+  "duree_s": 8501,
+  "chapitres": [
+    {
+      "debut": "00:00:00",
+      "debut_s": 0,
+      "titre": "Introduction"
+    },
+    {
+      "debut": "00:02:10",
+      "debut_s": 130,
+      "titre": "Christophe Boutry : policier, contre-terrorisme et forensique"
+    },
+    {
+      "debut": "00:04:11",
+      "debut_s": 251,
+      "titre": "Comment il est entré à la DGSI"
+    },
+    {
+      "debut": "00:06:41",
+      "debut_s": 401,
+      "titre": "Fuites Info : le privé comme le public sont touchés"
+    },
+    {
+      "debut": "00:09:03",
+      "debut_s": 543,
+      "titre": "Partis politiques : des données sensibles au sens du RGPD"
+    },
+    {
+      "debut": "00:12:07",
+      "debut_s": 727,
+      "titre": "Pourquoi une simple adresse email leakée est dangereuse"
+    },
+    {
+      "debut": "00:14:55",
+      "debut_s": 895,
+      "titre": "Anonymat, VPN, géolocalisation : vous êtes traçable"
+    },
+    {
+      "debut": "00:18:08",
+      "debut_s": 1088,
+      "titre": "Protéger sa traçabilité"
+    },
+    {
+      "debut": "00:19:27",
+      "debut_s": 1167,
+      "titre": "Les « look-up » et l'exemple Lecornu / slip français"
+    },
+    {
+      "debut": "00:20:34",
+      "debut_s": 1234,
+      "titre": "Golf, Ledger, DGFIP : quand les fuites mènent à des enlèvements"
+    },
+    {
+      "debut": "00:22:25",
+      "debut_s": 1345,
+      "titre": "Des groupes organisés, pas « le mec de cité du coin »"
+    },
+    {
+      "debut": "00:22:44",
+      "debut_s": 1364,
+      "titre": "De la fuite à l'arnaque : phishing et faux conseillers"
+    },
+    {
+      "debut": "00:25:22",
+      "debut_s": 1522,
+      "titre": "Les enlèvements crypto : exécutants, cerveaux, mixeurs"
+    },
+    {
+      "debut": "00:27:15",
+      "debut_s": 1635,
+      "titre": "Body Swap : le site IA qui déshabille et sa base leakée"
+    },
+    {
+      "debut": "00:31:39",
+      "debut_s": 1899,
+      "titre": "Message aux entrepreneurs : 2FA, chiffrement, sécurité de base"
+    },
+    {
+      "debut": "00:36:09",
+      "debut_s": 2169,
+      "titre": "Israël et la cybersécurité"
+    },
+    {
+      "debut": "00:36:50",
+      "debut_s": 2210,
+      "titre": "État : 20 % des fuites, entreprises privées : 80 %"
+    },
+    {
+      "debut": "00:41:00",
+      "debut_s": 2460,
+      "titre": "Profilage : croiser fuites et applications pour exposer n'importe qui"
+    },
+    {
+      "debut": "00:42:12",
+      "debut_s": 2532,
+      "titre": "Le dénominateur commun des fuites : WordPress, PHP, failles SQL"
+    },
+    {
+      "debut": "00:48:02",
+      "debut_s": 2882,
+      "titre": "À la DGSI : jouer avec les limites, la proportionnalité"
+    },
+    {
+      "debut": "00:50:47",
+      "debut_s": 3047,
+      "titre": "Objets connectés : GPS du chien, haut-parleurs et télés transformés en micros"
+    },
+    {
+      "debut": "00:54:21",
+      "debut_s": 3261,
+      "titre": "Aspirateurs robots et babyphones piratés"
+    },
+    {
+      "debut": "00:55:48",
+      "debut_s": 3348,
+      "titre": "Pegasus : le logiciel espion zéro clic"
+    },
+    {
+      "debut": "00:58:53",
+      "debut_s": 3533,
+      "titre": "SMS silencieux la géolocalisation"
+    },
+    {
+      "debut": "01:01:51",
+      "debut_s": 3711,
+      "titre": "La France, société de surveillance de masse"
+    },
+    {
+      "debut": "01:06:37",
+      "debut_s": 3997,
+      "titre": "MICAS, censure et blocage des réseaux sociaux"
+    },
+    {
+      "debut": "01:10:07",
+      "debut_s": 4207,
+      "titre": "L'exemple américain : caméras Flock, ICE et Palantir"
+    },
+    {
+      "debut": "01:18:09",
+      "debut_s": 4689,
+      "titre": "Palantir : ce que c'est et comment il l'a utilisé"
+    },
+    {
+      "debut": "01:25:53",
+      "debut_s": 5153,
+      "titre": "La France abandonne Palantir : ChapsVision"
+    },
+    {
+      "debut": "01:32:12",
+      "debut_s": 5532,
+      "titre": "Narcotrafic, terrorisme et cybercriminalité"
+    },
+    {
+      "debut": "01:33:43",
+      "debut_s": 5623,
+      "titre": "Corée du Nord : le hacking pour financer l'État"
+    },
+    {
+      "debut": "01:36:13",
+      "debut_s": 5773,
+      "titre": "Systèmes d'exploitation : GrapheneOS, iOS, Android"
+    },
+    {
+      "debut": "01:41:59",
+      "debut_s": 6119,
+      "titre": "Le jeu : noter les messageries sur 10"
+    },
+    {
+      "debut": "01:42:34",
+      "debut_s": 6154,
+      "titre": "Messenger : une catastrophe"
+    },
+    {
+      "debut": "01:43:21",
+      "debut_s": 6201,
+      "titre": "La messagerie de X"
+    },
+    {
+      "debut": "01:43:45",
+      "debut_s": 6225,
+      "titre": "Telegram"
+    },
+    {
+      "debut": "01:45:18",
+      "debut_s": 6318,
+      "titre": "Snapchat"
+    },
+    {
+      "debut": "01:46:13",
+      "debut_s": 6373,
+      "titre": "WhatsApp"
+    },
+    {
+      "debut": "01:48:03",
+      "debut_s": 6483,
+      "titre": "Signal"
+    },
+    {
+      "debut": "01:49:17",
+      "debut_s": 6557,
+      "titre": "SimpleX : la messagerie décentralisée"
+    },
+    {
+      "debut": "01:53:07",
+      "debut_s": 6787,
+      "titre": "L'enquête qui l'a le plus marqué : l'attentat de Trèbes"
+    },
+    {
+      "debut": "01:55:45",
+      "debut_s": 6945,
+      "titre": "Pédocriminalité : priorités de l'État et Chat Control"
+    },
+    {
+      "debut": "02:00:01",
+      "debut_s": 7201,
+      "titre": "Entre justice et vengeance : quelle société veut-on ?"
+    },
+    {
+      "debut": "02:02:25",
+      "debut_s": 7345,
+      "titre": "Protéger réellement les enfants : les 70 000 enquêtes en suspens"
+    },
+    {
+      "debut": "02:04:00",
+      "debut_s": 7440,
+      "titre": "Innocents et présomption d'innocence"
+    },
+    {
+      "debut": "02:07:49",
+      "debut_s": 7669,
+      "titre": "Une IA pour rendre la justice ?"
+    },
+    {
+      "debut": "02:12:13",
+      "debut_s": 7933,
+      "titre": "L'affaire Jubillar : l'humain dans le procès pénal"
+    },
+    {
+      "debut": "02:16:31",
+      "debut_s": 8191,
+      "titre": "Pourquoi la police n'utilise pas l'IA : souveraineté et preuve"
+    },
+    {
+      "debut": "02:18:32",
+      "debut_s": 8312,
+      "titre": "Le mot de la fin : soyez vigilants sur vos données"
+    }
+  ],
+  "transcript": {
+    "etat": "absent",
+    "detail": "0 octet sur json3, srv3 et xml",
+    "mesures": [
+      "&fmt=json3=0",
+      "&fmt=srv3=0",
+      "xml=0"
+    ]
+  },
+  "avertissements": [
+    "aucun en-tete de chapitres : horodatages pris dans toute la description",
+    "timedtext repond sans contenu : le transcript est tenu pour absent"
+  ],
+  "resume": {
+    "chapitres": 49,
+    "transcript": "absent"
+  }
+}

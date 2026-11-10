@@ -60,7 +60,7 @@ EQ-18 termine le dossier par sa propre chute : cinq conditions qui l'invalident,
 
 `chaque nombre ⇒ source publique ; douze cases pilier × couche habitées ; chaque extrait de la chaîne ⇒ sous-chaîne du texte mesuré`
 
-> 4 sources publiques · ABONDANCE 54eq/54c/107t · CHIFFRES 17eq/17c/30t · FONDATION 18eq/18c/45t · 10 extraits verbatimes · 0 horodatage cité
+> 4 sources publiques · ABONDANCE 54eq/54c/107t · CHIFFRES 17eq/17c/32t · FONDATION 18eq/18c/45t · HORLOGERIE 15eq/15c/64t · CONTINUITE 15eq/15c/23t · REDACTION 16eq/16c/32t · CONSTRUCTION 16eq/16c/42t · VERROUS 16eq/16c/51t · DECLARATION 16eq/16c/31t · GUERRE 16eq/16c/56t · 10 extraits verbatimes · 0 horodatage cité
 
 *Statut* : OPÉRATIONNEL · *chemin* : `fondation_base.py → eq04_confrontation_et_parc() → C04`
 
@@ -68,7 +68,7 @@ EQ-18 termine le dossier par sa propre chute : cinq conditions qui l'invalident,
 
 `imports ⊆ stdlib ∪ modules locaux — ici et dans tout le parc`
 
-> ici ['__future__', 'hashlib', 'inspect', 'json', 'math', 'pathlib', 're', 'sys', 'typing'] ; tiers ici [] ; tiers du parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'code': [], 'bibliotheques': []}
+> ici ['__future__', 'hashlib', 'inspect', 'json', 'math', 'pathlib', 're', 'sys', 'typing'] ; tiers ici [] ; tiers du parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'HORLOGERIE': [], 'CONTINUITE': [], 'REDACTION': [], 'CONSTRUCTION': [], 'VERROUS': [], 'DECLARATION': [], 'GUERRE': [], 'code': [], 'bibliotheques': []}
 
 *Statut* : OPÉRATIONNEL · *chemin* : `fondation_base.py → imports_de(), imports_parc() → C05`
 
@@ -183,8 +183,8 @@ EQ-18 termine le dossier par sa propre chute : cinq conditions qui l'invalident,
 | C01 | l'axiome est posé hors matrice et ne fournit aucun nombre | hors_matrice True · 0 nombre · quatre piliers engendrés | True · 0 · ['P1 UNITE', 'P2 BORNE', 'P3 CONFRONTATION', 'P4 TRANSMISSION'] | reçu |
 | C02 | la racine unique du graphe est fondée sur une source extérieure | racines = ['EQ-01'] et fondée dehors True | ['EQ-01'] · True | reçu |
 | C03 | graphe acyclique, dix-huit nœuds atteignables, zéro auto-référence | acyclique et atteignables = 18 | acyclique=True atteignables=18 self=[] couches vides=[] | reçu |
-| C04 | les douze cases pilier × couche sont habitées ; chaque dossier du parc déclare autant de contrôles que d'équations et porte ses tests ; la chaîne est citée mot pour mot et n'est jamais minutée | aucune case vide · eq = c > 0 et tests > 0 par dossier · extraits verbatimes · 0 horodatage · 0 octet de transcript | aucune · 4 sources · ABONDANCE 54/54 et 107t · CHIFFRES 17/17 et 30t · FONDATION 18/18 et 45t · extraits tous retrouvés · horodatages [] | reçu |
-| C05 | aucun import tiers, ici ni dans le parc | listes vides | ici [] · parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'code': [], 'bibliotheques': []} | reçu |
+| C04 | les douze cases pilier × couche sont habitées ; chaque dossier du parc déclare autant de contrôles que d'équations et porte ses tests ; la chaîne est citée mot pour mot et n'est jamais minutée | aucune case vide · eq = c > 0 et tests > 0 par dossier · extraits verbatimes · 0 horodatage · 0 octet de transcript | aucune · 4 sources · ABONDANCE 54/54 et 107t · CHIFFRES 17/17 et 32t · FONDATION 18/18 et 45t · HORLOGERIE 15/15 et 64t · CONTINUITE 15/15 et 23t · REDACTION 16/16 et 32t · CONSTRUCTION 16/16 et 42t · VERROUS 16/16 et 51t · DECLARATION 16/16 et 31t · GUERRE 16/16 et 56t · extraits tous retrouvés · horodatages [] | reçu |
+| C05 | aucun import tiers, ici ni dans le parc | listes vides | ici [] · parc {'ABONDANCE': [], 'CHIFFRES': [], 'FONDATION': [], 'HORLOGERIE': [], 'CONTINUITE': [], 'REDACTION': [], 'CONSTRUCTION': [], 'VERROUS': [], 'DECLARATION': [], 'GUERRE': [], 'code': [], 'bibliotheques': []} | reçu |
 | C06 | registre clos : une valeur par grandeur, unité non vide, registre = DECLARE | 0 doublon · 0 unité vide · entrées = noms uniques · hors_declare et declare_sans_entree vides | [] · [] · 14/14 · ∅ · ∅ | reçu |
 | C07 | la prédiction ne voit aucune clé du comparateur et ne change pas | intersection vide · digest inaltéré · drapeau levé sous contamination | ∅ · 242389d12056… · True · inaltéré True | reçu |
 | C08 | le compte communiqué est l'arrondi 10⁻¹⁰ ; il tombe dans l'intervalle mesuré 2024 — et l'intervalle du modèle standard ne le contient pas | taux implicite = 1,0e-10 · 2024 True · SM écrit tel quel | taux 1e-10 · 2024 True · SM (arrondi hors domaine) False | reçu |

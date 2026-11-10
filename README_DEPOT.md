@@ -67,6 +67,31 @@ ZENODO_DEPOT_ALMIZAN/
 │   │                            # + laboratoire.json, trajectoire et stabilité (CSV, SVG)
 │   ├── SOURCES_ET_PREDECESSEURS.md
 │   └── tests/                   # 64 tests
+├── CONTINUITE/            # la chaîne : 15 équations · 15 contrôles
+│   ├── continuite_base.py       # ρ = (249/400)^(1/12), télescopage exact, point fixe 61/500
+│   ├── artefacts/               # certificat.json + chaine_de_pas.csv + énoncé markdown
+│   └── tests/                   # 23 tests
+├── REDACTION/             # l'intelligibilité comptée : 16 équations · 16 contrôles
+│   ├── redaction_mizan.py       # déficit numérique 56/89 et 55/89, forme mesurée par page
+│   ├── artefacts/               # certificat.json + mesures_par_page.csv + règles markdown
+│   └── tests/                   # 32 tests
+├── CONSTRUCTION/          # les cotes : 16 équations · 16 contrôles · 0 prototype
+│   ├── construction_base.py     # 43 crans, cote 622,50 mm clampée à 122,00 mm, ε_a = 1/1000
+│   ├── artefacts/               # certificat.json + nomenclature + plan SVG + prédictions
+│   └── tests/                   # 42 tests
+├── VERROUS/               # l'état de la protection mesuré : 16 équations · 16 contrôles
+│   ├── verrous_base.py          # arbre, sceau re-haché, SPDX, 8 clauses, 4 instruments
+│   ├── artefacts/               # certificat.json + registre d'accès + clauses MD + plan SVG
+│   └── tests/                   # 51 tests
+├── DECLARATION/           # l'antériorité re-mesurée : 16 équations · 16 contrôles
+│   ├── declaration_base.py      # 66 commits, 0 date au sceau, 3 ablations rejouées
+│   ├── artefacts/               # certificat.json + chaîne d'antériorité CSV + ablations MD + plan SVG
+│   └── tests/                   # 31 tests
+├── GUERRE/                # la richesse face à la guerre : 16 équations · 16 contrôles
+│   ├── guerre_base.py           # 153 pays, ρ(revenu, charge) = 0,0619 contre ρ(masse) = 0,5036
+│   ├── snapshot/                # Banque mondiale 2022 + chapitres YouTube, engagés par SHA-256
+│   ├── artefacts/               # certificat.json + registre CSV + dossier MD + frontière SVG
+│   └── tests/                   # 56 tests
 ├── tests/                 # 53 tests unittest — tous verts, 0 ignoré
 ├── resultats/             # rapports JSON scellés SHA-256 + .gds
 ├── bibliotheques/         # 5 modules du moteur ASTRO-Q°ODE : clôture
@@ -187,11 +212,17 @@ cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
 cd CHIFFRES && py -m unittest tests.test_chiffres                #  32 tests
 cd FONDATION && py -m unittest tests.test_fondation              #  45 tests
 cd HORLOGERIE && py -m unittest tests.test_horlogerie tests.test_laboratoire   #  64 tests
+cd CONTINUITE && py -m unittest tests.test_continuite               #  23 tests
+cd REDACTION && py -m unittest tests.test_redaction                 #  32 tests
+cd CONSTRUCTION && py -m unittest tests.test_construction           #  42 tests
+cd VERROUS && py -m unittest tests.test_verrous                     #  51 tests
+cd DECLARATION && py -m unittest tests.test_declaration             #  31 tests
+cd GUERRE && py -m unittest tests.test_guerre                        #  56 tests
 
-py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 6 modules CONFORME
+py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 12 modules CONFORME
 ```
 
-311 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
+546 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
 sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
 
 ## Les quatre piliers, appliqués à tout le dépôt
@@ -201,12 +232,12 @@ et ne juge que ce que le module déclare déjà :
 
 | Pilier | Exigence | Vérifié |
 |---|---|---|
-| **P1 UNITE** | une équation = un identifiant = un contrôle, en chaîne continue sans trou ni doublon | 104 équations, 104 contrôles |
-| **P2 BORNE** | toute équation porte une `limite` écrite d'au moins 40 caractères | 104/104 |
-| **P3 CONFRONTATION** | chemin `module → fonction → contrôle`, statut parmi OPÉRATIONNEL / SIMULÉ / SPÉCIFIÉ, attendu et obtenu non vides, aucun contrôle rouge | 104/104 |
-| **P4 TRANSMISSION** | imports stdlib ou locaux seuls, `verifier()` callable, garde `__main__` | 6/6 modules |
+| **P1 UNITE** | une équation = un identifiant = un contrôle, en chaîne continue sans trou ni doublon | 199 équations, 199 contrôles |
+| **P2 BORNE** | toute équation porte une `limite` écrite d'au moins 40 caractères | 199/199 |
+| **P3 CONFRONTATION** | chemin `module → fonction → contrôle`, statut parmi OPÉRATIONNEL / SIMULÉ / SPÉCIFIÉ, attendu et obtenu non vides, aucun contrôle rouge | 199/199 |
+| **P4 TRANSMISSION** | imports stdlib ou locaux seuls, `verifier()` callable, garde `__main__` | 12/12 modules |
 
 Le coût est réel : l'audit exécute `resoudre()`, donc CHIFFRES calcule son
 domaine court (20 000 chiffres de π, e et √2 plus un calibrage Monte-Carlo) et
 demande une à deux minutes. `--rigide` fait échouer un pilier NON TENU ; le
-code de sortie est 0 sur les six modules principaux.
+code de sortie est 0 sur les douze modules principaux.

@@ -1,0 +1,1329 @@
+{
+  "attribution": {
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "ce_qu_un_snapshot_ne_prouve_pas": "qu'une guerre a eu lieu, qu'un État l'a voulue, ou qu'un peuple est protégé",
+    "ce_qu_un_snapshot_prouve": "ce que la source publique affichait au 2026-11-10",
+    "statut_de_la_demande": "déclaré · non vérifié pour tout fait de guerre, toute protection et toute prédiction"
+  },
+  "belligerants_declares": {
+    "avertissement_annee": "le revenu mesuré est celui de 2022, pas celui de l'année du conflit déclaré — la confrontation est indicative, pas probante",
+    "base_de_conflits_jointe": false,
+    "chaque_ligne_est_mesuree_ou_dite_absente": true,
+    "codes_sans_revenu": [
+      "YEM"
+    ],
+    "details": [
+      {
+        "annee": 2022,
+        "effort_fiscal_pct": "87.6",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "guerre conventionnelle à pleine échelle sur son sol",
+        "iso3": "UKR",
+        "revenu_mesure_pib_h": "4200.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 2021,
+        "effort_fiscal_pct": "—",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "reprise du territoire par une force non étatique",
+        "iso3": "AFG",
+        "revenu_mesure_pib_h": "357.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 2020,
+        "effort_fiscal_pct": "17.0",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "guerre du Tigré",
+        "iso3": "ETH",
+        "revenu_mesure_pib_h": "982.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 2022,
+        "effort_fiscal_pct": "45.2",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "conflit armé prolongé sans administration fiscale stable",
+        "iso3": "SOM",
+        "revenu_mesure_pib_h": "573.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 2015,
+        "effort_fiscal_pct": "—",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "guerre par procuration contre une coalition équipée",
+        "iso3": "YEM",
+        "revenu_mesure_pib_h": "—",
+        "revenu_present": false,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 1994,
+        "effort_fiscal_pct": "7.0",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "génocide et guerre en un trimestre",
+        "iso3": "RWA",
+        "revenu_mesure_pib_h": "1007.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 1975,
+        "effort_fiscal_pct": "—",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "victoire d'une armée pauvre contre une puissance riche",
+        "iso3": "VNM",
+        "revenu_mesure_pib_h": "4148.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 1992,
+        "effort_fiscal_pct": "—",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "guerre civile dite de la décennie noire",
+        "iso3": "DZA",
+        "revenu_mesure_pib_h": "4960.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 2012,
+        "effort_fiscal_pct": "—",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "effondrement militaire face à des groupes armés légers",
+        "iso3": "MLI",
+        "revenu_mesure_pib_h": "977.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 2004,
+        "effort_fiscal_pct": "—",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "insurrection prolongée sur son propre territoire",
+        "iso3": "PAK",
+        "revenu_mesure_pib_h": "1538.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 2003,
+        "effort_fiscal_pct": "—",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "invasion par une coalition à haut revenu",
+        "iso3": "IRQ",
+        "revenu_mesure_pib_h": "6521.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      },
+      {
+        "annee": 2008,
+        "effort_fiscal_pct": "—",
+        "entite_presente_dans_le_snapshot": true,
+        "fait": "offensive rebelle jusqu'à la capitale",
+        "iso3": "TCD",
+        "revenu_mesure_pib_h": "966.0",
+        "revenu_present": true,
+        "source": "déclaration d'auteur — aucun transcript ni base de conflits joint"
+      }
+    ],
+    "efforts_calculables": 4,
+    "nb": 12,
+    "part_revenus_mesures_pct": "91.67",
+    "regle": "un fait de guerre déclaré est confronté à la trésorerie mesurée du même pays ; le fait reste déclaré, la trésorerie reste mesurée et ce que la source ne publie pas reste écrit comme absence, jamais converti en zéro",
+    "revenus_absents": 1,
+    "revenus_mesures": 11,
+    "statut_du_fait": "déclaré · non vérifié",
+    "statut_du_revenu": "OPÉRATIONNEL · mesuré 2022 quand la source le publie",
+    "tous_les_revenus_sont_mesures": false
+  },
+  "capacite_absolue": {
+    "ce_que_cela_ne_dit_pas": "une corrélation de rang ne dit rien de causal et ne désigne aucun agresseur",
+    "effectif": 153,
+    "mediane_revenu": "6680.0",
+    "sens": "positif : la masse en dollars suit l'économie qui la fabrique",
+    "spearman_revenu_masse": "0.5036"
+  },
+  "chapitres_video": {
+    "avertissements": [
+      "aucun en-tete de chapitres : horodatages pris dans toute la description",
+      "timedtext repond sans contenu : le transcript est tenu pour absent"
+    ],
+    "chaine": "Axel Gaubert",
+    "chapitres_cites": [
+      {
+        "debut": "00:00:00",
+        "titre": "Introduction"
+      },
+      {
+        "debut": "02:16:31",
+        "titre": "Pourquoi la police n'utilise pas l'IA : souveraineté et preuve"
+      },
+      {
+        "debut": "02:18:32",
+        "titre": "Le mot de la fin : soyez vigilants sur vos données"
+      }
+    ],
+    "chemin": "GUERRE/snapshot/chapitres_yw6iom9lqey.json",
+    "citations_du_transcript": 0,
+    "duree_s": 8501,
+    "horodatage_releve": "2026-11-10T01:58:13Z",
+    "id": "Yw6iOM9lQeY",
+    "nb_chapitres_cites": 3,
+    "nb_sondes": 3,
+    "nombre": 49,
+    "octets": 7226,
+    "regle": "sans transcript, aucun contenu de la vidéo n'est cité : seuls les titres de chapitres et leurs horodatages sont repris, et chaque idée du dossier reste fondée sur la mesure publique, pas sur la vidéo",
+    "sha256": "f40a7ec603488f08f4684a0ff2a78344d594383728d76a1c54c58a8f80e94e6d",
+    "sondes": [
+      {
+        "format": "fmt=json3",
+        "octets": 0,
+        "sonde": "&fmt=json3=0"
+      },
+      {
+        "format": "fmt=srv3",
+        "octets": 0,
+        "sonde": "&fmt=srv3=0"
+      },
+      {
+        "format": "xml",
+        "octets": 0,
+        "sonde": "xml=0"
+      }
+    ],
+    "sous_la_duree": true,
+    "strictement_croissants": true,
+    "titre": "La surveillance de masse est déjà là : il l’a vue de l’intérieur | Christophe Boutry",
+    "transcript_detail": "0 octet sur json3, srv3 et xml",
+    "transcript_etat": "absent",
+    "transcript_octets": 0,
+    "url": "https://www.youtube.com/watch?v=Yw6iOM9lQeY"
+  },
+  "charge_relative": {
+    "ecart_max_min_pct": "0.64",
+    "effectif": 153,
+    "la_charge_ne_croit_pas_avec_le_revenu": true,
+    "quintile_le_plus_lourd": "1740.0 → 4721.0",
+    "quintiles": [
+      {
+        "intervalle_pib_h": "302.0 → 1605.0",
+        "n": 30,
+        "part_moyenne_pct": "1.68"
+      },
+      {
+        "intervalle_pib_h": "1740.0 → 4721.0",
+        "n": 30,
+        "part_moyenne_pct": "2.26"
+      },
+      {
+        "intervalle_pib_h": "4731.0 → 9281.0",
+        "n": 30,
+        "part_moyenne_pct": "1.71"
+      },
+      {
+        "intervalle_pib_h": "10025.0 → 28282.0",
+        "n": 30,
+        "part_moyenne_pct": "1.62"
+      },
+      {
+        "intervalle_pib_h": "28340.0 → 123720.0",
+        "n": 33,
+        "part_moyenne_pct": "1.96"
+      }
+    ],
+    "rang_du_quintile_le_plus_lourd": 2,
+    "regle": "un |rho| de rang sous 0,25 est tenu pour plat : le seuil est un choix d'auteur, pas une propriété des données",
+    "seuil_de_platitude": "0.25",
+    "spearman_revenu_part": "0.0619"
+  },
+  "couverture": {
+    "absence_n_est_pas_zero": "une entité sans valeur n'est pas un État sans armée : elle sort du comptage, elle n'entre pas dans le numérateur",
+    "avec_dette": 43,
+    "avec_effort_fiscal": 105,
+    "avec_part": 154,
+    "avec_recettes": 118,
+    "codes_sans_aucune_valeur": [],
+    "comparables": 153,
+    "indicateur_le_plus_muet": "dette_publique_part_du_pib_pct",
+    "lignes": 217,
+    "par_indicateur": {
+      "depense_militaire_usd_courants": 154,
+      "depense_part_du_pib_pct": 154,
+      "dette_publique_part_du_pib_pct": 43,
+      "pib_par_habitant_usd_courants": 209,
+      "population": 217,
+      "recettes_publiques_part_du_pib_pct": 118
+    },
+    "ratio_exploitable_pct": "70.51",
+    "sans_aucune_valeur": 0
+  },
+  "ecritures": {
+    "absence_partout": true,
+    "auto_reference": "certificat.json porte ce nœud : sa taille et son empreinte ne peuvent pas être scellées par lui-même",
+    "empreintes": {
+      "frontiere_tresor.svg": "d46f245f3f562303",
+      "guerre_et_tresor.md": "3201a10f9a25e078",
+      "tresor_et_guerre.csv": "f8395edaef56b1bf"
+    },
+    "interdits_hors_des_octets": true,
+    "liste_des_phrases_interdites": [
+      "sans richesse pas de guerre est une loi",
+      "l'émulateur prouve",
+      "protège tous les musulmans",
+      "le dépôt protège",
+      "ce dossier prédit la guerre",
+      "guerre inévitable"
+    ],
+    "nom_sans_empreinte": "certificat.json",
+    "nom_sans_phrase": "tresor_et_guerre.csv",
+    "noms": [
+      "certificat.json",
+      "frontiere_tresor.svg",
+      "guerre_et_tresor.md",
+      "tresor_et_guerre.csv"
+    ],
+    "noms_avec_phrase": [
+      "certificat.json",
+      "frontiere_tresor.svg",
+      "guerre_et_tresor.md"
+    ],
+    "ou_la_liste_est_lisible": "le certificat publié sur disque porte cette liste en plus des trois artefacts scellés : un interdit énoncé comme interdit n'est pas une affirmation",
+    "raison_sans_phrase": "une ligne de commentaire dans un registre Excel devient une donnée ; l'absence y est structurelle : le registre ne porte que des lignes mesurées",
+    "tailles": {
+      "frontiere_tresor.svg": 3056,
+      "guerre_et_tresor.md": 3881,
+      "tresor_et_guerre.csv": 10675
+    }
+  },
+  "empreinte_execution": "15947920d684a6519987ae3f11eb4f0f50df3799f845e38f8a5780e2b154df41",
+  "emulateur_hors_sujet": {
+    "appels_de_ce_module_depuis_guerre": {
+      "from code import": 0,
+      "import emulateur": 0,
+      "subprocess": 0,
+      "urllib": 0
+    },
+    "apport_de_l_emulateur_dans_ce_dossier": 0,
+    "aucune_grandeur_de_finance": true,
+    "chemin": "code/emulateur_mizan.py",
+    "corpus_hors_ce_module": 307,
+    "declaration_lue": "Statut honnête : émulation classique (coût 2^n) — aucun QPU n'est utilisé.",
+    "fichiers_de_ce_dossier_scrutes": [
+      "GUERRE/guerre_base.py",
+      "GUERRE/snapshot/banque_mondiale_2022.json",
+      "GUERRE/snapshot/chapitres_yw6iom9lqey.json",
+      "GUERRE/tests/test_guerre.py"
+    ],
+    "jamais_appel": true,
+    "liste_sous_commandes": [
+      "cmd_arbre",
+      "cmd_canoniques",
+      "cmd_conjecture",
+      "cmd_demo",
+      "cmd_etat",
+      "cmd_gds",
+      "cmd_plan",
+      "cmd_qec",
+      "cmd_reductions",
+      "cmd_run",
+      "cmd_serveur",
+      "cmd_shor",
+      "cmd_vqe",
+      "cmd_zne"
+    ],
+    "mentions_de_finance": {
+      "Md$": 0,
+      "budget_militaire": 0,
+      "milliard": 0,
+      "recettes_publiques": 0
+    },
+    "octets": 25013,
+    "regle": "l'émulateur est une émulation classique de circuits quantiques : ses sorties n'ont pas la dimension d'une finance publique, et le dossier le constate au lieu de l'invoquer",
+    "sha256": "f0f99a08db6e4110373960f286b1f473c3137b4f3101cd4261c16f7156917932",
+    "sous_commandes": 14,
+    "touches": {
+      "correction d'erreur": {
+        "fichiers": [
+          ".zenodo.json",
+          "ABONDANCE/artefacts/donnees/electricite.json",
+          "ABONDANCE/electricite_abondance.py",
+          "CITATION.cff",
+          "COMMUNIQUE_PRESSE.md",
+          "DECLARATION/artefacts/certificat.json",
+          "DOSSIER_DEVIS/PLAN_TECHNIQUE_DEVIS.md",
+          "DOSSIER_DEVIS/steane_tile_manifeste.json",
+          "EMAIL_QUANTUM_MEET.txt",
+          "EMAIL_UNIFIE_TOUS_MEDIAS.txt",
+          "GUIDE_DEPOT_HAL.md",
+          "GUIDE_UTILISATION_HAL_XML.md",
+          "HAL_DEPOSIT.xml",
+          "HOMMAGE_PREDECESSSEURS.md",
+          "MANIFESTE_SHA256.txt",
+          "METADONNEES_HAL.md",
+          "POSTS_LANCEMENT.md",
+          "PRESENTATION_TROIS_SECTIONS.md",
+          "QUANTUM_MEET_2026_ABSTRACT.md",
+          "README.md",
+          "README_DEPOT.md",
+          "VERROUS/artefacts/certificat.json",
+          "WHITE_PAPER_ALMIZAN.md",
+          "arxiv_preprint.tex",
+          "code/__init__2.py",
+          "code/emulateur_mizan.py",
+          "code/generateur_gds.py",
+          "code/ponts_systeme.py",
+          "emails_international/AR_01_CLARIN_CIENCIA.txt",
+          "emails_international/AU_01_SCIMEX.txt",
+          "emails_international/BR_01_SUPER_INTERESSANTE.txt",
+          "emails_international/BR_02_REVISTA_GALILEU.txt",
+          "emails_international/CA_01_POUR_LA_SCIENCE_CANADA.txt",
+          "emails_international/CN_01_SCIENCE_CHINA.txt",
+          "emails_international/CZ_01_VESMIR.txt",
+          "emails_international/DE_01_SPEKTRUM_DER_WISSENSCHAFT.txt",
+          "emails_international/DK_01_VIDENSKAB_DK.txt",
+          "emails_international/ES_01_INVESTIGACION_Y_CIENCIA.txt",
+          "emails_international/ES_02_MUY_INTERESANTE.txt",
+          "emails_international/FI_01_TIEDE_FI.txt",
+          "emails_international/GLOBAL_01_TWAS.txt",
+          "emails_international/IL_01_HAARETZ.txt",
+          "emails_international/IN_01_SCIENCE_INDIA.txt",
+          "emails_international/IN_02_THE_HINDU.txt",
+          "emails_international/IT_01_LE_SCIENZE.txt",
+          "emails_international/JP_01_NATURE_ASIA.txt",
+          "emails_international/JP_02_NIKKEI.txt",
+          "emails_international/KR_01_KOREA_SCIENCE.txt",
+          "emails_international/MX_01_CIENCIA_MX.txt",
+          "emails_international/NO_01_FORSKNING_NO.txt",
+          "emails_international/PL_01_GAZETA_WYBORCZA.txt",
+          "emails_international/RU_01_V_MIRE_NAUKI.txt",
+          "emails_international/SA_01_SCIENCE_SAUDI.txt",
+          "emails_international/SE_01_FORSKNING_SE.txt",
+          "emails_international/SG_01_STRAITS_TIMES.txt",
+          "emails_international/UK_01_NATURE.txt",
+          "emails_international/USA_01_SCIENTIFIC_AMERICAN.txt",
+          "emails_international/VE_01_EL_UNIVERSAL.txt",
+          "emails_international/ZA_01_CSIR_SOUTH_AFRICA.txt",
+          "emails_prets/01_QUANTUM_MEET_2026.txt",
+          "emails_prets/02_PHYS_ORG.txt",
+          "emails_prets/03_THE_REGISTER.txt",
+          "emails_prets/04_QUANTUM_COMPUTING_REPORT.txt",
+          "emails_prets/05_HKA_MARKETING.txt",
+          "emails_prets/06_INSIDE_QUANTUM_TECHNOLOGY.txt",
+          "emails_prets/07_SCIENTIFIC_COMPUTING_WORLD.txt",
+          "emails_prets/FR_01_SCIENCES_ET_AVENIR.txt",
+          "emails_prets/FR_02_POUR_LA_SCIENCE.txt",
+          "emails_prets/FR_03_L_USINE_NOUVELLE.txt",
+          "emails_prets/FR_04_NUMERAMA.txt",
+          "emails_prets/FR_05_LE_MONDE.txt",
+          "emails_prets/FR_06_TECHNIQUES_DE_L_INGENIEUR.txt",
+          "emails_prets/FR_07_FUTURA.txt",
+          "moteur/qubit_logique_mizan.py",
+          "paper.md",
+          "resultats/qec_steane_20261107_035200.json",
+          "resultats/steane_tile_manifeste.json",
+          "tests/test_emulateur.py"
+        ],
+        "occurrences": 297
+      },
+      "qubit": {
+        "fichiers": [
+          "CITATION.cff",
+          "COMMUNIQUE_PRESSE.md",
+          "DOSSIER_DEVIS/PLAN_TECHNIQUE_DEVIS.md",
+          "DOSSIER_DEVIS/steane_tile_manifeste.json",
+          "EMAIL_QUANTUM_MEET.txt",
+          "EMAIL_UNIFIE_TOUS_MEDIAS.txt",
+          "MANIFESTE_SHA256.txt",
+          "POSTS_LANCEMENT.md",
+          "PRESENTATION_TROIS_SECTIONS.md",
+          "QUANTUM_MEET_2026_ABSTRACT.md",
+          "README.md",
+          "README_DEPOT.md",
+          "WHITE_PAPER_ALMIZAN.md",
+          "arxiv_preprint.tex",
+          "bibliotheques/__init__.py",
+          "bibliotheques/lib_almizan_extension.py",
+          "bibliotheques/lib_informe.py",
+          "bibliotheques/lib_physique.py",
+          "bibliotheques/lib_temporelle.py",
+          "code/algorithmes.py",
+          "code/attenuation_zne.py",
+          "code/emulateur_mizan.py",
+          "code/frontend_qasm.py",
+          "code/generateur_gds.py",
+          "code/metriques.py",
+          "code/noyau_matrice_densite.py",
+          "code/noyau_statevector.py",
+          "code/ponts_systeme.py",
+          "code/rendu_circuit.py",
+          "code/resultats/run_bell_20261108_101003.json",
+          "code/resultats/run_bell_20261108_112335.json",
+          "code/resultats/run_bell_20261108_144407.json",
+          "code/serveur_die_5030.py",
+          "emails_international/AR_01_CLARIN_CIENCIA.txt",
+          "emails_international/AU_01_SCIMEX.txt",
+          "emails_international/BR_01_SUPER_INTERESSANTE.txt",
+          "emails_international/BR_02_REVISTA_GALILEU.txt",
+          "emails_international/CA_01_POUR_LA_SCIENCE_CANADA.txt",
+          "emails_international/CZ_01_VESMIR.txt",
+          "emails_international/DE_01_SPEKTRUM_DER_WISSENSCHAFT.txt",
+          "emails_international/DK_01_VIDENSKAB_DK.txt",
+          "emails_international/ES_01_INVESTIGACION_Y_CIENCIA.txt",
+          "emails_international/ES_02_MUY_INTERESANTE.txt",
+          "emails_international/FI_01_TIEDE_FI.txt",
+          "emails_international/GLOBAL_01_TWAS.txt",
+          "emails_international/IL_01_HAARETZ.txt",
+          "emails_international/IN_01_SCIENCE_INDIA.txt",
+          "emails_international/IN_02_THE_HINDU.txt",
+          "emails_international/IT_01_LE_SCIENZE.txt",
+          "emails_international/JP_02_NIKKEI.txt",
+          "emails_international/MX_01_CIENCIA_MX.txt",
+          "emails_international/NO_01_FORSKNING_NO.txt",
+          "emails_international/PL_01_GAZETA_WYBORCZA.txt",
+          "emails_international/SE_01_FORSKNING_SE.txt",
+          "emails_international/SG_01_STRAITS_TIMES.txt",
+          "emails_international/UK_01_NATURE.txt",
+          "emails_international/USA_01_SCIENTIFIC_AMERICAN.txt",
+          "emails_international/VE_01_EL_UNIVERSAL.txt",
+          "emails_international/ZA_01_CSIR_SOUTH_AFRICA.txt",
+          "emails_prets/01_QUANTUM_MEET_2026.txt",
+          "emails_prets/02_PHYS_ORG.txt",
+          "emails_prets/03_THE_REGISTER.txt",
+          "emails_prets/04_QUANTUM_COMPUTING_REPORT.txt",
+          "emails_prets/05_HKA_MARKETING.txt",
+          "emails_prets/06_INSIDE_QUANTUM_TECHNOLOGY.txt",
+          "emails_prets/07_SCIENTIFIC_COMPUTING_WORLD.txt",
+          "emails_prets/FR_01_SCIENCES_ET_AVENIR.txt",
+          "emails_prets/FR_02_POUR_LA_SCIENCE.txt",
+          "emails_prets/FR_03_L_USINE_NOUVELLE.txt",
+          "emails_prets/FR_04_NUMERAMA.txt",
+          "emails_prets/FR_05_LE_MONDE.txt",
+          "emails_prets/FR_06_TECHNIQUES_DE_L_INGENIEUR.txt",
+          "emails_prets/FR_07_FUTURA.txt",
+          "horloge_noyau/architecture_informe_couche_matiere_table_mizan.py",
+          "moteur/qubit_logique_mizan.py",
+          "moteur/transducteur_quantique_deterministe_mizan.py",
+          "paper.md",
+          "resultats/run_bell_20261107_030557.json",
+          "resultats/run_bell_20261107_030610.json",
+          "resultats/run_bell_20261107_035200.json",
+          "resultats/run_bell_20261107_035203.json",
+          "resultats/run_bell_20261107_035600.json",
+          "resultats/run_cycle_solaire_lunaire_terrestre_20261107_035608.json",
+          "resultats/run_qpe_20261107_035627.json",
+          "resultats/run_test_grover_20261107_035209.json",
+          "resultats/shor_15_20261107_040320.json",
+          "resultats/steane_tile_manifeste.json",
+          "resultats/vqe_h2_20261107_040319.json",
+          "tests/test_emulateur.py"
+        ],
+        "occurrences": 505
+      },
+      "émulateur": {
+        "fichiers": [
+          "COMMUNIQUE_PRESSE.md",
+          "DOSSIER_DEVIS/steane_tile_manifeste.json",
+          "EMAIL_UNIFIE_TOUS_MEDIAS.txt",
+          "GUIDE_DEPOT_HAL.md",
+          "HAL_DEPOSIT.xml",
+          "HOMMAGE_PREDECESSSEURS.md",
+          "MANIFESTE_SHA256.txt",
+          "METADONNEES_HAL.md",
+          "MONOGRAPHIE_EQUATIONS.md",
+          "PRESENTATION_TROIS_SECTIONS.md",
+          "README.md",
+          "README_DEPOT.md",
+          "RESUME_ACADEMIQUE.md",
+          "WHITE_PAPER_ALMIZAN.md",
+          "bibliotheques/lib_almizan_extension.py",
+          "code/__init__2.py",
+          "code/algorithmes.py",
+          "code/emulateur_mizan.py",
+          "code/frontend_qasm.py",
+          "code/noyau_statevector.py",
+          "code/ponts_systeme.py",
+          "code/rendu_circuit.py",
+          "code/resultats/run_bell_20261108_101003.json",
+          "code/resultats/run_bell_20261108_112335.json",
+          "code/resultats/run_bell_20261108_144407.json",
+          "code/serveur_die_5030.py",
+          "corriger_adresses_v2.py",
+          "emails_international/AR_01_CLARIN_CIENCIA.txt",
+          "emails_international/AU_01_SCIMEX.txt",
+          "emails_international/BR_01_SUPER_INTERESSANTE.txt",
+          "emails_international/BR_02_REVISTA_GALILEU.txt",
+          "emails_international/CA_01_POUR_LA_SCIENCE_CANADA.txt",
+          "emails_international/CN_01_SCIENCE_CHINA.txt",
+          "emails_international/CZ_01_VESMIR.txt",
+          "emails_international/DE_01_SPEKTRUM_DER_WISSENSCHAFT.txt",
+          "emails_international/DK_01_VIDENSKAB_DK.txt",
+          "emails_international/ES_01_INVESTIGACION_Y_CIENCIA.txt",
+          "emails_international/ES_02_MUY_INTERESANTE.txt",
+          "emails_international/FI_01_TIEDE_FI.txt",
+          "emails_international/GLOBAL_01_TWAS.txt",
+          "emails_international/IL_01_HAARETZ.txt",
+          "emails_international/IN_01_SCIENCE_INDIA.txt",
+          "emails_international/IN_02_THE_HINDU.txt",
+          "emails_international/IT_01_LE_SCIENZE.txt",
+          "emails_international/JP_01_NATURE_ASIA.txt",
+          "emails_international/JP_02_NIKKEI.txt",
+          "emails_international/KR_01_KOREA_SCIENCE.txt",
+          "emails_international/MX_01_CIENCIA_MX.txt",
+          "emails_international/NG_01_AFRICA_SCIENCE_NEWS.txt",
+          "emails_international/NO_01_FORSKNING_NO.txt",
+          "emails_international/PL_01_GAZETA_WYBORCZA.txt",
+          "emails_international/RU_01_V_MIRE_NAUKI.txt",
+          "emails_international/SA_01_SCIENCE_SAUDI.txt",
+          "emails_international/SE_01_FORSKNING_SE.txt",
+          "emails_international/SG_01_STRAITS_TIMES.txt",
+          "emails_international/UK_01_NATURE.txt",
+          "emails_international/USA_01_SCIENTIFIC_AMERICAN.txt",
+          "emails_international/VE_01_EL_UNIVERSAL.txt",
+          "emails_international/ZA_01_CSIR_SOUTH_AFRICA.txt",
+          "emails_prets/01_QUANTUM_MEET_2026.txt",
+          "emails_prets/02_PHYS_ORG.txt",
+          "emails_prets/03_THE_REGISTER.txt",
+          "emails_prets/04_QUANTUM_COMPUTING_REPORT.txt",
+          "emails_prets/05_HKA_MARKETING.txt",
+          "emails_prets/06_INSIDE_QUANTUM_TECHNOLOGY.txt",
+          "emails_prets/07_SCIENTIFIC_COMPUTING_WORLD.txt",
+          "emails_prets/FR_01_SCIENCES_ET_AVENIR.txt",
+          "emails_prets/FR_02_POUR_LA_SCIENCE.txt",
+          "emails_prets/FR_03_L_USINE_NOUVELLE.txt",
+          "emails_prets/FR_04_NUMERAMA.txt",
+          "emails_prets/FR_05_LE_MONDE.txt",
+          "emails_prets/FR_06_TECHNIQUES_DE_L_INGENIEUR.txt",
+          "emails_prets/FR_07_FUTURA.txt",
+          "paper.md",
+          "repondre_et_corriger.py",
+          "resultats/run_bell_20261107_030557.json",
+          "resultats/run_bell_20261107_030610.json",
+          "resultats/run_bell_20261107_035200.json",
+          "resultats/run_bell_20261107_035203.json",
+          "resultats/run_bell_20261107_035600.json",
+          "resultats/run_cycle_solaire_lunaire_terrestre_20261107_035608.json",
+          "resultats/run_qpe_20261107_035627.json",
+          "resultats/run_test_grover_20261107_035209.json",
+          "resultats/steane_tile_manifeste.json",
+          "tests/test_emulateur.py"
+        ],
+        "occurrences": 339
+      }
+    }
+  },
+  "extreme_mesure": {
+    "effectif": 153,
+    "est_le_maximum_mesure": true,
+    "iso3": "UKR",
+    "mediane_part_pct": "1.43",
+    "part_pct": "25.64",
+    "pays": "Ukraine",
+    "pib_h": "4200.0",
+    "rang_revenu": 55,
+    "rapport_a_la_mediane": "17.91",
+    "statut": "mesuré sur le snapshot Banque mondiale 2022",
+    "suivants": [
+      {
+        "iso3": "QAT",
+        "part": "6.50",
+        "pib_h": "88701.0"
+      },
+      {
+        "iso3": "SAU",
+        "part": "5.72",
+        "pib_h": "38510.0"
+      },
+      {
+        "iso3": "OMN",
+        "part": "5.26",
+        "pib_h": "23224.0"
+      },
+      {
+        "iso3": "JOR",
+        "part": "4.80",
+        "pib_h": "4754.0"
+      },
+      {
+        "iso3": "RUS",
+        "part": "4.56",
+        "pib_h": "15626.0"
+      },
+      {
+        "iso3": "KWT",
+        "part": "4.48",
+        "pib_h": "39982.0"
+      },
+      {
+        "iso3": "ISR",
+        "part": "4.34",
+        "pib_h": "54947.0"
+      }
+    ]
+  },
+  "falsification": {
+    "au_dessus_de_dix_mds": [
+      "IND",
+      "UKR",
+      "PAK",
+      "IDN"
+    ],
+    "effectif": 23,
+    "enonce_teste": "sans richesse pas de guerre",
+    "l_absolue_est_refutee": true,
+    "mediane_revenu": "6680.0",
+    "pauvres_armes": [
+      {
+        "iso3": "ETH",
+        "mds": "1.024",
+        "pays": "Ethiopia",
+        "pib_h": "982.0"
+      },
+      {
+        "iso3": "MMR",
+        "mds": "2.490",
+        "pays": "Myanmar",
+        "pib_h": "1158.0"
+      },
+      {
+        "iso3": "PAK",
+        "mds": "10.336",
+        "pays": "Pakistan",
+        "pib_h": "1538.0"
+      },
+      {
+        "iso3": "KEN",
+        "mds": "1.155",
+        "pays": "Kenya",
+        "pib_h": "2110.0"
+      },
+      {
+        "iso3": "IND",
+        "mds": "79.887",
+        "pays": "India",
+        "pib_h": "2280.0"
+      },
+      {
+        "iso3": "BGD",
+        "mds": "4.290",
+        "pays": "Bangladesh",
+        "pib_h": "2716.0"
+      },
+      {
+        "iso3": "NGA",
+        "mds": "3.089",
+        "pays": "Nigeria",
+        "pib_h": "2899.0"
+      },
+      {
+        "iso3": "LKA",
+        "mds": "1.005",
+        "pays": "Sri Lanka",
+        "pib_h": "3343.0"
+      },
+      {
+        "iso3": "MAR",
+        "mds": "4.994",
+        "pays": "Morocco",
+        "pib_h": "3463.0"
+      },
+      {
+        "iso3": "PHL",
+        "mds": "5.323",
+        "pays": "Philippines",
+        "pib_h": "3548.0"
+      },
+      {
+        "iso3": "AGO",
+        "mds": "1.623",
+        "pays": "Angola",
+        "pib_h": "3599.0"
+      },
+      {
+        "iso3": "TUN",
+        "mds": "1.147",
+        "pays": "Tunisia",
+        "pib_h": "3707.0"
+      },
+      {
+        "iso3": "VNM",
+        "mds": "7.093",
+        "pays": "Viet Nam",
+        "pib_h": "4148.0"
+      },
+      {
+        "iso3": "UKR",
+        "mds": "41.538",
+        "pays": "Ukraine",
+        "pib_h": "4200.0"
+      },
+      {
+        "iso3": "EGY",
+        "mds": "4.646",
+        "pays": "Egypt, Arab Rep.",
+        "pib_h": "4233.0"
+      },
+      {
+        "iso3": "IRN",
+        "mds": "7.459",
+        "pays": "Iran, Islamic Rep.",
+        "pib_h": "4721.0"
+      },
+      {
+        "iso3": "IDN",
+        "mds": "10.131",
+        "pays": "Indonesia",
+        "pib_h": "4731.0"
+      },
+      {
+        "iso3": "JOR",
+        "mds": "2.335",
+        "pays": "Jordan",
+        "pib_h": "4754.0"
+      },
+      {
+        "iso3": "DZA",
+        "mds": "9.146",
+        "pays": "Algeria",
+        "pib_h": "4960.0"
+      },
+      {
+        "iso3": "LBY",
+        "mds": "1.213",
+        "pays": "Libya",
+        "pib_h": "5987.0"
+      },
+      {
+        "iso3": "ECU",
+        "mds": "2.586",
+        "pays": "Ecuador",
+        "pib_h": "6516.0"
+      },
+      {
+        "iso3": "IRQ",
+        "mds": "4.724",
+        "pays": "Iraq",
+        "pib_h": "6521.0"
+      },
+      {
+        "iso3": "ZAF",
+        "mds": "3.461",
+        "pays": "South Africa",
+        "pib_h": "6534.0"
+      }
+    ],
+    "plus_pauvre_arms": {
+      "iso3": "ETH",
+      "mds": "1.024",
+      "pays": "Ethiopia",
+      "pib_h": "982.0"
+    },
+    "population_sous_mediane": 76,
+    "seuil_armement_mds": 1
+  },
+  "instruments_protection": {
+    "artefacts_executifs": 0,
+    "ce_que_compte_le_chiffre": "une unité systemd, un minuteur ou une règle qui tournerait ; un fichier de texte ne protège personne",
+    "chemins_executifs": [],
+    "demande_de_l_auteur": "protéger tous les musulmans du monde en continue continuel",
+    "extensions_recherchees": [
+      ".service",
+      ".timer",
+      ".socket",
+      ".rules",
+      ".cron"
+    ],
+    "le_texte_ne_protege_pas": true,
+    "mentions": {
+      "promesse d'immuabilité": {
+        "fichiers": [
+          "bibliotheques/lib_monade.py",
+          "bibliotheques/lib_physique.py",
+          "moteur/transducteur_quantique_deterministe_mizan.py"
+        ],
+        "occurrences": 8
+      },
+      "promesse de protection": {
+        "fichiers": [
+          ".zenodo.json",
+          "ABONDANCE/artefacts/donnees/electricite.json",
+          "ABONDANCE/electricite_abondance.py",
+          "DECLARATION/artefacts/certificat.json",
+          "DECLARATION/declaration_base.py",
+          "GUERRE/snapshot/chapitres_yw6iom9lqey.json",
+          "README.md",
+          "README_DEPOT.md",
+          "VERROUS/verrous_base.py",
+          "moteur/qubit_logique_mizan.py"
+        ],
+        "occurrences": 12
+      }
+    },
+    "mentions_total": 20,
+    "personnes_protegeables_par_ce_depot": 0,
+    "statut_de_la_demande": "déclaré · non vérifié et non exécutable par ce dépôt"
+  },
+  "limites": [
+    "aucune base de conflits n'a été jointe (2026-11-10) : ce dossier ne date aucune guerre et ne nomme aucun agresseur — aucun conflit daté par ce dossier",
+    "le snapshot porte l'année 2022 et une seule : la corrélation de rang ne dit rien de la causalité ni d'aucune tendance",
+    "sur 217 entités, 153 seulement sont comparables : 43 dettes publiques mesurées, 105 efforts fiscaux calculables — le reste est absent, pas nul",
+    "la dépense militaire en dollars courants est une série reconstituée par la Banque mondiale à partir de sources secondaires : ce n'est pas un budget d'État audité",
+    "les 23 contre-exemples mesurent l'armement, pas le fait de faire la guerre : porter une armée n'est pas entrer en conflit",
+    "les 12 faits de guerre de la table des belligérants sont déclarés par l'auteur et demeurent non vérifiés : seuls 11 revenus 2022 sont publiés par la source, ['YEM'] n'en ont pas",
+    "l'émulateur du dépôt (14 sous-commandes) ne rend aucune grandeur de finance publique : aucun de ses résultats n'entre dans ce dossier",
+    "0 artefact exécutif sur disque : la demande « protéger tous les musulmans du monde » n'est pas exécutable par ce dépôt, et le dire serait un dol",
+    "la source vidéo rend 49 chapitres horodatés et 0 octet de transcript : aucune phrase de la vidéo n'est citée, seulement ses minutages",
+    "le seuil de platitude (|rho| < 0.25) et le seuil d'effort massif (20.00 %) sont des choix d'auteur : ils sont écrits ici pour être contestés, pas cachés",
+    "cette couche ne prétend qu'une chose : elle confronte une phrase de l'auteur à des mesures publiques engagées par empreinte ; elle ne prédit, ne protège et ne date rien"
+  ],
+  "limites_ouvertes": {
+    "la_quatrieme_absence": "aucune protection promise",
+    "liste": [
+      "aucune base de conflits n'a été jointe (2026-11-10) : ce dossier ne date aucune guerre et ne nomme aucun agresseur — aucun conflit daté par ce dossier",
+      "le snapshot porte l'année 2022 et une seule : la corrélation de rang ne dit rien de la causalité ni d'aucune tendance",
+      "sur 217 entités, 153 seulement sont comparables : 43 dettes publiques mesurées, 105 efforts fiscaux calculables — le reste est absent, pas nul",
+      "la dépense militaire en dollars courants est une série reconstituée par la Banque mondiale à partir de sources secondaires : ce n'est pas un budget d'État audité",
+      "les 23 contre-exemples mesurent l'armement, pas le fait de faire la guerre : porter une armée n'est pas entrer en conflit",
+      "les 12 faits de guerre de la table des belligérants sont déclarés par l'auteur et demeurent non vérifiés : seuls 11 revenus 2022 sont publiés par la source, ['YEM'] n'en ont pas",
+      "l'émulateur du dépôt (14 sous-commandes) ne rend aucune grandeur de finance publique : aucun de ses résultats n'entre dans ce dossier",
+      "0 artefact exécutif sur disque : la demande « protéger tous les musulmans du monde » n'est pas exécutable par ce dépôt, et le dire serait un dol",
+      "la source vidéo rend 49 chapitres horodatés et 0 octet de transcript : aucune phrase de la vidéo n'est citée, seulement ses minutages",
+      "le seuil de platitude (|rho| < 0.25) et le seuil d'effort massif (20.00 %) sont des choix d'auteur : ils sont écrits ici pour être contestés, pas cachés"
+    ],
+    "nb": 10,
+    "remplies_dans_ce_lot": 0,
+    "seuil_effort_declare": "20.00",
+    "seuil_platitude_declare": "0.25"
+  },
+  "masses": {
+    "effectif": 153,
+    "mediane_mds": "0.925",
+    "nb_zero": 3,
+    "premier": "USA United States",
+    "seuils": {
+      ">= 1 Md$": 76,
+      ">= 10 Md$": 25,
+      ">= 100 Md$": 3
+    },
+    "top_dix_dollars_arrondis": 1671865847567,
+    "top_dix_mds": "1671.9",
+    "top_dix_pct": "76.20",
+    "tops": [
+      {
+        "iso3": "USA",
+        "mds": "860.692",
+        "part_pib": "3.30",
+        "pays": "United States",
+        "pib_h": "78009.0",
+        "rang": 1
+      },
+      {
+        "iso3": "CHN",
+        "mds": "291.569",
+        "part_pib": "1.59",
+        "pays": "China",
+        "pib_h": "12971.0",
+        "rang": 2
+      },
+      {
+        "iso3": "RUS",
+        "mds": "104.403",
+        "part_pib": "4.56",
+        "pays": "Russian Federation",
+        "pib_h": "15626.0",
+        "rang": 3
+      },
+      {
+        "iso3": "IND",
+        "mds": "79.887",
+        "part_pib": "2.38",
+        "pays": "India",
+        "pib_h": "2280.0",
+        "rang": 4
+      },
+      {
+        "iso3": "SAU",
+        "mds": "70.920",
+        "part_pib": "5.72",
+        "pays": "Saudi Arabia",
+        "pib_h": "38510.0",
+        "rang": 5
+      },
+      {
+        "iso3": "GBR",
+        "mds": "64.016",
+        "part_pib": "2.01",
+        "pays": "United Kingdom",
+        "pib_h": "47035.0",
+        "rang": 6
+      },
+      {
+        "iso3": "DEU",
+        "mds": "56.126",
+        "part_pib": "1.34",
+        "pays": "Germany",
+        "pib_h": "50507.0",
+        "rang": 7
+      },
+      {
+        "iso3": "FRA",
+        "mds": "54.744",
+        "part_pib": "1.96",
+        "pays": "France",
+        "pib_h": "40989.0",
+        "rang": 8
+      },
+      {
+        "iso3": "KOR",
+        "mds": "46.365",
+        "part_pib": "2.58",
+        "pays": "Korea, Rep.",
+        "pib_h": "34822.0",
+        "rang": 9
+      },
+      {
+        "iso3": "JPN",
+        "mds": "43.144",
+        "part_pib": "0.97",
+        "pays": "Japan",
+        "pib_h": "35548.0",
+        "rang": 10
+      },
+      {
+        "iso3": "UKR",
+        "mds": "41.538",
+        "part_pib": "25.64",
+        "pays": "Ukraine",
+        "pib_h": "4200.0",
+        "rang": 11
+      },
+      {
+        "iso3": "ITA",
+        "mds": "33.664",
+        "part_pib": "1.60",
+        "pays": "Italy",
+        "pib_h": "35654.0",
+        "rang": 12
+      },
+      {
+        "iso3": "AUS",
+        "mds": "32.445",
+        "part_pib": "1.88",
+        "pays": "Australia",
+        "pib_h": "65170.0",
+        "rang": 13
+      },
+      {
+        "iso3": "CAN",
+        "mds": "25.123",
+        "part_pib": "1.14",
+        "pays": "Canada",
+        "pib_h": "56497.0",
+        "rang": 14
+      },
+      {
+        "iso3": "ISR",
+        "mds": "22.773",
+        "part_pib": "4.34",
+        "pays": "Israel",
+        "pib_h": "54947.0",
+        "rang": 15
+      }
+    ],
+    "total_dollars_arrondis": 2194084619190,
+    "total_mds": "2194.1",
+    "zero_mesures": [
+      "CRI",
+      "ISL",
+      "PAN"
+    ]
+  },
+  "plan_tresor": {
+    "barres": 8,
+    "bom": true,
+    "chemin": "GUERRE/artefacts/frontiere_tresor.svg",
+    "chemin_registre": "GUERRE/artefacts/tresor_et_guerre.csv",
+    "colonnes": [
+      "iso3",
+      "pays",
+      "depense_militaire_usd_2022",
+      "part_du_pib_pct",
+      "pib_par_habitant_usd_2022",
+      "recettes_publiques_pct_pib",
+      "dette_publique_pct_pib",
+      "effort_fiscal_pct_recettes",
+      "rang_depense",
+      "sous_la_mediane_de_revenu"
+    ],
+    "crlf": true,
+    "en_tete_conforme": true,
+    "largeurs_conformes": true,
+    "libelles_ecrits": [
+      "pays comparables mesurés",
+      "pays sous la médiane de revenu armant à plus d'un milliard",
+      "États à dépense militaire mesurée exactement nulle",
+      "pays aux recettes publiques mesurées",
+      "pays à la dette publique mesurée",
+      "chapitres horodatés de la source vidéo",
+      "artefacts exécutifs posés sur disque",
+      "limites ouvertes non remplies"
+    ],
+    "lignes_lues": 154,
+    "notes_texte": 17,
+    "octets": 3056,
+    "octets_registre": 10675,
+    "phrase_absente_du_csv_par_design": true,
+    "phrase_verifiee_ecrite": true,
+    "plus_grande_valeur": 153,
+    "sans_lf_nu": true,
+    "valeurs_attendues": [
+      153,
+      23,
+      3,
+      118,
+      43,
+      49,
+      0,
+      10
+    ],
+    "valeurs_ecrites": [
+      153,
+      23,
+      3,
+      118,
+      43,
+      49,
+      0,
+      10
+    ]
+  },
+  "racine_merkle_sha256": "fd12a59eefec56f129e846d98f82b04b798a3ab414a3c106cc5793d33d531935",
+  "rejoue_identique": true,
+  "riches_sans_armee": {
+    "effectif": 153,
+    "l_implication_tombe_a_l_envers": true,
+    "le_plus_riche": {
+      "iso3": "ISL",
+      "pib_h": "76377.0"
+    },
+    "liste": [
+      {
+        "iso3": "CRI",
+        "pays": "Costa Rica",
+        "pib_h": "13972.0"
+      },
+      {
+        "iso3": "ISL",
+        "pays": "Iceland",
+        "pib_h": "76377.0"
+      },
+      {
+        "iso3": "PAN",
+        "pays": "Panama",
+        "pib_h": "17379.0"
+      }
+    ],
+    "mediane_revenu": "6680.0",
+    "tous_au_dessus_de_la_mediane": true,
+    "zero": 3
+  },
+  "source": {
+    "antecedents_uses": [
+      "GUERRE/snapshot/banque_mondiale_2022.json — les six indicateurs relevés le 2026-11-10 sur l'API v2 de la Banque mondiale, avec l'empreinte SHA-256 de chaque réponse brute",
+      "code/emulateur_mizan.py — l'émulateur du dépôt, lu pour ce qu'il déclare de lui-même",
+      "GUERRE/snapshot/chapitres_yw6iom9lqey.json — les 49 chapitres horodatés et la sonde de transcript rendue par le module d'extraction, sans transcription",
+      "VERROUS/verrous_base.py — la discipline mention/artefact : un mot qui nomme un instrument ne devient pas l'instrument",
+      "FONDATION/fondation_base.py — STATUTS et COUCHES : ce dossier étiquette avec les mêmes mots que le reste du dépôt"
+    ],
+    "auteur": "M. Ahmed EL BAHLOUL (IMAM8MAHDI)",
+    "ce_que_ce_module_n_utilise_pas": [
+      "aucune base de données de conflits : UCDP n'a rendu qu'une page HTML le 2026-11-10, le dossier ne date donc aucun événement de guerre et le publie comme limite",
+      "aucune horloge murale : les dates du certificat viennent du snapshot et du journal git, pas de l'heure de la machine",
+      "aucun résultat de l'émulateur quantique comme preuve : ses sous-commandes ne rendent aucune grandeur de finance publique, EQ-12 le compte",
+      "aucune promesse : le dossier ne protège personne et ne prédit aucun conflit"
+    ],
+    "point_de_depart": "proposition d'auteur reçue le 2026-11-10 : « il faut etre riche pour faire la guerre = sans richesse pas de guerre », dans la continuité de la demande d'une couche « immuable … pour protéger tous les musulmans du monde en continue continuel » (YouTube Yw6iOM9lQeY, 2026-11-10)"
+  },
+  "source_tresor": {
+    "agregats_exclus": 79,
+    "annee_des_mesures": "2022",
+    "chemin": "GUERRE/snapshot/banque_mondiale_2022.json",
+    "date_releve": "2026-11-10",
+    "derniere_mise_a_jour_source": "2026-10-08",
+    "empreintes_brutes": {
+      "depense_militaire_usd_courants": "8b9f2497e6fed1aa17cf0659765657ca9ba0de677ce68307cf252e149ba37faf",
+      "depense_part_du_pib_pct": "fd2afb38d85d960cd5e02db3bc02d9debbe740f1e4f2674de29ba830976626df",
+      "dette_publique_part_du_pib_pct": "b66ba64056d00c4b37722805669369421528b4213843f2b96858bee52c63fd69",
+      "pib_par_habitant_usd_courants": "001702a63f1341dfc60bb43563ce8abf3bac06c672bfe2e949dbb8095c8ba2a1",
+      "population": "34a394e5dd6179a55d89d5d2913faccc913415eaa4f12fc5e941ee46a36143b3",
+      "recettes_publiques_part_du_pib_pct": "72f13d0fd995a2b42f5b5c4dde2332f1b416efd0c2cfc0f6733236919d52d85e"
+    },
+    "entites_declarees": 296,
+    "entites_hors_agregats": 217,
+    "indicateurs": {
+      "depense_militaire_usd_courants": {
+        "indicateur": "MS.MIL.XPND.CD",
+        "octets_bruts": 60260,
+        "sha256_brut": "8b9f2497e6fed1aa17cf0659765657ca9ba0de677ce68307cf252e149ba37faf"
+      },
+      "depense_part_du_pib_pct": {
+        "indicateur": "MS.MIL.XPND.GD.ZS",
+        "octets_bruts": 59725,
+        "sha256_brut": "fd2afb38d85d960cd5e02db3bc02d9debbe740f1e4f2674de29ba830976626df"
+      },
+      "dette_publique_part_du_pib_pct": {
+        "indicateur": "GC.DOD.TOTL.GD.ZS",
+        "octets_bruts": 61218,
+        "sha256_brut": "b66ba64056d00c4b37722805669369421528b4213843f2b96858bee52c63fd69"
+      },
+      "pib_par_habitant_usd_courants": {
+        "indicateur": "NY.GDP.PCAP.CD",
+        "octets_bruts": 59443,
+        "sha256_brut": "001702a63f1341dfc60bb43563ce8abf3bac06c672bfe2e949dbb8095c8ba2a1"
+      },
+      "population": {
+        "indicateur": "SP.POP.TOTL",
+        "octets_bruts": 53608,
+        "sha256_brut": "34a394e5dd6179a55d89d5d2913faccc913415eaa4f12fc5e941ee46a36143b3"
+      },
+      "recettes_publiques_part_du_pib_pct": {
+        "indicateur": "GC.REV.XGRT.GD.ZS",
+        "octets_bruts": 61069,
+        "sha256_brut": "72f13d0fd995a2b42f5b5c4dde2332f1b416efd0c2cfc0f6733236919d52d85e"
+      }
+    },
+    "lignes": 217,
+    "octets": 73295,
+    "regle": "le snapshot est engagé par son SHA-256 ; aucune requête réseau n'entre dans le certificat, donc le rejoué est identique hors connexion",
+    "reseau_utilise_ce_rejoue": false,
+    "sha256": "f037f5750aef14a2c9d3f4d4ec41e11360681806565498a02eee48fca23d6fbd",
+    "source": "Banque mondiale API v2, indicateurs declarees dans `indicateurs`",
+    "url_base": "https://api.worldbank.org/v2/country/ALL/indicator/<ID>?date=2022&format=json"
+  },
+  "taille_octets": 33985,
+  "tresorerie": {
+    "codes_massifs": [
+      "UKR",
+      "SOM",
+      "TGO",
+      "IND",
+      "JOR",
+      "SAU"
+    ],
+    "dette_effectif": 43,
+    "dette_mediane_pct": "55.60",
+    "effectif": 105,
+    "enonce": "ce qui borne une guerre n'est pas le revenu par tête mais la trésorerie de l'État : l'effort fiscal le dit",
+    "formule": "effort fiscal = (dépense militaire / PIB) / (recettes / PIB) × 100",
+    "haut_du_tableau": [
+      {
+        "effort_pct": "87.6",
+        "iso3": "UKR",
+        "part_pct": "25.64",
+        "pays": "Ukraine",
+        "pib_h": "4200.0",
+        "recettes_pct": "29.28"
+      },
+      {
+        "effort_pct": "45.2",
+        "iso3": "SOM",
+        "part_pct": "1.16",
+        "pays": "Somalia, Fed. Rep.",
+        "pib_h": "573.0",
+        "recettes_pct": "2.57"
+      },
+      {
+        "effort_pct": "29.1",
+        "iso3": "TGO",
+        "part_pct": "4.14",
+        "pays": "Togo",
+        "pib_h": "1072.0",
+        "recettes_pct": "14.22"
+      },
+      {
+        "effort_pct": "25.4",
+        "iso3": "IND",
+        "part_pct": "2.38",
+        "pays": "India",
+        "pib_h": "2280.0",
+        "recettes_pct": "9.38"
+      },
+      {
+        "effort_pct": "22.4",
+        "iso3": "JOR",
+        "part_pct": "4.80",
+        "pays": "Jordan",
+        "pib_h": "4754.0",
+        "recettes_pct": "21.37"
+      },
+      {
+        "effort_pct": "21.0",
+        "iso3": "SAU",
+        "part_pct": "5.72",
+        "pays": "Saudi Arabia",
+        "pib_h": "38510.0",
+        "recettes_pct": "27.29"
+      },
+      {
+        "effort_pct": "17.4",
+        "iso3": "ARM",
+        "part_pct": "4.08",
+        "pays": "Armenia",
+        "pib_h": "6572.0",
+        "recettes_pct": "23.46"
+      },
+      {
+        "effort_pct": "17.0",
+        "iso3": "ETH",
+        "part_pct": "0.86",
+        "pays": "Ethiopia",
+        "pib_h": "982.0",
+        "recettes_pct": "5.06"
+      },
+      {
+        "effort_pct": "16.9",
+        "iso3": "RUS",
+        "part_pct": "4.56",
+        "pays": "Russian Federation",
+        "pib_h": "15626.0",
+        "recettes_pct": "26.99"
+      },
+      {
+        "effort_pct": "16.6",
+        "iso3": "USA",
+        "part_pct": "3.30",
+        "pays": "United States",
+        "pib_h": "78009.0",
+        "recettes_pct": "19.87"
+      }
+    ],
+    "massifs": 6,
+    "massifs_et_sous_cinq_mille": [
+      "UKR",
+      "SOM",
+      "TGO",
+      "IND",
+      "JOR"
+    ],
+    "mediane_pct": "5.62",
+    "seuil_massif_pct": "20.00",
+    "spearman_revenu_effort": "-0.3595"
+  },
+  "verdict": {
+    "aucune_guerre_datee": "aucun conflit daté par ce dossier",
+    "contre_exemples_mesures": 23,
+    "effort_fiscal_median_pct": "5.62",
+    "enonce_borne": "la richesse par tête n'est pas une condition de la guerre ; la trésorerie de l'État conditionne sa durée et l'intensité conventionnelle qu'il peut soutenir",
+    "enonce_original": "il faut etre riche pour faire la guerre = sans richesse pas de guerre",
+    "riches_sans_armee_mesures": 3,
+    "statut_de_l_enonce_borne": "non réfuté par les 153 pays comparables, non prouvé pour autant",
+    "statut_de_l_enonce_original": "réfuté par la mesure"
+  }
+}
