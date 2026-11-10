@@ -18,7 +18,9 @@ Ce que ce module fait, dans l'ordre
      sur les octets — aucune horloge murale n'entre dans le certificat, et C01 le vérifie en
      relisant le code source de ce module (EQ-01) ;
   2. il relit le manifeste scellé et re-hache chaque entrée : c'est ainsi que la dérive est comptée,
-     et le nombre dérivé est exigé dans le résultat publié (EQ-02) ;
+     et le nombre dérivé est exigé dans le résultat publié ; le rapport de couverture est tenu par
+     une identité — l'arbre compté, ce qui lui échappe, ce que le sceau nomme hors de lui — plutôt
+     que par un plafond de 100 % qu'un clone propre franchit (EQ-02) ;
   3. il lit les quatre textes de licence, compte les en-têtes SPDX fichier par fichier et nomme
      ceux qui n'en ont pas (EQ-03) ;
   4. il cherche dans les textes GNU la clause que l'avis reçu prétend voir (« usage non commercial
@@ -490,6 +492,10 @@ def manifeste() -> Dict[str, Any]:
     chemins = _chemins_sous_arbre()
     scelles = {c for _, c in entrees}
     hors = [c for c in chemins if c not in scelles]
+    # Une ligne du sceau peut nommer un fichier que la marche de l'arbre refuse de compter : ce sont
+    # nos propres artefacts. Le rapport de couverture dépasse alors 100 % — un compte, pas une promesse.
+    dans_arbre = set(chemins)
+    lignes_hors = sorted(c for _, c in entrees if c not in dans_arbre)
     comptes = {"a_l_identique": exact, "apres_normalisation_des_fins_de_ligne": normalise,
                "derivent": derive, "absents_de_disque": absent}
     return {"chemin": MANIFESTE_CHEMIN, "lignes_fichier": len(_texte(MANIFESTE_CHEMIN).splitlines()),
@@ -497,6 +503,11 @@ def manifeste() -> Dict[str, Any]:
             "comptes_additifs": sum(comptes.values()) == len(entrees),
             "conformes": exact + normalise,
             "couverture_%": _pourcent(exact + normalise, len(chemins)),
+            "lignes_hors_arbre": len(lignes_hors),
+            "lignes_hors_arbre_exemples": lignes_hors[:6],
+            "couverture_additive": (exact + normalise
+                                    == len(chemins) - len(hors) + len(lignes_hors)
+                                    - derive - absent),
             "derivent_listes": sorted(derives), "absents_listes": sorted(absents),
             "hors_manifeste": len(hors),
             "hors_manifeste_octets": sum((RACINE / c).stat().st_size for c in hors),
@@ -1229,7 +1240,9 @@ def equations(etat: Dict[str, Any]) -> List[Dict[str, Any]]:
             f"{man['total_lignes']} entrées · {man['a_l_identique']} à l'identique · "
             f"{man['apres_normalisation_des_fins_de_ligne']} après normalisation LF · "
             f"{man['derivent']} en dérive · {man['absents_de_disque']} absent(s) · verdict "
-            f"{man['verdict']} · {man['hors_manifeste']} fichiers publiés hors du sceau",
+            f"{man['verdict']} · {man['hors_manifeste']} fichiers publiés hors du sceau · "
+            f"{man['lignes_hors_arbre']} lignes du sceau nomment un fichier que la marche de "
+            f"l'arbre ne compte pas",
             "OPÉRATIONNEL",
             "re-sceller effacerait le compte de dérive sans effacer la cause : ce résultat garde le "
             "nombre dérivé écrit, y compris quand il est défavorable", man),
@@ -1414,15 +1427,18 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
             and inv["horloge_noyau_fichiers"] >= 0
             and "hors du suivi git" in eqs["EQ-01"]["limite"])
     ajouter("C02", "la dérive du sceau est mesurée, chiffrée et écrite dans le résultat",
-            "les quatre comptes épuisent les entrées, le nombre dérivé paraît dans le texte publié "
+            "les quatre comptes épuisent les entrées, le compte conforme s'épuise entre l'arbre "
+            "compté et les lignes qui le débordent, le nombre dérivé paraît dans le texte publié "
             "de EQ-02 et le manifeste ne se scelle pas lui-même",
-            f"{man['total_lignes']} = Σ comptes · dérive écrite",
+            f"{man['total_lignes']} = Σ comptes · {man['conformes']} = arbre − hors + hors marche "
+            f"· dérive écrite",
             f"{man['a_l_identique']} + {man['apres_normalisation_des_fins_de_ligne']} + "
             f"{man['derivent']} + {man['absents_de_disque']} = {man['total_lignes']} · additif "
             f"{man['comptes_additifs']} · dérive écrite dans le résultat "
             f"{'en dérive' in eqs['EQ-02']['resultat'] and str(man['derivent']) in eqs['EQ-02']['resultat']} · "
             f"auto-scellement {man['le_manifeste_ne_se_scelle_pas_lui_meme']}",
-            man["comptes_additifs"] and man["le_manifeste_ne_se_scelle_pas_lui_meme"]
+            man["comptes_additifs"] and man["couverture_additive"]
+            and man["le_manifeste_ne_se_scelle_pas_lui_meme"]
             and str(man["derivent"]) in eqs["EQ-02"]["resultat"]
             and len(man["derivent_listes"]) == man["derivent"]
             and man["toutes_entrees_existent"])

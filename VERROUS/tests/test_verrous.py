@@ -482,14 +482,30 @@ class TestReDerivation(unittest.TestCase):
         self.assertEqual(sum(1 for v in valeurs if v == 0), sv["barre_de_zero_longueur"])
 
     def test_le_pourcentage_de_couverture_tombe_sur_une_autre_ecriture(self):
+        """Le ratio est un compte qui s'épuise : 100 % n'est pas un plafond à défendre, c'est une identité."""
         man, n = CERT["manifeste"], len(marche_arbre())
         q, r = divmod(man["conformes"] * 10000, n)
         if 2 * r >= n:
             q += 1
         self.assertEqual(f"{q // 100}.{q % 100:02d}", man["couverture_%"])
-        self.assertLess(float(man["couverture_%"]), 100.0,
-                        "le sceau ne couvre pas tout l'arbre : la couverture est un compte, "
-                        "pas une coquetterie")
+        self.assertTrue(man["couverture_additive"],
+                        "les entrées conformes s'épuisent entre l'arbre compté, ce qui lui échappe, "
+                        "ce que le sceau nomme hors de lui, ce qui dérive et ce qui manque")
+        # Un clone propre dépasse 100 % : les lignes qui nomment nos artefacts ne correspondent à
+        # aucun fichier de la marche. Le refuser serait une cosmétique ; l'exiger nommé en est une.
+        if float(man["couverture_%"]) > 100.0:
+            self.assertGreater(man["lignes_hors_arbre"], 0,
+                               "au-delà de 100 %, le débordement doit être nommé, pas seulement compté")
+            self.assertEqual(man["derivent"], 0,
+                             "un débordement causé par une dérive serait une couverture mensongère")
+            self.assertEqual(man["absents_de_disque"], 0,
+                             "une entrée du sceau absente du disque n'est pas un excédent de couverture")
+        else:
+            self.assertLess(float(man["couverture_%"]), 100.0,
+                            "le sceau ne couvre pas tout l'arbre : la couverture est un compte, "
+                            "pas une coquetterie")
+        self.assertEqual(man["conformes"] - (n - man["hors_manifeste"]),
+                         man["lignes_hors_arbre"] - man["derivent"] - man["absents_de_disque"])
 
 
 # ─── 2. la structure ne tient pas aux zéros -----------------------------------
