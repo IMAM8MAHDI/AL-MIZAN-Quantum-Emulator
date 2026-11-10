@@ -49,14 +49,17 @@ https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 https://doi.org/10.5281/zenodo.24028242
 
 ## Version
-3.2.2 — dernière version effectivement publiée sur Zenodo
-(DOI 10.5281/zenodo.24091259, contrôle du 2026-11-10 : le DOI résout, la page
-répond HTTP 200). Le contenu de l'arbre de travail est postérieur et visera 3.3.0 ;
-ce numéro n'est pas encore publié et ne doit pas figurer dans un dépôt avant
-l'émission de l'enregistrement.
+3.3.1 — dernière version effectivement publiée sur Zenodo
+(DOI 10.5281/zenodo.24114682, contrôle du 2026-11-10 : le handle résout — 302
+vers `https://zenodo.org/doi/10.5281/zenodo.24114682`, page en HTTP 200 — et
+l'archive servie est identique octet pour octet à l'archive déposée).
+Le contenu de l'arbre de travail est postérieur : il consigne la chaîne de
+versions après l'émission et recharge les comptes d'histoire du dépôt. Le
+prochain numéro n'est pas encore publié et ne doit pas figurer dans un dépôt
+avant l'émission de l'enregistrement.
 
 ## Date de publication
-9 novembre 2026 (version 3.2.2 publiée)
+10 novembre 2026 (version 3.3.1 publiée)
 
 ## Fichiers à déposer
 1. **ZENODO_DEPOT_ALMIZAN.zip** (archive complète du dépôt)
@@ -83,7 +86,7 @@ Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2
   Zenodo 410 « Gone » (contrôlés le 2026-11-10). La relation est donc titrée,
   sans identifiant.
 - **Version publiée de AL-MIZAN :** DOI: 10.5281/zenodo.24028242 (DOI de concept,
-  résout vers la dernière version) et DOI: 10.5281/zenodo.24091259 (v3.2.2)
+  résout vers la dernière version) et DOI: 10.5281/zenodo.24114682 (v3.3.1)
 
 ## Notes de dépôt
 - Logiciel développé dans le cadre de l'initiative IMAM8MAHDI

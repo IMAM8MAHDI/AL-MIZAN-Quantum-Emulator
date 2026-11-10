@@ -537,21 +537,21 @@ COMMANDES = _3(
     "py -3 HORLOGERIE/laboratoire.py --pas 4096          # trajectoire, repère, stabilité\n"
     "py -3 HORLOGERIE/laboratoire.py --en-direct --secondes 20 --ticks 50000\n"
     "cd HORLOGERIE && py -3 -m unittest tests.test_horlogerie tests.test_laboratoire\n"
-    "py -3 -m OUTILS.sceller_manifeste --verifier        # 240 entrées du manifeste",
+    "py -3 -m OUTILS.sceller_manifeste --verifier        # re-hache chaque entrée scellée",
     "cd ZENODO_DEPOT_ALMIZAN\n"
     "py -3 HORLOGERIE/horlogerie.py                      # 15 equations, 15 checks\n"
     "py -3 HORLOGERIE/verifier_certificats.py            # re-reads the certificate alone\n"
     "py -3 HORLOGERIE/laboratoire.py --pas 4096          # trajectory, frame, stability\n"
     "py -3 HORLOGERIE/laboratoire.py --en-direct --secondes 20 --ticks 50000\n"
     "cd HORLOGERIE && py -3 -m unittest tests.test_horlogerie tests.test_laboratoire\n"
-    "py -3 -m OUTILS.sceller_manifeste --verifier        # 240 manifest entries",
+    "py -3 -m OUTILS.sceller_manifeste --verifier        # re-hashes every sealed entry",
     "cd ZENODO_DEPOT_ALMIZAN\n"
     "py -3 HORLOGERIE/horlogerie.py                      # 15 معادلة و15 تحقُّقًا\n"
     "py -3 HORLOGERIE/verifier_certificats.py            # يعيد قراءة الشهادة وحدها\n"
     "py -3 HORLOGERIE/laboratoire.py --pas 4096          # المسار والمعلَم والاستقرار\n"
     "py -3 HORLOGERIE/laboratoire.py --en-direct --secondes 20 --ticks 50000\n"
     "cd HORLOGERIE && py -3 -m unittest tests.test_horlogerie tests.test_laboratoire\n"
-    "py -3 -m OUTILS.sceller_manifeste --verifier        # 240 مدخلًا في manifeste",
+    "py -3 -m OUTILS.sceller_manifeste --verifier        # يُعيد تجزئة كل مدخل موقَّع",
 )
 
 # ----------------------------------------------------------------------------
