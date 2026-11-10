@@ -1,12 +1,12 @@
 ﻿evenement;source;date_mesuree;type_de_date;ce_que_cela_prouve;ce_que_cela_ne_prouve_pas
 racine du depot git;.git + git rev-list --max-parents=0;2026-11-07T06:05:23+01:00;declaree par l'horloge cliente;le depot commence ici;rien de ce qui precede
-dernier commit atteignable;git log;2026-11-10T09:57:26+01:00;declaree par l'horloge cliente;le depot etait a cet etat;la date de publication
-plage du journal de références;.git/logs/HEAD;2026-11-07T06:05:23+01:00 -> 2026-11-10T09:57:26+01:00;encaissee par git;97 operations locales datees;une paternite
+dernier commit atteignable;git log;2026-11-10T11:52:08+01:00;declaree par l'horloge cliente;le depot etait a cet etat;la date de publication
+plage du journal de références;.git/logs/HEAD;2026-11-07T06:05:23+01:00 -> 2026-11-10T11:52:08+01:00;encaissee par git;101 operations locales datees;une paternite
 sceau SHA-256 du depot;MANIFESTE_SHA256.txt;aucune date dans le fichier;empreinte de contenu;240 entrees, 0 date;une date, ni une paternite
 tete git liee au sceau;MANIFESTE_SHA256.txt;non liee;absence mesuree;0 identifiant de commit dans le sceau;le lien entre version publiee et octets scelles
 enregistrement Zenodo lu;.zenodo.json;2026-11-10;declare par l'auteur dans le depot;version 3.3.0, licence agpl-3.0-only;la date serveurs de Zenodo, qui se verifie en ligne
 citation lue;CITATION.cff;2026-11-10;declare par l'auteur;11 identifiants Zenodo distincts cites;que chaque identifiant resout
-dernier commit de l'archive;.git/HEAD;bb313539228b2a0cb349880832ccea5d6ca1ea33;encaisse par git;90 commits dont 18 d'automate;qui a decide
+dernier commit de l'archive;.git/HEAD;209a64b05d31196f0a1e8331ba752a8bf65ea456;encaisse par git;94 commits dont 18 d'automate;qui a decide
 instruments d'horodatage qualifie;archive complete;aucun;denombrement de fichiers;0 fichier d'instrument, 31 mentions textuelles;une valeur probante
 trace fractale la plus ancienne de l'archive;CONTINUITE/continuite_base.py, bibliotheques/lib_almizan_ext;2026-11-07T05:44:16+01:00;date du commit d'ajout;10 occurrences dans 3 fichiers;que les fractales soient le point de depart de l'auteur
 claim d'education des IA;archive complete;aucune date;denombrement d'instruments;0 mention du verbe, 0 instrument d'entrainement;le claim lui-meme
