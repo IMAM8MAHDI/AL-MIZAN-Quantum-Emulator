@@ -327,7 +327,13 @@ class TestReDerivation(unittest.TestCase):
         self.assertEqual(sha, hj["sha_tete"])
         self.assertEqual(sha, git_brut("rev-parse", "HEAD").strip())
         self.assertEqual(sha, journal_parse()[-1][1])
-        self.assertEqual(sha, sorted(histoire_brute(), key=lambda c: c[2])[-1][0])
+        # deux commits posés dans la même seconde sont strictement égaux en date : ce que la tête
+        # doit garantir, c'est qu'aucun ancêtre ne se dit plus récent qu'elle — pas le gagnant
+        # incertain d'un tri par date
+        tete = [c for c in histoire_brute() if c[0] == sha]
+        self.assertEqual(len(tete), 1, "la tête nommée par rev-parse apparaît une fois dans git log")
+        self.assertTrue(all(c[2] <= tete[0][2] for c in histoire_brute()),
+                        "un ancêtre plus récent que la tête rend l'histoire invérifiable")
         self.assertTrue(hi["tete_coherente"])
         self.assertTrue(hj["tete_coherente"])
         self.assertEqual(hi["tete_coherente"], hi["commits"] > 0)

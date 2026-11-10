@@ -334,6 +334,8 @@ def _histoire_atteignable() -> Dict[str, Any]:
             if len(c) == 4 and c[2].isdigit():
                 commits.append((c[0], c[1], int(c[2]), c[3]))
         ordre = sorted(commits, key=lambda c: c[2])
+        tete_sha = _sha_tete()
+        tete = next((c for c in commits if c[0] == tete_sha), None)
         lignes = len([l for l in (sortie or "").splitlines() if l])
         auteurs: Dict[str, int] = {}
         for _, mail, _, _ in commits:
@@ -347,8 +349,11 @@ def _histoire_atteignable() -> Dict[str, Any]:
             "auteurs_additifs": sum(auteurs.values()) == len(commits),
             "premiere": ordre[0][3] if ordre else "", "derniere": ordre[-1][3] if ordre else "",
             "duree_attestee_seconde": (ordre[-1][2] - ordre[0][2]) if ordre else 0,
-            "sha_tete": _sha_tete(),
-            "tete_coherente": bool(ordre) and ordre[-1][0] == _sha_tete(),
+            "sha_tete": tete_sha,
+            # Deux commits posés dans la même seconde sont égaux en date : la tête n'est pas « le
+            # dernier de ce tri », elle est le commit que le pointeur nomme. Ce que le contrôle teste
+            # est donc l'absence d'ancêtre plus récent que la tête, pas l'ordre d'un tri instable.
+            "tete_coherente": tete is not None and all(c[2] <= tete[2] for c in commits),
             "commits_d_outils_automates": sum(v for k, v in auteurs.items()
                                               if "cognition" in k or "bot" in k)}
     return _CACHE["_HISTOIRE"]
