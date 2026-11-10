@@ -963,6 +963,9 @@ def limites_ouvertes() -> Dict[str, Any]:
         f"git",
         "les dates du journal local de références ne voyagent pas : seule l'histoire atteignable "
         "par git se relit dans un clone, et l'archive publiée peut ne contenir aucun dépôt git",
+        "les quatre artefacts posés sur disque sont un instantané : le compte de commits qu'ils "
+        "affichent est celui de l'instant où ils ont été écrits, et le commit qui les transporte "
+        "les dépasse toujours d'un",
     ]
     return {"liste": liste, "nb": len(liste), "compte_courriers": nb_courriers,
             "marqueur_courriers": f"{nb_courriers} fichier(s) de courriers",
@@ -1596,8 +1599,9 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
             and sorted(set(ec["noms"]) - set(ec["noms_avec_phrase"])) == [ec["nom_sans_phrase"]])
     ajouter("C16", "les limites ouvertes ne sont pas déclarées franchies",
             "liste d'au moins douze limites, toutes longues d'au moins 40 caractères, zéro remplie "
-            "dans ce lot, le compte de courriers qu'une limite cite retombe sur la mesure, et deux "
-            "limites disent ce qui ne voyage pas : l'arbre hors suivi et le journal local",
+            "dans ce lot, le compte de courriers qu'une limite cite retombe sur la mesure, deux "
+            "limites disent ce qui ne voyage pas — l'arbre hors suivi et le journal local — et une "
+            "limite dit que les artefacts posés sont un instantané",
             "≥12 limites · 0 remplie · compte lié à la mesure",
             f"{lo['nb']} limites · plus courte {lo['longueur_minimale']} caractères · remplies "
             f"{lo['remplies_dans_ce_lot']} · verrous posés "
@@ -1609,7 +1613,8 @@ def controles(eqs: Dict[str, Any], etat: Dict[str, Any]) -> List[Dict[str, Any]]
             and lo["compte_courriers"] == reg["matiere_sur_disque"]
             and any(lo["marqueur_courriers"] in l for l in lo["liste"])
             and any("hors du suivi git" in l for l in lo["liste"])
-            and any("journal local de références" in l for l in lo["liste"]))
+            and any("journal local de références" in l for l in lo["liste"])
+            and any("instantané" in l for l in lo["liste"]))
     return out
 
 

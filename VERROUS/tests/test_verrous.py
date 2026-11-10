@@ -145,6 +145,14 @@ def matiere_de_contact(chemins):
     return sorted(c for c in chemins if c[:6] == "emails" or c[:6] == "EMAIL_")
 
 
+def git_rend(*argumens):
+    """Code retour de git, sans lever : 0 quand l'objet existe et que l'ancêtre est vérifié."""
+    if shutil.which("git") is None:
+        return None
+    return subprocess.run(["git", *argumens], cwd=str(RACINE_DEPOT),
+                          capture_output=True, text=True, encoding="utf-8").returncode
+
+
 def classement_manifeste():
     """(exact, normalise, derive, absent, derives, absents) par `split("  ")` — pas de regex."""
     exact = normalise = derive = absent = 0
@@ -393,6 +401,32 @@ class TestReDerivation(unittest.TestCase):
             self.assertEqual(len(set(matiere) & suivis), reg["matiere_suivie_par_git"])
             self.assertEqual(reg["matiere_suivie_par_git"] + reg["matiere_hors_suivi_git"],
                              reg["matiere_sur_disque"])
+
+    def test_linstantané_posé_sur_disque_est_cohérent_et_ne_devance_jamais_l_histoire_lue(self):
+        """Le certificat publié est un instantané : il se relit cohérent et ne précède jamais HEAD."""
+        publie = json.loads((RACINE_DEPOT / "VERROUS" / "artefacts" / "certificat.json")
+                            .read_bytes().decode("utf-8"))
+        ph, pv = publie["horodatages"], CERT["horodatages"]
+        # 1. l'instantané est cohérent avec lui-même, sinon il aurait été écrit à l'envers
+        self.assertEqual(ph["commits_attestes"], ph["histoire"]["commits"])
+        self.assertEqual(ph["premiere"], ph["histoire"]["premiere"])
+        self.assertEqual(ph["dates_publiees_par"], "histoire")
+        self.assertEqual(ph["journal_plus_que_commits"],
+                         ph["journal_local"]["parsees"] - ph["histoire"]["commits"])
+        # 2. le certificat vivant ne recopie pas l'instantané : il recalcule sur ce qu'il lit
+        self.assertEqual(pv["commits_attestes"], pv["histoire"]["commits"])
+        # 3. là où le commit écrit existe, il ne peut pas devancer la tête lue
+        sha = ph["histoire"]["sha_tete"]
+        if sha and git_rend("cat-file", "-e", sha + "^{commit}") == 0:
+            self.assertEqual(git_rend("merge-base", "--is-ancestor", sha, "HEAD"), 0,
+                             "l'instantané nomme un commit hors de l'histoire atteignable")
+            self.assertLessEqual(ph["commits_attestes"], pv["commits_attestes"],
+                                 "un artefact posé ne peut pas promettre plus de commits qu'il y "
+                                 "en a : le commit qui le transporte le dépasse d'un")
+        else:
+            self.assertNotEqual(sha, pv["histoire"]["sha_tete"],
+                                "cet arbre ne contient pas le commit écrit par l'instantané : "
+                                "la comparaison n'a pas de sens ici, et rien ne la prétend")
 
     def test_les_huit_clauses_se_recomptent_a_zero_sur_un_corpus_reconstruit(self):
         corpus = [c for c in marche_arbre()
@@ -733,12 +767,14 @@ class TestNonVacuite(unittest.TestCase):
         self.assertEqual([k for k, c in cs.items() if not c["ok"]], ["C16"])
 
     def test_une_limite_sur_le_non_voyageant_effacee_rougit_c16(self):
-        """Retirer la limite qui dit que le journal local ne voyage pas : C16 la réclame."""
-        lo = copy.deepcopy(CERT["limites_ouvertes"])
-        lo["liste"] = [l for l in lo["liste"] if "journal local de références" not in l]
-        lo["nb"] = len(lo["liste"])
-        cs = {c["id"]: c for c in V.controles(EQS, muter(("limites_ouvertes",), lo))}
-        self.assertEqual([k for k, c in cs.items() if not c["ok"]], ["C16"])
+        """Retirer la limite qui dit que le journal local ne voyage pas, ou celle qui dit que les
+        octets posés sont un instantané : C16 les réclame l'une comme l'autre."""
+        for motif in ("journal local de références", "instantané"):
+            lo = copy.deepcopy(CERT["limites_ouvertes"])
+            lo["liste"] = [l for l in lo["liste"] if motif not in l]
+            lo["nb"] = len(lo["liste"])
+            cs = {c["id"]: c for c in V.controles(EQS, muter(("limites_ouvertes",), lo))}
+            self.assertEqual([k for k, c in cs.items() if not c["ok"]], ["C16"], motif)
 
     def test_quatre_mensonges_sur_les_octets_publies_rougissent_seuls_c15(self):
         for chemin, valeur in ((("plan_svg", "largeurs_conformes"), False),
@@ -868,6 +904,8 @@ class TestVerdictsDefavorables(unittest.TestCase):
         self.assertEqual(sum(1 for l in lo["liste"] if "ne voyagent" in l), 2)
         self.assertTrue(any("hors du suivi git" in l for l in lo["liste"]))
         self.assertTrue(any("journal local de références" in l for l in lo["liste"]))
+        # une troisième dit que les octets posés sont un instantané, pas un direct
+        self.assertTrue(any("instantané" in l for l in lo["liste"]))
 
     def test_le_régime_commercial_est_corrige_sans_etre_adouci(self):
         rc = CERT["regime_commercial"]
