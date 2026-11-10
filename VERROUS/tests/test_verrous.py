@@ -16,7 +16,8 @@ Six exigences, dans l'ordre :
     3. les quatre artefacts sont relus sur disque par `csv.reader` et par regex, puis comparés au
        calcul : ce que le dossier publie est ce que le dossier a calculé ;
     4. non-vacuité : seize mutations, une par contrôle, nommées ROUGIT — faire apparaître un
-       fichier secret, décréter une clause rédigée, signer un instrument, rendre le journal
+       fichier secret, annoncer une dérive que rien ne liste, décréter une clause rédigée, signer un
+       instrument, rendre le journal
        incohérent, sceller le certificat dans son propre nœud, déclarer une limite franchie ;
     5. les verdicts défavorables restent écrits : 0 clause, 0 instrument, 0 avocat, 0 artefact
        précompilé, la dérive du sceau chiffrée, la divergence de licence Zenodo publiée, et
@@ -674,7 +675,7 @@ class TestArtefactsSurDisque(unittest.TestCase):
 
 MUTATIONS = [
     ("C01", ("inventaire", "chemins_uniques"), False),
-    ("C02", ("manifeste", "derivent"), 0),
+    ("C02", ("manifeste", "derivent"), len(CERT["manifeste"]["derivent_listes"]) + 1),
     ("C03", ("licence", "sans_en_tete_listes"), []),
     ("C04", ("regime_commercial", "clause_reseau_agpl"), 0),
     ("C05", ("frontiere", "coeur_secret_reelement_garde"), 3),
@@ -838,8 +839,13 @@ class TestVerdictsDefavorables(unittest.TestCase):
         self.assertEqual(CERT["verdict"]["occurrences_avocat"], 0)
 
     def test_la_dérive_du_sceau_reste_chiffrée_partout(self):
+        """Le compte de dérive est écrit où qu'il en soit : un sceau frais ne le fait pas disparaître.
+
+        Exiger un nombre non nul aurait confondu deux choses : ce que le sceau rend, et ce que le
+        texte sait écrire. Le contrôle porte sur la seconde — la même chaîne chiffre la dérive quand
+        elle existe, et une dérive annoncée sans liste nommée rougit C02.
+        """
         man = CERT["manifeste"]
-        self.assertGreater(man["derivent"], 0, "compter la dérive est le contrôle, pas la cacher")
         self.assertEqual(len(man["derivent_listes"]), man["derivent"])
         self.assertIn("en dérive", EQS["EQ-02"]["resultat"])
         self.assertIn(str(man["derivent"]), EQS["EQ-02"]["resultat"])
@@ -847,6 +853,16 @@ class TestVerdictsDefavorables(unittest.TestCase):
         self.assertIn(f"{man['derivent']} en dérive", md)
         self.assertIn(f"{man['conformes']}/{man['total_lignes']}",
                       V.octets_svg(CERT).decode("utf-8"))
+        # le cas défavorable rejoué sur les mêmes lignes : le nombre cesse d'être zero, il reste écrit
+        faux = copy.deepcopy(CERT)
+        faux["manifeste"]["derivent"] = man["total_lignes"] - man["conformes"] + 1
+        eqs = {e["id"]: e for e in V.equations(faux)}
+        self.assertIn(f"{faux['manifeste']['derivent']} en dérive", eqs["EQ-02"]["resultat"])
+        self.assertIn(f"{faux['manifeste']['derivent']} en dérive",
+                      V.octets_clauses_md(faux).decode("utf-8"))
+        cs = {c["id"]: c for c in V.controles(eqs, faux)}
+        self.assertFalse(cs["C02"]["ok"],
+                         "un compte de dérive que rien n'est venu lister ne peut pas rester vert")
 
     def test_la_divergence_de_licence_zenodo_est_publiée_non_gommée(self):
         exp = CERT["exposition"]
