@@ -177,11 +177,15 @@ ZNE, Steane, transducteur, Point Carré (PC-1..PC-4), l'arbre des
 7 problèmes (octaèdre χ=2, Hasse, Hodge, gap spectral, Navier 2D, RH≤200)
 et le spectre hermitien complexe de la matrice densité.
 
-**0 ignoré, et plus rien d'extérieur à l'archive.** Les deux ponts
+**Plus rien d'extérieur à l'archive.** Les deux ponts
 (Steane, transducteur) se chargent depuis `moteur/` et la capsule
 `horloge_noyau` depuis `bibliotheques/` : un `ASTRO-Q°ODE_SYSTEME`
-voisin n'est plus requis. 563 tests au total, tous verts — 63 hors dossiers
-d'équations, 500 dans les dix — et les 199 équations du parc (ABONDANCE 54,
+voisin n'est plus requis. 563 tests au total, tous verts et **0 ignoré dans
+un clone** — 63 hors dossiers d'équations, 500 dans les dix — ; dans l'archive
+ZIP seule, qui n'apporte pas de `.git`, 556 passent et 7 s'ignorent
+d'eux-mêmes (5 `VERROUS`, 2 `DECLARATION`), faute d'histoire git lisible :
+ce sont des relectures de commits, non des calculs. Mesure du 2026-11-10.
+Et les 199 équations du parc (ABONDANCE 54,
 CHIFFRES 17, FONDATION 18, HORLOGERIE 15, CONTINUITE 15, REDACTION 16,
 CONSTRUCTION 16, VERROUS 16, DECLARATION 16, GUERRE 16) portent chacune sa clause de limite, contrôlée
 par le même audit. Les 500 tests et les 199 équations des dossiers sont relevés
