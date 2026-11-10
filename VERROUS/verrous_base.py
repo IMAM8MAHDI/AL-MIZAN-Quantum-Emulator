@@ -969,9 +969,9 @@ def limites_ouvertes() -> Dict[str, Any]:
         f"git",
         "les dates du journal local de références ne voyagent pas : seule l'histoire atteignable "
         "par git se relit dans un clone, et l'archive publiée peut ne contenir aucun dépôt git",
-        "les quatre artefacts posés sur disque sont un instantané : le compte de commits qu'ils "
-        "affichent est celui de l'instant où ils ont été écrits, et le commit qui les transporte "
-        "les dépasse toujours d'un",
+        "les quatre artefacts posés sur disque sont un instantané : le compte de commits et "
+        "l'empreinte d'arbre qu'ils affichent sont ceux de l'état qu'ils précèdent ; le commit qui "
+        "les transporte, puis le scellement qui le suit, les dépassent",
     ]
     return {"liste": liste, "nb": len(liste), "compte_courriers": nb_courriers,
             "marqueur_courriers": f"{nb_courriers} fichier(s) de courriers",
