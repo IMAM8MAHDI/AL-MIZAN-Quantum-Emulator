@@ -92,6 +92,19 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── snapshot/                # Banque mondiale 2022 + chapitres YouTube, engagés par SHA-256
 │   ├── artefacts/               # certificat.json + registre CSV + dossier MD + frontière SVG
 │   └── tests/                   # 56 tests
+├── pages_depot/           # publication du site al-mizan.world depuis CE dépôt
+│   │                      # seul : 17 fichiers reproduits octet pour octet
+│   ├── generer_pages_site.py    # orchestrateur FONDATION + CHIFFRES + LABORATOIRE
+│   │                            # → web_cloud/ ; auto-localise le dépôt, aucune
+│   │                            # variable d'environnement ni clone voisin requis
+│   └── pages_laboratoire.py     # 9 livrables d'écran : FR/EN/AR + 6 exports
+├── oeuvre_universelle/    # copies servies en production de la page « espace
+│   │                      # disque » — hors registre d'équations, non auditées
+│   │                      # par audit_piliers
+│   ├── espace_disque.py         # 13 équations · 13 contrôles, en-tête SPDX
+│   └── generer_page_espace_disque.py  # 3 pages trilingues + 1 JSON
+├── docs/                  # table des routes réellement servies par la passerelle
+│   └── API_PASSERELLE_VPS.md
 ├── tests/                 # 53 tests unittest — tous verts, 0 ignoré
 ├── resultats/             # rapports JSON scellés SHA-256 + .gds
 ├── bibliotheques/         # 5 modules du moteur ASTRO-Q°ODE : clôture
@@ -222,8 +235,33 @@ cd GUERRE && py -m unittest tests.test_guerre                        #  56 tests
 py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 12 modules CONFORME
 ```
 
-546 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
+563 tests, 0 ignoré, depuis la seule archive : `bibliotheques/` et `moteur/`
 sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
+
+### Reproduire le site public depuis l'archive
+
+`pages_depot/generer_pages_site.py` régénère les 17 fichiers du site
+al-mizan.world publiés par les dossiers FONDATION, CHIFFRES et LABORATOIRE.
+Il se localise lui-même : `git clone` du dépôt, un répertoire `web_cloud/`
+là où l'on veut, puis :
+
+```
+py -3 pages_depot/generer_pages_site.py     # écrit 17 fichiers dans web_cloud/
+```
+
+Mesure du 2026-11-10, dans une copie du dépôt **sans `.git`** et avec
+`AL_MIZAN_DEPOT` retiré de l'environnement : les 17 fichiers sortent
+octet pour octet identiques aux 17 fichiers servis en production
+(`PRODUITS 17 IDENTIQUES 17`, code de sortie 0) — soit 4 pour
+`chiffres_pi`, 4 pour `fondation` et 9 pour `laboratoire`. La page
+« espace disque » et ses trois variantes ne sont pas dans ce compte :
+`oeuvre_universelle/` porte les modules **copiés depuis la production**,
+pour lecture et re-jouabilité, et l'orchestrateur ne les appelle pas.
+
+Le registre d'équations du dépôt — 199 équations, 199 contrôles, 12 modules
+`CONFORME` — reste inchangé par cette entrée : `pages_depot/`,
+`oeuvre_universelle/` et `docs/` sont de l'outillage de publication, pas des
+dossiers soumis à `FONDATION/OUTILS/audit_piliers.py --tous`.
 
 ## Les quatre piliers, appliqués à tout le dépôt
 
