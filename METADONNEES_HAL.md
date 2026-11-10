@@ -49,15 +49,21 @@ https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 https://doi.org/10.5281/zenodo.24028242
 
 ## Version
-2.0.0
+3.2.2 — dernière version effectivement publiée sur Zenodo
+(DOI 10.5281/zenodo.24091259, contrôle du 2026-11-10 : le DOI résout, la page
+répond HTTP 200). Le contenu de l'arbre de travail est postérieur et visera 3.3.0 ;
+ce numéro n'est pas encore publié et ne doit pas figurer dans un dépôt avant
+l'émission de l'enregistrement.
 
 ## Date de publication
-7 novembre 2026
+9 novembre 2026 (version 3.2.2 publiée)
 
 ## Fichiers à déposer
 1. **ZENODO_DEPOT_ALMIZAN.zip** (archive complète du dépôt)
-   - Code source Python (13 modules quantiques + 14 modules certificats)
-   - 53 tests unitaires pour l'émulateur, 546 pour le dépôt complet
+   - Code source Python (l'émulateur et les 12 modules de certificats répartis dans
+     les dix dossiers d'équations — compte relevé par
+     `FONDATION/fondation_base.py → inventaire_parc()`, pas saisi à la main)
+   - 53 tests unitaires pour l'émulateur, 562 pour le dépôt complet
    - Documentation complète (README, PRESENTATION, paper.md)
    - Métadonnées (.zenodo.json, CITATION.cff)
    - Licences (AGPL-3.0, GPL-3.0)
@@ -71,13 +77,18 @@ https://doi.org/10.5281/zenodo.24028242
 Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2, Cognition AI) pour la génération de code, les tests et la documentation. L'auteur humain (M. Ahmed EL BAHLOUL) a révisé, validé et dirigé tous les résultats, et a pris les décisions de conception fondamentales incluant la doctrine Al-Mizan, les règles du noyau scellé, l'architecture des certificats mathématiques et les contraintes d'honnêteté. Tout le code généré par IA a été inspecté manuellement et intégré sous supervision humaine.
 
 ## Relations avec d'autres publications
-- **Version révisée de :** ASTRO-Q°ODE_SYSTEME (DOI: 10.5281/zenodo.23554838)
-- **Voir aussi :** DOI: 10.5281/zenodo.23479740, DOI: 10.5281/zenodo.23288947
+- **Source de l'émulateur :** ASTRO-Q°ODE_SYSTEME — aucun identifiant Zenodo résolvable
+  à ce jour : 10.5281/zenodo.23554838 ne répond pas (handle 404) et
+  10.5281/zenodo.23479740 comme 10.5281/zenodo.23288947 renvoient une page
+  Zenodo 410 « Gone » (contrôlés le 2026-11-10). La relation est donc titrée,
+  sans identifiant.
+- **Version publiée de AL-MIZAN :** DOI: 10.5281/zenodo.24028242 (DOI de concept,
+  résout vers la dernière version) et DOI: 10.5281/zenodo.24091259 (v3.2.2)
 
 ## Notes de dépôt
 - Logiciel développé dans le cadre de l'initiative IMAM8MAHDI
 - Architecture "sans dolosif" : honnêteté scientifique stricte sur les capacités et limitations
 - Chaque certificat mathématique porte des bornes explicites
 - Émulation classique uniquement (pas de QPU matériel)
-- 53 tests unitaires pour l'émulateur, 546 pour le dépôt complet — tous verts
+- 53 tests unitaires pour l'émulateur, 562 pour le dépôt complet — tous verts
 - Documentation bilingue français/anglais

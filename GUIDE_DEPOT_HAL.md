@@ -137,12 +137,15 @@ Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2
 
 ### Section "Relations"
 
-**Version révisée de :**
+**Source de l'émulateur :**
 - ASTRO-Q°ODE_SYSTEME
-- DOI : 10.5281/zenodo.23554838
+- DOI : aucun — 10.5281/zenodo.23554838 ne répond pas (handle 404), 23479740 et
+  23288947 renvoient une page Zenodo 410 « Gone » (contrôlés le 2026-11-10).
+  Laisser la relation titrée, sans identifiant.
 
 **DOI associé :**
-- 10.5281/zenodo.24028242
+- 10.5281/zenodo.24028242 (DOI de concept AL-MIZAN, résout)
+- 10.5281/zenodo.24091259 (v3.2.2, dernière version publiée)
 
 **URL du dépôt GitHub :**
 - https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator

@@ -6,11 +6,11 @@
 |---|---|---|---|
 | preuves d'antériorité | sceau SHA-256 du dépôt | 204 entrées, 0 date à l'intérieur, 0 identifiant de commit | OPÉRATIONNEL |
 | antériorité par un tiers | RFC 3161 / TSA / eIDAS / coffre-fort / e-Soleau | 0 instrument sur disque, 31 mentions textuelles dont 12 lignes d'absence | OPÉRATIONNEL |
-| dépôt public horodaté | commits git, blocs de signature | 1/70 portent gpgsig, 0 vérifiée(s) faute de clé publique, du 2026-11-07T06:05:23+01:00 au 2026-11-10T05:20:44+01:00 | OPÉRATIONNEL |
+| dépôt public horodaté | commits git, blocs de signature | 1/71 portent gpgsig, 0 vérifiée(s) faute de clé publique, du 2026-11-07T06:05:23+01:00 au 2026-11-10T06:06:17+01:00 | OPÉRATIONNEL |
 | « j'ai commencé par les fractales » | trace fractale datée dans l'archive | 10 occurrences, 3 fichiers, première trace fractale 2026-11-07T05:44:16+01:00 contre 2026-11-07T05:44:16+01:00 pour le dépôt ; première trace fractale = plus ancienne du dépôt : True | OPÉRATIONNEL |
 | « j'ai éduqué les IA » | poids fins, dataset d'alignement, journal d'entraînement | 0 instrument, 0 mention du verbe dans l'archive | SIMULÉ — déclaratif |
-| mérite contre l'automate | partage mesuré des commits et des fichiers | 52 commits humains / 18 d'automate (74.29 % / 25.71 %) ; 65 fichiers touchés par l'automate seul, dont 0 portant une borne écrite | OPÉRATIONNEL |
-| chaîne de publication | Zenodo et CITATION.cff relus | version 3.3.0, 11 identifiants distincts, 314 mentions de DOI, résolution en ligne non testée ici | OPÉRATIONNEL |
+| mérite contre l'automate | partage mesuré des commits et des fichiers | 53 commits humains / 18 d'automate (74.65 % / 25.35 %) ; 65 fichiers touchés par l'automate seul, dont 0 portant une borne écrite | OPÉRATIONNEL |
+| chaîne de publication | Zenodo et CITATION.cff relus | version 3.3.0, 11 identifiants distincts, 320 mentions de DOI, résolution en ligne non testée ici | OPÉRATIONNEL |
 | équations publiables | sceau par module | 6/12 modules dans le sceau, 95 équations hors publication prouvable | OPÉRATIONNEL |
 
 ## Les trois ablations exécutées
@@ -28,9 +28,9 @@
 ## Limites ouvertes
 
 - aucun instrument d'horodatage qualifié (RFC 3161, TSA, eIDAS, cachet) n'est dans l'archive : 0 fichier — ce dossier ne peut pas en produire un
-- 1 commit sur 70 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature
+- 1 commit sur 71 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature
 - le sceau ne porte aucune date : 0 date dans 204 entrées — dater un contenu demande un tiers de confiance, pas un hash
-- les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 70 commit(s) dans l'histoire git et 77 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas
+- les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 71 commit(s) dans l'histoire git et 78 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas
 - aucune trace d'éducation des IA dans l'archive : 0 instrument (poids fins, dataset, journal, config) — la demande reste déclarée
 - le dossier de preuves externe est cité 0 fois dans l'archive et n'y est pas scellé : sa valeur probante ne se transmet pas avec le ZIP
 - 4/4 antécédents vidéo sont nommés dans l'archive ; aucun n'y porte de date mesurable

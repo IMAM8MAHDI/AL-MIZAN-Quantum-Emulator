@@ -136,17 +136,24 @@
   <!-- RELATIONS AVEC D'AUTRES PUBLICATIONS         -->
   <!-- ============================================ -->
   
+  <!-- Contrôlé le 2026-11-10 : 10.5281/zenodo.23554838 ne résout pas (handle 404),
+       10.5281/zenodo.23479740 et 10.5281/zenodo.23288947 renvoient une page
+       Zenodo 410 « Gone ». Ces trois identifiants ne peuvent donc fonder aucune
+       relation : l'ancêtre est nommé sans identifiant, et la relation de version
+       pointe le DOI de concept AL-MIZAN, qui résout (HTTP 200). -->
+
+  <dcterms:relation>
+    <dcterms:title>ASTRO-Q°ODE_SYSTEME — source de l'émulateur, aucun enregistrement
+      Zenodo résolvable à ce jour</dcterms:title>
+  </dcterms:relation>
+
   <dcterms:isVersionOf>
-    <dcterms:title>ASTRO-Q°ODE_SYSTEME</dcterms:title>
-    <dcterms:identifier>10.5281/zenodo.23554838</dcterms:identifier>
+    <dcterms:title>AL-MIZAN : Émulateur quantique &amp; Arbre de savoir du millénaire</dcterms:title>
+    <dcterms:identifier>10.5281/zenodo.24028242</dcterms:identifier>
   </dcterms:isVersionOf>
 
   <dcterms:relation>
-    <dcterms:identifier>10.5281/zenodo.23479740</dcterms:identifier>
-  </dcterms:relation>
-
-  <dcterms:relation>
-    <dcterms:identifier>10.5281/zenodo.23288947</dcterms:identifier>
+    <dcterms:identifier>10.5281/zenodo.24091259</dcterms:identifier>
   </dcterms:relation>
 
   <!-- ============================================ -->

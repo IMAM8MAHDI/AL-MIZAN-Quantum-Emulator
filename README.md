@@ -74,7 +74,7 @@ BSD sur 3 courbes (L'(37a1)=0.306 = valeur LMFDB) · Hasse p≤97 · Hodge T²/C
 | Rédaction | `REDACTION/redaction_mizan.py` | 16 équations et 16 contrôles : l'intelligibilité est comptée. Sur 89 lignes d'équation, la page anglaise ne portait les nombres du calcul français que sur 56 lignes, l'arabe sur 55 ; la correction est appliquée au moteur, re-mesurée, et la forme mesurée (longueur de phrase, coupe arabe, distance au premier tableau) sans emprunter d'indice de lisibilité externe |
 | Construction | `CONSTRUCTION/construction_base.py` | 16 équations et 16 contrôles : plans de l'emboîtement à l'échelle humaine — 43 crans, cote de tête 622,50 mm clampée à 122,00 mm au cran 42, tolérance relative 1/1000, facteur de matière 1/(1−ρ²) — 0 prototype construit, et la phrase l'écrit |
 | Verrous | `VERROUS/verrous_base.py` | 16 équations et 16 contrôles : l'état réel de la protection mesuré au lieu d'être déclaré — arbre scanné, sceau re-haché, couverture SPDX, les 8 clauses d'une feuille de route externe, les 4 instruments, le registre d'accès, et les corrections que les faits imposent à cette feuille de route |
-| Déclaration | `DECLARATION/declaration_base.py` | 16 équations et 16 contrôles : l'antériorité re-mesurée par `git` brut plutôt que recopiée — 70 commits datés par l'horloge cliente, 204 entrées de sceau portant **0 date**, 0 instrument d'horodatage qualifié, 0 instrument d'éducation sur disque, 52 commits humains contre 18 d'automate, trois ablations rejouées ; les dates sont lues dans l'histoire qui voyage avec le dépôt, pas dans le journal local qui reste sur la machine ; l'antériorité est accessible, la paternité n'est pas instrumentée |
+| Déclaration | `DECLARATION/declaration_base.py` | 16 équations et 16 contrôles : l'antériorité re-mesurée par `git` brut plutôt que recopiée — 71 commits au HEAD `1bb66c2`, datés par l'horloge cliente, 204 entrées de sceau portant **0 date**, 0 instrument d'horodatage qualifié, 0 instrument d'éducation sur disque, 53 commits humains contre 18 d'automate, trois ablations rejouées ; les dates sont lues dans `git log HEAD`, l'histoire qui voyage avec le dépôt, non dans le journal local qui reste sur la machine ; l'antériorité est accessible, la paternité n'est pas instrumentée. Le compte de commits est indexé par un SHA parce qu'il avance à chaque commit |
 | Guerre | `GUERRE/guerre_base.py` | 16 équations et 16 contrôles : « il faut être riche pour faire la guerre » testée sur un snapshot Banque mondiale 2022 engagé par SHA-256 — 153 pays comparables sur 217 entités, ρ(revenu, charge) = 0,0619 plat alors que ρ(revenu, masse) = 0,5036 monte, 23 pays sous la médiane de revenu arment à plus d'un Md$, effort fiscal médian 5,62 % des recettes ; l'énoncé initial est **réfuté par la mesure** et remplacé par un énoncé borné |
 
 ## Base universelle — FONDATION
@@ -180,11 +180,11 @@ et le spectre hermitien complexe de la matrice densité.
 **0 ignoré, et plus rien d'extérieur à l'archive.** Les deux ponts
 (Steane, transducteur) se chargent depuis `moteur/` et la capsule
 `horloge_noyau` depuis `bibliotheques/` : un `ASTRO-Q°ODE_SYSTEME`
-voisin n'est plus requis. 546 tests au total, tous verts — 63 hors dossiers
-d'équations, 483 dans les dix — et les 199 équations du parc (ABONDANCE 54,
+voisin n'est plus requis. 562 tests au total, tous verts — 63 hors dossiers
+d'équations, 499 dans les dix — et les 199 équations du parc (ABONDANCE 54,
 CHIFFRES 17, FONDATION 18, HORLOGERIE 15, CONTINUITE 15, REDACTION 16,
 CONSTRUCTION 16, VERROUS 16, DECLARATION 16, GUERRE 16) portent chacune sa clause de limite, contrôlée
-par le même audit. Les 483 tests et les 199 équations des dossiers sont relevés
+par le même audit. Les 499 tests et les 199 équations des dossiers sont relevés
 par `FONDATION/fondation_base.py → inventaire_parc()`, pas saisis à la main ;
 les 63 autres sont `tests.test_emulateur` et la suite `horloge_noyau`.
 
