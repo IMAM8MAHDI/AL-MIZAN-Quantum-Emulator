@@ -699,11 +699,17 @@ class TestNonVacuite(unittest.TestCase):
             self.assertEqual([k for k, c in cs.items() if not c["ok"]], ["C06"], chemin)
 
     def test_trois_mensonges_sur_les_deux_sources_rougissent_leur_seul_controle(self):
-        """Décréter l'autre source, reprendre de la matière ou gommer l'écart : chacun rougit."""
+        """Décréter l'autre source, reprendre de la matière ou gommer l'écart : chacun rougit.
+
+        La valeur mutée de l'écart vient de la mesure : à zéro partout — archive sans dépôt —
+        imposer 0 serait un mensonge inopérant et le contrôle ne contrôlerait plus rien.
+        """
+        chr_ = CERT["chronologie"]
         for cid, chemin, valeur in (
                 ("C06", ("horodatages", "dates_publiees_par"), "journal_local"),
                 ("C07", ("registre_acces", "matiere_reprise_dans_le_registre"), 3),
-                ("C14", ("chronologie", "divergence_journal_moins_histoire"), 0)):
+                ("C14", ("chronologie", "divergence_journal_moins_histoire"),
+                 chr_["divergence_journal_moins_histoire"] + 1)):
             cs = {c["id"]: c for c in V.controles(EQS, muter(chemin, valeur))}
             self.assertEqual([k for k, c in cs.items() if not c["ok"]], [cid], chemin)
 
@@ -817,10 +823,16 @@ class TestVerdictsDefavorables(unittest.TestCase):
         self.assertFalse(chr_["verrouillage_avant_exposition"])
         self.assertTrue(chr_["retroactif_impossible"])
         self.assertTrue(exp["expose"])
-        self.assertGreater(chr_["secondes_attestees"], 0)
         self.assertGreaterEqual(len(chr_["gouvernable_desormais"]), 3)
         # les deux sources de dates sont publiées séparément, et le verdict ne dépend d'aucune
         self.assertEqual(chr_["commits_attestes"], hi["commits"])
+        self.assertEqual(chr_["secondes_attestees"], hi["duree_attestee_seconde"])
+        if hi["commits"]:
+            self.assertGreater(chr_["secondes_attestees"], 0,
+                               "une histoire lisible donne une amplitude, pas un rond")
+        else:
+            self.assertEqual(chr_["secondes_attestees"], 0,
+                             "aucun dépôt git lu : l'amplitude est mesurée nulle, pas cachée")
         self.assertEqual(chr_["ecritures_du_journal_local"], hj["parsees"])
         self.assertEqual(chr_["divergence_journal_moins_histoire"], hj["parsees"] - hi["commits"])
         self.assertEqual("git log HEAD", chr_["source_des_dates"])

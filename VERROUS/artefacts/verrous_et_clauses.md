@@ -2,7 +2,7 @@
 
 | phase conseillée | ce que l'avis prescrivait | ce que le dépôt rend | statut |
 |---|---|---|---|
-| 1 | SHA-256 de chaque fichier, config, script et preuve, avant d'exposer | 336 fichiers inventoriés, empreinte d'arbre 2b9575067ee070b3… | OPÉRATIONNEL |
+| 1 | SHA-256 de chaque fichier, config, script et preuve, avant d'exposer | 336 fichiers inventoriés, empreinte d'arbre 3f99b86a50a8b075… | OPÉRATIONNEL |
 | 1 | sceau probant (e-Soleau, coffre-fort, RFC 3161) | 0 instrument juridique ; manifeste 163/204 conformes, 41 en dérive | SPÉCIFIÉ |
 | 1 | licence non commerciale | 0 clause d'usage non commercial dans les deux textes GNU ; expression « GPL-3.0-only OR AGPL-3.0-only » dans 80/94 sources | OPÉRATIONNEL |
 | 1 | garder un cœur secret | 0 fichier gardé, CONSTRUCTION/construction_base.py · CONTINUITE/continuite_base.py · DECLARATION/declaration_base.py · GUERRE/guerre_base.py · REDACTION/redaction_mizan.py · VERROUS/verrous_base.py — 6 module(s) d'équations hors sceau et publiés quand même | OPÉRATIONNEL |
@@ -12,7 +12,7 @@
 | 4 | licence d'exploitation contre cession de PI | 0/4 instrument cité, 0 signé, 0 pièce contractuelle sur disque | SPÉCIFIÉ |
 | 4 | rémunération hybride, pas de forfait unique | 0 montant imposé, 0 mention de redevance, 5 ligne(s) du devis parlent de prix | SPÉCIFIÉ |
 | 4 | relecture par un avocat spécialisé | 0 occurrence de « avocat », 0 de « barreau », saisine non attestée | SPÉCIFIÉ |
-| — | verrouiller avant d'exposer | DOI 10.5281/zenodo.24028242 publié, 67 commits datés dès 2026-11-07T05:44:16+01:00, 0 verrou : l'ordre est tenu à l'envers | SPÉCIFIÉ |
+| — | verrouiller avant d'exposer | DOI 10.5281/zenodo.24028242 publié, 68 commits datés dès 2026-11-07T05:44:16+01:00, 0 verrou : l'ordre est tenu à l'envers | SPÉCIFIÉ |
 
 ## Les quatre corrections que la mesure impose à l'avis reçu
 
