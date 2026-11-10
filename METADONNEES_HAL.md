@@ -63,7 +63,7 @@ l'émission de l'enregistrement.
    - Code source Python (l'émulateur et les 12 modules de certificats répartis dans
      les dix dossiers d'équations — compte relevé par
      `FONDATION/fondation_base.py → inventaire_parc()`, pas saisi à la main)
-   - 53 tests unitaires pour l'émulateur, 562 pour le dépôt complet
+   - 53 tests unitaires pour l'émulateur, 563 pour le dépôt complet
    - Documentation complète (README, PRESENTATION, paper.md)
    - Métadonnées (.zenodo.json, CITATION.cff)
    - Licences (AGPL-3.0, GPL-3.0)
@@ -90,5 +90,5 @@ Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2
 - Architecture "sans dolosif" : honnêteté scientifique stricte sur les capacités et limitations
 - Chaque certificat mathématique porte des bornes explicites
 - Émulation classique uniquement (pas de QPU matériel)
-- 53 tests unitaires pour l'émulateur, 562 pour le dépôt complet — tous verts
+- 53 tests unitaires pour l'émulateur, 563 pour le dépôt complet — tous verts
 - Documentation bilingue français/anglais

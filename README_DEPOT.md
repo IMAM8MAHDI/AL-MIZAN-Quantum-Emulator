@@ -82,9 +82,9 @@ ZENODO_DEPOT_ALMIZAN/
 ├── VERROUS/               # l'état de la protection mesuré : 16 équations · 16 contrôles
 │   ├── verrous_base.py          # arbre, sceau re-haché, SPDX, 8 clauses, 4 instruments
 │   ├── artefacts/               # certificat.json + registre d'accès + clauses MD + plan SVG
-│   └── tests/                   # 61 tests
+│   └── tests/                   # 62 tests
 ├── DECLARATION/           # l'antériorité re-mesurée : 16 équations · 16 contrôles
-│   ├── declaration_base.py      # 71 commits au HEAD 1bb66c2, 0 date au sceau, 3 ablations
+│   ├── declaration_base.py      # 74 commits au HEAD 7167eaf, 0 date au sceau, 3 ablations
 │   ├── artefacts/               # certificat.json + chaîne d'antériorité CSV + ablations MD + plan SVG
 │   └── tests/                   # 37 tests
 ├── GUERRE/                # la richesse face à la guerre : 16 équations · 16 contrôles
@@ -215,7 +215,7 @@ cd HORLOGERIE && py -m unittest tests.test_horlogerie tests.test_laboratoire   #
 cd CONTINUITE && py -m unittest tests.test_continuite               #  23 tests
 cd REDACTION && py -m unittest tests.test_redaction                 #  32 tests
 cd CONSTRUCTION && py -m unittest tests.test_construction           #  42 tests
-cd VERROUS && py -m unittest tests.test_verrous                     #  61 tests
+cd VERROUS && py -m unittest tests.test_verrous                     #  62 tests
 cd DECLARATION && py -m unittest tests.test_declaration             #  37 tests
 cd GUERRE && py -m unittest tests.test_guerre                        #  56 tests
 

@@ -1024,6 +1024,13 @@ def octets_svg(cert: Dict[str, Any]) -> bytes:
         + "\n".join(pieces) + "\n" + note + "\n</svg>\n").encode("utf-8")
 
 
+def _cellule_hors_sceau(fr: Dict[str, Any]) -> str:
+    # La liste n'est nommée que lorsqu'elle est non vide : rendue vide, elle laisse un séparateur
+    # sans rien derrière, ce qui se lisait comme une phrase cassée.
+    hors = fr["modules_d_equations_hors_sceau"]
+    return (" (" + " · ".join(hors) + ")") if hors else ""
+
+
 def octets_clauses_md(cert: Dict[str, Any]) -> bytes:
     inv, man, lic = cert["inventaire"], cert["manifeste"], cert["licence"]
     reg, cls, st = cert["registre_acces"], cert["clauses"], cert["structure_contrat"]
@@ -1044,9 +1051,9 @@ def octets_clauses_md(cert: Dict[str, Any]) -> bytes:
         f"d'usage non commercial dans les deux textes GNU ; expression « {lic['expression_lue']} » "
         f"dans {lic['avec_en_tete']}/{lic['python_total']} sources | OPÉRATIONNEL |",
         f"| 1 | garder un cœur secret | {cert['frontiere']['coeur_secret_reelement_garde']} fichier "
-        f"gardé, {' · '.join(cert['frontiere']['modules_d_equations_hors_sceau'])} — "
-        f"{len(cert['frontiere']['modules_d_equations_hors_sceau'])} module(s) d'équations hors "
-        f"sceau et publiés quand même | OPÉRATIONNEL |",
+        f"gardé ; {len(cert['frontiere']['modules_portant_des_equations'])} module(s) d'équations "
+        f"publié(s), {len(cert['frontiere']['modules_d_equations_hors_sceau'])} hors du sceau"
+        f"{_cellule_hors_sceau(cert['frontiere'])} | OPÉRATIONNEL |",
         f"| 2 | registre d'accès | {reg['nb_colonnes']} colonnes, {reg['nb_entrees']} ligne, "
         f"{reg['matiere_sur_disque']} fichier(s) de courriers sur ce disque, "
         f"{reg['matiere_suivie_par_git']} suivi(s) par git, "
@@ -1781,8 +1788,9 @@ def resume_markdown(cert: Dict[str, Any]) -> bytes:
         "2. le manifeste est re-haché entrée par entrée : la dérive est comptée, listée, publiée ;",
         "3. les textes GNU sont cherchés mot à mot : la clause « usage non commercial » annoncée par "
         "l'avis n'y est pas ;",
-        "4. la frontière « cœur secret » est mesurée : rien n'est gardé, et des modules d'équations "
-        "sont hors du sceau ;",
+        f"4. la frontière « cœur secret » est mesurée : {fr['coeur_secret_reelement_garde']} fichier "
+        f"gardé, {len(fr['modules_portant_des_equations'])} module(s) d'équations publiés, "
+        f"{len(fr['modules_d_equations_hors_sceau'])} hors du sceau{_cellule_hors_sceau(fr)} ;",
         "5. le journal git est parseé intégralement : dates, auteurs, tête, et paternité non prouvée ;",
         "6. le registre d'accès est ouvert vide, avec ses six colonnes ;",
         "7. les huit clauses sont cherchées avec un contrôle positif qui prouve que la recherche "
