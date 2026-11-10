@@ -41,12 +41,12 @@
   },
   "chronologie": {
     "ce_que_l_avis_prescrivait": "« Phase 1 : Verrouillage et traçabilité pré-exposition »",
-    "commits_attestes": 75,
+    "commits_attestes": 78,
     "date_de_exposition_lue": "2026-11-10",
-    "derniere_trace_datee": "2026-11-10T09:04:49+01:00",
+    "derniere_trace_datee": "2026-11-10T09:08:20+01:00",
     "divergence_journal_moins_histoire": 7,
     "doi_deja_publie": true,
-    "ecritures_du_journal_local": 82,
+    "ecritures_du_journal_local": 85,
     "exposition_attestee_anterieure_aux_verrous": true,
     "exposition_datee_sans_le_journal": true,
     "gouvernable_desormais": [
@@ -55,13 +55,13 @@
       "prochain document avant envoi"
     ],
     "journal_local_present": true,
-    "mesure": "l'histoire suivie par git porte 75 commits datés, le journal local enregistre 82 écritures (écart 7) : le DOI est publié et aucun verrou n'a été posé, la phase 1 arrive après l'exposition, elle ne la précède plus",
+    "mesure": "l'histoire suivie par git porte 78 commits datés, le journal local enregistre 85 écritures (écart 7) : le DOI est publié et aucun verrou n'a été posé, la phase 1 arrive après l'exposition, elle ne la précède plus",
     "ordre_independant_des_sources_de_dates": true,
     "portee_des_deux_sources": "les commits se lisent dans un clone et dans l'archive tant que git y est disponible ; le journal de références reste sur le disque qui l'a produit",
     "premiere_trace_datee": "2026-11-07T05:44:16+01:00",
     "retroactif_impossible": true,
     "second_term_manquant_pour_dater_un_verrou": true,
-    "secondes_attestees": 271233,
+    "secondes_attestees": 271444,
     "source_des_dates": "git log HEAD",
     "verrouillage_avant_exposition": false,
     "verrouillage_sans_consulter_une_date": false,
@@ -124,9 +124,9 @@
     "absence_partout": true,
     "auto_reference": "certificat.json porte ce nœud : sa taille et son empreinte ne peuvent pas être scellées par lui-même",
     "empreintes": {
-      "frontiere_publique.svg": "051f0f987862d669",
+      "frontiere_publique.svg": "95cb0449091601c3",
       "registre_acces.csv": "6234ee7886b03c0a",
-      "verrous_et_clauses.md": "8dfabe3d88a5dd02"
+      "verrous_et_clauses.md": "7a07438510944b9e"
     },
     "nom_sans_empreinte": "certificat.json",
     "nom_sans_phrase": "registre_acces.csv",
@@ -143,12 +143,12 @@
     ],
     "raison_sans_phrase": "une ligne de commentaire dans un registre Excel devient une donnée ; l'absence y est structurelle : zéro ligne",
     "tailles": {
-      "frontiere_publique.svg": 2704,
+      "frontiere_publique.svg": 2703,
       "registre_acces.csv": 72,
-      "verrous_et_clauses.md": 5001
+      "verrous_et_clauses.md": 5033
     }
   },
-  "empreinte_execution": "0a936b3172081a06d655494b513e2d3bf46fc846f5cbf1d49f99d83648aa5baa",
+  "empreinte_execution": "b7bcf1e4e7d191905e2c826e2542c4cfe479c7aa71f8fa778792cae3e414c68c",
   "exposition": {
     "branches_de_l_expression": [
       "AGPL-3.0-only",
@@ -240,14 +240,14 @@
     "ce_que_compte_chaque_source": "« histoire » compte les commits atteignables depuis HEAD : ils voyagent avec le dépôt. « journal_local » compte les écritures de .git/logs/HEAD : elles restent sur le disque qui les a produites et ne voyagent ni dans un clone ni dans l'archive",
     "ce_que_compte_le_strict": "le strict compte les artefacts d'horodatage sur disque (.tsa, .p7s, .p7m, .sig, .asc, .der), pas les mots qui les nomment : une mention n'est pas un instrument",
     "ce_que_prouve_un_depot": "un dépôt horodaté atteste qu'un contenu était accessible à une date, pas qu'il est de vous : antériorité légale = False",
-    "commits_attestes": 75,
+    "commits_attestes": 78,
     "commits_d_outils_automates": 18,
     "contraste_naif_contexte": "DECLARATION/artefacts/certificat.json:633 — \"bibliotheques/lib_physique.py:630|role_systeme=\\\"Coffre-fort cryptographique ultime et archive ",
     "contraste_naif_fichiers": 4,
     "contraste_naif_occurrences": 10,
     "dates_publiees_par": "histoire",
-    "derniere": "2026-11-10T09:04:49+01:00",
-    "duree_attestee_seconde": 271233,
+    "derniere": "2026-11-10T09:08:20+01:00",
+    "duree_attestee_seconde": 271444,
     "exclus_auto": [
       "VERROUS/verrous_base.py",
       "VERROUS/tests/test_verrous.py"
@@ -269,19 +269,19 @@
       "auteurs": {
         "Elbahloulahmed505@gmail.com": 1,
         "devin@cognition.ai": 18,
-        "elbahloulahmed505@gmail.com": 56
+        "elbahloulahmed505@gmail.com": 59
       },
       "auteurs_additifs": true,
-      "commits": 75,
+      "commits": 78,
       "commits_d_outils_automates": 18,
-      "derniere": "2026-11-10T09:04:49+01:00",
-      "duree_attestee_seconde": 271233,
+      "derniere": "2026-11-10T09:08:20+01:00",
+      "duree_attestee_seconde": 271444,
       "git_disponible": true,
-      "lignes": 75,
+      "lignes": 78,
       "premiere": "2026-11-07T05:44:16+01:00",
-      "sha_distincts": 75,
-      "sha_tete": "3493fd8023e98c83f642d7f1607685173a7ee329",
-      "somme_auteurs": 75,
+      "sha_distincts": 78,
+      "sha_tete": "836711d7bc4ba6902ddbc79bd9c1dd58a37f6748",
+      "somme_auteurs": 78,
       "tete_coherente": true,
       "tout_parse": true
     },
@@ -319,22 +319,22 @@
     "journal_local": {
       "auteurs": {
         "devin@cognition.ai": 18,
-        "elbahloulahmed505@gmail.com": 64
+        "elbahloulahmed505@gmail.com": 67
       },
       "auteurs_additifs": true,
-      "derniere": "2026-11-10T09:04:49+01:00",
-      "duree_attestee_seconde": 271233,
-      "lignes": 82,
-      "parsees": 82,
+      "derniere": "2026-11-10T09:08:20+01:00",
+      "duree_attestee_seconde": 271444,
+      "lignes": 85,
+      "parsees": 85,
       "premiere": "2026-11-07T05:44:16+01:00",
       "present": true,
-      "sha_dernier": "3493fd8023e98c83f642d7f1607685173a7ee329",
-      "sha_tete": "3493fd8023e98c83f642d7f1607685173a7ee329",
-      "somme_auteurs": 82,
+      "sha_dernier": "836711d7bc4ba6902ddbc79bd9c1dd58a37f6748",
+      "sha_tete": "836711d7bc4ba6902ddbc79bd9c1dd58a37f6748",
+      "somme_auteurs": 85,
       "tete_coherente": true,
       "tout_parse": true,
       "utf8_integrale": true,
-      "utf8_stricte": 82
+      "utf8_stricte": 85
     },
     "journal_plus_que_commits": 7,
     "mentions_instrument_fichiers": 3,
@@ -350,7 +350,7 @@
     "ce_que_le_suivi_dit": "un arbre scanné sur disque n'est pas l'arbre publié : les fichiers que git ne suit pas ne voyagent ni dans un clone ni dans l'archive, et l'écart est compté ici plutôt que subi",
     "chemins_uniques": true,
     "ecrit_uniquement_dans": "VERROUS/artefacts/",
-    "empreinte_arbre": "458c73b92187c57b0543a918c2d239e93d4b8e055f0e9b48472fc775d5c801b5",
+    "empreinte_arbre": "5568fb71edf859eefd3a03e996334c0784f06155f12123fd243ea53c8916789e",
     "empreintes_distinctes": false,
     "exemples_non_suivis": [
       "EMAIL_QUANTUM_MEET.txt",
@@ -384,7 +384,7 @@
     },
     "motifs_horloge_reposes": [],
     "nb_motifs_horloge_cherches": 5,
-    "octets_total": 4326258,
+    "octets_total": 4326291,
     "par_extension": {
       "(sans extension)": 5,
       ".bib": 1,
@@ -489,7 +489,7 @@
     "les prix, redevances et pourcentages sont absents du corpus : rien n'est négocié, et rien n'est ici proposé à la place",
     "ce certificat est mesuré sous le chemin où on le lance : l'arbre vu d'ici compte 336 fichiers (99 fichier(s) hors du suivi git) — les compteurs d'arbre et de matière ne voyagent pas avec le dépôt, EQ-01 et EQ-07 publient l'écart des fichiers hors du suivi git",
     "les dates du journal local de références ne voyagent pas : seule l'histoire atteignable par git se relit dans un clone, et l'archive publiée peut ne contenir aucun dépôt git",
-    "les quatre artefacts posés sur disque sont un instantané : le compte de commits qu'ils affichent est celui de l'instant où ils ont été écrits, et le commit qui les transporte les dépasse toujours d'un",
+    "les quatre artefacts posés sur disque sont un instantané : le compte de commits et l'empreinte d'arbre qu'ils affichent sont ceux de l'état qu'ils précèdent ; le commit qui les transporte, puis le scellement qui le suit, les dépassent",
     "cette couche ne prétend qu'une chose : elle mesure l'état du dépôt tel qu'il est écrit sur disque ; elle ne verrouille rien, ne rédige rien et ne conseille personne"
   ],
   "limites_ouvertes": {
@@ -507,7 +507,7 @@
       "les prix, redevances et pourcentages sont absents du corpus : rien n'est négocié, et rien n'est ici proposé à la place",
       "ce certificat est mesuré sous le chemin où on le lance : l'arbre vu d'ici compte 336 fichiers (99 fichier(s) hors du suivi git) — les compteurs d'arbre et de matière ne voyagent pas avec le dépôt, EQ-01 et EQ-07 publient l'écart des fichiers hors du suivi git",
       "les dates du journal local de références ne voyagent pas : seule l'histoire atteignable par git se relit dans un clone, et l'archive publiée peut ne contenir aucun dépôt git",
-      "les quatre artefacts posés sur disque sont un instantané : le compte de commits qu'ils affichent est celui de l'instant où ils ont été écrits, et le commit qui les transporte les dépasse toujours d'un"
+      "les quatre artefacts posés sur disque sont un instantané : le compte de commits et l'empreinte d'arbre qu'ils affichent sont ceux de l'état qu'ils précèdent ; le commit qui les transporte, puis le scellement qui le suit, les dépassent"
     ],
     "longueur_minimale": 113,
     "marqueur_courriers": "87 fichier(s) de courriers",
@@ -516,33 +516,16 @@
     "toutes_au_dela_de_20": true
   },
   "manifeste": {
-    "a_l_identique": 131,
+    "a_l_identique": 143,
     "absents_de_disque": 0,
     "absents_listes": [],
-    "apres_normalisation_des_fins_de_ligne": 93,
+    "apres_normalisation_des_fins_de_ligne": 97,
     "chemin": "MANIFESTE_SHA256.txt",
     "comptes_additifs": true,
-    "conformes": 224,
-    "couverture_%": "66.67",
-    "derivent": 16,
-    "derivent_listes": [
-      ".zenodo.json",
-      "COMMUNIQUE_PRESSE.md",
-      "DECLARATION/artefacts/certificat.json",
-      "DECLARATION/artefacts/chaine_anteriorite.csv",
-      "DECLARATION/artefacts/declaration_et_ablations.md",
-      "DECLARATION/artefacts/frontiere_anteriorite.svg",
-      "METADONNEES_HAL.md",
-      "POSTS_LANCEMENT.md",
-      "PRESENTATION_TROIS_SECTIONS.md",
-      "README.md",
-      "README_DEPOT.md",
-      "VERROUS/artefacts/certificat.json",
-      "VERROUS/artefacts/frontiere_publique.svg",
-      "VERROUS/artefacts/verrous_et_clauses.md",
-      "VERROUS/verrous_base.py",
-      "paper.md"
-    ],
+    "conformes": 240,
+    "couverture_%": "71.43",
+    "derivent": 0,
+    "derivent_listes": [],
     "hors_manifeste": 100,
     "hors_manifeste_exemples": [
       "EMAIL_QUANTUM_MEET.txt",
@@ -575,7 +558,7 @@
     "total_lignes": 240,
     "toutes_entrees_existent": true,
     "un_sceau_ne_dit_rien_de_la_date": true,
-    "verdict": "HORS SCEAU : 16 fichier(s) du dépôt ne rendent pas l'empreinte inscrite dans le manifeste"
+    "verdict": "SCELLÉ"
   },
   "plan_svg": {
     "absence_ecrite": true,
@@ -585,7 +568,7 @@
     "echelle": "220.0 px",
     "largeurs_conformes": true,
     "notes_texte": 17,
-    "octets": 2704,
+    "octets": 2703,
     "plus_grande_valeur": 336,
     "valeurs_attendues": [
       336,
@@ -608,7 +591,7 @@
       0
     ]
   },
-  "racine_merkle_sha256": "8e7ebfa7680acd5c8f9781e26d50c9f9e4c049a8ec7f377a687a3297f8e8359f",
+  "racine_merkle_sha256": "a047fd43a4e5bcd480c3670023a90d52c3b7105b05155fc1dfe05109808ffe6e",
   "regime_commercial": {
     "ce_que_les_textes_disent": "les deux textes GNU autorisent l'usage commercial et permettent de facturer des copies ; le seul mot « noncommercially » qu'ils contiennent règle une offre ponctuelle de source, pas un champ d'exploitation",
     "clause_reseau_agpl": 1,
@@ -844,7 +827,7 @@
     },
     "pieces_listees": []
   },
-  "taille_octets": 23879,
+  "taille_octets": 23323,
   "verdict": {
     "clauses_redigees": 0,
     "enonce": "aucun verrou contractuel posé",

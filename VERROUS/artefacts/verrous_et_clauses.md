@@ -2,8 +2,8 @@
 
 | phase conseillée | ce que l'avis prescrivait | ce que le dépôt rend | statut |
 |---|---|---|---|
-| 1 | SHA-256 de chaque fichier, config, script et preuve, avant d'exposer | 336 fichiers inventoriés, empreinte d'arbre 458c73b92187c57b… | OPÉRATIONNEL |
-| 1 | sceau probant (e-Soleau, coffre-fort, RFC 3161) | 0 instrument juridique ; manifeste 224/240 conformes, 16 en dérive | SPÉCIFIÉ |
+| 1 | SHA-256 de chaque fichier, config, script et preuve, avant d'exposer | 336 fichiers inventoriés, empreinte d'arbre 5568fb71edf859ee… | OPÉRATIONNEL |
+| 1 | sceau probant (e-Soleau, coffre-fort, RFC 3161) | 0 instrument juridique ; manifeste 240/240 conformes, 0 en dérive | SPÉCIFIÉ |
 | 1 | licence non commerciale | 0 clause d'usage non commercial dans les deux textes GNU ; expression « GPL-3.0-only OR AGPL-3.0-only » dans 80/94 sources | OPÉRATIONNEL |
 | 1 | garder un cœur secret | 0 fichier gardé ; 9 module(s) d'équations publié(s), 0 hors du sceau | OPÉRATIONNEL |
 | 2 | registre d'accès | 6 colonnes, 0 ligne, 87 fichier(s) de courriers sur ce disque, 0 suivi(s) par git, 0 sous le sceau, aucun repris | OPÉRATIONNEL |
@@ -12,7 +12,7 @@
 | 4 | licence d'exploitation contre cession de PI | 0/4 instrument cité, 0 signé, 0 pièce contractuelle sur disque | SPÉCIFIÉ |
 | 4 | rémunération hybride, pas de forfait unique | 0 montant imposé, 0 mention de redevance, 5 ligne(s) du devis parlent de prix | SPÉCIFIÉ |
 | 4 | relecture par un avocat spécialisé | 0 occurrence de « avocat », 0 de « barreau », saisine non attestée | SPÉCIFIÉ |
-| — | verrouiller avant d'exposer | DOI 10.5281/zenodo.24028242 publié, 75 commits datés dès 2026-11-07T05:44:16+01:00, 0 verrou : l'ordre est tenu à l'envers | SPÉCIFIÉ |
+| — | verrouiller avant d'exposer | DOI 10.5281/zenodo.24028242 publié, 78 commits datés dès 2026-11-07T05:44:16+01:00, 0 verrou : l'ordre est tenu à l'envers | SPÉCIFIÉ |
 
 ## Les quatre corrections que la mesure impose à l'avis reçu
 
@@ -35,6 +35,6 @@
 - les prix, redevances et pourcentages sont absents du corpus : rien n'est négocié, et rien n'est ici proposé à la place
 - ce certificat est mesuré sous le chemin où on le lance : l'arbre vu d'ici compte 336 fichiers (99 fichier(s) hors du suivi git) — les compteurs d'arbre et de matière ne voyagent pas avec le dépôt, EQ-01 et EQ-07 publient l'écart des fichiers hors du suivi git
 - les dates du journal local de références ne voyagent pas : seule l'histoire atteignable par git se relit dans un clone, et l'archive publiée peut ne contenir aucun dépôt git
-- les quatre artefacts posés sur disque sont un instantané : le compte de commits qu'ils affichent est celui de l'instant où ils ont été écrits, et le commit qui les transporte les dépasse toujours d'un
+- les quatre artefacts posés sur disque sont un instantané : le compte de commits et l'empreinte d'arbre qu'ils affichent sont ceux de l'état qu'ils précèdent ; le commit qui les transporte, puis le scellement qui le suit, les dépassent
 
 **aucun verrou contractuel posé** : ce dossier compte des octets, il ne rédige rien et ne conseille personne.
