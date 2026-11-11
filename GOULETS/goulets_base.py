@@ -58,12 +58,15 @@ DOSSIER = Path(__file__).resolve().parent
 SOURCES = DOSSIER / "sources"
 ARTEFACTS = DOSSIER / "artefacts"
 
-F_YOUTUBE = "youtube_2026-11-10.json"
-F_QUOTAS = "quotas_declares_2026-11-10.json"
-F_DISQUE = "disque_2026-11-10.json"
-F_STOCK = "backlog_local_2026-11-10.json"
-F_VIDEO = "video_source_2026-11-10.json"
-F_PLAFOND = "plafond_chaine_2026-11-10.json"
+# Aucun de ces noms ne porte de date : le nom entre dans MANIFESTE_SHA256.txt, et le sceau
+# d'AL-MIZAN ne doit porter aucune date (contrôlée par DECLARATION C04). La prise de chaque
+# instantané reste consignée à l'intérieur du fichier, champ mesure_le_utc.
+F_YOUTUBE = "youtube.json"
+F_QUOTAS = "quotas_declares.json"
+F_DISQUE = "disque.json"
+F_STOCK = "backlog_local.json"
+F_VIDEO = "video_source.json"
+F_PLAFOND = "plafond_chaine.json"
 F_EMPREINTES = "EMPREINTES.json"
 
 PUBLIES = (F_YOUTUBE, F_QUOTAS, F_DISQUE, F_STOCK, F_VIDEO, F_PLAFOND)

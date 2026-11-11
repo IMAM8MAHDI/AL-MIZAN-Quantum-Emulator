@@ -37,16 +37,24 @@ d'audience et n'affirme pas que la chaîne est arrêtable ou inarrêtable.
 
 | Fichier | Provenance | Ce qu'il nourrit |
 |---|---|---|
-| `sources/youtube_2026-11-10.json` | `channels.list(mine=True)` puis `playlistItems.list` sur la playlist d'expédition, puis `videos.list` par paquets de 50 — lecture seule | EQ-02, EQ-03, EQ-04, EQ-08, C02…C04, C08 |
-| `sources/quotas_declares_2026-11-10.json` | texte publié du barème de coûts, recopié verbatim le jour de la prise | EQ-05, C05 |
-| `sources/plafond_chaine_2026-11-10.json` | lignes du journal local de l'opérateur portant la raison renvoyée par l'API, rapprochées des publications lues sur la chaîne | EQ-06, C06 |
-| `sources/backlog_local_2026-11-10.json` | fichiers `.mp4` de trois dossiers locaux : taille par `stat()`, durée lue dans la boîte `mvhd` en remontant l'arborescence des boîtes | EQ-09, C09 |
-| `sources/disque_2026-11-10.json` | `GetDiskFreeSpaceExW` sur le lecteur de production, instantané propre à cet hôte | EQ-09, C10 |
-| `sources/video_source_2026-11-10.json` | oEmbed de la vidéo qui a donné le thème : titre, auteur, durée, horodatages de la description | `video_source` du certificat |
+| `sources/youtube.json` | `channels.list(mine=True)` puis `playlistItems.list` sur la playlist d'expédition, puis `videos.list` par paquets de 50 — lecture seule | EQ-02, EQ-03, EQ-04, EQ-08, C02…C04, C08 |
+| `sources/quotas_declares.json` | texte publié du barème de coûts, recopié verbatim le jour de la prise | EQ-05, C05 |
+| `sources/plafond_chaine.json` | lignes du journal local de l'opérateur portant la raison renvoyée par l'API, rapprochées des publications lues sur la chaîne | EQ-06, C06 |
+| `sources/backlog_local.json` | fichiers `.mp4` de trois dossiers locaux : taille par `stat()`, durée lue dans la boîte `mvhd` en remontant l'arborescence des boîtes | EQ-09, C09 |
+| `sources/disque.json` | `GetDiskFreeSpaceExW` sur le lecteur de production, instantané propre à cet hôte | EQ-09, C10 |
+| `sources/video_source.json` | oEmbed de la vidéo qui a donné le thème : titre, auteur, durée, horodatages de la description | `video_source` du certificat |
 | `sources/EMPREINTES.json` | table dressée à la capture : SHA-256 de chaque fichier, puis racine sur la concaténation triée « nom + empreinte » | EQ-01, C01 |
 
-Les noms de fichiers portent la date UTC de la prise. `git` ne doit pas y retoucher les fins de
-ligne : `.gitattributes` verrouille `GOULETS/sources/*.json` en `eol=lf`, faute de quoi un clone
+Aucun nom de fichier ne porte de date : le nom entre dans `MANIFESTE_SHA256.txt`, et le sceau du
+dépôt ne doit porter aucune date — `DECLARATION/declaration_base.py → sceau_contenu() → C04`
+compte les motifs `20\d\d-\d\d-\d\d` dans le texte du manifeste et rougit dès qu'un seul y
+apparaît. La date de prise reste consignée à l'intérieur de chaque instantané, champ
+`mesure_le_utc`, et dans `horodatage_utc` de la table d'empreintes ; le renommage du
+11 novembre 2026 n'a changé ni un octet des six fichiers (SHA-256 et tailles repris tels quels
+dans `EMPREINTES.json`), ni un nombre du certificat.
+
+`git` ne doit pas retoucher les fins de ligne de ces fichiers : `.gitattributes` verrouille
+`GOULETS/sources/*.json` en `eol=lf`, faute de quoi un clone
 Windows hacherait des octets différents et C01 rougirait pour une raison absente des données.
 
 ## 3. Ce que la prise établit — et ce qu'elle laisse ouvert
@@ -85,7 +93,7 @@ dans la limite de EQ-06.
 - Uniform Time Act (1966, tel qu'amendé) et la règle civile américaine qui en découle : deuxième
   dimanche de mars, premier dimanche de novembre. Le module la réécrit lui-même, sans `tzdata`.
 - Documentation publique de la YouTube Data API v3 : le barème de coûts et la réinitialisation
-  « at midnight Pacific Time (PT) », recopiés verbatim dans `quotas_declares_2026-11-10.json`.
+  « at midnight Pacific Time (PT) », recopiés verbatim dans `quotas_declares.json`.
 - ISO/IEC 14496-12 (boîtes `moov`/`mvhd`) : la structure d'en-tête MP4 dont la durée est lue.
 
 Aucun de ces travaux ne fonde un chiffre d'AL-MIZAN, et aucun chiffre de ce dossier ne leur est

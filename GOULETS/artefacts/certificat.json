@@ -90,40 +90,40 @@
     "taux_emploi_effectif": 0.13529411764705884
   },
   "empreintes": {
-    "backlog_local_2026-11-10.json": {
+    "backlog_local.json": {
       "attendu": "521f82c8a04ab7c91be364e0c7add789ddbbabb282b1c8462b05f6b94ed09486",
       "octets": 12307,
       "ok": true,
       "sha256": "521f82c8a04ab7c91be364e0c7add789ddbbabb282b1c8462b05f6b94ed09486"
     },
-    "disque_2026-11-10.json": {
+    "disque.json": {
       "attendu": "f406ad200c9b678e94ad242839d987be174f4fa4524f28a4e834a0d167d5c23a",
       "octets": 617,
       "ok": true,
       "sha256": "f406ad200c9b678e94ad242839d987be174f4fa4524f28a4e834a0d167d5c23a"
     },
     "hors_table": [],
-    "plafond_chaine_2026-11-10.json": {
+    "plafond_chaine.json": {
       "attendu": "a308821d75f993a78bfeb530bc2d7af9505e4911f2be9fd7740d5ce6720b0677",
       "octets": 2742,
       "ok": true,
       "sha256": "a308821d75f993a78bfeb530bc2d7af9505e4911f2be9fd7740d5ce6720b0677"
     },
-    "quotas_declares_2026-11-10.json": {
+    "quotas_declares.json": {
       "attendu": "5ca911f7ede44b2aaa5dfa35e943b6466c614d3dbea515d582d0b03342191c41",
       "octets": 1082,
       "ok": true,
       "sha256": "5ca911f7ede44b2aaa5dfa35e943b6466c614d3dbea515d582d0b03342191c41"
     },
-    "racine_declaree": "0fb7aee428ac2ec7ef5fe02a73cce7fe31a1da5e59ff4772657e0ded3445a52f",
-    "racine_recalculee": "0fb7aee428ac2ec7ef5fe02a73cce7fe31a1da5e59ff4772657e0ded3445a52f",
-    "video_source_2026-11-10.json": {
+    "racine_declaree": "5709f89f57cf7d7c543c7d27d1786b70b25e18aeca0ef27eb876f186bad2c04d",
+    "racine_recalculee": "5709f89f57cf7d7c543c7d27d1786b70b25e18aeca0ef27eb876f186bad2c04d",
+    "video_source.json": {
       "attendu": "d0d5f27be5a62a3ad956e000512a50ac30d1f157babb2c0abaf960af9d71d03b",
       "octets": 1007,
       "ok": true,
       "sha256": "d0d5f27be5a62a3ad956e000512a50ac30d1f157babb2c0abaf960af9d71d03b"
     },
-    "youtube_2026-11-10.json": {
+    "youtube.json": {
       "attendu": "dc6ac04f0e77fcf707eb357291cc06d42c363f47bb23790abbf6231cd80eff56",
       "octets": 3028,
       "ok": true,
@@ -342,12 +342,12 @@
     "plafond_effectif_par_jour": 10
   },
   "horodatages_des_sources": {
-    "backlog_local_2026-11-10.json": "2026-11-10T23:22:31+00:00",
-    "disque_2026-11-10.json": "2026-11-10T23:22:31+00:00",
-    "plafond_chaine_2026-11-10.json": "2026-11-10T23:22:39+00:00",
-    "quotas_declares_2026-11-10.json": "2026-11-10T23:22:31+00:00",
-    "video_source_2026-11-10.json": "2026-11-10T23:22:31+00:00",
-    "youtube_2026-11-10.json": "2026-11-10T23:22:31+00:00"
+    "backlog_local.json": "2026-11-10T23:22:31+00:00",
+    "disque.json": "2026-11-10T23:22:31+00:00",
+    "plafond_chaine.json": "2026-11-10T23:22:39+00:00",
+    "quotas_declares.json": "2026-11-10T23:22:31+00:00",
+    "video_source.json": "2026-11-10T23:22:31+00:00",
+    "youtube.json": "2026-11-10T23:22:31+00:00"
   },
   "plafond_constate": {
     "citation_raison": "The user has exceeded the number of videos they may upload. (domain youtube.video, reason uploadLimitExceeded, HTTP 400)",

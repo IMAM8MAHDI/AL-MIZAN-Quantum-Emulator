@@ -1,31 +1,31 @@
 {
  "fichiers": {
-  "backlog_local_2026-11-10.json": {
+  "backlog_local.json": {
    "octets": 12307,
    "sha256": "521f82c8a04ab7c91be364e0c7add789ddbbabb282b1c8462b05f6b94ed09486"
   },
-  "disque_2026-11-10.json": {
+  "disque.json": {
    "octets": 617,
    "sha256": "f406ad200c9b678e94ad242839d987be174f4fa4524f28a4e834a0d167d5c23a"
   },
-  "plafond_chaine_2026-11-10.json": {
+  "plafond_chaine.json": {
    "octets": 2742,
    "sha256": "a308821d75f993a78bfeb530bc2d7af9505e4911f2be9fd7740d5ce6720b0677"
   },
-  "quotas_declares_2026-11-10.json": {
+  "quotas_declares.json": {
    "octets": 1082,
    "sha256": "5ca911f7ede44b2aaa5dfa35e943b6466c614d3dbea515d582d0b03342191c41"
   },
-  "video_source_2026-11-10.json": {
+  "video_source.json": {
    "octets": 1007,
    "sha256": "d0d5f27be5a62a3ad956e000512a50ac30d1f157babb2c0abaf960af9d71d03b"
   },
-  "youtube_2026-11-10.json": {
+  "youtube.json": {
    "octets": 3028,
    "sha256": "dc6ac04f0e77fcf707eb357291cc06d42c363f47bb23790abbf6231cd80eff56"
   }
  },
  "horodatage_utc": "2026-11-10T23:29:59+00:00",
- "racine_sha256": "0fb7aee428ac2ec7ef5fe02a73cce7fe31a1da5e59ff4772657e0ded3445a52f",
+ "racine_sha256": "5709f89f57cf7d7c543c7d27d1786b70b25e18aeca0ef27eb876f186bad2c04d",
  "regle": "sha256 du fichier écrit, puis racine = sha256 de la concaténation triée « nom + empreinte »"
 }

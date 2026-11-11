@@ -54,8 +54,11 @@ ARTEFACTS = DOSSIER / "artefacts"
 F_INFOS = "info_netoyee.json"
 F_RESULT = "result.json"
 F_REGISTRE = "portes_transpilees.json"
-F_CALIBRAGE = "calibration_ibm_marrakesh_2026-11-10T1647Z.json"
-F_SUPPORT = "support_ibm_marrakesh_0-1_2026-11-10T2057Z.json"
+# Les noms des deux snapshots ne portent aucune date : ils entrent dans MANIFESTE_SHA256.txt, et
+# le sceau du dépôt ne doit porter aucune date (contrôlée par DECLARATION C04). L'horodatage du
+# fournisseur reste dans le fichier et dans sources/EMPREINTES.json.
+F_CALIBRAGE = "calibration_ibm_marrakesh.json"
+F_SUPPORT = "support_ibm_marrakesh_0-1.json"
 F_EMPREINTES = "EMPREINTES.json"
 
 PUBLIES = (F_INFOS, F_RESULT, F_REGISTRE, F_CALIBRAGE, F_SUPPORT)

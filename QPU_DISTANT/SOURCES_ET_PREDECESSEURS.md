@@ -61,8 +61,8 @@ Trois états, à ne pas confondre :
 | `sources/info_netoyee.json` | archive du fournisseur, champ `user_id` retiré | C01, C03, C04 |
 | `sources/result.json` | membre verbatim de l'archive du fournisseur | C02, C05, C06 |
 | `sources/portes_transpilees.json` | extraction qiskit hors dépôt, liée au bloc QPY | C03, C07 |
-| `sources/calibration_ibm_marrakesh_2026-11-10T1647Z.json` | snapshot public du calibrage de la machine, lu en lecture seule par `ASTRO-Q°ODE_SYSTEME/constantes_ibm.py` | C09 (`empreinte_parc`), EQ-07 |
-| `sources/support_ibm_marrakesh_0-1_2026-11-10T2057Z.json` | sonde en lecture seule du support 0-1 par `ASTRO-Q°ODE_SYSTEME/sonde_support_ibm.py` (0 tirage, 0 coût) | C09 (`empreinte_support`), EQ-08 |
+| `sources/calibration_ibm_marrakesh.json` | snapshot public du calibrage de la machine, lu en lecture seule par `ASTRO-Q°ODE_SYSTEME/constantes_ibm.py` | C09 (`empreinte_parc`), EQ-07 |
+| `sources/support_ibm_marrakesh_0-1.json` | sonde en lecture seule du support 0-1 par `ASTRO-Q°ODE_SYSTEME/sonde_support_ibm.py` (0 tirage, 0 coût) | C09 (`empreinte_support`), EQ-08 |
 | `sources/EMPREINTES.json` | table dressée lors de la rédaction du dossier | C01 |
 
 Les deux snapshots portent leur propre empreinte interne, et cette empreinte se recalcule à
@@ -80,6 +80,16 @@ exactement ceux que le fournisseur rend, en LF — 11 843 et 1 387 octets, que l
 `QPU_DISTANT/sources/*.json` en `eol=lf` pour qu'un clone ou une `git archive` ne réintroduce
 pas la même dérive. Aucun nombre de la confrontation n'en change : le JSON relu reste identique
 champ par champ, et la racine du dossier reste `011827d24081c8f2…`.
+
+Les deux mêmes fichiers ont été renommés le 11 novembre 2026 sans leur suffixe date
+(`…_2026-11-10T1647Z.json` → `calibration_ibm_marrakesh.json`,
+`…_2026-11-10T2057Z.json` → `support_ibm_marrakesh_0-1.json`) : un nom de fichier entre dans
+`MANIFESTE_SHA256.txt`, or le sceau du dépôt ne porte aucune date — c'est ce que mesure
+`DECLARATION/declaration_base.py → sceau_contenu() → C04`, qui rougissait à 8 dates pour ces
+deux noms et les six de `GOULETS/`. L'horodatage du fournisseur n'est pas perdu pour autant : il
+reste dans le contenu des deux snapshots, dans `horodatages_des_sources` du certificat et dans la
+table d'empreintes. Les octets des deux fichiers, eux, n'ont pas bougé d'un octet — C01 re-hache
+les mêmes SHA-256 qu'avant le renommage.
 
 ## 4. Règle d'attribution — quatre statuts
 

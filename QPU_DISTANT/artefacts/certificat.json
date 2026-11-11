@@ -74,7 +74,7 @@
     },
     "regle": "borne = 1 − 2·Σ ε (inégalité triangulaire)",
     "somme_eps": 0.03705172947376342,
-    "source": "calibration_ibm_marrakesh_2026-11-10T1647Z.json"
+    "source": "calibration_ibm_marrakesh.json"
   },
   "enveloppe_support": {
     "borne_basse": 0.9114309996674055,
@@ -128,7 +128,7 @@
     "regle": "borne = 1 − 2·Σ ε sur le support",
     "repli_mediane": {},
     "somme_eps": 0.044284500166297244,
-    "source": "support_ibm_marrakesh_0-1_2026-11-10T2057Z.json"
+    "source": "support_ibm_marrakesh_0-1.json"
   },
   "equations": [
     {
