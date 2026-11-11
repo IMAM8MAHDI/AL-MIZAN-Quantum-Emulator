@@ -348,7 +348,7 @@ d'exécution. Le code retour est 1 si un contrôle échoue.
 | `criteres_derivation_sans_intrant.py` | critère exécutable EQ-DSI-01…06, stdlib seule | 37 168 octets, SHA-256 `647fbc2b629836b31432…` |
 | `tests/test_derivation_sans_intrant_mizan.py` | 25 tests, dont non-vacuité et déterminisme | 13 733 octets, SHA-256 `5f3407c117dd12fe7671…` |
 | `resultats/criteres_derivation_sans_intrant.json` | rapport scellé par son empreinte | 8 869 octets, SHA-256 `349061689b4dd01e67df…` |
-| `docs/VEILLE_CHAIN_THEORY_2026-11-10.md` | cette note | non auto-scellée : une empreinte ne peut pas figurer dans le fichier qu'elle scelle |
+| `docs/VEILLE_CHAIN_THEORY_DERIVATION_SANS_INTRANT.md` | cette note, sous un nom sans date dans ce dépôt : le contrôle C04 refuse toute date à l'intérieur du sceau, et le chemin d'un fichier scellé y figure | non auto-scellée : une empreinte ne peut pas figurer dans le fichier qu'elle scelle |
 | `generer_tableau_maitre_sequentiel.py` (strate S32) | harmonisation de la matrice | 216 307 octets, SHA-256 `f47b09700a688cdae64a573d59598fc1…` |
 | `TABLEAU_MAITRE_SEQUENTIEL_UNIFIE.csv` | livrable régénéré, SEQ 001–345 | 198 201 octets, SHA-256 `9a123c07b06e1b22015819bf300f2856…` |
 | `TABLEAU_MAITRE_SEQUENTIEL_UNIFIE_IMAM8MAHDI.html` | dashboard régénéré | 494 096 octets, SHA-256 `43b746278a275ae4ea9e7371293265bb…` |
