@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Si vous utilisez, deployez ou citez ce logiciel, veuillez citer le DOI de concept 10.5281/zenodo.24028242 (il resout vers la derniere version deposee) et respecter la double licence GPL-3.0 / AGPL-3.0."
 title: "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems"
-version: "3.3.2"
+version: "3.4.0"
 date-released: "2026-11-11"
 doi: "10.5281/zenodo.24028242"
 url: "https://doi.org/10.5281/zenodo.24028242"
@@ -40,6 +40,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.24114682"
     description: "DOI de la version 3.3.1 (2026-11-10), pages_depot: le site public se regeneere depuis le depot"
+  - type: doi
+    value: "10.5281/zenodo.24122287"
+    description: "DOI de la version 3.3.2 (2026-11-11), critere d'accord numerique EQ-DSI et sa suite de 25 tests"
   - type: url
     value: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
     description: "Depot GitHub officiel"
@@ -70,5 +73,18 @@ abstract: >-
   forms a + b*sqrt(2) + c*sqrt(3) + d*sqrt(6) with n <= 31104, where the examined form ranks 47th of 82 at
   0.6 sigma and the best coincidence in the retained window is 108 times closer. The verdict is
   bounded to the public text examined and carries no judgment of intent.
+  QPU_DISTANT re-reads one already-executed run on a distant quantum processor (job dbpkmr0ou4as73ctrm80
+  on ibm_marrakesh, 256 shots on the physical support [0,1], 600 units): it recomputes the outcome
+  counters from the provider result table (00 = 126, 01 = 22, 11 = 108, sum 256, so 10 = 0), reports the
+  even-parity rate 0.9140625 = 234/256, and confronts it with two derived bounds - the machine median
+  bound 0.9258965 is not met (-0.676 sigma) while the real-support bound 0.9114310 is met (+0.150 sigma);
+  the 22-vs-0 asymmetry of the two weight-one words rejects the equiprobability null hypothesis at
+  p = 4.77e-07 under an exact integer Binom(22, 1/2). The module runs no qubit, tests no AL-MIZAN
+  equation and bounds only what a distant execution allows to be written.
+  GOULETS bounds the publication bottlenecks measured on this workspace: 23 videos counted, longest 30 s
+  against a declared 900 s threshold (870 s of margin), a 99-per-day published quota against a 10-per-day
+  ceiling actually observed (ratio 9.9), a measured cadence of 1.3529 per day, 78 files and 1432.543 s in
+  stock, 35434115072 free bytes out of 252841029632 (14.01 percent). Four dated, falsifiable bounds - no
+  ceiling is claimed to have been lifted.
   Strict honesty constraints: every artifact carries its computational bound, no open millennium problem
   is claimed as solved. Developed by M. Ahmed EL BAHLOUL under the IMAM8MAHDI initiative.

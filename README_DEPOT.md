@@ -2,7 +2,7 @@
 
 **Auteurs** : M. Ahmed EL BAHLOUL (IMAM8MAHDI) — développement assisté par IA générative (Devin SWE-2, Cognition AI), résultats relus et dirigés par l'auteur humain
 **DOI Zenodo** : [10.5281/zenodo.24028242](https://doi.org/10.5281/zenodo.24028242) — DOI de concept, il résout toujours vers la dernière version publiée
-**Chaîne de versions** : **v3.3.1 est publiée** — [10.5281/zenodo.24114682](https://doi.org/10.5281/zenodo.24114682), archive `AL-MIZAN_v331_50afbb8.zip` (1 382 512 octets, SHA-256 `1b7a3c2f27481fa32884a8acb1fac02e…`, MD5 `667b49cd9442eea2d354586456f77c55`), scellée sur le HEAD `50afbb8` (245 entrées) et re-téléchargée de Zenodo identique octet pour octet. Elle apporte `pages_depot/`, qui régénère le site public al-mizan.world depuis le dépôt seul : mesuré le 10 novembre 2026 sur une copie privée de `.git`, sans variable d'environnement et sans clone voisin, 17 fichiers produits, 17 identiques octet pour octet aux pages servies ; `docs/API_PASSERELLE_VPS.md`, table des routes réellement servies par la passerelle ; et `oeuvre_universelle/espace_disque.py` (13 équations, 13 contrôles). Le registre d'audit reste le même : `FONDATION/OUTILS/audit_piliers.py` parcourt des tuples fixes de dossiers d'équations et de modules principaux, et ces trois nouveautés n'y entrent pas — 563 tests verts mesurés par l'exécution des douze suites documentées et non par une somme de fiches (dans un clone ; dans l'archive ZIP seule, sans `.git`, 556 passent et 7 relectures d'histoire git s'ignorent d'elles-mêmes — 5 VERROUS, 2 DECLARATION), 199 équations et 199 contrôles notés par un seul audit, 12 modules CONFORME ; audit et douze suites rejoués le 10 novembre 2026 sur le HEAD `50afbb8`. Contrôle mesuré **dans le ZIP publié** : 246 fichiers = les 245 entrées scellées + `MANIFESTE_SHA256.txt`, qui s'exclut lui-même ; 229 d'entre eux re-hachent exactement vers leur valeur scellée, et les 16 CSV « Excel français » n'y re-hachent qu'après normalisation des fins de ligne — `.gitattributes` déclare `*.csv text eol=crlf`, donc `git archive` livre le CRLF que le livrable promet (BOM, séparateur « ; » et données inchangés) là où le scellement hache les octets LF du blob. La formule « chaque fichier de l'archive re-hache vers sa valeur scellée », écrite dans les fiches v3.1.0 à v3.2.1, était inexacte sur ce point ; la correction est portée par la version 3.2.2, un enregistrement publié n'étant pas amendable. Toute archive est construite par `git -c core.autocrlf=false archive --format=zip HEAD` sur le HEAD scellé, jamais sur l'arbre de travail Windows, et le DOI de version qu'elle porte ne peut pas figurer dans l'archive qu'il publie : il est consigné ici après l'émission. Le descriptif publié de v3.3.1 conserve les comptes relevés au HEAD `f8f474d` (86 commits, 240 entrées de sceau, 68 commits humains contre 18 d'automate) parce qu'un enregistrement publié n'est pas amendable ; le miroir `.zenodo.json` du dépôt, les deux README et le communiqué portent la mesure du 10 novembre 2026 au HEAD `50afbb8` : 104 commits dont 86 humains et 18 d'automate, 245 entrées de sceau portant 0 date. Versions précédentes : v3.3.0, [10.5281/zenodo.24105422](https://doi.org/10.5281/zenodo.24105422), archive `AL-MIZAN_v33_9d80f3f.zip` (1 308 464 octets, SHA-256 `6b20512128361fe678ca540056395014…`, MD5 `4e2e8337a0c8aeef53424f19810456fa`), 240 entrées scellées sur le HEAD `9d80f3f`, 241 entrées dans le ZIP publié dont 224 re-hachages exacts et 16 CSV après seuls fins de ligne, dossiers VERROUS, DECLARATION et GUERRE, 563 tests, 199 équations, 12 modules CONFORME ; v3.2.2, [10.5281/zenodo.24091259](https://doi.org/10.5281/zenodo.24091259), archive `AL-MIZAN_v322_d19a542.zip` (987 836 octets, SHA-256 `32672bb029616343…`, MD5 `c3e6886023575a52…`), 204 entrées scellées sur le HEAD `d19a542`, 205 entrées dans le ZIP publié dont 194 re-hachages exacts et 10 CSV après seuls fins de ligne, dossier HORLOGERIE et écran de laboratoire (`laboratoire.py`), 311 tests, 104 équations, 6 modules CONFORME ; v3.2.1, [10.5281/zenodo.24075082](https://doi.org/10.5281/zenodo.24075082), archive `AL-MIZAN_v321_c05f7ee.zip` (818 588 octets, SHA-256 `1d681d2d68ac45d2…`) ; v3.2.0, [10.5281/zenodo.24074846](https://doi.org/10.5281/zenodo.24074846) ; v3.1.0, [10.5281/zenodo.24062292](https://doi.org/10.5281/zenodo.24062292) ; v3.0.0, [10.5281/zenodo.24054060](https://doi.org/10.5281/zenodo.24054060). `CITATION.cff` porte la version du **contenu** de l'archive, jamais son propre DOI de version — même règle d'auto-référence que `MANIFESTE_SHA256.txt`.
+**Chaîne de versions** : **v3.3.2 est publiée** — [10.5281/zenodo.24122287](https://doi.org/10.5281/zenodo.24122287), archive `AL-MIZAN_v332_c9b7fbd.zip` (1 414 446 octets, SHA-256 `3504ff10cc5a9027b2037a371433c16e6909aca0452db4b78c937bf4b06cd87c`, MD5 `c2feaaf172389ede1d31182afc5d20f2`), scellée sur le HEAD `c9b7fbd` (249 entrées). Contrôle fait dans l'archive re-téléchargée de Zenodo : 250 membres = les 249 entrées scellées + `MANIFESTE_SHA256.txt`, qui s'exclut lui-même ; 233 re-hachent exactement vers leur valeur scellée, les 16 CSV « Excel français » n'y re-hachent qu'après normalisation des fins de ligne, 0 divergent. Elle apporte `criteres_derivation_sans_intrant.py` (EQ-DSI-01..06, recensement exact des 40 959 999 formes a + b√2 + c√3 + d√6 sur n ≤ 31 104, verdict « appropriation non établie » sur la forme examinée) et sa treizième suite de 25 tests ; son descriptif publié porte les comptes de ce temps-là — 588 tests, 199 équations, 199 contrôles, 12 modules CONFORME, manifeste de 245 à 249 entrées — et un enregistrement publié n'étant pas amendable, la correction est portée par la version suivante. **La version en préparation** ajoute `QPU_DISTANT/` (10 équations, 10 contrôles : le job `dbpkmr0ou4as73ctrm80` relu sur `ibm_marrakesh`, 256 tirs sur [0,1], compteurs recalculés depuis la table de résultats, deux bornes confrontées au support réel) et `GOULETS/` (10 équations, 10 contrôles : durée, cadence, plafond et disque mesurés) ; les deux entrent dans le registre d'audit, qui note le 11 novembre 2026 **14 modules CONFORME, 219 équations, 219 contrôles** sous code de sortie 0, et les quatorze suites documentées rendent **654 tests** — 566 dans les douze dossiers d'équations, 88 hors dossiers (`tests.test_emulateur` 53, la suite `horloge_noyau` 10, le critère EQ-DSI 25). Dans un clone, les 654 passent et aucun ne s'ignore ; dans la copie **sans `.git`** que fournit l'archive, 647 passent et 7 relectures d'histoire git s'ignorent d'elles-mêmes (5 VERROUS, 2 DECLARATION). Le sceau porte **276 entrées, 0 date**, et `pages_depot/generer_pages_site.py` produit **21 fichiers** du site après avoir revérifié 24 fichiers du dépôt contre ce sceau. La mesure d'antériorité de `DECLARATION/` est celle du HEAD `d9662d1` : 116 commits dont 98 humains et 18 d'automate, 276 entrées de sceau portant 0 date. v3.3.1 — [10.5281/zenodo.24114682](https://doi.org/10.5281/zenodo.24114682), archive `AL-MIZAN_v331_50afbb8.zip` (1 382 512 octets, SHA-256 `1b7a3c2f27481fa32884a8acb1fac02e…`, MD5 `667b49cd9442eea2d354586456f77c55`), scellée sur le HEAD `50afbb8` (245 entrées) et re-téléchargée de Zenodo identique octet pour octet, apportait `pages_depot/` — mesuré le 10 novembre 2026 sur une copie privée de `.git`, sans variable d'environnement et sans clone voisin : 17 fichiers produits, 17 identiques octet pour octet aux pages servies —, `docs/API_PASSERELLE_VPS.md`, table des routes réellement servies par la passerelle, et `oeuvre_universelle/espace_disque.py` (13 équations, 13 contrôles) ; ces trois nouveautés restent hors du registre d'audit, qui tenait alors 563 tests, 199 équations, 199 contrôles et 12 modules CONFORME. Contrôle mesuré dans le ZIP publié de v3.3.1 : 246 fichiers = les 245 entrées scellées + le manifeste, 229 re-hachages exacts et 16 CSV conformes après seuls fins de ligne — `.gitattributes` déclare `*.csv text eol=crlf`, donc `git archive` livre le CRLF que le livrable promet (BOM, séparateur « ; » et données inchangés) là où le scellement hache les octets LF du blob. La formule « chaque fichier de l'archive re-hache vers sa valeur scellée », écrite dans les fiches v3.1.0 à v3.2.1, était inexacte sur ce point ; la correction est portée par la version 3.2.2, un enregistrement publié n'étant pas amendable. Toute archive est construite par `git -c core.autocrlf=false archive --format=zip HEAD` sur le HEAD scellé, jamais sur l'arbre de travail Windows, et le DOI de version qu'elle porte ne peut pas figurer dans l'archive qu'il publie : il est consigné ici après l'émission. Le descriptif publié de v3.3.1 conserve les comptes relevés au HEAD `f8f474d` (86 commits, 240 entrées de sceau, 68 commits humains contre 18 d'automate) parce qu'un enregistrement publié n'est pas amendable ; le miroir `.zenodo.json` du dépôt, les deux README et le communiqué portaient la mesure du 10 novembre 2026 au HEAD `50afbb8` : 104 commits dont 86 humains et 18 d'automate, 245 entrées de sceau portant 0 date. Versions précédentes : v3.3.0, [10.5281/zenodo.24105422](https://doi.org/10.5281/zenodo.24105422), archive `AL-MIZAN_v33_9d80f3f.zip` (1 308 464 octets, SHA-256 `6b20512128361fe678ca540056395014…`, MD5 `4e2e8337a0c8aeef53424f19810456fa`), 240 entrées scellées sur le HEAD `9d80f3f`, 241 entrées dans le ZIP publié dont 224 re-hachages exacts et 16 CSV après seuls fins de ligne, dossiers VERROUS, DECLARATION et GUERRE, 563 tests, 199 équations, 12 modules CONFORME ; v3.2.2, [10.5281/zenodo.24091259](https://doi.org/10.5281/zenodo.24091259), archive `AL-MIZAN_v322_d19a542.zip` (987 836 octets, SHA-256 `32672bb029616343…`, MD5 `c3e6886023575a52…`), 204 entrées scellées sur le HEAD `d19a542`, 205 entrées dans le ZIP publié dont 194 re-hachages exacts et 10 CSV après seuls fins de ligne, dossier HORLOGERIE et écran de laboratoire (`laboratoire.py`), 311 tests, 104 équations, 6 modules CONFORME ; v3.2.1, [10.5281/zenodo.24075082](https://doi.org/10.5281/zenodo.24075082), archive `AL-MIZAN_v321_c05f7ee.zip` (818 588 octets, SHA-256 `1d681d2d68ac45d2…`) ; v3.2.0, [10.5281/zenodo.24074846](https://doi.org/10.5281/zenodo.24074846) ; v3.1.0, [10.5281/zenodo.24062292](https://doi.org/10.5281/zenodo.24062292) ; v3.0.0, [10.5281/zenodo.24054060](https://doi.org/10.5281/zenodo.24054060). `CITATION.cff` porte la version du **contenu** de l'archive, jamais son propre DOI de version — même règle d'auto-référence que `MANIFESTE_SHA256.txt`.
 **Licence** : AGPL-3.0 / GPL-3.0 (double licence, voir LICENSE.md, LICENSE-AGPL, LICENSE-GPL). Le champ licence, unique sur Zenodo, y porte AGPL-3.0-only.
 **Horloge noyau** : copie intégrale scellée conforme au verrou A137 (lecture/copie autorisées, contenu intact)
 
@@ -84,7 +84,7 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── artefacts/               # certificat.json + registre d'accès + clauses MD + plan SVG
 │   └── tests/                   # 62 tests
 ├── DECLARATION/           # l'antériorité re-mesurée : 16 équations · 16 contrôles
-│   ├── declaration_base.py      # 104 commits au HEAD 50afbb8, 0 date au sceau, 3 ablations
+│   ├── declaration_base.py      # 116 commits au HEAD d9662d1, 0 date au sceau, 3 ablations
 │   ├── artefacts/               # certificat.json + chaîne d'antériorité CSV + ablations MD + plan SVG
 │   └── tests/                   # 37 tests
 ├── GUERRE/                # la richesse face à la guerre : 16 équations · 16 contrôles
@@ -92,8 +92,27 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── snapshot/                # Banque mondiale 2022 + chapitres YouTube, engagés par SHA-256
 │   ├── artefacts/               # certificat.json + registre CSV + dossier MD + frontière SVG
 │   └── tests/                   # 56 tests
+├── QPU_DISTANT/          # l'exécution chez un fournisseur quantique distant, relue :
+│   │                      # 10 équations · 10 contrôles · statut OPÉRATIONNEL borné
+│   ├── qpu_distant_base.py     # job dbpkmr0ou4as73ctrm80 sur ibm_marrakesh : 256 tirs
+│   │                            # sur [0,1], 600 unités, compteurs recalculés depuis la
+│   │                            # table de résultats, deux bornes confrontées au support
+│   ├── sources/                # l'archive du fournisseur, engagée par empreinte
+│   │                            # (result.json, portes transpilées, calibration, support)
+│   ├── artefacts/              # certificat.json + compteurs et frontières (CSV, SVG)
+│   └── tests/                   # 28 tests
+├── GOULETS/             # les goulots de publication mesurés et bornés :
+│   │                      # 10 équations · 10 contrôles · aucune levée revendiquée
+│   ├── goulets_base.py         # 30 s contre seuil déclaré 900 s (marge 870 s), barème
+│   │                            # 99/jour contre plafond constaté 10/jour, 78 fichiers
+│   │                            # et 1 432,543 s en stock, 35 434 115 072 octets libres
+│   │                            # sur 252 841 029 632 (14,01 %)
+│   ├── sources/                # snapshots engagés par SHA-256 (chaîne YouTube, disque,
+│   │                            # backlog local, quotas déclarés, chapitres de la vidéo)
+│   ├── artefacts/               # certificat.json + cadence et bornes (CSV, SVG)
+│   └── tests/                   # 38 tests
 ├── pages_depot/           # publication du site al-mizan.world depuis CE dépôt
-│   │                      # seul : 17 fichiers reproduits octet pour octet
+│   │                      # seul : 21 fichiers reproduits octet pour octet
 │   ├── generer_pages_site.py    # orchestrateur FONDATION + CHIFFRES + LABORATOIRE
 │   │                            # → web_cloud/ ; auto-localise le dépôt, aucune
 │   │                            # variable d'environnement ni clone voisin requis
@@ -235,45 +254,51 @@ cd CONSTRUCTION && py -m unittest tests.test_construction           #  42 tests
 cd VERROUS && py -m unittest tests.test_verrous                     #  62 tests
 cd DECLARATION && py -m unittest tests.test_declaration             #  37 tests
 cd GUERRE && py -m unittest tests.test_guerre                        #  56 tests
+cd QPU_DISTANT && py -m unittest tests.test_qpu_distant              #  28 tests
+cd GOULETS && py -m unittest tests.test_goulets                       #  38 tests
 
-py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 12 modules CONFORME
+py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 14 modules CONFORME
 ```
 
-588 tests (les douze suites ci-dessus, 563, plus les 25 du critère EQ-DSI) depuis la seule
-archive : `bibliotheques/` et `moteur/` sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin
-n'est requis.
+654 tests : les douze suites ci-dessus portent 566 tests, auxquels s'ajoutent
+les 88 hors dossiers — `tests.test_emulateur` (53), la suite `horloge_noyau`
+(10) et le critère de dérivation sans intrant (25). `bibliotheques/` et
+`moteur/` sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
 
-Mesure du 2026-11-10, les douze suites rejouées dans une copie du dépôt
-**sans `.git`** (celle que l'archive ZIP fournit) : 556 tests s'exécutent et
+Mesure du 2026-11-11, les quatorze suites rejouées dans une copie du dépôt
+**sans `.git`** (celle que l'archive ZIP fournit) : 647 tests s'exécutent et
 passent, 7 s'ignorent d'eux-mêmes faute de dépôt git lisible — 5 dans
 `VERROUS`, 2 dans `DECLARATION`, tous des relectures d'histoire de commits.
-Dans un clone, les 563 passent et **aucun test ne s'ignore**. La mention
+Dans un clone, les 654 passent et **aucun test ne s'ignore**. La mention
 « 0 ignoré » portée ici jusqu'à la v3.3.0 ne décrivait donc que le cas du
 clone, pas celui de l'archive.
 
 ### Reproduire le site public depuis l'archive
 
-`pages_depot/generer_pages_site.py` régénère les 17 fichiers du site
-al-mizan.world publiés par les dossiers FONDATION, CHIFFRES et LABORATOIRE.
-Il se localise lui-même : `git clone` du dépôt, un répertoire `web_cloud/`
-là où l'on veut, puis :
+`pages_depot/generer_pages_site.py` régénère les 21 fichiers du site
+al-mizan.world publiés par les dossiers FONDATION, CHIFFRES et LABORATOIRE —
+les trois derniers noms du compte étant les livrables de l'exécution distante
+jointe à LABORATOIRE. Il se localise lui-même : `git clone` du dépôt, un
+répertoire `web_cloud/` là où l'on veut, puis :
 
 ```
-py -3 pages_depot/generer_pages_site.py     # écrit 17 fichiers dans web_cloud/
+py -3 pages_depot/generer_pages_site.py     # écrit 21 fichiers dans web_cloud/
 ```
 
-Mesure du 2026-11-10, dans une copie du dépôt **sans `.git`** et avec
-`AL_MIZAN_DEPOT` retiré de l'environnement : les 17 fichiers sortent
-octet pour octet identiques aux 17 fichiers servis en production
-(`PRODUITS 17 IDENTIQUES 17`, code de sortie 0) — soit 4 pour
-`chiffres_pi`, 4 pour `fondation` et 9 pour `laboratoire`. La page
+Mesure du 2026-11-11, dans le dépôt scellé : les 21 fichiers sortent, code de
+sortie 0, et 24 fichiers du dépôt sont revérifiés contre le sceau avant
+écriture — soit 4 pour `chiffres_pi`, 4 pour `fondation` et 13 pour
+`laboratoire`, dont les quatre livrables de l'exécution distante. La
+confrontation octet pour octet aux fichiers servis, mesurée le 2026-11-10 sur
+les 17 fichiers alors publiés (`PRODUITS 17 IDENTIQUES 17`), est re-jouée à
+chaque déploiement et porte sur 21 fichiers depuis cet ajout. La page
 « espace disque » et ses trois variantes ne sont pas dans ce compte :
 `oeuvre_universelle/` porte les modules **copiés depuis la production**,
 pour lecture et re-jouabilité, et l'orchestrateur ne les appelle pas.
 
-Le registre d'équations du dépôt — 199 équations, 199 contrôles, 12 modules
-`CONFORME` — reste inchangé par cette entrée : `pages_depot/`,
-`oeuvre_universelle/` et `docs/` sont de l'outillage de publication, pas des
+Le registre d'équations du dépôt — 219 équations, 219 contrôles, 14 modules
+`CONFORME` — n'est pas touché par cet outillage : `pages_depot/`,
+`oeuvre_universelle/` et `docs/` sont de la publication, pas des
 dossiers soumis à `FONDATION/OUTILS/audit_piliers.py --tous`.
 
 ## Les quatre piliers, appliqués à tout le dépôt
@@ -283,12 +308,12 @@ et ne juge que ce que le module déclare déjà :
 
 | Pilier | Exigence | Vérifié |
 |---|---|---|
-| **P1 UNITE** | une équation = un identifiant = un contrôle, en chaîne continue sans trou ni doublon | 199 équations, 199 contrôles |
-| **P2 BORNE** | toute équation porte une `limite` écrite d'au moins 40 caractères | 199/199 |
-| **P3 CONFRONTATION** | chemin `module → fonction → contrôle`, statut parmi OPÉRATIONNEL / SIMULÉ / SPÉCIFIÉ, attendu et obtenu non vides, aucun contrôle rouge | 199/199 |
-| **P4 TRANSMISSION** | imports stdlib ou locaux seuls, `verifier()` callable, garde `__main__` | 12/12 modules |
+| **P1 UNITE** | une équation = un identifiant = un contrôle, en chaîne continue sans trou ni doublon | 219 équations, 219 contrôles |
+| **P2 BORNE** | toute équation porte une `limite` écrite d'au moins 40 caractères | 219/219 |
+| **P3 CONFRONTATION** | chemin `module → fonction → contrôle`, statut parmi OPÉRATIONNEL / SIMULÉ / SPÉCIFIÉ, attendu et obtenu non vides, aucun contrôle rouge | 219/219 |
+| **P4 TRANSMISSION** | imports stdlib ou locaux seuls, `verifier()` callable, garde `__main__` | 14/14 modules |
 
 Le coût est réel : l'audit exécute `resoudre()`, donc CHIFFRES calcule son
 domaine court (20 000 chiffres de π, e et √2 plus un calibrage Monte-Carlo) et
 demande une à deux minutes. `--rigide` fait échouer un pilier NON TENU ; le
-code de sortie est 0 sur les douze modules principaux.
+code de sortie est 0 sur les quatorze modules principaux.

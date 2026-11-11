@@ -34,7 +34,8 @@
 **Chaque artefact porte sa borne.** Aucun problème ouvert du millénaire n'est résolu ici.
 
 - **Émulation classique** de la mécanique quantique — coût exponentiel en 2ⁿ (4ⁿ en mode densité)
-- **Aucun QPU ni capteur physique**
+- **Aucun QPU ni capteur physique branché ici** ; `QPU_DISTANT/` ne fait pas tourner de qubit : il
+  relit et re-borne l'archive d'un job déjà exécuté chez le fournisseur (`ibm_marrakesh`, 256 tirs)
 - **VQE et Shor** : démonstrations jouets (H₂ 2 qubits, N=15)
 - **Taux QEC** : exacts pour le modèle de bruit de capacité de code, pas des mesures de laboratoire
 - **Die :5030 et canal SCPI :5025** : interfaces réseau locales — sans matériel branché, rien de physique ne se produit
@@ -54,7 +55,7 @@
 | **ZNE** | Extrapolation Richardson à bruit nul (λ = 1, 2, 3) |
 | **Algorithmes** | VQE H₂, Shor N=15 (QPE sur permutation modulaire, 7 qubits) |
 | **GDSII** | Layout binaire .gds valide de la tuile Steane + DRC interne générique |
-| **Tests** | 53 tests d'émulation, 563 pour le dépôt complet — tous verts |
+| **Tests** | 53 tests d'émulation, 654 pour le dépôt complet — tous verts dans un clone (647 depuis la seule archive ZIP, où 7 relectures d'histoire git s'ignorent d'elles-mêmes) |
 
 ---
 

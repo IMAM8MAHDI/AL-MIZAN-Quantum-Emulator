@@ -49,24 +49,26 @@ https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 https://doi.org/10.5281/zenodo.24028242
 
 ## Version
-3.3.1 — dernière version effectivement publiée sur Zenodo
-(DOI 10.5281/zenodo.24114682, contrôle du 2026-11-10 : le handle résout — 302
-vers `https://zenodo.org/doi/10.5281/zenodo.24114682`, page en HTTP 200 — et
-l'archive servie est identique octet pour octet à l'archive déposée).
-Le contenu de l'arbre de travail est postérieur : il consigne la chaîne de
-versions après l'émission et recharge les comptes d'histoire du dépôt. Le
-prochain numéro n'est pas encore publié et ne doit pas figurer dans un dépôt
+3.3.2 — dernière version effectivement publiée sur Zenodo
+(DOI 10.5281/zenodo.24122287, archive `AL-MIZAN_v332_c9b7fbd.zip`, contrôle du 2026-11-11 fait
+dans l'archive re-téléchargée : 250 membres = les 249 entrées scellées + `MANIFESTE_SHA256.txt`,
+233 re-hachages exacts, 16 CSV « Excel français » conformes après seule normalisation des fins de
+ligne, 0 divergent).
+Le contenu de l'arbre de travail est postérieur : il ajoute `QPU_DISTANT/` et `GOULETS/`, soit
+219 équations, 219 contrôles, 14 modules CONFORME, 654 tests et un sceau de 276 entrées portant
+0 date. Le prochain numéro n'est pas encore publié et ne doit pas figurer dans un dépôt
 avant l'émission de l'enregistrement.
 
 ## Date de publication
-10 novembre 2026 (version 3.3.1 publiée)
+11 novembre 2026 (version 3.3.2 publiée)
 
 ## Fichiers à déposer
 1. **ZENODO_DEPOT_ALMIZAN.zip** (archive complète du dépôt)
-   - Code source Python (l'émulateur et les 12 modules de certificats répartis dans
-     les dix dossiers d'équations — compte relevé par
-     `FONDATION/fondation_base.py → inventaire_parc()`, pas saisi à la main)
-   - 53 tests unitaires pour l'émulateur, 563 pour le dépôt complet
+   - Code source Python (l'émulateur et les équations réparties dans les douze dossiers
+     d'équations — 219 équations, 219 contrôles, 14 modules audités — compte relevé par
+     `FONDATION/fondation_base.py → inventaire_parc()` et
+     `FONDATION/OUTILS/audit_piliers.py --tous --rigide`, pas saisi à la main)
+   - 53 tests unitaires pour l'émulateur, 654 pour le dépôt complet
    - Documentation complète (README, PRESENTATION, paper.md)
    - Métadonnées (.zenodo.json, CITATION.cff)
    - Licences (AGPL-3.0, GPL-3.0)
@@ -86,12 +88,14 @@ Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2
   Zenodo 410 « Gone » (contrôlés le 2026-11-10). La relation est donc titrée,
   sans identifiant.
 - **Version publiée de AL-MIZAN :** DOI: 10.5281/zenodo.24028242 (DOI de concept,
-  résout vers la dernière version) et DOI: 10.5281/zenodo.24114682 (v3.3.1)
+  résout vers la dernière version) et DOI: 10.5281/zenodo.24122287 (v3.3.2)
 
 ## Notes de dépôt
 - Logiciel développé dans le cadre de l'initiative IMAM8MAHDI
 - Architecture "sans dolosif" : honnêteté scientifique stricte sur les capacités et limitations
 - Chaque certificat mathématique porte des bornes explicites
-- Émulation classique uniquement (pas de QPU matériel)
-- 53 tests unitaires pour l'émulateur, 563 pour le dépôt complet — tous verts
+- Émulation classique dans ce dépôt : aucun qubit n'y tourne et aucune exécution distante n'y est
+  pilotée. `QPU_DISTANT/` relit et re-borne l'archive d'un job déjà exécuté chez le fournisseur
+  (`ibm_marrakesh`, statut `Completed`, 256 tirs), sans qiskit ni numpy.
+- 53 tests unitaires pour l'émulateur, 654 pour le dépôt complet — tous verts
 - Documentation bilingue français/anglais

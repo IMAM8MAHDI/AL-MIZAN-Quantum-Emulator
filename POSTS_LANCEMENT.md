@@ -15,11 +15,14 @@ I built a complete quantum emulator in pure Python with zero external dependenci
 - OpenQASM 2.0 frontend with 8 canonical circuits
 - Sealed SHA-256 mathematical certificates: Riemann zeros ≤100 (29 certified), BSD on named curves, Point Square Conjecture
 
-53/53 emulator tests pass, and 563/563 across the whole deposit (emulator, core
-clock, and the ten equation dossiers ABONDANCE, CHIFFRES, FONDATION,
-HORLOGERIE, CONTINUITE, REDACTION, CONSTRUCTION, VERROUS, DECLARATION and
-GUERRE). Every artifact carries
-explicit computational bounds — no open millennium problem is claimed as solved.
+53/53 emulator tests pass, and 654/654 across the whole deposit in a clone — 647
+from the bare ZIP, where 7 git-history re-reads skip themselves (emulator, core
+clock, and the twelve equation dossiers ABONDANCE, CHIFFRES, FONDATION,
+HORLOGERIE, CONTINUITE, REDACTION, CONSTRUCTION, VERROUS, DECLARATION, GUERRE,
+QPU_DISTANT and GOULETS). Every artifact carries
+explicit computational bounds — no open millennium problem is claimed as solved,
+and no qubit runs in this deposit: `QPU_DISTANT/` re-reads and re-bounds one job
+already executed at the provider (`ibm_marrakesh`, 256 shots).
 
 GitHub: https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 Zenodo: https://doi.org/10.5281/zenodo.24028242
@@ -104,7 +107,7 @@ Key results:
 
 The emulator runs on any Python 3.10+ machine — no QPU, no GPU, no dependencies. It's designed for education, research prototyping, and transparent computational mathematics.
 
-Published under AGPL-3.0: https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
+Published under GPL-3.0 / AGPL-3.0 (dual licence): https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 Archived on Zenodo: https://doi.org/10.5281/zenodo.24028242
 
 #QuantumComputing #OpenSource #Python #Mathematics #RiemannHypothesis #QEC
@@ -114,11 +117,12 @@ Archived on Zenodo: https://doi.org/10.5281/zenodo.24028242
 ## 5. Twitter/X Thread
 
 **Tweet 1/5:**
-🚀 AL-MIZAN v3.0 is live.
+🚀 AL-MIZAN v3.4.0 is live.
 
 A pure-Python quantum emulator with sealed mathematical certificates.
 
-0 dependencies. 53/53 emulator tests (563/563 on the whole deposit). Full QEC stack.
+0 dependencies. 53/53 emulator tests (654/654 on the whole deposit, in a clone).
+Full QEC stack.
 
 🔗 github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 
