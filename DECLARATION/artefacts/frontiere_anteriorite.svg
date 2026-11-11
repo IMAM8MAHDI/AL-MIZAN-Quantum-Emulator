@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="428" viewBox="0 0 520 428">
 <title>DECLARATION — ce que chaque instrument date et ce qu'il ne date pas</title>
-<desc>Longueurs proportionnelles a la plus grande valeur (249). antériorité accessible, paternité non instrumentée.</desc>
-<rect x="250" y="22" width="107.95" height="16" fill="#2f6f8f" data-libelle="commits atteignables" data-valeur="112"/>
+<desc>Longueurs proportionnelles a la plus grande valeur (276). antériorité accessible, paternité non instrumentée.</desc>
+<rect x="250" y="22" width="100.87" height="16" fill="#2f6f8f" data-libelle="commits atteignables" data-valeur="116"/>
 <text x="8" y="34" font-size="13" fill="#0f1c2b" xml:lang="fr">commits atteignables</text>
-<text x="363.95" y="34" font-size="13" fill="#1c3550">112</text>
-<rect x="250" y="52" width="17.35" height="16" fill="#8f5a2f" data-libelle="commits d'automate" data-valeur="18"/>
+<text x="356.87" y="34" font-size="13" fill="#1c3550">116</text>
+<rect x="250" y="52" width="15.65" height="16" fill="#8f5a2f" data-libelle="commits d'automate" data-valeur="18"/>
 <text x="8" y="64" font-size="13" fill="#0f1c2b" xml:lang="fr">commits d'automate</text>
-<text x="273.35" y="64" font-size="13" fill="#1c3550">18</text>
-<rect x="250" y="82" width="240.00" height="16" fill="#3f7a4f" data-libelle="entrees du sceau" data-valeur="249"/>
+<text x="271.65" y="64" font-size="13" fill="#1c3550">18</text>
+<rect x="250" y="82" width="240.00" height="16" fill="#3f7a4f" data-libelle="entrees du sceau" data-valeur="276"/>
 <text x="8" y="94" font-size="13" fill="#0f1c2b" xml:lang="fr">entrees du sceau</text>
-<text x="496.00" y="94" font-size="13" fill="#1c3550">249</text>
+<text x="496.00" y="94" font-size="13" fill="#1c3550">276</text>
 <rect x="250" y="112" width="0.00" height="16" fill="#5a3f7a" data-libelle="dates dans le sceau" data-valeur="0"/>
 <text x="8" y="124" font-size="13" fill="#0f1c2b" xml:lang="fr">dates dans le sceau</text>
 <text x="256.00" y="124" font-size="13" fill="#1c3550">0</text>
-<rect x="250" y="142" width="29.88" height="16" fill="#7a3f4f" data-libelle="mentions d'instruments" data-valeur="31"/>
+<rect x="250" y="142" width="26.96" height="16" fill="#7a3f4f" data-libelle="mentions d'instruments" data-valeur="31"/>
 <text x="8" y="154" font-size="13" fill="#0f1c2b" xml:lang="fr">mentions d'instruments</text>
-<text x="285.88" y="154" font-size="13" fill="#1c3550">31</text>
+<text x="282.96" y="154" font-size="13" fill="#1c3550">31</text>
 <rect x="250" y="172" width="0.00" height="16" fill="#3f5a7a" data-libelle="instruments d'horodatage reels" data-valeur="0"/>
 <text x="8" y="184" font-size="13" fill="#0f1c2b" xml:lang="fr">instruments d'horodatage reels</text>
 <text x="256.00" y="184" font-size="13" fill="#1c3550">0</text>
@@ -25,17 +25,17 @@
 <rect x="250" y="232" width="0.00" height="16" fill="#8f5a2f" data-libelle="instruments d'education" data-valeur="0"/>
 <text x="8" y="244" font-size="13" fill="#0f1c2b" xml:lang="fr">instruments d'education</text>
 <text x="256.00" y="244" font-size="13" fill="#1c3550">0</text>
-<rect x="250" y="262" width="62.65" height="16" fill="#3f7a4f" data-libelle="fichiers touches par l'automate seul" data-valeur="65"/>
+<rect x="250" y="262" width="56.52" height="16" fill="#3f7a4f" data-libelle="fichiers touches par l'automate seul" data-valeur="65"/>
 <text x="8" y="274" font-size="13" fill="#0f1c2b" xml:lang="fr">fichiers touches par l'automate seul</text>
-<text x="318.65" y="274" font-size="13" fill="#1c3550">65</text>
-<rect x="250" y="292" width="19.28" height="16" fill="#5a3f7a" data-libelle="equations hors du sceau" data-valeur="20"/>
+<text x="312.52" y="274" font-size="13" fill="#1c3550">65</text>
+<rect x="250" y="292" width="0.00" height="16" fill="#5a3f7a" data-libelle="equations hors du sceau" data-valeur="0"/>
 <text x="8" y="304" font-size="13" fill="#0f1c2b" xml:lang="fr">equations hors du sceau</text>
-<text x="275.28" y="304" font-size="13" fill="#1c3550">20</text>
-<rect x="250" y="322" width="211.08" height="16" fill="#7a3f4f" data-libelle="equations du parc" data-valeur="219"/>
+<text x="256.00" y="304" font-size="13" fill="#1c3550">0</text>
+<rect x="250" y="322" width="190.43" height="16" fill="#7a3f4f" data-libelle="equations du parc" data-valeur="219"/>
 <text x="8" y="334" font-size="13" fill="#0f1c2b" xml:lang="fr">equations du parc</text>
-<text x="467.08" y="334" font-size="13" fill="#1c3550">219</text>
-<rect x="250" y="352" width="14.46" height="16" fill="#3f5a7a" data-libelle="limites otrees par l'ablation" data-valeur="15"/>
+<text x="446.43" y="334" font-size="13" fill="#1c3550">219</text>
+<rect x="250" y="352" width="13.04" height="16" fill="#3f5a7a" data-libelle="limites otrees par l'ablation" data-valeur="15"/>
 <text x="8" y="364" font-size="13" fill="#0f1c2b" xml:lang="fr">limites otrees par l'ablation</text>
-<text x="270.46" y="364" font-size="13" fill="#1c3550">15</text>
-<text x="8" y="402" font-size="12" fill="#5c2f2f" xml:lang="fr">249 entrees de sceau, 0 date a l'interieur, 0 instrument d'horodatage reel — antériorité accessible, paternité non instrumentée</text>
+<text x="269.04" y="364" font-size="13" fill="#1c3550">15</text>
+<text x="8" y="402" font-size="12" fill="#5c2f2f" xml:lang="fr">276 entrees de sceau, 0 date a l'interieur, 0 instrument d'horodatage reel — antériorité accessible, paternité non instrumentée</text>
 </svg>

@@ -236,9 +236,9 @@
     "largeurs_de_colonnes": [
       6
     ],
-    "lignes_de_donnees": 29,
-    "nb_lignes_texte": 30,
-    "octets": 5054,
+    "lignes_de_donnees": 31,
+    "nb_lignes_texte": 32,
+    "octets": 5422,
     "phrase_absente_du_csv_par_design": true,
     "separateur": ";"
   },
@@ -378,11 +378,11 @@
     ],
     "antecedents_cites": 4,
     "antecedents_total": 4,
-    "date_derniere": "2026-11-11T01:18:33+01:00",
+    "date_derniere": "2026-11-11T01:41:38+01:00",
     "date_racine": "2026-11-07T06:05:23+01:00",
     "dossier_externel_nomme": "DOSSIER_JUSTICE_EL_BAHLOUL/PREUVES",
     "dossiers_attendus": 12,
-    "dossiers_avec_date": 10,
+    "dossiers_avec_date": 12,
     "dossiers_dates": {
       "ABONDANCE": "2026-11-08T22:19:56+01:00",
       "CHIFFRES": "2026-11-09T04:13:21+01:00",
@@ -390,8 +390,10 @@
       "CONTINUITE": "2026-11-10T04:16:11+01:00",
       "DECLARATION": "2026-11-10T04:16:11+01:00",
       "FONDATION": "2026-11-09T04:13:21+01:00",
+      "GOULETS": "2026-11-11T01:28:54+01:00",
       "GUERRE": "2026-11-10T04:16:11+01:00",
       "HORLOGERIE": "2026-11-09T17:16:21+01:00",
+      "QPU_DISTANT": "2026-11-11T01:28:54+01:00",
       "REDACTION": "2026-11-10T04:16:11+01:00",
       "VERROUS": "2026-11-10T04:16:11+01:00"
     },
@@ -407,7 +409,7 @@
     ],
     "narratif_ordre_tenu": true,
     "objets_anterieurs_a_la_racine": 71,
-    "objets_dates": 250,
+    "objets_dates": 277,
     "ordre_non_tenu": [],
     "ordre_raconte": "fractales → base universelle → horloge → protection → déclaration",
     "ordre_verifie": [
@@ -422,9 +424,9 @@
     "absence_partout": true,
     "auto_reference": "certificat.json porte ce nœud : sa taille et son empreinte ne peuvent pas être scellées par lui-même",
     "empreintes": {
-      "chaine_anteriorite.csv": "e202f830fa9994f1",
-      "declaration_et_ablations.md": "542bd60e4938b0e3",
-      "frontiere_anteriorite.svg": "fcfeeb041b3c5a78"
+      "chaine_anteriorite.csv": "c3de383691820cb4",
+      "declaration_et_ablations.md": "2ae7940f200a1b70",
+      "frontiere_anteriorite.svg": "0117d837115bc704"
     },
     "nom_sans_empreinte": "certificat.json",
     "nom_sans_phrase": "chaine_anteriorite.csv",
@@ -441,9 +443,9 @@
     ],
     "raison_sans_phrase": "une chaîne d'antériorité se lit dans un tableur : la phrase de verdict y deviendrait une donnée datée comme les autres",
     "tailles": {
-      "chaine_anteriorite.csv": 5054,
-      "declaration_et_ablations.md": 5464,
-      "frontiere_anteriorite.svg": 3878
+      "chaine_anteriorite.csv": 5422,
+      "declaration_et_ablations.md": 5462,
+      "frontiere_anteriorite.svg": 3875
     }
   },
   "education_ia": {
@@ -505,7 +507,7 @@
     },
     "statut_du_claim": "déclaré · non vérifié"
   },
-  "empreinte_execution": "52f45ff9d9e45d015fccb94d4a006ce485184366fb9c04d039b495daa63b6959",
+  "empreinte_execution": "f6294687990e8640566f7f9b0fb48447b531cb7545946a6b4fbcf814e620a1b9",
   "fractales": {
     "auteur_de_la_premiere_trace": "devin@cognition.ai",
     "auteurs_par_fichier": {
@@ -552,7 +554,7 @@
     "coeur_secret_garde": 0,
     "controle_de_comptage": true,
     "dossiers": 12,
-    "equations_non_scellees": 20,
+    "equations_non_scellees": 0,
     "equations_par_module": {
       "ABONDANCE/agriculture_abondance.py": 18,
       "ABONDANCE/eau_abondance.py": 15,
@@ -569,11 +571,8 @@
       "REDACTION/redaction_mizan.py": 16,
       "VERROUS/verrous_base.py": 16
     },
-    "modules_dans_le_sceau": 12,
-    "modules_non_scelles": [
-      "GOULETS/goulets_base.py",
-      "QPU_DISTANT/qpu_distant_base.py"
-    ],
+    "modules_dans_le_sceau": 14,
+    "modules_non_scelles": [],
     "modules_porteurs": 14,
     "somme_equations_par_module": 219,
     "total_parc": 219
@@ -585,24 +584,24 @@
     "auteurs_additifs": true,
     "auteurs_journal": {
       "devin@cognition.ai": 18,
-      "elbahloulahmed505@gmail.com": 101
+      "elbahloulahmed505@gmail.com": 105
     },
-    "commits_atteignables": 112,
+    "commits_atteignables": 116,
     "commits_automate": 18,
-    "commits_humains": 94,
-    "commits_sans_signature": 111,
+    "commits_humains": 98,
+    "commits_sans_signature": 115,
     "date_auteur_antérieure_à_la_racine": true,
     "date_auteur_plus_ancienne": "2026-11-07T05:44:16+01:00",
     "date_auteur_racine": "2026-11-07T06:05:23+01:00",
     "date_committer_racine": "2026-11-07T06:05:23+01:00",
     "date_debut": "2026-11-07T06:05:23+01:00",
-    "date_fin": "2026-11-11T01:18:33+01:00",
+    "date_fin": "2026-11-11T01:41:38+01:00",
     "dates_publiees_par": "git log HEAD — l'histoire qui voyage avec le dépôt",
-    "derniere": "2026-11-11T01:18:33+01:00",
-    "duree_attestee_seconde": 329657,
+    "derniere": "2026-11-11T01:41:38+01:00",
+    "duree_attestee_seconde": 331042,
     "git_disponible": true,
-    "journal_lignes": 119,
-    "journal_parsees": 119,
+    "journal_lignes": 123,
+    "journal_parsees": 123,
     "journal_plus_que_commits": 7,
     "journal_present": true,
     "journal_tout_parse": true,
@@ -614,7 +613,7 @@
       "e82bdccd3f9a57f72fd641f208d27daa3cb00262|2026-11-07T06:05:23+01:00"
     ],
     "remote": "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator.git",
-    "sha_tete": "c9b7fbd71a7debbec977132bffdf6af0baffa786",
+    "sha_tete": "d9662d165d276bf461bf5081542271ed28d5d71d",
     "signatures_detail": [
       {
         "bloc_de_signature": "E",
@@ -626,12 +625,12 @@
     "signatures_non_verifiees": 1,
     "signatures_portees": 1,
     "signatures_verifiees": 0,
-    "somme_auteurs_journal": 119,
+    "somme_auteurs_journal": 123,
     "tete_coherente": true,
     "tete_coincide_avec_l_histoire": true,
     "tete_longueur": 40,
     "utf8_integrale": true,
-    "utf8_stricte": 119
+    "utf8_stricte": 123
   },
   "instruments_horodatage": {
     "classifieur_non_vacue": true,
@@ -747,14 +746,14 @@
   },
   "limites": [
     "aucun instrument d'horodatage qualifié (RFC 3161, TSA, eIDAS, cachet) n'est dans l'archive : 0 fichier — ce dossier ne peut pas en produire un",
-    "1 commit sur 112 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
-    "le sceau ne porte aucune date : 0 date dans 249 entrées — dater un contenu demande un tiers de confiance, pas un hash",
-    "les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 112 commit(s) dans l'histoire git et 119 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas",
+    "1 commit sur 116 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
+    "le sceau ne porte aucune date : 0 date dans 276 entrées — dater un contenu demande un tiers de confiance, pas un hash",
+    "les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 116 commit(s) dans l'histoire git et 123 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas",
     "aucune trace d'éducation des IA dans l'archive : 0 instrument (poids fins, dataset, journal, config) — la demande reste déclarée",
     "le dossier de preuves externe est cité 0 fois dans l'archive et n'y est pas scellé : sa valeur probante ne se transmet pas avec le ZIP",
     "4/4 antécédents vidéo sont nommés dans l'archive ; aucun n'y porte de date mesurable",
     "la résolution en ligne des 13 identifiants Zenodo comptés n'est pas faite ici : ce module ne fait aucune requête réseau",
-    "127 fichiers de l'archive sont hors du sceau, dont 20 équations de modules non scellés",
+    "100 fichiers de l'archive sont hors du sceau, dont 0 équations de modules non scellés",
     "la date d'auteur la plus ancienne (2026-11-07T05:44:16+01:00) est signée devin@cognition.ai et la première trace fractale (2026-11-07T05:44:16+01:00) devin@cognition.ai : la plus vieille date du dépôt n'attribue pas l'idée à un humain",
     "le classifieur statue ligne à ligne : 19 lignes affirmatives sur les mentions d'horodatage, dont des clés de fichiers qui nomment l'instrument sans l'employer — le mot compte, il ne prouve pas",
     "cette couche ne prétend qu'une chose : elle date et retranche ce qui est écrit sur ce disque ; elle ne désigne personne comme inventeur et ne vaut aucun dépôt juridique",
@@ -764,14 +763,14 @@
     "aucune_limite_remplie_en_execuant_le_module": true,
     "liste": [
       "aucun instrument d'horodatage qualifié (RFC 3161, TSA, eIDAS, cachet) n'est dans l'archive : 0 fichier — ce dossier ne peut pas en produire un",
-      "1 commit sur 112 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
-      "le sceau ne porte aucune date : 0 date dans 249 entrées — dater un contenu demande un tiers de confiance, pas un hash",
-      "les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 112 commit(s) dans l'histoire git et 119 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas",
+      "1 commit sur 116 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
+      "le sceau ne porte aucune date : 0 date dans 276 entrées — dater un contenu demande un tiers de confiance, pas un hash",
+      "les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 116 commit(s) dans l'histoire git et 123 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas",
       "aucune trace d'éducation des IA dans l'archive : 0 instrument (poids fins, dataset, journal, config) — la demande reste déclarée",
       "le dossier de preuves externe est cité 0 fois dans l'archive et n'y est pas scellé : sa valeur probante ne se transmet pas avec le ZIP",
       "4/4 antécédents vidéo sont nommés dans l'archive ; aucun n'y porte de date mesurable",
       "la résolution en ligne des 13 identifiants Zenodo comptés n'est pas faite ici : ce module ne fait aucune requête réseau",
-      "127 fichiers de l'archive sont hors du sceau, dont 20 équations de modules non scellés",
+      "100 fichiers de l'archive sont hors du sceau, dont 0 équations de modules non scellés",
       "la date d'auteur la plus ancienne (2026-11-07T05:44:16+01:00) est signée devin@cognition.ai et la première trace fractale (2026-11-07T05:44:16+01:00) devin@cognition.ai : la plus vieille date du dépôt n'attribue pas l'idée à un humain",
       "le classifieur statue ligne à ligne : 19 lignes affirmatives sur les mentions d'horodatage, dont des clés de fichiers qui nomment l'instrument sans l'employer — le mot compte, il ne prouve pas"
     ],
@@ -831,43 +830,43 @@
   },
   "plan_svg": {
     "absence_ecrite": true,
-    "barre_de_zero_longueur": 4,
+    "barre_de_zero_longueur": 5,
     "barres": 12,
     "chemin": "DECLARATION/artefacts/frontiere_anteriorite.svg",
     "largeurs_conformes": true,
     "notes_texte": 25,
-    "octets": 3878,
-    "plus_grande_valeur": 249,
+    "octets": 3875,
+    "plus_grande_valeur": 276,
     "valeurs_attendues": [
-      112,
+      116,
       18,
-      249,
+      276,
       0,
       31,
       0,
       0,
       0,
       65,
-      20,
+      0,
       219,
       15
     ],
     "valeurs_ecrites": [
-      112,
+      116,
       18,
-      249,
+      276,
       0,
       31,
       0,
       0,
       0,
       65,
-      20,
+      0,
       219,
       15
     ]
   },
-  "racine_merkle_sha256": "0ff135ed5983bffd737f903b621e292f3734739b20e89841ce989464c507a34c",
+  "racine_merkle_sha256": "793ec1d15a00d7a775f0a2494bedebc85647769bc2e2c91c23983c750cfefb16",
   "rejoue_identique": true,
   "repartition_humain_machine": {
     "additif_commits": true,
@@ -877,8 +876,8 @@
     "automate_seul_sur_disque": 65,
     "ce_que_compte_ce_noeud": "qui a signé le commit, pas qui a pensé la décision",
     "commits_automate": 18,
-    "commits_humains": 94,
-    "commits_total": 112,
+    "commits_humains": 98,
+    "commits_total": 116,
     "exemples_automate_seul": [
       "DOSSIER_DEVIS/steane_tile_almizan.gds",
       "DOSSIER_DEVIS/steane_tile_manifeste.json",
@@ -889,18 +888,18 @@
     ],
     "exemples_portant_limite": [],
     "fichiers_automate_seul": 65,
-    "fichiers_humain_seul": 165,
+    "fichiers_humain_seul": 200,
     "fichiers_mixtes": 21,
     "fichiers_touches_par_automate": 86,
-    "fichiers_touches_par_humain": 186,
-    "fichiers_union": 251,
+    "fichiers_touches_par_humain": 221,
+    "fichiers_union": 286,
     "git_disponible": true,
     "par_auteur_fichiers": {
       "devin@cognition.ai": 86,
-      "elbahloulahmed505@gmail.com": 186
+      "elbahloulahmed505@gmail.com": 221
     },
-    "part_automate_pct": "16.07",
-    "part_humaine_pct": "83.93",
+    "part_automate_pct": "15.52",
+    "part_humaine_pct": "84.48",
     "preuve_de_paternite": false
   },
   "sceau_contenu": {
@@ -910,30 +909,30 @@
     "ce_qu_un_sceau_ne_prouve_pas": "la date légale, la paternité, ni l'antériorité d'une idée",
     "ce_qu_un_sceau_prouve": "que ces octets étaient là au moment du scellement",
     "chemins_uniques": true,
-    "couverture_sceau_pct": "65.86",
-    "dans_le_sceau": 245,
+    "couverture_sceau_pct": "73.12",
+    "dans_le_sceau": 272,
     "dates_trouvees": 0,
     "empreintes_uniques": false,
     "entrees_non_conformes": 0,
-    "entrees_parsees": 249,
+    "entrees_parsees": 276,
     "exemples_hors_manifeste": [
       "EMAIL_QUANTUM_MEET.txt",
       "EMAIL_UNIFIE_TOUS_MEDIAS.txt",
-      "GOULETS/SOURCES_ET_PREDECESSEURS.md",
-      "GOULETS/artefacts/bornes.csv",
-      "GOULETS/artefacts/cadence.csv",
-      "GOULETS/artefacts/certificat.json"
+      "MANIFESTE_SHA256.txt",
+      "code/resultats/run_bell_20261108_101003.json",
+      "code/resultats/run_bell_20261108_112335.json",
+      "code/resultats/run_bell_20261108_144407.json"
     ],
     "existe": true,
     "fichiers_arbre": 372,
-    "hors_manifeste": 127,
+    "hors_manifeste": 100,
     "identifiants_git_40_hex": 0,
     "le_manifeste_ne_se_scelle_pas_lui_meme": true,
     "longueurs_empreintes": [
       64
     ],
     "tete_git_citee": false,
-    "total_lignes": 249,
+    "total_lignes": 276,
     "trie": true
   },
   "source": {
@@ -1208,12 +1207,12 @@
     ],
     "tests": 566
   },
-  "taille_octets": 28987,
+  "taille_octets": 29033,
   "verdict": {
-    "commits_atteignables": 112,
+    "commits_atteignables": 116,
     "dates_dans_le_sceau": 0,
     "enonce": "antériorité accessible, paternité non instrumentée",
-    "equations_hors_sceau": 20,
+    "equations_hors_sceau": 0,
     "instruments_d_education": 0,
     "instruments_d_horodatage_sur_disque": 0,
     "limites_ouvertes": 11
