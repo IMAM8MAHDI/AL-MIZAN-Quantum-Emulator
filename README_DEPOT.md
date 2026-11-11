@@ -291,7 +291,13 @@ sortie 0, et 24 fichiers du dépôt sont revérifiés contre le sceau avant
 `laboratoire`, dont les quatre livrables de l'exécution distante. La
 confrontation octet pour octet aux fichiers servis, mesurée le 2026-11-10 sur
 les 17 fichiers alors publiés (`PRODUITS 17 IDENTIQUES 17`), est re-jouée à
-chaque déploiement et porte sur 21 fichiers depuis cet ajout. La page
+chaque déploiement et porte sur 21 fichiers depuis cet ajout. Re-jouée le
+2026-11-11 après le déploiement de l'exécution distante : `IDENTIQUES 21`,
+`ABSENTS_DU_SERVEUR 0`, `DIVERGENTS 0`. Le lot qui a produit cette égalité
+porte onze fichiers — le passeur, les six pages `fondation` et `laboratoire`,
+les quatre livrables `laboratoire_qpu_*` — expédiés depuis une archive dont
+l'empreinte est vérifiée des deux côtés, après sauvegarde des sept fichiers
+remplacés et restauration de leurs propriétaires et modes. La page
 « espace disque » et ses trois variantes ne sont pas dans ce compte :
 `oeuvre_universelle/` porte les modules **copiés depuis la production**,
 pour lecture et re-jouabilité, et l'orchestrateur ne les appelle pas.
