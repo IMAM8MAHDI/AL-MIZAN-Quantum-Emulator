@@ -1,0 +1,186 @@
+{
+ "archive": {
+  "nom": "job-dbpkmr0ou4as73ctrm80.zip",
+  "octets": 2706,
+  "sha256_zip": "7a137a17fe6b243c269a41136f486aa863d31f92de7d8db7a6b0154abba1fd63",
+  "sha256_membres": {
+   "job-dbpkmr0ou4as73ctrm80-info.json": "c0a614dc87de5e33d591464ce65d4690640dee4e91355cee9dee10cb066da3c9",
+   "job-dbpkmr0ou4as73ctrm80-result.json": "417f4d7eabfa78e18520622abd0bdc1cd612c5d2188c13ab2917c5f4b97d83ef"
+  },
+  "sha256_bloc_qpy": "fab40a5c0d459de209092fca4c5918c9c223214dadf29e235a20cffe5ee61d69",
+  "octets_bloc_qpy": 6277
+ },
+ "job": {
+  "id": "dbpkmr0ou4as73ctrm80",
+  "backend": "ibm_marrakesh",
+  "status": "Completed",
+  "cree_le_utc": "2026-11-10T16:50:52.166656Z",
+  "cout_units": 600,
+  "duree_estimee_s": 1.082784758,
+  "programme": {
+   "id": "sampler"
+  },
+  "tirs": 256
+ },
+ "circuit": {
+  "nom": "circuit-41",
+  "qubits_registre": 156,
+  "clbits": 2,
+  "operations": 12,
+  "profondeur": 8,
+  "global_phase": "2.3561944901923475",
+  "support_physique": [
+   0,
+   1
+  ]
+ },
+ "portes": [
+  {
+   "ordre": 0,
+   "nom": "rz",
+   "qubits": [
+    0
+   ],
+   "clbits": [],
+   "parametres": [
+    "1.5707963267948966"
+   ]
+  },
+  {
+   "ordre": 1,
+   "nom": "sx",
+   "qubits": [
+    0
+   ],
+   "clbits": [],
+   "parametres": []
+  },
+  {
+   "ordre": 2,
+   "nom": "rz",
+   "qubits": [
+    0
+   ],
+   "clbits": [],
+   "parametres": [
+    "1.5707963267948966"
+   ]
+  },
+  {
+   "ordre": 3,
+   "nom": "rz",
+   "qubits": [
+    1
+   ],
+   "clbits": [],
+   "parametres": [
+    "1.5707963267948966"
+   ]
+  },
+  {
+   "ordre": 4,
+   "nom": "sx",
+   "qubits": [
+    1
+   ],
+   "clbits": [],
+   "parametres": []
+  },
+  {
+   "ordre": 5,
+   "nom": "rz",
+   "qubits": [
+    1
+   ],
+   "clbits": [],
+   "parametres": [
+    "1.5707963267948966"
+   ]
+  },
+  {
+   "ordre": 6,
+   "nom": "cz",
+   "qubits": [
+    0,
+    1
+   ],
+   "clbits": [],
+   "parametres": []
+  },
+  {
+   "ordre": 7,
+   "nom": "rz",
+   "qubits": [
+    1
+   ],
+   "clbits": [],
+   "parametres": [
+    "1.5707963267948966"
+   ]
+  },
+  {
+   "ordre": 8,
+   "nom": "sx",
+   "qubits": [
+    1
+   ],
+   "clbits": [],
+   "parametres": []
+  },
+  {
+   "ordre": 9,
+   "nom": "rz",
+   "qubits": [
+    1
+   ],
+   "clbits": [],
+   "parametres": [
+    "1.5707963267948966"
+   ]
+  },
+  {
+   "ordre": 10,
+   "nom": "measure",
+   "qubits": [
+    0
+   ],
+   "clbits": [
+    0
+   ],
+   "parametres": []
+  },
+  {
+   "ordre": 11,
+   "nom": "measure",
+   "qubits": [
+    1
+   ],
+   "clbits": [
+    1
+   ],
+   "parametres": []
+  }
+ ],
+ "extraction": {
+  "script_source": "ASTRO-Q°ODE_SYSTEME/audit_archive_job_ibm.py",
+  "reference_externe": "qiskit (qpy.load)",
+  "empreinte_referencement": "87b5fb696be77a261414264ea4f6d295412f3b5a1c9668cc758cef50db7ac2f2",
+  "horodatage_utc": "2026-11-10T21:51:51Z"
+ },
+ "redaction": {
+  "motif": "le champ user_id de info.json est un identifiant de compte : il n'est pas publié",
+  "remplace_par": "le préfixe SHA-256 en 12 rangs de cet identifiant",
+  "empreinte_compte_sha256_12": "1019a804c93d",
+  "bloc_qpy_conserve": true,
+  "sha256_info_netoyee": "ec40fe3239972cb5dd7ec43815f5dc6124b85191f14292e095e58085c84f53c2",
+  "archive_originale_non_publiee": {
+   "nom": "job-dbpkmr0ou4as73ctrm80.zip",
+   "octets": 2706,
+   "sha256_zip": "7a137a17fe6b243c269a41136f486aa863d31f92de7d8db7a6b0154abba1fd63",
+   "sha256_membre_info": "c0a614dc87de5e33d591464ce65d4690640dee4e91355cee9dee10cb066da3c9",
+   "statut": "attesté par le registre scellé, non reproductible depuis les fichiers publiés"
+  },
+  "membre_result_publie_verbatim": true,
+  "sha256_membre_result": "417f4d7eabfa78e18520622abd0bdc1cd612c5d2188c13ab2917c5f4b97d83ef"
+ }
+}

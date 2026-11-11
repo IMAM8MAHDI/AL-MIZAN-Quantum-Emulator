@@ -1,0 +1,446 @@
+{
+  "audience": {
+    "abonnes": 1,
+    "abonnes_masques": false,
+    "videos": 23,
+    "vues": 48,
+    "vues_par_publication": 2.0869565217391304
+  },
+  "cadence": {
+    "derniere_utc": "2026-11-10T17:19:14+00:00",
+    "devoir": 0.23529411764705882,
+    "emprise_jours_pacifique": 17,
+    "emprise_jours_utc": 17,
+    "identiques": false,
+    "jours_actifs_pacifique": 4,
+    "jours_actifs_utc": 4,
+    "jours_pacifique": {
+      "2026-10-25": 1,
+      "2026-11-04": 4,
+      "2026-11-06": 8,
+      "2026-11-10": 10
+    },
+    "jours_utc": {
+      "2026-10-25": 1,
+      "2026-11-05": 4,
+      "2026-11-06": 8,
+      "2026-11-10": 10
+    },
+    "lambda_par_jour_pacifique": 1.3529411764705883,
+    "lambda_par_jour_utc": 1.3529411764705883,
+    "pic_pacifique": 10,
+    "pic_utc": 10,
+    "premiere_utc": "2026-10-25T22:14:01+00:00",
+    "publiees": 23
+  },
+  "capacite_declaree": {
+    "capacite_declaree_par_jour": 99,
+    "capacite_en_unites": 99,
+    "citation": "Projects that enable the YouTube Data API have a default quota allocation of 100 search.list calls, 100 videos.insert calls, and 10,000 units per day combined for all other endpoints.",
+    "composants": {
+      "thumbnails.set": 50,
+      "videos.insert": 1,
+      "videos.update": 50
+    },
+    "cout_par_publication": 101,
+    "plafond_appels_par_jour": 100,
+    "reinitialisation": "at midnight Pacific Time (PT)",
+    "reserve_unites_par_jour": 10000
+  },
+  "chaine": {
+    "creee_le_utc": "2024-06-18T16:22:15.38533Z",
+    "id": "UCeMs4f4J13F5fvJF1Xt8Nng",
+    "longUploadsStatus": "allowed",
+    "titre": "Ahmed Elbahloul"
+  },
+  "demande_originelle": "étudier et poser les équations pour résoudre les goulots d'étranglement et être inarrêtable",
+  "disque": {
+    "appel_reussi": true,
+    "gabarit_moyen_octets": 81269225.12820514,
+    "le_stock_tient": true,
+    "octets_libres": 35434115072,
+    "octets_totaux": 252841029632,
+    "part_libre": 0.14014384897725238,
+    "stock_deja_ecrit": 78,
+    "videos_du_gabarit_acceptees": 436
+  },
+  "dossier": "GOULETS",
+  "durees": {
+    "comptees": 23,
+    "franchissement_du_seuil": false,
+    "marge_avant_seuil_s": 870.0,
+    "max_s": 30.0,
+    "min_s": 11.0,
+    "moyenne_s": 11.826086956521738,
+    "seuil_declare_s": 900.0,
+    "total_s": 272.0,
+    "verrou_fournisseur": "allowed"
+  },
+  "emploi": {
+    "aucune_borne_atteinte": true,
+    "borne_declaree_par_jour": 99,
+    "borne_effective_par_jour": 10,
+    "lambda_par_jour": 1.3529411764705883,
+    "marges_jours_par_jour": {
+      "declaree": 97.6470588235294,
+      "effective": 8.647058823529411
+    },
+    "rapport_des_deux_bornes": 9.9,
+    "taux_emploi_declare": 0.013666072489601902,
+    "taux_emploi_effectif": 0.13529411764705884
+  },
+  "empreintes": {
+    "backlog_local_2026-11-10.json": {
+      "attendu": "521f82c8a04ab7c91be364e0c7add789ddbbabb282b1c8462b05f6b94ed09486",
+      "octets": 12307,
+      "ok": true,
+      "sha256": "521f82c8a04ab7c91be364e0c7add789ddbbabb282b1c8462b05f6b94ed09486"
+    },
+    "disque_2026-11-10.json": {
+      "attendu": "f406ad200c9b678e94ad242839d987be174f4fa4524f28a4e834a0d167d5c23a",
+      "octets": 617,
+      "ok": true,
+      "sha256": "f406ad200c9b678e94ad242839d987be174f4fa4524f28a4e834a0d167d5c23a"
+    },
+    "hors_table": [],
+    "plafond_chaine_2026-11-10.json": {
+      "attendu": "a308821d75f993a78bfeb530bc2d7af9505e4911f2be9fd7740d5ce6720b0677",
+      "octets": 2742,
+      "ok": true,
+      "sha256": "a308821d75f993a78bfeb530bc2d7af9505e4911f2be9fd7740d5ce6720b0677"
+    },
+    "quotas_declares_2026-11-10.json": {
+      "attendu": "5ca911f7ede44b2aaa5dfa35e943b6466c614d3dbea515d582d0b03342191c41",
+      "octets": 1082,
+      "ok": true,
+      "sha256": "5ca911f7ede44b2aaa5dfa35e943b6466c614d3dbea515d582d0b03342191c41"
+    },
+    "racine_declaree": "0fb7aee428ac2ec7ef5fe02a73cce7fe31a1da5e59ff4772657e0ded3445a52f",
+    "racine_recalculee": "0fb7aee428ac2ec7ef5fe02a73cce7fe31a1da5e59ff4772657e0ded3445a52f",
+    "video_source_2026-11-10.json": {
+      "attendu": "d0d5f27be5a62a3ad956e000512a50ac30d1f157babb2c0abaf960af9d71d03b",
+      "octets": 1007,
+      "ok": true,
+      "sha256": "d0d5f27be5a62a3ad956e000512a50ac30d1f157babb2c0abaf960af9d71d03b"
+    },
+    "youtube_2026-11-10.json": {
+      "attendu": "dc6ac04f0e77fcf707eb357291cc06d42c363f47bb23790abbf6231cd80eff56",
+      "octets": 3028,
+      "ok": true,
+      "sha256": "dc6ac04f0e77fcf707eb357291cc06d42c363f47bb23790abbf6231cd80eff56"
+    }
+  },
+  "equations": [
+    {
+      "chemin": "GOULETS/goulets_base.py → empreintes_des_sources()",
+      "couche": "S1 MESURABLE",
+      "depend_de": [],
+      "detail": null,
+      "fonde_hors_du_dossier": "six instantanés consigné hors du dépôt, puis écrits ici",
+      "formule": "SHA-256(instantané) pour les six fichiers · racine = SHA-256(nom+empreinte triés)",
+      "id": "EQ-01",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "GOULETS/goulets_base.py → cadence()",
+      "couche": "S1 MESURABLE",
+      "depend_de": [
+        "EQ-01"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "playlist d'expédition lue en lecture seule",
+      "formule": "λ = N/E · devoir = J_actifs/E",
+      "id": "EQ-02",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "GOULETS/goulets_base.py → decalage_pacifique() → cadence()",
+      "couche": "S1 MESURABLE",
+      "depend_de": [
+        "EQ-02"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "règle américaine du changement d'heure, recalculée sans tzdata",
+      "formule": "jour_pacifique = date(instant + δ(instant)) · δ = −7h en été, −8h en hiver",
+      "id": "EQ-03",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "GOULETS/goulets_base.py → durees()",
+      "couche": "S1 MESURABLE",
+      "depend_de": [
+        "EQ-01"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "durées lues dans les boîtes mvhd des fichiers",
+      "formule": "max(d) vs S_declare · verrou = longUploadsStatus",
+      "id": "EQ-04",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "GOULETS/goulets_base.py → capacite_declaree()",
+      "couche": "S1 MESURABLE",
+      "depend_de": [
+        "EQ-01"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "barème de coûts publié par le fournisseur",
+      "formule": "c = Σ coûts · capacité = min(⌊R/c⌋, plafond d'appels)",
+      "id": "EQ-05",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "SPÉCIFIÉ"
+    },
+    {
+      "chemin": "GOULETS/goulets_base.py → plafond_constate()",
+      "couche": "S1 MESURABLE",
+      "depend_de": [
+        "EQ-01",
+        "EQ-03"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "journal local de l'opérateur, horodaté localement",
+      "formule": "plafond_effectif = max_jour(publiées) sur les jours portant un refus",
+      "id": "EQ-06",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "GOULETS/goulets_base.py → emploi()",
+      "couche": "S1 MESURABLE",
+      "depend_de": [
+        "EQ-02",
+        "EQ-05",
+        "EQ-06"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": null,
+      "formule": "ρ = λ / borne",
+      "id": "EQ-07",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "GOULETS/goulets_base.py → audience()",
+      "couche": "S1 MESURABLE",
+      "depend_de": [
+        "EQ-01"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "compteurs publics de la chaîne",
+      "formule": "vues / publications · abonnés",
+      "id": "EQ-08",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "GOULETS/goulets_base.py → inventaire_stock() → marge_disque()",
+      "couche": "S1 MESURABLE",
+      "depend_de": [
+        "EQ-01"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "stat() de l'hôte de production",
+      "formule": "marge = ⌊octets_libres / (Σoctets / n)⌋",
+      "id": "EQ-09",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "GOULETS/goulets_base.py → horizon()",
+      "couche": "S1 MESURABLE",
+      "depend_de": [
+        "EQ-02",
+        "EQ-09"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": null,
+      "formule": "jours = n / λ · jours = n / borne_effective",
+      "id": "EQ-10",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "SIMULÉ"
+    }
+  ],
+  "horizon": {
+    "fichiers_a_publier": 78,
+    "hypothese": "projection linéaire : la cadence observée et le plafond mesuré tenus constants, sans hypothèse sur la production à venir",
+    "jours_a_cadence_tenue": 57.65217391304348,
+    "jours_au_plafond_effectif": 7.8,
+    "plafond_effectif_par_jour": 10
+  },
+  "horodatages_des_sources": {
+    "backlog_local_2026-11-10.json": "2026-11-10T23:22:31+00:00",
+    "disque_2026-11-10.json": "2026-11-10T23:22:31+00:00",
+    "plafond_chaine_2026-11-10.json": "2026-11-10T23:22:39+00:00",
+    "quotas_declares_2026-11-10.json": "2026-11-10T23:22:31+00:00",
+    "video_source_2026-11-10.json": "2026-11-10T23:22:31+00:00",
+    "youtube_2026-11-10.json": "2026-11-10T23:22:31+00:00"
+  },
+  "plafond_constate": {
+    "citation_raison": "The user has exceeded the number of videos they may upload. (domain youtube.video, reason uploadLimitExceeded, HTTP 400)",
+    "jour_du_max": "2026-11-10",
+    "jours_avec_refus": [
+      "2026-11-04",
+      "2026-11-06",
+      "2026-11-08",
+      "2026-11-10"
+    ],
+    "jours_refus_sans_publication": [
+      "2026-11-08"
+    ],
+    "loi_temporele_etablie": false,
+    "max_publiees_un_jour": 10,
+    "raisons_rencontrees": {
+      "uploadLimitExceeded": [
+        "2026-11-04",
+        "2026-11-06",
+        "2026-11-08",
+        "2026-11-10"
+      ],
+      "uploadThumbnailLimitExceeded": [
+        "2026-11-10"
+      ]
+    },
+    "suites_publiees_par_jour": [
+      1,
+      4,
+      8,
+      10
+    ]
+  },
+  "portee_et_limites": {
+    "ecritures_hors_artefacts": 0,
+    "enonces": [
+      "Quatre bornes, quatre natures : la durée est mesurée contre un seuil déclaré, la capacité en unités vient d'un barème publié, le plafond de 10 par jour est un fait observé, la marge de disque est propre à cet hôte.",
+      "Le plafond effectif (10/jour) est 9,9 fois plus bas que le plafond que le barème laisse calculer (99/jour) : la table publiée ne décrit pas la contrainte qui borne réellement cette chaîne.",
+      "Un refus est consigné un jour sans aucune publication : la loi temporelle du plafond n'est pas établie par ces données, et le dossier ne l'invente pas.",
+      "La cadence tenue (1,3529/jour) n'approche aucune des bornes : la contrainte mesurée est en amont de la plateforme, dans la production et la décision de publier — ce dossier ne mesure pas la première.",
+      "Aucune recette d'audience, aucune promesse de croissance : le rapport vues-publication est consigné comme un compteur, sans interprétation.",
+      "Le stock et la marge de disque sont des instantanés d'une machine : ils ne sont pas reproductibles sur une autre et ne prétendent pas l'être."
+    ],
+    "jetons_consignes": 0,
+    "predictions_al_mizan_testees": 0,
+    "reseau_appelle_par_ce_module": false
+  },
+  "racine_merkle_sha256": "7ca6d1b0ab394809d13811811fa57ca5190840c7bd7b47ea5f7802dcd49d4347",
+  "requalification": "« inarrêtable » n'a pas de définition falsifiable : le dossier pose quatre bornes datées, chacune avec la condition qui la rompt, et n'affirme aucune impossibilité d'arrêter la chaîne",
+  "statistiques": {
+    "hiddenSubscriberCount": false,
+    "subscriberCount": "1",
+    "videoCount": "23",
+    "viewCount": "48"
+  },
+  "stock": {
+    "dossiers": {
+      "VIDEO_PROMOTION_AL_MIZAN": {
+        "fichiers": 1,
+        "octets": 50485726,
+        "secondes": 30.0
+      },
+      "vibe_videos": {
+        "fichiers": 74,
+        "octets": 6136825753,
+        "secondes": 1372.45
+      },
+      "vibe_videos_doublons": {
+        "fichiers": 3,
+        "octets": 151688081,
+        "secondes": 30.093
+      }
+    },
+    "doublons": {
+      "fichiers": 3,
+      "octets": 151688081,
+      "secondes": 30.093
+    },
+    "durees_non_lues": 0,
+    "fichiers": 78,
+    "gabarit_moyen_octets": 81269225.12820514,
+    "octets": 6338999560,
+    "secondes": 1432.543
+  },
+  "sujet": "bornes mesurées d'une chaîne de publication vidéo",
+  "video_source": {
+    "auteur": "Le Futurologue",
+    "avertissement": "aucun en-tête de chapitres dans la description : horodatages pris dans toute la description ; transcript non sondé, donc AUCUNE phrase de la vidéo n'est citée ni résumée ici.",
+    "chapitres": 4,
+    "croissants": true,
+    "dernier_dans_la_duree": true,
+    "duree_s": 2523,
+    "titre": "Le dernier avertissement de l’humanité",
+    "transcript": "non sondé"
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "asymetrie": {
+    "01": 22,
+    "10": 0,
+    "cellule_minimale": 0,
+    "conclusion": "asymétrie non imputable au seul tirage",
+    "effectif": 22,
+    "hypothese_nulle": "les deux mots de poids un sont équiprobables",
+    "loi": "Binom(22, 1/2) calculée en entiers",
+    "valeur_p": 4.76837158203125e-07
+  },
+  "circuit": {
+    "clbits": 2,
+    "global_phase": "2.3561944901923475",
+    "nom": "circuit-41",
+    "operations": 12,
+    "profondeur": 8,
+    "qubits_registre": 156,
+    "support_physique": [
+      0,
+      1
+    ]
+  },
+  "compte_portes": {
+    "cz": 1,
+    "measure": 2,
+    "rz": 6,
+    "sx": 3
+  },
+  "compteurs": {
+    "00": 126,
+    "01": 22,
+    "11": 108
+  },
+  "dossier": "QPU_DISTANT",
+  "duree": {
+    "debut_utc": "2026-11-10T16:52:42.309345",
+    "duree_estimee_s": 1.082784758,
+    "duree_observee_s": 1.169047,
+    "fin_utc": "2026-11-10T16:52:43.478392",
+    "portee": "fenêtre d'exécution déclarée par le fournisseur, attente de file exclue"
+  },
+  "empreintes": {
+    "empreinte_parc_declaree": "8dc4cb80b6c5cd92c6a7eebcf9d256d0782b1fa30a24abb4c02d91654d93baf4",
+    "empreinte_parc_recalculee": "8dc4cb80b6c5cd92c6a7eebcf9d256d0782b1fa30a24abb4c02d91654d93baf4",
+    "empreinte_support_declaree": "f0fec1699c8c645163964c0e082b7e007f5b4fd36c2b3df4565d1c1e5c03dfc9",
+    "empreinte_support_recalculee": "f0fec1699c8c645163964c0e082b7e007f5b4fd36c2b3df4565d1c1e5c03dfc9",
+    "octets_bloc_qpy_recalcules": 6277,
+    "sha256_bloc_qpy_recalcule": "fab40a5c0d459de209092fca4c5918c9c223214dadf29e235a20cffe5ee61d69",
+    "sha256_bloc_qpy_registre": "fab40a5c0d459de209092fca4c5918c9c223214dadf29e235a20cffe5ee61d69",
+    "sha256_info_netoyee": "ec40fe3239972cb5dd7ec43815f5dc6124b85191f14292e095e58085c84f53c2",
+    "sha256_membre_result_registre": "417f4d7eabfa78e18520622abd0bdc1cd612c5d2188c13ab2917c5f4b97d83ef",
+    "sha256_zip_atteste": "7a137a17fe6b243c269a41136f486aa863d31f92de7d8db7a6b0154abba1fd63"
+  },
+  "enveloppe_mediane": {
+    "borne_basse": 0.9258965410524731,
+    "delta_enveloppe": 0.07410345894752685,
+    "detail": {
+      "cz": {
+        "contribution": 0.002482017214380877,
+        "erreur": 0.002482017214380877,
+        "n": 1
+      },
+      "measure": {
+        "contribution": 0.033203125,
+        "erreur": 0.0166015625,
+        "n": 2
+      },
+      "sx": {
+        "contribution": 0.001366587259382543,
+        "erreur": 0.0004555290864608477,
+        "n": 3
+      }
+    },
+    "regle": "borne = 1 − 2·Σ ε (inégalité triangulaire)",
+    "somme_eps": 0.03705172947376342,
+    "source": "calibration_ibm_marrakesh_2026-11-10T1647Z.json"
+  },
+  "enveloppe_support": {
+    "borne_basse": 0.9114309996674055,
+    "delta_enveloppe": 0.08856900033259449,
+    "detail": {
+      "cz[0,1]": {
+        "contribution": 0.0035079477364072797,
+        "erreur": 0.0035079477364072797,
+        "n": 1,
+        "source": "cz[0-1]"
+      },
+      "measure[0]": {
+        "contribution": 0.01513671875,
+        "erreur": 0.01513671875,
+        "n": 1,
+        "source": "measure[0]"
+      },
+      "measure[1]": {
+        "contribution": 0.0244140625,
+        "erreur": 0.0244140625,
+        "n": 1,
+        "source": "measure[1]"
+      },
+      "rz[0]": {
+        "contribution": 0.0,
+        "erreur": 0.0,
+        "n": 2,
+        "source": "virtuelle"
+      },
+      "rz[1]": {
+        "contribution": 0.0,
+        "erreur": 0.0,
+        "n": 4,
+        "source": "virtuelle"
+      },
+      "sx[0]": {
+        "contribution": 0.0005649546478691128,
+        "erreur": 0.0005649546478691128,
+        "n": 1,
+        "source": "sx[0]"
+      },
+      "sx[1]": {
+        "contribution": 0.0006608165320208469,
+        "erreur": 0.00033040826601042346,
+        "n": 2,
+        "source": "sx[1]"
+      }
+    },
+    "empreinte_support": "f0fec1699c8c645163964c0e082b7e007f5b4fd36c2b3df4565d1c1e5c03dfc9",
+    "horodatage_support_utc": "2026-11-10T20:57:22Z",
+    "regle": "borne = 1 − 2·Σ ε sur le support",
+    "repli_mediane": {},
+    "somme_eps": 0.044284500166297244,
+    "source": "support_ibm_marrakesh_0-1_2026-11-10T2057Z.json"
+  },
+  "equations": [
+    {
+      "chemin": "QPU_DISTANT/qpu_distant_base.py → mesurer() → empreintes",
+      "couche": "S2 REGULARITE",
+      "depend_de": [],
+      "detail": null,
+      "fonde_hors_du_dossier": "archive du fournisseur, téléchargée puis scellée",
+      "formule": "SHA-256(info) · SHA-256(result) · SHA-256(bloc QPY décompressé)",
+      "id": "EQ-01",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "QPU_DISTANT/qpu_distant_base.py → registre() → support_touche()",
+      "couche": "S2 REGULARITE",
+      "depend_de": [
+        "EQ-01"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "qiskit (qpy.load) pour la seule extraction du registre",
+      "formule": "12 opérations sur un registre de 156 fils, support effectif {0, 1}",
+      "id": "EQ-02",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "SPÉCIFIÉ"
+    },
+    {
+      "chemin": "QPU_DISTANT/qpu_distant_base.py → lecture_compteurs() → npy()",
+      "couche": "S2 REGULARITE",
+      "depend_de": [
+        "EQ-01"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "format .npy de numpy, lu à la main",
+      "formule": "BitArray → compte |00⟩, |01⟩, |10⟩, |11⟩",
+      "id": "EQ-03",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "QPU_DISTANT/qpu_distant_base.py → parite_mesuree()",
+      "couche": "S2 REGULARITE",
+      "depend_de": [
+        "EQ-03"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": null,
+      "formule": "p = n(pair)/N · σ = √(p(1−p)/N)",
+      "id": "EQ-04",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "QPU_DISTANT/qpu_distant_base.py → test_asymetrie()",
+      "couche": "S2 REGULARITE",
+      "depend_de": [
+        "EQ-04"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": null,
+      "formule": "H0 : les deux mots de poids un sont équiprobables · test bilatéral exact",
+      "id": "EQ-05",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "QPU_DISTANT/qpu_distant_base.py → simuler()",
+      "couche": "S2 REGULARITE",
+      "depend_de": [
+        "EQ-02"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": null,
+      "formule": "|ψ⟩ sur le support · pz(pair) = Σ |⟨x|ψ⟩|² sur x de poids pair",
+      "id": "EQ-06",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "SIMULÉ"
+    },
+    {
+      "chemin": "QPU_DISTANT/qpu_distant_base.py → enveloppe_mediane()",
+      "couche": "S2 REGULARITE",
+      "depend_de": [
+        "EQ-04"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "calibrage public du parc ibm_marrakesh",
+      "formule": "borne = 1 − 2·Σ ε_médiane",
+      "id": "EQ-07",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "SPÉCIFIÉ"
+    },
+    {
+      "chemin": "QPU_DISTANT/qpu_distant_base.py → enveloppe_support()",
+      "couche": "S2 REGULARITE",
+      "depend_de": [
+        "EQ-04"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "sonde du support 0-1, lecture seule du target",
+      "formule": "borne = 1 − 2·Σ ε_support",
+      "id": "EQ-08",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "SPÉCIFIÉ"
+    },
+    {
+      "chemin": "QPU_DISTANT/qpu_distant_base.py → verdicts",
+      "couche": "S2 REGULARITE",
+      "depend_de": [
+        "EQ-07",
+        "EQ-08"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": null,
+      "formule": "1 − 2·Σ ε_support < p < 1 − 2·Σ ε_médiane",
+      "id": "EQ-09",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    },
+    {
+      "chemin": "QPU_DISTANT/qpu_distant_base.py → duree_execution()",
+      "couche": "S2 REGULARITE",
+      "depend_de": [
+        "EQ-01"
+      ],
+      "detail": null,
+      "fonde_hors_du_dossier": "horodatages du fournisseur",
+      "formule": "fenêtre d'exécution · coût · localité",
+      "id": "EQ-10",
+      "limite": null,
+      "piliers": [
+        "P1 UNITE",
+        "P2 BORNE",
+        "P3 CONFRONTATION",
+        "P4 TRANSMISSION"
+      ],
+      "resultat": null,
+      "statut": "OPÉRATIONNEL"
+    }
+  ],
+  "horodatages_des_sources": {
+    "calibrage_utc": "2026-11-10T16:47:42Z",
+    "machine": "ibm_marrakesh",
+    "num_qubits_parc": 156,
+    "support_utc": "2026-11-10T20:57:22Z"
+  },
+  "job": {
+    "backend": "ibm_marrakesh",
+    "cout_units": 600,
+    "cree_le_utc": "2026-11-10T16:50:52.166656Z",
+    "id": "dbpkmr0ou4as73ctrm80",
+    "programme": {
+      "id": "sampler"
+    },
+    "status": "Completed",
+    "tirs": 256,
+    "titulaire": "le préfixe SHA-256 en 12 rangs de cet identifiant : 1019a804c93d"
+  },
+  "parite": {
+    "evenement": "nombre de 1 pair sur le registre",
+    "intervalle_1sigma": [
+      0.8965455164895976,
+      0.9315794835104024
+    ],
+    "p_exacte": "234/256",
+    "p_mesuree": 0.9140625,
+    "sigma_tirage": 0.01751698351040244,
+    "tirages": 256,
+    "tirages_impairs": 22,
+    "tirages_pairs": 234
+  },
+  "parite_ideale_simulee": {
+    "bruit_numerique": 4.440892098500626e-16,
+    "dimensions": 4,
+    "distribution": [
+      0.5,
+      0.0,
+      0.0,
+      0.5
+    ],
+    "norme": 1.0000000000000004,
+    "operations_unitaires": 10,
+    "p_pair_calculee": 1.0000000000000004,
+    "qubits_actifs": 2
+  },
+  "portee_et_limites": {
+    "ecritures_hors_artefacts": 0,
+    "enonces": [
+      "Un seul job, une seule paire de qubits, 256 tirs : aucune généralisation n'est établie par ce dossier.",
+      "Les deux enveloppes sont des bornes, pas des modèles de bruit : leurs verdicts sont rendus séparément et ne sont jamais fusionnés.",
+      "Le registre de portes transpilées est extrait avec qiskit hors du dépôt ; il est lié à l'archive par l'empreinte du bloc QPY, recalculée ici.",
+      "Ce tirage ne teste aucune équation d'AL-MIZAN : il borne ce qu'une exécution quantique distante autorise à écrire."
+    ],
+    "executions_locales": 0,
+    "predictions_al_mizan_testees": 0,
+    "qubit_physique_local": false,
+    "reseau_appelle_par_ce_module": false
+  },
+  "racine_merkle_sha256": "011827d24081c8f27b12683802066fb9a60c5e33235c64b4c4fdbb95e95228dd",
+  "support_physique": [
+    0,
+    1
+  ],
+  "verdicts": {
+    "mediane_machine": {
+      "borne_basse": 0.9258965410524731,
+      "ecart_en_sigma": -0.6755752807237312,
+      "recue": false,
+      "recue_a_3sigma": true
+    },
+    "support_reel": {
+      "borne_basse": 0.9114309996674055,
+      "ecart_en_sigma": 0.15022565563481882,
+      "recue": true
+    }
+  }
+}

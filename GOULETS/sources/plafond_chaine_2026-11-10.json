@@ -1,0 +1,74 @@
+{
+ "avertissement": "le journal recopie le même résultat d'outil dans plusieurs messages : `lignes_du_journal` ne compte pas des refus distincts. Ce que la ligne établit est l'existence d'un refus ce jour-là, sa raison verbatim et les noms de fichiers cités. `fichiers_nommés_différents` dénombre des noms, pas des tentatives. Un même jour peut porter les deux raisons.",
+ "citation_raison": "The user has exceeded the number of videos they may upload. (domain youtube.video, reason uploadLimitExceeded, HTTP 400)",
+ "jours_par_raison": {
+  "uploadLimitExceeded": [
+   "2026-11-04",
+   "2026-11-06",
+   "2026-11-08",
+   "2026-11-10"
+  ],
+  "uploadThumbnailLimitExceeded": [
+   "2026-11-10"
+  ]
+ },
+ "mesure_le_utc": "2026-11-10T23:22:39+00:00",
+ "methode": "lignes du journal local de session contenant la raison renvoyée par l'API, rapprochées des publications lues sur la chaîne ; jours exprimés en heure du Pacifique (zoneinfo America/Los_Angeles, bascule heure d'été comprise), parce que c'est le fuseau que le fournisseur déclare pour sa réinitialisation quotidienne",
+ "par_jour_pacifique": {
+  "2026-10-25": {
+   "publiees_ce_jour": 1,
+   "raisons": {}
+  },
+  "2026-11-04": {
+   "publiees_ce_jour": 4,
+   "raisons": {
+    "uploadLimitExceeded": {
+     "dernier_utc": "2026-11-05T07:42:19.655Z",
+     "fichiers_nommés_différents": 59,
+     "lignes_du_journal": 109,
+     "premier_utc": "2026-11-05T07:42:09.353Z"
+    }
+   }
+  },
+  "2026-11-06": {
+   "publiees_ce_jour": 8,
+   "raisons": {
+    "uploadLimitExceeded": {
+     "dernier_utc": "2026-11-06T10:02:39.928Z",
+     "fichiers_nommés_différents": 56,
+     "lignes_du_journal": 296,
+     "premier_utc": "2026-11-06T09:54:25.051Z"
+    }
+   }
+  },
+  "2026-11-08": {
+   "publiees_ce_jour": 0,
+   "raisons": {
+    "uploadLimitExceeded": {
+     "dernier_utc": "2026-11-08T19:24:09.836Z",
+     "fichiers_nommés_différents": 55,
+     "lignes_du_journal": 120,
+     "premier_utc": "2026-11-08T19:23:12.727Z"
+    }
+   }
+  },
+  "2026-11-10": {
+   "publiees_ce_jour": 10,
+   "raisons": {
+    "uploadLimitExceeded": {
+     "dernier_utc": "2026-11-10T23:22:22.615Z",
+     "fichiers_nommés_différents": 10,
+     "lignes_du_journal": 135,
+     "premier_utc": "2026-11-10T16:50:27.558Z"
+    },
+    "uploadThumbnailLimitExceeded": {
+     "dernier_utc": "2026-11-10T23:22:29.049Z",
+     "fichiers_nommés_différents": 11,
+     "lignes_du_journal": 82,
+     "premier_utc": "2026-11-10T16:59:30.035Z"
+    }
+   }
+  }
+ },
+ "portee": "le journal est celui de l'opérateur : ses horodatages sont locaux, pas ceux du serveur. La loi temporelle du plafond n'est pas établie ici ; seul son effet est consigné, jour par jour, à côté du nombre de vidéos réellement publiées."
+}

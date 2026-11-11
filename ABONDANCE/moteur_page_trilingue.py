@@ -576,6 +576,24 @@ def markdown(donnees: Dict[str, Any], spec: Dict[str, Any]) -> str:
 # ----------------------------------------------------------------------------
 # assemblage d'une page
 # ----------------------------------------------------------------------------
+def cle_eq(e: Dict[str, Any]) -> str:
+    """Clé des tables de textes quand une page réunit deux modules.
+
+    `EQ-01` désigne alors deux équations : la table est indexée par
+    « DOSSIER/EQ-01 », et la page affiche le dossier sous l'identifiant. Une ligne
+    qui ne porte pas de dossier garde l'identifiant seul — les pages mono-module
+    restent inchangées.
+    """
+    return f"{e['dossier']}/{e['id']}" if e.get("dossier") else e["id"]
+
+
+def marque_dossier(e: Dict[str, Any]) -> str:
+    """Le dossier d'une ligne, sous son identifiant : `.chemin` est déjà le style d'une
+    trace, il n'a pas besoin d'une seconde classe pour dire d'où vient la ligne."""
+    d = e.get("dossier")
+    return "" if not d else f"<br><span class=\"chemin\">{ech(d)}</span>"
+
+
 def construire_page(spec: Dict[str, Any], donnees: Dict[str, Any], lang: str) -> str:
     t = T[lang]
     pool = pool_nombres(
@@ -589,8 +607,8 @@ def construire_page(spec: Dict[str, Any], donnees: Dict[str, Any], lang: str) ->
     )
     textes_eq = spec["eq_text"]
 
-    def eq_texte(e_id: str, champ: int) -> str:
-        trio = textes_eq[e_id][lang]
+    def eq_texte(e: Dict[str, Any], champ: int) -> str:
+        trio = textes_eq[cle_eq(e)][lang]
         if champ == 0:
             return trio[0]
         if lang == "fr":
@@ -599,13 +617,14 @@ def construire_page(spec: Dict[str, Any], donnees: Dict[str, Any], lang: str) ->
 
     manquants: List[str] = []
     for e in donnees["equations"]:
-        if e["id"] not in textes_eq:
-            manquants.append(e["id"] + " (absent)")
+        cle_txt = cle_eq(e)
+        if cle_txt not in textes_eq:
+            manquants.append(cle_txt + " (absent)")
             continue
         for code in ("en", "ar"):
-            hors = verifier_nombres(textes_eq[e["id"]][code][1], pool)
+            hors = verifier_nombres(textes_eq[cle_txt][code][1], pool)
             if hors:
-                manquants.append(f"{e['id']}[{code}] :" + ",".join(hors))
+                manquants.append(f"{cle_txt}[{code}] :" + ",".join(hors))
     if manquants:
         raise ValueError("textes hors pool numérique : " + " ; ".join(manquants))
 
@@ -650,8 +669,8 @@ def construire_page(spec: Dict[str, Any], donnees: Dict[str, Any], lang: str) ->
 
     lignes_eq = []
     for e in donnees["equations"]:
-        titre_eq = eq_texte(e["id"], 0)
-        ligne = e["resultat"] if lang == "fr" else eq_texte(e["id"], 1)
+        titre_eq = eq_texte(e, 0)
+        ligne = e["resultat"] if lang == "fr" else eq_texte(e, 1)
         # Les nombres d'une ligne calculée ne se traduisent pas : sans eux, une page sur trois
         # seule porte la valeur vérifiable.
         calcul = ("" if lang == "fr"
@@ -659,9 +678,9 @@ def construire_page(spec: Dict[str, Any], donnees: Dict[str, Any], lang: str) ->
         cellule = (f"<span class=\"lecture\">{ech(ligne)}</span>{calcul}"
                    f"<br><span class=\"chemin\">{ech(e['chemin'])}</span>")
         if lang != "fr" and ech(e["resultat"]) not in cellule:
-            raise ValueError(f"{e['id']} : ligne calculée absente de la page «{lang}»")
+            raise ValueError(f"{cle_eq(e)} : ligne calculée absente de la page «{lang}»")
         lignes_eq.append([
-            ech(e["id"]),
+            ech(e["id"]) + marque_dossier(e),
             f"<span class=\"titre\">{ech(titre_eq)}</span>",
             f"<span class=\"formule\">{ech(e['formule'])}</span>",
             cellule,
@@ -674,7 +693,8 @@ def construire_page(spec: Dict[str, Any], donnees: Dict[str, Any], lang: str) ->
 
     lignes_ctrl = []
     for c in donnees["controles"]:
-        lignes_ctrl.append([ech(c["id"]), f"<span class=\"titre\">{ech(c['nom'])}</span>",
+        lignes_ctrl.append([ech(c["id"]) + marque_dossier(c),
+                            f"<span class=\"titre\">{ech(c['nom'])}</span>",
                             f"<span class=\"nb\">{ech(c['attendu'])}</span>",
                             f"<span class=\"nb\">{ech(c['obtenu'])}</span>",
                             f"<span class=\"statut {'o' if c['ok'] else 'p'}\">"
@@ -738,4 +758,5 @@ def construire_page(spec: Dict[str, Any], donnees: Dict[str, Any], lang: str) ->
 __all__ = ["LANGUES", "AUTEUR", "LICENCE", "T", "CSS", "ech", "nombres",
            "verifier_nombres", "figure_barres", "figure_baril", "figure_courbe",
            "construire_page", "ecrire_chemin", "ecrire_json", "ecrire_csv",
-           "ecrire_svg", "markdown", "lignes_csv_equations", "_fmt"]
+           "ecrire_svg", "markdown", "lignes_csv_equations", "_fmt",
+           "cle_eq", "marque_dossier"]

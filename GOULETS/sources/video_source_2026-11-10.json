@@ -1,0 +1,32 @@
+{
+ "auteur": "Le Futurologue",
+ "avertissement": "aucun en-tête de chapitres dans la description : horodatages pris dans toute la description ; transcript non sondé, donc AUCUNE phrase de la vidéo n'est citée ni résumée ici.",
+ "chaine_url": "https://www.youtube.com/@LeFuturologue",
+ "chapitres": [
+  {
+   "debut": "0:00",
+   "debut_s": 0,
+   "titre": "Introduction"
+  },
+  {
+   "debut": "1:56",
+   "debut_s": 116,
+   "titre": "Chapitre 1 : L’attaque"
+  },
+  {
+   "debut": "16:38",
+   "debut_s": 998,
+   "titre": "Chapitre 2 : Les réactions"
+  },
+  {
+   "debut": "22:37",
+   "debut_s": 1357,
+   "titre": "Chapitre 3 : Les leçons"
+  }
+ ],
+ "duree_s": 2523,
+ "mesure_le_utc": "2026-11-10T23:22:31+00:00",
+ "methode": "oEmbed du fournisseur d'hébergement (métadonnées) et extraction des horodatages de la description par le script du Skill extraire-chapitres-youtube-sans-transcript",
+ "titre": "Le dernier avertissement de l’humanité",
+ "url": "https://www.youtube.com/watch?v=gt1M0WzfnYk"
+}

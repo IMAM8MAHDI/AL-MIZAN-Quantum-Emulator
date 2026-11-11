@@ -1,0 +1,33 @@
+{
+ "backend": "ibm_marrakesh",
+ "created": "2026-11-10T16:50:52.166656Z",
+ "estimated_running_time_seconds": 1.082784758,
+ "id": "dbpkmr0ou4as73ctrm80",
+ "cost": 600,
+ "params": {
+  "options": {},
+  "pubs": [
+   [
+    {
+     "__type__": "QuantumCircuit",
+     "__value__": "eJztmGdTFGkURrtHlCQiIgICIiIiIiICIiICAiIiIkmSaRxBUUSGYALEnHNOP2z3p2ztB7bucBrmYcuq3dL9sFW8Hzhzeuie7pp7n/tCa2N7U2NHgm+Fw3JHgrxKd2IGnCjHcb47juPjoC/s9Ur7ERgcDUwMjheUFFX7fp+aKc76bXI66IbOcl3vUvMXD7uKrWUwAi6H3t1EQrsLW9EwBsaG34njOHFwFYyHq2ECXAMT4VqYBNfBZJgCU+F6mAbTYQbcADPhRpgFN8FsuBnmwC0wF26FeXAbzIfbYQHcAQvhTlgEd8FiWAJL4W5YBvfAcrgXVsB9sBLuh1WwGtbAA7AW1sF6eBA2wEOwER6GTfAIbIZHYQs8BlthG2yHHbATHoddsBv2wF7YB0/Ak/AUPA3PQD88CwPwHOyHA/A8vAAH4UV4CQ7By3AYXoEj0OvHUTgGx+EEvAqvwevwBrwJJ+EUnIa34Ay8De/Au/AevA8fwIfwEXwMn8Cn8Bl8Dl/Al/AVfA3fwLfwHXwPP8CP8BP8DL/Ar/BbwBLN57iu900uTrqFPHP/dnRhtfU2+Mf7g+FffVRKQV3Hn1l/VM2H4Y9Obu+eP/nnP+ifnez+zF26v+aDvBkStkLXrF14xF/4af/5Y3mj7kcXaO73j02Mzj3XXLH9izNC5enO/ZpN8++zs7Oz3jQPejUcnF20Qu98dSJd/3BgcGjIv/j9pbW0ltbS+r8uL0Dn4psXoWgl8Dgepj7VZaoRqstVV6hGqkapRqvGqMaqrlSNU12lGq+6WjVBdY1qoupa1STVdarJqimqqarrVdNU01UzVDeoZqpuVM1S3aSarbpZNUd1i2qu6lbVPNVtqvmq21ULVHeoFqruVC1S3aVarFqiWqq6W7VMdY9quepe1QrVfaqVqvtVq1SrVWtUD6jWqtap1qseVG1QPaTaqHpYtUn1iGqz6lHVFtVjqq2qbartqh2qnarHVbtUu1V7VHtV+1RPqJ5UPaV6WvWMql/1rGpA9Zxqv+qA6nnVC6qDqhdVL6kOqV5WHVa9ojqiGlQdVR1THVedUL2qek31uuoN1Zuqk6pTqtOqt1RnVG+r3lG9q3pP9b7qA9WHqo9UH6s+UX2q+kz1ueoL1Zeqr1Rfq75Rfav6TvW96gfVj6qfVD+rflH1/rD0scmJYDsT2sOwW4lmXxLLDiSOvUY8u4oE9g+J7BSS2BMkM/1TmfNpTPQMZncmUzqLeZzN5M1hxuYyTfOYm/lMyAJmYSFTr4j5VswkK2VmlTGdyplDFUycSmZLFVOkhnlRy2SoZwY0kPaN5HoTCd5MVreQyq3kbztJ20mmdpGePeRkH4loMWjZZ4FnKeflmYWYJZfFlWWUBZOlkUWQ5Y6FjSWMxYpliQWIpYZFheWDhYIlgbW/9bw1unW3tbT1sTWvday1qfWmNaR1obWe9Zs1mXWWtZP1kDWOdYu1iPWFNYN1gJW91boVuFW1lbLVrxWtVaqVp9WkFaJVn5Wc/Sft21/PZHDH"
+    },
+    {
+     "__type__": "ndarray",
+     "__value__": "eJyb7BfqGxDJyFDGUK2eklqcXKRupaBuk2ahrqOgnpZfVFKUmBefX5SSChJ3S8wpTtVRUC/OSCxIVbdS0DDQ0dRRqFWgAHABAFOzG1s="
+    },
+    256
+   ]
+  ],
+  "support_qiskit": true,
+  "version": 2
+ },
+ "program": {
+  "id": "sampler"
+ },
+ "state": {
+  "status": "Completed"
+ },
+ "status": "Completed",
+ "user_id": "redige (sha256/12 : 1019a804c93d)"
+}

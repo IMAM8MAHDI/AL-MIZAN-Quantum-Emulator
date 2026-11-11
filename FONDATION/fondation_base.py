@@ -215,13 +215,14 @@ MODULES_PRINCIPAUX = ("electricite_abondance.py", "eau_abondance.py",
                       "agriculture_abondance.py", "chiffres_pi.py", "fondation_base.py",
                       "horlogerie.py", "continuite_base.py", "redaction_mizan.py",
                       "construction_base.py", "verrous_base.py", "declaration_base.py",
-                      "guerre_base.py")
+                      "guerre_base.py", "qpu_distant_base.py", "goulets_base.py")
 
 # Les dossiers qui portent des équations, puis le parc complet (code et bibliothèques compris).
 # Une seule liste pour les deux comptages : sinon `imports_parc` et `inventaire_parc` peuvent
 # compter deux parcelles différentes du même dépôt et publier des totaux incohérents.
 DOSSIERS_EQUATIONS = ("ABONDANCE", "CHIFFRES", "FONDATION", "HORLOGERIE", "CONTINUITE",
-                      "REDACTION", "CONSTRUCTION", "VERROUS", "DECLARATION", "GUERRE")
+                      "REDACTION", "CONSTRUCTION", "VERROUS", "DECLARATION", "GUERRE",
+                      "QPU_DISTANT", "GOULETS")
 DOSSIERS_PARC = DOSSIERS_EQUATIONS + ("code", "bibliotheques")
 
 _MODULES_LOCAUX: Optional[Dict[str, str]] = None

@@ -451,9 +451,11 @@ class TestTransmission(unittest.TestCase):
     def test_inventaire_cohere_entre_modules(self):
         inv = FB.inventaire_parc()
         self.assertEqual(sorted(inv), sorted(FB.DOSSIERS_EQUATIONS))
+        # Les comptes sont ceux de l'audit : `inventaire_parc()` les recompte fichier par
+        # fichier, une dérive d'un dossier fait donc rougir ici avant de roussir un README.
         attendues = {"ABONDANCE": 54, "CHIFFRES": 17, "FONDATION": 18, "HORLOGERIE": 15,
                      "CONTINUITE": 15, "REDACTION": 16, "CONSTRUCTION": 16, "VERROUS": 16,
-                     "DECLARATION": 16, "GUERRE": 16}
+                     "DECLARATION": 16, "GUERRE": 16, "QPU_DISTANT": 10, "GOULETS": 10}
         for d, v in inv.items():
             self.assertTrue(v["present"], d)
             self.assertEqual(v["equations"], v["controles"], d)
@@ -461,7 +463,7 @@ class TestTransmission(unittest.TestCase):
             self.assertGreater(len(v["modules"]), 0, d)
             self.assertTrue(set(v["modules"]) <= set(FB.MODULES_PRINCIPAUX), d)
             self.assertEqual(v["equations"], attendues[d], d)
-        # les douze noms déclarés sont tous comptés quelque part, et une seule fois
+        # les quatorze noms déclarés sont tous comptés quelque part, et une seule fois
         comptes = [m for v in inv.values() for m in v["modules"]]
         self.assertEqual(sorted(comptes), sorted(FB.MODULES_PRINCIPAUX))
         self.assertEqual(len(comptes), len(set(comptes)), "un module compté deux fois")

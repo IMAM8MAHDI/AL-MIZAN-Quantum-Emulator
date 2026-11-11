@@ -13,13 +13,17 @@ Le dépôt scellé porte déjà ses textes français (énoncés des équations, 
 limites) : ce fichier n'en remplace aucun. Il ajoute le titre d'équation, la formule
 en anglais et en arabe, la ligne de lecture, le cheminement, les légendes, les cartes
 et le tableau du repère. Ce qui reste en français sur les trois pages — et pourquoi —
-est dit à l'étape 10 du cheminement : les énoncés de contrôle et les lignes calculées
+est dit à l'étape 11 du cheminement : les énoncés de contrôle et les lignes calculées
 sont les chaînes du module scellé, et les réécrire publierait des mots qu'aucun
 fichier du dépôt ne porte.
 """
 from __future__ import annotations
 
 from typing import Any, Dict, List, Sequence, Tuple
+
+# La clé d'une ligne de texte est celle du moteur : la page réunit deux modules, donc
+# deux `EQ-01`, et seul `MOTEUR.cle_eq` dit lequel est lequel.
+from moteur_page_trilingue import cle_eq
 
 
 def _3(fr: str, en: str, ar: str) -> Dict[str, str]:
@@ -43,21 +47,23 @@ TITRE_BANDE = _3("LABORATOIRE — AL-MIZAN × ASTRO-Q°ODE",
                  "المختبر — الميزان × ASTRO-Q°ODE")
 
 DESCRIPTION = _3(
-    "Le dossier HORLOGERIE du dépôt scellé, à l'écran : {eq} équations d'horlogerie "
-    "exactes en entiers, {ctrl} contrôles reçus sur {ctrl_total}, un repère de {coord} "
-    "coordonnées nommées, une trajectoire à trois axes dont la fermeture se calcule par "
-    "pgcd, et une stabilité jugée par écart-type d'Allan contre un bruit déclaré. Aucune "
-    "synchronisation physique n'est observée par ces calculs.",
-    "The HORLOGERIE dossier of the sealed deposit, on screen: {eq} horology equations "
-    "exact in integers, {ctrl} checks met out of {ctrl_total}, a frame of {coord} named "
-    "coordinates, a three-axis trajectory whose closure period is computed by gcd, and a "
-    "stability judged by Allan deviation against a declared noise. No physical "
+    "Le dossier HORLOGERIE du dépôt scellé, à l'écran : {eq_h} équations d'horlogerie "
+    "exactes en entiers, un repère de {coord} coordonnées nommées, une trajectoire à trois "
+    "axes dont la fermeture se calcule par pgcd, et une stabilité jugée par écart-type "
+    "d'Allan contre un bruit déclaré. En pièce jointe, le dossier QPU_DISTANT : {eq_q} "
+    "équations d'une exécution sur un processeur quantique distant. {ctrl} contrôles reçus "
+    "sur {ctrl_total}. Aucune synchronisation physique n'est observée par ces calculs.",
+    "The HORLOGERIE dossier of the sealed deposit, on screen: {eq_h} horology equations "
+    "exact in integers, a frame of {coord} named coordinates, a three-axis trajectory whose "
+    "closure period is computed by gcd, and a stability judged by Allan deviation against a "
+    "declared noise. As an annex, the QPU_DISTANT dossier: {eq_q} equations of one run on a "
+    "distant quantum processor. {ctrl} checks met out of {ctrl_total}. No physical "
     "synchronisation is observed by these calculations.",
-    "ملف HORLOGERIE من الإيداع المختوم على الشاشة: {eq} معادلةً في التوقيت دقيقةً في "
-    "الأعداد الصحيحة، و{ctrl} تحقُّقًا مستوفًى من {ctrl_total}، ومعْلَمًا من {coord} "
-    "إحداثيةً مسماة، ومسارًا من ثلاثة محاور يُحسَب انغلاقُه بالقاسم المشترك الأعظم، "
-    "واستقرارًا يُقاس بانحراف آلان مقابل ضجيجٍ مُعلَن. ولا تُلاحَظ في شيءٍ من هذا "
-    "مزامنةٌ فيزيائية.")
+    "ملف HORLOGERIE من الإيداع المختوم على الشاشة: {eq_h} معادلةً في التوقيت دقيقةً في "
+    "الأعداد الصحيحة، ومعْلَمًا من {coord} إحداثيةً مسماة، ومسارًا من ثلاثة محاور يُحسَب "
+    "انغلاقُه بالقاسم المشترك الأعظم، واستقرارًا يُقاس بانحراف آلان مقابل ضجيجٍ مُعلَن. "
+    "وفي ملحقٍ معه ملفُ QPU_DISTANT: {eq_q} معادلةً لتشغيلٍ على معالجٍ كمّيٍّ بعيد. و{ctrl} "
+    "تحقُّقًا مستوفًى من {ctrl_total}. ولا تُلاحَظ في شيءٍ من هذا مزامنةٌ فيزيائية.")
 
 # ----------------------------------------------------------------------------
 # gel de l'équation dont le nombre dépend de la machine
@@ -83,7 +89,7 @@ C12_GEL = _3("non publié : nombre dépendant de la machine qui exécute le calc
 # titres d'équation et lignes de lecture (FR : le titre seulement)
 # ----------------------------------------------------------------------------
 EQ_TEXT: Dict[str, Dict[str, tuple]] = {
-    "EQ-01": {
+    "HORLOGERIE/EQ-01": {
         "fr": ("Les douze semences rationnelles", ""),
         "en": ("The twelve rational seeds",
                "Twelve declared hours, months and weeks reduce to rational day counts. "
@@ -93,7 +99,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "اثنتا عشرةَ ساعةً وشهرًا وأسبوعًا مُعلَنة تُرَدُّ إلى أيامٍ نسبية. "
                "والشهادةُ تُثبِت حسابَ هذا الإعلان، لا أن السماء تُوافِقه."),
     },
-    "EQ-02": {
+    "HORLOGERIE/EQ-02": {
         "fr": ("dx par quatre niveaux", ""),
         "en": ("dx through four levels",
                "Four products of coefficients and seeds give dx as a fraction over 128. "
@@ -102,7 +108,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "أربعةُ حاصلاتِ ضربٍ من معاملاتٍ وبذور تُعطي dx كسرًا مقامُه 128. "
                "ويُقارَن العددان النسبيان يقينًا: فلا يدخل أيُّ هامشٍ مسموح."),
     },
-    "EQ-03": {
+    "HORLOGERIE/EQ-03": {
         "fr": ("dy par quatre niveaux", ""),
         "en": ("dy through four levels",
                "The same product on the lunar seeds gives dy. The week of 168 hours is "
@@ -111,7 +117,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "الحاصلُ ذاتُه على البذور القمرية يُعطي dy. وأسبوعُ 168 ساعةً مشتركٌ بين "
                "محور القمر ومحور الشمس، فليست النسبة dy/dx معاملًا حرًّا."),
     },
-    "EQ-04": {
+    "HORLOGERIE/EQ-04": {
         "fr": ("dz, son brut et leur rapport", ""),
         "en": ("dz, its raw form and their ratio",
                "dz is the only one of the three landing on an integer, and the raw lunar "
@@ -120,7 +126,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "dz وحدَه من الثلاثة يستقرُّ على عددٍ صحيح، وخامُ المحور القمري على "
                "المُطبَّع منه يساوي 144/5 يقينًا."),
     },
-    "EQ-05": {
+    "HORLOGERIE/EQ-05": {
         "fr": ("L'identité dt = dx + dy + dz", ""),
         "en": ("The identity dt = dx + dy + dz",
                "The closure of the three axes into the time counter holds through a "
@@ -130,7 +136,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "انغلاقُ المحاور الثلاثة في عدّاد الزمن يثبت بضربٍ متصالبٍ للأعداد "
                "الصحيحة. فلا يقول شيئًا عن ساعةٍ خارج الحساب."),
     },
-    "EQ-06": {
+    "HORLOGERIE/EQ-06": {
         "fr": ("Le dénominateur est minimal", ""),
         "en": ("The denominator is minimal",
                "The numerator is odd, so 2^7 is the smallest denominator dt can have. The "
@@ -139,7 +145,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "البسطُ فرديٌّ، فـ2^7 أصغرُ مقامٍ يمكن أن يبلغه dt. والبسطُ يُختبَر فرديًّا "
                "لا أوَّليًّا — وهذا وحدَه ما تدّعيه المعادلة."),
     },
-    "EQ-07": {
+    "HORLOGERIE/EQ-07": {
         "fr": ("La période, conséquence d'une hypothèse", ""),
         "en": ("The period, a consequence of a reading",
                "If dt were a frequency, its reciprocal would be a period of 40 digits in "
@@ -149,7 +155,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "لو كان dt تردُّدًا لكانت دورتُه عددًا من أربعين رقمًا بالنانو ثانية. "
                "والإيداعُ لا يرصد عدّادَ دورات، فتبقى هذه قراءةً مقرَّرة لا قياسًا."),
     },
-    "EQ-08": {
+    "HORLOGERIE/EQ-08": {
         "fr": ("Des seuils gelés avant lecture", ""),
         "en": ("Thresholds frozen before the read",
                "Nine pairs, three thresholds and a printed seal were fixed before any "
@@ -159,7 +165,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "تسعُ مقابلاتٍ وثلاثةُ حدودٍ وختمٌ مطبوع ثُبِّتت قبل قراءة أيِّ مقارن. "
                "فالتجميدُ يشمل الحدودَ والمراجع، لا السماء."),
     },
-    "EQ-09": {
+    "HORLOGERIE/EQ-09": {
         "fr": ("Soleil contre année tropique", ""),
         "en": ("Sun against the tropical year",
                "The declared solar cycle misses the mean tropical ephemeris and matches "
@@ -170,7 +176,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "اليولياني. فتقويمٌ متوسط يُقارَن بشهادةٍ متوسطة، ولا يُعاد حسابُهما من "
                "سماء اليوم."),
     },
-    "EQ-10": {
+    "HORLOGERIE/EQ-10": {
         "fr": ("Lune contre douze lunaisons", ""),
         "en": ("Moon against twelve synodic months",
                "Twelve synodic months fall outside the tolerance, and a sensitivity test "
@@ -179,7 +185,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "اثنتا عشرة دورةً اقترانية تخرج عن الهامش المسموح، ويبقى اختبارُ الحساسية "
                "على المنزلة السادسة من العُشر للشهر قائمًا."),
     },
-    "EQ-11": {
+    "HORLOGERIE/EQ-11": {
         "fr": ("Terre contre trois références", ""),
         "en": ("Earth against three references",
                "None of the three earthly comparisons passes the frozen threshold. A "
@@ -190,7 +196,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "وستين يومًا يبقى أساسَ حسابٍ مشروعًا تمامًا؛ والشهادة لا تُبلِّغ إلا ما لا "
                "تُوافِقه."),
     },
-    "EQ-12": {
+    "HORLOGERIE/EQ-12": {
         "fr": ("Le rythme d'exécution, hors scellement", ""),
         "en": ("The running pace, outside the seal",
                "Five series of 5 000 ticks measure how long the counter really takes. "
@@ -201,7 +207,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "على الآلة والمُفسِّر والحِمل، فأبقاه الإيداعُ خارج المختومات — راجِع السطر "
                "المُجمَّد أدناه."),
     },
-    "EQ-13": {
+    "HORLOGERIE/EQ-13": {
         "fr": ("Quatre énoncés du même nombre", ""),
         "en": ("Four statements of one number",
                "The living library, LA TABLE and the sealed act A136 write the same "
@@ -211,7 +217,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "المكتبةُ الحيّة وLA TABLE والفعلُ A136 المختوم يكتبون النسبةَ نفسها بتّةً "
                "بتّة. فالمواجهةُ تشمل ما يكتبه الإيداع، ولا تجعل العددَ فيزيائيًّا."),
     },
-    "EQ-14": {
+    "HORLOGERIE/EQ-14": {
         "fr": ("Un certificat qui se relit sans le dépôt", ""),
         "en": ("A certificate read without the deposit",
                "A second verifier recomputes the root from the file alone, without a "
@@ -222,7 +228,7 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "الوحدة التي أنتجته، ويرفض حقلًا مُبَدَّلًا. فيُثبِت أن الملف يُقرأ، ولا "
                "يُثبِت فيزياء."),
     },
-    "EQ-15": {
+    "HORLOGERIE/EQ-15": {
         "fr": ("La cohérence interne des sources", ""),
         "en": ("The internal coherence of the sources",
                "Twelve synodic months equal twelve times the mean month, and every "
@@ -233,6 +239,114 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
                "في الملف يُطابق العشرية التي يستشهد بها. وهذا تحقُّقُ استشهاد — وهو الذي "
                "أمسك خطأَ 2026-11-09."),
     },
+    "QPU_DISTANT/EQ-01": {
+        "fr": ("Trois empreintes, une seule reproduite ici", ""),
+        "en": ("Three seals, one of them reproduced here",
+               "The published result member and the QPY block, 6 277 bytes once "
+               "decompressed, are re-hashed on this page; the archive itself is only "
+               "attested, because it carries an account identifier."),
+        "ar": ("ثلاثةُ أختامٍ لا يُعاد هنا إلا واحدٌ منها",
+               "تُعاد ههنا تجزئةُ عضوِ النتيجة المنشور وكتلةِ QPY بعد فكِّ ضغطها، وهي "
+               "6 277 بايتًا؛ وأما الأرشيفُ نفسُه فمُثبَتٌ عليه فقط، لأنه يحمل معرِّفَ حساب."),
+    },
+    "QPU_DISTANT/EQ-02": {
+        "fr": ("Le registre de portes, lié par son empreinte", ""),
+        "en": ("The gate register, bound by its seal",
+               "Twelve operations on a register of 156 wires, eight deep, occupying two: the "
+               "list comes from a decoder running outside the deposit, so the page binds it "
+               "to the QPY block instead of regenerating it."),
+        "ar": ("سجلُّ الأبواب مرتبطٌ ببصمتِه",
+               "اثنتا عشرةَ عمليةً على سجلٍّ من 156 سلكًا، بعمقِ ثمانيةٍ يحتلُّ سلكَين: "
+               "القائمةُ من فاكٍّ يعمل خارج الإيداع، فالصفحةُ تربطُها بكتلة QPY ولا تُعيد "
+               "توليدَها."),
+    },
+    "QPU_DISTANT/EQ-03": {
+        "fr": ("Les compteurs relus par la seule bibliothèque standard", ""),
+        "en": ("The counters read with the standard library alone",
+               "The compressed bit array is unpacked with the standard library alone: 126, "
+               "22, 0 and 108 shots out of 256, and the declared count matches the sum of "
+               "the four counters."),
+        "ar": ("الحساباتُ تُقرأ بالمكتبة المعيارية وحدها",
+               "تُفرَّدُ مصفوفةُ البتِّ المضغوطة بالمكتبة المعيارية وحدها: 126 و22 و0 و108 "
+               "طلقةً من 256، والعددُ المُعلَن يُطابق مجموعَ العدّادات الأربعة."),
+    },
+    "QPU_DISTANT/EQ-04": {
+        "fr": ("La parité mesurée avec son incertitude", ""),
+        "en": ("The parity measured with its uncertainty",
+               "234 shots of 256 give an even word: p = 0.9140625, with a sampling deviation "
+               "of 0.01751698351040244 — the whole spread one run of that size can show, "
+               "correlated noise excluded."),
+        "ar": ("الزوجيةُ المقيسةُ مع عدمِ يقينِها",
+               "تُعطي 234 طلقةً من 256 كلمةً زوجية: فـp = 0.9140625 بانحرافِ سحبٍ قدرُه "
+               "0.01751698351040244، وهو كلُّ ما تُظهره تجربةٌ واحدةٌ بهذا الحجم دون الضجيج "
+               "المتشابك."),
+    },
+    "QPU_DISTANT/EQ-05": {
+        "fr": ("Une asymétrie bornée par un test exact", ""),
+        "en": ("An asymmetry bounded by an exact test",
+               "22 shots land on one odd word and not one on the other: the two-sided "
+               "conditional binomial rejects equal odds in integers, with no resampling. The "
+               "even side, 108 shots, says nothing of that balance."),
+        "ar": ("اختلالٌ حدَّهُ فحصٌ مضبوط",
+               "تقع 22 طلقةً على كلمةٍ فرديةٍ واحدة ولا تقع على الأخرى طلقة: فيرفض الفحصُ "
+               "الثنائيُّ ذو الحدينِ المشروطُ تساويَ الفرصِ في الأعداد الصحيحة بلا إعادةِ "
+               "سحب. وأما الجهةُ الزوجيةُ بـ108 طلقةٍ فلا تقول شيئًا في هذا التوازن."),
+    },
+    "QPU_DISTANT/EQ-06": {
+        "fr": ("La prédiction est calculée, pas prêtée", ""),
+        "en": ("The prediction is computed, not borrowed",
+               "Two qubits, ten unitary gates, plain floating-point amplitudes: on the "
+               "support used, the simulated even probability is 1.0000000000000004, which is "
+               "the number the machine run is then compared to."),
+        "ar": ("التنبؤُ محسوبٌ لا مستعار",
+               "كيبتان وعشرةُ أبوابٍ أحاديةٍ ومعاملاتٌ عشريةٌ عادية: فعلى الحيزِ المُستعمَل "
+               "يبلغ احتمالُ الزوجيةِ المحاكى 1.0000000000000004، وهو العددُ الذي يُقاسُ به "
+               "بعدها تشغيلُ الآلة."),
+    },
+    "QPU_DISTANT/EQ-07": {
+        "fr": ("La borne de la machine entière, non reçue", ""),
+        "en": ("The bound of the whole machine, not met",
+               "Charging each of the 12 operations at the median error of the machine gives "
+               "0.9258965410524731, and the measured parity 0.9140625 never reaches it: the "
+               "envelope is published as not met."),
+        "ar": ("حدُّ الآلةِ كلِّها غيرُ مستوًى",
+               "تحميلُ كلِّ عمليةٍ من الـ12 عمليةٍ خطأَ الآلةِ المتوسطَ يعطي "
+               "0.9258965410524731، فلا تبلغُها الزوجيةُ المقيسةُ 0.9140625 أبدًا: فالغلافُ "
+               "منشورٌ على أنه غيرُ مستوًى."),
+    },
+    "QPU_DISTANT/EQ-08": {
+        "fr": ("La borne du support occupé, reçue", ""),
+        "en": ("The bound of the support actually used, met",
+               "Restricting the charge to the two wires the circuit touches gives "
+               "0.9114309996674055, and the measured parity sits 0.15022565563481882 "
+               "deviations above it — on an envelope built from the calibration alone."),
+        "ar": ("حدُّ الحيزِ المُستعمَلِ فعلًا مستوًى",
+               "حصرُ التحميلِ في السلكَين الذين تمسُّهما الدارةُ يعطي 0.9114309996674055، "
+               "وتقعُ الزوجيةُ المقيسةُ فوقَه بـ0.15022565563481882 انحرافًا — على غلافٍ "
+               "مبنيٍّ على المعايرةِ وحدَها."),
+    },
+    "QPU_DISTANT/EQ-09": {
+        "fr": ("Une exécution tranche entre deux enveloppes", ""),
+        "en": ("One run decides between two envelopes",
+               "In increasing order 0.9114309996674055, 0.9140625, 0.9258965410524731: the "
+               "gap between the bounds is 0.014465541385067615, smaller than one sampling "
+               "deviation, so the decision is real and thin."),
+        "ar": ("تشغيلٌ واحدٌ يفصلُ بين غلافَين",
+               "بالترتيبِ الصاعد: 0.9114309996674055 ثم 0.9140625 ثم 0.9258965410524731؛ "
+               "وفارقُ الحدين 0.014465541385067615 أي دون انحرافِ سحبٍ واحد، فالفصلُ ثابتٌ "
+               "ودقيقٌ معًا."),
+    },
+    "QPU_DISTANT/EQ-10": {
+        "fr": ("Ce que le fournisseur a mesuré, et l'autre", ""),
+        "en": ("What the provider measured, and what it did not",
+               "The window published for the job is 1.169047 s against 1.082784758 s "
+               "estimated from the transpiled depth, at 600 units: queue time excluded, and "
+               "`qubit_physique_local` stays False."),
+        "ar": ("ما قاسه المُقدِّمُ وما لم يقس",
+               "النافذةُ المنشورةُ للمهمة 1.169047 ثانيةً مقابل 1.082784758 ثانيةً مقدَّرةٍ "
+               "من عمقِ الدارةِ بعد الترجمة، بكلفةِ 600 وحدة: خارجَ زمنِ الانتظار في الطابور، "
+               "و`qubit_physique_local` باقٍ على False."),
+    },
 }
 
 # ----------------------------------------------------------------------------
@@ -240,65 +354,92 @@ EQ_TEXT: Dict[str, Dict[str, tuple]] = {
 # ni un chiffre ni un symbole
 # ----------------------------------------------------------------------------
 FORMULE_FR: Dict[str, str] = {
-    "EQ-01": "A, M, S ∈ ℚ par astre, et A/24 donne les jours déclarés",
-    "EQ-02": "dx = (5/2·8766/12)·(3/2·(1461/2)/168)·(3/2·168/24)·(24/60)",
-    "EQ-03": "dy = (5/2·8496/12)·(3/2·708/168)·(3/2·168/24)·(24/60)",
-    "EQ-04": ("dz = 216 000·250·5/2 ; dz_brut = (300·8640/12)·(50·720/144)·(30·144/24)"
+    "HORLOGERIE/EQ-01": "A, M, S ∈ ℚ par astre, et A/24 donne les jours déclarés",
+    "HORLOGERIE/EQ-02": "dx = (5/2·8766/12)·(3/2·(1461/2)/168)·(3/2·168/24)·(24/60)",
+    "HORLOGERIE/EQ-03": "dy = (5/2·8496/12)·(3/2·708/168)·(3/2·168/24)·(24/60)",
+    "HORLOGERIE/EQ-04": ("dz = 216 000·250·5/2 ; dz_brut = (300·8640/12)·(50·720/144)·(30·144/24)"
               "·(24/60)"),
-    "EQ-05": "dt = dx + dy + dz",
-    "EQ-06": ("den(dt) = 2^7 et num(dt) impair ⇒ fraction réduite et dénominateur "
+    "HORLOGERIE/EQ-05": "dt = dx + dy + dz",
+    "HORLOGERIE/EQ-06": ("den(dt) = 2^7 et num(dt) impair ⇒ fraction réduite et dénominateur "
               "minimal"),
-    "EQ-07": "si dt est une fréquence : 1/dt = 128·10^9/17 292 418 731 ns",
-    "EQ-08": ("seuils gelés avant lecture : ≤ 60 s/an · ≤ 3 600 s/an · au-delà HORS "
+    "HORLOGERIE/EQ-07": "si dt est une fréquence : 1/dt = 128·10^9/17 292 418 731 ns",
+    "HORLOGERIE/EQ-08": ("seuils gelés avant lecture : ≤ 60 s/an · ≤ 3 600 s/an · au-delà HORS "
               "TOLÉRANCE"),
-    "EQ-09": "Soleil 365,25 j contre année tropique 365,2422 j",
-    "EQ-10": "Lune 354 j contre douze lunaisons 354,36708 j",
-    "EQ-11": "Terre 360 j contre les trois références disponibles",
-    "EQ-12": "τ = T/N sur consommer_tick(), cinq séries de cinq mille ticks",
-    "EQ-13": "lib_temporelle ≡ lib_informe ≡ acte A136 scellé ≡ certificat",
-    "EQ-14": ("un certificat se relit sans exécuter le dépôt : racine = SHA-256 des six "
+    "HORLOGERIE/EQ-09": "Soleil 365,25 j contre année tropique 365,2422 j",
+    "HORLOGERIE/EQ-10": "Lune 354 j contre douze lunaisons 354,36708 j",
+    "HORLOGERIE/EQ-11": "Terre 360 j contre les trois références disponibles",
+    "HORLOGERIE/EQ-12": "τ = T/N sur consommer_tick(), cinq séries de cinq mille ticks",
+    "HORLOGERIE/EQ-13": "lib_temporelle ≡ lib_informe ≡ acte A136 scellé ≡ certificat",
+    "HORLOGERIE/EQ-14": ("un certificat se relit sans exécuter le dépôt : racine = SHA-256 des six "
               "empreintes"),
-    "EQ-15": ("lunaisons_12 = 12 × lunaison, et chaque fraction du fichier est la "
+    "HORLOGERIE/EQ-15": ("lunaisons_12 = 12 × lunaison, et chaque fraction du fichier est la "
               "décimale citée"),
+    "QPU_DISTANT/EQ-01": "SHA-256(info) · SHA-256(result) · SHA-256(bloc QPY décompressé)",
+    "QPU_DISTANT/EQ-02": "12 opérations sur un registre de 156 fils, support effectif {0, 1}",
+    "QPU_DISTANT/EQ-03": "BitArray → compte |00⟩, |01⟩, |10⟩, |11⟩",
+    "QPU_DISTANT/EQ-04": "p = n(pair)/N · σ = √(p(1−p)/N)",
+    "QPU_DISTANT/EQ-05": "H0 : les deux mots de poids un sont équiprobables · test bilatéral exact",
+    "QPU_DISTANT/EQ-06": "|ψ⟩ sur le support · pz(pair) = Σ |⟨x|ψ⟩|² sur x de poids pair",
+    "QPU_DISTANT/EQ-07": "borne = 1 − 2·Σ ε_médiane",
+    "QPU_DISTANT/EQ-08": "borne = 1 − 2·Σ ε_support",
+    "QPU_DISTANT/EQ-09": "1 − 2·Σ ε_support < p < 1 − 2·Σ ε_médiane",
+    "QPU_DISTANT/EQ-10": "fenêtre d'exécution · coût · localité",
 }
 
 FORMULE_TR: Dict[str, Tuple[str, str]] = {
-    "EQ-01": ("A, M, S ∈ ℚ per body, and A/24 gives the declared days",
+    "HORLOGERIE/EQ-01": ("A, M, S ∈ ℚ per body, and A/24 gives the declared days",
               "A وM وS ∈ ℚ لكلِّ جرمٍ، وA/24 يعطي الأيامَ المُعلَنة"),
-    "EQ-02": ("dx = (5/2·8766/12)·(3/2·(1461/2)/168)·(3/2·168/24)·(24/60)",
+    "HORLOGERIE/EQ-02": ("dx = (5/2·8766/12)·(3/2·(1461/2)/168)·(3/2·168/24)·(24/60)",
               "dx = (5/2·8766/12)·(3/2·(1461/2)/168)·(3/2·168/24)·(24/60)"),
-    "EQ-03": ("dy = (5/2·8496/12)·(3/2·708/168)·(3/2·168/24)·(24/60)",
+    "HORLOGERIE/EQ-03": ("dy = (5/2·8496/12)·(3/2·708/168)·(3/2·168/24)·(24/60)",
               "dy = (5/2·8496/12)·(3/2·708/168)·(3/2·168/24)·(24/60)"),
-    "EQ-04": ("dz = 216 000·250·5/2 ; dz_brut = (300·8640/12)·(50·720/144)·(30·144/24)"
+    "HORLOGERIE/EQ-04": ("dz = 216 000·250·5/2 ; dz_brut = (300·8640/12)·(50·720/144)·(30·144/24)"
               "·(24/60)",
               "dz = 216 000·250·5/2 ; dz_brut = (300·8640/12)·(50·720/144)·(30·144/24)"
               "·(24/60)"),
-    "EQ-05": ("dt = dx + dy + dz", "dt = dx + dy + dz"),
-    "EQ-06": ("den(dt) = 2^7 and num(dt) odd ⇒ reduced fraction and minimal denominator",
+    "HORLOGERIE/EQ-05": ("dt = dx + dy + dz", "dt = dx + dy + dz"),
+    "HORLOGERIE/EQ-06": ("den(dt) = 2^7 and num(dt) odd ⇒ reduced fraction and minimal denominator",
               "den(dt) = 2^7 والبسطُ فرديٌّ ⇒ الكسرُ مُختزَلٌ والمقامُ أصغريّ"),
-    "EQ-07": ("if dt is a frequency: 1/dt = 128·10^9/17 292 418 731 ns",
+    "HORLOGERIE/EQ-07": ("if dt is a frequency: 1/dt = 128·10^9/17 292 418 731 ns",
               "إن كان dt تردُّدًا: 1/dt = 128·10^9/17 292 418 731 ns"),
-    "EQ-08": ("thresholds frozen before the read: ≤ 60 s/yr · ≤ 3 600 s/yr · beyond, "
+    "HORLOGERIE/EQ-08": ("thresholds frozen before the read: ≤ 60 s/yr · ≤ 3 600 s/yr · beyond, "
               "OUT OF TOLERANCE",
               "حدودٌ جُمِّدت قبل القراءة: ≤ 60 ث/سنة · ≤ 3 600 ث/سنة · وما جاوزَها خارج "
               "التحمُّل"),
-    "EQ-09": ("Sun 365,25 d against the tropical year 365,2422 d",
+    "HORLOGERIE/EQ-09": ("Sun 365,25 d against the tropical year 365,2422 d",
               "الشمس 365,25 يومًا مقابل السنة الاستوائية 365,2422 يومًا"),
-    "EQ-10": ("Moon 354 d against twelve synodic months 354,36708 d",
+    "HORLOGERIE/EQ-10": ("Moon 354 d against twelve synodic months 354,36708 d",
               "القمر 354 يومًا مقابل اثنتي عشرة دورةً اقترانية 354,36708 يومًا"),
-    "EQ-11": ("Earth 360 d against the three available references",
+    "HORLOGERIE/EQ-11": ("Earth 360 d against the three available references",
               "الأرض 360 يومًا مقابل المراجع الثلاثة المتوافرة"),
-    "EQ-12": ("τ = T/N on consommer_tick(), five series of five thousand ticks",
+    "HORLOGERIE/EQ-12": ("τ = T/N on consommer_tick(), five series of five thousand ticks",
               "τ = T/N على consommer_tick()، خمسُ سلاسلَ من خمسة آلاف نبضة"),
-    "EQ-13": ("lib_temporelle ≡ lib_informe ≡ sealed act A136 ≡ certificate",
+    "HORLOGERIE/EQ-13": ("lib_temporelle ≡ lib_informe ≡ sealed act A136 ≡ certificate",
               "lib_temporelle ≡ lib_informe ≡ الفعلُ A136 المختوم ≡ الشهادة"),
-    "EQ-14": ("a certificate is re-read without running the deposit: root = SHA-256 of "
+    "HORLOGERIE/EQ-14": ("a certificate is re-read without running the deposit: root = SHA-256 of "
               "the six seals",
               "شهادةٌ تُعاد قراءتُها بلا تشغيل الإيداع: الجذرُ = SHA-256 للأختام الستة"),
-    "EQ-15": ("lunaisons_12 = 12 × lunaison, and every fraction of the file is the "
+    "HORLOGERIE/EQ-15": ("lunaisons_12 = 12 × lunaison, and every fraction of the file is the "
               "decimal it cites",
               "lunaisons_12 = 12 × lunaison، وكلُّ كسرٍ في الملف هو العشريةُ التي يستشهد "
               "بها"),
+    "QPU_DISTANT/EQ-01": ("SHA-256(info) · SHA-256(result) · SHA-256(decompressed QPY block)",
+              "SHA-256(info) · SHA-256(result) · SHA-256(كتلة QPY بعد فكِّ الضغط)"),
+    "QPU_DISTANT/EQ-02": ("12 operations on a register of 156 wires, effective support {0, 1}",
+              "12 عمليةً على سجلٍّ من 156 سلكًا، والحيزُ المستعمل {0, 1}"),
+    "QPU_DISTANT/EQ-03": ("BitArray → count |00⟩, |01⟩, |10⟩, |11⟩",
+              "BitArray → حساب |00⟩ و|01⟩ و|10⟩ و|11⟩"),
+    "QPU_DISTANT/EQ-04": ("p = n(pair)/N · σ = √(p(1−p)/N)", "p = n(pair)/N · σ = √(p(1−p)/N)"),
+    "QPU_DISTANT/EQ-05": ("H0: the two weight-one words are equiprobable · exact two-sided test",
+              "H0: الكلمتانِ ذواتا الوزنِ الواحد متساويتا الفرص · فحصٌ ثنائيٌّ مضبوط"),
+    "QPU_DISTANT/EQ-06": ("|ψ⟩ on the support · pz(even) = Σ |⟨x|ψ⟩|² over even-weight x",
+              "|ψ⟩ على الحيز · pz(الزوجي) = Σ |⟨x|ψ⟩|² على x ذي الوزن الزوجي"),
+    "QPU_DISTANT/EQ-07": ("bound = 1 − 2·Σ ε_median", "الحدُّ = 1 − 2·Σ ε_المتوسط"),
+    "QPU_DISTANT/EQ-08": ("bound = 1 − 2·Σ ε_support", "الحدُّ = 1 − 2·Σ ε_الحيز"),
+    "QPU_DISTANT/EQ-09": ("1 − 2·Σ ε_support < p < 1 − 2·Σ ε_median",
+              "1 − 2·Σ ε_الحيز < p < 1 − 2·Σ ε_المتوسط"),
+    "QPU_DISTANT/EQ-10": ("execution window · cost · locality",
+              "نافذةُ التنفيذ · الكلفةُ · المحلّية"),
 }
 
 
@@ -313,7 +454,7 @@ def formules_traduites(donnees: Dict[str, Any], lang: str, vues: set) -> Dict[st
     index = 0 if lang == "en" else 1
     eqs: List[Dict[str, Any]] = []
     for e in donnees["equations"]:
-        cle = e["id"]
+        cle = cle_eq(e)
         if cle not in FORMULE_TR:
             raise SystemExit(f"formule sans traduction pour {lang} : {cle}")
         if FORMULE_FR[cle] != e["formule"]:
@@ -463,6 +604,34 @@ CHEMINEMENT: List[Dict[str, tuple]] = [
                "ما يفصل الختمَ عن العادة."),
     },
     {
+        "fr": ("Une exécution sur un processeur quantique distant",
+               "Le dossier `QPU_DISTANT` joint à ce laboratoire publie une exécution réelle "
+               "sur une machine à 156 fils d'IBM Quantum : les cinq fichiers sources "
+               "nécessaires, quatre artefacts, dix équations et dix contrôles. Le module "
+               "relit l'array de bits compressé, recompte les quatre compteurs et recalcule "
+               "les deux enveloppes d'erreur avec la seule bibliothèque standard — ni qiskit "
+               "ni numpy. L'archive du fournisseur, elle, n'est pas publiée : elle porte un "
+               "identifiant de compte, et seul son SHA-256 reste attesté. Le verdict "
+               "défavorable à l'enveloppe de la machine entière est publié tel quel."),
+        "en": ("A run on a distant quantum processor",
+               "The `QPU_DISTANT` dossier attached to this laboratory publishes a real "
+               "execution on an IBM Quantum machine of 156 wires: the five source files it "
+               "needs, four artefacts, ten equations and ten checks. The module re-reads the "
+               "compressed bit array, recounts the four counters and recomputes both error "
+               "envelopes with the standard library alone — no qiskit, no numpy. The "
+               "provider's archive is not published: it carries an account identifier, and "
+               "only its SHA-256 stays attested. The verdict unfavourable to the "
+               "whole-machine envelope is published as it is."),
+        "ar": ("تشغيلٌ على معالجٍ كمّيٍّ بعيد",
+               "يُنشر ملفُ `QPU_DISTANT` المُلحَق بهذا المختبر تشغيلًا حقيقيًّا على آلة IBM "
+               "Quantum ذات 156 سلكًا: الملفاتُ الخمسة المصدرية التي يحتاجها، وأربعةُ "
+               "مُخرَجات، وعشرُ معادلاتٍ وعشرُ تحقُّقات. فتعيد الوحدةُ قراءةَ مصفوفة البتِّ "
+               "المضغوطة وتُعيد عدَّ العدّادات الأربعة وتُحسب غلافي الخطإ بالمكتبة المعيارية "
+               "وحدها — لا qiskit ولا numpy. ولا يُنشر أرشيفُ المُقدِّم لأنه يحمل معرِّفَ "
+               "حساب، فبصمتُه SHA-256 وحدها مُثبَتٌ عليها. والحكمُ غيرُ الصالح في حدِّ "
+               "الآلةِ كلِّها منشورٌ كما هو."),
+    },
+    {
         "fr": ("Ce que rien ici ne revendique",
                "Aucune prévision astronomique, aucune dimension physique nouvelle, aucun "
                "horodatage dans les octets scellés, aucune preuve que le compteur tienne "
@@ -481,20 +650,20 @@ CHEMINEMENT: List[Dict[str, tuple]] = [
     {
         "fr": ("La langue des énoncés et des lignes calculées",
                "Les formules, les titres d'équation, les lignes de lecture, le cheminement, "
-               "les légendes et les cartes existent en trois langues. Les vingt énoncés de "
+               "les légendes et les cartes existent en trois langues. Les trente énoncés de "
                "contrôle et les lignes calculées, eux, restent en français : ce sont les "
                "chaînes que le module scellé produit et que le manifeste protège. Une page "
                "anglaise ou arabe qui les réécrirait affirmerait des mots qu'aucun fichier "
                "du dépôt ne porte."),
         "en": ("The language of the statements and the computed lines",
                "The formulas, equation titles, reading lines, reasoning, captions and "
-               "cards exist in three languages. The twenty control statements and the "
+               "cards exist in three languages. The thirty control statements and the "
                "computed lines stay in French: they are the strings the sealed module "
                "writes and the manifest protects. An English or Arabic page rewriting them "
                "would assert words no file of the deposit carries."),
         "ar": ("لغةُ العباراتِ والأسطرِ المحسوبة",
                "الصيغُ وعناوينُ المعادلات وأسطرُ القراءة ومسارُ الاستدلال والتعليقاتُ "
-               "والبطاقات موجودةٌ بثلاث لغات. أمّا عباراتُ التحقق العشرين والأسطرُ "
+               "والبطاقات موجودةٌ بثلاث لغات. أمّا عباراتُ التحقق الثلاثين والأسطرُ "
                "المحسوبةُ فتبقى بالفرنسية: فهي النصوصُ التي تكتبها الوحدةُ المختومة ويحميها "
                "البيان. ولو أعادت كتابةَها صفحةٌ إنجليزيةٌ أو عربيةٌ لثبّتت كلماتٍ لا "
                "يحملها أيُّ ملفٍ في الإيداع."),
@@ -515,19 +684,30 @@ SOURCES = _3(
     "citation et aucun nombre ne lui est donc attribué. Les repères extérieurs cités sont "
     "l'Union astronomique internationale, la NASA Glenn Research Center, l'Explanatory "
     "Supplement to the Astronomical Almanac et Wikipédia pour l'année tropique, chacun "
-    "repris avec sa source nommée.",
+    "repris avec sa source nommée. Le dossier `QPU_DISTANT`, lui, vient d'une exécution "
+    "sur `ibm_marrakesh` du 2026-11-10 (job `job-dbpkmr0ou4as73ctrm80`, 256 tirages, "
+    "600 units) : l'archive rendue par le fournisseur n'est pas publiée parce qu'elle "
+    "porte un identifiant de compte ; cinq fichiers en sont extraits, dont le résultat "
+    "verbatim, et chacun est donné avec son SHA-256.",
     "The dossier grows out of one public video (Adem B10, “AI Proved His 18-Year-Old "
     "Conjecture. He Hasn't Understood It Yet.”, 593 s, eight timestamped chapters), probed "
     "on 2026-11-09T15:32:44Z. No transcript was obtained, so no sentence, no quotation and "
     "no number is attributed to it. The external references cited are the International "
     "Astronomical Union, NASA Glenn Research Center, the Explanatory Supplement to the "
     "Astronomical Almanac and Wikipedia for the tropical year, each taken with its named "
-    "source.",
+    "source. The `QPU_DISTANT` dossier comes from a run on `ibm_marrakesh` on 2026-11-10 "
+    "(job `job-dbpkmr0ou4as73ctrm80`, 256 shots, 600 units): the archive returned by the "
+    "provider is not published, because it carries an account identifier; five files are "
+    "taken out of it, the result verbatim among them, and each is given with its SHA-256.",
     "ينشأ هذا الملف من فيديو عامٍّ واحد (Adem B10، «AI Proved His 18-Year-Old Conjecture. "
     "He Hasn't Understood It Yet»، 593 ثانية، وثمانية فصولٍ مؤرَّخة)، رُصِد في "
     "2026-11-09T15:32:44Z. ولم يُحصَل نصُّ كلام، فلا تُنسَب إليه عبارةٌ ولا اقتباسٌ ولا عدد. "
     "واما المراجع الخارجية المذكورة فهي الاتحاد الفلكي الدولي، ومركز ناسا غلين، والملحق "
-    "الشارح للقائمة الفلكية، وويكيبيديا للسنة الاستوائية — كلٌّ بمصدره المسمّى.",
+    "الشارح للقائمة الفلكية، وويكيبيديا للسنة الاستوائية — كلٌّ بمصدره المسمّى. وأما ملفُ "
+    "`QPU_DISTANT` فمن تشغيلٍ على `ibm_marrakesh` يوم 2026-11-10 (المهمةُ "
+    "`job-dbpkmr0ou4as73ctrm80`، و256 طلقة، و600 وحدة): فأرشيفُ المُقدِّم غيرُ منشور لأنه "
+    "يحمل معرِّفَ حساب؛ وخمسةُ ملفاتٍ مُستخرَجةٌ منه، منها النتيجةُ الحرفية، وكلُّ واحدٍ "
+    "مقدَّمٌ ببصمتِه SHA-256.",
 )
 
 COMMANDES = _3(
@@ -536,6 +716,8 @@ COMMANDES = _3(
     "py -3 HORLOGERIE/verifier_certificats.py            # relit le certificat sans le dépôt\n"
     "py -3 HORLOGERIE/laboratoire.py --pas 4096          # trajectoire, repère, stabilité\n"
     "py -3 HORLOGERIE/laboratoire.py --en-direct --secondes 20 --ticks 50000\n"
+    "py -3 QPU_DISTANT/qpu_distant_base.py               # 10 équations, 10 contrôles IBM\n"
+    "py -3 -m unittest QPU_DISTANT.tests.test_qpu_distant  # 28 tests hors du dépôt\n"
     "cd HORLOGERIE && py -3 -m unittest tests.test_horlogerie tests.test_laboratoire\n"
     "py -3 -m OUTILS.sceller_manifeste --verifier        # re-hache chaque entrée scellée",
     "cd ZENODO_DEPOT_ALMIZAN\n"
@@ -543,6 +725,8 @@ COMMANDES = _3(
     "py -3 HORLOGERIE/verifier_certificats.py            # re-reads the certificate alone\n"
     "py -3 HORLOGERIE/laboratoire.py --pas 4096          # trajectory, frame, stability\n"
     "py -3 HORLOGERIE/laboratoire.py --en-direct --secondes 20 --ticks 50000\n"
+    "py -3 QPU_DISTANT/qpu_distant_base.py               # 10 equations, 10 IBM checks\n"
+    "py -3 -m unittest QPU_DISTANT.tests.test_qpu_distant  # 28 tests outside the deposit\n"
     "cd HORLOGERIE && py -3 -m unittest tests.test_horlogerie tests.test_laboratoire\n"
     "py -3 -m OUTILS.sceller_manifeste --verifier        # re-hashes every sealed entry",
     "cd ZENODO_DEPOT_ALMIZAN\n"
@@ -550,6 +734,8 @@ COMMANDES = _3(
     "py -3 HORLOGERIE/verifier_certificats.py            # يعيد قراءة الشهادة وحدها\n"
     "py -3 HORLOGERIE/laboratoire.py --pas 4096          # المسار والمعلَم والاستقرار\n"
     "py -3 HORLOGERIE/laboratoire.py --en-direct --secondes 20 --ticks 50000\n"
+    "py -3 QPU_DISTANT/qpu_distant_base.py               # 10 معادلات و10 تحقُّقات IBM\n"
+    "py -3 -m unittest QPU_DISTANT.tests.test_qpu_distant  # 28 اختبارًا خارج الإيداع\n"
     "cd HORLOGERIE && py -3 -m unittest tests.test_horlogerie tests.test_laboratoire\n"
     "py -3 -m OUTILS.sceller_manifeste --verifier        # يُعيد تجزئة كل مدخل موقَّع",
 )
@@ -644,6 +830,29 @@ IMG_LEGENDE = _3(
     "أعلاه فيرسمه محرِّكُ الصفحات.",
 )
 
+IMG_QPU_ALT = _3(
+    "Frontières d'erreur recalculées sur une exécution distante : {qpu_p} mesuré entre "
+    "{qpu_support} et {qpu_mediane}.",
+    "Error bounds recomputed on a distant run: {qpu_p} measured, between {qpu_support} and "
+    "{qpu_mediane}.",
+    "حدودُ الخطإ المعادُ حسابها على تشغيلٍ بعيد: {qpu_p} مقيسٌ بين {qpu_support} و"
+    "{qpu_mediane}.",
+)
+
+IMG_QPU_LEGENDE = _3(
+    "Le tracé du dépôt lui-même, servi octet pour octet depuis `QPU_DISTANT/artefacts/` : "
+    "trois barres — la parité mesurée {qpu_p} sur {qpu_tirs} tirages, l'enveloppe du "
+    "support occupé {qpu_support}, l'enveloppe de la machine entière {qpu_mediane}. La "
+    "mesure tombe entre les deux : la seconde enveloppe est reçue, la première non.",
+    "The deposit's own plot, served byte for byte from `QPU_DISTANT/artefacts/`: three "
+    "bars — the measured parity {qpu_p} over {qpu_tirs} shots, the envelope of the support "
+    "used {qpu_support}, the envelope of the whole machine {qpu_mediane}. The measure falls "
+    "between the two: one envelope is met, the other is not.",
+    "مخطَّطُ الإيداع نفسه، مُقدَّمًا بتّةً بتّة من `QPU_DISTANT/artefacts/`: ثلاثةُ أعمدة — "
+    "الزوجيةُ المقيسةُ {qpu_p} على {qpu_tirs} طلقة، وغلافُ الحيزِ المُستعمَل {qpu_support}، "
+    "وغلافُ الآلةِ كلِّها {qpu_mediane}. ويقع المقيسُ بينهما: فغلافٌ يُستوى وغلافٌ لا يُستوى.",
+)
+
 CAPTION_MATIERAUX = _3(
     "Les quatorze coordonnées du repère, dans l'ordre du fichier scellé. La colonne de "
     "quantité recopie la valeur telle que le dépôt l'écrit — y compris les deux valeurs "
@@ -680,7 +889,7 @@ NOTE_HOTE = _3(
 # cartes : valeurs reprises telles quelles du calcul, notes traduites
 # ----------------------------------------------------------------------------
 def cartes(v: Dict[str, str]) -> List[Any]:
-    """Dix cartes. `v` porte les chaînes déjà écrites par les modules du dépôt."""
+    """Quatorze cartes. `v` porte les chaînes déjà écrites par les modules du dépôt."""
     def n(trio: Sequence[str]) -> List[str]:
         return [trio[i].format(**v) for i in range(3)]
 
@@ -771,13 +980,57 @@ def cartes(v: Dict[str, str]) -> List[Any]:
                  "مدخلًا، منها اثنان يُترَكان للإنتاج. والعدَّ يضبطه التحقُّقُ L03.")),
               v["coord"]),
         carte(("contrôles reçus", "checks met", "التحقُّقاتُ المستوفاة"),
-              n(("quinze du certificat d'horlogerie et cinq du laboratoire, tous verts au "
-                 "moment où la page est écrite : {ctrl} sur {ctrl_total}.",
-                 "fifteen from the horology certificate and five from the laboratory, all "
-                 "green as the page is written: {ctrl} of {ctrl_total}.",
-                 "خمسةَ عشرَ من شهادة التوقيت وخمسةً من المختبر، كلها ناجحةٌ عند كتابة "
-                 "الصفحة: {ctrl} من {ctrl_total}.")),
+              n(("quinze du certificat d'horlogerie, cinq du laboratoire et dix de "
+                 "l'exécution distante, tous verts au moment où la page est écrite : "
+                 "{ctrl} sur {ctrl_total}.",
+                 "fifteen from the horology certificate, five from the laboratory and ten "
+                 "from the distant run, all green as the page is written: {ctrl} of "
+                 "{ctrl_total}.",
+                 "خمسةَ عشرَ من شهادة التوقيت وخمسةً من المختبر وعشرةً من التشغيل البعيد، "
+                 "كلها ناجحةٌ عند كتابة الصفحة: {ctrl} من {ctrl_total}.")),
               v["controles"]),
+        carte(("parité mesurée sur la machine distante",
+               "parity measured on the distant machine",
+               "الزوجيةُ المقيسةُ على الآلة البعيدة"),
+              n(("{qpu_pair} tirs sur {qpu_tirs} rendent un mot pair, avec {qpu_sigma} pour "
+                 "incertitude de tirage : la proportion telle que le fichier la donne.",
+                 "{qpu_pair} shots of {qpu_tirs} return an even word, with {qpu_sigma} as "
+                 "sampling deviation: the proportion as the file gives it.",
+                 "تُعطي {qpu_pair} طلقةٍ من {qpu_tirs} كلمةً زوجية، بـ{qpu_sigma} انحرافَ "
+                 "سحب: فالنسبةُ كما يُعطيها الملف.")),
+              v["qpu_p"]),
+        carte(("enveloppe du support occupé", "envelope of the support used",
+               "غلافُ الحيزِ المُستعمَل"),
+              n(("chaque porte facturée à l'erreur des deux fils que le circuit occupe, la "
+                 "calibration seule pour source : reçue, à {qpu_ecart_support} σ.",
+                 "each gate charged at the error of the two wires the circuit occupies, the "
+                 "calibration as its only source: met, by {qpu_ecart_support} σ.",
+                 "كلُّ بابٍ مُحمَّلٌ خطأَ السلكَين اللذين تحتلهما الدارة، والمعايرةُ مصدرًا "
+                 "وحيدًا: تمّ، بـ{qpu_ecart_support} σ.")),
+              v["qpu_support"]),
+        carte(("enveloppe de la machine entière", "envelope of the whole machine",
+               "غلافُ الآلةِ كلِّها"),
+              n(("la même règle appliquée aux médiannes de la machine tout entière : la "
+                 "mesure ne l'atteint pas, de {qpu_ecart_mediane} σ, et le verdict "
+                 "défavorable est publié tel quel.",
+                 "the same rule applied to the medians of the whole machine: the measure "
+                 "never reaches it, by {qpu_ecart_mediane} σ, and the unfavourable verdict "
+                 "is published as it stands.",
+                 "القاعدةُ ذاتُها على وَسائطِ الآلةِ كلِّها: فلا يبلغها المقيسُ بـ"
+                 "{qpu_ecart_mediane} σ، والحكمُ غيرُ الصالح منشورٌ كما هو.")),
+              v["qpu_mediane"]),
+        carte(("asymétrie des deux mots impairs", "asymmetry of the two odd words",
+               "اختلالُ الكلمتين الفرديتين"),
+              n(("22 tirs sur l'un des deux mots impairs, aucun sur l'autre : le test "
+                 "bilatéral exact rend cette probabilité en entiers, et ne borne pas la "
+                 "parité.",
+                 "22 shots on one of the two odd words, none on the other: the exact "
+                 "two-sided test returns this probability in integers, and bounds no "
+                 "parity.",
+                 "تقع 22 طلقةً على إحدَى الكلمتين الفرديتين ولا تقع على الأخرى واحدة: "
+                 "فيُعطي الفحصُ الثنائيُّ المضبوط هذا الاحتمالَ في الأعداد الصحيحة، ولا يحُدُّ "
+                 "الزوجية.")),
+              v["qpu_asym_p"]),
     ]
 
 
@@ -860,10 +1113,10 @@ def materiaux(repere: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
 def table_eq_text() -> Dict[str, Dict[str, tuple]]:
     """EQ-12 est gelée : ni τ ni son rapport, sur aucune des trois langues."""
     table = {k: dict(v) for k, v in EQ_TEXT.items()}
-    table["EQ-12"] = {
-        "fr": (EQ_TEXT["EQ-12"]["fr"][0], EQ12_GEL["fr"]),
-        "en": (EQ_TEXT["EQ-12"]["en"][0], EQ12_GEL["en"]),
-        "ar": (EQ_TEXT["EQ-12"]["ar"][0], EQ12_GEL["ar"]),
+    table["HORLOGERIE/EQ-12"] = {
+        "fr": (EQ_TEXT["HORLOGERIE/EQ-12"]["fr"][0], EQ12_GEL["fr"]),
+        "en": (EQ_TEXT["HORLOGERIE/EQ-12"]["en"][0], EQ12_GEL["en"]),
+        "ar": (EQ_TEXT["HORLOGERIE/EQ-12"]["ar"][0], EQ12_GEL["ar"]),
     }
     return table
 
@@ -884,6 +1137,6 @@ __all__ = ["_3", "carte", "THEME", "TITRE_BANDE", "DESCRIPTION", "EQ_TEXT", "FOR
            "COMMANDES", "CAPTION_MATIERAUX", "NOTE_HOTE", "FIG_ECARTS_TITRE",
            "FIG_ECARTS_DESC", "FIG_ECARTS_SERIES", "FIG_ECARTS_LEGENDE", "FIG_STAB_TITRE",
            "FIG_STAB_DESC", "FIG_STAB_SERIES", "FIG_STAB_LEGENDE", "IMG_TRAJECTOIRE_ALT",
-           "IMG_LEGENDE", "COORD_EQ", "COORD_ROLE", "UNITE_TR", "STATUT_COORD_TR",
-           "materiaux", "cartes", "EQ12_GEL", "C12_GEL", "table_eq_text",
-           "gele_controles"]
+           "IMG_LEGENDE", "IMG_QPU_ALT", "IMG_QPU_LEGENDE", "COORD_EQ", "COORD_ROLE",
+           "UNITE_TR", "STATUT_COORD_TR", "materiaux", "cartes", "EQ12_GEL", "C12_GEL",
+           "table_eq_text", "gele_controles"]

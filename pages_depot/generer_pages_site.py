@@ -18,12 +18,15 @@ dossier. Le garde-fou numérique du moteur refuse toute phrase anglaise ou arabe
 Sorties, toutes en LF :
     web_cloud/fondation[_en|_ar].html        trois pages, 18 équations, NA62
     web_cloud/chiffres_pi[_en|_ar].html      trois pages, 17 équations, π-e-√2
-    web_cloud/laboratoire[_en|_ar].html      trois pages, 15 équations, repère et trajectoire
+    web_cloud/laboratoire[_en|_ar].html      trois pages, repère, trajectoire et exécution IBM
     web_cloud/fondation_resultats.json       copie verbatim de FONDATION/artefacts/donnees
     web_cloud/chiffres_pi_resultats.json     copie verbatim de CHIFFRES/artefacts/donnees
     web_cloud/laboratoire_{resultats,certificats}.json  copies des artefacts HORLOGERIE
+    web_cloud/laboratoire_qpu_certificat.json  copie de l'artefact QPU_DISTANT
     web_cloud/laboratoire_trajectoire.svg            tracé du dépôt, recopié tel quel
+    web_cloud/laboratoire_qpu_frontieres.svg        idem, pour les deux enveloppes d'erreur
     web_cloud/laboratoire_{trajectoire,stabilite,confrontation}.csv  idem, en CRLF Excel
+    web_cloud/laboratoire_qpu_{compteurs,frontieres}.csv            idem, pour l'exécution
 
 Usage :
     py -3 pages_depot/generer_pages_site.py
@@ -293,12 +296,16 @@ def _fuite_hote(ecrits: List[Path], mesure: Dict[str, Any]) -> None:
 
 
 def laboratoire(sceau: Sceau, ecrits: List[Path]) -> Dict[str, Any]:
-    """Rien n'est calculé de neuf ici : le site met en forme le dossier HORLOGERIE.
+    """Rien n'est calculé de neuf ici : le site met en forme les dossiers HORLOGERIE
+    et QPU_DISTANT du dépôt scellé.
 
     Le certificat et le laboratoire sont recalculés puis confrontés aux artefacts scellés —
     ce qui ne coïncide pas arrête la génération. Deux lignes sont gelées avant affichage
     parce que leur nombre dépend de la machine qui exécute : EQ-12 (τ mesuré) et C12 (ses
     cinq séries). Aucune valeur d'hôte n'atteint une page ; `_fuite_hote` le vérifie.
+    L'exécution distante suit la même discipline : `qpu_distant_base.py` est rejoué, son
+    certificat comparé octet pour octet à l'artefact, et son verdict défavorable publié
+    sans adoucissement.
     """
     for part in (("HORLOGERIE", "horlogerie.py"), ("HORLOGERIE", "laboratoire.py"),
                  ("HORLOGERIE", "calibrer_horloge_almizan.py"),
@@ -337,23 +344,46 @@ def laboratoire(sceau: Sceau, ecrits: List[Path]) -> Dict[str, Any]:
         raise SystemExit(f"contrôles du laboratoire non reçus : "
                          f"{lab['controles_verts']}/{lab['nombre_controles']}")
 
+    # ── la pièce jointe : le dossier QPU_DISTANT, même discipline de relecture ──
+    for part in (("QPU_DISTANT", "qpu_distant_base.py"),):
+        sceau.chemin(*part)
+    QD = __import__("QPU_DISTANT.qpu_distant_base", fromlist=["resoudre"])
+    qpu = QD.resoudre()
+    if not QD.verifier(qpu):
+        raise SystemExit("contrôles de l'exécution distante non reçus : la page n'est pas "
+                         "publiée")
+    cert_q, con_q = qpu["certificat"], qpu["conclusion"]
+    chemin_cert_q = sceau.chemin("QPU_DISTANT", "artefacts", "certificat.json")
+    if QD.octets_certificat(cert_q) != _vue_git(chemin_cert_q.read_bytes()):
+        raise SystemExit("le certificat d'exécution recalculé n'est pas l'artefact scellé")
+    if cert_q["racine_merkle_sha256"] != con_q["racine_merkle_sha256"]:
+        raise SystemExit("la racine du certificat d'exécution n'est pas celle de sa conclusion")
+
     # ── ce que la page affiche : le domaine calculé, moins les deux lignes d'hôte ──
+    # Chaque ligne porte le dossier dont elle sort : `EQ-01` et `C01` existent chez
+    # HORLOGERIE et chez QPU_DISTANT, et la page les réunit dans une seule table.
     eqs = []
     for e in bruts["equations"]:
-        copie = dict(e)
+        copie = dict(e, dossier="HORLOGERIE")
         if copie["id"] == "EQ-12":
             copie["resultat"] = PL.EQ12_GEL["fr"]
             copie["detail"] = {"gel": PL.EQ12_GEL["fr"]}
         eqs.append(copie)
-    controles = PL.gele_controles(bruts["controles"]) + [
+    eqs += [dict(e, dossier="QPU_DISTANT") for e in qpu["equations"]]
+    controles = [dict(c, dossier="HORLOGERIE") for c in PL.gele_controles(bruts["controles"])] + [
         {"id": c["id"], "nom": c["enonce"], "attendu": _valeur_brute(c["attendu"]),
-         "obtenu": _valeur_brute(c["obtenu"]), "ok": bool(c["vrai"])} for c in lab["controles"]]
+         "obtenu": _valeur_brute(c["obtenu"]), "ok": bool(c["vrai"]),
+         "dossier": "HORLOGERIE"} for c in lab["controles"]]
+    controles += [{"id": c["id"], "nom": c["nom"], "attendu": c["attendu"],
+                   "obtenu": c["obtenu"], "ok": bool(c["ok"]),
+                   "dossier": "QPU_DISTANT"} for c in qpu["controles"]]
     recus = sum(1 for c in controles if c["ok"])
     if recus != len(controles):
         raise SystemExit(f"{len(controles) - recus} contrôle(s) sur {len(controles)} "
                          "seraient publiés en rouge")
 
     astro, par = cert["astronomie"], cert["astronomie"]["par_cycle"]
+    par_q, ver_q, asym_q = cert_q["parite"], cert_q["verdicts"], cert_q["asymetrie"]
     r, fermet = cert["rationnels"], lab["trajectoire"]["fermeture"]
     stab, bande = lab["stabilite_simulee"], lab["stabilite_simulee"]["bande"]
     pas, fermeture = lab["trajectoire"]["pas"], fermet["periode_commune"]
@@ -378,23 +408,39 @@ def laboratoire(sceau: Sceau, ecrits: List[Path]) -> Dict[str, Any]:
         "verdict_lune": par["Lune"]["verdict"],
         "verdict_terre": par["Terre"]["verdict"],
         "ctrl": str(recus), "ctrl_total": str(len(controles)),
-        "eq": str(len(eqs)),
+        "eq_h": str(len(bruts["equations"])), "eq_q": str(len(qpu["equations"])),
+        "qpu_p": repr(par_q["p_mesuree"]), "qpu_pair": str(par_q["tirages_pairs"]),
+        "qpu_tirs": str(par_q["tirages"]), "qpu_sigma": repr(par_q["sigma_tirage"]),
+        "qpu_support": repr(ver_q["support_reel"]["borne_basse"]),
+        "qpu_mediane": repr(ver_q["mediane_machine"]["borne_basse"]),
+        "qpu_ecart_support": repr(ver_q["support_reel"]["ecart_en_sigma"]),
+        "qpu_ecart_mediane": repr(ver_q["mediane_machine"]["ecart_en_sigma"]),
+        "qpu_asym_p": repr(asym_q["valeur_p"]),
         "tours": f"{pas / fermeture:.3e}",
     }
 
     def fmt(trio: Dict[str, str]) -> Dict[str, str]:
         return _3(*[trio[lang].format(**v) for lang in MOTEUR.LANGUES])
 
+    statuts: Dict[str, int] = {}
+    for table in (bruts["conclusion"]["statuts_par_label"], con_q["statuts_par_label"]):
+        for label, nombre in table.items():
+            statuts[label] = statuts.get(label, 0) + nombre
     donnees = {
-        "source": bruts["source"],
+        "source": dict(bruts["source"], execution_distante={
+            "dossier": "QPU_DISTANT", "job": cert_q["job"]["id"],
+            "machine": cert_q["job"]["backend"],
+            "archive_attestee_par_sha256": cert_q["empreintes"]["sha256_zip_atteste"],
+            "fichiers_publies": list(QD.PUBLIES)}),
         "equations": eqs,
         "controles": controles,
         "resume": {"equations": len(eqs), "controles_ok": recus, "controles_total": len(controles),
-                   "statuts": bruts["conclusion"]["statuts_par_label"]},
+                   "equations_horlogerie": len(bruts["equations"]),
+                   "equations_execution": len(qpu["equations"]), "statuts": statuts},
         "valeurs_declarees": {},
     }
 
-    # ── trois figures : deux dessinées par le moteur, une recopiée du dépôt ──
+    # ── quatre figures : deux dessinées par le moteur, deux recopiées du dépôt ──
     serie_ecarts = {lang: [(PL.FIG_ECARTS_SERIES[a][IDX[lang]], float(par[a]["ecart_max_s"]),
                            COULEUR_SIGNALÉ if par[a]["verdict"] == "ÉCART SIGNALÉ"
                            else COULEUR_HORS_TOLERANCE)
@@ -419,10 +465,17 @@ def laboratoire(sceau: Sceau, ecrits: List[Path]) -> Dict[str, Any]:
                         f"alt=\"{MOTEUR.ech(fmt(PL.IMG_TRAJECTOIRE_ALT)[lang])}\">")
                  for lang in MOTEUR.LANGUES},
          "legende": fmt(PL.IMG_LEGENDE)},
+        {"svg": {lang: (f"<img src='{SITE}/laboratoire-qpu-frontieres.svg' width='900' height='360' "
+                        f"loading='lazy' decoding='async' "
+                        f"style='max-width:100%;height:auto' "
+                        f"alt=\"{MOTEUR.ech(fmt(PL.IMG_QPU_ALT)[lang])}\">")
+                 for lang in MOTEUR.LANGUES},
+         "legende": fmt(PL.IMG_QPU_LEGENDE)},
     ]
 
     spec = {
-        "module": "HORLOGERIE/horlogerie.py + HORLOGERIE/laboratoire.py",
+        "module": ("HORLOGERIE/horlogerie.py + HORLOGERIE/laboratoire.py "
+                   "+ QPU_DISTANT/qpu_distant_base.py"),
         "slug": "laboratoire", "theme": PL.THEME, "titre_bande": PL.TITRE_BANDE,
         "description": fmt(PL.DESCRIPTION), "eq_text": PL.table_eq_text(),
         "cheminement": PL.CHEMINEMENT, "figures": figures,
@@ -440,6 +493,10 @@ def laboratoire(sceau: Sceau, ecrits: List[Path]) -> Dict[str, Any]:
         {"href": f"{SITE}/laboratoire-certificats.json",
          "libelle": _3("Certificat d'horlogerie scellé", "Sealed horology certificate",
                        "شهادةُ التوقيت المختومة")},
+        {"href": f"{SITE}/laboratoire-qpu-certificat.json",
+         "libelle": _3(f"Certificat d'exécution scellé ({cert_q['job']['backend']})",
+                       f"Sealed run certificate ({cert_q['job']['backend']})",
+                       f"شهادةُ التشغيل المختومة ({cert_q['job']['backend']})")},
         {"href": f"{SITE}/fondation",
          "libelle": _3("La base posée : FONDATION", "The posited base: FONDATION",
                        "الأساس المقرَّر: FONDATION")},
@@ -466,10 +523,16 @@ def laboratoire(sceau: Sceau, ecrits: List[Path]) -> Dict[str, Any]:
               ("HORLOGERIE", "artefacts", "trajectoire_laboratoire.svg"),
               ("HORLOGERIE", "artefacts", "trajectoire_laboratoire.csv"),
               ("HORLOGERIE", "artefacts", "stabilite_laboratoire.csv"),
-              ("HORLOGERIE", "artefacts", "confrontation_astronomique.csv")]
+              ("HORLOGERIE", "artefacts", "confrontation_astronomique.csv"),
+              ("QPU_DISTANT", "artefacts", "certificat.json"),
+              ("QPU_DISTANT", "artefacts", "compteurs.csv"),
+              ("QPU_DISTANT", "artefacts", "frontieres.csv"),
+              ("QPU_DISTANT", "artefacts", "figures", "frontieres.svg")]
     destinations = ["laboratoire_resultats.json", "laboratoire_certificats.json",
                     "laboratoire_trajectoire.svg", "laboratoire_trajectoire.csv",
-                    "laboratoire_stabilite.csv", "laboratoire_confrontation.csv"]
+                    "laboratoire_stabilite.csv", "laboratoire_confrontation.csv",
+                    "laboratoire_qpu_certificat.json", "laboratoire_qpu_compteurs.csv",
+                    "laboratoire_qpu_frontieres.csv", "laboratoire_qpu_frontieres.svg"]
     for part, nom in zip(copies, destinations):
         source = sceau.chemin(*part)
         brut = _vue_git(source.read_bytes()) if Path(nom).suffix == ".json" else source.read_bytes()
@@ -479,7 +542,13 @@ def laboratoire(sceau: Sceau, ecrits: List[Path]) -> Dict[str, Any]:
     _fuite_hote(ecrits[avant:], mesure)
     return {"equations": len(eqs), "controles": f"{recus}/{len(controles)}",
             "coordonnees": len(lab["repere"]), "verdict": lab["verdict"],
-            "racine_merkle": cert["racine_merkle_sha256"][:16] + "…"}
+            "racine_merkle": cert["racine_merkle_sha256"][:16] + "…",
+            "equations_horlogerie": donnees["resume"]["equations_horlogerie"],
+            "equations_execution": donnees["resume"]["equations_execution"],
+            "verdict_execution": " · ".join(
+                f"{nom} : {'reçue' if d['recue'] else 'non reçue'}"
+                for nom, d in cert_q["verdicts"].items()),
+            "racine_merkle_execution": cert_q["racine_merkle_sha256"][:16] + "…"}
 
 
 # ============================================================================

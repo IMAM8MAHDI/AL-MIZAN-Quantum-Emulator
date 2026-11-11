@@ -1,0 +1,26 @@
+{
+ "dossier": "QPU_DISTANT/sources",
+ "regle": "sha256 des octets tels que livres par le fournisseur, fins de ligne LF, aucun reencodage",
+ "fichiers": {
+  "calibration_ibm_marrakesh_2026-11-10T1647Z.json": {
+   "octets": 11843,
+   "sha256": "4e8ce9fa17c3cdb1b694f3e3ef8f77d4fdc411bf0c34b0c9c37e89f5af5da756"
+  },
+  "info_netoyee.json": {
+   "octets": 2182,
+   "sha256": "ec40fe3239972cb5dd7ec43815f5dc6124b85191f14292e095e58085c84f53c2"
+  },
+  "portes_transpilees.json": {
+   "octets": 3603,
+   "sha256": "f81c7966e1db13a876604d204e4eee136d8f9533e83599f432dc09aad14f6467"
+  },
+  "result.json": {
+   "octets": 2226,
+   "sha256": "417f4d7eabfa78e18520622abd0bdc1cd612c5d2188c13ab2917c5f4b97d83ef"
+  },
+  "support_ibm_marrakesh_0-1_2026-11-10T2057Z.json": {
+   "octets": 1387,
+   "sha256": "b2840c136712d3f5fca1855882cd764ac905dbc378c979e30b6a62146ac793c0"
+  }
+ }
+}

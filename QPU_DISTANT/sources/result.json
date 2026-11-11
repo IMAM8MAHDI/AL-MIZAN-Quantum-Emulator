@@ -1,0 +1,79 @@
+{
+  "__type__": "PrimitiveResult",
+  "__value__": {
+    "pub_results": [
+      {
+        "__type__": "SamplerPubResult",
+        "__value__": {
+          "data": {
+            "__type__": "DataBin",
+            "__value__": {
+              "field_names": [
+                "c"
+              ],
+              "field_types": [
+                "<class 'qiskit.primitives.containers.bit_array.BitArray'>"
+              ],
+              "shape": [],
+              "fields": {
+                "c": {
+                  "__type__": "BitArray",
+                  "__value__": {
+                    "array": {
+                      "__type__": "ndarray",
+                      "__value__": "eJydTzkOAjEMtOWOV6QLSGkWCQoeQAeioaBCERtEgViUBRrgFXwY23GAGhc+xjMT57VcL1YbhBvcfZv6XfYz5x/Xxgfn912+5HjadrlNgs/jsU+M94d4TjwPx5NpcM0ouKf7MwYEHAjAFYmAagOkqRSwRc26KSDhlyM+KjS5Nkg/atUSFD59NuyCJqseCObOneCoCJkBqK/SFSsfqJRKFDXZpXKnWtvzMkl9AxAeHTs="
+                    },
+                    "num_bits": 2
+                  }
+                }
+              }
+            }
+          },
+          "metadata": {
+            "circuit_metadata": {},
+            "compilation": {
+              "scheduler_timing": null,
+              "stretch_values": null
+            }
+          }
+        }
+      }
+    ],
+    "metadata": {
+      "execution": {
+        "execution_spans": {
+          "__type__": "ExecutionSpans",
+          "__value__": {
+            "spans": [
+              {
+                "__type__": "DoubleSliceSpan",
+                "__value__": {
+                  "start": {
+                    "__type__": "datetime",
+                    "__value__": "2026-11-10T16:52:42.309345"
+                  },
+                  "stop": {
+                    "__type__": "datetime",
+                    "__value__": "2026-11-10T16:52:43.478392"
+                  },
+                  "data_slices": {
+                    "0": [
+                      [
+                        256
+                      ],
+                      0,
+                      1,
+                      0,
+                      256
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "version": 2
+    }
+  }
+}

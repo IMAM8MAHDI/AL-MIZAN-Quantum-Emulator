@@ -1,0 +1,146 @@
+{
+ "chaine": {
+  "creee_le_utc": "2024-06-18T16:22:15.38533Z",
+  "id": "UCeMs4f4J13F5fvJF1Xt8Nng",
+  "longUploadsStatus": "allowed",
+  "titre": "Ahmed Elbahloul"
+ },
+ "derive": {
+  "emprise_jours": 17,
+  "jours_actifs": 4,
+  "par_jour": {
+   "2026-10-25": 1,
+   "2026-11-05": 4,
+   "2026-11-06": 8,
+   "2026-11-10": 10
+  },
+  "plus_longue_secondes": 30.0,
+  "publiees": 23,
+  "secondes_total": 272.0
+ },
+ "mesure_le_utc": "2026-11-10T23:22:31+00:00",
+ "methode": "youtube.channels().list(mine=True) puis playlistItems.list sur la playlist d'expédition, puis videos.list par paquets de 50 — lecture seule, aucune écriture, aucun jeton recopié",
+ "publications": [
+  {
+   "id": "JxdPGf38i8Y",
+   "publie_le_utc": "2026-10-25T22:14:01Z",
+   "secondes": 30.0
+  },
+  {
+   "id": "GMMpSWxgtxg",
+   "publie_le_utc": "2026-11-05T07:24:59Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "DgqOuVhXyJs",
+   "publie_le_utc": "2026-11-05T07:28:00Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "7ywlM7S86h0",
+   "publie_le_utc": "2026-11-05T07:33:40Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "jSDvqL20r3k",
+   "publie_le_utc": "2026-11-05T07:37:27Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "5FZp5_mxclg",
+   "publie_le_utc": "2026-11-06T10:12:48Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "zPRHHK_694U",
+   "publie_le_utc": "2026-11-06T10:15:16Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "1zJHk8iV4Pw",
+   "publie_le_utc": "2026-11-06T10:17:53Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "QWGFfKCrjNY",
+   "publie_le_utc": "2026-11-06T10:20:50Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "le4YtCH3VNo",
+   "publie_le_utc": "2026-11-06T10:23:22Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "hbJDhd3aBc0",
+   "publie_le_utc": "2026-11-06T10:25:05Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "9BiylLvjoPw",
+   "publie_le_utc": "2026-11-06T10:27:27Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "NzCEJvSMWrw",
+   "publie_le_utc": "2026-11-06T10:28:44Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "TSqrY4sYDPk",
+   "publie_le_utc": "2026-11-10T16:47:10Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "W6pyCLERklk",
+   "publie_le_utc": "2026-11-10T16:50:55Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "39c77I1ZCLg",
+   "publie_le_utc": "2026-11-10T16:54:15Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "Yt6xqr8g_V4",
+   "publie_le_utc": "2026-11-10T16:57:41Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "HzR33I08v78",
+   "publie_le_utc": "2026-11-10T16:59:42Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "8YNYoeoVnuU",
+   "publie_le_utc": "2026-11-10T17:09:25Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "StmpNmHQ7fQ",
+   "publie_le_utc": "2026-11-10T17:10:58Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "OgZuU2Jm6Hg",
+   "publie_le_utc": "2026-11-10T17:14:10Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "t8xrFh6Jw9g",
+   "publie_le_utc": "2026-11-10T17:16:41Z",
+   "secondes": 11.0
+  },
+  {
+   "id": "8u8gkRzDTQw",
+   "publie_le_utc": "2026-11-10T17:19:14Z",
+   "secondes": 11.0
+  }
+ ],
+ "statistiques": {
+  "hiddenSubscriberCount": false,
+  "subscriberCount": "1",
+  "videoCount": "23",
+  "viewCount": "48"
+ }
+}

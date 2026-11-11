@@ -1,0 +1,11 @@
+{
+ "appel_reussi": true,
+ "lecteur": "C:",
+ "mesure_le_utc": "2026-11-10T23:22:31+00:00",
+ "methode": "kernel32.GetDiskFreeSpaceExW('C:\\\\') et os.walk sur le tampon %LOCALAPPDATA%\\VisualStudio",
+ "octets_libres": 35434115072,
+ "octets_libres_appelant": 35434115072,
+ "octets_totaux": 252841029632,
+ "portee": "mesure propre à la machine qui a écrit cette page : elle n'est pas reproductible sur une autre, et le dépôt la consigne comme instantané. Le troisième paramètre sortant de GetDiskFreeSpaceExW est l'espace libre accessible à l'appelant, pas la taille d'un cluster.",
+ "tampons_visualstudio": []
+}

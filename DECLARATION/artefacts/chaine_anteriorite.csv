@@ -1,14 +1,14 @@
 ﻿evenement;source;date_mesuree;type_de_date;ce_que_cela_prouve;ce_que_cela_ne_prouve_pas
 racine du depot git;.git + git rev-list --max-parents=0;2026-11-07T06:05:23+01:00;declaree par l'horloge cliente;le depot commence ici;rien de ce qui precede
-dernier commit atteignable;git log;2026-11-10T11:52:08+01:00;declaree par l'horloge cliente;le depot etait a cet etat;la date de publication
-plage du journal de références;.git/logs/HEAD;2026-11-07T06:05:23+01:00 -> 2026-11-10T11:52:08+01:00;encaissee par git;101 operations locales datees;une paternite
-sceau SHA-256 du depot;MANIFESTE_SHA256.txt;aucune date dans le fichier;empreinte de contenu;240 entrees, 0 date;une date, ni une paternite
+dernier commit atteignable;git log;2026-11-11T01:18:33+01:00;declaree par l'horloge cliente;le depot etait a cet etat;la date de publication
+plage du journal de références;.git/logs/HEAD;2026-11-07T06:05:23+01:00 -> 2026-11-11T01:18:33+01:00;encaissee par git;119 operations locales datees;une paternite
+sceau SHA-256 du depot;MANIFESTE_SHA256.txt;aucune date dans le fichier;empreinte de contenu;249 entrees, 0 date;une date, ni une paternite
 tete git liee au sceau;MANIFESTE_SHA256.txt;non liee;absence mesuree;0 identifiant de commit dans le sceau;le lien entre version publiee et octets scelles
-enregistrement Zenodo lu;.zenodo.json;2026-11-10;declare par l'auteur dans le depot;version 3.3.0, licence agpl-3.0-only;la date serveurs de Zenodo, qui se verifie en ligne
-citation lue;CITATION.cff;2026-11-10;declare par l'auteur;11 identifiants Zenodo distincts cites;que chaque identifiant resout
-dernier commit de l'archive;.git/HEAD;209a64b05d31196f0a1e8331ba752a8bf65ea456;encaisse par git;94 commits dont 18 d'automate;qui a decide
+enregistrement Zenodo lu;.zenodo.json;2026-11-11;declare par l'auteur dans le depot;version 3.3.2, licence agpl-3.0-only;la date serveurs de Zenodo, qui se verifie en ligne
+citation lue;CITATION.cff;2026-11-11;declare par l'auteur;13 identifiants Zenodo distincts cites;que chaque identifiant resout
+dernier commit de l'archive;.git/HEAD;c9b7fbd71a7debbec977132bffdf6af0baffa786;encaisse par git;112 commits dont 18 d'automate;qui a decide
 instruments d'horodatage qualifie;archive complete;aucun;denombrement de fichiers;0 fichier d'instrument, 31 mentions textuelles;une valeur probante
-trace fractale la plus ancienne de l'archive;CONTINUITE/continuite_base.py, bibliotheques/lib_almizan_ext;2026-11-07T05:44:16+01:00;date du commit d'ajout;10 occurrences dans 3 fichiers;que les fractales soient le point de depart de l'auteur
+trace fractale la plus ancienne de l'archive;COMMUNIQUE_PRESSE.md, CONTINUITE/continuite_base.py, bibliot;2026-11-07T05:44:16+01:00;date du commit d'ajout;11 occurrences dans 4 fichiers;que les fractales soient le point de depart de l'auteur
 claim d'education des IA;archive complete;aucune date;denombrement d'instruments;0 mention du verbe, 0 instrument d'entrainement;le claim lui-meme
 dossier ABONDANCE;git log --diff-filter=A;2026-11-08T22:19:56+01:00;date du commit d'ajout;le dossier est entre dans l'archive a cette date;la date de la premiere idee qu'il contient
 dossier CHIFFRES;git log --diff-filter=A;2026-11-09T04:13:21+01:00;date du commit d'ajout;le dossier est entre dans l'archive a cette date;la date de la premiere idee qu'il contient
@@ -20,6 +20,7 @@ dossier GUERRE;git log --diff-filter=A;2026-11-10T04:16:11+01:00;date du commit 
 dossier HORLOGERIE;git log --diff-filter=A;2026-11-09T17:16:21+01:00;date du commit d'ajout;le dossier est entre dans l'archive a cette date;la date de la premiere idee qu'il contient
 dossier REDACTION;git log --diff-filter=A;2026-11-10T04:16:11+01:00;date du commit d'ajout;le dossier est entre dans l'archive a cette date;la date de la premiere idee qu'il contient
 dossier VERROUS;git log --diff-filter=A;2026-11-10T04:16:11+01:00;date du commit d'ajout;le dossier est entre dans l'archive a cette date;la date de la premiere idee qu'il contient
+fichier nommant fractal : COMMUNIQUE_PRESSE.md;fractales();2026-11-08T15:17:11+01:00;date du commit d'ajout;1 occurrences;l'anteriorite du fractalisme
 fichier nommant fractal : CONTINUITE/continuite_base.py;fractales();2026-11-10T04:16:11+01:00;date du commit d'ajout;1 occurrences;l'anteriorite du fractalisme
 fichier nommant fractal : bibliotheques/lib_almizan_extension.py;fractales();2026-11-09T04:13:21+01:00;date du commit d'ajout;8 occurrences;l'anteriorite du fractalisme
 fichier nommant fractal : horloge_noyau/architecture_informe_couche_matiere_table_mizan.py;fractales();2026-11-07T05:44:16+01:00;date du commit d'ajout;1 occurrences;l'anteriorite du fractalisme

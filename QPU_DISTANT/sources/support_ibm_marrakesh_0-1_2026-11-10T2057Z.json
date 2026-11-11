@@ -1,0 +1,56 @@
+{
+ "machine": "ibm_marrakesh",
+ "horodatage_utc": "2026-11-10T20:57:22Z",
+ "support": [
+  0,
+  1
+ ],
+ "qubits": {
+  "0": {
+   "T1_s": 0.00032406186183929036,
+   "T2_s": 4.067774879169454e-05,
+   "frequence_Hz": null,
+   "sx": 0.0005649546478691128,
+   "sx_duree_s": 3.6e-08,
+   "x": 0.0005649546478691128,
+   "x_duree_s": 3.6e-08,
+   "rz": 0.0,
+   "rz_duree_s": 0.0,
+   "id": 0.0005649546478691128,
+   "id_duree_s": 3.6e-08,
+   "measure": 0.01513671875,
+   "measure_duree_s": 2.684e-06
+  },
+  "1": {
+   "T1_s": 0.00017566743321049545,
+   "T2_s": 0.00015246427146818134,
+   "frequence_Hz": null,
+   "sx": 0.00033040826601042346,
+   "sx_duree_s": 3.6e-08,
+   "x": 0.00033040826601042346,
+   "x_duree_s": 3.6e-08,
+   "rz": 0.0,
+   "rz_duree_s": 0.0,
+   "id": 0.00033040826601042346,
+   "id_duree_s": 3.6e-08,
+   "measure": 0.0244140625,
+   "measure_duree_s": 2.684e-06
+  }
+ },
+ "aretes": {
+  "0-1": {
+   "porte": "cz",
+   "erreur": 0.0035079477364072797,
+   "duree_s": 6.8e-08
+  }
+ },
+ "attente_jobs": 1,
+ "empreinte_parc": "8dc4cb80b6c5cd92c6a7eebcf9d256d0782b1fa30a24abb4c02d91654d93baf4",
+ "medianes_machine": {
+  "erreur_1q.sx": 0.0004555290864608477,
+  "erreur_2q": 0.002482017214380877,
+  "erreur_lecture": 0.0166015625
+ },
+ "soumission": "aucune : lecture seule du target, 0 tirage, 0 coût",
+ "empreinte_support": "f0fec1699c8c645163964c0e082b7e007f5b4fd36c2b3df4565d1c1e5c03dfc9"
+}

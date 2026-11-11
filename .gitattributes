@@ -19,3 +19,11 @@ moteur/** text eol=lf
 # livré : sans la règle, un clone ou une `git archive` hors Windows déploie du LF
 # et le livrable ne tient plus le format annoncé.
 *.csv text eol=crlf
+
+# Les instantanés JSON lus par les modules d'équations sont hachés SHA-256 à chaque
+# exécution, contre une table `EMPREINTES.json` consignée au moment de la capture.
+# Un clone Windows avec `core.autocrlf=true` y traduirait les fins de ligne en CRLF :
+# l'octet lu n'est plus l'octet scellé, le contrôle rougit pour une raison qui n'est
+# pas dans les données. `eol=lf` verrouille les octets, comme pour `horloge_noyau/`.
+GOULETS/sources/*.json text eol=lf
+QPU_DISTANT/sources/*.json text eol=lf

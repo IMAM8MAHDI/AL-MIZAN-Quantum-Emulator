@@ -400,9 +400,9 @@
     "lignes_a_croix": 12,
     "que_dit_ce_dossier": "la continuité continuelle de cette couche est une propriété d'une chaîne déclarée sur un domaine fini ; aucune de ces croix n'est devenue une coche"
   },
-  "empreinte_execution": "e2b6f5b087aa1b09d7de0326eda616a7db3b7c04a6fa0fb63bcd13fe2d2cfe79",
+  "empreinte_execution": "72046fb552a6b1d87bcb9c064e7e9944756b5fb3e4b9f80f9316b25b0f8b7b83",
   "graphe": {
-    "controles_comptes": 199,
+    "controles_comptes": 219,
     "dossiers_comptes": [
       "ABONDANCE",
       "CHIFFRES",
@@ -410,12 +410,14 @@
       "CONTINUITE",
       "DECLARATION",
       "FONDATION",
+      "GOULETS",
       "GUERRE",
       "HORLOGERIE",
+      "QPU_DISTANT",
       "REDACTION",
       "VERROUS"
     ],
-    "equations_comptees": 199,
+    "equations_comptees": 219,
     "modules_absents": [],
     "modules_declares": [
       "electricite_abondance.py",
@@ -429,10 +431,12 @@
       "construction_base.py",
       "verrous_base.py",
       "declaration_base.py",
-      "guerre_base.py"
+      "guerre_base.py",
+      "qpu_distant_base.py",
+      "goulets_base.py"
     ],
     "racines_fondees_dehors": true,
-    "tests_comptes": 483,
+    "tests_comptes": 566,
     "tiers_par_dossier": {}
   },
   "limites": [
@@ -508,7 +512,7 @@
     },
     "valeur_decimal": "4.91393341224625665857651859365362978125244668337341199421100"
   },
-  "racine_merkle_sha256": "21710f215f6a8d289f6b2a1c75d37ad14318a4e6e9a3854b829daf75eb12fd40",
+  "racine_merkle_sha256": "2d946487dd45925ff267ecb6f0918552d18d8243482f5d65e800d4386cd77e72",
   "rejoue_identique": true,
   "rho": {
     "bornes": {

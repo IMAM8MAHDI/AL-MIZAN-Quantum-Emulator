@@ -1,0 +1,9 @@
+﻿borne;valeur;unite;source;cadre;rompee_si
+duree;900,0;secondes;déclaré;seuil attaché au verrou;une vidéo publiée dépasse 900 secondes
+duree_publiée_max;30,0;secondes;mesuré;fait;un instantané de chaîne plus récent rend un autre maximum
+capacite_unites;99;publications/jour;déclaré;barème publié;le fournisseur modifie son barème ou son allocation projet
+plafond_effectif;10;publications/jour;mesuré;fait;un jour publie davantage sans refus, ou le plafond est relevé
+cadence_tenue;1,352941;publications/jour;mesuré;moyenne d'emprise;la cadence observée change de valeur
+taux_emploi_effectif;0,135294;sans unité;mesuré;rapport;le numérateur ou le dénominateur bouge
+marge_disque;436;vidéos;mesuré;instantané d'hôte;l'espace libre descend sous un gabarit moyen
+stock_en_attente;78;fichiers;mesuré;instantané d'hôte;le dossier change de contenu
