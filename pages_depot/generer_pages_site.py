@@ -54,7 +54,7 @@ if not (DEPOT / "FONDATION" / "fondation_base.py").is_file():
 WEB = RACINE / "web_cloud"
 SITE = "https://www.al-mizan.world"
 DOI_CONCEPT = "https://doi.org/10.5281/zenodo.24028242"
-ARCHIVE_PUBLIEE = "10.5281/zenodo.24122287"
+ARCHIVE_PUBLIEE = "10.5281/zenodo.24123150"
 DEPOT_GITHUB = "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
 
 for _d in (str(DEPOT / "FONDATION"), str(DEPOT / "ABONDANCE"), str(RACINE / "pages_depot")):

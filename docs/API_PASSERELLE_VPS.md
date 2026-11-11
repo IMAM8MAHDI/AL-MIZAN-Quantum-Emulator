@@ -62,7 +62,7 @@ Les routes `/api/v1/comptes/*` et `/api/v1/admin/*` forment un espace distinct :
 | `/chiffres-pi/en` | — | `web_cloud/chiffres_pi_en.html` — same bounded claim (en) |
 | `/chiffres-pi/ar` | — | `web_cloud/chiffres_pi_ar.html` — الحدود ذاتها (ar, RTL) |
 | `/chiffres-pi.json` | `/chiffres-pi/resultats.json` | `web_cloud/chiffres_pi_resultats.json` — copie verbatim (vue LF) de `CHIFFRES/artefacts/donnees/chiffres.json` |
-| `/laboratoire` | `/horlogerie` | `web_cloud/laboratoire.html` — dossier HORLOGERIE du dépôt scellé rejoué pas à pas : 15 EQ / 20 contrôles, verdict `LABORATOIRE CONFORME` ; **aucune synchronisation physique** observée (fr) |
+| `/laboratoire` | `/horlogerie` | `web_cloud/laboratoire.html` — dossier HORLOGERIE du dépôt scellé rejoué pas à pas (15 EQ / 20 contrôles) et, en pièce jointe, le dossier QPU_DISTANT (10 EQ / 10 contrôles) : **25 EQ / 30 contrôles**, verdict `LABORATOIRE CONFORME` ; **aucune synchronisation physique** observée (fr) |
 | `/laboratoire/en` | — | `web_cloud/laboratoire_en.html` — same bounded claim, *no physical synchronisation* (en) |
 | `/laboratoire/ar` | — | `web_cloud/laboratoire_ar.html` — الحدود ذاتها، لا مزامنة فيزيائية (ar, RTL) |
 | `/laboratoire.json` | `/laboratoire/resultats.json` | `web_cloud/laboratoire_resultats.json` — copie verbatim (vue LF) de `HORLOGERIE/artefacts/laboratoire.json` (5 contrôles, `verdict`, `portee_repere`) |
@@ -71,6 +71,10 @@ Les routes `/api/v1/comptes/*` et `/api/v1/admin/*` forment un espace distinct :
 | `/laboratoire-trajectoire.csv` | — | `web_cloud/laboratoire_trajectoire.csv` — `text/csv`, CRLF et virgule décimale (format Excel français du dépôt), aucune conversion |
 | `/laboratoire-stabilite.csv` | — | `web_cloud/laboratoire_stabilite.csv` — idem : stabilité simulée et stabilité propre à l'hôte |
 | `/laboratoire-confrontation.csv` | — | `web_cloud/laboratoire_confrontation.csv` — idem : confrontation calcul ↔ mesure de l'hôte |
+| `/laboratoire-qpu-certificat.json` | `/laboratoire/qpu-certificat.json` | `web_cloud/laboratoire_qpu_certificat.json` — certificat de l'exécution distante relue (`job dbpkmr0ou4as73ctrm80` sur `ibm_marrakesh`, 256 tirs, 600 unités, `status: Completed`) : compteurs, parité, empreintes, `racine_merkle_sha256` et `portee_et_limites`. **Aucun qubit n'est lancé ici** : le module relit et re-borne une archive déjà émise (fr/en/ar sur la page) |
+| `/laboratoire-qpu-compteurs.csv` | — | `web_cloud/laboratoire_qpu_compteurs.csv` — `text/csv`, CRLF et virgule décimale : 00 → 126, 01 → 22, 11 → 108, Σ 256 (donc 10 → 0), avec le poids de paire de chaque mot |
+| `/laboratoire-qpu-frontieres.csv` | — | `web_cloud/laboratoire_qpu_frontieres.csv` — les deux bornes dérivées confrontées à la parité mesurée 0,9140625 : `mediane_machine` 0,9258965 **non reçue** (−0,676 σ) et `support_reel` 0,9114310 **reçue** (+0,150 σ) |
+| `/laboratoire-qpu-frontieres.svg` | — | `web_cloud/laboratoire_qpu_frontieres.svg` — `image/svg+xml`, même confrontation rendue en figure (la parité mesurée, les deux frontières, la zone de rejet) |
 | `/espace-disque` | `/espace_disque` | `web_cloud/espace_disque.html` — 13 EQ / 13 contrôles sur l'espace disque mesuré du poste de développement (fr) |
 | `/espace-disque/en` | — | `web_cloud/espace_disque_en.html` — same 13 equations, same limits (en) |
 | `/espace-disque/ar` | — | `web_cloud/espace_disque_ar.html` — المعادلات الثلاث عشرة والحدود ذاتها (ar, RTL) |

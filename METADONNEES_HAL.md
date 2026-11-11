@@ -49,18 +49,23 @@ https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator
 https://doi.org/10.5281/zenodo.24028242
 
 ## Version
-3.3.2 — dernière version effectivement publiée sur Zenodo
-(DOI 10.5281/zenodo.24122287, archive `AL-MIZAN_v332_c9b7fbd.zip`, contrôle du 2026-11-11 fait
-dans l'archive re-téléchargée : 250 membres = les 249 entrées scellées + `MANIFESTE_SHA256.txt`,
-233 re-hachages exacts, 16 CSV « Excel français » conformes après seule normalisation des fins de
-ligne, 0 divergent).
-Le contenu de l'arbre de travail est postérieur : il ajoute `QPU_DISTANT/` et `GOULETS/`, soit
+3.4.0 — dernière version effectivement publiée sur Zenodo
+(DOI 10.5281/zenodo.24123150, archive `AL-MIZAN_v340_3ec9560.zip`, 1 510 344 octets, SHA-256
+`dcdbbeb60dfb8bba4d5b57273f85b9961c2231b807dea69b62bb8c12085d5ed2`, MD5
+`5e9b258f89053c59c2d0afc07ac06ee3` ; contrôle du 2026-11-11 fait dans l'archive re-téléchargée :
+identique octet pour octet à l'archive déposée, 346 entrées dont 277 fichiers et 69 répertoires ;
+sur les 276 entrées scellées sur le HEAD `3ec9560`, 256 re-hachent exactement, les 20 CSV
+« Excel français » re-hachent après seule normalisation des fins de ligne, 0 diverge, et le seul
+fichier du ZIP hors sceau est `MANIFESTE_SHA256.txt`, qui s'exclut lui-même).
+Version précédente : 3.3.2 (DOI 10.5281/zenodo.24122287, archive `AL-MIZAN_v332_c9b7fbd.zip`,
+250 membres pour 249 entrées scellées, 233 re-hachages exacts, 16 CSV après seules fins de ligne,
+0 divergent). Le contenu de cette version 3.4.0 est `QPU_DISTANT/` et `GOULETS/`, soit
 219 équations, 219 contrôles, 14 modules CONFORME, 654 tests et un sceau de 276 entrées portant
-0 date. Le prochain numéro n'est pas encore publié et ne doit pas figurer dans un dépôt
-avant l'émission de l'enregistrement.
+0 date. Comme pour chaque version, le DOI de 3.4.0 ne figure pas dans l'archive qu'il publie :
+il est consigné dans les fiches après l'émission.
 
 ## Date de publication
-11 novembre 2026 (version 3.3.2 publiée)
+11 novembre 2026 (version 3.4.0 publiée)
 
 ## Fichiers à déposer
 1. **ZENODO_DEPOT_ALMIZAN.zip** (archive complète du dépôt)
@@ -88,7 +93,7 @@ Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2
   Zenodo 410 « Gone » (contrôlés le 2026-11-10). La relation est donc titrée,
   sans identifiant.
 - **Version publiée de AL-MIZAN :** DOI: 10.5281/zenodo.24028242 (DOI de concept,
-  résout vers la dernière version) et DOI: 10.5281/zenodo.24122287 (v3.3.2)
+  résout vers la dernière version) et DOI: 10.5281/zenodo.24123150 (v3.4.0)
 
 ## Notes de dépôt
 - Logiciel développé dans le cadre de l'initiative IMAM8MAHDI
