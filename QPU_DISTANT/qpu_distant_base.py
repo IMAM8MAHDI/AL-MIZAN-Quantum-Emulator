@@ -653,13 +653,19 @@ def octets_certificat(cert: Dict[str, Any]) -> bytes:
     return (json.dumps(cert, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8")
 
 
+def _cellule(v: Any) -> str:
+    # La virgule décimale ne s'applique qu'aux nombres : `calibration_ibm_marrakesh.json`
+    # est un nom de fichier, pas un flottant, et son point doit survivre à l'export.
+    return str(v).replace(".", ",") if isinstance(v, float) else str(v)
+
+
 def octets_compteurs(m: Dict[str, Any]) -> bytes:
     """Le format Excel français du dépôt : BOM, « ; », CRLF, virgule décimale."""
     lignes = [["mot", "occurrences", "poids_de_paire"]]
     for mot, n in m["compteurs"].items():
         lignes.append([mot, n, "pair" if mot.count("1") % 2 == 0 else "impair"])
     lignes.append(["Σ", sum(m["compteurs"].values()), "—"])
-    corps = "\r\n".join(";".join(str(v).replace(".", ",") for v in ligne) for ligne in lignes)
+    corps = "\r\n".join(";".join(_cellule(v) for v in ligne) for ligne in lignes)
     return b"\xef\xbb\xbf" + (corps + "\r\n").encode("utf-8")
 
 
@@ -672,7 +678,7 @@ def octets_frontieres(m: Dict[str, Any]) -> bytes:
         lignes.append([nom, e["source"], e["somme_eps"], e["borne_basse"],
                        m["parite"]["p_mesuree"], "vrai" if v["recue"] else "faux",
                        v["ecart_en_sigma"]])
-    corps = "\r\n".join(";".join(str(v).replace(".", ",") for v in ligne) for ligne in lignes)
+    corps = "\r\n".join(";".join(_cellule(v) for v in ligne) for ligne in lignes)
     return b"\xef\xbb\xbf" + (corps + "\r\n").encode("utf-8")
 
 
