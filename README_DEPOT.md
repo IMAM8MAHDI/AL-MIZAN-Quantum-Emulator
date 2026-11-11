@@ -103,9 +103,12 @@ ZENODO_DEPOT_ALMIZAN/
 │   │                      # par audit_piliers
 │   ├── espace_disque.py         # 13 équations · 13 contrôles, en-tête SPDX
 │   └── generer_page_espace_disque.py  # 3 pages trilingues + 1 JSON
+├── criteres_derivation_sans_intrant.py  # EQ-DSI-01..06, 40 959 999 formes recensées
 ├── docs/                  # table des routes réellement servies par la passerelle
-│   └── API_PASSERELLE_VPS.md
-├── tests/                 # 53 tests unittest — tous verts, 0 ignoré
+│   ├── API_PASSERELLE_VPS.md
+│   └── VEILLE_CHAIN_THEORY_DERIVATION_SANS_INTRANT.md  # verdict sur pièces
+│                            # nom sans date : C04 refuse toute date dans le sceau
+├── tests/                 # 78 tests unittest (53 emulateur + 25 critère DSI)
 ├── resultats/             # rapports JSON scellés SHA-256 + .gds
 ├── bibliotheques/         # 5 modules du moteur ASTRO-Q°ODE : clôture
 │   │                      # transitive exacte de ce que ce dépôt importe
@@ -219,6 +222,7 @@ py emulateur_mizan.py demo        # Bell, Grover, QEC, ZNE
 py emulateur_mizan.py arbre       # arbre des 10 branches
 py emulateur_mizan.py conjecture  # Point Carré PC-1..PC-6
 py -m unittest tests.test_emulateur                     # 53 tests
+py -m unittest tests.test_derivation_sans_intrant_mizan  # 25 tests (EQ-DSI)
 py -m unittest horloge_noyau.tests.test_horloge_noyau_complet   # 10 tests
 cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
     tests.test_eau_abondance tests.test_agriculture_abondance   # 107 tests
@@ -235,8 +239,9 @@ cd GUERRE && py -m unittest tests.test_guerre                        #  56 tests
 py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 12 modules CONFORME
 ```
 
-563 tests depuis la seule archive : `bibliotheques/` et `moteur/`
-sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
+588 tests (les douze suites ci-dessus, 563, plus les 25 du critère EQ-DSI) depuis la seule
+archive : `bibliotheques/` et `moteur/` sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin
+n'est requis.
 
 Mesure du 2026-11-10, les douze suites rejouées dans une copie du dépôt
 **sans `.git`** (celle que l'archive ZIP fournit) : 556 tests s'exécutent et

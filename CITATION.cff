@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Si vous utilisez, deployez ou citez ce logiciel, veuillez citer le DOI de concept 10.5281/zenodo.24028242 (il resout vers la derniere version deposee) et respecter la double licence GPL-3.0 / AGPL-3.0."
 title: "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems"
-version: "3.3.1"
-date-released: "2026-11-10"
+version: "3.3.2"
+date-released: "2026-11-11"
 doi: "10.5281/zenodo.24028242"
 url: "https://doi.org/10.5281/zenodo.24028242"
 repository-code: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
@@ -64,5 +64,11 @@ abstract: >-
   GDSII layout generation. It provides sealed SHA-256 mathematical certificates for bounded verifications:
   Point Square Conjecture (PC-1..PC-6 verified by exhaustion on the declared finite domain), Turing theorem on the Riemann strip <= 100
   (29 zeros certified via interval arithmetic), and BSD verification on named elliptic curves.
+  A numerical-agreement criterion (EQ-DSI-01..06) decides whether a closed form offered for a measured
+  constant is derived or merely coincidental: it reproduces (79 + 48*sqrt(2) + 42*sqrt(3) + 3*sqrt(6))/31104
+  to 1.42e-13, scores it at z = 0.5983879635182564 against CODATA 2022, and enumerates all 40,959,999
+  forms a + b*sqrt(2) + c*sqrt(3) + d*sqrt(6) with n <= 31104, where the examined form ranks 47th of 82 at
+  0.6 sigma and the best coincidence in the retained window is 108 times closer. The verdict is
+  bounded to the public text examined and carries no judgment of intent.
   Strict honesty constraints: every artifact carries its computational bound, no open millennium problem
   is claimed as solved. Developed by M. Ahmed EL BAHLOUL under the IMAM8MAHDI initiative.
