@@ -190,7 +190,10 @@ voisin n'est plus requis. 700 tests au total, tous verts et **0 ignoré dans
 un clone** — 88 hors dossiers d'équations, 612 dans les treize — ; dans l'archive
 ZIP seule, qui n'apporte pas de `.git`, 693 passent et 7 s'ignorent
 d'eux-mêmes (5 `VERROUS`, 2 `DECLARATION`), faute d'histoire git lisible :
-ce sont des relectures de commits, non des calculs. Mesure du 2026-11-14.
+ce sont des relectures de commits, non des calculs. Mesure du 2026-11-14, sur
+une copie extraite en LF (`git -c core.autocrlf=false archive`) : une copie que
+l'export rend en CRLF perd en plus un test de comparaison octet pour octet à
+HORLOGERIE, sans effet sur aucune équation.
 Et les 232 équations du parc (ABONDANCE 54,
 CHIFFRES 17, FONDATION 18, HORLOGERIE 15, CONTINUITE 15, REDACTION 16,
 CONSTRUCTION 16, VERROUS 16, DECLARATION 16, GUERRE 16, QPU_DISTANT 10,

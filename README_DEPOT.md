@@ -278,12 +278,22 @@ les 88 hors dossiers — `tests.test_emulateur` (53), la suite `horloge_noyau`
 `moteur/` sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
 
 Mesure du 2026-11-14, les seize suites ci-dessus rejouées dans une copie du dépôt
-**sans `.git`** (celle que l'archive ZIP fournit) : 693 tests s'exécutent et
-passent, 7 s'ignorent d'eux-mêmes faute de dépôt git lisible — 5 dans
-`VERROUS`, 2 dans `DECLARATION`, tous des relectures d'histoire de commits.
+**sans `.git`** extraite du HEAD `616744c` : 700 tests sont collectés, 7
+s'ignorent d'eux-mêmes faute de dépôt git lisible — 5 dans
+`VERROUS`, 2 dans `DECLARATION`, tous des relectures d'histoire de commits —
+et les **693 restants passent**.
 Dans un clone, les 700 passent et **aucun test ne s'ignore**. La mention
 « 0 ignoré » portée ici jusqu'à la v3.3.0 ne décrivait donc que le cas du
 clone, pas celui de l'archive.
+
+La façon d'extraire cette copie compte : `git -c core.autocrlf=false archive`
+rend les mêmes octets que le dépôt, alors qu'un `git archive` nu sur un hôte en
+`core.autocrlf=true` rend tout le dépôt en CRLF et fait échouer
+`HORLOGERIE/tests/test_horlogerie.py`, la méthode
+`test_fichier_present_conforme_et_octet_pour_octet_reproductible` — 692 passent,
+1 échoue, et le seul écart est la fin de ligne d'un certificat que le module
+écrit en LF. Le scellement, lui, hache des blobs LF : une archive qui diverge
+par ses fins de ligne n'est pas l'archive scellée.
 
 ### Reproduire le site public depuis l'archive
 
