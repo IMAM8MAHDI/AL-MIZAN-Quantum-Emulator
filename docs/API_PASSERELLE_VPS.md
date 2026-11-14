@@ -105,6 +105,10 @@ Les routes `/api/v1/comptes/*` et `/api/v1/admin/*` forment un espace distinct :
 | `/securite-bornee/en` | — | `web_cloud/securite_bornee_en.html` — same register, same equations, same numbers; the module's own statements stay in French and the page says so (en) |
 | `/securite-bornee/ar` | — | `web_cloud/securite_bornee_ar.html` — السجل نفسه والصيغ نفسها والأرقام نفسها؛ فرضيات معلنة لا قياس، وعبارات السجل بالفرنسية كما يُصدرها الوحدة (ar, RTL) |
 | `/securite-bornee.json` | `/securite-bornee/resultats.json` | `web_cloud/securite_bornee_resultats.json` — registre EQ-SB complet : `source`, `parametres_declares` 13, `garanties_declarees` 6, `marqueurs_absolus` 9, `mesure` (13 blocs de calculs exacts), `equations` 13, `controles` 13, `certificat` avec `racine_merkle_sha256` identique à celle du dépôt scellé, `limites` ; lecture seule, recalculé à chaque génération de page |
+| `/socle-313t` | `/socle-313t/`, `/socle_313t` | `web_cloud/socle_313t.html` — registre EQ-PS du socle de 313 × 10^12 poids adressables (`reseau_poids_sparse_mizan.py`) : 9 équations, 9 contrôles, 19 paramètres déclarés, banc de non-vacuité de 8 fixtures sur 9 (EQ-PS-02 n'en porte pas, la page le dit) ; source = constante `C` scellée et échelle demandée par l'auteur, **pas une vidéo** ; capacité déclarée, majorant d'adresses nommables et poids matérialisés mesurés sont trois nombres distincts, **aucune preuve, aucune machine sous tension** (fr) |
+| `/socle-313t/en` | — | `web_cloud/socle_313t_en.html` — same register, same equations, same three distinct numbers; declared capacity, upper bound of nameable addresses, measured materialised weights (en) |
+| `/socle-313t/ar` | — | `web_cloud/socle_313t_ar.html` — السجل نفسه والصيغ نفسها والأرقام نفسها؛ سعة معلنة وسقف للأسماء ووزن مُاد مُقاس، وعبارات السجل الفرنسية كما يُصدرها الوحدة (ar, RTL) |
+| `/socle-313t.json` | `/socle-313t/resultats.json` | `web_cloud/socle_313t_resultats.json` — rapport EQ-PS complet : `rapport` (`equations` 9 avec `forme`, `statut`, `valeur`, `chemin_controle`, `limite`, `compte` `{PASS: 9, FAIL: 0, INCONCLUSIF: 0}`, `racine` SHA-256 des neuf verdicts, `duree_observation_seconde`, `cadre` 23 champs dont `registre`, sans `cle_test` ni `echantillon`) et `mutations` (8 captées sur 8 testées) ; lecture seule, recalculé à chaque génération de page |
 
 Les fichiers HTML sont lus à chaque requête. Aucun cache applicatif. Les six pages de compte sont renvoyées avec `Cache-Control: no-cache` et `X-Content-Type-Options: nosniff`.
 
@@ -118,6 +122,25 @@ ici, parce que les pages correspondantes vivent du côté atelier et ne sont pas
 est rejouable sans réseau : lire les clés du dictionnaire, chercher chaque `` `/route` `` dans le
 présent fichier et compter les absences. Ce qui est affirmé : les routes listées ci-dessus sont servies.
 Ce qui ne l'est pas : que la liste soit exhaustive.
+
+**Second relevé, mesuré le 2026-11-14 à 10:37 UTC.** Quatre lignes de plus sont ajoutées ci-dessus —
+`/socle-313t`, `/socle-313t/en`, `/socle-313t/ar`, `/socle-313t.json` — et couvrent le troisième
+registre que ce dépôt embarque, le socle 313T (EQ-PS) : **douze lignes descriptives pour trois
+registres**, et le tableau du fichier passe de 100 à 104 lignes. Elles sont recopiées octet pour octet
+de la table de l'atelier ; le contrôle est fait par diff des quatre lignes, pas par relecture.
+Sous la recette énoncée au paragraphe précédent — chercher exactement `` `/route` `` dans le présent
+fichier pour chaque clé de `PAGES_PUBLIQUES` — le même fichier rendait, à l'instant de HEAD
+(`6c487af`, sans les quatre lignes) **91 absences en 53 familles** sur les 140 clés actuelles ; après
+ajout, **86 absences en 51 familles**, les cinq clés du socle (`/socle-313t`, son alias `/socle-313t/`,
+son alias `/socle_313t`, `/socle-313t/en`, `/socle-313t/ar`) passant d'absentes à couvertes par les
+deux premières colonnes de la ligne canonique, et deux familles disparaissant avec elles. Le relevé
+de 05:57:59 UTC (commit `618ae6a` : 135 clés, 86 absences, 51 familles) n'est donc pas contredit :
+les cinq clés gagnées par la passerelle depuis cette heure sont précisément celles du socle, et les
+recouvrir rend exactement les deux mêmes compteurs. La règle des familles, énoncée parce qu'elle ne se
+devine pas : une clé est ramenée à sa famille en retirant un suffixe `/en`, `/ar` ou `/fr`, puis un
+`/` final, puis un suffixe `.json` ; on compte ensuite les familles distinctes. Ce qui est affirmé :
+ces douze lignes descriptives sont servies en production. Ce qui ne l'est pas : que la table soit
+complète, ni que les 86 absences soient des routes cassées.
 
 ---
 

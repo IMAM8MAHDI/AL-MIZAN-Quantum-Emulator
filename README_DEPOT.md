@@ -158,7 +158,8 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── API_PASSERELLE_VPS.md
 │   └── VEILLE_CHAIN_THEORY_DERIVATION_SANS_INTRANT.md  # verdict sur pièces
 │                            # nom sans date : C04 refuse toute date dans le sceau
-├── tests/                 # 78 tests unittest (53 emulateur + 25 critère DSI)
+├── tests/                 # 109 tests unittest (53 emulateur + 25 critère DSI
+│                          # + 31 socle EQ-PS, copie adaptée de celle de l'atelier)
 ├── resultats/             # rapports JSON scellés SHA-256 + .gds
 ├── bibliotheques/         # 5 modules du moteur ASTRO-Q°ODE : clôture
 │   │                      # transitive exacte de ce que ce dépôt importe
@@ -278,6 +279,7 @@ py emulateur_mizan.py arbre       # arbre des 10 branches
 py emulateur_mizan.py conjecture  # Point Carré PC-1..PC-6
 py -m unittest tests.test_emulateur                     # 53 tests
 py -m unittest tests.test_derivation_sans_intrant_mizan  # 25 tests (EQ-DSI)
+py -m unittest tests.test_reseau_poids                   # 31 tests (EQ-PS, copie adaptée)
 py -m unittest horloge_noyau.tests.test_horloge_noyau_complet   # 10 tests
 cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
     tests.test_eau_abondance tests.test_agriculture_abondance   # 107 tests
@@ -301,6 +303,14 @@ py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 15 modules CO
 les 88 hors dossiers — `tests.test_emulateur` (53), la suite `horloge_noyau`
 (10) et le critère de dérivation sans intrant (25). `bibliotheques/` et
 `moteur/` sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
+
+Relevé du 2026-11-14, après l'ajout de `tests/test_reseau_poids.py` : les trois suites
+hors dossiers rendent 53 + 25 + **31** = **109** tests (`Ran 53 tests`, `Ran 25 tests`,
+`Ran 31 tests`, chacun `OK`, mesurés dans ce dépôt à cette heure). Le compte hors dossiers
+passe donc de 88 à 109, et le total de 700 à **731** — par composition seulement : les
+treize suites de dossiers (612) n'ont pas été rejouées à cette heure et leur nombre reste
+le relevé de leur heure. Ce qui est mesuré ici, c'est 109 ; 731 est une somme de deux
+nombres dont un seul vient d'être revérifié.
 
 Mesure du 2026-11-14, les seize suites ci-dessus rejouées dans une copie du dépôt
 **sans `.git`** extraite du HEAD `616744c` : 700 tests sont collectés, 7
@@ -410,6 +420,28 @@ pages elles-mêmes — le générateur écrirait dans un `web_cloud/` que ce dé
 sert pas, et le module se rejoue sans lui. Comme `espace_disque.py`, cette copie
 reste hors du registre d'audit, et les deux lignes qui l'écartent des octets de
 production sont nommées : pas une copie silencieusement muée.
+
+**Relevé du 2026-11-14, 10:37 UTC — le paragraphe ci-dessus n'est plus exact pour
+la suite de tests, et le reste pour le générateur et les pages.** La suite est
+désormais embarquée : `tests/test_reseau_poids.py`, copie adaptée de celle de
+l'atelier, qui en collecte 37 (`Ran 37 tests`, `OK`, mesuré dans l'atelier à la
+même heure) et rend **31 tests, `OK`** ici. Les six écartés sont les tests de
+publication : ils lisent `web_cloud/`, `oeuvre_universelle/generer_page_reseau_poids.py`
+et le dictionnaire `PAGES_PUBLIQUES` de la passerelle — trois fichiers que ce dépôt
+n'embarque pas. Ils ne sont pas supprimés pour faire passer une couleur : leurs
+assertions restent rejouées dans l'atelier, et le périmètre du fichier copie est
+écrit dans sa docstring, avec les deux imports retirés et les deux modules devenus
+sans usage (`json`, `re`). Le nombre de 84 tests consigné au paragraphe précédent
+reste le relevé de son heure (05:51 UTC) ; l'écart avec les 37 collectés
+aujourd'hui n'est pas expliqué ici et n'est pas corrigé rétroactivement.
+
+Le miroir de `docs/API_PASSERELLE_VPS.md` suit le même mouvement : quatre lignes
+de plus, recopiées octet pour octet de la table de l'atelier et contrôlées par diff,
+portent à douze les lignes descriptives des trois registres embarqués (EQ-SA, EQ-SB,
+EQ-PS). Sous la recette que cette note énonce elle-même — chercher exactement
+`` `/route` `` dans le fichier pour chaque clé de `PAGES_PUBLIQUES` — les compteurs
+passent de 91 absences / 53 familles à **86 absences / 51 familles** sur 140 clés,
+mesuré sur les deux états du fichier (`6c487af` puis copie de travail).
 
 Le registre d'équations du dépôt — 232 équations, 232 contrôles, 15 modules
 `CONFORME` — n'est pas touché par cet outillage : `pages_depot/`,
