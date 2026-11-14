@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Si vous utilisez, deployez ou citez ce logiciel, veuillez citer le DOI de concept 10.5281/zenodo.24028242 (il resout vers la derniere version deposee) et respecter la double licence GPL-3.0 / AGPL-3.0."
 title: "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems"
-version: "3.5.0"
+version: "3.6.0"
 date-released: "2026-11-14"
 doi: "10.5281/zenodo.24028242"
 url: "https://doi.org/10.5281/zenodo.24028242"
@@ -106,10 +106,25 @@ abstract: >-
   nor an accessible transcript. It rests on reseau_poids_sparse_mizan.py, a 313000000000000 = 313 * 10^12 addressable
   weight base (EQ-PS-01..09: a BLAKE2b-64 reduced quintuple, only written addresses occupy memory), on
   tokenizer_mizan.py (259 byte-level symbols), on module_tableau_maitre_mizan.py and on the shipped
-  TABLEAU_MAITRE_SEQUENTIEL_UNIFIE.csv (454 data rows, 41 strata, 362708 bytes at checkout). Measured in a clone
-  placed outside the author's workspace and re-checked from the ZIP extract: base 9 PASS, 0 FAIL, root
+  TABLEAU_MAITRE_SEQUENTIEL_UNIFIE.csv (454 data rows, 41 strata, 362708 bytes at checkout at v3.5.0). Measured
+  in a clone placed outside the author's workspace and re-checked from the ZIP extract: base 9 PASS, 0 FAIL, root
   32d241880c1fc396, exit code 0; EQ-SA 13/13 with and without the CSV on the identical chain digest
   6c39391df55d991b - the CSV weighs on the base, not on the judgment. The registry holds 15 modules, 232 equations
   and 232 controls, and the manifest 285 entries carrying no date.
+  v3.6.0 changes no registry module. It refreshes the shipped master table: the EQ-SB strate S41 takes the file from
+  454 to 470 data rows and from 41 to 42 strata, i.e. 389164 bytes and SHA-256 d3ad50d52d9cb081... at checkout,
+  388693 and 293b8f7cf17b43e7... in the blob (OID 5c90894e5cc04e17), the gap being the 471 line endings that
+  eol=crlf restores; the same CSV leaves the base root unchanged at 32d241880c1fc396. It adds to
+  docs/API_PASSERELLE_VPS.md the eight route rows of the two registers this deposit ships (EQ-SA and EQ-SB), copied
+  verbatim from the workshop table, together with a dated statement of its own incompleteness: of the 135 keys of
+  the production gateway dictionary PAGES_PUBLIQUES, 86 - 51 families - still have no row here, because those pages
+  live on the workshop side and are not shipped; the check is replayable offline (read the keys, search each /route
+  in the file, count the absences), and what is claimed is that the listed routes are served, not that the list is
+  exhaustive. It also records the recipe behind the EQ-SA chain digest, until then left out, which is why a replay
+  could return another value: SHA-256 over UTF-8 of the 13 'EQ-nn|result' records followed by the 13
+  'Cnn|expected|obtained|ok' records, each record separated from the next by a single newline, first 16 hexadecimal
+  digits; the variant without the separator gives bd397aa7a35bb616. Replayed on 2026-11-14 inside this deposit:
+  base 9 PASS, 0 FAIL, root 32d241880c1fc396, exit code 0; EQ-SA 13/13 on digest 6c39391df55d991b;
+  FONDATION/OUTILS/audit_piliers.py --tous on 15 modules, 232 equations, 232 controls, exit code 0.
   Strict honesty constraints: every artifact carries its computational bound, no open millennium problem
   is claimed as solved. Developed by M. Ahmed EL BAHLOUL under the IMAM8MAHDI initiative.
