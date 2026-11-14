@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Si vous utilisez, deployez ou citez ce logiciel, veuillez citer le DOI de concept 10.5281/zenodo.24028242 (il resout vers la derniere version deposee) et respecter la double licence GPL-3.0 / AGPL-3.0."
 title: "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems"
-version: "3.4.0"
-date-released: "2026-11-11"
+version: "3.5.0"
+date-released: "2026-11-14"
 doi: "10.5281/zenodo.24028242"
 url: "https://doi.org/10.5281/zenodo.24028242"
 repository-code: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
@@ -89,5 +89,24 @@ abstract: >-
   ceiling actually observed (ratio 9.9), a measured cadence of 1.3529 per day, 78 files and 1432.543 s in
   stock, 35434115072 free bytes out of 252841029632 (14.01 percent). Four dated, falsifiable bounds - no
   ceiling is claimed to have been lifted.
+  SURETE bounds software security instead of promising it: 13 equations and 13 controls. Rice's theorem is
+  stated then bounded by the exact enumeration of the 131071 = 2^17 - 1 nonzero words of K = 16; Poisson with a
+  common cause is reached by three independent routes (p = 1/5, beta = 1/10 giving s = 1/50 and a = 9/49); the
+  patch window is 360-720 h when it is known and 0 h when it is not, so an undisclosed window is only ever
+  understated; availability is A = 4380/4381 = 0.999772 at MTBF 8760 h and MTTR 2 h. An obsolescence criterion is
+  then applied to six written guarantee statements, with no company and no person named: three fall outside it and
+  three hold; the same criterion is turned against this module (C13). 7 OPERATIONAL, 4 SIMULATED, 2 SPECIFIED - no
+  proof and no measurement of any real product.
+  The same obsolescence criterion also runs as an out-of-registry chain, shipped so that a bare clone replays it:
+  solutions_posees_acteurs.py (EQ-SA, 13 equations, 13 controls, 6 OPERATIONAL, 6 SIMULATED, 1 SPECIFIED) judges a
+  guarantee statement, never a firm, and records that the video which supplied the theme has neither public chapters
+  nor an accessible transcript. It rests on reseau_poids_sparse_mizan.py, a 313000000000000 = 313 * 10^12 addressable
+  weight base (EQ-PS-01..09: a BLAKE2b-64 reduced quintuple, only written addresses occupy memory), on
+  tokenizer_mizan.py (259 byte-level symbols), on module_tableau_maitre_mizan.py and on the shipped
+  TABLEAU_MAITRE_SEQUENTIEL_UNIFIE.csv (454 data rows, 41 strata, 362708 bytes at checkout). Measured in a clone
+  placed outside the author's workspace and re-checked from the ZIP extract: base 9 PASS, 0 FAIL, root
+  32d241880c1fc396, exit code 0; EQ-SA 13/13 with and without the CSV on the identical chain digest
+  6c39391df55d991b - the CSV weighs on the base, not on the judgment. The registry holds 15 modules, 232 equations
+  and 232 controls, and the manifest 285 entries carrying no date.
   Strict honesty constraints: every artifact carries its computational bound, no open millennium problem
   is claimed as solved. Developed by M. Ahmed EL BAHLOUL under the IMAM8MAHDI initiative.
