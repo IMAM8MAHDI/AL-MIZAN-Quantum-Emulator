@@ -46,6 +46,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.24123150"
     description: "DOI de la version 3.4.0 (2026-11-11), dossiers QPU_DISTANT et GOULETS"
+  - type: doi
+    value: "10.5281/zenodo.24211440"
+    description: "DOI de la version 3.5.0 (2026-11-14), dossier SURETE et chaine EQ-SA executable"
   - type: url
     value: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
     description: "Depot GitHub officiel"
