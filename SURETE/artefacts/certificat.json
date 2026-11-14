@@ -1,0 +1,40 @@
+{
+ "controles": 13,
+ "controles_verts": 13,
+ "equations": 13,
+ "module": "SURETE/surete_bornee_base.py",
+ "parametres_declares": [
+  "annee_s",
+  "beta_cause_commune",
+  "bornes_fenetre_connue_h",
+  "chaine_correctif_jours",
+  "correctifs_par_an",
+  "densite_defauts_par_ligne",
+  "fraction_exploitable",
+  "heures_par_an",
+  "mtbf_h",
+  "mttr_h",
+  "p_couche",
+  "plancher_etats_par_s",
+  "profondeur_enumeree",
+  "socle_facteur",
+  "socle_poids",
+  "socle_puissance",
+  "tcb_lignes",
+  "tolerance_relative",
+  "troncons_poisson"
+ ],
+ "racine_merkle_sha256": "c41de72882b7568101def098bdb1c67b59015db85098a6027204d2eb208198f0",
+ "source": {
+  "chapitres_publics": 0,
+  "duree_s": 1366,
+  "transcript": "absent (timedtext : 0 octet en json3, srv3 et xml)",
+  "video_id": "AcoshabaQyg"
+ },
+ "statuts_par_label": {
+  "OPÉRATIONNEL": 7,
+  "SIMULÉ": 4,
+  "SPÉCIFIÉ": 2
+ },
+ "version": "1.0.0"
+}

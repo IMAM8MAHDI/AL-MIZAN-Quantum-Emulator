@@ -455,7 +455,8 @@ class TestTransmission(unittest.TestCase):
         # fichier, une dérive d'un dossier fait donc rougir ici avant de roussir un README.
         attendues = {"ABONDANCE": 54, "CHIFFRES": 17, "FONDATION": 18, "HORLOGERIE": 15,
                      "CONTINUITE": 15, "REDACTION": 16, "CONSTRUCTION": 16, "VERROUS": 16,
-                     "DECLARATION": 16, "GUERRE": 16, "QPU_DISTANT": 10, "GOULETS": 10}
+                     "DECLARATION": 16, "GUERRE": 16, "QPU_DISTANT": 10, "GOULETS": 10,
+                     "SURETE": 13}
         for d, v in inv.items():
             self.assertTrue(v["present"], d)
             self.assertEqual(v["equations"], v["controles"], d)
@@ -463,7 +464,7 @@ class TestTransmission(unittest.TestCase):
             self.assertGreater(len(v["modules"]), 0, d)
             self.assertTrue(set(v["modules"]) <= set(FB.MODULES_PRINCIPAUX), d)
             self.assertEqual(v["equations"], attendues[d], d)
-        # les quatorze noms déclarés sont tous comptés quelque part, et une seule fois
+        # les quinze noms déclarés sont tous comptés quelque part, et une seule fois
         comptes = [m for v in inv.values() for m in v["modules"]]
         self.assertEqual(sorted(comptes), sorted(FB.MODULES_PRINCIPAUX))
         self.assertEqual(len(comptes), len(set(comptes)), "un module compté deux fois")
