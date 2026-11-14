@@ -263,7 +263,8 @@
       "24091259",
       "24105422",
       "24114682",
-      "24122287"
+      "24122287",
+      "24123150"
     ],
     "ce_qu_un_doi_ne_prouve_pas": "que le contenu est de vous avant cette date",
     "ce_qu_un_doi_prouve": "qu'un contenu désigné est accessible publiquement sous cet identifiant, à la date serveurs",
@@ -271,8 +272,8 @@
     "createurs": [
       "EL BAHLOUL, M. Ahmed"
     ],
-    "date_publication_lue": "2026-11-11",
-    "date_release_cff": "2026-11-11",
+    "date_publication_lue": "2026-11-14",
+    "date_release_cff": "2026-11-14",
     "doi_cff": [
       "10.5281/zenodo.24028242"
     ],
@@ -297,7 +298,7 @@
       "24122287": 5,
       "24123150": 7
     },
-    "nb_ancetres_cites": 8,
+    "nb_ancetres_cites": 9,
     "paires_recid_version": {
       "24032527": "2.0.0",
       "24062292": "3.1.0",
@@ -309,9 +310,7 @@
       "24122287": "3.3.2",
       "24123150": "3.4.0"
     },
-    "recid_de_la_version_lue": [
-      "24123150"
-    ],
+    "recid_de_la_version_lue": [],
     "recid_le_plus_cite": "24028242",
     "recids": [
       "23288947",
@@ -342,8 +341,8 @@
     "resolutions_testées_en_ligne": false,
     "titre_lu": "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems",
     "total_mentions_doi": 341,
-    "version_cff": "3.4.0",
-    "version_lue": "3.4.0",
+    "version_cff": "3.5.0",
+    "version_lue": "3.5.0",
     "versions_zenodo_et_cff_concordantes": true
   },
   "chronologie": {
@@ -396,7 +395,7 @@
     ],
     "antecedents_cites": 4,
     "antecedents_total": 4,
-    "date_derniere": "2026-11-14T02:55:05+01:00",
+    "date_derniere": "2026-11-14T03:27:48+01:00",
     "date_racine": "2026-11-07T06:05:23+01:00",
     "dossier_externel_nomme": "DOSSIER_JUSTICE_EL_BAHLOUL/PREUVES",
     "dossiers_attendus": 13,
@@ -443,9 +442,9 @@
     "absence_partout": true,
     "auto_reference": "certificat.json porte ce nœud : sa taille et son empreinte ne peuvent pas être scellées par lui-même",
     "empreintes": {
-      "chaine_anteriorite.csv": "8be8fe784253b5f0",
-      "declaration_et_ablations.md": "0c047f7a9f9a24cb",
-      "frontiere_anteriorite.svg": "e2db9f798f3c7615"
+      "chaine_anteriorite.csv": "56525782cfd33374",
+      "declaration_et_ablations.md": "322f9b4a5bba46aa",
+      "frontiere_anteriorite.svg": "4a47f6b243c191e2"
     },
     "nom_sans_empreinte": "certificat.json",
     "nom_sans_phrase": "chaine_anteriorite.csv",
@@ -526,7 +525,7 @@
     },
     "statut_du_claim": "déclaré · non vérifié"
   },
-  "empreinte_execution": "95156f908d57877c4c1cd0bda453d51d39651cf61a2255ba1fd9c76059f5648b",
+  "empreinte_execution": "8623fd2946f3b979bda647dccfccb9e698b1ee67a3fe1664f008e74c65323948",
   "fractales": {
     "auteur_de_la_premiere_trace": "devin@cognition.ai",
     "auteurs_par_fichier": {
@@ -608,24 +607,24 @@
     "auteurs_additifs": true,
     "auteurs_journal": {
       "devin@cognition.ai": 18,
-      "elbahloulahmed505@gmail.com": 121
+      "elbahloulahmed505@gmail.com": 124
     },
-    "commits_atteignables": 132,
+    "commits_atteignables": 135,
     "commits_automate": 18,
-    "commits_humains": 114,
-    "commits_sans_signature": 131,
+    "commits_humains": 117,
+    "commits_sans_signature": 134,
     "date_auteur_antérieure_à_la_racine": true,
     "date_auteur_plus_ancienne": "2026-11-07T05:44:16+01:00",
     "date_auteur_racine": "2026-11-07T06:05:23+01:00",
     "date_committer_racine": "2026-11-07T06:05:23+01:00",
     "date_debut": "2026-11-07T06:05:23+01:00",
-    "date_fin": "2026-11-14T02:55:05+01:00",
+    "date_fin": "2026-11-14T03:27:48+01:00",
     "dates_publiees_par": "git log HEAD — l'histoire qui voyage avec le dépôt",
-    "derniere": "2026-11-14T02:55:05+01:00",
-    "duree_attestee_seconde": 594649,
+    "derniere": "2026-11-14T03:27:48+01:00",
+    "duree_attestee_seconde": 596612,
     "git_disponible": true,
-    "journal_lignes": 139,
-    "journal_parsees": 139,
+    "journal_lignes": 142,
+    "journal_parsees": 142,
     "journal_plus_que_commits": 7,
     "journal_present": true,
     "journal_tout_parse": true,
@@ -637,7 +636,7 @@
       "e82bdccd3f9a57f72fd641f208d27daa3cb00262|2026-11-07T06:05:23+01:00"
     ],
     "remote": "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator.git",
-    "sha_tete": "9f2c41d1a45067573aa446fdb2f06e636769937f",
+    "sha_tete": "57531a70117607701facea98eee392d550bc5d99",
     "signatures_detail": [
       {
         "bloc_de_signature": "E",
@@ -649,12 +648,12 @@
     "signatures_non_verifiees": 1,
     "signatures_portees": 1,
     "signatures_verifiees": 0,
-    "somme_auteurs_journal": 139,
+    "somme_auteurs_journal": 142,
     "tete_coherente": true,
     "tete_coincide_avec_l_histoire": true,
     "tete_longueur": 40,
     "utf8_integrale": true,
-    "utf8_stricte": 139
+    "utf8_stricte": 142
   },
   "instruments_horodatage": {
     "classifieur_non_vacue": true,
@@ -773,9 +772,9 @@
   },
   "limites": [
     "aucun instrument d'horodatage qualifié (RFC 3161, TSA, eIDAS, cachet) n'est dans l'archive : 0 fichier — ce dossier ne peut pas en produire un",
-    "1 commit sur 132 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
+    "1 commit sur 135 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
     "le sceau ne porte aucune date : 0 date dans 285 entrées — dater un contenu demande un tiers de confiance, pas un hash",
-    "les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 132 commit(s) dans l'histoire git et 139 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas",
+    "les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 135 commit(s) dans l'histoire git et 142 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas",
     "aucune trace d'éducation des IA dans l'archive : 0 instrument (poids fins, dataset, journal, config) — la demande reste déclarée",
     "le dossier de preuves externe est cité 0 fois dans l'archive et n'y est pas scellé : sa valeur probante ne se transmet pas avec le ZIP",
     "4/4 antécédents vidéo sont nommés dans l'archive ; aucun n'y porte de date mesurable",
@@ -790,9 +789,9 @@
     "aucune_limite_remplie_en_execuant_le_module": true,
     "liste": [
       "aucun instrument d'horodatage qualifié (RFC 3161, TSA, eIDAS, cachet) n'est dans l'archive : 0 fichier — ce dossier ne peut pas en produire un",
-      "1 commit sur 132 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
+      "1 commit sur 135 porte un bloc gpgsig (clé B5690EEEBB952194) et 0 est vérifiée : faute de clé publique au trousseau, aucun commit ne rend ce dépôt probant par signature",
       "le sceau ne porte aucune date : 0 date dans 285 entrées — dater un contenu demande un tiers de confiance, pas un hash",
-      "les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 132 commit(s) dans l'histoire git et 139 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas",
+      "les dates ne voyagent pas avec l'archive : lue d'ici, cette couche compte 135 commit(s) dans l'histoire git et 142 ligne(s) au journal local ; extraite par « git archive » hors de tout dépôt, elle n'en compte aucun et doit le dire — EQ-01 nomme la source, C01, C02, C03 et C09 exigent le zéro honnête dans ce second cas",
       "aucune trace d'éducation des IA dans l'archive : 0 instrument (poids fins, dataset, journal, config) — la demande reste déclarée",
       "le dossier de preuves externe est cité 0 fois dans l'archive et n'y est pas scellé : sa valeur probante ne se transmet pas avec le ZIP",
       "4/4 antécédents vidéo sont nommés dans l'archive ; aucun n'y porte de date mesurable",
@@ -865,7 +864,7 @@
     "octets": 3875,
     "plus_grande_valeur": 285,
     "valeurs_attendues": [
-      132,
+      135,
       18,
       285,
       0,
@@ -879,7 +878,7 @@
       15
     ],
     "valeurs_ecrites": [
-      132,
+      135,
       18,
       285,
       0,
@@ -893,7 +892,7 @@
       15
     ]
   },
-  "racine_merkle_sha256": "cc6d53b16f15f8d912396ce4dbce8507ca8ae67d231f5ff0619a53ba324cb5f7",
+  "racine_merkle_sha256": "6e049d68f3d295f3e1cf2cc0a42f4c646e6dff51e8cab6f1fabccade7c3402b8",
   "rejoue_identique": true,
   "repartition_humain_machine": {
     "additif_commits": true,
@@ -903,8 +902,8 @@
     "automate_seul_sur_disque": 65,
     "ce_que_compte_ce_noeud": "qui a signé le commit, pas qui a pensé la décision",
     "commits_automate": 18,
-    "commits_humains": 114,
-    "commits_total": 132,
+    "commits_humains": 117,
+    "commits_total": 135,
     "exemples_automate_seul": [
       "DOSSIER_DEVIS/steane_tile_almizan.gds",
       "DOSSIER_DEVIS/steane_tile_manifeste.json",
@@ -925,8 +924,8 @@
       "devin@cognition.ai": 86,
       "elbahloulahmed505@gmail.com": 230
     },
-    "part_automate_pct": "13.64",
-    "part_humaine_pct": "86.36",
+    "part_automate_pct": "13.33",
+    "part_humaine_pct": "86.67",
     "preuve_de_paternite": false
   },
   "sceau_contenu": {
@@ -1250,9 +1249,9 @@
     ],
     "tests": 612
   },
-  "taille_octets": 30505,
+  "taille_octets": 30507,
   "verdict": {
-    "commits_atteignables": 132,
+    "commits_atteignables": 135,
     "dates_dans_le_sceau": 0,
     "enonce": "antériorité accessible, paternité non instrumentée",
     "equations_hors_sceau": 0,

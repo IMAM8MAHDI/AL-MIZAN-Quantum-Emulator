@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="428" viewBox="0 0 520 428">
 <title>DECLARATION — ce que chaque instrument date et ce qu'il ne date pas</title>
 <desc>Longueurs proportionnelles a la plus grande valeur (285). antériorité accessible, paternité non instrumentée.</desc>
-<rect x="250" y="22" width="111.16" height="16" fill="#2f6f8f" data-libelle="commits atteignables" data-valeur="132"/>
+<rect x="250" y="22" width="113.68" height="16" fill="#2f6f8f" data-libelle="commits atteignables" data-valeur="135"/>
 <text x="8" y="34" font-size="13" fill="#0f1c2b" xml:lang="fr">commits atteignables</text>
-<text x="367.16" y="34" font-size="13" fill="#1c3550">132</text>
+<text x="369.68" y="34" font-size="13" fill="#1c3550">135</text>
 <rect x="250" y="52" width="15.16" height="16" fill="#8f5a2f" data-libelle="commits d'automate" data-valeur="18"/>
 <text x="8" y="64" font-size="13" fill="#0f1c2b" xml:lang="fr">commits d'automate</text>
 <text x="271.16" y="64" font-size="13" fill="#1c3550">18</text>
