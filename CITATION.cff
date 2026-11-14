@@ -49,6 +49,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.24211440"
     description: "DOI de la version 3.5.0 (2026-11-14), dossier SURETE et chaine EQ-SA executable"
+  - type: doi
+    value: "10.5281/zenodo.24213946"
+    description: "DOI de la version 3.6.0 (2026-11-14), tableau maitre embarque a la strate S41 et miroir des routes des deux registres"
   - type: url
     value: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
     description: "Depot GitHub officiel"
