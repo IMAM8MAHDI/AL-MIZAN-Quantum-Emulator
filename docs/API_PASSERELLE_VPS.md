@@ -97,10 +97,27 @@ Les routes `/api/v1/comptes/*` et `/api/v1/admin/*` forment un espace distinct :
 | `/cgu` | — | `web_cloud/cgu.html` |
 | `/confidentialite` | — | `web_cloud/confidentialite.html` |
 | `/unifie` | `/panneau` | Page HTML générée en mémoire (tableau de bord des 4 démarches) |
+| `/solutions-acteurs` | `/solutions-acteurs/`, `/solutions_posees_acteurs` | `web_cloud/solutions_posees_acteurs.html` — registre EQ-SA issu d'une vidéo de 109 min sans transcript : 13 équations, 13 contrôles, 12 paramètres déclarés, 13 chapitres horodatés ; **hypothèses de modèle, aucune mesure, aucune citation, aucune personne désignée** (fr) |
+| `/solutions-acteurs/en` | — | `web_cloud/solutions_posees_acteurs_en.html` — same register, same equations, same numbers, declared assumptions only (en) |
+| `/solutions-acteurs/ar` | — | `web_cloud/solutions_posees_acteurs_ar.html` — السجل نفسه والصيغ نفسها والأرقام نفسها؛ فرضيات معلنة لا قياس (ar, RTL) |
+| `/solutions-acteurs.json` | `/solutions-acteurs/resultats.json` | `web_cloud/solutions_posees_acteurs_resultats.json` — registre EQ-SA complet : `source` (transcript absent, mesuré 0 octet sur json3/srv3/xml), `chapitres` 13, `parametres_declares` 12, `equations` 13, `controles` 13, `limites`, `resume` ; lecture seule, recalculé à chaque génération de page |
+| `/securite-bornee` | `/securite-bornee/`, `/securite_bornee` | `web_cloud/securite_bornee.html` — registre EQ-SB issu d'une vidéo de 22 min 46 s sans transcript (0 chapitre public, transcript mesuré absent) : 13 équations, 13 contrôles, 13 paramètres déclarés, 6 garanties énoncées jugées comme énoncés ; **borne ce qu'une garantie peut porter, ne juge ni entreprise ni personne, aucune mesure de produit réel** (fr) |
+| `/securite-bornee/en` | — | `web_cloud/securite_bornee_en.html` — same register, same equations, same numbers; the module's own statements stay in French and the page says so (en) |
+| `/securite-bornee/ar` | — | `web_cloud/securite_bornee_ar.html` — السجل نفسه والصيغ نفسها والأرقام نفسها؛ فرضيات معلنة لا قياس، وعبارات السجل بالفرنسية كما يُصدرها الوحدة (ar, RTL) |
+| `/securite-bornee.json` | `/securite-bornee/resultats.json` | `web_cloud/securite_bornee_resultats.json` — registre EQ-SB complet : `source`, `parametres_declares` 13, `garanties_declarees` 6, `marqueurs_absolus` 9, `mesure` (13 blocs de calculs exacts), `equations` 13, `controles` 13, `certificat` avec `racine_merkle_sha256` identique à celle du dépôt scellé, `limites` ; lecture seule, recalculé à chaque génération de page |
 
 Les fichiers HTML sont lus à chaque requête. Aucun cache applicatif. Les six pages de compte sont renvoyées avec `Cache-Control: no-cache` et `X-Content-Type-Options: nosniff`.
 
 Une route GET non reconnue qui ne commence pas par `/api/` renvoie `web_cloud/page_404.html` avec le code `404` ; une route API inconnue renvoie un JSON `{"succes": false, "erreur": "Route GET introuvable"}` en `404`.
+
+**Miroir partiel, mesuré le 2026-11-14.** Les huit lignes ajoutées ici couvrent les deux registres
+que ce dépôt embarque (EQ-SA et EQ-SB) ; elles sont recopiées verbatim de la table de l'atelier.
+Cette copie n'est **pas** la table complète : comparée au dictionnaire `PAGES_PUBLIQUES` de la
+passerelle de production (135 clés de route), 86 d'entre elles — 51 familles — n'ont pas de ligne
+ici, parce que les pages correspondantes vivent du côté atelier et ne sont pas embarquées. Le contrôle
+est rejouable sans réseau : lire les clés du dictionnaire, chercher chaque `` `/route` `` dans le
+présent fichier et compter les absences. Ce qui est affirmé : les routes listées ci-dessus sont servies.
+Ce qui ne l'est pas : que la liste soit exhaustive.
 
 ---
 
