@@ -1,14 +1,14 @@
 ﻿evenement;source;date_mesuree;type_de_date;ce_que_cela_prouve;ce_que_cela_ne_prouve_pas
 racine du depot git;.git + git rev-list --max-parents=0;2026-11-07T06:05:23+01:00;declaree par l'horloge cliente;le depot commence ici;rien de ce qui precede
-dernier commit atteignable;git log;2026-11-14T01:35:44+01:00;declaree par l'horloge cliente;le depot etait a cet etat;la date de publication
-plage du journal de références;.git/logs/HEAD;2026-11-07T06:05:23+01:00 -> 2026-11-14T01:35:44+01:00;encaissee par git;133 operations locales datees;une paternite
-sceau SHA-256 du depot;MANIFESTE_SHA256.txt;aucune date dans le fichier;empreinte de contenu;280 entrees, 0 date;une date, ni une paternite
+dernier commit atteignable;git log;2026-11-14T02:55:05+01:00;declaree par l'horloge cliente;le depot etait a cet etat;la date de publication
+plage du journal de références;.git/logs/HEAD;2026-11-07T06:05:23+01:00 -> 2026-11-14T02:55:05+01:00;encaissee par git;139 operations locales datees;une paternite
+sceau SHA-256 du depot;MANIFESTE_SHA256.txt;aucune date dans le fichier;empreinte de contenu;285 entrees, 0 date;une date, ni une paternite
 tete git liee au sceau;MANIFESTE_SHA256.txt;non liee;absence mesuree;0 identifiant de commit dans le sceau;le lien entre version publiee et octets scelles
 enregistrement Zenodo lu;.zenodo.json;2026-11-11;declare par l'auteur dans le depot;version 3.4.0, licence agpl-3.0-only;la date serveurs de Zenodo, qui se verifie en ligne
 citation lue;CITATION.cff;2026-11-11;declare par l'auteur;15 identifiants Zenodo distincts cites;que chaque identifiant resout
-dernier commit de l'archive;.git/HEAD;bf50a4a5154bc64107a8f4afd78875d051e1d243;encaisse par git;126 commits dont 18 d'automate;qui a decide
-instruments d'horodatage qualifie;archive complete;aucun;denombrement de fichiers;0 fichier d'instrument, 31 mentions textuelles;une valeur probante
-trace fractale la plus ancienne de l'archive;COMMUNIQUE_PRESSE.md, CONTINUITE/continuite_base.py, bibliot;2026-11-07T05:44:16+01:00;date du commit d'ajout;11 occurrences dans 4 fichiers;que les fractales soient le point de depart de l'auteur
+dernier commit de l'archive;.git/HEAD;9f2c41d1a45067573aa446fdb2f06e636769937f;encaisse par git;132 commits dont 18 d'automate;qui a decide
+instruments d'horodatage qualifie;archive complete;aucun;denombrement de fichiers;0 fichier d'instrument, 33 mentions textuelles;une valeur probante
+trace fractale la plus ancienne de l'archive;COMMUNIQUE_PRESSE.md, CONTINUITE/continuite_base.py, TABLEAU;2026-11-07T05:44:16+01:00;date du commit d'ajout;53 occurrences dans 5 fichiers;que les fractales soient le point de depart de l'auteur
 claim d'education des IA;archive complete;aucune date;denombrement d'instruments;0 mention du verbe, 0 instrument d'entrainement;le claim lui-meme
 dossier ABONDANCE;git log --diff-filter=A;2026-11-08T22:19:56+01:00;date du commit d'ajout;le dossier est entre dans l'archive a cette date;la date de la premiere idee qu'il contient
 dossier CHIFFRES;git log --diff-filter=A;2026-11-09T04:13:21+01:00;date du commit d'ajout;le dossier est entre dans l'archive a cette date;la date de la premiere idee qu'il contient
@@ -25,6 +25,7 @@ dossier SURETE;git log --diff-filter=A;2026-11-14T01:35:44+01:00;date du commit 
 dossier VERROUS;git log --diff-filter=A;2026-11-10T04:16:11+01:00;date du commit d'ajout;le dossier est entre dans l'archive a cette date;la date de la premiere idee qu'il contient
 fichier nommant fractal : COMMUNIQUE_PRESSE.md;fractales();2026-11-08T15:17:11+01:00;date du commit d'ajout;1 occurrences;l'anteriorite du fractalisme
 fichier nommant fractal : CONTINUITE/continuite_base.py;fractales();2026-11-10T04:16:11+01:00;date du commit d'ajout;1 occurrences;l'anteriorite du fractalisme
+fichier nommant fractal : TABLEAU_MAITRE_SEQUENTIEL_UNIFIE.csv;fractales();2026-11-14T02:52:54+01:00;date du commit d'ajout;42 occurrences;l'anteriorite du fractalisme
 fichier nommant fractal : bibliotheques/lib_almizan_extension.py;fractales();2026-11-09T04:13:21+01:00;date du commit d'ajout;8 occurrences;l'anteriorite du fractalisme
 fichier nommant fractal : horloge_noyau/architecture_informe_couche_matiere_table_mizan.py;fractales();2026-11-07T05:44:16+01:00;date du commit d'ajout;1 occurrences;l'anteriorite du fractalisme
 antecedent video M90ZAVojI30;SOURCE + corpus du depot;aucune date mesurable dans l'archive;mention textuelle;33 mention(s) dans l'archive;la date de publication de la video

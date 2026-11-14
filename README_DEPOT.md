@@ -84,7 +84,7 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── artefacts/               # certificat.json + registre d'accès + clauses MD + plan SVG
 │   └── tests/                   # 62 tests
 ├── DECLARATION/           # l'antériorité re-mesurée : 16 équations · 16 contrôles
-│   ├── declaration_base.py      # 126 commits au HEAD bf50a4a, 0 date au sceau, 3 ablations
+│   ├── declaration_base.py      # 132 commits au HEAD 9f2c41d, 0 date au sceau, 3 ablations
 │   ├── artefacts/               # certificat.json + chaîne d'antériorité CSV + ablations MD + plan SVG
 │   └── tests/                   # 37 tests
 ├── GUERRE/                # la richesse face à la guerre : 16 équations · 16 contrôles
