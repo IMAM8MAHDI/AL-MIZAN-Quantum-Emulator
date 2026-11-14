@@ -147,9 +147,10 @@ ZENODO_DEPOT_ALMIZAN/
 ├── module_tableau_maitre_mizan.py # charge le tableau maître ; une ligne adaptée à la
 │   │                            # profondeur de ce dépôt : le CSV est embarqué ici, non
 │   │                            # cherché chez un voisin
-├── TABLEAU_MAITRE_SEQUENTIEL_UNIFIE.csv  # instantané : 454 lignes, 41 strates,
-│   │                            # 362 708 octets au checkout (CRLF), SHA-256 `040c1781…` ;
-│   │                            # 362 253 et `0cf9e87c…` dans le blob (`i/lf`). Sans lui le
+├── TABLEAU_MAITRE_SEQUENTIEL_UNIFIE.csv  # instantané : 471 lignes (470 de données +
+│   │                            # en-tête), 42 strates dont S41 · EQ-SB, 389 164 octets au
+│   │                            # checkout (CRLF), SHA-256 `d3ad50d5…` ; 388 693 et
+│   │                            # `293b8f7c…` dans le blob (`i/lf`). Sans lui le
 │   │                            # socle EQ-PS divise par zéro ; les 13 contrôles d'EQ-SA
 │   │                            # restent verts dans les deux états (mesuré)
 ├── criteres_derivation_sans_intrant.py  # EQ-DSI-01..06, 40 959 999 formes recensées
@@ -359,9 +360,12 @@ briques de la racine (`reseau_poids_sparse_mizan.py`, `tokenizer_mizan.py`,
 scellé ici.
 
 Le socle 313T que la copie importe lit ses axes dans le tableau maître : le CSV
-est donc **embarqué** (454 lignes de données, 41 strates ; 362 708 octets et
-SHA-256 `040c17814fab29e6…` au checkout, 362 253 et `0cf9e87c88d84356…` dans le
-blob, l'écart étant les 455 fins de ligne que `eol=crlf` rend) et
+est donc **embarqué** (470 lignes de données, 42 strates ; 389 164 octets et
+SHA-256 `d3ad50d52d9cb081…` au checkout, 388 693 et `293b8f7cf17b43e7…` dans le
+blob (OID `5c90894e5cc04e17`), l'écart étant les 471 fins de ligne que
+`eol=crlf` rend — mesure du 2026-11-14 à 05:51 UTC ; la strate S41 du registre
+EQ-SB a porté le fichier de 454 à 470 lignes de données et de 41 à 42 strates,
+et le relevé antérieur consignait 362 708 octets et `040c17814fab29e6…`) et
 `module_tableau_maitre_mizan.py` reçoit à ce prix une ligne adaptée — dans
 l'atelier il cherche un niveau plus haut, ici il trouve son propre voisinage.
 Sur les cinq fichiers du lot, trois sont strictement identiques aux octets de
@@ -383,14 +387,24 @@ ajustement pour faire passer l'audit.
 
 Sans le CSV le socle divise par zéro (`axes["entrees"] = 0`), mesuré ; avec,
 `py -3 reseau_poids_sparse_mizan.py --controler` rend
-**9 PASS, 0 FAIL, racine `32d241880c1fc396`**, code 0. Les treize contrôles
+**9 PASS, 0 FAIL, racine `32d241880c1fc396`**, code 0 — re-joué le 2026-11-14
+sur le CSV à 470 lignes de données, même racine. Les treize contrôles
 d'EQ-SA, eux, sont verts avec ou sans le CSV : dans un clone posé hors du
 workspace de l'auteur — hors de portée du CSV voisin — `resoudre()` rend
 `controles_ok = 13 / 13` dans les deux états et la même empreinte de chaîne,
-`6c39391df55d991b` (16 premiers hexadécimaux des `EQ-nn|résultat` puis
-`Cnn|attendu|obtenu|ok`) ; le CSV pèse donc sur le socle, pas sur le jugement.
-Le clone rejoue aussi l'`sha256sum` du CSV : `040c17814fab29e6…`, 362 708
-octets. Ce qui reste du côté atelier et
+`6c39391df55d991b`. La recette de cette empreinte, précisée ici parce qu'elle
+ne se devine pas : SHA-256 sur UTF-8 des treize enregistrements `EQ-nn|résultat`
+suivis des treize `Cnn|attendu|obtenu|ok`, chaque enregistrement séparé du
+suivant par un unique `\n`, 16 premiers hexadécimaux du digest. Rejouée
+le 2026-11-14 dans ce dépôt sur le CSV embarqué, elle rend exactement la même
+valeur, `6c39391df55d991b` ; la variante sans le `\n` entre enregistrements en
+rend une autre (`bd397aa7a35bb616`), d'où la précision. Le CSV pèse donc sur le
+socle, pas sur le jugement.
+Ce dépôt rejoue l'`sha256sum` du CSV sur son propre checkout :
+`d3ad50d52d9cb081…`, 389 164 octets, mesuré le 2026-11-14 (relevé antérieur
+dans le clone hors workspace, consigné au commit `7bb4517` :
+`040c17814fab29e6…`, 362 708 octets).
+Ce qui reste du côté atelier et
 n'est pas embarqué : la suite de 84 tests, le générateur des trois pages et les
 pages elles-mêmes — le générateur écrirait dans un `web_cloud/` que ce dépôt ne
 sert pas, et le module se rejoue sans lui. Comme `espace_disque.py`, cette copie
