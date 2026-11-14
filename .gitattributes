@@ -13,7 +13,7 @@ horloge_noyau/** text eol=lf
 bibliotheques/** text eol=lf
 moteur/** text eol=lf
 
-# Les sept CSV du dépôt sont déclarés « Excel français » : BOM UTF-8, séparateur
+# Les CSV du dépôt sont déclarés « Excel français » : BOM UTF-8, séparateur
 # « ; » et fins de ligne CRLF. Le scellement, lui, hache les octets du blob — donc
 # LF — et ne change pas ici. Ce que `eol=crlf` règle, c'est le fichier réellement
 # livré : sans la règle, un clone ou une `git archive` hors Windows déploie du LF

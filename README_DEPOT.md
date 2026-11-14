@@ -128,11 +128,30 @@ ZENODO_DEPOT_ALMIZAN/
 │   │                            # → web_cloud/ ; auto-localise le dépôt, aucune
 │   │                            # variable d'environnement ni clone voisin requis
 │   └── pages_laboratoire.py     # 9 livrables d'écran : FR/EN/AR + 6 exports
-├── oeuvre_universelle/    # copies servies en production de la page « espace
-│   │                      # disque » — hors registre d'équations, non auditées
-│   │                      # par audit_piliers
+├── oeuvre_universelle/    # copies servies en production — hors registre d'équations,
+│   │                      # non auditées par audit_piliers, et que l'orchestrateur
+│   │                      # `pages_depot/` n'appelle pas
 │   ├── espace_disque.py         # 13 équations · 13 contrôles, en-tête SPDX
-│   └── generer_page_espace_disque.py  # 3 pages trilingues + 1 JSON
+│   ├── generer_page_espace_disque.py  # 3 pages trilingues + 1 JSON
+│   └── solutions_posees_acteurs.py    # 13 équations · 13 contrôles : le jugement porté
+│   │                            # sur un énoncé de garantie — « jamais sécurisé à 100 % » —
+│   │                            # 6 OPÉRATIONNEL · 6 SIMULÉ · 1 SPÉCIFIÉ, et le critère
+│   │                            # retourné contre le module lui-même (C13)
+├── reseau_poids_sparse_mizan.py  # socle de 313 000 000 000 000 poids adressables
+│   │                            # (EQ-PS-01..09), importée par la copie ci-dessus :
+│   │                            # quintuplet réduit par BLAKE2b-64, seules les adresses
+│   │                            # écrites tiennent en mémoire ; une ligne d'import
+│   │                            # l'adapte, voir « Copies depuis la production »
+├── tokenizer_mizan.py            # les 259 symboles byte-level (3 spéciaux + 256 octets)
+│   │                            # qui bornent l'axe « symbole » du socle
+├── module_tableau_maitre_mizan.py # charge le tableau maître ; une ligne adaptée à la
+│   │                            # profondeur de ce dépôt : le CSV est embarqué ici, non
+│   │                            # cherché chez un voisin
+├── TABLEAU_MAITRE_SEQUENTIEL_UNIFIE.csv  # instantané : 454 lignes, 41 strates,
+│   │                            # 362 708 octets au checkout (CRLF), SHA-256 `040c1781…` ;
+│   │                            # 362 253 et `0cf9e87c…` dans le blob (`i/lf`). Sans lui le
+│   │                            # socle EQ-PS divise par zéro ; les 13 contrôles d'EQ-SA
+│   │                            # restent verts dans les deux états (mesuré)
 ├── criteres_derivation_sans_intrant.py  # EQ-DSI-01..06, 40 959 999 formes recensées
 ├── docs/                  # table des routes réellement servies par la passerelle
 │   ├── API_PASSERELLE_VPS.md
@@ -147,6 +166,11 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── lib_temporelle.py        # cycles dx dy dz dt
 │   ├── lib_monade.py            # MonadeSupreme, transcription >>=
 │   └── lib_almizan_extension.py # 27 Formes, invariants 0.6225 / 0.122
+│                            # (un module du moteur, `lib_bloc_synchron_mzn.py`, reste
+│                            #  hors de ce dépôt : ses trois attestations de 313 sont
+│                            #  déjà ici, et son grand livre porte l'état civil de
+│                            #  l'auteur, deux adresses de portefeuille et une clause
+│                            #  que le verrou C11 de VERROUS n'admet qu'à zéro occurrence)
 ├── moteur/                # 2 briques quantiques souveraines, pur stdlib
 │   ├── qubit_logique_mizan.py              # Steane [[7,1,3]]
 │   └── transducteur_quantique_deterministe_mizan.py  # A–S, MIZAN 0.6225
@@ -323,6 +347,51 @@ remplacés et restauration de leurs propriétaires et modes. La page
 « espace disque » et ses trois variantes ne sont pas dans ce compte :
 `oeuvre_universelle/` porte les modules **copiés depuis la production**,
 pour lecture et re-jouabilité, et l'orchestrateur ne les appelle pas.
+
+Seconde copie de ce genre : `solutions_posees_acteurs.py`. Treize équations,
+treize contrôles, 6 OPÉRATIONNEL · 6 SIMULÉ · 1 SPÉCIFIÉ : le module juge une
+**obsolescence décidée sur un énoncé de garantie** — jamais sur une entreprise ni
+sur une personne — et retourne son propre critère contre lui (C13). La vidéo qui
+a fourni le thème n'a ni chapitres ni transcription accessible ; le module le
+consigne dans `source` et ne cite personne. Sa chaîne d'imports tient en trois
+briques de la racine (`reseau_poids_sparse_mizan.py`, `tokenizer_mizan.py`,
+`module_tableau_maitre_mizan.py`) plus `bibliotheques/lib_physique.py`, déjà
+scellé ici.
+
+Le socle 313T que la copie importe lit ses axes dans le tableau maître : le CSV
+est donc **embarqué** (454 lignes de données, 41 strates ; 362 708 octets et
+SHA-256 `040c17814fab29e6…` au checkout, 362 253 et `0cf9e87c88d84356…` dans le
+blob, l'écart étant les 455 fins de ligne que `eol=crlf` rend) et
+`module_tableau_maitre_mizan.py` reçoit à ce prix une ligne adaptée — dans
+l'atelier il cherche un niveau plus haut, ici il trouve son propre voisinage.
+Sur les cinq fichiers du lot, trois sont strictement identiques aux octets de
+production, mesure en cours : `tokenizer_mizan.py` (6 647 o),
+`solutions_posees_acteurs.py` (53 007 o) et le CSV. Deux s'en écartent, chacun
+par une ligne de code — et le diff ne cache rien d'autre :
+`module_tableau_maitre_mizan.py` porte la localisation du CSV,
+`reseau_poids_sparse_mizan.py` une ligne d'import où `CONSTANTE_C = 313` se lit
+sur `lib_physique.MAGNITUDE_ETAT_MATIERE_TERRE` au lieu de
+`lib_bloc_synchron_mzn.CONSTANTE_C` ; les deux noms rendent le même entier. Le
+motif est public et se vérifie sans ouvrir le fichier écarté : le grand livre
+MZN porte l'état civil de l'auteur et deux adresses de portefeuille nominatives,
+et il contient une clause rémunératoire que le verrou C11 de `VERROUS/` compte
+dans tout le corpus et n'admet qu'à **zéro** occurrence — le motif est dans le
+code du verrou, pas dans ce README. Mesuré avec le fichier dans le dépôt :
+`rouges ['C11']`, code 1. Mesuré sans : `CONFORME`, code 0, et du côté du socle
+le même compte dans les deux états — substitution sans effet numérique, pas un
+ajustement pour faire passer l'audit.
+
+Sans le CSV le socle divise par zéro (`axes["entrees"] = 0`), mesuré ; avec,
+`py -3 reseau_poids_sparse_mizan.py --controler` rend
+**9 PASS, 0 FAIL, racine `32d241880c1fc396`**, code 0 — même compte dans un clone
+hors du workspace de l'auteur. Les treize contrôles d'EQ-SA, eux, sont verts avec
+ou sans le CSV : `resoudre()["resume"]` donne `controles_ok = 13 / 13` dans les
+deux états, sur la même empreinte de chaîne. Ce qui reste du côté atelier et
+n'est pas embarqué : la suite de 84 tests, le générateur des trois pages et les
+pages elles-mêmes — le générateur écrirait dans un `web_cloud/` que ce dépôt ne
+sert pas, et le module se rejoue sans lui. Comme `espace_disque.py`, cette copie
+reste hors du registre d'audit, et les deux lignes qui l'écartent des octets de
+production sont nommées : pas une copie silencieusement muée.
 
 Le registre d'équations du dépôt — 232 équations, 232 contrôles, 15 modules
 `CONFORME` — n'est pas touché par cet outillage : `pages_depot/`,
