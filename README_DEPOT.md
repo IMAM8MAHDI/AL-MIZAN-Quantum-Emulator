@@ -84,7 +84,7 @@ ZENODO_DEPOT_ALMIZAN/
 │   ├── artefacts/               # certificat.json + registre d'accès + clauses MD + plan SVG
 │   └── tests/                   # 62 tests
 ├── DECLARATION/           # l'antériorité re-mesurée : 16 équations · 16 contrôles
-│   ├── declaration_base.py      # 116 commits au HEAD d9662d1, 0 date au sceau, 3 ablations
+│   ├── declaration_base.py      # 126 commits au HEAD bf50a4a, 0 date au sceau, 3 ablations
 │   ├── artefacts/               # certificat.json + chaîne d'antériorité CSV + ablations MD + plan SVG
 │   └── tests/                   # 37 tests
 ├── GUERRE/                # la richesse face à la guerre : 16 équations · 16 contrôles
@@ -111,6 +111,17 @@ ZENODO_DEPOT_ALMIZAN/
 │   │                            # backlog local, quotas déclarés, chapitres de la vidéo)
 │   ├── artefacts/               # certificat.json + cadence et bornes (CSV, SVG)
 │   └── tests/                   # 38 tests
+├── SURETE/              # la sécurité bornée : 13 équations · 13 contrôles ·
+│   │                      # AUCUNE PREUVE · aucune mesure de produit réel
+│   ├── surete_bornee_base.py    # Rice énoncé puis borné par 131 071 mots énumérés,
+│   │                            # Poisson (P₀ par trois routes), fenêtre de correctif,
+│   │                            # intervalle non majoré, fuite à deux couches,
+│   │                            # disponibilité, critère sur l'énoncé d'une garantie,
+│   │                            # coût pour un tiers, registre consigné, socle 313T,
+│   │                            # et le critère retourné contre le module lui-même
+│   ├── SOURCES_ET_PREDECESSEURS.md  # la demande requalifiée, les statuts, la filiation
+│   ├── artefacts/               # certificat.json (racine Merkle des 13 équations)
+│   └── tests/                   # 46 tests
 ├── pages_depot/           # publication du site al-mizan.world depuis CE dépôt
 │   │                      # seul : 21 fichiers reproduits octet pour octet
 │   ├── generer_pages_site.py    # orchestrateur FONDATION + CHIFFRES + LABORATOIRE
@@ -256,20 +267,21 @@ cd DECLARATION && py -m unittest tests.test_declaration             #  37 tests
 cd GUERRE && py -m unittest tests.test_guerre                        #  56 tests
 cd QPU_DISTANT && py -m unittest tests.test_qpu_distant              #  28 tests
 cd GOULETS && py -m unittest tests.test_goulets                       #  38 tests
+cd SURETE && py -m unittest tests.test_surete_bornee                   #  46 tests
 
-py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 14 modules CONFORME
+py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide          # 15 modules CONFORME
 ```
 
-654 tests : les douze suites ci-dessus portent 566 tests, auxquels s'ajoutent
+700 tests : les treize suites de dossiers ci-dessus portent 612 tests, auxquels s'ajoutent
 les 88 hors dossiers — `tests.test_emulateur` (53), la suite `horloge_noyau`
 (10) et le critère de dérivation sans intrant (25). `bibliotheques/` et
 `moteur/` sont embarqués, aucun `ASTRO-Q°ODE_SYSTEME` voisin n'est requis.
 
-Mesure du 2026-11-11, les quatorze suites rejouées dans une copie du dépôt
-**sans `.git`** (celle que l'archive ZIP fournit) : 647 tests s'exécutent et
+Mesure du 2026-11-14, les seize suites ci-dessus rejouées dans une copie du dépôt
+**sans `.git`** (celle que l'archive ZIP fournit) : 693 tests s'exécutent et
 passent, 7 s'ignorent d'eux-mêmes faute de dépôt git lisible — 5 dans
 `VERROUS`, 2 dans `DECLARATION`, tous des relectures d'histoire de commits.
-Dans un clone, les 654 passent et **aucun test ne s'ignore**. La mention
+Dans un clone, les 700 passent et **aucun test ne s'ignore**. La mention
 « 0 ignoré » portée ici jusqu'à la v3.3.0 ne décrivait donc que le cas du
 clone, pas celui de l'archive.
 
@@ -302,7 +314,7 @@ remplacés et restauration de leurs propriétaires et modes. La page
 `oeuvre_universelle/` porte les modules **copiés depuis la production**,
 pour lecture et re-jouabilité, et l'orchestrateur ne les appelle pas.
 
-Le registre d'équations du dépôt — 219 équations, 219 contrôles, 14 modules
+Le registre d'équations du dépôt — 232 équations, 232 contrôles, 15 modules
 `CONFORME` — n'est pas touché par cet outillage : `pages_depot/`,
 `oeuvre_universelle/` et `docs/` sont de la publication, pas des
 dossiers soumis à `FONDATION/OUTILS/audit_piliers.py --tous`.
@@ -314,12 +326,12 @@ et ne juge que ce que le module déclare déjà :
 
 | Pilier | Exigence | Vérifié |
 |---|---|---|
-| **P1 UNITE** | une équation = un identifiant = un contrôle, en chaîne continue sans trou ni doublon | 219 équations, 219 contrôles |
-| **P2 BORNE** | toute équation porte une `limite` écrite d'au moins 40 caractères | 219/219 |
-| **P3 CONFRONTATION** | chemin `module → fonction → contrôle`, statut parmi OPÉRATIONNEL / SIMULÉ / SPÉCIFIÉ, attendu et obtenu non vides, aucun contrôle rouge | 219/219 |
-| **P4 TRANSMISSION** | imports stdlib ou locaux seuls, `verifier()` callable, garde `__main__` | 14/14 modules |
+| **P1 UNITE** | une équation = un identifiant = un contrôle, en chaîne continue sans trou ni doublon | 232 équations, 232 contrôles |
+| **P2 BORNE** | toute équation porte une `limite` écrite d'au moins 40 caractères | 232/232 |
+| **P3 CONFRONTATION** | chemin `module → fonction → contrôle`, statut parmi OPÉRATIONNEL / SIMULÉ / SPÉCIFIÉ, attendu et obtenu non vides, aucun contrôle rouge | 232/232 |
+| **P4 TRANSMISSION** | imports stdlib ou locaux seuls, `verifier()` callable, garde `__main__` | 15/15 modules |
 
 Le coût est réel : l'audit exécute `resoudre()`, donc CHIFFRES calcule son
 domaine court (20 000 chiffres de π, e et √2 plus un calibrage Monte-Carlo) et
 demande une à deux minutes. `--rigide` fait échouer un pilier NON TENU ; le
-code de sortie est 0 sur les quatorze modules principaux.
+code de sortie est 0 sur les quinze modules principaux.

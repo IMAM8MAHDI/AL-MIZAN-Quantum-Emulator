@@ -69,11 +69,11 @@ il est consigné dans les fiches après l'émission.
 
 ## Fichiers à déposer
 1. **ZENODO_DEPOT_ALMIZAN.zip** (archive complète du dépôt)
-   - Code source Python (l'émulateur et les équations réparties dans les douze dossiers
-     d'équations — 219 équations, 219 contrôles, 14 modules audités — compte relevé par
+   - Code source Python (l'émulateur et les équations réparties dans les treize dossiers
+     d'équations — 232 équations, 232 contrôles, 15 modules audités — compte relevé par
      `FONDATION/fondation_base.py → inventaire_parc()` et
      `FONDATION/OUTILS/audit_piliers.py --tous --rigide`, pas saisi à la main)
-   - 53 tests unitaires pour l'émulateur, 654 pour le dépôt complet
+   - 53 tests unitaires pour l'émulateur, 700 pour le dépôt complet
    - Documentation complète (README, PRESENTATION, paper.md)
    - Métadonnées (.zenodo.json, CITATION.cff)
    - Licences (AGPL-3.0, GPL-3.0)
@@ -102,5 +102,5 @@ Ce logiciel a été développé avec l'assistance d'IA générative (Devin SWE-2
 - Émulation classique dans ce dépôt : aucun qubit n'y tourne et aucune exécution distante n'y est
   pilotée. `QPU_DISTANT/` relit et re-borne l'archive d'un job déjà exécuté chez le fournisseur
   (`ibm_marrakesh`, statut `Completed`, 256 tirs), sans qiskit ni numpy.
-- 53 tests unitaires pour l'émulateur, 654 pour le dépôt complet — tous verts
+- 53 tests unitaires pour l'émulateur, 700 pour le dépôt complet — tous verts
 - Documentation bilingue français/anglais

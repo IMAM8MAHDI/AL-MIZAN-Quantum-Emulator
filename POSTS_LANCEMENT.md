@@ -15,11 +15,11 @@ I built a complete quantum emulator in pure Python with zero external dependenci
 - OpenQASM 2.0 frontend with 8 canonical circuits
 - Sealed SHA-256 mathematical certificates: Riemann zeros ≤100 (29 certified), BSD on named curves, Point Square Conjecture
 
-53/53 emulator tests pass, and 654/654 across the whole deposit in a clone — 647
+53/53 emulator tests pass, and 700/700 across the whole deposit in a clone — 693
 from the bare ZIP, where 7 git-history re-reads skip themselves (emulator, core
-clock, and the twelve equation dossiers ABONDANCE, CHIFFRES, FONDATION,
+clock, and the thirteen equation dossiers ABONDANCE, CHIFFRES, FONDATION,
 HORLOGERIE, CONTINUITE, REDACTION, CONSTRUCTION, VERROUS, DECLARATION, GUERRE,
-QPU_DISTANT and GOULETS). Every artifact carries
+QPU_DISTANT, GOULETS and SURETE). Every artifact carries
 explicit computational bounds — no open millennium problem is claimed as solved,
 and no qubit runs in this deposit: `QPU_DISTANT/` re-reads and re-bounds one job
 already executed at the provider (`ibm_marrakesh`, 256 shots).

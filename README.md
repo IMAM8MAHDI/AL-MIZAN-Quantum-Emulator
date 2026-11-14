@@ -74,10 +74,11 @@ BSD sur 3 courbes (L'(37a1)=0.306 = valeur LMFDB) · Hasse p≤97 · Hodge T²/C
 | Rédaction | `REDACTION/redaction_mizan.py` | 16 équations et 16 contrôles : l'intelligibilité est comptée. Sur 89 lignes d'équation, la page anglaise ne portait les nombres du calcul français que sur 56 lignes, l'arabe sur 55 ; la correction est appliquée au moteur, re-mesurée, et la forme mesurée (longueur de phrase, coupe arabe, distance au premier tableau) sans emprunter d'indice de lisibilité externe |
 | Construction | `CONSTRUCTION/construction_base.py` | 16 équations et 16 contrôles : plans de l'emboîtement à l'échelle humaine — 43 crans, cote de tête 622,50 mm clampée à 122,00 mm au cran 42, tolérance relative 1/1000, facteur de matière 1/(1−ρ²) — 0 prototype construit, et la phrase l'écrit |
 | Verrous | `VERROUS/verrous_base.py` | 16 équations et 16 contrôles : l'état réel de la protection mesuré au lieu d'être déclaré — arbre scanné, sceau re-haché, couverture SPDX, les 8 clauses d'une feuille de route externe, les 4 instruments, le registre d'accès, et les corrections que les faits imposent à cette feuille de route |
-| Déclaration | `DECLARATION/declaration_base.py` | 16 équations et 16 contrôles : l'antériorité re-mesurée par `git` brut plutôt que recopiée — 116 commits au HEAD `d9662d1`, datés par l'horloge cliente, 276 entrées de sceau portant **0 date**, 0 instrument d'horodatage qualifié, 0 instrument d'éducation sur disque, 98 commits humains contre 18 d'automate, trois ablations rejouées ; les dates sont lues dans `git log HEAD`, l'histoire qui voyage avec le dépôt, non dans le journal local qui reste sur la machine ; l'antériorité est accessible, la paternité n'est pas instrumentée. Le compte de commits est indexé par un SHA parce qu'il avance à chaque commit, et l'artefact posé sur disque reste l'instantané du HEAD où il a été écrit |
+| Déclaration | `DECLARATION/declaration_base.py` | 16 équations et 16 contrôles : l'antériorité re-mesurée par `git` brut plutôt que recopiée — 126 commits au HEAD `bf50a4a`, datés par l'horloge cliente, 280 entrées de sceau portant **0 date**, 0 instrument d'horodatage qualifié, 0 instrument d'éducation sur disque, 108 commits humains contre 18 d'automate, trois ablations rejouées ; les dates sont lues dans `git log HEAD`, l'histoire qui voyage avec le dépôt, non dans le journal local qui reste sur la machine ; l'antériorité est accessible, la paternité n'est pas instrumentée. Le compte de commits est indexé par un SHA parce qu'il avance à chaque commit, et l'artefact posé sur disque reste l'instantané du HEAD où il a été écrit |
 | Guerre | `GUERRE/guerre_base.py` | 16 équations et 16 contrôles : « il faut être riche pour faire la guerre » testée sur un snapshot Banque mondiale 2022 engagé par SHA-256 — 153 pays comparables sur 217 entités, ρ(revenu, charge) = 0,0619 plat alors que ρ(revenu, masse) = 0,5036 monte, 23 pays sous la médiane de revenu arment à plus d'un Md$, effort fiscal médian 5,62 % des recettes ; l'énoncé initial est **réfuté par la mesure** et remplacé par un énoncé borné |
 | QPU distant | `QPU_DISTANT/qpu_distant_base.py` | 10 équations et 10 contrôles : un job IBM **déjà exécuté**, relu depuis son archive — backend `ibm_marrakesh`, job `dbpkmr0ou4as73ctrm80`, 256 tirs sur la paire de qubits physiques [0,1], 600 unités de coût, 1,169047 s observées pour 1,082785 s estimées. Les compteurs sont recomptés dans l'array de bits compressé (00 126 · 01 22 · 10 0 · 11 108), la parité mesurée 0,9140625 (234/256) est encadrée par deux bornes recalculées — 0,9258965 pour la médiane machine (verdict **non reçue**, −0,676 σ), 0,9114310 pour le support réel (reçue, +0,150 σ) — et l'asymétrie 22 contre 0 rend une valeur p de 4,77 × 10⁻⁷ calculée en entiers |
 | Goulots | `GOULETS/goulets_base.py` | 10 équations et 10 contrôles : quatre bornes datées d'une chaîne de publication vidéo, chacune avec la condition qui la rompt — durée maximale constatée 30 s contre le seuil déclaré de 900 s (marge 870 s, franchissement non observé, verrous fournisseur `allowed`), barème publié 99 publications/jour en unités contre **plafond effectif constaté 10/jour** (rapport 9,9), cadence tenue 1,3529/jour, 78 fichiers en stock pour 1 432,543 s, 35 434 115 072 octets libres sur 252 841 029 632 (14,01 %) propres à cet hôte ; « inarrêtable » n'a pas de définition falsifiable et n'est donc pas affirmé |
+| Sûreté bornée | `SURETE/surete_bornee_base.py` | 13 équations et 13 contrôles : une garantie de sécurité est-elle tenable ? Le critère porte sur **l'énoncé**, pas sur l'équipe — `tenable(g) ⟺ (borne de fuite annoncée > 0) et (procédure publique en temps borné)`. Indécidabilité de Rice énoncée puis bornée par l'énumération effective de ses 131 071 mots (le mot critique `0000000000000000` change le verdict d'une machine à l'autre) ; défauts attendus sous Poisson, `P₀` rendu par trois routes ; fenêtre de correctif comptée pas à pas ; **additionner un intervalle non majoré détruit le majorant** ; fuite à deux couches strictement décroissante sur 40 rangs exacts vers son plancher `s = p·β` ; disponibilité en rationnels, l'approximation usuelle `T·MTTR/MTBF` étant montrée **majore** ; registre consigné recompté ; socle de 313 000 000 000 000 poids (313 premier) ; et le critère retourné contre le module lui-même — les trois garanties absolues qu'il pourrait afficher sont disqualifiées par son propre calcul. Verdict : `BORNE ÉCRITE, GARANTIES TRIÉES, AUCUNE PREUVE` |
 
 ## Base universelle — FONDATION
 
@@ -171,7 +172,8 @@ cd DECLARATION && py -m unittest tests.test_declaration             # 37 tests
 cd GUERRE && py -m unittest tests.test_guerre                       # 56 tests
 cd QPU_DISTANT && py -m unittest tests.test_qpu_distant               # 28 tests
 cd GOULETS && py -m unittest tests.test_goulets                       # 38 tests
-py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide             # 14 modules CONFORME
+cd SURETE && py -m unittest tests.test_surete_bornee                   # 46 tests
+py -3 FONDATION/OUTILS/audit_piliers.py --tous --rigide             # 15 modules CONFORME
 ```
 
 53 tests : états, portes, permutations, intrication, Born, bruit
@@ -184,16 +186,16 @@ et le spectre hermitien complexe de la matrice densité.
 **Plus rien d'extérieur à l'archive.** Les deux ponts
 (Steane, transducteur) se chargent depuis `moteur/` et la capsule
 `horloge_noyau` depuis `bibliotheques/` : un `ASTRO-Q°ODE_SYSTEME`
-voisin n'est plus requis. 654 tests au total, tous verts et **0 ignoré dans
-un clone** — 88 hors dossiers d'équations, 566 dans les douze — ; dans l'archive
-ZIP seule, qui n'apporte pas de `.git`, 647 passent et 7 s'ignorent
+voisin n'est plus requis. 700 tests au total, tous verts et **0 ignoré dans
+un clone** — 88 hors dossiers d'équations, 612 dans les treize — ; dans l'archive
+ZIP seule, qui n'apporte pas de `.git`, 693 passent et 7 s'ignorent
 d'eux-mêmes (5 `VERROUS`, 2 `DECLARATION`), faute d'histoire git lisible :
-ce sont des relectures de commits, non des calculs. Mesure du 2026-11-11.
-Et les 219 équations du parc (ABONDANCE 54,
+ce sont des relectures de commits, non des calculs. Mesure du 2026-11-14.
+Et les 232 équations du parc (ABONDANCE 54,
 CHIFFRES 17, FONDATION 18, HORLOGERIE 15, CONTINUITE 15, REDACTION 16,
 CONSTRUCTION 16, VERROUS 16, DECLARATION 16, GUERRE 16, QPU_DISTANT 10,
-GOULETS 10) portent chacune sa clause de limite, contrôlée
-par le même audit. Les 566 tests et les 219 équations des dossiers sont relevés
+GOULETS 10, SURETE 13) portent chacune sa clause de limite, contrôlée
+par le même audit. Les 612 tests et les 232 équations des dossiers sont relevés
 par `FONDATION/fondation_base.py → inventaire_parc()`, pas saisis à la main ;
 les 88 autres sont `tests.test_emulateur` (53), la suite `horloge_noyau` (10)
 et le critère de dérivation sans intrant (25).
@@ -208,7 +210,7 @@ Le die :5030 et le canal SCPI :5025 sont des interfaces réseau locales —
 sans matériel branché, rien de physique ne se produit. Le .gds n'est pas
 un masque fabricable.
 
-Les douze dossiers d'équations ne prouvent rien d'universel. ABONDANCE calcule
+Les treize dossiers d'équations ne prouvent rien d'universel. ABONDANCE calcule
 des régularités finies et les confronte ; CHIFFRES annonce 108 cellules avant
 mesure puis constate un verdict de **CONTENU** — l'absence d'un rejet sur
 n = 10⁶ chiffres n'établit pas que π est normal, et un résultat discordant
@@ -227,7 +229,7 @@ aucune de ses six prédictions n'a été ni confirmée ni réfutée ; VERROUS me
 l'état de la protection et ne la pose pas — 0 clause retrouvée sur 8, 0
 instrument signé sur 4, aucune saisine en relecture attestée, et une clause
 absente reste absente après exécution du module ; DECLARATION re-hache l'histoire
-du dépôt (116 commits au HEAD `d9662d1`) et montre que les 276 entrées du sceau portent **0 date** : l'antériorité
+du dépôt (126 commits au HEAD `bf50a4a`) et montre que les 280 entrées du sceau portent **0 date** : l'antériorité
 reste accessible, la paternité n'est instrumentée par aucun horodatage qualifié
 et l'auteur reste déclaré, non prouvé ; GUERRE confronte une phrase de l'auteur à
 un snapshot et la réfute — 23 pays sous la médiane de revenu arment à plus d'un
@@ -241,5 +243,10 @@ deux enveloppes n'est pas reçue ; GOULETS pose quatre bornes datées d'une cha�
 de publication et écrit pour chacune la condition qui la rompt — le mot
 « inarrêtable » n'a pas de définition falsifiable, le dossier ne l'affirme donc
 pas, et il ne mesure ni l'audience (1 abonné, 48 vues pour 23 publications) ni la
-décision de publier. Chaque équation porte sa clause
+décision de publier ; SURETE décide de la tenabilité d'une garantie sur son seul
+énoncé et retourne le critère contre lui-même — ses trois promesses absolues
+sortent hors critère, aucune mesure de produit réel n'entre dans ses treize
+équations, le théorème de Rice qu'il cite n'est pas redémontré et borne ce qu'un
+algorithme peut décider, non ce que contient un domaine fini : le verdict est
+`BORNE ÉCRITE, GARANTIES TRIÉES, AUCUNE PREUVE`. Chaque équation porte sa clause
 de limite, lue par `audit_piliers.py`.
