@@ -383,10 +383,14 @@ ajustement pour faire passer l'audit.
 
 Sans le CSV le socle divise par zéro (`axes["entrees"] = 0`), mesuré ; avec,
 `py -3 reseau_poids_sparse_mizan.py --controler` rend
-**9 PASS, 0 FAIL, racine `32d241880c1fc396`**, code 0 — même compte dans un clone
-hors du workspace de l'auteur. Les treize contrôles d'EQ-SA, eux, sont verts avec
-ou sans le CSV : `resoudre()["resume"]` donne `controles_ok = 13 / 13` dans les
-deux états, sur la même empreinte de chaîne. Ce qui reste du côté atelier et
+**9 PASS, 0 FAIL, racine `32d241880c1fc396`**, code 0. Les treize contrôles
+d'EQ-SA, eux, sont verts avec ou sans le CSV : dans un clone posé hors du
+workspace de l'auteur — hors de portée du CSV voisin — `resoudre()` rend
+`controles_ok = 13 / 13` dans les deux états et la même empreinte de chaîne,
+`6c39391df55d991b` (16 premiers hexadécimaux des `EQ-nn|résultat` puis
+`Cnn|attendu|obtenu|ok`) ; le CSV pèse donc sur le socle, pas sur le jugement.
+Le clone rejoue aussi l'`sha256sum` du CSV : `040c17814fab29e6…`, 362 708
+octets. Ce qui reste du côté atelier et
 n'est pas embarqué : la suite de 84 tests, le générateur des trois pages et les
 pages elles-mêmes — le générateur écrirait dans un `web_cloud/` que ce dépôt ne
 sert pas, et le module se rejoue sans lui. Comme `espace_disque.py`, cette copie
