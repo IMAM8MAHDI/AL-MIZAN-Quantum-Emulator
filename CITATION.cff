@@ -52,6 +52,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.24213946"
     description: "DOI de la version 3.6.0 (2026-11-14), tableau maitre embarque a la strate S41 et miroir des routes des deux registres"
+  - type: doi
+    value: "10.5281/zenodo.24236343"
+    description: "DOI de la version 3.7.0 (2026-11-15), registre EQ-TLU embarque et tableau maitre a la strate S42"
   - type: url
     value: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
     description: "Depot GitHub officiel"
