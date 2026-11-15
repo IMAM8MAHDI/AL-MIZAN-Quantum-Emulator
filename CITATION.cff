@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Si vous utilisez, deployez ou citez ce logiciel, veuillez citer le DOI de concept 10.5281/zenodo.24028242 (il resout vers la derniere version deposee) et respecter la double licence GPL-3.0 / AGPL-3.0."
 title: "AL-MIZAN: Pure-Python Quantum Emulator with Sealed Mathematical Certificates for Millennium Problems"
-version: "3.6.0"
-date-released: "2026-11-14"
+version: "3.7.0"
+date-released: "2026-11-15"
 doi: "10.5281/zenodo.24028242"
 url: "https://doi.org/10.5281/zenodo.24028242"
 repository-code: "https://github.com/IMAM8MAHDI/AL-MIZAN-Quantum-Emulator"
@@ -129,5 +129,39 @@ abstract: >-
   digits; the variant without the separator gives bd397aa7a35bb616. Replayed on 2026-11-14 inside this deposit:
   base 9 PASS, 0 FAIL, root 32d241880c1fc396, exit code 0; EQ-SA 13/13 on digest 6c39391df55d991b;
   FONDATION/OUTILS/audit_piliers.py --tous on 15 modules, 232 equations, 232 controls, exit code 0.
+  v3.7.0 ships the EQ-TLU register as a root-level module: accomplissement_313t_mizan.py, 9 equations and 9 controls, separating the
+  three senses of 'accomplishing the 313T weights' - volume REFUSED (626 TB dense in bf16, 2504 TB in float64, against the free space
+  measured on the machine, margin recomputed at every run by C06), structure ACCOMPLISHED (the radices close exactly on 313T, a
+  bijection in both directions, a partition into 313 fibres), function ACCOMPLISHED (one weight per address, computable in O(1) with no
+  storage) - plus a grid of 313000 anchors actually written, 1e-9 of the capacity, its Merkle root recomputed twice to the same value.
+  C07 bounds the enumeration with two timed throughput measures at two different sizes; the extrapolated time counts in centuries and
+  was never run. No proof, no machine under power. Copy fidelity is measured, not asserted: workshop file 54346 bytes
+  (2337507942a7f444...), this copy 54676 (4b4354fab6bbb513...), the diff being one hunk of four docstring lines, with identical syntax
+  trees once the docstrings are removed; the test copy renders 43 tests against the workshop's 44 collected, the dropped method being
+  the site-manifest membership test, which reads three files this deposit does not ship - and whose local equivalent cannot be green at
+  the moment that matters, since the seal is taken on the blobs of the content commit. Replayed inside this deposit: 9 PASS, 0 FAIL,
+  verdicts root af29ebe38dd79b3b..., the exact digest carried by the three published pages, and 9 attacks captured out of 9. One first
+  run went red here (Ran 43 tests in 121.721s, failures=2, compte 8 PASS / 1 FAIL and 8 of 9 mutations captured); every replay since is
+  green, including this one (Ran 43 tests, OK, 74 s). The cause is not established - the runner was not instrumented at that moment -
+  but the candidate set is closed by experiment: only two controls read outside the module, and forcing _mesurer_ram() to return
+  'unavailable', which is what GlobalMemoryStatusEx yields when it fails, reproduces that exact pair of symptoms on EQ-TLU-06, as does
+  forcing rapport_debits outside the band, at 0.4 and at 2.6, on EQ-TLU-07. 2000 consecutive calls to _mesurer_ram() never returned
+  'unavailable' (0.13 s, machine at 87 percent RAM load, 1.02 GB free), while six rapport_debits measures under four worker threads
+  spread from 0.7885 to 1.6191 inside a band that stops at 0.5 and 2.0: throughput is the tighter of the two instruments. Neither band
+  nor threshold was loosened to buy a colour. The embedded master table moves from 470 to 482 data rows and from 42 to 43 strata, strate
+  S42 carrying the twelve EQ-TLU rows: 411573 bytes and SHA-256 189c8c9b5a88cd1a... at Windows checkout, 411090 and cf47914b42ba6da1...
+  in the LF blob (OID f96606dde09c54f2), the gap being exactly the 483 line endings that eol=crlf restores. Replayed on this CSV:
+  reseau_poids_sparse_mizan.py --controler holds 9 PASS, 0 FAIL, root 32d241880c1fc396, exit code 0 - the base verdicts root does not
+  depend on the row count - and solutions_posees_acteurs.py holds 13/13 on the unchanged chain digest 6c39391df55d991b. The
+  materialisation counter does follow the table: the same line prints 185202 weights here against 175509 on the 470-row file, because
+  materialiser_registre writes rows in file order and draws no randomness. The EQ-TLU module displays the base's published constant
+  (materialises_socle_publie = 175509, line 512) and C05 confronts that constant with the 200000 ceiling; both values pass under it. The
+  drift is recorded here and in docs/API_PASSERELLE_VPS.md instead of being smoothed, and the three published pages and the served JSON
+  still carry 175509. The four suites under tests/ render 53 + 25 + 31 + 43 = 152 tests, each OK with exit code 0; with the 10 tests of
+  horloge_noyau the out-of-registry count is 162 and the composed total 774, of which only the 162 was replayed at this hour.
+  docs/API_PASSERELLE_VPS.md gains four route rows copied byte for byte from the workshop table, taking it from 104 to 108 rows; under
+  the recipe that file states itself, absences go from 91 in 53 families to 86 in 51 families over the 145 current keys of
+  PAGES_PUBLIQUES, the five recovered keys being exactly those of EQ-TLU. The audit registry is untouched: 15 modules CONFORME,
+  232 equations, 232 controls, exit code 0.
   Strict honesty constraints: every artifact carries its computational bound, no open millennium problem
   is claimed as solved. Developed by M. Ahmed EL BAHLOUL under the IMAM8MAHDI initiative.

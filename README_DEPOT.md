@@ -142,24 +142,37 @@ ZENODO_DEPOT_ALMIZAN/
 │   │                            # quintuplet réduit par BLAKE2b-64, seules les adresses
 │   │                            # écrites tiennent en mémoire ; une ligne d'import
 │   │                            # l'adapte, voir « Copies depuis la production »
+├── accomplissement_313t_mizan.py # EQ-TLU-01..09 : les trois sens d'« accomplir les 313 T »
+│   │                            # séparés et contrôlés — volume REFUSÉ (626 To de dense en
+│   │                            # bf16 contre la place de la machine, marge recomptée à
+│   │                            # chaque exécution par EQ-TLU-06), structure ACCOMPLIE
+│   │                            # (les 13 radices ferment exactement 313T, bijection dans
+│   │                            # les deux sens, partition en 313 fibres), fonction
+│   │                            # ACCOMPLIE (poids en O(1) sans stockage) ; une grille de
+│   │                            # 313 000 ancres = 10^-9 de la capacité est réellement
+│   │                            # écrite et scellée par sa racine de Merkle. Importe le
+│   │                            # socle ci-dessus ; interface CLI --controler / --nommer /
+│   │                            # --poids / --mutations / --certificat ; AUCUNE PREUVE,
+│   │                            # aucune machine sous tension
 ├── tokenizer_mizan.py            # les 259 symboles byte-level (3 spéciaux + 256 octets)
 │   │                            # qui bornent l'axe « symbole » du socle
 ├── module_tableau_maitre_mizan.py # charge le tableau maître ; une ligne adaptée à la
 │   │                            # profondeur de ce dépôt : le CSV est embarqué ici, non
 │   │                            # cherché chez un voisin
-├── TABLEAU_MAITRE_SEQUENTIEL_UNIFIE.csv  # instantané : 471 lignes (470 de données +
-│   │                            # en-tête), 42 strates dont S41 · EQ-SB, 389 164 octets au
-│   │                            # checkout (CRLF), SHA-256 `d3ad50d5…` ; 388 693 et
-│   │                            # `293b8f7c…` dans le blob (`i/lf`). Sans lui le
-│   │                            # socle EQ-PS divise par zéro ; les 13 contrôles d'EQ-SA
-│   │                            # restent verts dans les deux états (mesuré)
+├── TABLEAU_MAITRE_SEQUENTIEL_UNIFIE.csv  # instantané : 483 lignes (482 de données +
+│   │                            # en-tête), 43 strates dont S42 · EQ-TLU (12 lignes),
+│   │                            # 411 573 octets au checkout (CRLF), SHA-256 `189c8c9b…` ;
+│   │                            # 411 090 et `cf47914b…` dans le blob (`i/lf`). Sans lui le
+│   │                            # socle EQ-PS divise par zéro et l'axe « entrées × strates »
+│   │                            # qui borne les adresses nommables d'EQ-TLU disparaît avec
 ├── criteres_derivation_sans_intrant.py  # EQ-DSI-01..06, 40 959 999 formes recensées
 ├── docs/                  # table des routes réellement servies par la passerelle
 │   ├── API_PASSERELLE_VPS.md
 │   └── VEILLE_CHAIN_THEORY_DERIVATION_SANS_INTRANT.md  # verdict sur pièces
 │                            # nom sans date : C04 refuse toute date dans le sceau
-├── tests/                 # 109 tests unittest (53 emulateur + 25 critère DSI
-│                          # + 31 socle EQ-PS, copie adaptée de celle de l'atelier)
+├── tests/                 # 152 tests unittest (53 emulateur + 25 critère DSI
+│                          # + 31 socle EQ-PS + 43 accomplissement EQ-TLU ; les deux
+│                          # dernières sont des copies adaptées de l'atelier)
 ├── resultats/             # rapports JSON scellés SHA-256 + .gds
 ├── bibliotheques/         # 5 modules du moteur ASTRO-Q°ODE : clôture
 │   │                      # transitive exacte de ce que ce dépôt importe
@@ -280,6 +293,7 @@ py emulateur_mizan.py conjecture  # Point Carré PC-1..PC-6
 py -m unittest tests.test_emulateur                     # 53 tests
 py -m unittest tests.test_derivation_sans_intrant_mizan  # 25 tests (EQ-DSI)
 py -m unittest tests.test_reseau_poids                   # 31 tests (EQ-PS, copie adaptée)
+py -m unittest tests.test_accomplissement_313t            # 43 tests (EQ-TLU, copie adaptée)
 py -m unittest horloge_noyau.tests.test_horloge_noyau_complet   # 10 tests
 cd ABONDANCE && py -m unittest tests.test_electricite_abondance \
     tests.test_eau_abondance tests.test_agriculture_abondance   # 107 tests
@@ -311,6 +325,14 @@ passe donc de 88 à 109, et le total de 700 à **731** — par composition seule
 treize suites de dossiers (612) n'ont pas été rejouées à cette heure et leur nombre reste
 le relevé de leur heure. Ce qui est mesuré ici, c'est 109 ; 731 est une somme de deux
 nombres dont un seul vient d'être revérifié.
+
+Relevé du 2026-11-15, après l'ajout de `tests/test_accomplissement_313t.py` : les quatre
+suites sous `tests/` rendent 53 + 25 + 31 + **43** = **152** tests, chacun sur sa ligne
+`Ran N tests` et chacun `OK` avec le code 0 — `Ran 53` en 25 s, `Ran 25` en 33 s, `Ran 31`
+en 12 s, `Ran 43` en 74 s, jouées séparément dans ce dépôt à cette heure. Avec les 10 tests
+de `horloge_noyau/tests`, le compte hors dossiers d'équations est de **162** et le total
+composé de 612 + 162 = **774**, dont seul le bloc de 162 vient d'être rejoué : les treize
+suites de dossiers (612) restent le relevé de leur heure.
 
 Mesure du 2026-11-14, les seize suites ci-dessus rejouées dans une copie du dépôt
 **sans `.git`** extraite du HEAD `616744c` : 700 tests sont collectés, 7
@@ -442,6 +464,97 @@ EQ-PS). Sous la recette que cette note énonce elle-même — chercher exactemen
 `` `/route` `` dans le fichier pour chaque clé de `PAGES_PUBLIQUES` — les compteurs
 passent de 91 absences / 53 familles à **86 absences / 51 familles** sur 140 clés,
 mesuré sur les deux états du fichier (`6c487af` puis copie de travail).
+
+Copie du même genre ajoutée le 2026-11-15 : `accomplissement_313t_mizan.py`, le registre
+EQ-TLU, et sa suite. Neuf équations, neuf contrôles, et les trois sens d'« accomplir les
+313 T » séparés et traités séparément — volume **refusé** (626 To en bf16, 2 504 To en
+float64, contre la place mesurée sur la machine, marge recomptée à chaque exécution par
+C06), structure **accomplie** (les radices ferment exactement 313T, bijection dans les deux
+sens, partition en 313 fibres), fonction **accomplie** (un poids par adresse, calculable en
+O(1) sans stockage) — plus une grille réellement écrite de 313 000 ancres, soit 10⁻⁹ de la
+capacité. Aucun de ces mots n'est une preuve : le registre se termine sur « aucune preuve,
+aucune machine sous tension », et C07 borne l'énumération à des siècles qui n'ont jamais
+été courus.
+
+La copie est contrôlée, pas affirmée. Module : atelier 54 346 octets `2337507942a7f444…`,
+dépôt 54 676 octets `4b4354fab6bbb513…` ; le diff tient en un seul hunk,
+`@@ -41,4 +41,8 @@`, quatre lignes de docstring qui disent où le scellement se prend ici —
+`FONDATION/OUTILS/sceller_manifeste.py`, sur les blobs du commit — plutôt que dans le
+manifeste d'antériorité du site. Les deux fichiers sont alors comparés par analyse
+syntaxique, docstrings retirées : arbres identiques, donc pas une ligne de code ne diffère.
+Suite : atelier 21 149 octets `9fd8bb00ea9d1012…`, 44 tests collectés ; dépôt 20 652 octets
+`bca095f082db0f90…`, 43 rendus. L'écart est un test, nommé dans la docstring de la copie —
+`test_le_lot_est_scelle_le_certificat_et_le_json_servis_ne_le_sont_pas` — qui lit
+`oeuvre_universelle.manifeste_anteriorite`, les trois pages
+`web_cloud/accomplissement_313t*.html` et le dictionnaire `PAGES_PUBLIQUES` de la
+passerelle : trois fichiers que ce dépôt n'embarque pas. Les 43 méthodes restantes sont
+identiques octet pour octet. Ce n'est pas une suppression pour obtenir une couleur, et son
+équivalent « ici » ne peut pas s'écrire : le sceau de ce dépôt se prend sur les blobs du
+commit de contenu, donc entre ce commit et le commit de scellement il n'existe aucun instant
+où un test d'appartenance à son propre sceau serait vert. La recette remplace le test —
+`py -3 FONDATION/OUTILS/sceller_manifeste.py --verifier`, lecture seule, code 1 si divergent.
+
+Rejoué dans ce dépôt : `py -3 -B accomplissement_313t_mizan.py --controler` rend 9 PASS,
+0 FAIL, 0 INCONCLUSIF et la racine de verdicts `af29ebe38dd79b3b…`, l'empreinte exacte que
+portent les trois pages publiées ; `--mutations` rend 9 attaques capées sur 9.
+
+Une exécution a rouge, la première : `Ran 43 tests in 121.721s`, `FAILED (failures=2)`, avec
+d'un côté `{'PASS': 8, 'FAIL': 1, 'INCONCLUSIF': 0}` et de l'autre `AssertionError: 8 != 9`
+(mutations capées). Depuis, chaque réexécution est verte — dont celle de ce relevé
+(`Ran 43 tests`, `OK`, 74 s) et une réexécution instrumentée qui relit le registre dans le
+même processus : 43 tests, 0 échec, 0 erreur, compte relu `{'PASS': 9, 'FAIL': 0,
+'INCONCLUSIF': 0}`, racine `af29ebe38dd79b3b`, mutations 9/9, `rapport_debits` 1,0907.
+L'équation rouge de la première exécution n'a pas été lue — le lanceur n'était pas
+instrumenté à ce moment — et la cause n'est donc pas établie ; ce qui l'est, en revanche,
+c'est qu'elle ne peut être que l'une des deux, et le champ des candidats a été fermé par
+l'expérience. Deux contrôles seulement lisent l'extérieur : C06 la machine
+(`mesures_machine()`) et C07 le débit (`mesurer_debit()`). Jouées hors suite dans un
+processus à part : forcer `_mesurer_ram()` à rendre `disponible: False` — la valeur que rend
+`GlobalMemoryStatusEx` quand il échoue — donne `EQ-TLU-06` FAIL, compte 8 PASS / 1 FAIL et
+mutations 8/9 avec `EQ-TLU-06` non capée ; forcer `rapport_debits` hors bande, à 0,4 comme à
+2,6, donne le même couple de symptômes sur `EQ-TLU-07`. Rien d'autre dans le module ne
+produit ce couple sans lever d'exception — et la première exécution n'a pas levé
+d'exception. Les deux candidats ne sont pas également crédibles : 2 000 appels consécutifs à
+`_mesurer_ram()` n'ont jamais rendu `False` (0,13 s, machine à 87 % de charge RAM et 1,02 Go
+libre), alors que six mesures de `rapport_debits` sous quatre threads de charge rendent
+0,7885 ; 0,8710 ; 0,9849 ; 1,1014 ; 1,4091 ; 1,6191 — minimum 0,7885, maximum 1,6191 — dans
+une bande qui s'arrête à 0,5 et 2,0. Le débit est l'instrument le plus tendu des deux. Ni la
+bande de C07 ni le seuil de C06 n'ont été relâchés pour faire tenir une couleur : un
+contrôle qui rouge quand la machine ne tient pas sa mesure fait ce pour quoi il est écrit.
+
+Le tableau maître embarqué change d'état avec ce lot : 470 → **482 lignes de données**
+(483 lignes de fichier avec l'en-tête), 41 → **43 strates**, S42 · EQ-TLU portant les douze
+lignes du registre. Il pèse 411 573 octets et SHA-256 `189c8c9b5a88cd1a…` au checkout
+Windows, 411 090 octets et `cf47914b42ba6da1…` dans le blob LF (OID `f96606dde09c54f2`) :
+l'écart n'est pas du contenu, 411 573 − 411 090 = 483, exactement les fins de ligne que
+`eol=crlf` rend. Relevés antérieurs, pour que la chaîne reste lisible : 470 lignes et
+42 strates, 389 164 octets `d3ad50d5…` au checkout, 388 693 et `293b8f7c…` dans le blob
+(OID `5c90894e…`), et avant cela 362 708 octets `040c1781…`. Ce que ce changement fait et
+ne fait pas, mesuré dans ce dépôt sur le CSV à 482 lignes :
+`py -3 -B reseau_poids_sparse_mizan.py --controler` tient **9 PASS, 0 FAIL, racine
+`32d241880c1fc396`**, code 0 — la racine des verdicts d'EQ-PS ne dépend pas du nombre de
+lignes — et `solutions_posees_acteurs.py` tient **13/13** avec son empreinte de chaîne
+`6c39391df55d991b`, inchangée. Le compteur de matérialisation, lui, suit le tableau : la
+même ligne imprime **185 202** poids matérialisés ici, contre 175 509 sur le CSV à 470
+lignes, parce que `materialiser_registre` écrit les lignes dans l'ordre du fichier et ne
+tire aucun aléa. Le module EQ-TLU, lui, affiche la valeur **publiée** du socle,
+`materialises_socle_publie = 175 509` (constante nommée comme telle à sa ligne 512), et C05
+la confronte au plafond de 200 000 — les deux valeurs passent sous le plafond. L'écart est
+consigné ici et dans `docs/API_PASSERELLE_VPS.md` plutôt que lissé : les trois pages
+publiées et le JSON servi portent encore 175 509, et le recompter sur place demanderait un
+second cycle complet de scellement et de déploiement du site, qui n'est pas ce lot.
+
+Le miroir de `docs/API_PASSERELLE_VPS.md` suit : quatre lignes de plus —
+`/accomplissement-313t`, `/accomplissement-313t/en`, `/accomplissement-313t/ar`,
+`/accomplissement-313t.json` — recopiées octet pour octet de la table de l'atelier, l'égalité
+étant contrôlée par comparaison des octets et non par relecture ; le tableau passe de 104 à
+108 lignes descriptives et les seize lignes couvrent quatre registres. Sous la même recette,
+sur les 145 clés actuelles de `PAGES_PUBLIQUES` : le fichier amputé de ces quatre lignes
+rendait **91 absences en 53 familles**, avec les quatre lignes **86 absences en 51
+familles**, et les cinq clés recouvertes sont précisément celles d'EQ-TLU (la route, ses
+deux alias, `/en`, `/ar`). Que ces compteurs se retrouvent identiques à ceux du relevé
+précédent n'est pas une recopie : la passerelle a gagné cinq clés depuis le HEAD `6c487af`,
+exactement celles de ce lot, sur un total passé de 140 à 145.
 
 Le registre d'équations du dépôt — 232 équations, 232 contrôles, 15 modules
 `CONFORME` — n'est pas touché par cet outillage : `pages_depot/`,

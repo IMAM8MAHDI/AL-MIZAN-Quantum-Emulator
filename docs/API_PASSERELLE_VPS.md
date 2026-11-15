@@ -109,6 +109,10 @@ Les routes `/api/v1/comptes/*` et `/api/v1/admin/*` forment un espace distinct :
 | `/socle-313t/en` | — | `web_cloud/socle_313t_en.html` — same register, same equations, same three distinct numbers; declared capacity, upper bound of nameable addresses, measured materialised weights (en) |
 | `/socle-313t/ar` | — | `web_cloud/socle_313t_ar.html` — السجل نفسه والصيغ نفسها والأرقام نفسها؛ سعة معلنة وسقف للأسماء ووزن مُاد مُقاس، وعبارات السجل الفرنسية كما يُصدرها الوحدة (ar, RTL) |
 | `/socle-313t.json` | `/socle-313t/resultats.json` | `web_cloud/socle_313t_resultats.json` — rapport EQ-PS complet : `rapport` (`equations` 9 avec `forme`, `statut`, `valeur`, `chemin_controle`, `limite`, `compte` `{PASS: 9, FAIL: 0, INCONCLUSIF: 0}`, `racine` SHA-256 des neuf verdicts, `duree_observation_seconde`, `cadre` 23 champs dont `registre`, sans `cle_test` ni `echantillon`) et `mutations` (8 captées sur 8 testées) ; lecture seule, recalculé à chaque génération de page |
+| `/accomplissement-313t` | `/accomplissement-313t/`, `/accomplissement_313t` | `web_cloud/accomplissement_313t.html` — registre EQ-TLU (`accomplissement_313t_mizan.py`) : 9 équations, 9 contrôles, 9 limites écrites, banc de non-vacuité de **9 mutations sur 9 capteurs**. Il répond à « les 313 billions de poids sont-ils accomplis ? » en séparant trois sens qui ne sont pas interchangeables : **volume refusé** (626 To de matrice dense en bf16, quatre à six ordres de grandeur au-dessus de la place mesurée), **structure accomplie** (treize radices dont le produit ferme exactement 313 000 000 000 000, bijection énumérée dans les deux sens sur 313 000 points et 12 pointes recoupées par une seconde route, partition en 313 fibres contiguës mesurée trois fois), **fonction accomplie** (poids calculé en O(1) pour chaque adresse, sans stockage, χ² de 20 000 dessins encadré à 312 ddl). Une grille de 313 000 ancres — un milliardième de la capacité — est réellement écrite et scellée par sa racine de Merkle reproduite deux fois. Le registre se retourne contre lui-même : les adresses qu'il nomme sont lues dans le tableau maître et restent des ordres de grandeur sous la capacité. **Aucune preuve, aucun poids persistant, aucune machine sous tension** (fr) |
+| `/accomplissement-313t/en` | — | `web_cloud/accomplissement_313t_en.html` — same register, same three separated senses, same nine limits; refused volume, accomplished structure, accomplished function (en) |
+| `/accomplissement-313t/ar` | — | `web_cloud/accomplissement_313t_ar.html` — السجل نفسه والصيغ نفسها والحدود التسعة نفسها؛ حجم مرفوض وبنية مُنجزة ودالة مُنجزة، وعبارات السجل بالفرنسية كما يُصدرها الوحدة (ar, RTL) |
+| `/accomplissement-313t.json` | `/accomplissement-313t/resultats.json` | `web_cloud/accomplissement_313t_resultats.json` — rapport EQ-TLU complet : `equations` 9 (avec `forme`, `statut`, `valeur`, `chemin_controle`, `limite`), `compte` `{PASS: 9, FAIL: 0, INCONCLUSIF: 0}`, `racine` SHA-256 des neuf verdicts, `limites` 9, `mutations` (9 captées sur 9), et le `cadre` machine (disque, RAM, débits mesurés, temps d'énumération, occupation de la grille). Les relevés qui dérivent d'une exécution à l'autre ne vivent **que** ici : les quatre grandeurs d'exécution (`disque_libre_octets`, `ram_libre_octets`, `debit_retenu_par_seconde`, `duree_observation_seconde`) et l'horodatage du relevé n'apparaissent sur aucune des trois pages, qui ne portent que les valeurs déterministes (verdicts, radices, comptes, ratios tenus en `Fraction`, χ² encadré). Une exception, assumée et contrôlée : les pages affichent `adresses_nommables`, le majorant auto-référent recalculé sur le tableau maître chargé — dès qu'une strate est ajoutée ou qu'une ligne est réécrite, les trois pages rendent obsolètes et imposent de rejouer la chaîne ordonnée avant tout rescellement. Le contrôle `test_20_pages_eqtlu_portent_le_majorant_recalcule` de `tests/test_site_public_mizan.py` refuse une page qui porterait un majorant que le registre ne calcule plus |
 
 Les fichiers HTML sont lus à chaque requête. Aucun cache applicatif. Les six pages de compte sont renvoyées avec `Cache-Control: no-cache` et `X-Content-Type-Options: nosniff`.
 
@@ -141,6 +145,45 @@ devine pas : une clé est ramenée à sa famille en retirant un suffixe `/en`, `
 `/` final, puis un suffixe `.json` ; on compte ensuite les familles distinctes. Ce qui est affirmé :
 ces douze lignes descriptives sont servies en production. Ce qui ne l'est pas : que la table soit
 complète, ni que les 86 absences soient des routes cassées.
+
+**Troisième relevé, mesuré le 2026-11-14 à 23:31 UTC.** Quatre lignes de plus sont ajoutées
+ci-dessus — `/accomplissement-313t`, `/accomplissement-313t/en`, `/accomplissement-313t/ar`,
+`/accomplissement-313t.json` — et couvrent le quatrième registre que ce dépôt embarque,
+l'accomplissement des 313 × 10^12 poids (EQ-TLU, `accomplissement_313t_mizan.py`) : **seize
+lignes descriptives pour quatre registres**, et le tableau passe de 104 à 108 lignes. Elles
+sont recopiées octet pour octet de la table de l'atelier ; l'égalité des quatre lignes est
+contrôlée par comparaison des octets, pas par relecture. Sous la recette énoncée plus haut —
+chercher exactement `` `/route` `` dans le présent fichier pour chaque clé de `PAGES_PUBLIQUES`
+— le fichier amputé de ces quatre lignes rendait, sur les 145 clés actuelles, **91 absences en
+53 familles** ; avec les quatre lignes, **86 absences en 51 familles**. Les cinq clés recouvertes
+sont précisément celles d'EQ-TLU (`/accomplissement-313t`, son alias `/accomplissement-313t/`,
+son alias `/accomplissement_313t`, `/accomplissement-313t/en`, `/accomplissement-313t/ar`) et
+deux familles disparaissent avec elles. La coïncidence avec le relevé précédent n'est pas une
+recopie : la passerelle a gagné cinq clés depuis le HEAD `6c487af`, exactement celles de ce lot,
+et les recouvrir rend les deux mêmes compteurs sur un total passé de 140 à 145 clés.
+
+Le registre se rejoue hors atelier, dans ce dépôt : `py -3 -B accomplissement_313t_mizan.py
+--controler` rend 9 PASS, 0 FAIL, 0 INCONCLUSIF et la racine de verdicts `af29ebe38dd79b3b…`,
+l'empreinte exacte que portent les trois pages publiées ; `--mutations` rend 9 attaques capées
+sur 9. Les axes lus sur le CSV embarqué — 482 entrées, 43 strates, 13 colonnes, 259 symboles,
+6 314 tranches — donnent 440 618 966 788 adresses nommables contre 313 000 000 000 000 de
+capacité : deux nombres qui ne se confondent pas, et `majorant < capacité` tient dans les deux
+sens. Le troisième, la matérialisation réelle, se lit à deux endroits qui ne concordent plus :
+le module EQ-TLU affiche la valeur **publiée** du socle, `materialises_socle_publie = 175 509`
+(constante nommée comme telle à sa ligne 512, mesure du tableau à 470 lignes avant la strate
+S42), alors que `reseau_poids_sparse_mizan.py --controler`, rejoué ici sur le CSV à 482 lignes,
+en compte **185 202** avec la même racine EQ-PS `32d241880c1fc396`, 9 PASS et le code 0 —
+`materialiser_registre` ne tire aucun aléa, le compteur suit donc l'état du tableau maître, pas
+la racine des verdicts. L'écart est consigné ici plutôt que lissé : les trois pages publiées et
+le JSON servi portent encore 175 509. L'audit des quatre piliers (`--tous`) reste à
+15 modules CONFORME, 232 équations, 232 contrôles, code 0 : sa liste vient de
+`DOSSIERS_EQUATIONS × MODULES_PRINCIPAUX` et ne parcourt pas les modules posés à la racine, où
+vivent le socle EQ-PS et EQ-TLU. Aucune prétention de preuve : EQ-TLU-06 refuse le volume dense
+(626 To en bf16 contre la place mesurée sur la machine), EQ-TLU-07 borne l'énumération à des
+siècles qui n'ont jamais été courus, et le registre se termine par « aucune preuve, aucune
+machine sous tension ». Ce qui est affirmé : ces seize lignes descriptives sont servies en
+production, et le registre qu'elles décrivent se rejoue sur ce clone avec la même racine. Ce qui
+ne l'est pas : que la table soit complète, ni que les 86 absences soient des routes cassées.
 
 ---
 
